@@ -1,0 +1,185 @@
+/* Bahasa Indonesia — 20-tech */
+addT('id', {
+  'gi9ayo1olm': R`
+<p>Sumber energi <b>tak terbarukan</b> (batu bara, minyak bumi, gas alam, uranium) akan habis, dan pembakaran bahan bakar fosil melepaskan karbon dioksida. Sumber energi <b>terbarukan</b> tergantikan secara alami: cahaya matahari, angin, air yang mengalir, panas bumi, gelombang laut, pasang surut, dan biomassa. Indonesia memiliki salah satu cadangan panas bumi terbesar di dunia serta sinar matahari dan sungai yang melimpah.</p>
+⟦0⟧
+<h3>Energi surya</h3>
+<p>Sel fotovoltaik (sel surya) mengubah cahaya langsung menjadi listrik. Pada hari yang cerah sekitar $1000\,\mathrm{W/m^2}$ cahaya matahari sampai di permukaan tanah, dan efisiensi panel pada umumnya 15–22%, sehingga keluarannya $P = \eta\, I A$ untuk intensitas $I$ dan luas $A$.</p>
+<h3>Energi angin</h3>
+<p>Energi kinetik udara yang melewati bilah turbin setiap detik adalah</p>
+⟦1⟧
+<p>dengan $\rho \approx 1{,}2\,\mathrm{kg/m^3}$ adalah massa jenis udara dan $A = \pi r^2$ luas yang disapu bilah sepanjang $r$. Kelajuan angin dua kali lipat menghasilkan daya $2^3 = 8$ kali lipat. Tidak ada turbin yang dapat mengambil lebih dari sekitar 59% daya ini (batas Betz).</p>
+<h3>Pembangkit listrik tenaga air dan panas bumi</h3>
+<p>Air yang jatuh dari ketinggian $h$ memutar turbin. Dengan debit (volume per detik) $Q$, dayanya $P = \eta \rho Q g h$ (untuk air $\rho = 1000\,\mathrm{kg/m^3}$). Pembangkit listrik tenaga panas bumi memakai uap dari batuan panas di bawah tanah untuk menggerakkan turbin.</p>
+⟦2⟧`,
+  '1sqd0qw6yt9': R`<p>Tidak ada alat yang mengubah seluruh masukannya menjadi keluaran yang berguna. <b>Efisiensi</b> adalah</p><p>$$\eta = \frac{\text{keluaran berguna}}{\text{masukan total}} \times 100\%.$$</p>`,
+  '1gquuevw3v6': R`<p>Listrik dijual dalam satuan kilowatt-jam: $1\,\mathrm{kWh} = 1000\,\mathrm{W} \times 3600\,\mathrm{s}$, yaitu $3{,}6 \times 10^{6}\,\mathrm{J}$. Daya dalam kW dikali jam menghasilkan kWh.</p>`,
+  '23anl0rg7xc': R`Cahaya matahari dengan intensitas ⟦0⟧ mengenai panel surya seluas ⟦1⟧ yang efisiensinya ⟦2⟧. Berapa daya listrik keluarannya?`,
+  '1cxva570so5': R`Sebuah rumah memerlukan daya ⟦0⟧ dari panel surya yang efisiensinya ⟦1⟧, dengan cahaya matahari ⟦2⟧. Berapa luas panel yang diperlukan?`,
+  '1hslrkfisua': R`Sebuah turbin angin memiliki bilah sepanjang ⟦0⟧. Angin bertiup dengan kelajuan ⟦1⟧ dan turbin mengubah ⟦2⟧ daya angin menjadi listrik. Berapa daya listrik keluarannya, dalam MW? (Massa jenis udara ⟦3⟧.)`,
+  'jy8evwe1xb': R`$A = \pi r^2 = ⟦0⟧\,\mathrm{m^2}$; $P_{\text{angin}} = \tfrac12 \rho A v^3 = \tfrac12 \cdot 1{,}2 \cdot ⟦1⟧ \cdot ⟦2⟧^3 = ⟦3⟧\,\mathrm{W}$. Keluaran $= ⟦4⟧ \times ⟦5⟧ = ⟦6⟧$.`,
+  '1r7ak00xurw': R`Kelajuan angin di sebuah turbin menjadi ⟦0⟧. Berapa kali perubahan daya yang tersedia dalam angin?`,
+  '25jys9aycma': R`setengahnya`,
+  'ufkn6uubk6': R`dua kali lipat`,
+  'hp02cmipl9': R`tiga kali lipat`,
+  '296o7p7c82a': R`$P \propto v^3$, jadi dayanya berubah dengan faktor $⟦0⟧^3 = ⟦1⟧$.`,
+  'y9tp5u5ovk': R`Air mengalir melalui pembangkit listrik tenaga air dengan debit ⟦0⟧ dan jatuh dari ketinggian ⟦1⟧. Efisiensi pembangkit ⟦2⟧. Berapa daya listrik keluarannya, dalam MW? ⟦3⟧`,
+  'ygr2eu9url': R`Sebuah atap dipasangi ⟦0⟧ panel surya, masing-masing menghasilkan ⟦1⟧ di bawah sinar matahari penuh. Atap itu menerima setara ⟦2⟧ jam sinar matahari penuh per hari. Berapa energi yang dihasilkan panel-panel itu setiap hari, dalam kWh?`,
+  '7q3mv65bn8': R`Daya total $⟦0⟧ \times ⟦1⟧ = ⟦2⟧\,\mathrm{W} = ⟦3⟧\,\mathrm{kW}$. Energi $= ⟦4⟧ \times ⟦5⟧ = ⟦6⟧$.`,
+  '1ieomdn004w': R`Sebuah generator diberi daya ⟦0⟧ dan menghasilkan daya listrik ⟦1⟧. Berapa efisiensinya?`,
+  '1u7uz3k6qyd': R`Sebuah pembangkit listrik membakar bahan bakar dengan laju ⟦0⟧ dan efisiensinya ⟦1⟧. Berapa daya yang terbuang sebagai panas?`,
+  'pm0k6e0fkq': R`Keluaran berguna $= ⟦0⟧ \times ⟦1⟧ = ⟦2⟧$, jadi ⟦3⟧ terbuang sebagai panas.`,
+  'hl17gwo0zw': R`Manakah yang merupakan sumber energi terbarukan?`,
+  '23tzmc391ja': R`Panas bumi`,
+  '1g0bdq2was': R`Angin`,
+  '1e7ut9i2n2u': R`Cahaya matahari`,
+  'xvs0r1390y': R`Air yang mengalir`,
+  '1mvfcies4hf': R`Batu bara`,
+  'b8aj1ch43k': R`Gas alam`,
+  '1uqwocpsci2': R`Uranium`,
+  '10hnhwhy9n4': R`Sumber terbarukan tergantikan secara alami secepat kita memakainya; bahan bakar fosil dan uranium tidak.`,
+  '1r44myitlv3': R`Perubahan energi apa yang terjadi di dalam sel surya?`,
+  'z16ny5kmc1': R`Energi cahaya menjadi energi listrik`,
+  '1ydfx6j4r1u': R`Energi panas menjadi energi listrik`,
+  '1k7b6gno0tk': R`Energi kimia menjadi energi listrik`,
+  '13dpgdt42nk': R`Energi kinetik menjadi energi listrik`,
+  '21l0j2c8bck': R`Sel fotovoltaik mengubah cahaya langsung menjadi listrik; foton melepaskan elektron di dalam semikonduktor.`,
+  'prunjjyggz': R`Apa kelemahan energi angin dan energi surya?`,
+  'fnwv79x3ic': R`Keluarannya bergantung pada cuaca`,
+  '2em36ff5shs': R`Melepaskan karbon dioksida`,
+  '2emgqz95lkm': R`Akan habis`,
+  '1mymhxsch7q': R`Menghasilkan limbah radioaktif`,
+  '9jxck1bdrz': R`Angin tidak selalu bertiup dan matahari tidak selalu bersinar, sehingga diperlukan penyimpanan energi atau pembangkit cadangan.`,
+  '20fupi3jemj': R`Sumber energi apa yang dipakai pembangkit listrik tenaga panas bumi?`,
+  'x0r4tbgzzg': R`Panas dari batuan panas di bawah tanah`,
+  'vdj7gs3ig1': R`Energi kinetik angin`,
+  '258t0hpxuf8': R`Cahaya matahari`,
+  '1uw96epmi13': R`Pembakaran batu bara`,
+  '16gntv7v755': R`Air yang dipompa ke bawah (atau yang sudah ada secara alami) dipanaskan oleh batuan panas dan kembali sebagai uap untuk menggerakkan turbin.`,
+  '1dctkrz4nbx': R`
+<p>Setiap benda memancarkan gelombang elektromagnetik, dan benda yang lebih panas memancar lebih kuat dan pada panjang gelombang yang lebih pendek. Dua hukum menggambarkan radiasi ini:</p>
+⟦0⟧
+<p>Yang pertama adalah <b>hukum pergeseran Wien</b>: permukaan Matahari yang bersuhu sekitar $5800\,\mathrm{K}$ memancar paling kuat pada cahaya tampak (sekitar $500\,\mathrm{nm}$), sedangkan Bumi yang bersuhu sekitar $288\,\mathrm{K}$ memancar paling kuat pada inframerah (sekitar $10\,\mathrm{\mu m}$). Yang kedua adalah <b>hukum Stefan–Boltzmann</b>, dengan $\sigma = 5{,}67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$ dan emisivitas $e$ ($e = 1$ untuk benda hitam sempurna).</p>
+<h3>Keseimbangan energi Bumi</h3>
+<p>Bumi menyerap cahaya matahari dan memancarkan inframerah kembali ke luar angkasa. Sekitar 30% cahaya matahari dipantulkan (<b>albedo</b> $\alpha \approx 0{,}3$). Menyeimbangkan energi yang diserap dengan energi yang dipancarkan, dengan konstanta matahari $S = 1361\,\mathrm{W/m^2}$, menghasilkan</p>
+⟦1⟧
+<p>Itu sama dengan $-18\,^\circ\mathrm{C}$, padahal suhu rata-rata permukaan Bumi sekitar $15\,^\circ\mathrm{C}$. Selisihnya disebabkan oleh <b>efek rumah kaca</b>.</p>
+⟦2⟧
+<p>Akibatnya antara lain naiknya permukaan laut (karena pemuaian air laut dan mencairnya es di daratan), cuaca yang lebih ekstrem, serta perubahan ekosistem dan pertanian. Emisi dapat dikurangi dengan menghemat energi, beralih ke sumber terbarukan, dan melindungi hutan.</p>
+⟦3⟧`,
+  '25qbz25dq5g': R`\lambda_{\max} T = 2{,}9 \times 10^{-3}\,\mathrm{m\,K} \qquad P = e\sigma A T^4`,
+  '11ekpd75c8g': R`<p><b>Gas rumah kaca</b> (uap air, karbon dioksida, metana, dinitrogen oksida) meloloskan cahaya matahari tampak tetapi menyerap inframerah yang dipancarkan permukaan Bumi, lalu memancarkan sebagian kembali ke bawah sehingga permukaan menjadi hangat. Pembakaran bahan bakar fosil dan penebangan hutan telah menaikkan kadar CO₂ dari sekitar 280 ppm sebelum tahun 1800 menjadi lebih dari 420 ppm saat ini, sehingga efek itu makin kuat: inilah <b>pemanasan global</b>.</p>`,
+  '2c5bjew3ndw': R`<p>Lubang ozon adalah masalah yang berbeda: ozon di atmosfer atas menahan ultraviolet, dan lapisan itu dirusak oleh CFC. Lubang ozon bukan penyebab utama pemanasan global.</p>`,
+  'a413z1zy4a': R`permukaan Matahari`,
+  'yoi73866b': R`sebuah bintang`,
+  'v5amddjc9e': R`sebuah bintang merah`,
+  'mobadgewup': R`filamen lampu pijar`,
+  '18akkuuzta3': R`permukaan Bumi`,
+  '1bgj1l6es9b': R`tubuh manusia`,
+  '7pzas2bk2h': R`Suhu ⟦0⟧ sekitar ⟦1⟧. Pada panjang gelombang berapa radiasinya paling kuat, dalam ⟦2⟧? (Tetapan Wien $2{,}9 \times 10^{-3}\,\mathrm{m\,K}$.)`,
+  '2ganho3hy90': R`$\lambda_{\max} = \frac{2{,}9 \times 10^{-3}}{⟦0⟧} = ⟦1⟧\,\mathrm{m} = ⟦2⟧$⟦3⟧.`,
+  'ia7clqzt4e': R`, yaitu inframerah`,
+  'g70vgnvcnl': R`Berapa daya yang dipancarkan setiap meter persegi benda hitam bersuhu ⟦0⟧? ($\sigma = 5{,}67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$.)`,
+  '2cf1hxpxa7w': R`$\frac{P}{A} = \sigma T^4 = 5{,}67 \times 10^{-8} \times ⟦0⟧^4 = ⟦1⟧$.`,
+  '1fbnqtymx3a': R`Suhu mutlak sebuah benda panas menjadi ⟦0⟧. Berapa kali perubahan daya yang dipancarkannya?`,
+  '1qea8ntcj9w': R`naik 50%`,
+  '25xyv41qty': R`$P \propto T^4$, jadi dayanya berubah dengan faktor $⟦0⟧^4 = ⟦1⟧$.`,
+  '3uwl9fgwzo': R`Tanpa atmosfer, berapa suhu rata-rata Bumi jika albedonya ⟦0⟧? Gunakan $T = \left(\frac{S(1 - \alpha)}{4\sigma}\right)^{1/4}$ dengan $S = 1361\,\mathrm{W/m^2}$ dan $\sigma = 5{,}67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$. Tuliskan jawabannya dalam kelvin.`,
+  '23kdkkon8ua': R`$T = \left(\frac{1361 \times ⟦0⟧}{4 \times 5{,}67 \times 10^{-8}}\right)^{1/4} = ⟦1⟧$, yaitu sekitar ⟦2⟧. Efek rumah kaca membuat permukaan yang sebenarnya lebih hangat.`,
+  '39mmvmcaqa': R`Sebuah rumah tangga memakai listrik ⟦0⟧ per bulan. Jika pembangkitan setiap kWh melepaskan ⟦1⟧ CO₂, berapa CO₂ yang ditimbulkan setiap bulan?`,
+  '16mustvvbgc': R`$⟦0⟧ \times ⟦1⟧ = ⟦2⟧$ CO₂ setiap bulan (sekitar ⟦3⟧ per tahun).`,
+  '2ealcyufgih': R`Sebuah mobil menempuh ⟦0⟧ dengan satu liter bensin, dan pembakaran satu liter bensin melepaskan sekitar ⟦1⟧ CO₂. Berapa CO₂ yang dilepaskannya untuk jarak ⟦2⟧?`,
+  'dr3ki3pnzw': R`Bensin yang terpakai $= \frac{⟦0⟧}{⟦1⟧} = ⟦2⟧$ liter, jadi CO₂ $= ⟦3⟧ \times 2{,}3 = ⟦4⟧$.`,
+  'm3m9f4q7pb': R`Bagaimana gas rumah kaca menghangatkan permukaan Bumi?`,
+  '1kvsrxmvuut': R`Menyerap inframerah yang dipancarkan Bumi dan memancarkan sebagian kembali ke bawah`,
+  '1kro0kdebrw': R`Menyerap cahaya tampak sebelum mencapai tanah`,
+  '25gp1dlcuim': R`Membentuk lubang yang meloloskan lebih banyak ultraviolet`,
+  'bzrtpchzaa': R`Menghasilkan panas melalui reaksi kimia`,
+  '13tqcbz7obi': R`Cahaya matahari (sebagian besar cahaya tampak) diteruskan; tanah yang hangat memancarkan inframerah, yang diserap gas rumah kaca dan sebagian dipancarkan kembali ke bawah.`,
+  'halmbbq0dy': R`Manakah yang <b>bukan</b> gas rumah kaca?`,
+  '12guwpp52cw': R`Nitrogen`,
+  'dxja4u3nje': R`Karbon dioksida`,
+  '1050mw875i9': R`Metana`,
+  'ympyt352w3': R`Uap air`,
+  '2ab37617ucg': R`Nitrogen dan oksigen, gas utama penyusun udara, tidak menyerap inframerah. Karbon dioksida, metana, dan uap air menyerapnya.`,
+  '24m6jvhvnyx': R`Apa dua penyebab utama naiknya permukaan laut?`,
+  '2dubsnsz8mp': R`Pemuaian air laut dan mencairnya es di daratan`,
+  '2aiy7k3o7ba': R`Hujan dan sungai yang bertambah banyak`,
+  '2aaf2p4nw57': R`Mencairnya es laut dan penguapan`,
+  '1dzbf12khxe': R`Pasang surut dan gempa bumi`,
+  '9g3ub2qehe': R`Air yang lebih hangat memerlukan ruang yang lebih besar, dan gletser serta lapisan es yang mencair menambah air ke laut. Es laut yang terapung hampir tidak mengubah permukaan laut ketika mencair.`,
+  'kj9sw8abyl': R`Pada bagian spektrum manakah Bumi memancar paling kuat?`,
+  '1g9sox43ojh': R`Menurut hukum Wien, pada suhu sekitar 288 K puncaknya berada di dekat $10\,\mathrm{\mu m}$, yaitu inframerah.`,
+  '1jzyh2pnebl': R`
+<p>Bahan-bahan dikelompokkan menurut seberapa mudah muatan bergerak di dalamnya. <b>Konduktor</b> (logam) memiliki banyak elektron bebas; <b>isolator</b> hampir tidak memilikinya. <b>Semikonduktor</b> seperti silikon berada di antara keduanya, dan daya hantarnya meningkat ketika dipanaskan atau disinari.</p>
+<h3>Doping</h3>
+<p>Menambahkan sedikit sekali unsur lain mengubah semikonduktor secara drastis. Unsur golongan V (fosfor, arsen) menambahkan elektron lebih: semikonduktor <b>tipe-n</b>. Unsur golongan III (boron, galium) meninggalkan kekosongan yang disebut <b>hole</b> yang berperilaku sebagai muatan positif: semikonduktor <b>tipe-p</b>.</p>
+<h3>Dioda</h3>
+<p><b>Sambungan p–n</b> adalah sebuah <b>dioda</b>: dioda hanya menghantarkan arus ke satu arah. Pada <b>bias maju</b> (sisi p positif) dioda silikon menghantar setelah tegangannya melebihi sekitar $0{,}7\,\mathrm{V}$; pada <b>bias mundur</b> hampir tidak ada arus yang mengalir. Dioda mengubah AC menjadi DC (<b>penyearahan</b>). <b>Dioda pemancar cahaya</b> (LED) memancarkan cahaya ketika diberi bias maju dan memerlukan resistor seri untuk membatasi arusnya:</p>
+⟦0⟧
+<h3>Transistor</h3>
+<p>Transistor memungkinkan arus <b>basis</b> $I_B$ yang kecil mengendalikan arus <b>kolektor</b> yang jauh lebih besar, $I_C = \beta I_B$, dengan $\beta$ (sering 100 atau lebih) adalah penguatan arus. Transistor berfungsi sebagai penguat dan sebagai saklar; prosesor modern berisi miliaran transistor.</p>
+<h3>Gerbang logika</h3>
+⟦1⟧
+⟦2⟧
+⟦3⟧`,
+  'b75zb1pwu5': R`R = \frac{V_s - V_{\text{LED}}}{I}`,
+  'ivft9kfdi0': R`Gerbang`,
+  '2b2vvcooba0': R`Keluaran bernilai 1 jika…`,
+  '1r7zrrqvpnq': R`NOT`,
+  'ng9vkx7ilt': R`masukannya 0`,
+  'uixtugmls4': R`AND`,
+  'galfyqipq9': R`kedua masukan bernilai 1`,
+  '1lzp72styvf': R`OR`,
+  'sgq45zf2ih': R`paling sedikit satu masukan bernilai 1`,
+  'tlmtwc4w18': R`NAND`,
+  'k93ie7klyp': R`kedua masukan tidak sama-sama bernilai 1`,
+  '1udaue9onkb': R`NOR`,
+  '1dvsrofussb': R`kedua masukan bernilai 0`,
+  'y4odget7sv': R`XOR`,
+  '1pykhsgu6es': R`kedua masukan berbeda`,
+  '1koqm2il3m0': R`<p>Rangkaian digital bekerja dengan dua keadaan saja, 0 dan 1. Bilangan <b>biner</b> memakai perpangkatan 2: $1011_2 = 8 + 0 + 2 + 1 = 11$.</p>`,
+  '282xozfz6l5': R`<p>Ubah miliampere menjadi ampere sebelum memakai $R = V/I$: $20\,\mathrm{mA} = 0{,}02\,\mathrm{A}$.</p>`,
+  '2jkb08f2dg': R`merah`,
+  '1719de5b71t': R`hijau`,
+  '1a43z74k2oy': R`biru`,
+  '1agbxs9p8se': R`kuning`,
+  'mcd42l16h9': R`Sebuah LED ⟦0⟧ memerlukan tegangan ⟦1⟧ dan arus ⟦2⟧. Resistor berapa yang harus dipasang seri dengannya pada sumber tegangan ⟦3⟧?`,
+  '1nb0msahh8h': R`Resistor menanggung tegangan $⟦0⟧ - ⟦1⟧ = ⟦2⟧\,\mathrm{V}$, jadi $R = \frac{⟦3⟧}{⟦4⟧} = ⟦5⟧$.`,
+  '28e0hktce90': R`Sebuah transistor dengan penguatan arus ⟦0⟧ mengalirkan arus kolektor ⟦1⟧. Berapa arus basisnya, dalam µA?`,
+  'ryzx4vkvmh': R`Sebuah transistor memiliki penguatan arus $\beta = ⟦0⟧$. Arus basis sebesar ⟦1⟧ mengalir. Berapa arus kolektornya, dalam mA?`,
+  'jaql7bheoj': R`Masukan $(A, B)$ gerbang ⟦0⟧ berturut-turut bernilai $(0, 0)$, $(0, 1)$, $(1, 0)$, dan $(1, 1)$. Apa saja keluarannya?`,
+  '1mtjokmhpw9': R`Gerbang ⟦0⟧ menghasilkan 1 jika ⟦1⟧, jadi keluarannya ⟦2⟧.`,
+  '20l7lrpf5v3': R`Berapa keluaran gerbang ⟦0⟧ jika $A = ⟦1⟧$ dan $B = ⟦2⟧$?`,
+  'yhxm4nu6dj': R`Bergantung pada keluaran sebelumnya`,
+  '10xr4g5u8os': R`Tidak ada keluaran`,
+  '1e4mjooq9id': R`Gerbang ⟦0⟧ menghasilkan 1 jika ⟦1⟧. Di sini keluarannya ⟦2⟧.`,
+  'pwb7l3x34n': R`Ubahlah bilangan biner $⟦0⟧_2$ ke bilangan desimal.`,
+  '2a8xvq11t8u': R`Tuliskan bilangan desimal ⟦0⟧ dalam bentuk biner.`,
+  '1dd7u02yykk': R`$⟦0⟧ = ⟦1⟧$, jadi bentuk binernya $⟦2⟧_2$.`,
+  '1xxwf7c3y4q': R`Sebuah transformator memberikan tegangan efektif ⟦0⟧ kepada sebuah dioda silikon yang dipakai sebagai penyearah setengah gelombang. Berapa tegangan puncak pada beban, dengan memperhitungkan ⟦1⟧ untuk dioda?`,
+  '2dbhwnx5pft': R`Tegangan puncak masukan $V_0 = \sqrt2 \times ⟦0⟧ = ⟦1⟧\,\mathrm{V}$. Dioda menyerap ⟦2⟧, sehingga tersisa ⟦3⟧.`,
+  '2fo853eq7s0': R`Silikon didoping dengan fosfor (golongan V). Semikonduktor jenis apa yang terbentuk?`,
+  'v0cnigt4ja': R`tipe-n`,
+  '1phjnvmqqa4': R`tipe-p`,
+  '238v72pxkkz': R`isolator`,
+  '1pojtyp5yqn': R`konduktor`,
+  '1sn25oqbuqd': R`Fosfor memiliki satu elektron valensi lebih banyak daripada silikon, sehingga menambah elektron bebas: pembawa muatan negatif, tipe-n.`,
+  '18iu4rpnc5g': R`Silikon didoping dengan boron (golongan III). Apa pembawa muatan mayoritasnya?`,
+  'pm0hrkpch4': R`Hole`,
+  '1ye2rznydkg': R`Elektron bebas`,
+  'rm0zl0b17j': R`Proton`,
+  'k4cyscucp8': R`Ion`,
+  '5ix2ehiel4': R`Boron memiliki satu elektron valensi lebih sedikit, sehingga meninggalkan hole yang berperilaku sebagai pembawa muatan positif: tipe-p.`,
+  '1rg1jni825o': R`Sebuah dioda dipasang dengan bias mundur. Apa yang terjadi?`,
+  'pdv8odolb1': R`Hampir tidak ada arus yang mengalir`,
+  '1dg6dniogmz': R`Arus besar mengalir`,
+  '1r9h9gsiv5x': R`Dioda menyala`,
+  '1rpqil0hmfx': R`Dioda memperkuat arus`,
+  '6up74uvt0q': R`Pada bias mundur, lapisan deplesi pada sambungan melebar dan menghalangi arus.`,
+  '111drfx2m42': R`Apa yang terjadi pada hambatan semikonduktor ketika suhunya naik?`,
+  '1vomu4xn33e': R`Menjadi tak hingga`,
+  '1vms6qvcqry': R`Panas membebaskan lebih banyak pembawa muatan, sehingga semikonduktor menghantar lebih baik. Sifat ini dimanfaatkan pada termistor.`,
+  '1nn4mxs0j5f': R`Gerbang logika manakah yang menghasilkan keluaran 1 hanya jika kedua masukannya bernilai 1?`,
+  '29v97sippra': R`Gerbang AND memerlukan A dan B keduanya bernilai 1.`,
+});

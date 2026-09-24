@@ -1,0 +1,336 @@
+##### renewables
+@gi9ayo1olm  ; 0=Key(T`<p>No device turns all of its inpu | 1=Fm(T`P = \tfrac12 \rho A v^3`) | 2=Tip(T`<p>Electricity is sold in kilowatt
+
+<p><b>Non-renewable</b> resources (coal, oil, natural gas, uranium) will run out, and burning fossil fuels releases carbon dioxide. <b>Renewable</b> resources are replaced naturally: sunlight, wind, flowing water, geothermal heat, waves, tides and biomass. Indonesia has some of the world's largest geothermal reserves and plenty of sunshine and rivers.</p>
+⟦0⟧
+<h3>Solar power</h3>
+<p>Photovoltaic (solar) cells turn light directly into electricity. On a clear day about $1000\,\mathrm{W/m^2}$ of sunlight reaches the ground, and typical panels are 15–22% efficient, so the output is $P = \eta\, I A$ for intensity $I$ and area $A$.</p>
+<h3>Wind power</h3>
+<p>The kinetic energy of the air passing through the blades each second is</p>
+⟦1⟧
+<p>where $\rho \approx 1.2\,\mathrm{kg/m^3}$ is the density of air and $A = \pi r^2$ the area swept by blades of length $r$. Doubling the wind speed gives $2^3 = 8$ times the power. No turbine can extract more than about 59% of this (the Betz limit).</p>
+<h3>Hydroelectric and geothermal power</h3>
+<p>Water falling through a height $h$ turns turbines. With a flow of volume $Q$ each second, the power is $P = \eta \rho Q g h$ (for water $\rho = 1000\,\mathrm{kg/m^3}$). Geothermal plants use steam from hot rocks underground to drive turbines.</p>
+⟦2⟧
+@1sqd0qw6yt9
+<p>No device turns all of its input into useful output. The <b>efficiency</b> is</p><p>$$\eta = \frac{\text{useful output}}{\text{total input}} \times 100\%.$$</p>
+@1gquuevw3v6
+<p>Electricity is sold in kilowatt-hours: $1\,\mathrm{kWh} = 1000\,\mathrm{W} \times 3600\,\mathrm{s}$, which is $3.6 \times 10^{6}\,\mathrm{J}$. Power in kW times hours gives kWh.</p>
+@23anl0rg7xc  ; 0=Q(I, 'W/m^2') | 1=Q(A, 'm^2') | 2=Q(eta, '%')
+Sunlight of intensity ⟦0⟧ falls on a solar panel of area ⟦1⟧ with an efficiency of ⟦2⟧. What is its electrical power output?
+@1cxva570so5  ; 0=Q(P, 'kW') | 1=Q(eta, '%') | 2=Q(1000, 'W/m^2')
+A house needs ⟦0⟧ from solar panels that are ⟦1⟧ efficient, in sunlight of ⟦2⟧. What area of panels is needed?
+@1hslrkfisua  ; 0=Q(r, 'm') | 1=Q(v, 'm/s') | 2=Q(eta, '%') | 3=Q(1.2, 'kg/m^3')
+A wind turbine has blades ⟦0⟧ long. The wind blows at ⟦1⟧ and the turbine turns ⟦2⟧ of the wind's power into electricity. What is its electrical output, in MW? (Density of air ⟦3⟧.)
+@jy8evwe1xb  ; 0=M(sig(Math.PI * r * r)) | 1=M(sig(Math.PI * r * r)) | 2=v | 3=sciT(Pin) | 4=M(eta / 100) | 5=sciT(Pin) | 6=QT(P, 'MW')
+$A = \pi r^2 = ⟦0⟧\,\mathrm{m^2}$; $P_{\text{wind}} = \tfrac12 \rho A v^3 = \tfrac12 \cdot 1.2 \cdot ⟦1⟧ \cdot ⟦2⟧^3 = ⟦3⟧\,\mathrm{W}$. Output $= ⟦4⟧ \times ⟦5⟧ = ⟦6⟧$.
+@1r7ak00xurw  ; 0=k === 0.5 ? T`halves` : k === 2 ? T`doub
+The wind speed at a turbine ⟦0⟧. By what factor does the power available in the wind change?
+@25jys9aycma
+halves
+@ufkn6uubk6
+doubles
+@hp02cmipl9
+triples
+@296o7p7c82a  ; 0=M(k) | 1=M(f)
+$P \propto v^3$, so the power changes by $⟦0⟧^3 = ⟦1⟧$.
+@y9tp5u5ovk  ; 0=Q(Qf, 'm^3/s') | 1=Q(h, 'm') | 2=Q(eta, '%') | 3=gNote(g)
+Water flows through a hydroelectric plant at ⟦0⟧ and falls ⟦1⟧. The plant is ⟦2⟧ efficient. What is its electrical output, in MW? ⟦3⟧
+@ygr2eu9url  ; 0=n | 1=Q(P, 'W') | 2=hrs
+A roof has ⟦0⟧ solar panels, each producing ⟦1⟧ in full sunlight. The roof gets the equivalent of ⟦2⟧ hours of full sunlight a day. How much energy do the panels produce each day, in kWh?
+@7q3mv65bn8  ; 0=n | 1=P | 2=n * P | 3=M(n * P / 1000) | 4=M(n * P / 1000) | 5=hrs | 6=QT(kWh, 'kWh')
+Total power $⟦0⟧ \times ⟦1⟧ = ⟦2⟧\,\mathrm{W} = ⟦3⟧\,\mathrm{kW}$. Energy $= ⟦4⟧ \times ⟦5⟧ = ⟦6⟧$.
+@1ieomdn004w  ; 0=Q(Pin, 'kW') | 1=Q(Pout, 'kW')
+A generator is supplied with ⟦0⟧ of power and delivers ⟦1⟧ of electrical power. What is its efficiency?
+@1u7uz3k6qyd  ; 0=Q(Pin, 'MW') | 1=Q(eta, '%')
+A power station burns fuel at a rate of ⟦0⟧ and is ⟦1⟧ efficient. How much power is wasted as heat?
+@pm0k6e0fkq  ; 0=M(eta / 100) | 1=Pin | 2=QT(Pout, 'MW') | 3=Q(sig(Pin - Pout), 'MW')
+Useful output $= ⟦0⟧ \times ⟦1⟧ = ⟦2⟧$, so ⟦3⟧ is wasted as heat.
+@hl17gwo0zw
+Which of these is a renewable energy resource?
+@23tzmc391ja
+Geothermal
+@1g0bdq2was
+Wind
+@1e7ut9i2n2u
+Sunlight
+@xvs0r1390y
+Flowing water
+@1mvfcies4hf
+Coal
+@b8aj1ch43k
+Natural gas
+@1uqwocpsci2
+Uranium
+@10hnhwhy9n4
+Renewable resources are replaced naturally as fast as we use them; fossil fuels and uranium are not.
+@1r44myitlv3
+What energy change takes place in a solar cell?
+@z16ny5kmc1
+Light energy to electrical energy
+@1ydfx6j4r1u
+Heat energy to electrical energy
+@1k7b6gno0tk
+Chemical energy to electrical energy
+@13dpgdt42nk
+Kinetic energy to electrical energy
+@21l0j2c8bck
+Photovoltaic cells turn light directly into electricity; photons free electrons in the semiconductor.
+@prunjjyggz
+What is a disadvantage of wind and solar power?
+@fnwv79x3ic
+Their output depends on the weather
+@2em36ff5shs
+They release carbon dioxide
+@2emgqz95lkm
+They will run out
+@1mymhxsch7q
+They produce radioactive waste
+@9jxck1bdrz
+The wind does not always blow and the Sun does not always shine, so storage or back-up power is needed.
+@20fupi3jemj
+What energy resource does a geothermal power station use?
+@x0r4tbgzzg
+Heat from hot rocks underground
+@vdj7gs3ig1
+The kinetic energy of the wind
+@258t0hpxuf8
+The Sun's light
+@1uw96epmi13
+Burning coal
+@16gntv7v755
+Water pumped down (or naturally present) is heated by hot rocks and returns as steam to drive turbines.
+
+##### climate
+@1dctkrz4nbx  ; 0=Fm(T`\lambda_{\max} T = 2.9 \times 10^{- | 1=Fm(T`T = \left(\frac{S(1 - \alpha)}{4\si | 2=Key(T`<p><b>Greenhouse gases</b> (water  | 3=Tip(T`<p>The ozone hole is a different p
+
+<p>Every object radiates electromagnetic waves, and hotter objects radiate more strongly and at shorter wavelengths. Two laws describe this radiation:</p>
+⟦0⟧
+<p>The first is <b>Wien's law</b>: the Sun's surface at about $5800\,\mathrm{K}$ peaks in visible light (about $500\,\mathrm{nm}$), while the Earth at about $288\,\mathrm{K}$ peaks in the infrared (about $10\,\mathrm{\mu m}$). The second is the <b>Stefan–Boltzmann law</b>, with $\sigma = 5.67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$ and emissivity $e$ ($e = 1$ for a perfect black body).</p>
+<h3>The Earth's energy balance</h3>
+<p>The Earth absorbs sunlight and radiates infrared back to space. About 30% of the sunlight is reflected (the <b>albedo</b> $\alpha \approx 0.3$). Balancing the energy absorbed against the energy radiated gives, with the solar constant $S = 1361\,\mathrm{W/m^2}$,</p>
+⟦1⟧
+<p>That is $-18\,^\circ\mathrm{C}$, yet the average surface temperature is about $15\,^\circ\mathrm{C}$. The difference is the <b>greenhouse effect</b>.</p>
+⟦2⟧
+<p>The consequences include rising sea levels (from the thermal expansion of seawater and melting land ice), more extreme weather and changes to ecosystems and farming. Emissions are reduced by using less energy, switching to renewable sources and protecting forests.</p>
+⟦3⟧
+@25qbz25dq5g
+\lambda_{\max} T = 2.9 \times 10^{-3}\,\mathrm{m\,K} \qquad P = e\sigma A T^4
+@11ekpd75c8g
+<p><b>Greenhouse gases</b> (water vapour, carbon dioxide, methane, nitrous oxide) let visible sunlight through but absorb the infrared radiated by the ground, and re-emit part of it back down, warming the surface. Burning fossil fuels and cutting forests have raised the CO₂ concentration from about 280 ppm before 1800 to over 420 ppm today, enhancing the effect: this is <b>global warming</b>.</p>
+@2c5bjew3ndw
+<p>The ozone hole is a different problem: ozone in the upper atmosphere blocks ultraviolet, and it was damaged by CFCs. It is not the main cause of global warming.</p>
+@a413z1zy4a
+the Sun's surface
+@yoi73866b
+a star
+@v5amddjc9e
+a red star
+@mobadgewup
+the filament of a lamp
+@18akkuuzta3
+the Earth's surface
+@1bgj1l6es9b
+the human body
+@7pzas2bk2h  ; 0=obj | 1=Q(T0, 'K') | 2=inNm ? 'nm' : 'µm'
+The temperature of ⟦0⟧ is about ⟦1⟧. At what wavelength does its radiation peak, in ⟦2⟧? (Wien's constant $2.9 \times 10^{-3}\,\mathrm{m\,K}$.)
+@2ganho3hy90  ; 0=T0 | 1=sciT(lam) | 2=QT(sig(inNm ? lam * 1e9 : lam * 1e6), in | 3=inNm ? '' : T`, in the infrared`
+$\lambda_{\max} = \frac{2.9 \times 10^{-3}}{⟦0⟧} = ⟦1⟧\,\mathrm{m} = ⟦2⟧$⟦3⟧.
+@ia7clqzt4e
+, in the infrared
+@g70vgnvcnl  ; 0=Q(T0, 'K')
+How much power does each square metre of a black body at ⟦0⟧ radiate? ($\sigma = 5.67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$.)
+@2cf1hxpxa7w  ; 0=T0 | 1=QT(sig(I), 'W/m^2')
+$\frac{P}{A} = \sigma T^4 = 5.67 \times 10^{-8} \times ⟦0⟧^4 = ⟦1⟧$.
+@1fbnqtymx3a  ; 0=k === 2 ? T`doubles` : k === 3 ? T`tripl
+The absolute temperature of a hot object ⟦0⟧. By what factor does the power it radiates change?
+@1qea8ntcj9w
+increases by 50%
+@25xyv41qty  ; 0=M(k) | 1=M(f)
+$P \propto T^4$, so the power changes by $⟦0⟧^4 = ⟦1⟧$.
+@3uwl9fgwzo  ; 0=NUM(a)
+Without an atmosphere, what would the average temperature of the Earth be if its albedo were ⟦0⟧? Use $T = \left(\frac{S(1 - \alpha)}{4\sigma}\right)^{1/4}$ with $S = 1361\,\mathrm{W/m^2}$ and $\sigma = 5.67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$. Give the answer in kelvin.
+@23kdkkon8ua  ; 0=M(1 - a) | 1=QT(Tk, 'K') | 2=Q(sig(Tk - 273, 2), '°C')
+$T = \left(\frac{1361 \times ⟦0⟧}{4 \times 5.67 \times 10^{-8}}\right)^{1/4} = ⟦1⟧$, that is about ⟦2⟧. The greenhouse effect makes the real surface warmer.
+@39mmvmcaqa  ; 0=Q(kWh, 'kWh') | 1=Q(ef, 'kg')
+A household uses ⟦0⟧ of electricity a month. If generating each kWh releases ⟦1⟧ of CO₂, how much CO₂ does this cause per month?
+@16mustvvbgc  ; 0=kWh | 1=M(ef) | 2=QT(co2, 'kg') | 3=Q(sig(co2 * 12 / 1000, 2), 't')
+$⟦0⟧ \times ⟦1⟧ = ⟦2⟧$ of CO₂ each month (about ⟦3⟧ a year).
+@2ealcyufgih  ; 0=Q(km, 'km') | 1=Q(2.3, 'kg') | 2=Q(d, 'km')
+A car travels ⟦0⟧ on one litre of petrol, and burning a litre of petrol releases about ⟦1⟧ of CO₂. How much CO₂ does it release over ⟦2⟧?
+@dr3ki3pnzw  ; 0=M(d) | 1=km | 2=M(sig(d / km)) | 3=M(sig(d / km)) | 4=QT(co2, 'kg')
+Fuel used $= \frac{⟦0⟧}{⟦1⟧} = ⟦2⟧$ litres, so CO₂ $= ⟦3⟧ \times 2.3 = ⟦4⟧$.
+@m3m9f4q7pb
+How do greenhouse gases warm the Earth's surface?
+@1kvsrxmvuut
+They absorb infrared radiated by the Earth and send some back down
+@1kro0kdebrw
+They absorb visible sunlight before it reaches the ground
+@25gp1dlcuim
+They make a hole that lets in more ultraviolet
+@bzrtpchzaa
+They produce heat by chemical reactions
+@13tqcbz7obi
+Sunlight (mostly visible) passes through; the warm ground radiates infrared, which greenhouse gases absorb and partly re-emit downwards.
+@halmbbq0dy
+Which of these is <b>not</b> a greenhouse gas?
+@12guwpp52cw
+Nitrogen
+@dxja4u3nje
+Carbon dioxide
+@1050mw875i9
+Methane
+@ympyt352w3
+Water vapour
+@2ab37617ucg
+Nitrogen and oxygen, the main gases in air, do not absorb infrared. Carbon dioxide, methane and water vapour do.
+@24m6jvhvnyx
+What are the two main causes of rising sea levels?
+@2dubsnsz8mp
+Thermal expansion of seawater and melting land ice
+@2aiy7k3o7ba
+More rain and more rivers
+@2aaf2p4nw57
+Melting sea ice and evaporation
+@1dzbf12khxe
+Tides and earthquakes
+@9g3ub2qehe
+Warmer water takes up more space, and melting glaciers and ice sheets add water to the sea. Melting floating sea ice barely changes the level.
+@kj9sw8abyl
+In which part of the spectrum does the Earth radiate most strongly?
+@1g9sox43ojh
+By Wien's law, at about 288 K the peak is near $10\,\mathrm{\mu m}$, in the infrared.
+
+##### electronics
+@1jzyh2pnebl  ; 0=Fm(T`R = \frac{V_s - V_{\text{LED}}}{I}` | 1=Tbl([T`Gate`, T`Output is 1 when…`], [[T | 2=Key(T`<p>Digital circuits work with just | 3=Tip(T`<p>Put the milliamps into amps bef
+
+<p>Materials are grouped by how easily charge moves through them. <b>Conductors</b> (metals) have many free electrons; <b>insulators</b> have almost none. <b>Semiconductors</b> such as silicon lie in between, and their conductivity rises as they get warmer or are lit.</p>
+<h3>Doping</h3>
+<p>Adding a tiny amount of another element changes a semiconductor dramatically. A group V element (phosphorus, arsenic) adds spare electrons: an <b>n-type</b> semiconductor. A group III element (boron, gallium) leaves gaps called <b>holes</b> that act as positive charges: a <b>p-type</b> semiconductor.</p>
+<h3>Diodes</h3>
+<p>A <b>p–n junction</b> is a <b>diode</b>: it conducts in one direction only. In <b>forward bias</b> (p side positive) it conducts once the voltage exceeds about $0.7\,\mathrm{V}$ for silicon; in <b>reverse bias</b> almost no current flows. Diodes turn AC into DC (<b>rectification</b>). A <b>light-emitting diode</b> (LED) gives out light when forward biased and needs a series resistor to limit its current:</p>
+⟦0⟧
+<h3>Transistors</h3>
+<p>A transistor lets a small <b>base</b> current $I_B$ control a much larger <b>collector</b> current, $I_C = \beta I_B$, where $\beta$ (often 100 or more) is the current gain. Transistors work as amplifiers and as switches; a modern processor contains billions of them.</p>
+<h3>Logic gates</h3>
+⟦1⟧
+⟦2⟧
+⟦3⟧
+@b75zb1pwu5
+R = \frac{V_s - V_{\text{LED}}}{I}
+@ivft9kfdi0
+Gate
+@2b2vvcooba0
+Output is 1 when…
+@1r7zrrqvpnq
+NOT
+@ng9vkx7ilt
+the input is 0
+@uixtugmls4
+AND
+@galfyqipq9
+both inputs are 1
+@1lzp72styvf
+OR
+@sgq45zf2ih
+at least one input is 1
+@tlmtwc4w18
+NAND
+@k93ie7klyp
+not both inputs are 1
+@1udaue9onkb
+NOR
+@1dvsrofussb
+both inputs are 0
+@y4odget7sv
+XOR
+@1pykhsgu6es
+the inputs are different
+@1koqm2il3m0
+<p>Digital circuits work with just two states, 0 and 1. A number in <b>binary</b> uses powers of 2: $1011_2 = 8 + 0 + 2 + 1 = 11$.</p>
+@282xozfz6l5
+<p>Put the milliamps into amps before using $R = V/I$: $20\,\mathrm{mA} = 0.02\,\mathrm{A}$.</p>
+@2jkb08f2dg
+red
+@1719de5b71t
+green
+@1a43z74k2oy
+blue
+@1agbxs9p8se
+yellow
+@mcd42l16h9  ; 0=col | 1=Q(Vl, 'V') | 2=Q(I, 'mA') | 3=Q(Vs, 'V')
+A ⟦0⟧ LED needs ⟦1⟧ across it and a current of ⟦2⟧. What resistor should be put in series with it on a ⟦3⟧ supply?
+@1nb0msahh8h  ; 0=Vs | 1=M(Vl) | 2=M(sig(Vs - Vl)) | 3=M(sig(Vs - Vl)) | 4=M(I / 1000) | 5=QT(R, 'Ω')
+The resistor takes $⟦0⟧ - ⟦1⟧ = ⟦2⟧\,\mathrm{V}$, so $R = \frac{⟦3⟧}{⟦4⟧} = ⟦5⟧$.
+@28e0hktce90  ; 0=b | 1=Q(Ic, 'mA')
+A transistor with a current gain of ⟦0⟧ carries a collector current of ⟦1⟧. What is the base current, in µA?
+@ryzx4vkvmh  ; 0=b | 1=Q(Ib, 'µA')
+A transistor has a current gain $\beta = ⟦0⟧$. A base current of ⟦1⟧ flows. What is the collector current, in mA?
+@jaql7bheoj  ; 0=g
+The inputs $(A, B)$ of the ⟦0⟧ gate take the values $(0, 0)$, $(0, 1)$, $(1, 0)$ and $(1, 1)$ in turn. What are the outputs?
+@1mtjokmhpw9  ; 0=g | 1=rule | 2=col(g)
+The ⟦0⟧ gate gives 1 when ⟦1⟧, so the outputs are ⟦2⟧.
+@20l7lrpf5v3  ; 0=g | 1=A | 2=B
+What is the output of the ⟦0⟧ gate when $A = ⟦1⟧$ and $B = ⟦2⟧$?
+@yhxm4nu6dj
+It depends on the previous output
+@10xr4g5u8os
+There is no output
+@1e4mjooq9id  ; 0=g | 1=rule | 2=gates[g](A, B)
+The ⟦0⟧ gate gives 1 when ⟦1⟧. Here the output is ⟦2⟧.
+@pwb7l3x34n  ; 0=bin
+Convert the binary number $⟦0⟧_2$ to decimal.
+@2a8xvq11t8u  ; 0=n
+Write the decimal number ⟦0⟧ in binary.
+@1dd7u02yykk  ; 0=n | 1=bin.split('').map((c, i) => (c === '1' ? | 2=bin
+$⟦0⟧ = ⟦1⟧$, so it is $⟦2⟧_2$.
+@1xxwf7c3y4q  ; 0=Q(Vr, 'V') | 1=Q(0.7, 'V')
+A transformer gives ⟦0⟧ rms to a single silicon diode used as a half-wave rectifier. What is the peak voltage across the load, allowing ⟦1⟧ for the diode?
+@2dbhwnx5pft  ; 0=Vr | 1=M(sig(V0)) | 2=Q(0.7, 'V') | 3=Q(out, 'V')
+Peak input $V_0 = \sqrt2 \times ⟦0⟧ = ⟦1⟧\,\mathrm{V}$. The diode drops ⟦2⟧, leaving ⟦3⟧.
+@2fo853eq7s0
+Silicon is doped with phosphorus (group V). What type of semiconductor is made?
+@v0cnigt4ja
+n-type
+@1phjnvmqqa4
+p-type
+@238v72pxkkz
+an insulator
+@1pojtyp5yqn
+a conductor
+@1sn25oqbuqd
+Phosphorus has one more outer electron than silicon, so it adds free electrons: negative charge carriers, n-type.
+@18iu4rpnc5g
+Silicon is doped with boron (group III). What are the main charge carriers?
+@pm0hrkpch4
+Holes
+@1ye2rznydkg
+Free electrons
+@rm0zl0b17j
+Protons
+@k4cyscucp8
+Ions
+@5ix2ehiel4
+Boron has one fewer outer electron, leaving holes that behave as positive carriers: p-type.
+@1rg1jni825o
+A diode is connected in reverse bias. What happens?
+@pdv8odolb1
+Almost no current flows
+@1dg6dniogmz
+A large current flows
+@1r9h9gsiv5x
+It lights up
+@1rpqil0hmfx
+It amplifies the current
+@6up74uvt0q
+In reverse bias the junction's depletion layer widens and blocks the current.
+@111drfx2m42
+What happens to the resistance of a semiconductor when it gets warmer?
+@1vomu4xn33e
+It becomes infinite
+@1vms6qvcqry
+Heat frees more charge carriers, so a semiconductor conducts better. This is used in thermistors.
+@1nn4mxs0j5f
+Which logic gate gives an output of 1 only when both inputs are 1?
+@29v97sippra
+An AND gate needs A and B both to be 1.

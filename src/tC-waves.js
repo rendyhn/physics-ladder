@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TRACK C — Waves & Sound (planned)
+   TRACK C — Waves & Sound
    ========================================================================== */
 level({
   id: 'waves', mark: 'C', name: 'Waves & Sound', short: 'Waves', band: 'Oscillations · waves · sound', color: 'lv3',

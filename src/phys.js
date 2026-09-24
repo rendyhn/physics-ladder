@@ -13,9 +13,10 @@ function uT(u) {
   if (!u) return '';
   if (u === '°C') return '^\\circ\\mathrm{C}';
   if (u === '°') return '^\\circ';
+  if (u === '%') return '\\%';
   return '\\mathrm{' + un(u).replace(/Ω/g, '\\Omega').replace(/·/g, '\\cdot ').replace(/ /g, '\\,') + '}';   // un(): local unit words, e.g. km/jam
 }
-const QT = (x, u, fixed) => `${M(x, fixed)}${u === '°' || u === '°C' ? '' : '\\,'}${uT(u)}`;   // quantity inside $…$
+const QT = (x, u, fixed) => `${M(x, fixed)}${u === '°' || u === '°C' || u === '%' ? '' : '\\,'}${uT(u)}`;   // quantity inside $…$
 const Q = (x, u, fixed) => `$${QT(x, u, fixed)}$`;                                           // quantity as inline maths
 /* scientific notation inside $…$: 3{,}0 \times 10^{8} */
 function sciT(x, n = 3) {
@@ -222,4 +223,97 @@ function circleSvg(label) {
 function waveSvg(lambda, A, span, { xl = 'x (m)', yl = 'y (cm)', label, xStep } = {}) {
   const pts = []; for (let i = 0; i <= 160; i++) { const x = span * i / 160; pts.push([x, A * Math.sin(2 * Math.PI * x / lambda)]); }
   return graphSvg(pts, { xMax: span, yMax: A * 1.25, yMin: -A * 1.25, xl, yl, xStep: xStep || lambda / 2, yStep: A, label, dots: false });
+}
+
+/* ---------- ray diagram for a mirror or thin lens ----------
+   kind: 'concave' | 'convex' | 'plane' (mirrors) or 'converging' | 'diverging' (lenses);
+   f: focal length (positive number), s: object distance, same units. Two principal rays are drawn;
+   virtual images get dashed extensions. */
+function opticsSvg(kind, f, s, label) {
+  const W = 460, H = 220, y0 = 110, mirror = !/ing$/.test(kind), fs = kind === 'plane' ? Infinity : (kind === 'convex' || kind === 'diverging' ? -f : f);
+  const v = fs === Infinity ? -s : 1 / (1 / fs - 1 / s), m = -v / s;
+  const xsD = [-s, mirror ? -v : v, 0];                        // positions in data units (mirror images mirrored)
+  if (fs !== Infinity) xsD.push(mirror ? -fs : fs, mirror ? -2 * fs : 2 * fs, mirror ? 0 : -fs);
+  const lo = Math.min(...xsD), hi = Math.max(...xsD), k = 380 / Math.max(hi - lo, 1e-9), Xc = 40 + (0 - lo) * k;
+  const ho = Math.min(62, 62 / Math.max(1, Math.abs(m))), hi2 = ho * m, X = d => Xc + d * k;
+  const xo = X(-s), yt = y0 - ho, xi = X(mirror ? -v : v), yi = y0 - hi2;
+  const f1 = n => +n.toFixed(1);
+  let out = svgOpen(W, H, label) + `<line class="fig-line" x1="10" y1="${y0}" x2="${W - 10}" y2="${y0}"/>`;
+  // the optical element
+  if (kind === 'plane') out += `<line class="fig-wire" x1="${f1(Xc)}" y1="${y0 - 90}" x2="${f1(Xc)}" y2="${y0 + 90}"/>` + [...Array(9)].map((_, i) => `<line class="fig-line" x1="${f1(Xc)}" y1="${y0 - 80 + i * 20}" x2="${f1(Xc + 9)}" y2="${y0 - 88 + i * 20}"/>`).join('');
+  else if (mirror) { const b = kind === 'concave' ? -9 : 9; out += `<path class="fig-wire" fill="none" d="M${f1(Xc + b)} ${y0 - 90} Q${f1(Xc - b)} ${y0} ${f1(Xc + b)} ${y0 + 90}"/>`; }
+  else if (kind === 'converging') out += `<path class="fig-shape" d="M${f1(Xc)} ${y0 - 92} Q${f1(Xc + 16)} ${y0} ${f1(Xc)} ${y0 + 92} Q${f1(Xc - 16)} ${y0} ${f1(Xc)} ${y0 - 92}Z"/>`;
+  else out += `<path class="fig-shape" d="M${f1(Xc - 9)} ${y0 - 92} L${f1(Xc + 9)} ${y0 - 92} Q${f1(Xc + 1)} ${y0} ${f1(Xc + 9)} ${y0 + 92} L${f1(Xc - 9)} ${y0 + 92} Q${f1(Xc - 1)} ${y0} ${f1(Xc - 9)} ${y0 - 92}Z"/>`;
+  // focal points (F) and centre of curvature / 2F
+  if (fs !== Infinity) {
+    const marks = mirror ? [[-fs, 'F'], [-2 * fs, 'C']] : [[fs, 'F'], [-fs, 'F'], [2 * fs, '2F'], [-2 * fs, '2F']];
+    for (const [d, t] of marks) { const x = X(d); if (x > 12 && x < W - 12) out += `<circle class="fig-dot" cx="${f1(x)}" cy="${y0}" r="3"/>` + txt(x, y0 + 20, t, 'fig-small'); }
+  }
+  // a ray from p in direction d, clipped to the picture
+  const ray = (px, py, dx, dy, dashed) => {
+    let t = Infinity;
+    if (dx > 0) t = Math.min(t, (W - 8 - px) / dx); if (dx < 0) t = Math.min(t, (8 - px) / dx);
+    if (dy > 0) t = Math.min(t, (H - 6 - py) / dy); if (dy < 0) t = Math.min(t, (6 - py) / dy);
+    return `<line class="fig-vec fig-vec-${dashed ? 'c' : 'b'}${dashed ? ' fig-dashed' : ''}" style="stroke-width:1.6" x1="${f1(px)}" y1="${f1(py)}" x2="${f1(px + t * dx)}" y2="${f1(py + t * dy)}"/>`;
+  };
+  const seg = (x1, y1, x2, y2, dashed) => `<line class="fig-vec fig-vec-${dashed ? 'c' : 'b'}${dashed ? ' fig-dashed' : ''}" style="stroke-width:1.6" x1="${f1(x1)}" y1="${f1(y1)}" x2="${f1(x2)}" y2="${f1(y2)}"/>`;
+  const dir = mirror ? -1 : 1;                                // rays leave to the left from a mirror, to the right from a lens
+  // ray 1: parallel to the axis, then through (or away from) F
+  out += seg(xo, yt, Xc, yt);
+  out += fs === Infinity ? ray(Xc, yt, dir, 0) : ray(Xc, yt, dir * Math.abs(fs) * k, Math.sign(fs) * (y0 - yt));
+  // ray 2: through the centre of the lens, or to the pole of the mirror and back at the same angle
+  out += seg(xo, yt, Xc, y0);
+  out += ray(Xc, y0, mirror ? -(Xc - xo) : Xc - xo, y0 - yt);
+  if (v < 0) out += seg(Xc, yt, xi, yi, true) + seg(Xc, y0, xi, yi, true);   // virtual image: extend the rays back
+  out += arrow(xo, y0, xo, yt, 'a') + arrow(xi, y0, xi, yi, v < 0 ? 'c' : 'a');
+  return out + '</svg>';
+}
+
+/* ---------- refraction at a flat boundary: incident angle i, refracted angle r (degrees); r = null for total internal reflection ---------- */
+function refractionSvg(i, r, top, bottom, label) {
+  const W = 360, H = 240, cx = 180, cy = 120, L = 105, f1 = n => +n.toFixed(1);
+  let s = svgOpen(W, H, label) + `<rect class="fig-block" x="10" y="${cy}" width="${W - 20}" height="${H - cy - 10}" style="opacity:.35"/>`;
+  s += `<line class="fig-line" x1="10" y1="${cy}" x2="${W - 10}" y2="${cy}"/><line class="fig-dash" x1="${cx}" y1="14" x2="${cx}" y2="${H - 14}"/>`;
+  s += txt(22, cy - 10, top, 'fig-small', 'start') + txt(22, cy + 22, bottom, 'fig-small', 'start');
+  const ix = cx - L * sinD(i), iy = cy - L * cosD(i);
+  s += arrow(ix, iy, cx - 0.45 * L * sinD(i), cy - 0.45 * L * cosD(i), 'a') + `<line class="fig-vec fig-vec-a" style="stroke-width:2.4" x1="${f1(ix)}" y1="${f1(iy)}" x2="${cx}" y2="${cy}"/>`;
+  s += txt(cx - 34 * tanD(Math.min(i, 72)) - 10, cy - 30, `${i}°`, 'fig-small', 'end');   // just outside the incident ray
+  if (r == null) {
+    const rx = cx + L * sinD(i), ry = cy - L * cosD(i);
+    s += arrow(cx, cy, rx, ry, 'b');
+  } else {
+    const rx = cx + L * sinD(r), ry = cy + L * cosD(r);
+    s += arrow(cx, cy, rx, ry, 'b') + txt(cx + 30 * sinD(r / 2) + 8, cy + 50 * cosD(r / 2), 'r', 'fig-small', 'start');
+    s += `<line class="fig-vec fig-vec-c fig-dashed" style="stroke-width:1.2" x1="${cx}" y1="${cy}" x2="${f1(cx + 0.7 * L * sinD(i))}" y2="${f1(cy - 0.7 * L * cosD(i))}"/>`;
+  }
+  return s + '</svg>';
+}
+
+/* ---------- Young's double slit: slits, screen and the bright fringes ---------- */
+function slitSvg(label) {
+  const W = 460, H = 220, xs = 110, xScr = 380, cy = 110, f1 = n => +n.toFixed(1);
+  let s = svgOpen(W, H, label);
+  s += `<line class="fig-wire" x1="${xs}" y1="16" x2="${xs}" y2="${cy - 22}"/><line class="fig-wire" x1="${xs}" y1="${cy - 12}" x2="${xs}" y2="${cy + 12}"/><line class="fig-wire" x1="${xs}" y1="${cy + 22}" x2="${xs}" y2="${H - 16}"/>`;
+  s += `<line class="fig-wire" x1="${xScr}" y1="12" x2="${xScr}" y2="${H - 12}"/>`;
+  for (let k = -3; k <= 3; k++) { const y = cy + k * 26; s += `<rect class="fig-block" x="${xScr + 4}" y="${f1(y - 5)}" width="${24 - 4 * Math.abs(k)}" height="10" rx="2" style="fill:var(--accent);opacity:${f1(1 - Math.abs(k) * 0.2)}"/>`; }
+  for (const y of [cy - 17, cy + 17]) s += `<line class="fig-vec fig-vec-c fig-dashed" style="stroke-width:1.2" x1="${xs}" y1="${y}" x2="${xScr}" y2="${cy + 52}"/>`;
+  for (let k = 0; k < 4; k++) s += `<path class="fig-line" fill="none" d="M${40 + k * 14} ${cy - 40} Q${50 + k * 14} ${cy} ${40 + k * 14} ${cy + 40}"/>`;
+  s += `<line class="fig-dash" x1="${xs}" y1="${cy}" x2="${xScr}" y2="${cy}"/>`;
+  s += txt(xs - 8, cy + 5, 'd', 'fig-text', 'end') + txt((xs + xScr) / 2, cy - 8, 'L') + txt(xScr + 44, cy + 34, 'Δy', 'fig-small', 'start');
+  s += `<line class="fig-line" x1="${xScr + 36}" y1="${cy}" x2="${xScr + 36}" y2="${cy + 26}"/>`;
+  return s + '</svg>';
+}
+
+/* ---------- hydrogen energy levels E_n = −13.6/n² eV (spaced by √|E| so the upper levels stay readable), with an optional transition arrow from level a to level b ---------- */
+function levelsSvg(nMax, a, b, label) {
+  const W = 360, H = 250, top = 24, bot = 226, Y = E => top + Math.sqrt(E / -13.6) * (bot - top), f1 = n => +n.toFixed(1);
+  let s = svgOpen(W, H, label);
+  for (let n = 1; n <= nMax; n++) {
+    const E = -13.6 / (n * n), y = Y(E);
+    s += `<line class="fig-wire" x1="70" y1="${f1(y)}" x2="250" y2="${f1(y)}"/>`;
+    if (n <= 4) s += txt(62, y + 4, `n = ${n}`, 'fig-small', 'end') + txt(258, y + 4, `${F(sig(E, 3))} eV`, 'fig-small', 'start');
+  }
+  s += `<line class="fig-dash" x1="70" y1="${top - 8}" x2="250" y2="${top - 8}"/>` + txt(258, top - 4, '0 eV (∞)', 'fig-small', 'start');
+  if (a && b) { const ya = Y(-13.6 / (a * a)), yb = Y(-13.6 / (b * b)); s += arrow(160, ya, 160, yb, a > b ? 'a' : 'b'); }
+  return s + '</svg>';
 }

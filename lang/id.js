@@ -131,18 +131,18 @@ addMeta('id', {
     'induction': [R`Induksi Elektromagnetik`, R`Fluks magnetik, hukum Faraday dan Lenz, GGL pada batang yang bergerak, generator, transformator, dan transmisi daya.`],
     'ac': [R`Arus Bolak-balik`, R`Nilai puncak dan nilai efektif, reaktansi induktor dan kapasitor, impedansi rangkaian RLC, resonansi, dan daya AC.`],
     'em-waves': [R`Gelombang Elektromagnetik`, R`Spektrum elektromagnetik, kelajuan cahaya, frekuensi dan panjang gelombang, kegunaan dan bahayanya, serta polarisasi.`],
-    'mirrors': [R`Pemantulan & Cermin`],
-    'lenses': [R`Pembiasan & Lensa`],
-    'instruments': [R`Alat-Alat Optik`],
-    'interference': [R`Interferensi & Difraksi`],
-    'relativity': [R`Relativitas Khusus`],
-    'photons': [R`Foton & Efek Fotolistrik`],
-    'atoms': [R`Model Atom & Spektrum`],
-    'radioactivity': [R`Inti Atom & Radioaktivitas`],
-    'nuclear-energy': [R`Energi Nuklir: Fisi & Fusi`],
-    'renewables': [R`Energi Terbarukan & Alternatif`],
-    'climate': [R`Pemanasan Global & Efek Rumah Kaca`],
-    'electronics': [R`Semikonduktor & Elektronika Dasar`],
+    'mirrors': [R`Pemantulan & Cermin`, R`Hukum pemantulan, bayangan pada cermin datar, cermin cekung dan cembung, persamaan cermin, dan perbesaran.`],
+    'lenses': [R`Pembiasan & Lensa`, R`Indeks bias, hukum Snell, pemantulan sempurna, lensa konvergen dan divergen, persamaan lensa, dan kekuatan lensa.`],
+    'instruments': [R`Alat-Alat Optik`, R`Mata dan cacat mata, kacamata, lup, mikroskop, teropong, dan kamera.`],
+    'interference': [R`Interferensi & Difraksi`, R`Superposisi cahaya, celah ganda Young, difraksi celah tunggal, kisi difraksi, dan lapisan tipis.`],
+    'relativity': [R`Relativitas Khusus`, R`Dua postulat Einstein, faktor Lorentz, dilatasi waktu, kontraksi panjang, penjumlahan kecepatan, dan E = mc².`],
+    'photons': [R`Foton & Efek Fotolistrik`, R`Cahaya sebagai foton, E = hf, elektronvolt, efek fotolistrik, fungsi kerja, potensial henti, dan gelombang de Broglie.`],
+    'atoms': [R`Model Atom & Spektrum`, R`Dari Thomson ke Rutherford ke Bohr: inti atom, tingkat energi hidrogen, serta spektrum emisi dan absorpsi.`],
+    'radioactivity': [R`Inti Atom & Radioaktivitas`, R`Proton, neutron, dan isotop; radiasi alfa, beta, dan gamma; persamaan peluruhan, waktu paruh, dan penanggalan radiokarbon.`],
+    'nuclear-energy': [R`Energi Nuklir: Fisi & Fusi`, R`Defek massa dan energi ikat, energi reaksi inti, fisi dan reaksi berantai, reaktor nuklir, dan fusi di Matahari.`],
+    'renewables': [R`Energi Terbarukan & Alternatif`, R`Sumber-sumber energi, efisiensi, serta fisika panel surya, turbin angin, PLTA, dan panas bumi.`],
+    'climate': [R`Pemanasan Global & Efek Rumah Kaca`, R`Radiasi benda panas, hukum Wien dan Stefan–Boltzmann, keseimbangan energi Bumi, efek rumah kaca, dan emisi karbon.`],
+    'electronics': [R`Semikonduktor & Elektronika Dasar`, R`Konduktor, isolator, dan semikonduktor; doping, dioda dan LED, penyearah, transistor, gerbang logika, dan bilangan biner.`],
   },
   math: {
     'fractions': [R`Pecahan`],
@@ -930,6 +930,570 @@ addT('id', {
   'yavzaa7kh1': R`f_0 = \frac{1}{2\pi\sqrt{LC}}`,
 });
 
+/* Bahasa Indonesia — 16-optics-a */
+addT('id', {
+  '5xmq0evl31': R`
+<p>Cahaya merambat lurus dalam bentuk <b>sinar</b>. Ketika sinar mengenai permukaan yang licin, sinar itu dipantulkan menurut <b>hukum pemantulan</b>:</p>
+⟦0⟧
+<h3>Cermin datar</h3>
+<p>Bayangan pada cermin datar bersifat <b>maya</b> (cahaya hanya seolah-olah datang dari bayangan itu), <b>tegak</b>, <b>sama besar</b> dengan bendanya, <b>tertukar kiri-kanan</b>, dan berada di belakang cermin sejauh jarak benda di depan cermin. Dua cermin yang membentuk sudut $\alpha$ menghasilkan $n = \dfrac{360^\circ}{\alpha} - 1$ bayangan.</p>
+<h3>Cermin lengkung</h3>
+<p><b>Cermin cekung</b> (melengkung ke dalam, seperti bagian dalam sendok) mengumpulkan sinar-sinar sejajar di <b>titik fokus</b> F. <b>Cermin cembung</b> (melengkung ke luar) menyebarkannya seolah-olah sinar-sinar itu datang dari titik fokus di belakang cermin. Jarak fokus adalah setengah jari-jari kelengkungan, $f = \frac{R}{2}$.</p>
+⟦1⟧
+⟦2⟧
+<p>Di sini $s$ adalah jarak benda dan $s'$ jarak bayangan. Gunakan aturan tanda: $f$ positif untuk cermin cekung dan negatif untuk cermin cembung; $s'$ positif berarti bayangan <b>nyata</b> di depan cermin, $s'$ negatif berarti bayangan <b>maya</b> di belakang cermin.</p>
+⟦3⟧
+⟦4⟧`,
+  'sloay995au': R`<p>Sudut datang sama dengan sudut pantul, $i = r$. Kedua sudut diukur dari <b>garis normal</b>, yaitu garis yang tegak lurus permukaan. Sinar datang, sinar pantul, dan garis normal terletak pada satu bidang.</p>`,
+  '3pwq8jv1vb': R`Diagram sinar: benda di luar C di depan cermin cekung membentuk bayangan nyata, terbalik, dan diperkecil di antara F dan C`,
+  'z96iey12in': R`Benda di luar C: bayangannya nyata, terbalik, dan diperkecil.`,
+  '12a9ebziswg': R`Diagram sinar: cermin cembung selalu membentuk bayangan maya, tegak, dan diperkecil di belakang cermin`,
+  '20zoy67bn1p': R`Cermin cembung selalu menghasilkan bayangan maya, tegak, dan diperkecil.`,
+  '26astc4ievj': R`<p>Cermin cembung memberi bidang pandang yang luas, sehingga dipakai sebagai spion kendaraan dan di tikungan tajam. Cermin cekung dipakai pada senter dan lampu depan mobil (lampu di F menghasilkan berkas sejajar) serta sebagai cermin rias (benda di dalam F menghasilkan bayangan tegak yang diperbesar).</p>`,
+  '3wzfbbu4j2': R`Seorang anak perempuan berdiri ⟦0⟧ di depan cermin datar. Berapa jarak antara dia dan bayangannya?`,
+  '1rkdt9joqjc': R`Bayangannya berada ⟦0⟧ di belakang cermin, jadi jarak antara dia dan bayangannya $2 \times ⟦1⟧ = ⟦2⟧$.`,
+  '3gobfavq0v': R`Seorang anak laki-laki berjalan mendekati cermin datar dengan kelajuan ⟦0⟧. Seberapa cepat dia mendekati bayangannya?`,
+  '2akxbe5w5kj': R`Dia dan bayangannya masing-masing bergerak mendekati cermin dengan kelajuan ⟦0⟧, jadi keduanya saling mendekat dengan kelajuan $2 \times ⟦1⟧ = ⟦2⟧$.`,
+  '1dg18nnj76x': R`Seberkas sinar mengenai cermin datar dengan membentuk sudut ⟦0⟧ terhadap <b>permukaan</b> cermin. Berapa sudut pantulnya?`,
+  'krwaypl39z': R`Seberkas sinar mengenai cermin datar dengan sudut datang ⟦0⟧. Berapa sudut antara sinar datang dan sinar pantul?`,
+  '25qk9f4f9qm': R`Sudut diukur dari garis normal: $i = 90^\circ - ⟦0⟧^\circ = ⟦1⟧^\circ$, dan $r = i = ⟦2⟧^\circ$.`,
+  '1dyw5j2qa0z': R`$r = i = ⟦0⟧^\circ$, jadi sudut antara kedua sinar adalah $i + r = ⟦1⟧^\circ$.`,
+  '21n5jsptatn': R`Dua cermin datar dipasang membentuk sudut ⟦0⟧ satu sama lain, dengan sebatang lilin di antaranya. Berapa banyak bayangan lilin yang terbentuk?`,
+  '197di70az2n': R`Diagram sinar untuk benda dan cermin pada soal`,
+  '5c08i75xf9': R`Sebuah benda diletakkan ⟦0⟧ di depan cermin cekung yang jarak fokusnya ⟦1⟧. Berapa jarak bayangan dari cermin?⟦2⟧`,
+  '23zz167c7bm': R`$\frac{1}{s'} = \frac{1}{f} - \frac{1}{s} = \frac{1}{⟦0⟧} - \frac{1}{⟦1⟧}$, jadi $s' = ⟦2⟧$ di depan cermin (bayangan nyata, perbesaran ⟦3⟧).`,
+  '1yq6ab2zjn0': R`Sebuah benda diletakkan ⟦0⟧ di depan cermin cembung yang jarak fokusnya ⟦1⟧. Berapa jarak bayangan di belakang cermin?⟦2⟧`,
+  '2dvs82mfvj3': R`Untuk cermin cembung $f = -⟦0⟧\,\mathrm{cm}$: $\frac{1}{s'} = -\frac{1}{⟦1⟧} - \frac{1}{⟦2⟧}$, jadi $s' = ⟦3⟧\,\mathrm{cm}$. Tanda minus berarti bayangan maya ⟦4⟧ di belakang cermin.`,
+  'nmj656u3y0': R`Sebuah benda setinggi ⟦0⟧ berdiri ⟦1⟧ di depan cermin cekung yang jarak fokusnya ⟦2⟧. Berapa tinggi bayangannya?`,
+  'x165krom7l': R`$s' = \frac{sf}{s - f} = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧ - ⟦3⟧} = ⟦4⟧\,\mathrm{cm}$, jadi $h' = h\frac{s'}{s} = ⟦5⟧ \cdot \frac{⟦6⟧}{⟦7⟧} = ⟦8⟧$.`,
+  'vwr6b1rqk4': R`Sebuah benda berdiri ⟦0⟧ di depan cermin cekung yang jarak fokusnya ⟦1⟧. Berapa perbesarannya?`,
+  '2esr8jpmvyi': R`$s' = \frac{sf}{s - f} = ⟦0⟧\,\mathrm{cm}$, jadi $M = \frac{s'}{s} = \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  '1ih8nkbei01': R`Sebuah cermin cekung memiliki jarak fokus ⟦0⟧. Berapa jari-jari kelengkungannya?`,
+  '1242p72410u': R`Sebuah cermin cekung memiliki jari-jari kelengkungan ⟦0⟧. Berapa jarak fokusnya?`,
+  '1h8z2jvmzvr': R`Sebuah benda diletakkan di antara titik fokus dan cermin cekung. Bayangan seperti apa yang terbentuk?`,
+  'v99bvgxqv3': R`Maya, tegak, dan diperbesar`,
+  '3xs9gg97ub': R`Nyata, terbalik, dan diperkecil`,
+  'ny82vqzz7u': R`Nyata, terbalik, dan diperbesar`,
+  '1teatxfhddr': R`Maya, tegak, dan diperkecil`,
+  'zft5ktd9v2': R`Di dalam F sinar-sinar pantulnya menyebar, sehingga hanya seolah-olah bertemu di belakang cermin: bayangannya maya, tegak, dan diperbesar. Begitulah cara kerja cermin rias.`,
+  '1ttw1xvq3b2': R`Mengapa cermin cembung dipakai sebagai spion kendaraan?`,
+  '1z57rks2fmm': R`Bidang pandangnya luas`,
+  '13cssiahml7': R`Benda tampak lebih besar`,
+  'b1te2uo6m7': R`Membentuk bayangan nyata`,
+  'xnsm8t4ufe': R`Mengumpulkan cahaya matahari`,
+  '3uwk8tqb6f': R`Cermin cembung menyebarkan sinar pantul, sehingga cermin yang kecil dapat menampilkan daerah yang luas di belakang kendaraan. Bayangannya diperkecil, sehingga kendaraan lain tampak lebih jauh daripada sebenarnya.`,
+  '1riedjl01hb': R`Di mana lampu senter harus diletakkan terhadap cermin cekungnya agar menghasilkan berkas cahaya sejajar?`,
+  '1f66eqb3rda': R`Di titik fokus`,
+  's5gses9zl4': R`Di pusat kelengkungan`,
+  '2enzalr78f9': R`Di antara F dan cermin`,
+  '15n08mqaqeq': R`Jauh dari cermin`,
+  'h62ytrft9v': R`Sinar dari titik fokus dipantulkan cermin cekung sejajar sumbu utama.`,
+  '1dgbyj3bp8j': R`Bayangan seperti apa yang dibentuk cermin datar?`,
+  '8ltpej1tb5': R`Maya, tegak, sama besar`,
+  '1dkj0jhe6kn': R`Nyata, terbalik, sama besar`,
+  'k4gy3m5ff8': R`Maya, tegak, diperkecil`,
+  '2c9ddi203cv': R`Nyata, tegak, diperbesar`,
+  'c3iuc2zfsn': R`Bayangannya maya (di belakang cermin), tegak, sama besar, dan tertukar kiri-kanan.`,
+  '179fybctq7n': R`
+<p>Cahaya melambat ketika memasuki medium yang lebih rapat seperti air atau kaca, dan jika datang dengan sudut miring arahnya berubah. Pembelokan ini disebut <b>pembiasan</b> (refraksi). <b>Indeks bias</b> suatu medium membandingkan kelajuan cahaya di ruang hampa dengan kelajuannya di medium itu:</p>
+⟦0⟧
+<p>Persamaan kedua adalah <b>hukum Snell</b>; sudut-sudutnya diukur dari garis normal. Ketika masuk ke medium yang lebih rapat ($n$ lebih besar), sinar dibelokkan <b>mendekati</b> garis normal.</p>
+⟦1⟧
+<h3>Pemantulan sempurna</h3>
+<p>Dari medium yang lebih rapat ke medium yang kurang rapat, sinar dibelokkan menjauhi garis normal. Jika sudut datangnya melebihi <b>sudut kritis</b> $C$, tidak ada cahaya yang keluar sama sekali: semuanya dipantulkan. Untuk medium berindeks bias $n$ yang berbatasan dengan udara, $\sin C = \dfrac{1}{n}$. Serat optik dan kilau berlian memanfaatkan pemantulan sempurna.</p>
+<h3>Lensa</h3>
+<p>Lensa <b>konvergen</b> (cembung) mengumpulkan sinar-sinar sejajar di titik fokusnya; lensa <b>divergen</b> (cekung) menyebarkannya. Persamaan yang sama seperti pada cermin berlaku, dengan $f$ positif untuk lensa konvergen dan negatif untuk lensa divergen:</p>
+⟦2⟧
+⟦3⟧
+⟦4⟧
+⟦5⟧`,
+  'zuhhq1o61d': R`Sinar yang masuk dari udara ke kaca dibelokkan mendekati garis normal`,
+  'wcn395gapo': R`Dari udara ke kaca, sinar dibelokkan mendekati garis normal.`,
+  '24pol08m91g': R`Diagram sinar: benda di luar 2F di depan lensa konvergen membentuk bayangan nyata, terbalik, dan diperkecil di sisi lain lensa`,
+  '26nincv0ryc': R`Lensa konvergen: sinar yang sejajar sumbu utama dibiaskan melalui F; sinar yang melalui pusat lensa diteruskan lurus.`,
+  'lqzc7zqsi0': R`<p>$s'$ positif berarti bayangan <b>nyata</b> di sisi lain lensa; $s'$ negatif berarti bayangan <b>maya</b> di sisi yang sama dengan benda. <b>Kekuatan lensa</b> $P$ dinyatakan dalam dioptri (D) jika $f$ dalam meter: lensa dengan $f = 50\,\mathrm{cm}$ memiliki $P = 2\,\mathrm{D}$.</p>`,
+  'cf1ts18l8b': R`<p>Benda di dalam jarak fokus lensa konvergen menghasilkan bayangan maya, tegak, dan diperbesar: inilah lup (kaca pembesar). Lensa divergen selalu menghasilkan bayangan maya, tegak, dan diperkecil.</p>`,
+  'n6qnovqr0x': R`berlian`,
+  'bacelxbizn': R`es`,
+  '1cce1ko3mbd': R`Indeks bias ⟦0⟧ adalah ⟦1⟧. Berapa kelajuan cahaya di dalamnya? ($c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  '2003tfvqpsj': R`Ketik perpangkatan sepuluh seperti 2e8.`,
+  '1ch5krcivbw': R`$v = \frac{c}{n} = \frac{3{,}0 \times 10^{8}}{⟦0⟧} = ⟦1⟧\,\mathrm{m/s}$.`,
+  '1mpfgiztboo': R`Cahaya merambat dengan kelajuan $⟦0⟧\,\mathrm{m/s}$ di dalam suatu bahan bening. Berapa indeks biasnya? ($c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  'lez44myyd3': R`$n = \frac{c}{v} = \frac{3{,}0 \times 10^{8}}{⟦0⟧} = ⟦1⟧$.`,
+  '1k3orhngcrq': R`Seberkas sinar masuk dari udara ke ⟦0⟧ ($n = ⟦1⟧$) dengan sudut datang ⟦2⟧. Berapa sudut biasnya?⟦3⟧`,
+  '2dunb6st0m4': R`Sinar yang masuk dari udara ke bahan yang lebih rapat`,
+  '8nwj2evsle': R`$\sin r = \frac{\sin ⟦0⟧^\circ}{⟦1⟧} = ⟦2⟧$, jadi $r = ⟦3⟧$. Sinar dibelokkan mendekati garis normal.`,
+  '157g6978u7e': R`plastik`,
+  'imx534msaz': R`Berapa sudut kritis untuk cahaya yang keluar dari ⟦0⟧ ($n = ⟦1⟧$) ke udara?`,
+  '1qmfto1pdzo': R`$\sin C = \frac{1}{n} = \frac{1}{⟦0⟧} = ⟦1⟧$, jadi $C = ⟦2⟧$. Sinar yang mengenai permukaan dengan sudut lebih besar dari ini dipantulkan sempurna.`,
+  'k9b8m7imef': R`Diagram sinar untuk benda dan lensa pada soal`,
+  '2ftkvhro6rm': R`Sebuah benda diletakkan ⟦0⟧ dari lensa ⟦1⟧ yang jarak fokusnya ⟦2⟧. Di mana letak bayangannya? Tuliskan $s'$ dalam cm, dengan tanda minus untuk bayangan maya.⟦3⟧`,
+  '3rqjgl059q': R`konvergen`,
+  '202oohs12tm': R`divergen`,
+  '10k9jncce53': R`$\frac{1}{s'} = \frac{1}{f} - \frac{1}{s} = \frac{1}{⟦0⟧} - \frac{1}{⟦1⟧}$, jadi $s' = ⟦2⟧$: ⟦3⟧.`,
+  'fn4yvfz7oo': R`bayangan nyata di sisi lain lensa`,
+  '185aiy6gltg': R`bayangan maya di sisi yang sama dengan benda`,
+  '1gsofoiobh9': R`Sebuah lensa memiliki kekuatan ⟦0⟧. Berapa jarak fokusnya dalam sentimeter?`,
+  '2eiudqx21md': R`Jarak fokusnya positif: lensa konvergen.`,
+  '2didtdxrvls': R`Jarak fokusnya negatif: lensa divergen.`,
+  'sp9xzc71sn': R`Sebuah lensa ⟦0⟧ memiliki jarak fokus ⟦1⟧. Berapa kekuatannya dalam dioptri?`,
+  'iucb2yoznu': R`Nyala lilin setinggi ⟦0⟧ berada ⟦1⟧ dari lensa konvergen yang jarak fokusnya ⟦2⟧. Berapa tinggi bayangannya pada layar?`,
+  '21kcym88iwy': R`$s' = \frac{sf}{s - f} = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧} = ⟦3⟧\,\mathrm{cm}$, jadi $h' = h\frac{s'}{s} = ⟦4⟧ \cdot \frac{⟦5⟧}{⟦6⟧} = ⟦7⟧$ (terbalik).`,
+  'qyry45i0la': R`Apa dua syarat terjadinya pemantulan sempurna?`,
+  'n690svtf0m': R`Cahaya bergerak dari medium lebih rapat ke medium kurang rapat, dengan sudut datang lebih besar dari sudut kritis`,
+  '1mngvtn4m66': R`Cahaya bergerak dari medium kurang rapat ke medium lebih rapat, dengan sudut datang lebih besar dari sudut kritis`,
+  '1brk3t5c0xk': R`Cahaya bergerak dari medium lebih rapat ke medium kurang rapat, dengan sudut datang lebih kecil dari sudut kritis`,
+  '29z2pjl4cgd': R`Permukaannya harus dilapisi perak seperti cermin`,
+  '124mbotpg29': R`Hanya cahaya yang keluar dari medium lebih rapat yang dibelokkan menjauhi garis normal, dan hanya di atas sudut kritis seluruhnya dipantulkan.`,
+  '1xu4651cdpp': R`Bayangan seperti apa yang dihasilkan lup?`,
+  'bp8b6x39d3': R`Maya, terbalik, dan diperkecil`,
+  '8f3rhykz6r': R`Nyata, tegak, dan diperkecil`,
+  '1s31i53omas': R`Lup adalah lensa konvergen dengan benda di dalam jarak fokusnya, yang menghasilkan bayangan maya, tegak, dan diperbesar.`,
+  '1gm08o2kjnl': R`Sedotan di dalam gelas berisi air tampak patah di permukaan air. Mengapa?`,
+  '22syymr8krr': R`Cahaya dari sedotan dibiaskan ketika keluar dari air`,
+  'tsia4foo08': R`Air membengkokkan sedotan`,
+  '1wh8e2q5tbo': R`Cahaya dipantulkan oleh gelas`,
+  '1cv3wcxhat4': R`Cahaya merambat lebih cepat di dalam air`,
+  'hj0pkof0t7': R`Cahaya dari bagian yang di dalam air dibelokkan menjauhi garis normal ketika masuk ke udara, sehingga bagian itu tampak lebih tinggi daripada sebenarnya.`,
+  'qa4lcs3la9': R`Apa yang terjadi pada kelajuan dan panjang gelombang cahaya ketika masuk dari udara ke kaca?`,
+  '1e5vtn434lh': R`Keduanya berkurang; frekuensinya tetap`,
+  '169vv4dwr2w': R`Keduanya bertambah`,
+  '26e9r1xbw5v': R`Kelajuannya berkurang dan frekuensinya berkurang`,
+  'xy0kapmo53': R`Tidak ada yang berubah`,
+  '1fjln7ee7bx': R`$v = c/n$ lebih kecil di dalam kaca. Frekuensi ditentukan oleh sumbernya dan tidak berubah, jadi $\lambda = v/f$ juga berkurang.`,
+});
+
+/* Bahasa Indonesia — 17-optics-b */
+addT('id', {
+  '11qegw9nonk': R`
+<h3>Mata</h3>
+<p>Kornea dan lensa mata membentuk bayangan nyata dan terbalik pada <b>retina</b>. Otot-otot mengubah bentuk lensa sehingga benda dekat maupun jauh dapat terlihat tajam (<b>daya akomodasi</b>). Mata normal dapat melihat dengan jelas dari <b>titik dekat</b> (punctum proximum), sekitar $25\,\mathrm{cm}$, sampai <b>titik jauh</b> (punctum remotum) di tak hingga.</p>
+⟦0⟧
+<p>Di sini $PR$ (titik jauh) dan $PP$ (titik dekat) dinyatakan dalam sentimeter, dan $P$ yang diperoleh dalam dioptri.</p>
+<h3>Lup</h3>
+<p>Lup adalah lensa konvergen yang dipegang dekat mata dengan benda di dalam jarak fokusnya. Perbesaran angulernya $M = \dfrac{25}{f}$ untuk mata tidak berakomodasi (bayangan di tak hingga) dan $M = \dfrac{25}{f} + 1$ jika bayangan berada di titik dekat ($f$ dalam cm).</p>
+<h3>Mikroskop dan teropong</h3>
+<p><b>Mikroskop</b> memakai lensa objektif berfokus pendek untuk membentuk bayangan nyata yang diperbesar, lalu lensa okuler memperbesarnya lagi. Untuk mata tidak berakomodasi, perbesaran totalnya</p>
+⟦1⟧
+<p><b>Teropong bias</b> (teleskop) memiliki lensa objektif berfokus panjang dan lensa okuler berfokus pendek. Untuk mata tidak berakomodasi, jarak kedua lensa $d = f_{ob} + f_{ok}$ dan</p>
+⟦2⟧
+⟦3⟧
+⟦4⟧`,
+  '1cg8jb6cnmm': R`Cacat mata`,
+  '1rfj6s0td7l': R`Masalah`,
+  '1yoo0feclny': R`Koreksi`,
+  '2g1hm3p73vr': R`Rabun jauh (miopi)`,
+  'xycq5ai216': R`titik jauh terlalu dekat; bayangan jatuh di depan retina`,
+  '1ts8ywnkm4k': R`lensa divergen: $P = -\dfrac{100}{PR}$`,
+  't2axvjdh6v': R`Rabun dekat (hipermetropi)`,
+  '1ogi8k3rqb1': R`titik dekat terlalu jauh; bayangan jatuh di belakang retina`,
+  '118zdlrz2i1': R`lensa konvergen: $P = 4 - \dfrac{100}{PP}$`,
+  '1im026v51vf': R`Presbiopi (mata tua)`,
+  'j3hk5il45l': R`lensa mata mengeras dan tidak dapat berakomodasi`,
+  '24gdqhv53da': R`lensa bifokal`,
+  '1zn8ekpmqoc': R`M = \frac{s'_{ob}}{s_{ob}} \times \frac{25}{f_{ok}}`,
+  '2folmjxrlt5': R`M = \frac{f_{ob}}{f_{ok}}`,
+  '1srl89ejjl': R`<p><b>Kamera</b> mirip dengan mata: lensa konvergen membentuk bayangan nyata, terbalik, dan diperkecil pada sensor. Kamera memfokuskan dengan menggeser lensanya, bukan dengan mengubah bentuknya.</p>`,
+  'a2586oeszf': R`<p>Tetap gunakan sentimeter di semua rumus ini, dan ingat bahwa angka 25 adalah titik dekat dalam cm.</p>`,
+  '1whj302qp0n': R`Seseorang yang rabun jauh memiliki titik jauh ⟦0⟧. Berapa kekuatan lensa kacamata yang diperlukannya untuk melihat benda jauh dengan jelas?`,
+  '2ek4d2ge7td': R`Lensa harus membuat benda jauh tampak berada di titik jauhnya: $P = -\frac{100}{PR} = -\frac{100}{⟦0⟧} = ⟦1⟧$, yaitu lensa divergen.`,
+  '1ty18larjr3': R`Seseorang yang rabun dekat memiliki titik dekat ⟦0⟧. Berapa kekuatan lensa yang diperlukannya untuk membaca buku yang dipegang ⟦1⟧ dari mata?`,
+  'ea4vhlq6rk': R`$P = \frac{100}{25} - \frac{100}{PP} = 4 - \frac{100}{⟦0⟧} = ⟦1⟧$, yaitu lensa konvergen.`,
+  '19jaxyfwoe4': R`Sebuah lup memiliki jarak fokus ⟦0⟧. Berapa perbesarannya jika ⟦1⟧?`,
+  'xptn5luaw8': R`mata tidak berakomodasi (bayangan di tak hingga)`,
+  '1bkdju4sco6': R`bayangan berada di titik dekat, ⟦0⟧`,
+  '10f3bkvh36r': R`Sebuah teropong memiliki lensa objektif dengan jarak fokus ⟦0⟧ dan lensa okuler dengan jarak fokus ⟦1⟧. Berapa perbesarannya untuk mata tidak berakomodasi?`,
+  '1tjhkgxdb1b': R`Sebuah teropong memiliki lensa objektif dengan jarak fokus ⟦0⟧ dan lensa okuler dengan jarak fokus ⟦1⟧. Berapa panjang teropong (jarak antara kedua lensa) untuk mata tidak berakomodasi?`,
+  '59wzdjna77': R`Pada sebuah mikroskop, lensa objektif (jarak fokus ⟦0⟧) berada ⟦1⟧ dari preparat, dan lensa okulernya memiliki jarak fokus ⟦2⟧. Berapa perbesaran total untuk mata tidak berakomodasi?`,
+  '19yyuz9glxq': R`Objektif: $s'_{ob} = \frac{s_{ob} f_{ob}}{s_{ob} - f_{ob}} = ⟦0⟧\,\mathrm{cm}$, memperbesar $\frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$ kali. Okuler: $\frac{25}{⟦4⟧} = ⟦5⟧$. Total $M = ⟦6⟧ \times ⟦7⟧ = ⟦8⟧$.`,
+  '221441dpnwl': R`Lensa jenis apa yang mengoreksi rabun jauh (miopi)?`,
+  'j4isb2w3io': R`Lensa divergen (cekung)`,
+  '8lqr1vql7r': R`Lensa konvergen (cembung)`,
+  'mw5knk4vh3': R`Lensa bifokal`,
+  '23dsokah7xn': R`Lensa silinder`,
+  '1xgk6phkgem': R`Mata rabun jauh memfokuskan terlalu kuat, sehingga bayangan jatuh di depan retina. Lensa divergen menyebarkan sinar sedikit lebih dahulu.`,
+  '18livwtpugd': R`Pada mata rabun jauh, di mana bayangan benda jauh terbentuk?`,
+  '1rb30d8i3e1': R`Di depan retina`,
+  '1yb41ypubtz': R`Di belakang retina`,
+  '1nelgrs9szv': R`Tepat di retina`,
+  'ysa4htssnm': R`Di lensa mata`,
+  '18fhqawfolt': R`Mata memfokuskan terlalu kuat (atau bola matanya terlalu panjang), sehingga sinar dari benda jauh bertemu sebelum mencapai retina.`,
+  '1hhts6koaba': R`Seperti apa bayangan yang dibentuk lensa kamera pada sensornya?`,
+  'eydnjgiqy6': R`Nyata, tegak, dan diperbesar`,
+  'l1p0627c1t': R`Maya, terbalik, dan diperbesar`,
+  '1b18o6sf4yd': R`Bendanya jauh di luar $2F$, sehingga lensa membentuk bayangan nyata, terbalik, dan diperkecil, sama seperti mata pada retina.`,
+  '16aqiuw43bj': R`Bagaimana mata memfokuskan benda-benda pada jarak yang berbeda?`,
+  '1qqyo8ayl7o': R`Otot-otot mengubah bentuk lensa mata`,
+  '1zgxqnzg9f6': R`Lensa mata bergeser maju-mundur`,
+  '28x01rk5lnj': R`Pupil berubah ukuran`,
+  '1kis6f0ab3l': R`Retina bergeser`,
+  '1peatd655x': R`Inilah daya akomodasi: otot siliaris membuat lensa lebih cembung untuk benda dekat dan lebih pipih untuk benda jauh. Kamera menggeser lensanya sebagai gantinya.`,
+  '2cjdo4fyecw': R`
+<p>Ketika dua gelombang bertemu, keduanya saling menjumlahkan (<b>superposisi</b>). Jika puncak bertemu puncak, keduanya saling menguatkan: <b>interferensi konstruktif</b>. Jika puncak bertemu lembah, keduanya saling meniadakan: <b>interferensi destruktif</b>. Agar pola yang tetap dapat terlihat, sumber-sumbernya harus <b>koheren</b>: frekuensinya sama dan beda fasenya tetap.</p>
+⟦0⟧
+<h3>Celah ganda Young</h3>
+<p>Cahaya yang melewati dua celah sempit berjarak $d$ menghasilkan pita terang dan gelap pada layar berjarak $L$. Untuk sudut kecil:</p>
+⟦1⟧
+⟦2⟧
+<h3>Difraksi</h3>
+<p>Gelombang menyebar ketika melewati celah. Untuk celah tunggal selebar $a$, pita gelap berada pada $a\sin\theta = m\lambda$, dan pita terang pusat dua kali lebih lebar daripada pita yang lain. <b>Kisi difraksi</b> memiliki sangat banyak celah, $N$ per satuan panjang, sehingga jarak antarcelahnya $d = 1/N$. Garis-garis terangnya tajam dan memenuhi $d\sin\theta = m\lambda$; orde tertinggi yang dapat muncul adalah bilangan bulat terbesar di bawah $d/\lambda$.</p>
+⟦3⟧
+<p>Warna-warni gelembung sabun dan lapisan minyak berasal dari <b>interferensi lapisan tipis</b> antara cahaya yang dipantulkan oleh permukaan atas dan permukaan bawah lapisan.</p>`,
+  '1ei3r9wsxtr': R`<p>Konstruktif jika beda lintasannya kelipatan bulat panjang gelombang, $\Delta = m\lambda$; destruktif jika beda lintasannya kelipatan bulat ditambah setengah, $\Delta = (m + \frac12)\lambda$.</p>`,
+  '16wpbecjuab': R`Dua celah berjarak d, layar berjarak L, dan pita terang yang berjarak Δy satu sama lain`,
+  '1ctxbp4t5gr': R`Pita-pita terang berjarak sama, yaitu $\Delta y$.`,
+  '728c6gjxqq': R`<p>Gunakan meter: $1\,\mathrm{nm} = 10^{-9}\,\mathrm{m}$ dan $1\,\mathrm{mm} = 10^{-3}\,\mathrm{m}$. Kisi dengan 500 garis per mm memiliki $d = \frac{1}{500}\,\mathrm{mm} = 2 \times 10^{-6}\,\mathrm{m}$.</p>`,
+  '13g1libswe7': R`Cahaya dengan panjang gelombang ⟦0⟧ melewati dua celah berjarak ⟦1⟧ menuju layar sejauh ⟦2⟧. Berapa jarak antara dua pita terang yang berdekatan, dalam mm?`,
+  'hwswu6ari8': R`Pada percobaan celah ganda, jarak antarcelah ⟦0⟧ dan jarak layar ⟦1⟧. Jarak antarpita terang ⟦2⟧. Berapa panjang gelombang cahayanya, dalam nm?`,
+  'v38s2jkhkg': R`Cahaya dengan panjang gelombang ⟦0⟧ mengenai dua celah berjarak ⟦1⟧. Berapa jarak pita terang ke-⟦2⟧ dari terang pusat pada layar sejauh ⟦3⟧? Tuliskan jawabanmu dalam mm.`,
+  '29jilo8yy3g': R`Cahaya dengan panjang gelombang ⟦0⟧ mengenai kisi difraksi dengan ⟦1⟧ garis per mm. Pada sudut berapa garis terang orde ⟦2⟧ muncul?`,
+  '2dwpq9t0eon': R`pertama`,
+  'cnbixo2uho': R`$d = \frac{1}{⟦0⟧}\,\mathrm{mm} = ⟦1⟧\,\mathrm{m}$. Maka $\sin\theta = \frac{m\lambda}{d} = \frac{⟦2⟧ \cdot ⟦3⟧ \times 10^{-9}}{⟦4⟧} = ⟦5⟧$, jadi $\theta = ⟦6⟧$.`,
+  'tz5apuq7vk': R`Sebuah kisi memiliki ⟦0⟧ garis per mm dan disinari cahaya dengan panjang gelombang ⟦1⟧. Berapa orde tertinggi garis terang yang dapat terlihat?`,
+  'g94on2vulf': R`$d = \frac{1}{⟦0⟧}\,\mathrm{mm} = ⟦1⟧\,\mathrm{nm}$. Karena $\sin\theta \le 1$, $m \le \frac{d}{\lambda} = \frac{⟦2⟧}{⟦3⟧} = ⟦4⟧$, jadi orde tertingginya ⟦5⟧.`,
+  '17j74sp530': R`Cahaya dengan panjang gelombang ⟦0⟧ melewati celah tunggal selebar ⟦1⟧ menuju layar sejauh ⟦2⟧. Berapa lebar pita terang pusat, dalam mm?`,
+  '22hb6fwqyuh': R`Pita gelap pertama berada pada $y = \frac{\lambda L}{a}$ di kedua sisi, jadi lebar pita pusat $\frac{2\lambda L}{a} = \frac{2 \cdot ⟦0⟧ \times 10^{-9} \cdot ⟦1⟧}{⟦2⟧ \times 10^{-3}} = ⟦3⟧$.`,
+  '243wwp7hfq1': R`Pada percobaan celah ganda, kedua celah didekatkan. Apa yang terjadi pada pita-pitanya?`,
+  '1d75l32e54g': R`Pita-pitanya makin berjauhan`,
+  'x8vfyv5ntk': R`Pita-pitanya makin berdekatan`,
+  '4lfaozqjt6': R`Pita-pitanya hilang`,
+  '1ouvpd3j1mh': R`$\Delta y = \frac{\lambda L}{d}$: $d$ yang lebih kecil menghasilkan jarak antarpita yang lebih besar.`,
+  '78ho1ewdil': R`Cahaya merah pada percobaan celah ganda diganti dengan cahaya biru. Apa yang terjadi pada jarak antarpita?`,
+  '20jl3pvke8d': R`Pita-pitanya hilang`,
+  'ym4tv9da11': R`Cahaya biru memiliki panjang gelombang yang lebih pendek, dan $\Delta y = \frac{\lambda L}{d}$ sebanding dengan $\lambda$.`,
+  '1aot6n01byc': R`Mengapa dua bola lampu yang terpisah tidak menghasilkan pola interferensi?`,
+  '1ucdek5ih30': R`Keduanya tidak koheren`,
+  '5ygs74ue0l': R`Cahayanya terlalu terang`,
+  '1dxmnu7q27w': R`Cahaya tidak dapat berinterferensi`,
+  '28ntu4f0a2u': R`Keduanya terlalu berjauhan`,
+  '2viuo7gtae': R`Fase cahaya dari setiap lampu berubah secara acak jutaan kali per detik, sehingga polanya bergeser terlalu cepat untuk dilihat. Sumber yang koheren menjaga beda fasenya tetap.`,
+  '17lwsz7frq2': R`Apa penyebab warna-warni pada gelembung sabun?`,
+  'vs3iybizrj': R`Interferensi cahaya yang dipantulkan oleh kedua permukaan lapisan`,
+  'jjhpnmrk67': R`Zat pewarna dalam sabun`,
+  '26zqigeyhh3': R`Pembiasan seperti pada prisma`,
+  '199jpzcoygb': R`Difraksi melalui udara`,
+  'rb9xge601l': R`Cahaya yang dipantulkan dari permukaan depan dan belakang lapisan tipis saling berinterferensi. Warna mana yang saling menguatkan bergantung pada tebal lapisan.`,
+});
+
+/* Bahasa Indonesia — 18-modern-a */
+addT('id', {
+  '1ew761u2kqi': R`
+<p>Einstein menyusun teori relativitas khusus (1905) di atas dua <b>postulat</b>:</p>
+<ol><li>Hukum-hukum fisika berlaku sama di setiap kerangka acuan inersial (yang tidak dipercepat).</li><li>Kelajuan cahaya di ruang hampa, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$, sama bagi setiap pengamat, berapa pun kelajuan pengamat atau sumbernya.</li></ol>
+<p>Menerima kedua postulat itu berarti waktu dan panjang bergantung pada pengamat. Semuanya diatur oleh <b>faktor Lorentz</b></p>
+⟦0⟧
+<p>yang bernilai 1 pada kelajuan sehari-hari dan membesar tanpa batas ketika $v$ mendekati $c$. Untuk $v = 0{,}6c$, $\gamma = 1{,}25$; untuk $v = 0{,}8c$, $\gamma = \frac53$.</p>
+⟦1⟧
+<h3>Penjumlahan kecepatan</h3>
+<p>Kecepatan tidak dapat dijumlahkan begitu saja. Jika pesawat antariksa yang bergerak dengan kecepatan $v$ menembakkan wahana ke depan dengan kecepatan $u'$ relatif terhadap pesawat, pengamat melihat wahana itu bergerak dengan kecepatan</p>
+⟦2⟧
+<p>yang tidak pernah melebihi $c$.</p>
+<h3>Massa dan energi</h3>
+<p>Massa adalah salah satu bentuk energi. Benda bermassa $m$ yang diam memiliki <b>energi diam</b> $E_0 = mc^2$, dan energi totalnya ketika bergerak $E = \gamma mc^2$, sehingga energi kinetiknya $E_k = (\gamma - 1)mc^2$.</p>
+⟦3⟧`,
+  'v5mvitovf4': R`<p><b>Dilatasi waktu:</b> jam yang bergerak berdetak lebih lambat, $\Delta t = \gamma\,\Delta t_0$, dengan $\Delta t_0$ adalah <b>waktu sejati</b> yang diukur oleh jam yang diam relatif terhadap kejadian-kejadian itu.</p><p><b>Kontraksi panjang:</b> benda yang bergerak menjadi lebih pendek searah geraknya, $L = \dfrac{L_0}{\gamma}$, dengan $L_0$ adalah <b>panjang sejati</b> (diukur dalam keadaan diam).</p>`,
+  '2bq3bg1sabs': R`<p>Tuliskan kecepatan sebagai pecahan dari $c$: dengan begitu $v^2/c^2$ hanyalah kuadrat pecahan itu, dan $c$ saling menghilangkan.</p>`,
+  'dvkahsfr2o': R`Berapa faktor Lorentz $\gamma$ untuk benda yang bergerak dengan kecepatan $⟦0⟧c$?`,
+  '1w51gxfwxyu': R`Sebuah pesawat antariksa bergerak dengan kecepatan $⟦0⟧c$. Seorang astronaut di dalamnya mengukur selang waktu antara dua detak jamnya ⟦1⟧. Berapa lama selang waktu itu menurut pengamat di Bumi?`,
+  'wnjkdb33wp': R`$\gamma = \frac{1}{\sqrt{1 - ⟦0⟧^2}} = ⟦1⟧$, jadi $\Delta t = \gamma\,\Delta t_0 = ⟦2⟧ \times ⟦3⟧ = ⟦4⟧$. Jam yang bergerak berdetak lebih lambat.`,
+  '26pxyy3t9ts': R`Sebuah pesawat antariksa panjangnya ⟦0⟧ jika diukur dalam keadaan diam. Berapa panjangnya menurut pengamat ketika pesawat itu melintas dengan kecepatan $⟦1⟧c$?`,
+  'hxr4a3whwz': R`$\gamma = ⟦0⟧$, jadi $L = \frac{L_0}{\gamma} = \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  '2fxmt406esf': R`Rata-rata umur muon yang diam adalah ⟦0⟧. Berapa rata-rata umur muon yang bergerak dengan kecepatan $⟦1⟧c$, diukur dari Bumi?`,
+  '100wttpsxs9': R`$\gamma = \frac{1}{\sqrt{1 - ⟦0⟧^2}} = ⟦1⟧$, jadi $\Delta t = \gamma\,\Delta t_0 = ⟦2⟧ \times ⟦3⟧ = ⟦4⟧$. Inilah sebabnya muon yang terbentuk tinggi di atmosfer dapat mencapai permukaan tanah.`,
+  '16nid14geq7': R`Sebuah pesawat antariksa yang bergerak dengan kecepatan $⟦0⟧c$ relatif terhadap Bumi menembakkan wahana ke depan dengan kecepatan $⟦1⟧c$ relatif terhadap pesawat. Berapa kecepatan wahana relatif terhadap Bumi, sebagai pecahan dari $c$?`,
+  'rgf6bk9c35': R`$u = \frac{u' + v}{1 + u'v/c^2} = \frac{⟦0⟧ + ⟦1⟧}{1 + ⟦2⟧ \cdot ⟦3⟧} = ⟦4⟧c$, lebih kecil dari $c$ sebagaimana mestinya.`,
+  '2duk8r0cjqc': R`Berapa energi yang setara dengan massa ⟦0⟧? ($c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  '5fck4vhbmf': R`Ketik perpangkatan sepuluh seperti 9e13.`,
+  '8x97jk0pgd': R`$E = mc^2 = ⟦0⟧ \times (3{,}0 \times 10^{8})^2 = ⟦1⟧\,\mathrm{J}$.`,
+  'qayc48fv3t': R`Menurut relativitas khusus, besaran manakah yang sama bagi semua pengamat?`,
+  '1gx9b1a7xfg': R`Kelajuan cahaya di ruang hampa`,
+  'qbi3zembdk': R`Panjang benda yang bergerak`,
+  '1yylfvm3yq5': R`Selang waktu antara dua kejadian`,
+  '2a3ngf8t5du': R`Energi kinetik suatu benda`,
+  '9pr1dztq23': R`Inilah postulat kedua Einstein. Panjang dan waktu bergantung pada gerak pengamat.`,
+  '1j8486l1m9q': R`Mengapa pesawat antariksa yang bermassa tidak pernah dapat mencapai kelajuan cahaya?`,
+  '1vbma6cs0de': R`Energinya harus menjadi tak hingga`,
+  '5of4p25eht': R`Massanya akan menjadi nol`,
+  '1ju9139v6pl': R`Ruang angkasa terlalu hampa`,
+  'u8362f71kd': R`Mesinnya akan berhenti bekerja`,
+  'sw45zy7sck': R`$E = \gamma mc^2$ dan $\gamma$ membesar tanpa batas ketika $v \to c$, sehingga diperlukan energi yang tak hingga besarnya.`,
+  'dcrpsy3mld': R`Seorang astronaut bepergian dengan kelajuan tinggi ke sebuah bintang yang jauh lalu kembali. Dibandingkan saudara kembarnya di Bumi, dia:`,
+  '2def54nmxui': R`lebih muda`,
+  '1nzyn7twkj2': R`lebih tua`,
+  'ohhicxuk2r': R`sama umurnya`,
+  '1buxhc9lw24': R`bisa lebih tua atau lebih muda secara acak`,
+  '8wgwhz4d59': R`Jamnya (dan tubuhnya) berjalan lebih lambat relatif terhadap Bumi, sehingga waktu yang berlalu baginya lebih sedikit. Inilah paradoks kembar.`,
+  '104sg94tyb3': R`
+<p>Cahaya membawa energi dalam paket-paket kecil yang disebut <b>foton</b>. Planck dan Einstein menunjukkan bahwa energi satu foton hanya bergantung pada frekuensinya:</p>
+⟦0⟧
+<p>dengan tetapan Planck $h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$. Energi foton sangat kecil, sehingga sering dinyatakan dalam <b>elektronvolt</b>: $1\,\mathrm{eV} = 1{,}6 \times 10^{-19}\,\mathrm{J}$, yaitu energi yang diperoleh elektron ketika melewati beda potensial $1\,\mathrm{V}$.</p>
+<h3>Efek fotolistrik</h3>
+<p>Cahaya yang menyinari logam bersih dapat melepaskan elektron dari logam itu. Hasil percobaannya menunjukkan:</p>
+<ul><li>di bawah <b>frekuensi ambang</b> $f_0$ tidak ada elektron yang keluar, seterang apa pun cahayanya;</li><li>di atas frekuensi itu, elektron langsung keluar, dan energi kinetik maksimumnya bergantung pada frekuensi, bukan pada kecerahan;</li><li>cahaya yang lebih terang menghasilkan elektron yang <b>lebih banyak</b>, bukan yang lebih cepat.</li></ul>
+⟦1⟧
+<h3>Gelombang materi</h3>
+<p>De Broglie mengusulkan bahwa partikel juga berperilaku sebagai gelombang, dengan panjang gelombang $\lambda = \dfrac{h}{p} = \dfrac{h}{mv}$. Difraksi elektron membuktikannya, dan mikroskop elektron memanfaatkannya untuk melihat detail yang jauh lebih kecil daripada yang dapat dilihat dengan cahaya.</p>
+⟦2⟧`,
+  '18enfkx2h3o': R`E = hf = \frac{hc}{\lambda}`,
+  '1z2agzhwa5s': R`<p>Satu foton memberikan seluruh energinya kepada satu elektron. Sebagian energi itu, yaitu <b>fungsi kerja</b> $\phi = hf_0$, diperlukan untuk melepaskan elektron; sisanya menjadi energi kinetik:</p><p>$$E_{k,\max} = hf - \phi = eV_s$$</p><p>dengan $V_s$ adalah <b>potensial henti</b> yang diperlukan untuk menghentikan elektron tercepat.</p>`,
+  'q9fb6rowh5': R`<p>Jalan pintas yang berguna: $hc = 1240\,\mathrm{eV\,nm}$ (hingga 3 angka penting, $1{,}24 \times 10^{3}$), sehingga foton dengan panjang gelombang $\lambda$ dalam nm memiliki energi sekitar $\frac{1240}{\lambda}\,\mathrm{eV}$.</p>`,
+  '1nxog0s2qbw': R`Berapa energi foton dengan panjang gelombang ⟦0⟧, dalam joule? ($h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  '1fgf22ybxx8': R`Ketik perpangkatan sepuluh seperti 3,3e-19.`,
+  '12epezir3wv': R`$E = \frac{hc}{\lambda} = \frac{6{,}63 \times 10^{-34} \cdot 3{,}0 \times 10^{8}}{⟦0⟧ \times 10^{-9}} = ⟦1⟧\,\mathrm{J}$.`,
+  'eqkxnqeujl': R`Berapa energi foton dengan panjang gelombang ⟦0⟧, dalam elektronvolt? (Gunakan $hc = 1240\,\mathrm{eV\,nm}$.)`,
+  '1t6cav1mtn8': R`sesium`,
+  'ahw0qmdpcd': R`natrium`,
+  '133xjfi0kfo': R`kalium`,
+  'bftet78xwv': R`kalsium`,
+  '1dm2eqt8sp8': R`seng`,
+  '1hilubw0x7z': R`Cahaya dengan panjang gelombang ⟦0⟧ menyinari ⟦1⟧ yang fungsi kerjanya ⟦2⟧. Berapa ⟦3⟧? (Gunakan $hc = 1240\,\mathrm{eV\,nm}$.)`,
+  '16z8hfd48yk': R`potensial hentinya`,
+  '1895iy8ygzn': R`energi kinetik maksimum elektron yang terlepas, dalam eV`,
+  '1ttq7fhudur': R`Energi foton $E = \frac{1240}{⟦0⟧} = ⟦1⟧\,\mathrm{eV}$. $E_{k,\max} = E - \phi = ⟦2⟧ - ⟦3⟧ = ⟦4⟧$⟦5⟧.`,
+  '9c2e3vccav': R`, jadi potensial hentinya ⟦0⟧`,
+  '1w3avete4ca': R`Fungsi kerja ⟦0⟧ adalah ⟦1⟧. Berapa frekuensi ambangnya? ($h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$, $1\,\mathrm{eV} = 1{,}6 \times 10^{-19}\,\mathrm{J}$.)`,
+  '1cy02f4sklq': R`$f_0 = \frac{\phi}{h} = \frac{⟦0⟧ \times 1{,}6 \times 10^{-19}}{6{,}63 \times 10^{-34}} = ⟦1⟧\,\mathrm{Hz}$.`,
+  '7occgrgaao': R`Fungsi kerja ⟦0⟧ adalah ⟦1⟧. Berapa panjang gelombang terpanjang cahaya yang masih dapat melepaskan elektron dari logam itu, dalam nm? (Gunakan $hc = 1240\,\mathrm{eV\,nm}$.)`,
+  '1v5yo60yats': R`$\lambda_0 = \frac{hc}{\phi} = \frac{1240}{⟦0⟧} = ⟦1⟧$. Panjang gelombang yang lebih panjang memiliki energi per foton yang terlalu kecil.`,
+  'vpcv96svlb': R`Sebuah laser memancarkan ⟦0⟧ cahaya dengan panjang gelombang ⟦1⟧. Berapa banyak foton yang dipancarkannya setiap detik? ($h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  '1s07evp0y7y': R`Ketik perpangkatan sepuluh seperti 2,5e15.`,
+  'yv7one3398': R`Setiap foton membawa $E = \frac{hc}{\lambda} = ⟦0⟧\,\mathrm{J}$. Banyaknya foton per detik $\frac{P}{E} = \frac{⟦1⟧ \times 10^{-3}}{⟦2⟧} = ⟦3⟧$.`,
+  '1h2zza138pv': R`Berapa panjang gelombang de Broglie sebuah elektron yang bergerak dengan kelajuan $⟦0⟧\,\mathrm{m/s}$, dalam nm? ($h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$, $m_e = 9{,}11 \times 10^{-31}\,\mathrm{kg}$.)`,
+  '1r4um7a7xo7': R`$\lambda = \frac{h}{mv} = \frac{6{,}63 \times 10^{-34}}{9{,}11 \times 10^{-31} \cdot ⟦0⟧} = ⟦1⟧\,\mathrm{m} = ⟦2⟧$.`,
+  '1qnhwr9fj0y': R`Pada efek fotolistrik, apa yang terjadi jika cahaya dibuat lebih terang tetapi frekuensinya tetap?`,
+  '14tyl4prpfl': R`Elektron yang terlepas lebih banyak, dengan energi kinetik maksimum yang sama`,
+  '2akecprdw2c': R`Elektron keluar lebih cepat`,
+  '1sqh9fja7yn': R`Elektron yang terlepas lebih sedikit`,
+  'couz47qj7u': R`Tidak ada yang berubah sama sekali`,
+  '76n5h9d9v3': R`Cahaya yang lebih terang berarti foton lebih banyak, sehingga elektron lebih banyak; setiap foton tetap berenergi $hf$, sehingga energi kinetik maksimumnya tidak berubah.`,
+  '1mckokp87tm': R`Cahaya dengan frekuensi di bawah frekuensi ambang menyinari logam dalam waktu lama. Apa yang terjadi?`,
+  '1m9sgluqdli': R`Tidak ada elektron yang terlepas`,
+  'wtxqlgpvu9': R`Lama-kelamaan elektron terlepas`,
+  'o9nvke63l4': R`Elektron hanya terlepas jika cahayanya terang`,
+  '14hiivx9euk': R`Logam memancarkan foton`,
+  '1x5klq5fvcu': R`Setiap foton memiliki energi yang terlalu kecil untuk melepaskan elektron, dan elektron tidak dapat mengumpulkan energi dari beberapa foton.`,
+  '1yrr6i8879': R`Percobaan manakah yang menunjukkan bahwa elektron berperilaku sebagai gelombang?`,
+  'x7x2w6b9rt': R`Difraksi elektron`,
+  '1vgnkwh6teb': R`Efek fotolistrik`,
+  'kdflz4cqey': R`Percobaan hamburan foil emas Rutherford`,
+  '239xtu149ab': R`Percobaan tetes minyak Millikan`,
+  '27f639s4s9h': R`Berkas elektron yang melewati kristal menghasilkan pola difraksi, sama seperti gelombang.`,
+  '28m8ukd7io1': R`Bukti manakah yang menunjukkan bahwa cahaya berperilaku sebagai partikel?`,
+  'padb6170ja': R`Interferensi celah ganda`,
+  '222gjxxnpjv': R`Difraksi melalui celah sempit`,
+  'fjsh4vfaqm': R`Polarisasi`,
+  '1gzc807a4v0': R`Frekuensi ambang dan pelepasan elektron yang seketika hanya dapat dijelaskan jika cahaya datang dalam paket-paket berenergi $hf$. Interferensi, difraksi, dan polarisasi menunjukkan sifat gelombangnya.`,
+  'gmyi9rl91h': R`
+<h3>Model-model atom</h3>
+⟦0⟧
+<p>Pada <b>percobaan hamburan foil emas</b> Rutherford, sebagian besar partikel alfa menembus lurus, tetapi beberapa terpantul kembali. Jadi atom sebagian besar berupa ruang kosong, dengan massa dan muatan positifnya terpusat pada inti yang sangat kecil.</p>
+<h3>Model atom hidrogen Bohr</h3>
+⟦1⟧
+⟦2⟧
+⟦3⟧
+<p>Karena hanya selisih energi tertentu yang mungkin, setiap unsur hanya memancarkan dan menyerap panjang gelombang tertentu: <b>spektrum garisnya</b>, semacam sidik jari yang dipakai untuk mengenali unsur-unsur di bintang. Untuk hidrogen, transisi ke $n = 1$ menghasilkan <b>deret Lyman</b> (ultraviolet), transisi ke $n = 2$ <b>deret Balmer</b> (cahaya tampak), dan transisi ke $n = 3$ <b>deret Paschen</b> (inframerah).</p>
+⟦4⟧`,
+  'ki5bhylf5o': R`Model`,
+  '5g7bmgw51u': R`Gambaran`,
+  'e3m8pc7x3h': R`Thomson (1897)`,
+  'tgm2g87rdm': R`bola bermuatan positif dengan elektron-elektron tertanam di dalamnya, seperti kismis dalam roti`,
+  '1vbopqkzgey': R`tidak dapat menjelaskan hasil percobaan foil emas`,
+  'rm2l11201n': R`Rutherford (1911)`,
+  '1nb13m6bnhg': R`inti positif yang sangat kecil dan padat, dengan elektron-elektron yang mengorbit jauh di luarnya`,
+  'qwvd64ygu': R`elektron yang mengorbit seharusnya memancarkan energi dan jatuh berpilin ke inti`,
+  '7snkcfe6zh': R`Bohr (1913)`,
+  '1jteqxpz1gi': R`elektron hanya berada pada lintasan-lintasan tertentu yang diizinkan, masing-masing dengan energi tetap`,
+  '1kf29ylfqg1': R`hanya berlaku untuk atom mirip hidrogen`,
+  '1vpmx6ftn31': R`E_n = -\frac{13{,}6\,\mathrm{eV}}{n^2} \qquad r_n = n^2 \times 0{,}053\,\mathrm{nm}`,
+  '1x0bckvin6w': R`Tingkat-tingkat energi hidrogen, dengan elektron yang turun dari n = 3 ke n = 2`,
+  '2bzkuxr7dbi': R`Tingkat-tingkat energi hidrogen (tidak berskala). Transisi dari $n = 3$ ke $n = 2$ memancarkan foton merah berenergi $1{,}89\,\mathrm{eV}$.`,
+  'wyrtzm67pu': R`<p>Ketika elektron turun dari tingkat yang lebih tinggi ke tingkat yang lebih rendah, elektron memancarkan foton yang energinya tepat sama dengan selisih energinya: $hf = E_{\text{atas}} - E_{\text{bawah}}$. Menyerap foton dengan energi yang tepat sama menaikkannya kembali. Energi yang diperlukan untuk melepaskan elektron sepenuhnya dari tingkat $n$ adalah <b>energi ionisasi</b>, $\frac{13{,}6}{n^2}\,\mathrm{eV}$.</p>`,
+  '1z9gegum1p1': R`<p>Energi tingkat-tingkat itu negatif karena elektronnya terikat: perlu ditambahkan energi untuk melepaskannya. Dengan $hc = 1240\,\mathrm{eV\,nm}$, panjang gelombang foton $\lambda = \frac{1240}{\Delta E}$ dalam nm jika $\Delta E$ dalam eV.</p>`,
+  'bgwixr92m4': R`Berapa energi yang diperlukan untuk mengionisasi atom hidrogen yang elektronnya berada di tingkat $n = ⟦0⟧$?`,
+  'yzd9496h20': R`Elektron harus dinaikkan dari $E_{⟦0⟧} = -\frac{13{,}6}{⟦1⟧^2} = ⟦2⟧\,\mathrm{eV}$ ke $0$, jadi diperlukan ⟦3⟧.`,
+  '1yzjv598qmy': R`Berapa energi elektron pada tingkat $n = ⟦0⟧$ atom hidrogen? (Sertakan tanda minusnya.)`,
+  'zufpoezt6t': R`$E_n = -\frac{13{,}6}{n^2} = -\frac{13{,}6}{⟦0⟧} = ⟦1⟧$.`,
+  '12183t60ks0': R`Elektron pada atom hidrogen turun dari tingkat $n = ⟦0⟧$ ke $n = ⟦1⟧$. Berapa energi foton yang dipancarkan?⟦2⟧`,
+  'r8007l4uoq': R`Tingkat-tingkat energi hidrogen dengan transisi pada soal`,
+  'ymq1mu70hz': R`$\Delta E = E_{⟦0⟧} - E_{⟦1⟧} = -\frac{13{,}6}{⟦2⟧} + \frac{13{,}6}{⟦3⟧} = ⟦4⟧$.`,
+  'zwj1741ei1': R`Berapa panjang gelombang foton yang dipancarkan ketika elektron hidrogen turun dari $n = ⟦0⟧$ ke $n = ⟦1⟧$, dalam nm? (Gunakan $hc = 1240\,\mathrm{eV\,nm}$.)`,
+  'm970bbqzc': R`$\Delta E = 13{,}6\left(\frac{1}{⟦0⟧} - \frac{1}{⟦1⟧}\right) = ⟦2⟧\,\mathrm{eV}$, jadi $\lambda = \frac{1240}{⟦3⟧} = ⟦4⟧$⟦5⟧.`,
+  '1ps67b9ngjv': R` (cahaya tampak, deret Balmer)`,
+  '4elyzv9aio': R` (ultraviolet, deret Lyman)`,
+  'iaggzj58mq': R` (inframerah, deret Paschen)`,
+  '207946vxpl': R`Menurut model Bohr, jari-jari lintasan hidrogen terkecil adalah ⟦0⟧. Berapa jari-jari lintasan $n = ⟦1⟧$?`,
+  'mn4ct9qj79': R`$r_n = n^2 r_1 = ⟦0⟧ \times 0{,}053 = ⟦1⟧$.`,
+  '15p3jhjf2kc': R`Atom-atom hidrogen dieksitasi ke tingkat $n = ⟦0⟧$. Ketika elektron-elektronnya kembali ke keadaan dasar melalui semua jalur yang mungkin, berapa banyak garis spektrum berbeda yang dapat dipancarkan?`,
+  'aw0lu9o4uk': R`Setiap pasangan tingkat menghasilkan satu garis: $\frac{n(n-1)}{2} = \frac{⟦0⟧ \cdot ⟦1⟧}{2} = ⟦2⟧$.`,
+  '16gnmm4vdju': R`Pada percobaan foil emas Rutherford, sebagian besar partikel alfa menembus foil dengan lurus. Apa yang ditunjukkan hal ini?`,
+  'u1ueafgfp8': R`Atom sebagian besar berupa ruang kosong`,
+  'a2f683lfl4': R`Atom berupa bola pejal`,
+  '2626nhc9jfh': R`Elektron sangat berat`,
+  '13lj76jbbgk': R`Partikel alfa bermuatan negatif`,
+  '20ww5vml3k': R`Hanya sebagian sangat kecil yang terpantul kembali, oleh inti yang sangat kecil, padat, dan positif; bagian atom lainnya meloloskan partikel-partikel itu.`,
+  '22sytcchefg': R`Deret garis hidrogen manakah yang berada di bagian cahaya tampak pada spektrum?`,
+  '1i0ay5ahqzh': R`Balmer`,
+  '1kim79mwow1': R`Lyman`,
+  'gsuud6n6hj': R`Paschen`,
+  '11jhdlrolrb': R`Brackett`,
+  'ffnufnr19v': R`Transisi ke $n = 2$ (deret Balmer) menghasilkan cahaya tampak; transisi ke $n = 1$ menghasilkan ultraviolet dan transisi ke $n = 3$ menghasilkan inframerah.`,
+  '246kq4prwbl': R`Mengapa setiap unsur memiliki spektrum garis sendiri?`,
+  '28uzrvxiyuu': R`Atom-atomnya memiliki susunan tingkat energi sendiri`,
+  'uo06bbjntu': R`Atom-atomnya memiliki massa yang berbeda`,
+  '1gkgjet9kfk': R`Intinya memancarkan cahaya`,
+  '316v0x06ln': R`Elektronnya bergerak dengan kelajuan yang berbeda`,
+  '12wh6nk068h': R`Foton dipancarkan dengan energi yang sama dengan selisih antartingkat, dan tingkat-tingkat itu berbeda untuk setiap unsur.`,
+  'sdafdmsoo8': R`Apa kelemahan utama model atom Rutherford?`,
+  '1f01rkcxuax': R`Elektron yang mengorbit seharusnya memancarkan energi dan jatuh berpilin ke inti`,
+  '4uvi43mww5': R`Tidak memiliki inti`,
+  'lr8ylcgwe2': R`Tidak dapat menjelaskan hasil percobaan foil emas`,
+  '1jczt3vg3uy': R`Menempatkan elektron di dalam inti`,
+  'qt74y1b7ec': R`Menurut fisika klasik, muatan yang dipercepat memancarkan radiasi. Bohr mengatasinya dengan hanya mengizinkan lintasan-lintasan stabil tertentu.`,
+});
+
+/* Bahasa Indonesia — 19-modern-b */
+addT('id', {
+  'bzten31v3l': R`
+<p>Inti atom berisi <b>proton</b> dan <b>neutron</b> (keduanya disebut <b>nukleon</b>). Suatu nuklida ditulis $^{A}_{Z}\mathrm{X}$, dengan $Z$ adalah <b>nomor atom</b> (banyaknya proton) dan $A$ adalah <b>nomor massa</b> (proton + neutron), sehingga banyaknya neutron $N = A - Z$. <b>Isotop-isotop</b> suatu unsur memiliki $Z$ yang sama tetapi $A$ yang berbeda, misalnya $^{12}_{6}\mathrm{C}$ dan $^{14}_{6}\mathrm{C}$.</p>
+<h3>Tiga jenis radiasi</h3>
+⟦0⟧
+⟦1⟧
+<h3>Waktu paruh</h3>
+<p>Peluruhan bersifat acak, tetapi sejumlah besar inti meluruh dengan laju yang dapat diramalkan. <b>Waktu paruh</b> $T_{1/2}$ adalah waktu yang diperlukan agar separuh inti (dan karena itu separuh aktivitasnya) meluruh:</p>
+⟦2⟧
+⟦3⟧
+⟦4⟧`,
+  '2fv9ci45ruf': R`Radiasi`,
+  '1b00t4z3zq2': R`Wujudnya`,
+  'ulpbmvnemj': R`Daya ionisasi`,
+  '15gpepd9u51': R`Dihentikan oleh`,
+  'qr4ks5da28': R`alfa, $\alpha$`,
+  '1h3wuzchmej': R`inti helium $^{4}_{2}\mathrm{He}$`,
+  '1brdy6usvzk': R`kuat`,
+  '27qpxu25pg7': R`kertas atau beberapa cm udara`,
+  '1aj4n2hvz16': R`beta, $\beta^-$`,
+  '1frgoejc1jz': R`elektron cepat $^{\;\,0}_{-1}\mathrm{e}$`,
+  'qrj7sjjtwh': R`sedang`,
+  '1trt70rptzw': R`beberapa mm aluminium`,
+  'ixtrg2hzst': R`gamma, $\gamma$`,
+  'fpp8oxejma': R`foton berenergi tinggi`,
+  '13b1ybv24l1': R`lemah`,
+  '12v1uc1pdij': R`timbal atau beton tebal (dikurangi, tidak dihentikan)`,
+  '1uq06x40lma': R`<p>Pada persamaan peluruhan, $A$ dan $Z$ harus setara di kedua ruas. Peluruhan alfa mengurangi $A$ sebesar 4 dan $Z$ sebesar 2; peluruhan beta (neutron berubah menjadi proton) tidak mengubah $A$ dan menaikkan $Z$ sebesar 1; pancaran gamma tidak mengubah keduanya.</p><p>$$^{238}_{\;\,92}\mathrm{U} \to\, ^{234}_{\;\,90}\mathrm{Th} + {}^{4}_{2}\mathrm{He} \qquad ^{14}_{\;\,6}\mathrm{C} \to\, ^{14}_{\;\,7}\mathrm{N} + {}^{\;\,0}_{-1}\mathrm{e}$$</p>`,
+  '8shst7qa2h': R`t (waktu paruh)`,
+  'ymobdjr22u': R`Kurva peluruhan: banyaknya inti berkurang separuh setiap satu waktu paruh`,
+  '271c7zemn9a': R`Setelah 1, 2, 3 waktu paruh, yang tersisa $50\%$, $25\%$, $12{,}5\%$.`,
+  'vr4nodqyw8': R`<p>Penanggalan radiokarbon memakai $^{14}\mathrm{C}$, yang waktu paruhnya sekitar 5730 tahun. Makhluk hidup menjaga kadarnya tetap; setelah mati, karbon-14 meluruh, sehingga bagian yang tersisa menunjukkan umurnya.</p>`,
+  '1t7joq53swc': R`Berapa banyak ⟦0⟧ dalam inti $^{⟦1⟧}_{⟦2⟧}\mathrm{⟦3⟧}$?`,
+  '1tpp7o8i9dz': R`neutron`,
+  '1vnjc79gtpw': R`proton`,
+  'lvvfye09px': R`nukleon`,
+  '1dejdf7vaqs': R`$Z = ⟦0⟧$ proton, $A = ⟦1⟧$ nukleon, jadi $N = A - Z = ⟦2⟧ - ⟦3⟧ = ⟦4⟧$ neutron.`,
+  'bz7wn1mmcf': R`$^{⟦0⟧}_{⟦1⟧}\mathrm{⟦2⟧}$ meluruh dengan memancarkan partikel ⟦3⟧ menjadi ⟦4⟧. Berapa ⟦5⟧ inti ⟦6⟧?`,
+  '11419wyk0bk': R`alfa`,
+  'gp4ukuc2g2': R`beta`,
+  'su3aas66b1': R`nomor massa`,
+  '1vu40bw4bbd': R`nomor atom`,
+  '281nzwfqvt0': R`Pancaran alfa melepaskan $^{4}_{2}\mathrm{He}$: $^{⟦0⟧}_{⟦1⟧}\mathrm{⟦2⟧} \to\, ^{⟦3⟧}_{⟦4⟧}\mathrm{⟦5⟧} + {}^{4}_{2}\mathrm{He}$.`,
+  'd78h2dwyhu': R`Pada peluruhan beta, sebuah neutron berubah menjadi proton: $^{⟦0⟧}_{⟦1⟧}\mathrm{⟦2⟧} \to\, ^{⟦3⟧}_{⟦4⟧}\mathrm{⟦5⟧} + {}^{\;\,0}_{-1}\mathrm{e}$. $A$ tidak berubah dan $Z$ naik 1.`,
+  '1qn5tzfsu4y': R`hari`,
+  '2eruzlr62qp': R`jam`,
+  '188ez77gire': R`Sebuah sampel radioaktif mengandung ⟦0⟧ isotop yang waktu paruhnya ⟦1⟧ ⟦2⟧. Berapa banyak isotop itu yang tersisa setelah ⟦3⟧ ⟦4⟧?`,
+  '2dmo7v35t9q': R`⟦0⟧ ⟦1⟧ sama dengan ⟦2⟧ kali waktu paruh, jadi $m = ⟦3⟧ \times \left(\frac12\right)^{⟦4⟧} = ⟦5⟧$.`,
+  '1mgi2yis3z0': R`Aktivitas sebuah sampel turun dari ⟦0⟧ menjadi ⟦1⟧ dalam ⟦2⟧ ⟦3⟧. Berapa waktu paruhnya, dalam ⟦4⟧?`,
+  '2da1owbea45': R`$\frac{⟦0⟧}{⟦1⟧} = \frac{1}{⟦2⟧} = \left(\frac12\right)^{⟦3⟧}$, jadi ⟦4⟧ kali waktu paruh berlalu dalam ⟦5⟧ ⟦6⟧: $T_{1/2} = \frac{⟦7⟧}{⟦8⟧} = ⟦9⟧$ ⟦10⟧.`,
+  'kyvico5v0g': R`Sepotong kayu kuno mengandung $\frac{1}{⟦0⟧}$ dari kadar karbon-14 pada kayu yang masih hidup. Waktu paruh karbon-14 adalah 5730 tahun. Berapa umur kayu itu, dalam tahun?`,
+  '8wibbh41id': R`$\frac{1}{⟦0⟧} = \left(\frac12\right)^{⟦1⟧}$, jadi sudah berlalu ⟦2⟧ kali waktu paruh: $⟦3⟧ \times 5730 = ⟦4⟧$ tahun.`,
+  '2fxcdfx5qg': R`$^{⟦0⟧}_{⟦1⟧}\mathrm{⟦2⟧}$ meluruh melalui serangkaian peluruhan alfa dan beta menjadi $^{⟦3⟧}_{⟦4⟧}\mathrm{⟦5⟧}$ yang stabil. Berapa kali peluruhan ⟦6⟧ terjadi?`,
+  '1951gwqv7yf': R`Hanya peluruhan alfa yang mengubah $A$: $\frac{⟦0⟧ - ⟦1⟧}{4} = ⟦2⟧$ peluruhan alfa. Peluruhan itu menurunkan $Z$ sebesar $2 \times ⟦3⟧ = ⟦4⟧$, padahal $Z$ hanya turun $⟦5⟧ - ⟦6⟧ = ⟦7⟧$, jadi terjadi $⟦8⟧ - ⟦9⟧ = ⟦10⟧$ peluruhan beta.`,
+  '21csyzshzbi': R`Jenis radiasi manakah yang daya tembusnya paling besar?`,
+  '17bhfb20ogq': R`Gamma`,
+  '1loolxkw4t': R`Alfa`,
+  'buez92xbkw': R`Beta`,
+  '10o0bjbxv0g': R`Semuanya sama`,
+  'qovwt9jk9h': R`Sinar gamma adalah foton yang tidak bermuatan dan daya ionisasinya lemah, sehingga dapat menembus paling jauh; diperlukan timbal atau beton tebal untuk mengurangi intensitasnya.`,
+  'nxvmx9lzdd': R`Jenis radiasi manakah yang dapat dihentikan oleh selembar kertas?`,
+  'qxvpi7g4j4': R`Tidak ada`,
+  'pxgu523riw': R`Partikel alfa berat dan bermuatan dua, sehingga daya ionisasinya kuat dan energinya cepat habis.`,
+  '1ote5xfjmg3': R`Apa yang dimaksud dengan isotop?`,
+  '24cm82ub7n6': R`Atom-atom dengan jumlah proton sama tetapi jumlah neutron berbeda`,
+  'ms3ja4phgg': R`Atom-atom dengan jumlah neutron sama tetapi jumlah proton berbeda`,
+  'oqq3ioxdma': R`Atom-atom dengan nomor massa sama tetapi unsurnya berbeda`,
+  'x0ip4jyngj': R`Atom-atom yang kehilangan elektron`,
+  '20pyduqzush': R`Isotop adalah unsur yang sama ($Z$ sama) dengan nomor massa berbeda, seperti karbon-12 dan karbon-14.`,
+  '1d6f1oet2w0': R`Mengapa sumber alfa berbahaya di dalam tubuh tetapi cukup aman di luar tubuh?`,
+  '1sypfwibbm2': R`Daya ionisasi alfa kuat, tetapi alfa tidak dapat menembus kulit`,
+  '1z32l2y6kyi': R`Daya tembus alfa sangat besar`,
+  '4v23lk8spt': R`Alfa hanya memengaruhi logam`,
+  '5n7k21lnny': R`Alfa adalah salah satu bentuk cahaya`,
+  '1ipejtxfevv': R`Di luar tubuh, alfa dihentikan oleh lapisan kulit mati terluar. Di dalam tubuh, seluruh daya ionisasinya yang kuat mengenai sel-sel hidup.`,
+  '22y6imb19uh': R`
+<p>Massa inti sedikit <b>lebih kecil</b> daripada jumlah massa proton dan neutron penyusunnya. <b>Defek massa</b> $\Delta m$ ini setara dengan <b>energi ikat</b>, yaitu energi yang diperlukan untuk memisahkan inti menjadi nukleon-nukleonnya:</p>
+⟦0⟧
+<p>Massa inti dinyatakan dalam <b>satuan massa atom</b>, dan $1\,\mathrm{u}$ setara dengan $931{,}5\,\mathrm{MeV}$. Gunakan $m_p = 1{,}00728\,\mathrm{u}$ dan $m_n = 1{,}00867\,\mathrm{u}$.</p>
+⟦1⟧
+<h3>Fisi</h3>
+<p>Neutron lambat yang diserap uranium-235 membuat inti itu terbelah menjadi dua inti yang lebih kecil dan 2 atau 3 neutron baru, sambil melepaskan sekitar $200\,\mathrm{MeV}$. Neutron-neutron baru itu dapat membelah inti-inti lain: terjadilah <b>reaksi berantai</b>. Di dalam reaktor:</p>
+<ul><li><b>moderator</b> (air atau grafit) memperlambat neutron agar lebih mudah menimbulkan fisi;</li><li><b>batang kendali</b> (boron atau kadmium) menyerap neutron sehingga, rata-rata, setiap fisi menimbulkan tepat satu fisi berikutnya;</li><li><b>pendingin</b> membawa panas untuk menghasilkan uap bagi turbin;</li><li><b>perisai</b> beton tebal menyerap radiasi.</li></ul>
+<h3>Fusi</h3>
+<p>Di Matahari, inti-inti hidrogen bergabung (berfusi) menjadi helium pada suhu sekitar 15 juta kelvin; hanya pada suhu setinggi itu inti-inti bergerak cukup cepat untuk mengatasi tolakan listriknya. Bahan bakar fusi berlimpah dan limbah berumur panjangnya sedikit, tetapi pembangkit listrik fusi yang praktis belum berhasil dibangun.</p>
+⟦2⟧`,
+  '1ouefgz1rpx': R`\Delta m = Z m_p + (A - Z) m_n - m_{\text{inti}} \qquad E_B = \Delta m\,c^2`,
+  'ghycpt9bpv': R`<p><b>Energi ikat per nukleon</b> menunjukkan seberapa stabil suatu inti. Nilainya paling besar di sekitar besi-56 (sekitar $8{,}8\,\mathrm{MeV}$). Energi dilepaskan ketika inti-inti ringan bergabung (<b>fusi</b>) atau inti berat terbelah (<b>fisi</b>), karena hasil reaksinya lebih kuat terikat. Energi yang dilepaskan dalam suatu reaksi adalah</p><p>$$Q = (m_{\text{sebelum}} - m_{\text{sesudah}}) \times 931{,}5\,\mathrm{MeV/u}.$$</p>`,
+  'aox46tcuuf': R`<p>Pertahankan banyak angka desimal ketika mengurangkan massa: defek massa adalah selisih kecil antara dua bilangan besar.</p>`,
+  '1z86nmihn6k': R`helium-4`,
+  'jzmjtvtyjo': R`deuterium`,
+  '2774xu8m7f4': R`litium-7`,
+  '7nzf3cjc91': R`karbon-12`,
+  '2amkm11amtl': R`oksigen-16`,
+  'ljgsjy1vo2': R`Inti ⟦0⟧ ($^{⟦1⟧}_{⟦2⟧}\mathrm{⟦3⟧}$) bermassa ⟦4⟧. ($m_p = 1{,}00728\,\mathrm{u}$, $m_n = 1{,}00867\,\mathrm{u}$, $1\,\mathrm{u} = 931{,}5\,\mathrm{MeV}$.)`,
+  '1jsckfu4f97': R`$\Delta m = ⟦0⟧(1{,}00728) + ⟦1⟧(1{,}00867) - ⟦2⟧ = ⟦3⟧\,\mathrm{u}$.`,
+  '1uqtsiu9vx0': R`⟦0⟧ Berapa defek massanya, dalam u?`,
+  '1tsavry6wtg': R`⟦0⟧ Berapa energi ikatnya, dalam MeV?`,
+  '2fwkde3xrn7': R`⟦0⟧ $E_B = ⟦1⟧ \times 931{,}5 = ⟦2⟧$.`,
+  '2g7aveo85y0': R`⟦0⟧ Berapa energi ikat per nukleonnya, dalam MeV?`,
+  '1q8g0vb107h': R`⟦0⟧ $E_B = ⟦1⟧\,\mathrm{MeV}$, dan per nukleon $\frac{⟦2⟧}{⟦3⟧} = ⟦4⟧$.`,
+  '1va0vwtmlqg': R`Hitung energi yang dilepaskan pada reaksi $⟦0⟧$, dalam MeV. Massa sebelum reaksi ⟦1⟧ dan ⟦2⟧; sesudah reaksi ⟦3⟧ dan ⟦4⟧. ($1\,\mathrm{u} = 931{,}5\,\mathrm{MeV}$.)`,
+  '2duc985uwg1': R`$\Delta m = (⟦0⟧ + ⟦1⟧) - (⟦2⟧ + ⟦3⟧) = ⟦4⟧\,\mathrm{u}$, jadi $Q = ⟦5⟧ \times 931{,}5 = ⟦6⟧$.`,
+  'shgqutw0kh': R`Setiap fisi uranium-235 melepaskan sekitar ⟦0⟧. Berapa banyak fisi per detik yang diperlukan untuk menghasilkan daya ⟦1⟧? ($1\,\mathrm{eV} = 1{,}6 \times 10^{-19}\,\mathrm{J}$.)`,
+  '1lwqdmg4sw6': R`Ketik perpangkatan sepuluh seperti 3,1e19.`,
+  '15lm3qyqxce': R`Satu fisi menghasilkan $200 \times 10^{6} \times 1{,}6 \times 10^{-19} = 3{,}2 \times 10^{-11}\,\mathrm{J}$. Maka $N = \frac{⟦0⟧ \times 10^{6}}{3{,}2 \times 10^{-11}} = ⟦1⟧$ fisi per detik.`,
+  'q4g3bywppq': R`Sebuah pembangkit listrik menghasilkan daya keluaran listrik dan panas sebesar ⟦0⟧ selama ⟦1⟧. Berapa massa yang diubah menjadi energi, dalam gram? ($c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  'o5zutp0p9o': R`satu hari`,
+  's1gy0np2ta': R`30 hari`,
+  'w3kkk4eoeb': R`satu tahun (365 hari)`,
+  '20dg77e6r0d': R`$E = Pt = ⟦0⟧ \times 10^{6} \times ⟦1⟧ = ⟦2⟧\,\mathrm{J}$, jadi $m = \frac{E}{c^2} = \frac{⟦3⟧}{9 \times 10^{16}} = ⟦4⟧\,\mathrm{kg} = ⟦5⟧$.`,
+  '1gnr6cumfqc': R`Apa fungsi batang kendali dalam reaktor nuklir?`,
+  'jn8ia4met3': R`Menyerap neutron dan mengendalikan laju fisi`,
+  '155v1fvo9wi': R`Memperlambat neutron`,
+  '29guqkt01m1': R`Membawa panas keluar`,
+  'm8fhzc538k': R`Mencegah sinar gamma keluar`,
+  '1qdy42i88cl': R`Batang kendali (boron atau kadmium) menyerap neutron. Menurunkannya memperlambat reaksi berantai; menaikkannya mempercepat reaksi.`,
+  '19v3x5nk2l6': R`Apa fungsi moderator dalam reaktor nuklir?`,
+  '22q4jedf5ge': R`Menyerap semua neutron`,
+  'x2x1mky0yv': R`Mendinginkan turbin`,
+  '1cbh4hzb9ld': R`Membuat uranium menjadi radioaktif`,
+  '28e2vd30wrb': R`Neutron lambat jauh lebih mungkin membuat U-235 terbelah. Air atau grafit memperlambat neutron melalui tumbukan.`,
+  'pkks7bq594': R`Apa sumber utama energi Matahari?`,
+  '1ko57skypbm': R`Fusi hidrogen menjadi helium`,
+  '1g92w0oimsn': R`Fisi uranium`,
+  '23rjaiccv6m': R`Pembakaran gas hidrogen`,
+  '17ugpdkq5um': R`Peluruhan radioaktif karbon`,
+  'kpbcifh5oa': R`Di inti Matahari, inti-inti hidrogen berfusi menjadi helium; massa yang hilang muncul sebagai energi, $E = \Delta m c^2$.`,
+  'add76tf9dz': R`Mengapa fusi memerlukan suhu yang sangat tinggi?`,
+  'b9rmvckls3': R`Agar inti-inti bergerak cukup cepat untuk mengatasi tolakan listriknya`,
+  '1djjx5pi1ig': R`Untuk melelehkan bahan bakar`,
+  '1uvbey068vy': R`Untuk menghasilkan neutron`,
+  '7s7r9ccrru': R`Untuk memulai reaksi kimia`,
+  '29ue4qhek1l': R`Semua inti bermuatan positif dan saling tolak. Hanya pada suhu jutaan kelvin inti-inti itu bertumbukan cukup keras untuk saling mendekat dan berfusi.`,
+  '1rt9l4ywlvv': R`Inti manakah yang melepaskan energi ketika terbelah?`,
+  '1w5q21ebsz': R`Inti yang sangat berat, seperti uranium`,
+  '1ltuj86j4lx': R`Inti yang sangat ringan, seperti hidrogen`,
+  '8p8w14cs7g': R`Inti di sekitar besi`,
+  '15gmm6i5mpi': R`Semua inti`,
+  '28v30qoxes8': R`Energi ikat per nukleon paling besar di sekitar besi. Inti berat menjadi lebih kuat terikat dengan terbelah, inti ringan dengan bergabung.`,
+});
+
 /* Bahasa Indonesia — 2-foundations */
 addT('id', {
   '4ynf6btmh8': R`Besaran`,
@@ -1071,6 +1635,192 @@ addT('id', {
   'gu5b4idsdf': R`Manakah besaran berikut yang merupakan <b>skalar</b>?`,
   'y26ywmu64b': R`Vektor memerlukan arah selain besar: ⟦0⟧ memiliki arah, sedangkan yang lain cukup dijelaskan dengan angka dan satuan.`,
   '1yxlrt52dl': R`Skalar cukup dijelaskan dengan besarnya: ⟦0⟧ tidak memiliki arah, sedangkan yang lain memilikinya.`,
+});
+
+/* Bahasa Indonesia — 20-tech */
+addT('id', {
+  'gi9ayo1olm': R`
+<p>Sumber energi <b>tak terbarukan</b> (batu bara, minyak bumi, gas alam, uranium) akan habis, dan pembakaran bahan bakar fosil melepaskan karbon dioksida. Sumber energi <b>terbarukan</b> tergantikan secara alami: cahaya matahari, angin, air yang mengalir, panas bumi, gelombang laut, pasang surut, dan biomassa. Indonesia memiliki salah satu cadangan panas bumi terbesar di dunia serta sinar matahari dan sungai yang melimpah.</p>
+⟦0⟧
+<h3>Energi surya</h3>
+<p>Sel fotovoltaik (sel surya) mengubah cahaya langsung menjadi listrik. Pada hari yang cerah sekitar $1000\,\mathrm{W/m^2}$ cahaya matahari sampai di permukaan tanah, dan efisiensi panel pada umumnya 15–22%, sehingga keluarannya $P = \eta\, I A$ untuk intensitas $I$ dan luas $A$.</p>
+<h3>Energi angin</h3>
+<p>Energi kinetik udara yang melewati bilah turbin setiap detik adalah</p>
+⟦1⟧
+<p>dengan $\rho \approx 1{,}2\,\mathrm{kg/m^3}$ adalah massa jenis udara dan $A = \pi r^2$ luas yang disapu bilah sepanjang $r$. Kelajuan angin dua kali lipat menghasilkan daya $2^3 = 8$ kali lipat. Tidak ada turbin yang dapat mengambil lebih dari sekitar 59% daya ini (batas Betz).</p>
+<h3>Pembangkit listrik tenaga air dan panas bumi</h3>
+<p>Air yang jatuh dari ketinggian $h$ memutar turbin. Dengan debit (volume per detik) $Q$, dayanya $P = \eta \rho Q g h$ (untuk air $\rho = 1000\,\mathrm{kg/m^3}$). Pembangkit listrik tenaga panas bumi memakai uap dari batuan panas di bawah tanah untuk menggerakkan turbin.</p>
+⟦2⟧`,
+  '1sqd0qw6yt9': R`<p>Tidak ada alat yang mengubah seluruh masukannya menjadi keluaran yang berguna. <b>Efisiensi</b> adalah</p><p>$$\eta = \frac{\text{keluaran berguna}}{\text{masukan total}} \times 100\%.$$</p>`,
+  '1gquuevw3v6': R`<p>Listrik dijual dalam satuan kilowatt-jam: $1\,\mathrm{kWh} = 1000\,\mathrm{W} \times 3600\,\mathrm{s}$, yaitu $3{,}6 \times 10^{6}\,\mathrm{J}$. Daya dalam kW dikali jam menghasilkan kWh.</p>`,
+  '23anl0rg7xc': R`Cahaya matahari dengan intensitas ⟦0⟧ mengenai panel surya seluas ⟦1⟧ yang efisiensinya ⟦2⟧. Berapa daya listrik keluarannya?`,
+  '1cxva570so5': R`Sebuah rumah memerlukan daya ⟦0⟧ dari panel surya yang efisiensinya ⟦1⟧, dengan cahaya matahari ⟦2⟧. Berapa luas panel yang diperlukan?`,
+  '1hslrkfisua': R`Sebuah turbin angin memiliki bilah sepanjang ⟦0⟧. Angin bertiup dengan kelajuan ⟦1⟧ dan turbin mengubah ⟦2⟧ daya angin menjadi listrik. Berapa daya listrik keluarannya, dalam MW? (Massa jenis udara ⟦3⟧.)`,
+  'jy8evwe1xb': R`$A = \pi r^2 = ⟦0⟧\,\mathrm{m^2}$; $P_{\text{angin}} = \tfrac12 \rho A v^3 = \tfrac12 \cdot 1{,}2 \cdot ⟦1⟧ \cdot ⟦2⟧^3 = ⟦3⟧\,\mathrm{W}$. Keluaran $= ⟦4⟧ \times ⟦5⟧ = ⟦6⟧$.`,
+  '1r7ak00xurw': R`Kelajuan angin di sebuah turbin menjadi ⟦0⟧. Berapa kali perubahan daya yang tersedia dalam angin?`,
+  '25jys9aycma': R`setengahnya`,
+  'ufkn6uubk6': R`dua kali lipat`,
+  'hp02cmipl9': R`tiga kali lipat`,
+  '296o7p7c82a': R`$P \propto v^3$, jadi dayanya berubah dengan faktor $⟦0⟧^3 = ⟦1⟧$.`,
+  'y9tp5u5ovk': R`Air mengalir melalui pembangkit listrik tenaga air dengan debit ⟦0⟧ dan jatuh dari ketinggian ⟦1⟧. Efisiensi pembangkit ⟦2⟧. Berapa daya listrik keluarannya, dalam MW? ⟦3⟧`,
+  'ygr2eu9url': R`Sebuah atap dipasangi ⟦0⟧ panel surya, masing-masing menghasilkan ⟦1⟧ di bawah sinar matahari penuh. Atap itu menerima setara ⟦2⟧ jam sinar matahari penuh per hari. Berapa energi yang dihasilkan panel-panel itu setiap hari, dalam kWh?`,
+  '7q3mv65bn8': R`Daya total $⟦0⟧ \times ⟦1⟧ = ⟦2⟧\,\mathrm{W} = ⟦3⟧\,\mathrm{kW}$. Energi $= ⟦4⟧ \times ⟦5⟧ = ⟦6⟧$.`,
+  '1ieomdn004w': R`Sebuah generator diberi daya ⟦0⟧ dan menghasilkan daya listrik ⟦1⟧. Berapa efisiensinya?`,
+  '1u7uz3k6qyd': R`Sebuah pembangkit listrik membakar bahan bakar dengan laju ⟦0⟧ dan efisiensinya ⟦1⟧. Berapa daya yang terbuang sebagai panas?`,
+  'pm0k6e0fkq': R`Keluaran berguna $= ⟦0⟧ \times ⟦1⟧ = ⟦2⟧$, jadi ⟦3⟧ terbuang sebagai panas.`,
+  'hl17gwo0zw': R`Manakah yang merupakan sumber energi terbarukan?`,
+  '23tzmc391ja': R`Panas bumi`,
+  '1g0bdq2was': R`Angin`,
+  '1e7ut9i2n2u': R`Cahaya matahari`,
+  'xvs0r1390y': R`Air yang mengalir`,
+  '1mvfcies4hf': R`Batu bara`,
+  'b8aj1ch43k': R`Gas alam`,
+  '1uqwocpsci2': R`Uranium`,
+  '10hnhwhy9n4': R`Sumber terbarukan tergantikan secara alami secepat kita memakainya; bahan bakar fosil dan uranium tidak.`,
+  '1r44myitlv3': R`Perubahan energi apa yang terjadi di dalam sel surya?`,
+  'z16ny5kmc1': R`Energi cahaya menjadi energi listrik`,
+  '1ydfx6j4r1u': R`Energi panas menjadi energi listrik`,
+  '1k7b6gno0tk': R`Energi kimia menjadi energi listrik`,
+  '13dpgdt42nk': R`Energi kinetik menjadi energi listrik`,
+  '21l0j2c8bck': R`Sel fotovoltaik mengubah cahaya langsung menjadi listrik; foton melepaskan elektron di dalam semikonduktor.`,
+  'prunjjyggz': R`Apa kelemahan energi angin dan energi surya?`,
+  'fnwv79x3ic': R`Keluarannya bergantung pada cuaca`,
+  '2em36ff5shs': R`Melepaskan karbon dioksida`,
+  '2emgqz95lkm': R`Akan habis`,
+  '1mymhxsch7q': R`Menghasilkan limbah radioaktif`,
+  '9jxck1bdrz': R`Angin tidak selalu bertiup dan matahari tidak selalu bersinar, sehingga diperlukan penyimpanan energi atau pembangkit cadangan.`,
+  '20fupi3jemj': R`Sumber energi apa yang dipakai pembangkit listrik tenaga panas bumi?`,
+  'x0r4tbgzzg': R`Panas dari batuan panas di bawah tanah`,
+  'vdj7gs3ig1': R`Energi kinetik angin`,
+  '258t0hpxuf8': R`Cahaya matahari`,
+  '1uw96epmi13': R`Pembakaran batu bara`,
+  '16gntv7v755': R`Air yang dipompa ke bawah (atau yang sudah ada secara alami) dipanaskan oleh batuan panas dan kembali sebagai uap untuk menggerakkan turbin.`,
+  '1dctkrz4nbx': R`
+<p>Setiap benda memancarkan gelombang elektromagnetik, dan benda yang lebih panas memancar lebih kuat dan pada panjang gelombang yang lebih pendek. Dua hukum menggambarkan radiasi ini:</p>
+⟦0⟧
+<p>Yang pertama adalah <b>hukum pergeseran Wien</b>: permukaan Matahari yang bersuhu sekitar $5800\,\mathrm{K}$ memancar paling kuat pada cahaya tampak (sekitar $500\,\mathrm{nm}$), sedangkan Bumi yang bersuhu sekitar $288\,\mathrm{K}$ memancar paling kuat pada inframerah (sekitar $10\,\mathrm{\mu m}$). Yang kedua adalah <b>hukum Stefan–Boltzmann</b>, dengan $\sigma = 5{,}67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$ dan emisivitas $e$ ($e = 1$ untuk benda hitam sempurna).</p>
+<h3>Keseimbangan energi Bumi</h3>
+<p>Bumi menyerap cahaya matahari dan memancarkan inframerah kembali ke luar angkasa. Sekitar 30% cahaya matahari dipantulkan (<b>albedo</b> $\alpha \approx 0{,}3$). Menyeimbangkan energi yang diserap dengan energi yang dipancarkan, dengan konstanta matahari $S = 1361\,\mathrm{W/m^2}$, menghasilkan</p>
+⟦1⟧
+<p>Itu sama dengan $-18\,^\circ\mathrm{C}$, padahal suhu rata-rata permukaan Bumi sekitar $15\,^\circ\mathrm{C}$. Selisihnya disebabkan oleh <b>efek rumah kaca</b>.</p>
+⟦2⟧
+<p>Akibatnya antara lain naiknya permukaan laut (karena pemuaian air laut dan mencairnya es di daratan), cuaca yang lebih ekstrem, serta perubahan ekosistem dan pertanian. Emisi dapat dikurangi dengan menghemat energi, beralih ke sumber terbarukan, dan melindungi hutan.</p>
+⟦3⟧`,
+  '25qbz25dq5g': R`\lambda_{\max} T = 2{,}9 \times 10^{-3}\,\mathrm{m\,K} \qquad P = e\sigma A T^4`,
+  '11ekpd75c8g': R`<p><b>Gas rumah kaca</b> (uap air, karbon dioksida, metana, dinitrogen oksida) meloloskan cahaya matahari tampak tetapi menyerap inframerah yang dipancarkan permukaan Bumi, lalu memancarkan sebagian kembali ke bawah sehingga permukaan menjadi hangat. Pembakaran bahan bakar fosil dan penebangan hutan telah menaikkan kadar CO₂ dari sekitar 280 ppm sebelum tahun 1800 menjadi lebih dari 420 ppm saat ini, sehingga efek itu makin kuat: inilah <b>pemanasan global</b>.</p>`,
+  '2c5bjew3ndw': R`<p>Lubang ozon adalah masalah yang berbeda: ozon di atmosfer atas menahan ultraviolet, dan lapisan itu dirusak oleh CFC. Lubang ozon bukan penyebab utama pemanasan global.</p>`,
+  'a413z1zy4a': R`permukaan Matahari`,
+  'yoi73866b': R`sebuah bintang`,
+  'v5amddjc9e': R`sebuah bintang merah`,
+  'mobadgewup': R`filamen lampu pijar`,
+  '18akkuuzta3': R`permukaan Bumi`,
+  '1bgj1l6es9b': R`tubuh manusia`,
+  '7pzas2bk2h': R`Suhu ⟦0⟧ sekitar ⟦1⟧. Pada panjang gelombang berapa radiasinya paling kuat, dalam ⟦2⟧? (Tetapan Wien $2{,}9 \times 10^{-3}\,\mathrm{m\,K}$.)`,
+  '2ganho3hy90': R`$\lambda_{\max} = \frac{2{,}9 \times 10^{-3}}{⟦0⟧} = ⟦1⟧\,\mathrm{m} = ⟦2⟧$⟦3⟧.`,
+  'ia7clqzt4e': R`, yaitu inframerah`,
+  'g70vgnvcnl': R`Berapa daya yang dipancarkan setiap meter persegi benda hitam bersuhu ⟦0⟧? ($\sigma = 5{,}67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$.)`,
+  '2cf1hxpxa7w': R`$\frac{P}{A} = \sigma T^4 = 5{,}67 \times 10^{-8} \times ⟦0⟧^4 = ⟦1⟧$.`,
+  '1fbnqtymx3a': R`Suhu mutlak sebuah benda panas menjadi ⟦0⟧. Berapa kali perubahan daya yang dipancarkannya?`,
+  '1qea8ntcj9w': R`naik 50%`,
+  '25xyv41qty': R`$P \propto T^4$, jadi dayanya berubah dengan faktor $⟦0⟧^4 = ⟦1⟧$.`,
+  '3uwl9fgwzo': R`Tanpa atmosfer, berapa suhu rata-rata Bumi jika albedonya ⟦0⟧? Gunakan $T = \left(\frac{S(1 - \alpha)}{4\sigma}\right)^{1/4}$ dengan $S = 1361\,\mathrm{W/m^2}$ dan $\sigma = 5{,}67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$. Tuliskan jawabannya dalam kelvin.`,
+  '23kdkkon8ua': R`$T = \left(\frac{1361 \times ⟦0⟧}{4 \times 5{,}67 \times 10^{-8}}\right)^{1/4} = ⟦1⟧$, yaitu sekitar ⟦2⟧. Efek rumah kaca membuat permukaan yang sebenarnya lebih hangat.`,
+  '39mmvmcaqa': R`Sebuah rumah tangga memakai listrik ⟦0⟧ per bulan. Jika pembangkitan setiap kWh melepaskan ⟦1⟧ CO₂, berapa CO₂ yang ditimbulkan setiap bulan?`,
+  '16mustvvbgc': R`$⟦0⟧ \times ⟦1⟧ = ⟦2⟧$ CO₂ setiap bulan (sekitar ⟦3⟧ per tahun).`,
+  '2ealcyufgih': R`Sebuah mobil menempuh ⟦0⟧ dengan satu liter bensin, dan pembakaran satu liter bensin melepaskan sekitar ⟦1⟧ CO₂. Berapa CO₂ yang dilepaskannya untuk jarak ⟦2⟧?`,
+  'dr3ki3pnzw': R`Bensin yang terpakai $= \frac{⟦0⟧}{⟦1⟧} = ⟦2⟧$ liter, jadi CO₂ $= ⟦3⟧ \times 2{,}3 = ⟦4⟧$.`,
+  'm3m9f4q7pb': R`Bagaimana gas rumah kaca menghangatkan permukaan Bumi?`,
+  '1kvsrxmvuut': R`Menyerap inframerah yang dipancarkan Bumi dan memancarkan sebagian kembali ke bawah`,
+  '1kro0kdebrw': R`Menyerap cahaya tampak sebelum mencapai tanah`,
+  '25gp1dlcuim': R`Membentuk lubang yang meloloskan lebih banyak ultraviolet`,
+  'bzrtpchzaa': R`Menghasilkan panas melalui reaksi kimia`,
+  '13tqcbz7obi': R`Cahaya matahari (sebagian besar cahaya tampak) diteruskan; tanah yang hangat memancarkan inframerah, yang diserap gas rumah kaca dan sebagian dipancarkan kembali ke bawah.`,
+  'halmbbq0dy': R`Manakah yang <b>bukan</b> gas rumah kaca?`,
+  '12guwpp52cw': R`Nitrogen`,
+  'dxja4u3nje': R`Karbon dioksida`,
+  '1050mw875i9': R`Metana`,
+  'ympyt352w3': R`Uap air`,
+  '2ab37617ucg': R`Nitrogen dan oksigen, gas utama penyusun udara, tidak menyerap inframerah. Karbon dioksida, metana, dan uap air menyerapnya.`,
+  '24m6jvhvnyx': R`Apa dua penyebab utama naiknya permukaan laut?`,
+  '2dubsnsz8mp': R`Pemuaian air laut dan mencairnya es di daratan`,
+  '2aiy7k3o7ba': R`Hujan dan sungai yang bertambah banyak`,
+  '2aaf2p4nw57': R`Mencairnya es laut dan penguapan`,
+  '1dzbf12khxe': R`Pasang surut dan gempa bumi`,
+  '9g3ub2qehe': R`Air yang lebih hangat memerlukan ruang yang lebih besar, dan gletser serta lapisan es yang mencair menambah air ke laut. Es laut yang terapung hampir tidak mengubah permukaan laut ketika mencair.`,
+  'kj9sw8abyl': R`Pada bagian spektrum manakah Bumi memancar paling kuat?`,
+  '1g9sox43ojh': R`Menurut hukum Wien, pada suhu sekitar 288 K puncaknya berada di dekat $10\,\mathrm{\mu m}$, yaitu inframerah.`,
+  '1jzyh2pnebl': R`
+<p>Bahan-bahan dikelompokkan menurut seberapa mudah muatan bergerak di dalamnya. <b>Konduktor</b> (logam) memiliki banyak elektron bebas; <b>isolator</b> hampir tidak memilikinya. <b>Semikonduktor</b> seperti silikon berada di antara keduanya, dan daya hantarnya meningkat ketika dipanaskan atau disinari.</p>
+<h3>Doping</h3>
+<p>Menambahkan sedikit sekali unsur lain mengubah semikonduktor secara drastis. Unsur golongan V (fosfor, arsen) menambahkan elektron lebih: semikonduktor <b>tipe-n</b>. Unsur golongan III (boron, galium) meninggalkan kekosongan yang disebut <b>hole</b> yang berperilaku sebagai muatan positif: semikonduktor <b>tipe-p</b>.</p>
+<h3>Dioda</h3>
+<p><b>Sambungan p–n</b> adalah sebuah <b>dioda</b>: dioda hanya menghantarkan arus ke satu arah. Pada <b>bias maju</b> (sisi p positif) dioda silikon menghantar setelah tegangannya melebihi sekitar $0{,}7\,\mathrm{V}$; pada <b>bias mundur</b> hampir tidak ada arus yang mengalir. Dioda mengubah AC menjadi DC (<b>penyearahan</b>). <b>Dioda pemancar cahaya</b> (LED) memancarkan cahaya ketika diberi bias maju dan memerlukan resistor seri untuk membatasi arusnya:</p>
+⟦0⟧
+<h3>Transistor</h3>
+<p>Transistor memungkinkan arus <b>basis</b> $I_B$ yang kecil mengendalikan arus <b>kolektor</b> yang jauh lebih besar, $I_C = \beta I_B$, dengan $\beta$ (sering 100 atau lebih) adalah penguatan arus. Transistor berfungsi sebagai penguat dan sebagai saklar; prosesor modern berisi miliaran transistor.</p>
+<h3>Gerbang logika</h3>
+⟦1⟧
+⟦2⟧
+⟦3⟧`,
+  'b75zb1pwu5': R`R = \frac{V_s - V_{\text{LED}}}{I}`,
+  'ivft9kfdi0': R`Gerbang`,
+  '2b2vvcooba0': R`Keluaran bernilai 1 jika…`,
+  '1r7zrrqvpnq': R`NOT`,
+  'ng9vkx7ilt': R`masukannya 0`,
+  'uixtugmls4': R`AND`,
+  'galfyqipq9': R`kedua masukan bernilai 1`,
+  '1lzp72styvf': R`OR`,
+  'sgq45zf2ih': R`paling sedikit satu masukan bernilai 1`,
+  'tlmtwc4w18': R`NAND`,
+  'k93ie7klyp': R`kedua masukan tidak sama-sama bernilai 1`,
+  '1udaue9onkb': R`NOR`,
+  '1dvsrofussb': R`kedua masukan bernilai 0`,
+  'y4odget7sv': R`XOR`,
+  '1pykhsgu6es': R`kedua masukan berbeda`,
+  '1koqm2il3m0': R`<p>Rangkaian digital bekerja dengan dua keadaan saja, 0 dan 1. Bilangan <b>biner</b> memakai perpangkatan 2: $1011_2 = 8 + 0 + 2 + 1 = 11$.</p>`,
+  '282xozfz6l5': R`<p>Ubah miliampere menjadi ampere sebelum memakai $R = V/I$: $20\,\mathrm{mA} = 0{,}02\,\mathrm{A}$.</p>`,
+  '2jkb08f2dg': R`merah`,
+  '1719de5b71t': R`hijau`,
+  '1a43z74k2oy': R`biru`,
+  '1agbxs9p8se': R`kuning`,
+  'mcd42l16h9': R`Sebuah LED ⟦0⟧ memerlukan tegangan ⟦1⟧ dan arus ⟦2⟧. Resistor berapa yang harus dipasang seri dengannya pada sumber tegangan ⟦3⟧?`,
+  '1nb0msahh8h': R`Resistor menanggung tegangan $⟦0⟧ - ⟦1⟧ = ⟦2⟧\,\mathrm{V}$, jadi $R = \frac{⟦3⟧}{⟦4⟧} = ⟦5⟧$.`,
+  '28e0hktce90': R`Sebuah transistor dengan penguatan arus ⟦0⟧ mengalirkan arus kolektor ⟦1⟧. Berapa arus basisnya, dalam µA?`,
+  'ryzx4vkvmh': R`Sebuah transistor memiliki penguatan arus $\beta = ⟦0⟧$. Arus basis sebesar ⟦1⟧ mengalir. Berapa arus kolektornya, dalam mA?`,
+  'jaql7bheoj': R`Masukan $(A, B)$ gerbang ⟦0⟧ berturut-turut bernilai $(0, 0)$, $(0, 1)$, $(1, 0)$, dan $(1, 1)$. Apa saja keluarannya?`,
+  '1mtjokmhpw9': R`Gerbang ⟦0⟧ menghasilkan 1 jika ⟦1⟧, jadi keluarannya ⟦2⟧.`,
+  '20l7lrpf5v3': R`Berapa keluaran gerbang ⟦0⟧ jika $A = ⟦1⟧$ dan $B = ⟦2⟧$?`,
+  'yhxm4nu6dj': R`Bergantung pada keluaran sebelumnya`,
+  '10xr4g5u8os': R`Tidak ada keluaran`,
+  '1e4mjooq9id': R`Gerbang ⟦0⟧ menghasilkan 1 jika ⟦1⟧. Di sini keluarannya ⟦2⟧.`,
+  'pwb7l3x34n': R`Ubahlah bilangan biner $⟦0⟧_2$ ke bilangan desimal.`,
+  '2a8xvq11t8u': R`Tuliskan bilangan desimal ⟦0⟧ dalam bentuk biner.`,
+  '1dd7u02yykk': R`$⟦0⟧ = ⟦1⟧$, jadi bentuk binernya $⟦2⟧_2$.`,
+  '1xxwf7c3y4q': R`Sebuah transformator memberikan tegangan efektif ⟦0⟧ kepada sebuah dioda silikon yang dipakai sebagai penyearah setengah gelombang. Berapa tegangan puncak pada beban, dengan memperhitungkan ⟦1⟧ untuk dioda?`,
+  '2dbhwnx5pft': R`Tegangan puncak masukan $V_0 = \sqrt2 \times ⟦0⟧ = ⟦1⟧\,\mathrm{V}$. Dioda menyerap ⟦2⟧, sehingga tersisa ⟦3⟧.`,
+  '2fo853eq7s0': R`Silikon didoping dengan fosfor (golongan V). Semikonduktor jenis apa yang terbentuk?`,
+  'v0cnigt4ja': R`tipe-n`,
+  '1phjnvmqqa4': R`tipe-p`,
+  '238v72pxkkz': R`isolator`,
+  '1pojtyp5yqn': R`konduktor`,
+  '1sn25oqbuqd': R`Fosfor memiliki satu elektron valensi lebih banyak daripada silikon, sehingga menambah elektron bebas: pembawa muatan negatif, tipe-n.`,
+  '18iu4rpnc5g': R`Silikon didoping dengan boron (golongan III). Apa pembawa muatan mayoritasnya?`,
+  'pm0hrkpch4': R`Hole`,
+  '1ye2rznydkg': R`Elektron bebas`,
+  'rm0zl0b17j': R`Proton`,
+  'k4cyscucp8': R`Ion`,
+  '5ix2ehiel4': R`Boron memiliki satu elektron valensi lebih sedikit, sehingga meninggalkan hole yang berperilaku sebagai pembawa muatan positif: tipe-p.`,
+  '1rg1jni825o': R`Sebuah dioda dipasang dengan bias mundur. Apa yang terjadi?`,
+  'pdv8odolb1': R`Hampir tidak ada arus yang mengalir`,
+  '1dg6dniogmz': R`Arus besar mengalir`,
+  '1r9h9gsiv5x': R`Dioda menyala`,
+  '1rpqil0hmfx': R`Dioda memperkuat arus`,
+  '6up74uvt0q': R`Pada bias mundur, lapisan deplesi pada sambungan melebar dan menghalangi arus.`,
+  '111drfx2m42': R`Apa yang terjadi pada hambatan semikonduktor ketika suhunya naik?`,
+  '1vomu4xn33e': R`Menjadi tak hingga`,
+  '1vms6qvcqry': R`Panas membebaskan lebih banyak pembawa muatan, sehingga semikonduktor menghantar lebih baik. Sifat ini dimanfaatkan pada termistor.`,
+  '1nn4mxs0j5f': R`Gerbang logika manakah yang menghasilkan keluaran 1 hanya jika kedua masukannya bernilai 1?`,
+  '29v97sippra': R`Gerbang AND memerlukan A dan B keduanya bernilai 1.`,
 });
 
 /* Bahasa Indonesia — 3-mech-a */

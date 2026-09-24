@@ -6,20 +6,20 @@ A companion to [Math Ladder](https://github.com/rendyhn/math-ladder): each topic
 
 ## Contents
 
-The topics are laid out in eight tracks. The first 12 topics are ready. The rest already appear in the menus and the prerequisite map, marked *coming soon*.
+The 45 topics are laid out in eight tracks, and all of them are ready.
 
-| Track | Ready | Planned |
-|---|---|---|
-| A. Foundations | quantities, units & conversions; vectors | measurement & significant figures |
-| B. Mechanics | motion in a straight line; free fall; projectile motion; Newton's laws; friction & inclined planes; work, energy & power; momentum & collisions | circular motion, rotation, equilibrium, gravitation, springs, fluids, centre of mass |
-| C. Waves & Sound | | simple harmonic motion, mechanical waves, sound |
-| D. Heat & Thermodynamics | temperature, heat & expansion | ideal gases, laws of thermodynamics, heat transfer |
-| E. Electricity & Magnetism | current, voltage & Ohm's law; DC circuits | electrostatics, capacitors, magnetism, induction, AC, electromagnetic waves |
-| F. Optics | | mirrors, lenses, optical instruments, interference |
-| G. Modern Physics | | relativity, photons, atoms, radioactivity, nuclear energy |
-| H. Physics & Technology | | renewable energy, climate, electronics |
+| Track | Topics |
+|---|---|
+| A. Foundations | quantities, units & conversions; measurement & significant figures; vectors |
+| B. Mechanics | motion in a straight line; vertical motion & free fall; projectile motion; circular motion; Newton's laws; friction & inclined planes; work, energy & power; momentum, impulse & collisions; rotation & torque; equilibrium of rigid bodies; gravitation & orbits; elasticity & springs; fluids at rest; fluids in motion; centre of mass & angular momentum |
+| C. Waves & Sound | simple harmonic motion; mechanical waves; sound (intensity, decibels, Doppler effect) |
+| D. Heat & Thermodynamics | temperature, heat & expansion; kinetic theory & ideal gases; laws of thermodynamics & heat engines; heat transfer |
+| E. Electricity & Magnetism | electrostatics; electric potential & capacitors; current, voltage & Ohm's law; DC circuits; magnetic fields & the Lorentz force; electromagnetic induction; alternating current; electromagnetic waves |
+| F. Optics | reflection & mirrors; refraction & lenses; optical instruments; interference & diffraction |
+| G. Modern Physics | special relativity; photons & the photoelectric effect; atomic models & spectra; nuclei & radioactivity; nuclear energy |
+| H. Physics & Technology | renewable & alternative energy; global warming & the greenhouse effect; semiconductors & basic electronics |
 
-Each ready topic has a lesson and a practice sheet. A sheet mixes multiple-choice and fill-in questions (or only one kind), checks the answers and folds out worked solutions. Diagrams (free-body diagrams, slopes, projectile paths, motion graphs and circuits) are drawn from each question's own numbers.
+Each topic has a lesson and a practice sheet. A sheet mixes multiple-choice and fill-in questions (or only one kind), checks the answers and folds out worked solutions. Diagrams (free-body diagrams, slopes, projectile paths, motion graphs, circuits, waves, ray diagrams for mirrors and lenses, energy levels and decay curves) are drawn from each question's own numbers.
 
 Each lesson opens with **Where this topic sits**: the topics it builds on, including topics on Math Ladder, and the topics it leads to, each with a one-sentence reason.
 
@@ -62,7 +62,7 @@ python tools/i18n.py check id    # coverage, placeholders, TeX and HTML checks
 python tools/i18n.py missing id  # strings still untranslated
 ```
 
-To write a planned topic, replace its `{ id, soon: true, title }` entry in the track file with a full topic (`blurb`, `lesson`, `gens`), then translate the new strings.
+To add a topic, add it to its track file first as `{ id, stage, soon: true, title }` (it then shows as *coming soon*), then replace that entry with a full topic (`blurb`, `lesson`, `gens`) and translate the new strings.
 
 ## Files
 
@@ -70,7 +70,7 @@ To write a planned topic, replace its `{ id, soon: true, title }` entry in the t
 |---|---|
 | `index.html` | The app, built from `src/`. English is built in; other languages load from `lang/`. |
 | `lang/<code>.js` | Built language packs. |
-| `src/tA-foundations.js` … `src/tH-technology.js` | Lessons and question generators for each track. Planned topics are listed here too. |
+| `src/tA-foundations.js` … `src/tH-technology.js` | Lessons and question generators for each track. |
 | `src/ladder.js` | Prerequisite links between topics and to Math Ladder, each with its reason. |
 | `src/phys.js` | Significant figures, units, scientific notation, and the SVG diagrams. |
 | `src/core.js` | Random numbers, number formatting, formula builders, the translation system. |

@@ -228,7 +228,7 @@ function cleanInput(raw) {
   s = s.replace(/(\d)[^\x00-\x7F\s\d()+\-*/^.,]+(\^[23])?$/u, '$1');      // …or a non-Latin unit written without a space (3500м, 12سم)
   return s.trim();
 }
-const PU = '(?:[kmgµμncp]?(?:ohms?|pa|hz|cal|wh|ev|n|j|w|v|a|c|g|m|s|l|k|t|f)|°c|°f|°|h|min|rad|rev|rpm|atm)(?:\\^?\\(?-?[123]\\)?)?';
+const PU = '(?:[kmgµμncp]?(?:ohms?|pa|hz|cal|wh|ev|bq|d|u|n|j|w|v|a|c|g|m|s|l|k|t|f)|°c|°f|°|h|min|rad|rev|rpm|atm)(?:\\^?\\(?-?[123]\\)?)?';
 const PHYS_UNIT = new RegExp(`(?<=[\\d)\\s])\\s*${PU}(?:\\s*[*/.]?\\s*${PU})*\\s*$`, 'u');
 function parseNum(raw) {
   const s = cleanInput(raw); if (!s) return null;

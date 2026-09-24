@@ -1,0 +1,175 @@
+/* Bahasa Indonesia — 18-modern-a */
+addT('id', {
+  '1ew761u2kqi': R`
+<p>Einstein menyusun teori relativitas khusus (1905) di atas dua <b>postulat</b>:</p>
+<ol><li>Hukum-hukum fisika berlaku sama di setiap kerangka acuan inersial (yang tidak dipercepat).</li><li>Kelajuan cahaya di ruang hampa, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$, sama bagi setiap pengamat, berapa pun kelajuan pengamat atau sumbernya.</li></ol>
+<p>Menerima kedua postulat itu berarti waktu dan panjang bergantung pada pengamat. Semuanya diatur oleh <b>faktor Lorentz</b></p>
+⟦0⟧
+<p>yang bernilai 1 pada kelajuan sehari-hari dan membesar tanpa batas ketika $v$ mendekati $c$. Untuk $v = 0{,}6c$, $\gamma = 1{,}25$; untuk $v = 0{,}8c$, $\gamma = \frac53$.</p>
+⟦1⟧
+<h3>Penjumlahan kecepatan</h3>
+<p>Kecepatan tidak dapat dijumlahkan begitu saja. Jika pesawat antariksa yang bergerak dengan kecepatan $v$ menembakkan wahana ke depan dengan kecepatan $u'$ relatif terhadap pesawat, pengamat melihat wahana itu bergerak dengan kecepatan</p>
+⟦2⟧
+<p>yang tidak pernah melebihi $c$.</p>
+<h3>Massa dan energi</h3>
+<p>Massa adalah salah satu bentuk energi. Benda bermassa $m$ yang diam memiliki <b>energi diam</b> $E_0 = mc^2$, dan energi totalnya ketika bergerak $E = \gamma mc^2$, sehingga energi kinetiknya $E_k = (\gamma - 1)mc^2$.</p>
+⟦3⟧`,
+  'v5mvitovf4': R`<p><b>Dilatasi waktu:</b> jam yang bergerak berdetak lebih lambat, $\Delta t = \gamma\,\Delta t_0$, dengan $\Delta t_0$ adalah <b>waktu sejati</b> yang diukur oleh jam yang diam relatif terhadap kejadian-kejadian itu.</p><p><b>Kontraksi panjang:</b> benda yang bergerak menjadi lebih pendek searah geraknya, $L = \dfrac{L_0}{\gamma}$, dengan $L_0$ adalah <b>panjang sejati</b> (diukur dalam keadaan diam).</p>`,
+  '2bq3bg1sabs': R`<p>Tuliskan kecepatan sebagai pecahan dari $c$: dengan begitu $v^2/c^2$ hanyalah kuadrat pecahan itu, dan $c$ saling menghilangkan.</p>`,
+  'dvkahsfr2o': R`Berapa faktor Lorentz $\gamma$ untuk benda yang bergerak dengan kecepatan $⟦0⟧c$?`,
+  '1w51gxfwxyu': R`Sebuah pesawat antariksa bergerak dengan kecepatan $⟦0⟧c$. Seorang astronaut di dalamnya mengukur selang waktu antara dua detak jamnya ⟦1⟧. Berapa lama selang waktu itu menurut pengamat di Bumi?`,
+  'wnjkdb33wp': R`$\gamma = \frac{1}{\sqrt{1 - ⟦0⟧^2}} = ⟦1⟧$, jadi $\Delta t = \gamma\,\Delta t_0 = ⟦2⟧ \times ⟦3⟧ = ⟦4⟧$. Jam yang bergerak berdetak lebih lambat.`,
+  '26pxyy3t9ts': R`Sebuah pesawat antariksa panjangnya ⟦0⟧ jika diukur dalam keadaan diam. Berapa panjangnya menurut pengamat ketika pesawat itu melintas dengan kecepatan $⟦1⟧c$?`,
+  'hxr4a3whwz': R`$\gamma = ⟦0⟧$, jadi $L = \frac{L_0}{\gamma} = \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  '2fxmt406esf': R`Rata-rata umur muon yang diam adalah ⟦0⟧. Berapa rata-rata umur muon yang bergerak dengan kecepatan $⟦1⟧c$, diukur dari Bumi?`,
+  '100wttpsxs9': R`$\gamma = \frac{1}{\sqrt{1 - ⟦0⟧^2}} = ⟦1⟧$, jadi $\Delta t = \gamma\,\Delta t_0 = ⟦2⟧ \times ⟦3⟧ = ⟦4⟧$. Inilah sebabnya muon yang terbentuk tinggi di atmosfer dapat mencapai permukaan tanah.`,
+  '16nid14geq7': R`Sebuah pesawat antariksa yang bergerak dengan kecepatan $⟦0⟧c$ relatif terhadap Bumi menembakkan wahana ke depan dengan kecepatan $⟦1⟧c$ relatif terhadap pesawat. Berapa kecepatan wahana relatif terhadap Bumi, sebagai pecahan dari $c$?`,
+  'rgf6bk9c35': R`$u = \frac{u' + v}{1 + u'v/c^2} = \frac{⟦0⟧ + ⟦1⟧}{1 + ⟦2⟧ \cdot ⟦3⟧} = ⟦4⟧c$, lebih kecil dari $c$ sebagaimana mestinya.`,
+  '2duk8r0cjqc': R`Berapa energi yang setara dengan massa ⟦0⟧? ($c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  '5fck4vhbmf': R`Ketik perpangkatan sepuluh seperti 9e13.`,
+  '8x97jk0pgd': R`$E = mc^2 = ⟦0⟧ \times (3{,}0 \times 10^{8})^2 = ⟦1⟧\,\mathrm{J}$.`,
+  'qayc48fv3t': R`Menurut relativitas khusus, besaran manakah yang sama bagi semua pengamat?`,
+  '1gx9b1a7xfg': R`Kelajuan cahaya di ruang hampa`,
+  'qbi3zembdk': R`Panjang benda yang bergerak`,
+  '1yylfvm3yq5': R`Selang waktu antara dua kejadian`,
+  '2a3ngf8t5du': R`Energi kinetik suatu benda`,
+  '9pr1dztq23': R`Inilah postulat kedua Einstein. Panjang dan waktu bergantung pada gerak pengamat.`,
+  '1j8486l1m9q': R`Mengapa pesawat antariksa yang bermassa tidak pernah dapat mencapai kelajuan cahaya?`,
+  '1vbma6cs0de': R`Energinya harus menjadi tak hingga`,
+  '5of4p25eht': R`Massanya akan menjadi nol`,
+  '1ju9139v6pl': R`Ruang angkasa terlalu hampa`,
+  'u8362f71kd': R`Mesinnya akan berhenti bekerja`,
+  'sw45zy7sck': R`$E = \gamma mc^2$ dan $\gamma$ membesar tanpa batas ketika $v \to c$, sehingga diperlukan energi yang tak hingga besarnya.`,
+  'dcrpsy3mld': R`Seorang astronaut bepergian dengan kelajuan tinggi ke sebuah bintang yang jauh lalu kembali. Dibandingkan saudara kembarnya di Bumi, dia:`,
+  '2def54nmxui': R`lebih muda`,
+  '1nzyn7twkj2': R`lebih tua`,
+  'ohhicxuk2r': R`sama umurnya`,
+  '1buxhc9lw24': R`bisa lebih tua atau lebih muda secara acak`,
+  '8wgwhz4d59': R`Jamnya (dan tubuhnya) berjalan lebih lambat relatif terhadap Bumi, sehingga waktu yang berlalu baginya lebih sedikit. Inilah paradoks kembar.`,
+  '104sg94tyb3': R`
+<p>Cahaya membawa energi dalam paket-paket kecil yang disebut <b>foton</b>. Planck dan Einstein menunjukkan bahwa energi satu foton hanya bergantung pada frekuensinya:</p>
+⟦0⟧
+<p>dengan tetapan Planck $h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$. Energi foton sangat kecil, sehingga sering dinyatakan dalam <b>elektronvolt</b>: $1\,\mathrm{eV} = 1{,}6 \times 10^{-19}\,\mathrm{J}$, yaitu energi yang diperoleh elektron ketika melewati beda potensial $1\,\mathrm{V}$.</p>
+<h3>Efek fotolistrik</h3>
+<p>Cahaya yang menyinari logam bersih dapat melepaskan elektron dari logam itu. Hasil percobaannya menunjukkan:</p>
+<ul><li>di bawah <b>frekuensi ambang</b> $f_0$ tidak ada elektron yang keluar, seterang apa pun cahayanya;</li><li>di atas frekuensi itu, elektron langsung keluar, dan energi kinetik maksimumnya bergantung pada frekuensi, bukan pada kecerahan;</li><li>cahaya yang lebih terang menghasilkan elektron yang <b>lebih banyak</b>, bukan yang lebih cepat.</li></ul>
+⟦1⟧
+<h3>Gelombang materi</h3>
+<p>De Broglie mengusulkan bahwa partikel juga berperilaku sebagai gelombang, dengan panjang gelombang $\lambda = \dfrac{h}{p} = \dfrac{h}{mv}$. Difraksi elektron membuktikannya, dan mikroskop elektron memanfaatkannya untuk melihat detail yang jauh lebih kecil daripada yang dapat dilihat dengan cahaya.</p>
+⟦2⟧`,
+  '18enfkx2h3o': R`E = hf = \frac{hc}{\lambda}`,
+  '1z2agzhwa5s': R`<p>Satu foton memberikan seluruh energinya kepada satu elektron. Sebagian energi itu, yaitu <b>fungsi kerja</b> $\phi = hf_0$, diperlukan untuk melepaskan elektron; sisanya menjadi energi kinetik:</p><p>$$E_{k,\max} = hf - \phi = eV_s$$</p><p>dengan $V_s$ adalah <b>potensial henti</b> yang diperlukan untuk menghentikan elektron tercepat.</p>`,
+  'q9fb6rowh5': R`<p>Jalan pintas yang berguna: $hc = 1240\,\mathrm{eV\,nm}$ (hingga 3 angka penting, $1{,}24 \times 10^{3}$), sehingga foton dengan panjang gelombang $\lambda$ dalam nm memiliki energi sekitar $\frac{1240}{\lambda}\,\mathrm{eV}$.</p>`,
+  '1nxog0s2qbw': R`Berapa energi foton dengan panjang gelombang ⟦0⟧, dalam joule? ($h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  '1fgf22ybxx8': R`Ketik perpangkatan sepuluh seperti 3,3e-19.`,
+  '12epezir3wv': R`$E = \frac{hc}{\lambda} = \frac{6{,}63 \times 10^{-34} \cdot 3{,}0 \times 10^{8}}{⟦0⟧ \times 10^{-9}} = ⟦1⟧\,\mathrm{J}$.`,
+  'eqkxnqeujl': R`Berapa energi foton dengan panjang gelombang ⟦0⟧, dalam elektronvolt? (Gunakan $hc = 1240\,\mathrm{eV\,nm}$.)`,
+  '1t6cav1mtn8': R`sesium`,
+  'ahw0qmdpcd': R`natrium`,
+  '133xjfi0kfo': R`kalium`,
+  'bftet78xwv': R`kalsium`,
+  '1dm2eqt8sp8': R`seng`,
+  '1hilubw0x7z': R`Cahaya dengan panjang gelombang ⟦0⟧ menyinari ⟦1⟧ yang fungsi kerjanya ⟦2⟧. Berapa ⟦3⟧? (Gunakan $hc = 1240\,\mathrm{eV\,nm}$.)`,
+  '16z8hfd48yk': R`potensial hentinya`,
+  '1895iy8ygzn': R`energi kinetik maksimum elektron yang terlepas, dalam eV`,
+  '1ttq7fhudur': R`Energi foton $E = \frac{1240}{⟦0⟧} = ⟦1⟧\,\mathrm{eV}$. $E_{k,\max} = E - \phi = ⟦2⟧ - ⟦3⟧ = ⟦4⟧$⟦5⟧.`,
+  '9c2e3vccav': R`, jadi potensial hentinya ⟦0⟧`,
+  '1w3avete4ca': R`Fungsi kerja ⟦0⟧ adalah ⟦1⟧. Berapa frekuensi ambangnya? ($h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$, $1\,\mathrm{eV} = 1{,}6 \times 10^{-19}\,\mathrm{J}$.)`,
+  '1cy02f4sklq': R`$f_0 = \frac{\phi}{h} = \frac{⟦0⟧ \times 1{,}6 \times 10^{-19}}{6{,}63 \times 10^{-34}} = ⟦1⟧\,\mathrm{Hz}$.`,
+  '7occgrgaao': R`Fungsi kerja ⟦0⟧ adalah ⟦1⟧. Berapa panjang gelombang terpanjang cahaya yang masih dapat melepaskan elektron dari logam itu, dalam nm? (Gunakan $hc = 1240\,\mathrm{eV\,nm}$.)`,
+  '1v5yo60yats': R`$\lambda_0 = \frac{hc}{\phi} = \frac{1240}{⟦0⟧} = ⟦1⟧$. Panjang gelombang yang lebih panjang memiliki energi per foton yang terlalu kecil.`,
+  'vpcv96svlb': R`Sebuah laser memancarkan ⟦0⟧ cahaya dengan panjang gelombang ⟦1⟧. Berapa banyak foton yang dipancarkannya setiap detik? ($h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  '1s07evp0y7y': R`Ketik perpangkatan sepuluh seperti 2,5e15.`,
+  'yv7one3398': R`Setiap foton membawa $E = \frac{hc}{\lambda} = ⟦0⟧\,\mathrm{J}$. Banyaknya foton per detik $\frac{P}{E} = \frac{⟦1⟧ \times 10^{-3}}{⟦2⟧} = ⟦3⟧$.`,
+  '1h2zza138pv': R`Berapa panjang gelombang de Broglie sebuah elektron yang bergerak dengan kelajuan $⟦0⟧\,\mathrm{m/s}$, dalam nm? ($h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$, $m_e = 9{,}11 \times 10^{-31}\,\mathrm{kg}$.)`,
+  '1r4um7a7xo7': R`$\lambda = \frac{h}{mv} = \frac{6{,}63 \times 10^{-34}}{9{,}11 \times 10^{-31} \cdot ⟦0⟧} = ⟦1⟧\,\mathrm{m} = ⟦2⟧$.`,
+  '1qnhwr9fj0y': R`Pada efek fotolistrik, apa yang terjadi jika cahaya dibuat lebih terang tetapi frekuensinya tetap?`,
+  '14tyl4prpfl': R`Elektron yang terlepas lebih banyak, dengan energi kinetik maksimum yang sama`,
+  '2akecprdw2c': R`Elektron keluar lebih cepat`,
+  '1sqh9fja7yn': R`Elektron yang terlepas lebih sedikit`,
+  'couz47qj7u': R`Tidak ada yang berubah sama sekali`,
+  '76n5h9d9v3': R`Cahaya yang lebih terang berarti foton lebih banyak, sehingga elektron lebih banyak; setiap foton tetap berenergi $hf$, sehingga energi kinetik maksimumnya tidak berubah.`,
+  '1mckokp87tm': R`Cahaya dengan frekuensi di bawah frekuensi ambang menyinari logam dalam waktu lama. Apa yang terjadi?`,
+  '1m9sgluqdli': R`Tidak ada elektron yang terlepas`,
+  'wtxqlgpvu9': R`Lama-kelamaan elektron terlepas`,
+  'o9nvke63l4': R`Elektron hanya terlepas jika cahayanya terang`,
+  '14hiivx9euk': R`Logam memancarkan foton`,
+  '1x5klq5fvcu': R`Setiap foton memiliki energi yang terlalu kecil untuk melepaskan elektron, dan elektron tidak dapat mengumpulkan energi dari beberapa foton.`,
+  '1yrr6i8879': R`Percobaan manakah yang menunjukkan bahwa elektron berperilaku sebagai gelombang?`,
+  'x7x2w6b9rt': R`Difraksi elektron`,
+  '1vgnkwh6teb': R`Efek fotolistrik`,
+  'kdflz4cqey': R`Percobaan hamburan foil emas Rutherford`,
+  '239xtu149ab': R`Percobaan tetes minyak Millikan`,
+  '27f639s4s9h': R`Berkas elektron yang melewati kristal menghasilkan pola difraksi, sama seperti gelombang.`,
+  '28m8ukd7io1': R`Bukti manakah yang menunjukkan bahwa cahaya berperilaku sebagai partikel?`,
+  'padb6170ja': R`Interferensi celah ganda`,
+  '222gjxxnpjv': R`Difraksi melalui celah sempit`,
+  'fjsh4vfaqm': R`Polarisasi`,
+  '1gzc807a4v0': R`Frekuensi ambang dan pelepasan elektron yang seketika hanya dapat dijelaskan jika cahaya datang dalam paket-paket berenergi $hf$. Interferensi, difraksi, dan polarisasi menunjukkan sifat gelombangnya.`,
+  'gmyi9rl91h': R`
+<h3>Model-model atom</h3>
+⟦0⟧
+<p>Pada <b>percobaan hamburan foil emas</b> Rutherford, sebagian besar partikel alfa menembus lurus, tetapi beberapa terpantul kembali. Jadi atom sebagian besar berupa ruang kosong, dengan massa dan muatan positifnya terpusat pada inti yang sangat kecil.</p>
+<h3>Model atom hidrogen Bohr</h3>
+⟦1⟧
+⟦2⟧
+⟦3⟧
+<p>Karena hanya selisih energi tertentu yang mungkin, setiap unsur hanya memancarkan dan menyerap panjang gelombang tertentu: <b>spektrum garisnya</b>, semacam sidik jari yang dipakai untuk mengenali unsur-unsur di bintang. Untuk hidrogen, transisi ke $n = 1$ menghasilkan <b>deret Lyman</b> (ultraviolet), transisi ke $n = 2$ <b>deret Balmer</b> (cahaya tampak), dan transisi ke $n = 3$ <b>deret Paschen</b> (inframerah).</p>
+⟦4⟧`,
+  'ki5bhylf5o': R`Model`,
+  '5g7bmgw51u': R`Gambaran`,
+  'e3m8pc7x3h': R`Thomson (1897)`,
+  'tgm2g87rdm': R`bola bermuatan positif dengan elektron-elektron tertanam di dalamnya, seperti kismis dalam roti`,
+  '1vbopqkzgey': R`tidak dapat menjelaskan hasil percobaan foil emas`,
+  'rm2l11201n': R`Rutherford (1911)`,
+  '1nb13m6bnhg': R`inti positif yang sangat kecil dan padat, dengan elektron-elektron yang mengorbit jauh di luarnya`,
+  'qwvd64ygu': R`elektron yang mengorbit seharusnya memancarkan energi dan jatuh berpilin ke inti`,
+  '7snkcfe6zh': R`Bohr (1913)`,
+  '1jteqxpz1gi': R`elektron hanya berada pada lintasan-lintasan tertentu yang diizinkan, masing-masing dengan energi tetap`,
+  '1kf29ylfqg1': R`hanya berlaku untuk atom mirip hidrogen`,
+  '1vpmx6ftn31': R`E_n = -\frac{13{,}6\,\mathrm{eV}}{n^2} \qquad r_n = n^2 \times 0{,}053\,\mathrm{nm}`,
+  '1x0bckvin6w': R`Tingkat-tingkat energi hidrogen, dengan elektron yang turun dari n = 3 ke n = 2`,
+  '2bzkuxr7dbi': R`Tingkat-tingkat energi hidrogen (tidak berskala). Transisi dari $n = 3$ ke $n = 2$ memancarkan foton merah berenergi $1{,}89\,\mathrm{eV}$.`,
+  'wyrtzm67pu': R`<p>Ketika elektron turun dari tingkat yang lebih tinggi ke tingkat yang lebih rendah, elektron memancarkan foton yang energinya tepat sama dengan selisih energinya: $hf = E_{\text{atas}} - E_{\text{bawah}}$. Menyerap foton dengan energi yang tepat sama menaikkannya kembali. Energi yang diperlukan untuk melepaskan elektron sepenuhnya dari tingkat $n$ adalah <b>energi ionisasi</b>, $\frac{13{,}6}{n^2}\,\mathrm{eV}$.</p>`,
+  '1z9gegum1p1': R`<p>Energi tingkat-tingkat itu negatif karena elektronnya terikat: perlu ditambahkan energi untuk melepaskannya. Dengan $hc = 1240\,\mathrm{eV\,nm}$, panjang gelombang foton $\lambda = \frac{1240}{\Delta E}$ dalam nm jika $\Delta E$ dalam eV.</p>`,
+  'bgwixr92m4': R`Berapa energi yang diperlukan untuk mengionisasi atom hidrogen yang elektronnya berada di tingkat $n = ⟦0⟧$?`,
+  'yzd9496h20': R`Elektron harus dinaikkan dari $E_{⟦0⟧} = -\frac{13{,}6}{⟦1⟧^2} = ⟦2⟧\,\mathrm{eV}$ ke $0$, jadi diperlukan ⟦3⟧.`,
+  '1yzjv598qmy': R`Berapa energi elektron pada tingkat $n = ⟦0⟧$ atom hidrogen? (Sertakan tanda minusnya.)`,
+  'zufpoezt6t': R`$E_n = -\frac{13{,}6}{n^2} = -\frac{13{,}6}{⟦0⟧} = ⟦1⟧$.`,
+  '12183t60ks0': R`Elektron pada atom hidrogen turun dari tingkat $n = ⟦0⟧$ ke $n = ⟦1⟧$. Berapa energi foton yang dipancarkan?⟦2⟧`,
+  'r8007l4uoq': R`Tingkat-tingkat energi hidrogen dengan transisi pada soal`,
+  'ymq1mu70hz': R`$\Delta E = E_{⟦0⟧} - E_{⟦1⟧} = -\frac{13{,}6}{⟦2⟧} + \frac{13{,}6}{⟦3⟧} = ⟦4⟧$.`,
+  'zwj1741ei1': R`Berapa panjang gelombang foton yang dipancarkan ketika elektron hidrogen turun dari $n = ⟦0⟧$ ke $n = ⟦1⟧$, dalam nm? (Gunakan $hc = 1240\,\mathrm{eV\,nm}$.)`,
+  'm970bbqzc': R`$\Delta E = 13{,}6\left(\frac{1}{⟦0⟧} - \frac{1}{⟦1⟧}\right) = ⟦2⟧\,\mathrm{eV}$, jadi $\lambda = \frac{1240}{⟦3⟧} = ⟦4⟧$⟦5⟧.`,
+  '1ps67b9ngjv': R` (cahaya tampak, deret Balmer)`,
+  '4elyzv9aio': R` (ultraviolet, deret Lyman)`,
+  'iaggzj58mq': R` (inframerah, deret Paschen)`,
+  '207946vxpl': R`Menurut model Bohr, jari-jari lintasan hidrogen terkecil adalah ⟦0⟧. Berapa jari-jari lintasan $n = ⟦1⟧$?`,
+  'mn4ct9qj79': R`$r_n = n^2 r_1 = ⟦0⟧ \times 0{,}053 = ⟦1⟧$.`,
+  '15p3jhjf2kc': R`Atom-atom hidrogen dieksitasi ke tingkat $n = ⟦0⟧$. Ketika elektron-elektronnya kembali ke keadaan dasar melalui semua jalur yang mungkin, berapa banyak garis spektrum berbeda yang dapat dipancarkan?`,
+  'aw0lu9o4uk': R`Setiap pasangan tingkat menghasilkan satu garis: $\frac{n(n-1)}{2} = \frac{⟦0⟧ \cdot ⟦1⟧}{2} = ⟦2⟧$.`,
+  '16gnmm4vdju': R`Pada percobaan foil emas Rutherford, sebagian besar partikel alfa menembus foil dengan lurus. Apa yang ditunjukkan hal ini?`,
+  'u1ueafgfp8': R`Atom sebagian besar berupa ruang kosong`,
+  'a2f683lfl4': R`Atom berupa bola pejal`,
+  '2626nhc9jfh': R`Elektron sangat berat`,
+  '13lj76jbbgk': R`Partikel alfa bermuatan negatif`,
+  '20ww5vml3k': R`Hanya sebagian sangat kecil yang terpantul kembali, oleh inti yang sangat kecil, padat, dan positif; bagian atom lainnya meloloskan partikel-partikel itu.`,
+  '22sytcchefg': R`Deret garis hidrogen manakah yang berada di bagian cahaya tampak pada spektrum?`,
+  '1i0ay5ahqzh': R`Balmer`,
+  '1kim79mwow1': R`Lyman`,
+  'gsuud6n6hj': R`Paschen`,
+  '11jhdlrolrb': R`Brackett`,
+  'ffnufnr19v': R`Transisi ke $n = 2$ (deret Balmer) menghasilkan cahaya tampak; transisi ke $n = 1$ menghasilkan ultraviolet dan transisi ke $n = 3$ menghasilkan inframerah.`,
+  '246kq4prwbl': R`Mengapa setiap unsur memiliki spektrum garis sendiri?`,
+  '28uzrvxiyuu': R`Atom-atomnya memiliki susunan tingkat energi sendiri`,
+  'uo06bbjntu': R`Atom-atomnya memiliki massa yang berbeda`,
+  '1gkgjet9kfk': R`Intinya memancarkan cahaya`,
+  '316v0x06ln': R`Elektronnya bergerak dengan kelajuan yang berbeda`,
+  '12wh6nk068h': R`Foton dipancarkan dengan energi yang sama dengan selisih antartingkat, dan tingkat-tingkat itu berbeda untuk setiap unsur.`,
+  'sdafdmsoo8': R`Apa kelemahan utama model atom Rutherford?`,
+  '1f01rkcxuax': R`Elektron yang mengorbit seharusnya memancarkan energi dan jatuh berpilin ke inti`,
+  '4uvi43mww5': R`Tidak memiliki inti`,
+  'lr8ylcgwe2': R`Tidak dapat menjelaskan hasil percobaan foil emas`,
+  '1jczt3vg3uy': R`Menempatkan elektron di dalam inti`,
+  'qt74y1b7ec': R`Menurut fisika klasik, muatan yang dipercepat memancarkan radiasi. Bohr mengatasinya dengan hanya mengizinkan lintasan-lintasan stabil tertentu.`,
+});

@@ -1,0 +1,435 @@
+##### mirrors
+@5xmq0evl31  ; 0=Key(T`<p>The angle of incidence equals t | 1=Fig(opticsSvg('concave', 10, 25, T`Ray d | 2=Fm(T`\frac{1}{f} = \frac{1}{s} + \frac{1 | 3=Fig(opticsSvg('convex', 10, 15, T`Ray di | 4=Tip(T`<p>Convex mirrors give a wide fiel
+
+<p>Light travels in straight lines called <b>rays</b>. When a ray hits a smooth surface it bounces off according to the <b>law of reflection</b>:</p>
+⟦0⟧
+<h3>Plane mirrors</h3>
+<p>The image in a flat mirror is <b>virtual</b> (the light only seems to come from it), <b>upright</b>, the <b>same size</b> as the object, <b>laterally inverted</b> (left and right swapped) and as far behind the mirror as the object is in front. Two mirrors at an angle $\alpha$ form $n = \dfrac{360^\circ}{\alpha} - 1$ images.</p>
+<h3>Curved mirrors</h3>
+<p>A <b>concave</b> mirror (curved inwards, like the inside of a spoon) brings parallel rays together at its <b>focal point</b> F. A <b>convex</b> mirror (curved outwards) spreads them out as if they came from a focal point behind it. The focal length is half the radius of curvature, $f = \frac{R}{2}$.</p>
+⟦1⟧
+⟦2⟧
+<p>Here $s$ is the object distance and $s'$ the image distance. Use the sign rule: $f$ is positive for a concave mirror and negative for a convex one; a positive $s'$ is a <b>real</b> image in front of the mirror, a negative $s'$ a <b>virtual</b> image behind it.</p>
+⟦3⟧
+⟦4⟧
+@sloay995au
+<p>The angle of incidence equals the angle of reflection, $i = r$. Both angles are measured from the <b>normal</b>, the line at right angles to the surface, and the incident ray, reflected ray and normal lie in one plane.</p>
+@3pwq8jv1vb
+Ray diagram: an object beyond C in front of a concave mirror forms a real, inverted, smaller image between F and C
+@z96iey12in
+Object beyond C: the image is real, inverted and smaller.
+@12a9ebziswg
+Ray diagram: a convex mirror always forms a virtual, upright, smaller image behind the mirror
+@20zoy67bn1p
+A convex mirror always gives a virtual, upright, smaller image.
+@26astc4ievj
+<p>Convex mirrors give a wide field of view, so they are used as car side mirrors and at blind corners. Concave mirrors are used in torches and headlights (bulb at F gives a parallel beam) and as make-up mirrors (object inside F gives a magnified, upright image).</p>
+@3wzfbbu4j2  ; 0=Q(d, 'm')
+A girl stands ⟦0⟧ in front of a plane mirror. How far is she from her image?
+@1rkdt9joqjc  ; 0=Q(d, 'm') | 1=M(d) | 2=QT(sig(2 * d), 'm')
+The image is ⟦0⟧ behind the mirror, so the distance between her and her image is $2 \times ⟦1⟧ = ⟦2⟧$.
+@3gobfavq0v  ; 0=Q(v, 'm/s')
+A boy walks towards a plane mirror at ⟦0⟧. How fast does he approach his image?
+@2akxbe5w5kj  ; 0=Q(v, 'm/s') | 1=M(v) | 2=QT(sig(2 * v), 'm/s')
+He and his image each move towards the mirror at ⟦0⟧, so they close in on each other at $2 \times ⟦1⟧ = ⟦2⟧$.
+@1dg18nnj76x  ; 0=Q(th, '°')
+A ray of light strikes a plane mirror making an angle of ⟦0⟧ with the <b>surface</b> of the mirror. What is the angle of reflection?
+@krwaypl39z  ; 0=Q(th, '°')
+A ray of light strikes a plane mirror with an angle of incidence of ⟦0⟧. What is the angle between the incident and reflected rays?
+@25qk9f4f9qm  ; 0=th | 1=90 - th | 2=90 - th
+Angles are measured from the normal: $i = 90^\circ - ⟦0⟧^\circ = ⟦1⟧^\circ$, and $r = i = ⟦2⟧^\circ$.
+@1dyw5j2qa0z  ; 0=th | 1=2 * th
+$r = i = ⟦0⟧^\circ$, so the angle between the rays is $i + r = ⟦1⟧^\circ$.
+@21n5jsptatn  ; 0=Q(a, '°')
+Two plane mirrors are placed at an angle of ⟦0⟧ to each other, with a candle between them. How many images of the candle are formed?
+@197di70az2n
+Ray diagram for the object and mirror in the question
+@5c08i75xf9  ; 0=Q(s, 'cm') | 1=Q(f, 'cm') | 2=fig
+An object is placed ⟦0⟧ in front of a concave mirror of focal length ⟦1⟧. How far from the mirror is the image formed?⟦2⟧
+@23zz167c7bm  ; 0=f | 1=M(s) | 2=QT(sp, 'cm') | 3=NUM(Mg)
+$\frac{1}{s'} = \frac{1}{f} - \frac{1}{s} = \frac{1}{⟦0⟧} - \frac{1}{⟦1⟧}$, so $s' = ⟦2⟧$ in front of the mirror (a real image, magnification ⟦3⟧).
+@1yq6ab2zjn0  ; 0=Q(s, 'cm') | 1=Q(f, 'cm') | 2=fig
+An object is placed ⟦0⟧ in front of a convex mirror of focal length ⟦1⟧. How far behind the mirror is the image?⟦2⟧
+@2dvs82mfvj3  ; 0=f | 1=f | 2=M(s) | 3=M(sp) | 4=Q(sig(-sp), 'cm')
+For a convex mirror $f = -⟦0⟧\,\mathrm{cm}$: $\frac{1}{s'} = -\frac{1}{⟦1⟧} - \frac{1}{⟦2⟧}$, so $s' = ⟦3⟧\,\mathrm{cm}$. The minus sign means a virtual image ⟦4⟧ behind the mirror.
+@nmj656u3y0  ; 0=Q(h, 'cm') | 1=Q(s, 'cm') | 2=Q(f, 'cm')
+An object ⟦0⟧ tall stands ⟦1⟧ in front of a concave mirror of focal length ⟦2⟧. How tall is its image?
+@x165krom7l  ; 0=M(s) | 1=f | 2=M(s) | 3=f | 4=M(sig(sp)) | 5=h | 6=M(sig(sp)) | 7=M(s) | 8=QT(sig(h * sp / s), 'cm')
+$s' = \frac{sf}{s - f} = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧ - ⟦3⟧} = ⟦4⟧\,\mathrm{cm}$, so $h' = h\frac{s'}{s} = ⟦5⟧ \cdot \frac{⟦6⟧}{⟦7⟧} = ⟦8⟧$.
+@vwr6b1rqk4  ; 0=Q(s, 'cm') | 1=Q(f, 'cm')
+An object stands ⟦0⟧ in front of a concave mirror of focal length ⟦1⟧. What is the magnification?
+@2esr8jpmvyi  ; 0=M(sig(sp)) | 1=M(sig(sp)) | 2=M(s) | 3=M(Mg)
+$s' = \frac{sf}{s - f} = ⟦0⟧\,\mathrm{cm}$, so $M = \frac{s'}{s} = \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.
+@1ih8nkbei01  ; 0=Q(R / 2, 'cm')
+A concave mirror has a focal length of ⟦0⟧. What is its radius of curvature?
+@1242p72410u  ; 0=Q(R, 'cm')
+A concave mirror has a radius of curvature of ⟦0⟧. What is its focal length?
+@1h8z2jvmzvr
+An object is placed between the focal point and a concave mirror. What kind of image is formed?
+@v99bvgxqv3
+Virtual, upright and magnified
+@3xs9gg97ub
+Real, inverted and smaller
+@ny82vqzz7u
+Real, inverted and magnified
+@1teatxfhddr
+Virtual, upright and smaller
+@zft5ktd9v2
+Inside F the reflected rays spread out, so they only seem to meet behind the mirror: the image is virtual, upright and larger. This is how a make-up mirror works.
+@1ttw1xvq3b2
+Why are convex mirrors used as car side mirrors?
+@1z57rks2fmm
+They give a wide field of view
+@13cssiahml7
+They make objects look bigger
+@b1te2uo6m7
+They form real images
+@xnsm8t4ufe
+They focus sunlight
+@3uwk8tqb6f
+A convex mirror spreads the reflected rays, so a small mirror shows a wide area behind the car. The images are smaller, so cars look further away than they are.
+@1riedjl01hb
+Where should the bulb of a torch be placed relative to its concave mirror to give a parallel beam?
+@1f66eqb3rda
+At the focal point
+@s5gses9zl4
+At the centre of curvature
+@2enzalr78f9
+Between F and the mirror
+@15n08mqaqeq
+Far from the mirror
+@h62ytrft9v
+Rays from the focal point reflect off a concave mirror parallel to the axis.
+@1dgbyj3bp8j
+What kind of image does a plane mirror form?
+@8ltpej1tb5
+Virtual, upright, same size
+@1dkj0jhe6kn
+Real, inverted, same size
+@k4gy3m5ff8
+Virtual, upright, smaller
+@2c9ddi203cv
+Real, upright, magnified
+@c3iuc2zfsn
+The image is virtual (behind the mirror), upright, the same size and laterally inverted.
+
+##### lenses
+@179fybctq7n  ; 0=Fm(T`n = \frac{c}{v} \qquad n_1 \sin\the | 1=Fig(refractionSvg(40, 25, T`air`, T`glas | 2=Fm(T`\frac{1}{f} = \frac{1}{s} + \frac{1 | 3=Fig(opticsSvg('converging', 10, 25, T`Ra | 4=Key(T`<p>A positive $s'$ is a <b>real</b | 5=Tip(T`<p>An object inside the focal leng
+
+<p>Light slows down when it enters a denser medium such as water or glass, and if it arrives at an angle it changes direction. This bending is <b>refraction</b>. The <b>refractive index</b> of a medium compares the speed of light in a vacuum with its speed there:</p>
+⟦0⟧
+<p>The second equation is <b>Snell's law</b>; the angles are measured from the normal. Going into a denser medium (larger $n$) the ray bends <b>towards</b> the normal.</p>
+⟦1⟧
+<h3>Total internal reflection</h3>
+<p>Going from a denser into a less dense medium the ray bends away from the normal. Beyond the <b>critical angle</b> $C$ no light gets out at all: it is all reflected. For a medium of index $n$ against air, $\sin C = \dfrac{1}{n}$. Optical fibres and the sparkle of diamonds use total internal reflection.</p>
+<h3>Lenses</h3>
+<p>A <b>converging</b> (convex) lens brings parallel rays together at its focal point; a <b>diverging</b> (concave) lens spreads them out. The same equations as for mirrors apply, with $f$ positive for converging and negative for diverging lenses:</p>
+⟦2⟧
+⟦3⟧
+⟦4⟧
+⟦5⟧
+@zuhhq1o61d
+A ray passing from air into glass bends towards the normal
+@wcn395gapo
+From air into glass the ray bends towards the normal.
+@24pol08m91g
+Ray diagram: an object beyond 2F in front of a converging lens forms a real, inverted, smaller image on the other side
+@26nincv0ryc
+A converging lens: a ray parallel to the axis passes through F; a ray through the centre goes straight on.
+@lqzc7zqsi0
+<p>A positive $s'$ is a <b>real</b> image on the far side of the lens; a negative $s'$ is a <b>virtual</b> image on the same side as the object. The <b>power</b> $P$ is measured in dioptres (D) when $f$ is in metres: a lens with $f = 50\,\mathrm{cm}$ has $P = 2\,\mathrm{D}$.</p>
+@cf1ts18l8b
+<p>An object inside the focal length of a converging lens gives a virtual, upright, magnified image: this is a magnifying glass. A diverging lens always gives a virtual, upright, smaller image.</p>
+@n6qnovqr0x
+diamond
+@bacelxbizn
+ice
+@1cce1ko3mbd  ; 0=mat | 1=NUM(n)
+The refractive index of ⟦0⟧ is ⟦1⟧. What is the speed of light in it? ($c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)
+@2003tfvqpsj
+Type a power of ten like 2e8.
+@1ch5krcivbw  ; 0=M(n) | 1=sciT(v)
+$v = \frac{c}{n} = \frac{3.0 \times 10^{8}}{⟦0⟧} = ⟦1⟧\,\mathrm{m/s}$.
+@1mpfgiztboo  ; 0=sciT(v)
+Light travels at $⟦0⟧\,\mathrm{m/s}$ in a transparent material. What is its refractive index? ($c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)
+@lez44myyd3  ; 0=sciT(v) | 1=M(sig(3e8 / sig(v)))
+$n = \frac{c}{v} = \frac{3.0 \times 10^{8}}{⟦0⟧} = ⟦1⟧$.
+@1k3orhngcrq  ; 0=mat | 1=M(n) | 2=Q(i, '°') | 3=Fig(refractionSvg(i, r, T`air`, mat, T`A
+A ray of light passes from air into ⟦0⟧ ($n = ⟦1⟧$) with an angle of incidence of ⟦2⟧. What is the angle of refraction?⟦3⟧
+@2dunb6st0m4
+A ray passing from air into a denser material
+@8nwj2evsle  ; 0=i | 1=M(n) | 2=M(sig(sinD(i) / n)) | 3=QT(r, '°')
+$\sin r = \frac{\sin ⟦0⟧^\circ}{⟦1⟧} = ⟦2⟧$, so $r = ⟦3⟧$. The ray bends towards the normal.
+@157g6978u7e
+plastic
+@imx534msaz  ; 0=mat | 1=M(n)
+What is the critical angle for light going from ⟦0⟧ ($n = ⟦1⟧$) into air?
+@1qmfto1pdzo  ; 0=M(n) | 1=M(sig(1 / n)) | 2=QT(C, '°')
+$\sin C = \frac{1}{n} = \frac{1}{⟦0⟧} = ⟦1⟧$, so $C = ⟦2⟧$. Rays hitting the surface at more than this angle are totally internally reflected.
+@k9b8m7imef
+Ray diagram for the object and lens in the question
+@2ftkvhro6rm  ; 0=Q(s, 'cm') | 1=cv ? T`converging` : T`diverging` | 2=Q(f, 'cm') | 3=fig
+An object is placed ⟦0⟧ from a ⟦1⟧ lens of focal length ⟦2⟧. Where is the image? Give $s'$ in cm, with a minus sign for a virtual image.⟦3⟧
+@3rqjgl059q
+converging
+@202oohs12tm
+diverging
+@10k9jncce53  ; 0=fs | 1=M(s) | 2=QT(sp, 'cm') | 3=sp > 0 ? T`a real image on the far side 
+$\frac{1}{s'} = \frac{1}{f} - \frac{1}{s} = \frac{1}{⟦0⟧} - \frac{1}{⟦1⟧}$, so $s' = ⟦2⟧$: ⟦3⟧.
+@fn4yvfz7oo
+a real image on the far side of the lens
+@185aiy6gltg
+a virtual image on the same side as the object
+@1gsofoiobh9  ; 0=Q(P, 'D')
+A lens has a power of ⟦0⟧. What is its focal length in centimetres?
+@2eiudqx21md
+A positive focal length: a converging lens.
+@2didtdxrvls
+A negative focal length: a diverging lens.
+@sp9xzc71sn  ; 0=cv ? T`converging` : T`diverging` | 1=Q(fcm, 'cm')
+A ⟦0⟧ lens has a focal length of ⟦1⟧. What is its power, in dioptres?
+@iucb2yoznu  ; 0=Q(h, 'cm') | 1=Q(s, 'cm') | 2=Q(f, 'cm')
+A candle flame ⟦0⟧ tall is ⟦1⟧ from a converging lens of focal length ⟦2⟧. How tall is the image on the screen?
+@21kcym88iwy  ; 0=M(s) | 1=f | 2=M(s - f) | 3=M(sig(sp)) | 4=h | 5=M(sig(sp)) | 6=M(s) | 7=QT(hi, 'cm')
+$s' = \frac{sf}{s - f} = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧} = ⟦3⟧\,\mathrm{cm}$, so $h' = h\frac{s'}{s} = ⟦4⟧ \cdot \frac{⟦5⟧}{⟦6⟧} = ⟦7⟧$ (inverted).
+@qyry45i0la
+Which two conditions are needed for total internal reflection?
+@n690svtf0m
+Light goes from a denser to a less dense medium, at more than the critical angle
+@1mngvtn4m66
+Light goes from a less dense to a denser medium, at more than the critical angle
+@1brk3t5c0xk
+Light goes from a denser to a less dense medium, at less than the critical angle
+@29z2pjl4cgd
+The surface must be silvered like a mirror
+@124mbotpg29
+Only light leaving a denser medium bends away from the normal, and only beyond the critical angle is all of it reflected.
+@1xu4651cdpp
+What kind of image does a magnifying glass give?
+@bp8b6x39d3
+Virtual, inverted and smaller
+@8f3rhykz6r
+Real, upright and smaller
+@1s31i53omas
+A magnifying glass is a converging lens with the object inside its focal length, which gives a virtual, upright, magnified image.
+@1gm08o2kjnl
+A straw in a glass of water looks bent at the surface. Why?
+@22syymr8krr
+Light from the straw refracts as it leaves the water
+@tsia4foo08
+The water bends the straw
+@1wh8e2q5tbo
+Light reflects off the glass
+@1cv3wcxhat4
+Light travels faster in water
+@hj0pkof0t7
+Light from the underwater part bends away from the normal as it passes into air, so that part seems to be higher than it is.
+@qa4lcs3la9
+What happens to the speed and wavelength of light as it passes from air into glass?
+@1e5vtn434lh
+Both decrease; the frequency stays the same
+@169vv4dwr2w
+Both increase
+@26e9r1xbw5v
+The speed decreases and the frequency decreases
+@xy0kapmo53
+Nothing changes
+@1fjln7ee7bx
+$v = c/n$ is smaller in glass. The frequency is set by the source and does not change, so $\lambda = v/f$ also decreases.
+
+##### instruments
+@11qegw9nonk  ; 0=Tbl([T`Defect`, T`Problem`, T`Correction | 1=Fm(T`M = \frac{s'_{ob}}{s_{ob}} \times \ | 2=Fm(T`M = \frac{f_{ob}}{f_{ok}}`) | 3=Key(T`<p>A <b>camera</b> is like an eye: | 4=Tip(T`<p>Keep centimetres throughout the
+
+<h3>The eye</h3>
+<p>The cornea and the lens of the eye form a real, inverted image on the <b>retina</b>. Muscles change the shape of the lens so that both near and far objects are in focus (<b>accommodation</b>). A normal eye sees clearly from its <b>near point</b>, about $25\,\mathrm{cm}$, to its <b>far point</b> at infinity.</p>
+⟦0⟧
+<p>Here $PR$ (far point) and $PP$ (near point) are in centimetres and $P$ comes out in dioptres.</p>
+<h3>Magnifying glass</h3>
+<p>A converging lens held close to the eye with the object inside its focal length. Its angular magnification is $M = \dfrac{25}{f}$ for a relaxed eye (image at infinity) and $M = \dfrac{25}{f} + 1$ when the image is at the near point ($f$ in cm).</p>
+<h3>Microscope and telescope</h3>
+<p>A <b>microscope</b> uses a short-focus objective lens to form a magnified real image, which the eyepiece then magnifies again. For a relaxed eye the total magnification is</p>
+⟦1⟧
+<p>A <b>refracting telescope</b> has a long-focus objective and a short-focus eyepiece. For a relaxed eye the lenses are $d = f_{ob} + f_{ok}$ apart and</p>
+⟦2⟧
+⟦3⟧
+⟦4⟧
+@1cg8jb6cnmm
+Defect
+@1rfj6s0td7l
+Problem
+@1yoo0feclny
+Correction
+@2g1hm3p73vr
+Short sight (myopia)
+@xycq5ai216
+far point is too close; the image forms in front of the retina
+@1ts8ywnkm4k
+diverging lens: $P = -\dfrac{100}{PR}$
+@t2axvjdh6v
+Long sight (hypermetropia)
+@1ogi8k3rqb1
+near point is too far; the image forms behind the retina
+@118zdlrz2i1
+converging lens: $P = 4 - \dfrac{100}{PP}$
+@1im026v51vf
+Presbyopia (old age)
+@j3hk5il45l
+the lens stiffens and cannot accommodate
+@24gdqhv53da
+bifocal lenses
+@1zn8ekpmqoc
+M = \frac{s'_{ob}}{s_{ob}} \times \frac{25}{f_{ok}}
+@2folmjxrlt5
+M = \frac{f_{ob}}{f_{ok}}
+@1srl89ejjl
+<p>A <b>camera</b> is like an eye: a converging lens forms a real, inverted, smaller image on a sensor. It focuses by moving the lens rather than changing its shape.</p>
+@a2586oeszf
+<p>Keep centimetres throughout these formulas, and remember that the 25 is the near point in cm.</p>
+@1whj302qp0n  ; 0=Q(PR, 'cm')
+A short-sighted person has a far point of ⟦0⟧. What power of spectacle lens do they need to see distant objects clearly?
+@2ek4d2ge7td  ; 0=PR | 1=QT(P, 'D')
+The lens must make distant objects appear at the far point: $P = -\frac{100}{PR} = -\frac{100}{⟦0⟧} = ⟦1⟧$, a diverging lens.
+@1ty18larjr3  ; 0=Q(PP, 'cm') | 1=Q(25, 'cm')
+A long-sighted person has a near point of ⟦0⟧. What power of lens do they need to read a book held ⟦1⟧ from the eye?
+@ea4vhlq6rk  ; 0=PP | 1=QT(P, 'D')
+$P = \frac{100}{25} - \frac{100}{PP} = 4 - \frac{100}{⟦0⟧} = ⟦1⟧$, a converging lens.
+@19jaxyfwoe4  ; 0=Q(f, 'cm') | 1=relaxed ? T`the eye is relaxed (image at
+A magnifying glass has a focal length of ⟦0⟧. What is its magnification when ⟦1⟧?
+@xptn5luaw8
+the eye is relaxed (image at infinity)
+@1bkdju4sco6  ; 0=Q(25, 'cm')
+the image is at the near point, ⟦0⟧
+@10f3bkvh36r  ; 0=Q(fob, 'cm') | 1=Q(fok, 'cm')
+A telescope has an objective of focal length ⟦0⟧ and an eyepiece of focal length ⟦1⟧. What is its magnification for a relaxed eye?
+@1tjhkgxdb1b  ; 0=Q(fob, 'cm') | 1=Q(fok, 'cm')
+A telescope has an objective of focal length ⟦0⟧ and an eyepiece of focal length ⟦1⟧. How long is the telescope (the distance between the lenses) for a relaxed eye?
+@59wzdjna77  ; 0=Q(fob, 'cm') | 1=Q(sob, 'cm') | 2=Q(fok, 'cm')
+In a microscope the objective (focal length ⟦0⟧) is ⟦1⟧ from the specimen, and the eyepiece has a focal length of ⟦2⟧. What is the total magnification for a relaxed eye?
+@19yyuz9glxq  ; 0=M(sig(sp)) | 1=M(sig(sp)) | 2=M(sob) | 3=M(sig(sp / sob)) | 4=M(fok) | 5=M(sig(25 / fok)) | 6=M(sig(sp / sob)) | 7=M(sig(25 / fok)) | 8=M(Mg)
+Objective: $s'_{ob} = \frac{s_{ob} f_{ob}}{s_{ob} - f_{ob}} = ⟦0⟧\,\mathrm{cm}$, magnifying $\frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$ times. Eyepiece: $\frac{25}{⟦4⟧} = ⟦5⟧$. Total $M = ⟦6⟧ \times ⟦7⟧ = ⟦8⟧$.
+@221441dpnwl
+What kind of lens corrects short sight (myopia)?
+@j4isb2w3io
+A diverging (concave) lens
+@8lqr1vql7r
+A converging (convex) lens
+@mw5knk4vh3
+A bifocal lens
+@23dsokah7xn
+A cylindrical lens
+@1xgk6phkgem
+A short-sighted eye focuses too strongly, so the image forms in front of the retina. A diverging lens spreads the rays a little first.
+@18livwtpugd
+In a short-sighted eye, where does the image of a distant object form?
+@1rb30d8i3e1
+In front of the retina
+@1yb41ypubtz
+Behind the retina
+@1nelgrs9szv
+On the retina
+@ysa4htssnm
+On the lens
+@18fhqawfolt
+The eye is too strongly focusing (or too long), so rays from far away meet before they reach the retina.
+@1hhts6koaba
+What is the image formed by a camera lens on its sensor like?
+@eydnjgiqy6
+Real, upright and larger
+@l1p0627c1t
+Virtual, inverted and larger
+@1b18o6sf4yd
+The object is far beyond $2F$, so the lens forms a real, inverted, diminished image, just as the eye does on the retina.
+@16aqiuw43bj
+How does the eye focus on objects at different distances?
+@1qqyo8ayl7o
+Muscles change the shape of the lens
+@1zgxqnzg9f6
+The lens moves forwards and backwards
+@28x01rk5lnj
+The pupil changes size
+@1kis6f0ab3l
+The retina moves
+@1peatd655x
+This is accommodation: the ciliary muscles make the lens fatter for near objects and thinner for far ones. A camera moves its lens instead.
+
+##### interference
+@2cjdo4fyecw  ; 0=Key(T`<p>Constructive where the path dif | 1=Fig(slitSvg(T`Two slits a distance d apa | 2=Fm(T`d\sin\theta = m\lambda \qquad y_m = | 3=Tip(T`<p>Work in metres: $1\,\mathrm{nm}
+
+<p>When two waves meet they add up (<b>superposition</b>). If crest meets crest they reinforce: <b>constructive interference</b>. If crest meets trough they cancel: <b>destructive interference</b>. To see a steady pattern the sources must be <b>coherent</b>: the same frequency and a constant phase difference.</p>
+⟦0⟧
+<h3>Young's double slit</h3>
+<p>Light through two narrow slits a distance $d$ apart makes bright and dark fringes on a screen a distance $L$ away. For small angles:</p>
+⟦1⟧
+⟦2⟧
+<h3>Diffraction</h3>
+<p>Waves spread out when they pass through a gap. For a single slit of width $a$ the dark fringes are at $a\sin\theta = m\lambda$, and the central bright band is twice as wide as the others. A <b>diffraction grating</b> has very many slits, $N$ per unit length, so the slit spacing is $d = 1/N$. Its bright lines are sharp and obey $d\sin\theta = m\lambda$; the highest order that can appear is the largest whole number below $d/\lambda$.</p>
+⟦3⟧
+<p>The colours of soap bubbles and oil films come from <b>thin-film interference</b> between light reflected from the top and the bottom of the film.</p>
+@1ei3r9wsxtr
+<p>Constructive where the path difference is a whole number of wavelengths, $\Delta = m\lambda$; destructive where it is a whole number plus a half, $\Delta = (m + \frac12)\lambda$.</p>
+@16wpbecjuab
+Two slits a distance d apart, a screen a distance L away, and bright fringes a distance Δy apart
+@1ctxbp4t5gr
+Bright fringes are equally spaced, $\Delta y$ apart.
+@728c6gjxqq
+<p>Work in metres: $1\,\mathrm{nm} = 10^{-9}\,\mathrm{m}$ and $1\,\mathrm{mm} = 10^{-3}\,\mathrm{m}$. A grating with 500 lines per mm has $d = \frac{1}{500}\,\mathrm{mm} = 2 \times 10^{-6}\,\mathrm{m}$.</p>
+@13g1libswe7  ; 0=Q(lam, 'nm') | 1=Q(d, 'mm') | 2=Q(L, 'm')
+Light of wavelength ⟦0⟧ passes through two slits ⟦1⟧ apart onto a screen ⟦2⟧ away. What is the spacing between neighbouring bright fringes, in mm?
+@hwswu6ari8  ; 0=Q(d, 'mm') | 1=Q(L, 'm') | 2=Q(dy, 'mm')
+In a double-slit experiment the slits are ⟦0⟧ apart and the screen is ⟦1⟧ away. The bright fringes are ⟦2⟧ apart. What is the wavelength of the light, in nm?
+@v38s2jkhkg  ; 0=Q(lam, 'nm') | 1=Q(d, 'mm') | 2=m | 3=Q(L, 'm')
+Light of wavelength ⟦0⟧ falls on two slits ⟦1⟧ apart. How far from the central bright fringe is bright fringe number ⟦2⟧, on a screen ⟦3⟧ away? Give your answer in mm.
+@29jilo8yy3g  ; 0=Q(lam, 'nm') | 1=N | 2=m === 1 ? T`first` : T`second`
+Light of wavelength ⟦0⟧ falls on a diffraction grating with ⟦1⟧ lines per mm. At what angle is the ⟦2⟧-order bright line?
+@2dwpq9t0eon
+first
+@cnbixo2uho  ; 0=N | 1=sciT(d) | 2=m | 3=lam | 4=sciT(d) | 5=M(sig(s1)) | 6=QT(th, '°')
+$d = \frac{1}{⟦0⟧}\,\mathrm{mm} = ⟦1⟧\,\mathrm{m}$. Then $\sin\theta = \frac{m\lambda}{d} = \frac{⟦2⟧ \cdot ⟦3⟧ \times 10^{-9}}{⟦4⟧} = ⟦5⟧$, so $\theta = ⟦6⟧$.
+@tz5apuq7vk  ; 0=N | 1=Q(lam, 'nm')
+A grating has ⟦0⟧ lines per mm and is lit with light of wavelength ⟦1⟧. What is the highest order of bright line that can be seen?
+@g94on2vulf  ; 0=N | 1=M(sig(d)) | 2=M(sig(d)) | 3=lam | 4=M(sig(d / lam)) | 5=mMax
+$d = \frac{1}{⟦0⟧}\,\mathrm{mm} = ⟦1⟧\,\mathrm{nm}$. Since $\sin\theta \le 1$, $m \le \frac{d}{\lambda} = \frac{⟦2⟧}{⟦3⟧} = ⟦4⟧$, so the highest order is ⟦5⟧.
+@17j74sp530  ; 0=Q(lam, 'nm') | 1=Q(a, 'mm') | 2=Q(L, 'm')
+Light of wavelength ⟦0⟧ passes through a single slit ⟦1⟧ wide onto a screen ⟦2⟧ away. How wide is the central bright band, in mm?
+@22hb6fwqyuh  ; 0=lam | 1=L | 2=M(a) | 3=QT(w, 'mm')
+The first dark fringes are at $y = \frac{\lambda L}{a}$ on either side, so the central band is $\frac{2\lambda L}{a} = \frac{2 \cdot ⟦0⟧ \times 10^{-9} \cdot ⟦1⟧}{⟦2⟧ \times 10^{-3}} = ⟦3⟧$ wide.
+@243wwp7hfq1
+In a double-slit experiment the slits are moved closer together. What happens to the fringes?
+@1d75l32e54g
+They spread further apart
+@x8vfyv5ntk
+They get closer together
+@4lfaozqjt6
+They disappear
+@1ouvpd3j1mh
+$\Delta y = \frac{\lambda L}{d}$: a smaller $d$ gives a larger fringe spacing.
+@78ho1ewdil
+Red light in a double-slit experiment is replaced by blue light. What happens to the fringe spacing?
+@20jl3pvke8d
+The fringes disappear
+@ym4tv9da11
+Blue light has a shorter wavelength, and $\Delta y = \frac{\lambda L}{d}$ is proportional to $\lambda$.
+@1aot6n01byc
+Why do two separate light bulbs not produce an interference pattern?
+@1ucdek5ih30
+They are not coherent
+@5ygs74ue0l
+Their light is too bright
+@1dxmnu7q27w
+Light cannot interfere
+@28ntu4f0a2u
+They are too far apart
+@2viuo7gtae
+The phase of the light from each bulb changes randomly millions of times a second, so the pattern shifts too fast to see. Coherent sources keep a constant phase difference.
+@17lwsz7frq2
+What causes the colours of a soap bubble?
+@vs3iybizrj
+Interference of light reflected from the two surfaces of the film
+@jjhpnmrk67
+Dyes in the soap
+@26zqigeyhh3
+Refraction as in a prism
+@199jpzcoygb
+Diffraction through the air
+@rb9xge601l
+Light reflected from the front and back of the thin film interferes. Which colours reinforce depends on the film thickness.

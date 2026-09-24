@@ -1,0 +1,580 @@
+##### relativity
+@1ew761u2kqi  ; 0=Fm(T`\gamma = \frac{1}{\sqrt{1 - v^2/c^2 | 1=Key(T`<p><b>Time dilation:</b> a moving  | 2=Fm(T`u = \frac{u' + v}{1 + \dfrac{u'v}{c | 3=Tip(T`<p>Write speeds as fractions of $c
+
+<p>Einstein built special relativity (1905) on two <b>postulates</b>:</p>
+<ol><li>The laws of physics are the same in every inertial (non-accelerating) frame of reference.</li><li>The speed of light in a vacuum, $c = 3.0 \times 10^{8}\,\mathrm{m/s}$, is the same for every observer, however fast they or the source move.</li></ol>
+<p>Accepting both means that time and length depend on the observer. Everything is controlled by the <b>Lorentz factor</b></p>
+⟦0⟧
+<p>which is 1 at everyday speeds and grows without limit as $v$ approaches $c$. For $v = 0.6c$, $\gamma = 1.25$; for $v = 0.8c$, $\gamma = \frac53$.</p>
+⟦1⟧
+<h3>Adding velocities</h3>
+<p>Speeds do not simply add. If a spaceship moving at $v$ fires a probe forwards at $u'$ relative to itself, an observer sees the probe move at</p>
+⟦2⟧
+<p>which never exceeds $c$.</p>
+<h3>Mass and energy</h3>
+<p>Mass is a form of energy. An object of mass $m$ at rest has <b>rest energy</b> $E_0 = mc^2$, and its total energy when moving is $E = \gamma mc^2$, so its kinetic energy is $E_k = (\gamma - 1)mc^2$.</p>
+⟦3⟧
+@v5mvitovf4
+<p><b>Time dilation:</b> a moving clock runs slow, $\Delta t = \gamma\,\Delta t_0$, where $\Delta t_0$ is the <b>proper time</b> measured by a clock at rest relative to the events.</p><p><b>Length contraction:</b> a moving object is shorter along its direction of motion, $L = \dfrac{L_0}{\gamma}$, where $L_0$ is its <b>proper length</b> (measured at rest).</p>
+@2bq3bg1sabs
+<p>Write speeds as fractions of $c$: then $v^2/c^2$ is just the square of that fraction, and $c$ cancels.</p>
+@dvkahsfr2o  ; 0=M(b)
+What is the Lorentz factor $\gamma$ for an object moving at $⟦0⟧c$?
+@1w51gxfwxyu  ; 0=M(b) | 1=Q(t0, 's')
+A spaceship travels at $⟦0⟧c$. An astronaut on board measures the time between two ticks of her clock as ⟦1⟧. How long does this take according to an observer on Earth?
+@wnjkdb33wp  ; 0=M(b) | 1=M(sig(g)) | 2=M(sig(g)) | 3=t0 | 4=QT(t, 's')
+$\gamma = \frac{1}{\sqrt{1 - ⟦0⟧^2}} = ⟦1⟧$, so $\Delta t = \gamma\,\Delta t_0 = ⟦2⟧ \times ⟦3⟧ = ⟦4⟧$. The moving clock runs slow.
+@26pxyy3t9ts  ; 0=Q(L0, 'm') | 1=M(b)
+A spaceship is ⟦0⟧ long when measured at rest. How long does it appear to an observer when it flies past at $⟦1⟧c$?
+@hxr4a3whwz  ; 0=M(sig(g)) | 1=L0 | 2=M(sig(g)) | 3=QT(L, 'm')
+$\gamma = ⟦0⟧$, so $L = \frac{L_0}{\gamma} = \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.
+@2fxmt406esf  ; 0=Q(t0, 'µs') | 1=M(b)
+A muon lives for ⟦0⟧ on average when at rest. How long does a muon moving at $⟦1⟧c$ live on average, as measured from the Earth?
+@100wttpsxs9  ; 0=M(b) | 1=M(sig(g)) | 2=M(sig(g)) | 3=M(t0) | 4=QT(t, 'µs')
+$\gamma = \frac{1}{\sqrt{1 - ⟦0⟧^2}} = ⟦1⟧$, so $\Delta t = \gamma\,\Delta t_0 = ⟦2⟧ \times ⟦3⟧ = ⟦4⟧$. This is why muons made high in the atmosphere reach the ground.
+@16nid14geq7  ; 0=M(v) | 1=M(u1)
+A spaceship moving at $⟦0⟧c$ relative to the Earth fires a probe forwards at $⟦1⟧c$ relative to the ship. How fast does the probe move relative to the Earth, as a fraction of $c$?
+@rgf6bk9c35  ; 0=M(u1) | 1=M(v) | 2=M(u1) | 3=M(v) | 4=M(u)
+$u = \frac{u' + v}{1 + u'v/c^2} = \frac{⟦0⟧ + ⟦1⟧}{1 + ⟦2⟧ \cdot ⟦3⟧} = ⟦4⟧c$, less than $c$ as it must be.
+@2duk8r0cjqc  ; 0=Q(m, unit)
+How much energy is equivalent to a mass of ⟦0⟧? ($c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)
+@5fck4vhbmf
+Type a power of ten like 9e13.
+@8x97jk0pgd  ; 0=M(kg) | 1=sciT(E)
+$E = mc^2 = ⟦0⟧ \times (3.0 \times 10^{8})^2 = ⟦1⟧\,\mathrm{J}$.
+@qayc48fv3t
+According to special relativity, which quantity is the same for all observers?
+@1gx9b1a7xfg
+The speed of light in a vacuum
+@qbi3zembdk
+The length of a moving object
+@1yylfvm3yq5
+The time between two events
+@2a3ngf8t5du
+The kinetic energy of an object
+@9pr1dztq23
+This is Einstein's second postulate. Lengths and times depend on the observer's motion.
+@1j8486l1m9q
+Why can a spaceship with mass never reach the speed of light?
+@1vbma6cs0de
+Its energy would have to become infinite
+@5of4p25eht
+Its mass would become zero
+@1ju9139v6pl
+Space is too empty
+@u8362f71kd
+Its engine would stop working
+@sw45zy7sck
+$E = \gamma mc^2$ and $\gamma$ grows without limit as $v \to c$, so an infinite amount of energy would be needed.
+@dcrpsy3mld
+An astronaut travels at high speed to a distant star and back. Compared with her twin on Earth, she is:
+@2def54nmxui
+younger
+@1nzyn7twkj2
+older
+@ohhicxuk2r
+the same age
+@1buxhc9lw24
+older or younger at random
+@8wgwhz4d59
+Her clock (and her body) ran slow relative to the Earth, so less time passed for her. This is the twin paradox.
+
+##### photons
+@104sg94tyb3  ; 0=Fm(T`E = hf = \frac{hc}{\lambda}`) | 1=Key(T`<p>One photon gives all its energy | 2=Tip(T`<p>A handy shortcut: $hc = 1240\,\
+
+<p>Light carries energy in tiny packets called <b>photons</b>. Planck and Einstein showed that the energy of one photon depends only on its frequency:</p>
+⟦0⟧
+<p>with Planck's constant $h = 6.63 \times 10^{-34}\,\mathrm{J\,s}$. Photon energies are tiny, so they are often given in <b>electronvolts</b>: $1\,\mathrm{eV} = 1.6 \times 10^{-19}\,\mathrm{J}$, the energy an electron gains across $1\,\mathrm{V}$.</p>
+<h3>The photoelectric effect</h3>
+<p>Light shining on a clean metal can knock electrons out of it. The experiments showed:</p>
+<ul><li>below a <b>threshold frequency</b> $f_0$ no electrons come out, however bright the light;</li><li>above it, electrons come out at once, and their maximum kinetic energy depends on the frequency, not the brightness;</li><li>brighter light gives <b>more</b> electrons, not faster ones.</li></ul>
+⟦1⟧
+<h3>Matter waves</h3>
+<p>De Broglie suggested that particles also behave as waves, with wavelength $\lambda = \dfrac{h}{p} = \dfrac{h}{mv}$. Electron diffraction confirmed it, and electron microscopes use it to see details far smaller than light can.</p>
+⟦2⟧
+@18enfkx2h3o
+E = hf = \frac{hc}{\lambda}
+@1z2agzhwa5s
+<p>One photon gives all its energy to one electron. Part of it, the <b>work function</b> $\phi = hf_0$, is needed to free the electron; the rest becomes kinetic energy:</p><p>$$E_{k,\max} = hf - \phi = eV_s$$</p><p>where $V_s$ is the <b>stopping potential</b> needed to halt the fastest electrons.</p>
+@q9fb6rowh5
+<p>A handy shortcut: $hc = 1240\,\mathrm{eV\,nm}$ (to 3 significant figures, $1.24 \times 10^{3}$), so a photon of wavelength $\lambda$ in nm has an energy of about $\frac{1240}{\lambda}\,\mathrm{eV}$.</p>
+@1nxog0s2qbw  ; 0=Q(nm, 'nm')
+What is the energy of a photon of wavelength ⟦0⟧, in joules? ($h = 6.63 \times 10^{-34}\,\mathrm{J\,s}$, $c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)
+@1fgf22ybxx8
+Type a power of ten like 3.3e-19.
+@12epezir3wv  ; 0=nm | 1=sciT(E)
+$E = \frac{hc}{\lambda} = \frac{6.63 \times 10^{-34} \cdot 3.0 \times 10^{8}}{⟦0⟧ \times 10^{-9}} = ⟦1⟧\,\mathrm{J}$.
+@eqkxnqeujl  ; 0=Q(nm, 'nm')
+What is the energy of a photon of wavelength ⟦0⟧, in electronvolts? (Use $hc = 1240\,\mathrm{eV\,nm}$.)
+@1t6cav1mtn8
+caesium
+@ahw0qmdpcd
+sodium
+@133xjfi0kfo
+potassium
+@bftet78xwv
+calcium
+@1dm2eqt8sp8
+zinc
+@1hilubw0x7z  ; 0=Q(nm, 'nm') | 1=metal | 2=Q(phi, 'eV') | 3=askV ? T`the stopping potential` : T`the
+Light of wavelength ⟦0⟧ falls on ⟦1⟧, whose work function is ⟦2⟧. What is ⟦3⟧? (Use $hc = 1240\,\mathrm{eV\,nm}$.)
+@16z8hfd48yk
+the stopping potential
+@1895iy8ygzn
+the maximum kinetic energy of the emitted electrons, in eV
+@1ttq7fhudur  ; 0=nm | 1=M(sig(E)) | 2=M(sig(E)) | 3=M(phi) | 4=QT(K, 'eV') | 5=askV ? T`, so the stopping potential is 
+Photon energy $E = \frac{1240}{⟦0⟧} = ⟦1⟧\,\mathrm{eV}$. $E_{k,\max} = E - \phi = ⟦2⟧ - ⟦3⟧ = ⟦4⟧$⟦5⟧.
+@9c2e3vccav  ; 0=Q(K, 'V')
+, so the stopping potential is ⟦0⟧
+@1w3avete4ca  ; 0=metal | 1=Q(phi, 'eV')
+The work function of ⟦0⟧ is ⟦1⟧. What is its threshold frequency? ($h = 6.63 \times 10^{-34}\,\mathrm{J\,s}$, $1\,\mathrm{eV} = 1.6 \times 10^{-19}\,\mathrm{J}$.)
+@1cy02f4sklq  ; 0=M(phi) | 1=sciT(f0)
+$f_0 = \frac{\phi}{h} = \frac{⟦0⟧ \times 1.6 \times 10^{-19}}{6.63 \times 10^{-34}} = ⟦1⟧\,\mathrm{Hz}$.
+@7occgrgaao  ; 0=metal | 1=Q(phi, 'eV')
+The work function of ⟦0⟧ is ⟦1⟧. What is the longest wavelength of light that can release electrons from it, in nm? (Use $hc = 1240\,\mathrm{eV\,nm}$.)
+@1v5yo60yats  ; 0=M(phi) | 1=QT(lam, 'nm')
+$\lambda_0 = \frac{hc}{\phi} = \frac{1240}{⟦0⟧} = ⟦1⟧$. Longer wavelengths have too little energy per photon.
+@vpcv96svlb  ; 0=Q(P, 'mW') | 1=Q(nm, 'nm')
+A laser emits ⟦0⟧ of light of wavelength ⟦1⟧. How many photons does it emit each second? ($h = 6.63 \times 10^{-34}\,\mathrm{J\,s}$, $c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)
+@1s07evp0y7y
+Type a power of ten like 2.5e15.
+@yv7one3398  ; 0=sciT(6.63e-34 * 3e8 / (nm * 1e-9)) | 1=M(P) | 2=sciT(6.63e-34 * 3e8 / (nm * 1e-9)) | 3=sciT(N / 1000)
+Each photon carries $E = \frac{hc}{\lambda} = ⟦0⟧\,\mathrm{J}$. The number per second is $\frac{P}{E} = \frac{⟦1⟧ \times 10^{-3}}{⟦2⟧} = ⟦3⟧$.
+@1h2zza138pv  ; 0=sciT(v)
+What is the de Broglie wavelength of an electron moving at $⟦0⟧\,\mathrm{m/s}$, in nm? ($h = 6.63 \times 10^{-34}\,\mathrm{J\,s}$, $m_e = 9.11 \times 10^{-31}\,\mathrm{kg}$.)
+@1r4um7a7xo7  ; 0=sciT(v) | 1=sciT(lam * 1e-9) | 2=QT(sig(lam), 'nm')
+$\lambda = \frac{h}{mv} = \frac{6.63 \times 10^{-34}}{9.11 \times 10^{-31} \cdot ⟦0⟧} = ⟦1⟧\,\mathrm{m} = ⟦2⟧$.
+@1qnhwr9fj0y
+In the photoelectric effect, what happens when the light is made brighter but its frequency is kept the same?
+@14tyl4prpfl
+More electrons are emitted, with the same maximum kinetic energy
+@2akecprdw2c
+The electrons come out faster
+@1sqh9fja7yn
+Fewer electrons are emitted
+@couz47qj7u
+Nothing changes at all
+@76n5h9d9v3
+Brighter light means more photons, so more electrons; each photon still has the same energy $hf$, so the maximum kinetic energy is unchanged.
+@1mckokp87tm
+Light below the threshold frequency shines on a metal for a long time. What happens?
+@1m9sgluqdli
+No electrons are emitted
+@wtxqlgpvu9
+Electrons are eventually emitted
+@o9nvke63l4
+Electrons are emitted only if the light is bright
+@14hiivx9euk
+The metal emits photons
+@1x5klq5fvcu
+Each photon has too little energy to free an electron, and an electron cannot save up energy from several photons.
+@1yrr6i8879
+Which experiment shows that electrons behave as waves?
+@x7x2w6b9rt
+Electron diffraction
+@1vgnkwh6teb
+The photoelectric effect
+@kdflz4cqey
+Rutherford's gold-foil experiment
+@239xtu149ab
+Millikan's oil-drop experiment
+@27f639s4s9h
+A beam of electrons passing through a crystal gives a diffraction pattern, just as waves do.
+@28m8ukd7io1
+Which evidence shows that light behaves as particles?
+@padb6170ja
+Double-slit interference
+@222gjxxnpjv
+Diffraction through a narrow slit
+@fjsh4vfaqm
+Polarisation
+@1gzc807a4v0
+The threshold frequency and the instant emission can only be explained if light arrives in packets of energy $hf$. Interference, diffraction and polarisation show its wave nature.
+
+##### atoms
+@gmyi9rl91h  ; 0=Tbl([T`Model`, T`Picture`, T`Problem`],  | 1=Fm(T`E_n = -\frac{13.6\,\mathrm{eV}}{n^2 | 2=Fig(levelsSvg(6, 3, 2, T`Energy levels o | 3=Key(T`<p>When an electron drops from a h | 4=Tip(T`<p>Level energies are negative bec
+
+<h3>Models of the atom</h3>
+⟦0⟧
+<p>In Rutherford's <b>gold-foil experiment</b> most alpha particles passed straight through, but a few bounced back. So the atom is mostly empty space, with its mass and positive charge concentrated in a tiny nucleus.</p>
+<h3>The Bohr model of hydrogen</h3>
+⟦1⟧
+⟦2⟧
+⟦3⟧
+<p>Because only certain energy differences are possible, each element emits and absorbs only certain wavelengths: its <b>line spectrum</b>, a fingerprint used to identify elements in stars. For hydrogen, drops to $n = 1$ give the ultraviolet <b>Lyman</b> series, drops to $n = 2$ the visible <b>Balmer</b> series and drops to $n = 3$ the infrared <b>Paschen</b> series.</p>
+⟦4⟧
+@ki5bhylf5o
+Model
+@5g7bmgw51u
+Picture
+@e3m8pc7x3h
+Thomson (1897)
+@tgm2g87rdm
+a sphere of positive charge with electrons embedded, like raisins in a bun
+@1vbopqkzgey
+could not explain the gold-foil results
+@rm2l11201n
+Rutherford (1911)
+@1nb13m6bnhg
+a tiny, dense, positive nucleus with electrons orbiting far away
+@qwvd64ygu
+orbiting electrons should radiate energy and spiral into the nucleus
+@7snkcfe6zh
+Bohr (1913)
+@1jteqxpz1gi
+electrons only in certain allowed orbits, each with a fixed energy
+@1kf29ylfqg1
+works only for hydrogen-like atoms
+@1vpmx6ftn31
+E_n = -\frac{13.6\,\mathrm{eV}}{n^2} \qquad r_n = n^2 \times 0.053\,\mathrm{nm}
+@1x0bckvin6w
+Energy levels of hydrogen, with an electron dropping from n = 3 to n = 2
+@2bzkuxr7dbi
+Energy levels of hydrogen (not to scale). A drop from $n = 3$ to $n = 2$ emits a red photon of $1.89\,\mathrm{eV}$.
+@wyrtzm67pu
+<p>When an electron drops from a higher level to a lower one it emits a photon with exactly the energy difference: $hf = E_{\text{upper}} - E_{\text{lower}}$. Absorbing a photon of exactly that energy lifts it back up. The energy needed to remove the electron completely from level $n$ is the <b>ionisation energy</b>, $\frac{13.6}{n^2}\,\mathrm{eV}$.</p>
+@1z9gegum1p1
+<p>Level energies are negative because the electron is bound: you have to add energy to free it. With $hc = 1240\,\mathrm{eV\,nm}$ the wavelength of a photon is $\lambda = \frac{1240}{\Delta E}$ in nm when $\Delta E$ is in eV.</p>
+@bgwixr92m4  ; 0=n
+How much energy is needed to ionise a hydrogen atom whose electron is in level $n = ⟦0⟧$?
+@yzd9496h20  ; 0=n | 1=n | 2=M(E) | 3=Q(sig(13.6 / (n * n)), 'eV')
+The electron must be raised from $E_{⟦0⟧} = -\frac{13.6}{⟦1⟧^2} = ⟦2⟧\,\mathrm{eV}$ to $0$, so it needs ⟦3⟧.
+@1yzjv598qmy  ; 0=n
+What is the energy of the electron in level $n = ⟦0⟧$ of a hydrogen atom? (Include the minus sign.)
+@zufpoezt6t  ; 0=n * n | 1=QT(E, 'eV')
+$E_n = -\frac{13.6}{n^2} = -\frac{13.6}{⟦0⟧} = ⟦1⟧$.
+@12183t60ks0  ; 0=hi | 1=lo | 2=Fig(levelsSvg(6, hi, lo, T`Hydrogen ener
+An electron in a hydrogen atom drops from level $n = ⟦0⟧$ to $n = ⟦1⟧$. What is the energy of the emitted photon?⟦2⟧
+@r8007l4uoq
+Hydrogen energy levels with the transition in the question
+@ymq1mu70hz  ; 0=hi | 1=lo | 2=hi * hi | 3=lo * lo | 4=QT(dE, 'eV')
+$\Delta E = E_{⟦0⟧} - E_{⟦1⟧} = -\frac{13.6}{⟦2⟧} + \frac{13.6}{⟦3⟧} = ⟦4⟧$.
+@zwj1741ei1  ; 0=hi | 1=lo
+What is the wavelength of the photon emitted when a hydrogen electron drops from $n = ⟦0⟧$ to $n = ⟦1⟧$, in nm? (Use $hc = 1240\,\mathrm{eV\,nm}$.)
+@m970bbqzc  ; 0=lo * lo | 1=hi * hi | 2=M(sig(dE)) | 3=M(sig(dE)) | 4=QT(lam, 'nm') | 5=lo === 2 ? T` (visible light, in the Bal
+$\Delta E = 13.6\left(\frac{1}{⟦0⟧} - \frac{1}{⟦1⟧}\right) = ⟦2⟧\,\mathrm{eV}$, so $\lambda = \frac{1240}{⟦3⟧} = ⟦4⟧$⟦5⟧.
+@1ps67b9ngjv
+ (visible light, in the Balmer series)
+@4elyzv9aio
+ (ultraviolet, in the Lyman series)
+@iaggzj58mq
+ (infrared, in the Paschen series)
+@207946vxpl  ; 0=Q(0.053, 'nm') | 1=n
+In the Bohr model the radius of the smallest hydrogen orbit is ⟦0⟧. What is the radius of orbit $n = ⟦1⟧$?
+@mn4ct9qj79  ; 0=n * n | 1=QT(r, 'nm')
+$r_n = n^2 r_1 = ⟦0⟧ \times 0.053 = ⟦1⟧$.
+@15p3jhjf2kc  ; 0=n
+Hydrogen atoms are excited to level $n = ⟦0⟧$. As the electrons fall back to the ground state by every possible route, how many different spectral lines can be emitted?
+@aw0lu9o4uk  ; 0=n | 1=n - 1 | 2=lines
+Every pair of levels gives one line: $\frac{n(n-1)}{2} = \frac{⟦0⟧ \cdot ⟦1⟧}{2} = ⟦2⟧$.
+@16gnmm4vdju
+In Rutherford's gold-foil experiment most alpha particles passed straight through the foil. What did this show?
+@u1ueafgfp8
+The atom is mostly empty space
+@a2f683lfl4
+The atom is a solid sphere
+@2626nhc9jfh
+Electrons are very heavy
+@13lj76jbbgk
+Alpha particles are negative
+@20ww5vml3k
+Only a tiny fraction bounced back, from a very small, dense, positive nucleus; the rest of the atom lets the particles through.
+@22sytcchefg
+Which series of hydrogen lines lies in the visible part of the spectrum?
+@1i0ay5ahqzh
+Balmer
+@1kim79mwow1
+Lyman
+@gsuud6n6hj
+Paschen
+@11jhdlrolrb
+Brackett
+@ffnufnr19v
+Drops to $n = 2$ (the Balmer series) give visible light; drops to $n = 1$ give ultraviolet and drops to $n = 3$ give infrared.
+@246kq4prwbl
+Why does each element have its own line spectrum?
+@28uzrvxiyuu
+Its atoms have their own set of energy levels
+@uo06bbjntu
+Its atoms have different masses
+@1gkgjet9kfk
+Its nuclei emit light
+@316v0x06ln
+Its electrons move at different speeds
+@12wh6nk068h
+Photons are emitted with energies equal to the differences between levels, and the levels are different for every element.
+@sdafdmsoo8
+What was the main problem with Rutherford's model of the atom?
+@1f01rkcxuax
+Orbiting electrons should radiate energy and spiral into the nucleus
+@4uvi43mww5
+It had no nucleus
+@lr8ylcgwe2
+It could not explain the gold-foil results
+@1jczt3vg3uy
+It put the electrons inside the nucleus
+@qt74y1b7ec
+Classical physics says an accelerating charge radiates. Bohr solved this by allowing only certain stable orbits.
+
+##### radioactivity
+@bzten31v3l  ; 0=Tbl([T`Radiation`, T`What it is`, T`Ioni | 1=Key(T`<p>In a decay equation both $A$ an | 2=Fm(T`N = N_0\left(\tfrac12\right)^{t/T_{ | 3=Fig(graphSvg([...Array(41)].map((_, i) = | 4=Tip(T`<p>Radiocarbon dating uses $^{14}\
+
+<p>A nucleus contains <b>protons</b> and <b>neutrons</b> (together, <b>nucleons</b>). A nuclide is written $^{A}_{Z}\mathrm{X}$, where $Z$ is the <b>atomic number</b> (number of protons) and $A$ the <b>mass number</b> (protons + neutrons), so the number of neutrons is $N = A - Z$. <b>Isotopes</b> of an element have the same $Z$ but different $A$, for example $^{12}_{6}\mathrm{C}$ and $^{14}_{6}\mathrm{C}$.</p>
+<h3>Three kinds of radiation</h3>
+⟦0⟧
+⟦1⟧
+<h3>Half-life</h3>
+<p>Decay is random, but a large number of nuclei decays at a predictable rate. The <b>half-life</b> $T_{1/2}$ is the time for half of the nuclei (and so half the activity) to decay:</p>
+⟦2⟧
+⟦3⟧
+⟦4⟧
+@2fv9ci45ruf
+Radiation
+@1b00t4z3zq2
+What it is
+@ulpbmvnemj
+Ionising
+@15gpepd9u51
+Stopped by
+@qr4ks5da28
+alpha, $\alpha$
+@1h3wuzchmej
+helium nucleus $^{4}_{2}\mathrm{He}$
+@1brdy6usvzk
+strongly
+@27qpxu25pg7
+paper or a few cm of air
+@1aj4n2hvz16
+beta, $\beta^-$
+@1frgoejc1jz
+fast electron $^{\;\,0}_{-1}\mathrm{e}$
+@qrj7sjjtwh
+moderately
+@1trt70rptzw
+a few mm of aluminium
+@ixtrg2hzst
+gamma, $\gamma$
+@fpp8oxejma
+high-energy photon
+@13b1ybv24l1
+weakly
+@12v1uc1pdij
+thick lead or concrete (reduced, not stopped)
+@1uq06x40lma
+<p>In a decay equation both $A$ and $Z$ must balance. Alpha decay lowers $A$ by 4 and $Z$ by 2; beta decay (a neutron turning into a proton) keeps $A$ and raises $Z$ by 1; gamma emission changes neither.</p><p>$$^{238}_{\;\,92}\mathrm{U} \to\, ^{234}_{\;\,90}\mathrm{Th} + {}^{4}_{2}\mathrm{He} \qquad ^{14}_{\;\,6}\mathrm{C} \to\, ^{14}_{\;\,7}\mathrm{N} + {}^{\;\,0}_{-1}\mathrm{e}$$</p>
+@8shst7qa2h
+t (half-lives)
+@ymobdjr22u
+Decay curve: the number of nuclei halves every half-life
+@271c7zemn9a
+After 1, 2, 3 half-lives, $50\%$, $25\%$, $12.5\%$ remain.
+@vr4nodqyw8
+<p>Radiocarbon dating uses $^{14}\mathrm{C}$, with a half-life of about 5730 years. Living things keep a steady level of it; after death it decays, so the fraction left gives the age.</p>
+@1t7joq53swc  ; 0=what === 'n' ? T`neutrons` : what === 'p | 1=A | 2=Z | 3=sym
+How many ⟦0⟧ are there in a nucleus of $^{⟦1⟧}_{⟦2⟧}\mathrm{⟦3⟧}$?
+@1tpp7o8i9dz
+neutrons
+@1vnjc79gtpw
+protons
+@lvvfye09px
+nucleons
+@1dejdf7vaqs  ; 0=Z | 1=A | 2=A | 3=Z | 4=A - Z
+$Z = ⟦0⟧$ protons, $A = ⟦1⟧$ nucleons, so $N = A - Z = ⟦2⟧ - ⟦3⟧ = ⟦4⟧$ neutrons.
+@bz7wn1mmcf  ; 0=p[2] | 1=p[1] | 2=p[0] | 3=alpha ? T`alpha` : T`beta` | 4=d[0] | 5=askA ? T`mass number` : T`atomic number` | 6=d[0]
+$^{⟦0⟧}_{⟦1⟧}\mathrm{⟦2⟧}$ decays by ⟦3⟧ emission into ⟦4⟧. What is the ⟦5⟧ of the ⟦6⟧ nucleus?
+@11419wyk0bk
+alpha
+@gp4ukuc2g2
+beta
+@su3aas66b1
+mass number
+@1vu40bw4bbd
+atomic number
+@281nzwfqvt0  ; 0=p[2] | 1=p[1] | 2=p[0] | 3=d[2] | 4=d[1] | 5=d[0]
+Alpha emission removes $^{4}_{2}\mathrm{He}$: $^{⟦0⟧}_{⟦1⟧}\mathrm{⟦2⟧} \to\, ^{⟦3⟧}_{⟦4⟧}\mathrm{⟦5⟧} + {}^{4}_{2}\mathrm{He}$.
+@d78h2dwyhu  ; 0=p[2] | 1=p[1] | 2=p[0] | 3=d[2] | 4=d[1] | 5=d[0]
+In beta decay a neutron becomes a proton: $^{⟦0⟧}_{⟦1⟧}\mathrm{⟦2⟧} \to\, ^{⟦3⟧}_{⟦4⟧}\mathrm{⟦5⟧} + {}^{\;\,0}_{-1}\mathrm{e}$. $A$ is unchanged and $Z$ goes up by 1.
+@1qn5tzfsu4y
+days
+@2eruzlr62qp
+hours
+@188ez77gire  ; 0=Q(m0, 'g') | 1=T12 | 2=unit[0] | 3=T12 * k | 4=unit[0]
+A radioactive sample contains ⟦0⟧ of an isotope with a half-life of ⟦1⟧ ⟦2⟧. How much of the isotope is left after ⟦3⟧ ⟦4⟧?
+@2dmo7v35t9q  ; 0=T12 * k | 1=unit[0] | 2=k | 3=m0 | 4=k | 5=QT(m, 'g')
+⟦0⟧ ⟦1⟧ is ⟦2⟧ half-lives, so $m = ⟦3⟧ \times \left(\frac12\right)^{⟦4⟧} = ⟦5⟧$.
+@1mgi2yis3z0  ; 0=Q(m0 * 10, 'Bq') | 1=Q(sig(m * 10, 4), 'Bq') | 2=T12 * k | 3=unit[0] | 4=unit[0]
+The activity of a sample falls from ⟦0⟧ to ⟦1⟧ in ⟦2⟧ ⟦3⟧. What is its half-life, in ⟦4⟧?
+@2da1owbea45  ; 0=M(sig(m * 10, 4)) | 1=m0 * 10 | 2=2 ** k | 3=k | 4=k | 5=T12 * k | 6=unit[0] | 7=T12 * k | 8=k | 9=T12 | 10=unit[0]
+$\frac{⟦0⟧}{⟦1⟧} = \frac{1}{⟦2⟧} = \left(\frac12\right)^{⟦3⟧}$, so ⟦4⟧ half-lives passed in ⟦5⟧ ⟦6⟧: $T_{1/2} = \frac{⟦7⟧}{⟦8⟧} = ⟦9⟧$ ⟦10⟧.
+@kyvico5v0g  ; 0=frac
+A piece of ancient wood contains $\frac{1}{⟦0⟧}$ of the carbon-14 found in living wood. Carbon-14 has a half-life of 5730 years. How old is the wood, in years?
+@8wibbh41id  ; 0=frac | 1=k | 2=k | 3=k | 4=M(age)
+$\frac{1}{⟦0⟧} = \left(\frac12\right)^{⟦1⟧}$, so ⟦2⟧ half-lives have passed: $⟦3⟧ \times 5730 = ⟦4⟧$ years.
+@2fxcdfx5qg  ; 0=p[2] | 1=p[1] | 2=p[0] | 3=d[2] | 4=d[1] | 5=d[0] | 6=askA ? T`alpha` : T`beta`
+$^{⟦0⟧}_{⟦1⟧}\mathrm{⟦2⟧}$ decays through a series of alpha and beta decays to stable $^{⟦3⟧}_{⟦4⟧}\mathrm{⟦5⟧}$. How many ⟦6⟧ decays take place?
+@1951gwqv7yf  ; 0=p[2] | 1=d[2] | 2=na | 3=na | 4=2 * na | 5=p[1] | 6=d[1] | 7=p[1] - d[1] | 8=2 * na | 9=p[1] - d[1] | 10=nb
+Only alpha decays change $A$: $\frac{⟦0⟧ - ⟦1⟧}{4} = ⟦2⟧$ alpha decays. They lower $Z$ by $2 \times ⟦3⟧ = ⟦4⟧$, but $Z$ only falls by $⟦5⟧ - ⟦6⟧ = ⟦7⟧$, so there are $⟦8⟧ - ⟦9⟧ = ⟦10⟧$ beta decays.
+@21csyzshzbi
+Which type of radiation is the most penetrating?
+@17bhfb20ogq
+Gamma
+@1loolxkw4t
+Alpha
+@buez92xbkw
+Beta
+@10o0bjbxv0g
+They are all the same
+@qovwt9jk9h
+Gamma rays are uncharged photons and ionise weakly, so they travel furthest; thick lead or concrete is needed to reduce them.
+@nxvmx9lzdd
+Which type of radiation is stopped by a sheet of paper?
+@qxvpi7g4j4
+None of them
+@pxgu523riw
+Alpha particles are heavy and doubly charged, so they ionise strongly and lose their energy very quickly.
+@1ote5xfjmg3
+What are isotopes?
+@24cm82ub7n6
+Atoms with the same number of protons but different numbers of neutrons
+@ms3ja4phgg
+Atoms with the same number of neutrons but different numbers of protons
+@oqq3ioxdma
+Atoms with the same mass number but different elements
+@x0ip4jyngj
+Atoms that have lost electrons
+@20pyduqzush
+Isotopes are the same element (same $Z$) with different mass numbers, like carbon-12 and carbon-14.
+@1d6f1oet2w0
+Why is an alpha source dangerous inside the body but fairly safe outside it?
+@1sypfwibbm2
+Alpha is strongly ionising but cannot get through the skin
+@1z32l2y6kyi
+Alpha is very penetrating
+@4v23lk8spt
+Alpha only affects metals
+@5n7k21lnny
+Alpha is a form of light
+@1ipejtxfevv
+Outside, alpha is stopped by the dead outer layer of skin. Inside, all of its strong ionisation is done to living cells.
+
+##### nuclear-energy
+@22y6imb19uh  ; 0=Fm(T`\Delta m = Z m_p + (A - Z) m_n - m_ | 1=Key(T`<p>The <b>binding energy per nucle | 2=Tip(T`<p>Keep many decimal places when s
+
+<p>A nucleus has slightly <b>less</b> mass than the protons and neutrons it is made of. This <b>mass defect</b> $\Delta m$ is the mass equivalent of the <b>binding energy</b>, the energy needed to pull the nucleus apart:</p>
+⟦0⟧
+<p>Nuclear masses are given in <b>atomic mass units</b>, and $1\,\mathrm{u}$ is equivalent to $931.5\,\mathrm{MeV}$. Take $m_p = 1.00728\,\mathrm{u}$ and $m_n = 1.00867\,\mathrm{u}$.</p>
+⟦1⟧
+<h3>Fission</h3>
+<p>A slow neutron absorbed by uranium-235 makes it split into two smaller nuclei and 2 or 3 new neutrons, releasing about $200\,\mathrm{MeV}$. The new neutrons can split further nuclei: a <b>chain reaction</b>. In a reactor:</p>
+<ul><li>the <b>moderator</b> (water or graphite) slows the neutrons so that they cause fission more easily;</li><li><b>control rods</b> (boron or cadmium) absorb neutrons so that, on average, each fission causes exactly one more;</li><li>the <b>coolant</b> carries the heat to make steam for the turbines;</li><li>thick concrete <b>shielding</b> absorbs the radiation.</li></ul>
+<h3>Fusion</h3>
+<p>In the Sun, hydrogen nuclei fuse into helium at about 15 million kelvin; only at such temperatures do nuclei move fast enough to overcome their electric repulsion. Fusion fuel is plentiful and leaves little long-lived waste, but a practical fusion power station has not yet been built.</p>
+⟦2⟧
+@1ouefgz1rpx
+\Delta m = Z m_p + (A - Z) m_n - m_{\text{nucleus}} \qquad E_B = \Delta m\,c^2
+@ghycpt9bpv
+<p>The <b>binding energy per nucleon</b> measures how stable a nucleus is. It peaks near iron-56 (about $8.8\,\mathrm{MeV}$). Energy is released when light nuclei join (<b>fusion</b>) or heavy nuclei split (<b>fission</b>), because the products are more tightly bound. The energy released in a reaction is</p><p>$$Q = (m_{\text{before}} - m_{\text{after}}) \times 931.5\,\mathrm{MeV/u}.$$</p>
+@aox46tcuuf
+<p>Keep many decimal places when subtracting masses: the mass defect is a small difference between large numbers.</p>
+@1z86nmihn6k
+helium-4
+@jzmjtvtyjo
+deuterium
+@2774xu8m7f4
+lithium-7
+@7nzf3cjc91
+carbon-12
+@2amkm11amtl
+oxygen-16
+@ljgsjy1vo2  ; 0=name | 1=A | 2=Z | 3=sym | 4=Q(m, 'u')
+A ⟦0⟧ nucleus ($^{⟦1⟧}_{⟦2⟧}\mathrm{⟦3⟧}$) has a mass of ⟦4⟧. ($m_p = 1.00728\,\mathrm{u}$, $m_n = 1.00867\,\mathrm{u}$, $1\,\mathrm{u} = 931.5\,\mathrm{MeV}$.)
+@1jsckfu4f97  ; 0=Z | 1=A - Z | 2=M(m) | 3=M(sig(dm, 4))
+$\Delta m = ⟦0⟧(1.00728) + ⟦1⟧(1.00867) - ⟦2⟧ = ⟦3⟧\,\mathrm{u}$.
+@1uqtsiu9vx0  ; 0=q0
+⟦0⟧ What is its mass defect, in u?
+@1tsavry6wtg  ; 0=q0
+⟦0⟧ What is its binding energy, in MeV?
+@2fwkde3xrn7  ; 0=sdm | 1=M(sig(dm, 4)) | 2=QT(E, 'MeV')
+⟦0⟧ $E_B = ⟦1⟧ \times 931.5 = ⟦2⟧$.
+@2g7aveo85y0  ; 0=q0
+⟦0⟧ What is its binding energy per nucleon, in MeV?
+@1q8g0vb107h  ; 0=sdm | 1=M(E) | 2=M(E) | 3=A | 4=QT(sig(dm * 931.5 / A), 'MeV')
+⟦0⟧ $E_B = ⟦1⟧\,\mathrm{MeV}$, and per nucleon $\frac{⟦2⟧}{⟦3⟧} = ⟦4⟧$.
+@1va0vwtmlqg  ; 0=eq | 1=Q(mb[0], 'u') | 2=Q(mb[1], 'u') | 3=Q(ma[0], 'u') | 4=Q(ma[1], 'u')
+Find the energy released in the reaction $⟦0⟧$, in MeV. The masses before are ⟦1⟧ and ⟦2⟧; after, ⟦3⟧ and ⟦4⟧. ($1\,\mathrm{u} = 931.5\,\mathrm{MeV}$.)
+@2duc985uwg1  ; 0=M(mb[0]) | 1=M(mb[1]) | 2=M(ma[0]) | 3=M(ma[1]) | 4=M(sig(dm, 4)) | 5=M(sig(dm, 4)) | 6=QT(Qv, 'MeV')
+$\Delta m = (⟦0⟧ + ⟦1⟧) - (⟦2⟧ + ⟦3⟧) = ⟦4⟧\,\mathrm{u}$, so $Q = ⟦5⟧ \times 931.5 = ⟦6⟧$.
+@shgqutw0kh  ; 0=Q(200, 'MeV') | 1=Q(P, 'MW')
+Each fission of uranium-235 releases about ⟦0⟧. How many fissions per second are needed to produce ⟦1⟧ of power? ($1\,\mathrm{eV} = 1.6 \times 10^{-19}\,\mathrm{J}$.)
+@1lwqdmg4sw6
+Type a power of ten like 3.1e19.
+@15lm3qyqxce  ; 0=P | 1=sciT(N)
+One fission gives $200 \times 10^{6} \times 1.6 \times 10^{-19} = 3.2 \times 10^{-11}\,\mathrm{J}$. Then $N = \frac{⟦0⟧ \times 10^{6}}{3.2 \times 10^{-11}} = ⟦1⟧$ fissions per second.
+@q4g3bywppq  ; 0=Q(P, 'MW') | 1=days === 1 ? T`one day` : days === 30 ? 
+A power station produces ⟦0⟧ of electrical and heat output for ⟦1⟧. How much mass is converted into energy, in grams? ($c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)
+@o5zutp0p9o
+one day
+@s1gy0np2ta
+30 days
+@w3kkk4eoeb
+one year (365 days)
+@20dg77e6r0d  ; 0=P | 1=M(days * 86400) | 2=sciT(E) | 3=sciT(E) | 4=sciT(E / 9e16) | 5=QT(sig(mg), 'g')
+$E = Pt = ⟦0⟧ \times 10^{6} \times ⟦1⟧ = ⟦2⟧\,\mathrm{J}$, so $m = \frac{E}{c^2} = \frac{⟦3⟧}{9 \times 10^{16}} = ⟦4⟧\,\mathrm{kg} = ⟦5⟧$.
+@1gnr6cumfqc
+What is the job of the control rods in a nuclear reactor?
+@jn8ia4met3
+To absorb neutrons and control the rate of fission
+@155v1fvo9wi
+To slow the neutrons down
+@29guqkt01m1
+To carry heat away
+@m8fhzc538k
+To stop gamma rays escaping
+@1qdy42i88cl
+Control rods (boron or cadmium) absorb neutrons. Lowering them slows the chain reaction; raising them speeds it up.
+@19v3x5nk2l6
+What is the job of the moderator in a nuclear reactor?
+@22q4jedf5ge
+To absorb all the neutrons
+@x2x1mky0yv
+To cool the turbines
+@1cbh4hzb9ld
+To make the uranium radioactive
+@28e2vd30wrb
+Slow neutrons are much more likely to cause U-235 to split. Water or graphite slow them through collisions.
+@pkks7bq594
+What is the main source of the Sun's energy?
+@1ko57skypbm
+Fusion of hydrogen into helium
+@1g92w0oimsn
+Fission of uranium
+@23rjaiccv6m
+Burning of hydrogen gas
+@17ugpdkq5um
+Radioactive decay of carbon
+@kpbcifh5oa
+In the Sun's core hydrogen nuclei fuse into helium; the lost mass appears as energy, $E = \Delta m c^2$.
+@add76tf9dz
+Why does fusion need extremely high temperatures?
+@b9rmvckls3
+So that nuclei move fast enough to overcome their electric repulsion
+@1djjx5pi1ig
+To melt the fuel
+@1uvbey068vy
+To produce neutrons
+@7s7r9ccrru
+To start a chemical reaction
+@29ue4qhek1l
+Nuclei are all positive and repel each other. Only at millions of kelvin do they collide hard enough to get close and fuse.
+@1rt9l4ywlvv
+Which nuclei release energy when they split?
+@1w5q21ebsz
+Very heavy nuclei, such as uranium
+@1ltuj86j4lx
+Very light nuclei, such as hydrogen
+@8p8w14cs7g
+Nuclei near iron
+@15gmm6i5mpi
+All nuclei
+@28v30qoxes8
+Binding energy per nucleon peaks near iron. Heavy nuclei become more tightly bound by splitting, light ones by fusing.
