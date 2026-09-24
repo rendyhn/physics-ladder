@@ -116,13 +116,13 @@ addMeta('id', {
     'fluid-statics': [R`Fluida Statis`, R`Massa jenis dan tekanan, tekanan hidrostatis, dongkrak hidraulik (Pascal), gaya apung (Archimedes), terapung dan tenggelam.`],
     'fluid-dynamics': [R`Fluida Dinamis`, R`Debit, persamaan kontinuitas, asas Bernoulli, hukum Torricelli, dan mengapa fluida yang lebih cepat bertekanan lebih rendah.`],
     'center-of-mass': [R`Pusat Massa & Momentum Sudut`, R`Menentukan pusat massa, gerak pusat massa, momentum sudut dan kekekalannya, penari es dan komidi putar.`],
-    'shm': [R`Gerak Harmonik Sederhana`],
-    'mech-waves': [R`Gelombang Mekanik`],
-    'sound': [R`Bunyi: Intensitas, Desibel & Efek Doppler`],
+    'shm': [R`Gerak Harmonik Sederhana`, R`Getaran dengan gaya pemulih: beban pada pegas, bandul sederhana, periode dan frekuensi, kelajuan maksimum, dan energi.`],
+    'mech-waves': [R`Gelombang Mekanik`, R`Gelombang transversal dan longitudinal, panjang gelombang, frekuensi dan cepat rambat, gelombang pada tali, dan gelombang stasioner.`],
+    'sound': [R`Bunyi: Intensitas, Desibel & Efek Doppler`, R`Cepat rambat bunyi dan gema, tinggi nada dan kenyaringan, intensitas dan skala desibel, efek Doppler, dan pipa organa.`],
     'heat': [R`Suhu, Kalor & Pemuaian`, R`Skala suhu, kalor jenis, kalor laten, pencampuran (kalorimetri), dan pemuaian.`],
-    'gases': [R`Teori Kinetik & Gas Ideal`],
-    'thermo-laws': [R`Hukum Termodinamika & Mesin Kalor`],
-    'heat-transfer': [R`Perpindahan Kalor: Konduksi, Konveksi & Radiasi`],
+    'gases': [R`Teori Kinetik & Gas Ideal`, R`Hukum Boyle, Charles, dan Gay-Lussac, persamaan gas ideal, mol, serta energi kinetik dan kelajuan molekul gas.`],
+    'thermo-laws': [R`Hukum Termodinamika & Mesin Kalor`, R`Energi dalam dan hukum I, usaha oleh gas, proses termodinamika, mesin kalor, batas Carnot, dan mesin pendingin.`],
+    'heat-transfer': [R`Perpindahan Kalor: Konduksi, Konveksi & Radiasi`, R`Tiga cara kalor berpindah, laju konduksi melalui dinding, radiasi dan hukum pangkat empat, serta isolasi.`],
     'electrostatics': [R`Listrik Statis: Muatan, Gaya & Medan`],
     'capacitors': [R`Potensial Listrik & Kapasitor`],
     'current-ohm': [R`Arus, Tegangan & Hukum Ohm`, R`Muatan dan arus, beda potensial, hambatan dan hukum Ohm, hambatan jenis, serta daya dan energi listrik.`],
@@ -424,6 +424,259 @@ addT('id', {
   '231jc4s23vr': R`Bertambah, karena gravitasi memberinya momen gaya`,
   '1ylan4wywz6': R`Di udara tidak ada momen gaya luar terhadap pusat massanya, jadi $I\omega$ tetap. Menekuk tubuh memperkecil $I$, sehingga $\omega$ bertambah.`,
   'deihpxduhb': R`x_{\text{pm}} = \frac{\sum m_i x_i}{\sum m_i} \qquad y_{\text{pm}} = \frac{\sum m_i y_i}{\sum m_i}`,
+});
+
+/* Bahasa Indonesia — 12-waves */
+addT('id', {
+  '1i3485l57l3': R`
+<p>Sebuah benda bergerak <b>harmonik sederhana</b> (GHS) jika gaya yang menariknya kembali ke posisi setimbang sebanding dengan simpangannya: $F = -kx$. Beban pada pegas dan bandul yang berayun dengan sudut kecil adalah contoh klasiknya.</p>
+⟦0⟧
+<h3>Menggambarkan getaran</h3>
+<ul><li><b>Amplitudo</b> $A$: simpangan terbesar dari posisi setimbang.</li><li><b>Periode</b> $T$: waktu untuk satu getaran penuh; <b>frekuensi</b> $f = 1/T$; <b>frekuensi sudut</b> $\omega = 2\pi f$.</li><li>Simpangannya mengikuti kurva sinus atau kosinus: $x = A\cos(\omega t)$.</li></ul>
+⟦1⟧
+<h3>Kecepatan, percepatan, dan energi</h3>
+<ul><li>Kelajuan terbesar di titik setimbang: $v_{\max} = A\omega$. Pada simpangan $x$: $v = \omega\sqrt{A^2 - x^2}$.</li><li>Percepatan terbesar di kedua ujung: $a_{\max} = A\omega^2$, selalu mengarah kembali ke titik setimbang.</li><li>Energi totalnya tetap, $E = \tfrac12 k A^2$; energi ini berganti-ganti antara energi kinetik dan energi potensial.</li></ul>
+⟦2⟧`,
+  '9pqe4ezwqq': R`Grafik simpangan terhadap waktu untuk getaran dengan amplitudo 4 cm dan periode 3 s`,
+  'gnp8qkykr1': R`Amplitudo $A = 4\,\mathrm{cm}$, periode $T = 3\,\mathrm{s}$.`,
+  '6jvoipk1c7': R`<p>Periode dua osilator baku:</p><p>$$\text{beban pada pegas: } T = 2\pi\sqrt{\frac{m}{k}} \qquad \text{bandul sederhana: } T = 2\pi\sqrt{\frac{L}{g}}$$</p><p>Keduanya tidak bergantung pada amplitudo. Periode bandul juga tidak bergantung pada massanya.</p>`,
+  'ztuj449fxe': R`<p>Pakai satuan SI di dalam akar: massa dalam kg, panjang dalam m. Bandul $50\,\mathrm{cm}$ memiliki $L = 0{,}5\,\mathrm{m}$.</p>`,
+  '22y4iw6i15l': R`Beban ⟦0⟧ digantung pada pegas dengan $k = ⟦1⟧$. Berapa periode getaran vertikalnya?`,
+  '1f2ky331xgd': R`Sebuah jam bandul memerlukan periode ⟦0⟧. Berapa panjang bandulnya? ⟦1⟧`,
+  'a1jdfy14a8': R`$T = 2\pi\sqrt{L/g}$, jadi $L = g\left(\frac{T}{2\pi}\right)^2 = ⟦0⟧\left(\frac{⟦1⟧}{2\pi}\right)^2 = ⟦2⟧$.`,
+  'p3ith2qya4': R`Berapa periode bandul sederhana yang panjangnya ⟦0⟧? ⟦1⟧`,
+  '1l9xl6dqu34': R`Sebuah benda bergerak harmonik sederhana dengan amplitudo ⟦0⟧ dan frekuensi ⟦1⟧. Berapa ⟦2⟧ maksimumnya?`,
+  '18fa0getwbu': R`$\omega = 2\pi f = ⟦0⟧\,\mathrm{rad/s}$, jadi $a_{\max} = A\omega^2 = ⟦1⟧ \cdot ⟦2⟧^2 = ⟦3⟧$.`,
+  'mv2mk76t00': R`$\omega = 2\pi f = ⟦0⟧\,\mathrm{rad/s}$, jadi $v_{\max} = A\omega = ⟦1⟧ \cdot ⟦2⟧ = ⟦3⟧$.`,
+  '1lchwdg6ceu': R`Sebuah beban bergetar dengan amplitudo ⟦0⟧ dan frekuensi sudut ⟦1⟧. Berapa kelajuannya saat berada ⟦2⟧ dari titik setimbang?`,
+  '15inzlixgu1': R`Sebuah pegas dengan $k = ⟦0⟧$ bergetar dengan amplitudo ⟦1⟧. Berapa energi total getarannya?`,
+  '1c3sz9vebxm': R`Sebuah bandul diayunkan dengan amplitudo yang lebih besar (tetapi masih kecil). Apa yang terjadi pada periodenya?`,
+  'wd2gq68rwy': R`Bertambah`,
+  'jvkkvevhx9': R`Berkurang`,
+  '1lzjojr1jnc': R`Menjadi dua kali lipat`,
+  'ac5vxrzmc8': R`Untuk ayunan kecil $T = 2\pi\sqrt{L/g}$, yang tidak memuat amplitudo: ayunan yang lebih besar menempuh jarak lebih jauh tetapi bergerak lebih cepat.`,
+  '1s5j1a71s65': R`Sebuah jam bandul dibawa ke Bulan, tempat $g$ sekitar seperenam nilainya di Bumi. Apa yang terjadi pada periode bandulnya?`,
+  'ratubbdd9j': R`Menjadi sekitar 2,45 kali lebih lama`,
+  '2bzcbdko0w8': R`Menjadi 6 kali lebih lama`,
+  'pgt5z6i3q': R`Menjadi lebih singkat`,
+  'akk3tbuht3': R`$T \propto 1/\sqrt{g}$, jadi membagi $g$ dengan 6 mengalikan $T$ dengan $\sqrt6 \approx 2{,}45$. Jam itu menjadi lambat.`,
+  '1ge7ofuh1pi': R`Di titik mana beban pada pegas memiliki kelajuan terbesar?`,
+  '2e889ojppn3': R`Saat melewati titik setimbang`,
+  'kap86cmi06': R`Di kedua ujung geraknya`,
+  '1q326t4g0i1': R`Di tengah-tengah antara titik setimbang dan ujung`,
+  '23y0ansr5sj': R`Kelajuannya sama di mana pun`,
+  '28zytuoytx3': R`Di titik setimbang seluruh energinya adalah energi kinetik, jadi kelajuannya terbesar; di ujung-ujung beban berhenti sesaat.`,
+  '8z6fbnnl86': R`
+<p><b>Gelombang</b> memindahkan energi dari satu tempat ke tempat lain tanpa memindahkan mediumnya. Pada gelombang mekanik, setiap partikel medium bergetar di sekitar posisinya sendiri dan meneruskan getaran itu ke partikel di sebelahnya.</p>
+<h3>Dua jenis gelombang</h3>
+<ul><li><b>Transversal:</b> partikel bergerak tegak lurus terhadap arah rambat gelombang. Gelombang pada tali, riak di permukaan air.</li><li><b>Longitudinal:</b> partikel bergerak maju-mundur searah rambat gelombang, membentuk rapatan dan regangan. Bunyi, slinki yang didorong.</li></ul>
+⟦0⟧
+<h3>Menggambarkan gelombang</h3>
+<ul><li><b>Panjang gelombang</b> $\lambda$: panjang satu gelombang penuh, misalnya dari puncak ke puncak.</li><li><b>Frekuensi</b> $f$: banyak gelombang yang melewati suatu titik per sekon; <b>periode</b> $T = 1/f$.</li><li><b>Amplitudo</b>: simpangan terbesar dari posisi setimbang.</li></ul>
+⟦1⟧
+<h3>Gelombang pada tali dan gelombang stasioner</h3>
+<p>Pada tali dengan tegangan $F$ dan massa per satuan panjang $\mu$, $v = \sqrt{F/\mu}$. Tali yang terikat di kedua ujungnya bergetar dalam <b>gelombang stasioner</b> yang panjangnya memuat bilangan bulat kali setengah panjang gelombang: $L = n\frac{\lambda}{2}$, jadi</p>
+⟦2⟧
+<p>Frekuensi terendah, $f_1$, adalah <b>nada dasar</b>; yang lain adalah nada atas (harmonik). Senar gitar disetel dengan mengubah tegangannya.</p>
+⟦3⟧`,
+  'kp4lbl7udc': R`Gelombang transversal dengan panjang gelombang 2 m dan amplitudo 3 cm`,
+  '1zm6py874qx': R`Panjang gelombang $\lambda = 2\,\mathrm{m}$ (puncak ke puncak), amplitudo $3\,\mathrm{cm}$.`,
+  'bglc9ofl2o': R`<p>Dalam satu periode gelombang maju sejauh satu panjang gelombang, jadi cepat rambatnya</p><p>$$v = f\lambda = \frac{\lambda}{T}.$$</p><p>Cepat rambat ditentukan oleh medium; frekuensi ditentukan oleh sumber.</p>`,
+  '1jnkp0gh44x': R`<p>Puncak dan lembah berikutnya berjarak setengah panjang gelombang, bukan satu.</p>`,
+  'ie8wf5nukd': R`Sebuah gelombang memiliki frekuensi ⟦0⟧ dan panjang gelombang ⟦1⟧. Berapa cepat rambatnya?`,
+  '1msis8skok2': R`Sebuah gelombang merambat dengan kelajuan ⟦0⟧ dan panjang gelombang ⟦1⟧. Berapa frekuensinya?`,
+  '1jdnxuku9ds': R`Sebuah gelombang merambat dengan kelajuan ⟦0⟧ dan frekuensi ⟦1⟧. Berapa panjang gelombangnya?`,
+  '1q5mbsbi04x': R`Potret sesaat gelombang pada tali`,
+  '1d7y6igctu': R`Grafik berikut adalah potret sesaat gelombang pada tali. Berapa panjang gelombangnya?`,
+  'mtgrxeu6hv': R`Satu gelombang penuh (puncak ke puncak, atau satu siklus penuh kurva) panjangnya ⟦0⟧.`,
+  '1mlp49e0emv': R`Grafik berikut adalah potret sesaat gelombang pada tali. Setiap titik tali melakukan satu getaran penuh setiap ⟦0⟧. Berapa cepat rambat gelombangnya?`,
+  '26oej5eyfks': R`Dari grafik $\lambda = ⟦0⟧$. Jadi $v = \frac{\lambda}{T} = \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  '1gm9faoax5k': R`Sebuah tali bermassa ⟦0⟧ per meter ditegangkan dengan gaya ⟦1⟧. Berapa cepat rambat gelombang pada tali itu?`,
+  '1gyij8yhy49': R`$\mu = ⟦0⟧\,\mathrm{kg/m}$, jadi $v = \sqrt{\frac{F}{\mu}} = \sqrt{\frac{⟦1⟧}{⟦2⟧}} = ⟦3⟧$.`,
+  '2fkcsa11ofq': R`Sebuah senar gitar sepanjang ⟦0⟧ terikat di kedua ujungnya, dan gelombang merambat padanya dengan kelajuan ⟦1⟧. Berapa frekuensi nada dasarnya?`,
+  '27rnf38usgi': R`Sebuah senar sepanjang ⟦0⟧ terikat di kedua ujungnya, dan gelombang merambat padanya dengan kelajuan ⟦1⟧. Berapa frekuensi harmonik ke-⟦2⟧?`,
+  '101kbhi2ki4': R`Sebuah gelombang air memiliki panjang gelombang ⟦0⟧. Berapa jarak mendatar antara sebuah puncak dan lembah berikutnya?`,
+  '1jzf6mz8i0': R`Puncak dan lembah berikutnya berjarak setengah panjang gelombang: ⟦0⟧.`,
+  '631lfrkrbk': R`Manakah yang merupakan gelombang longitudinal?`,
+  '15621awlnrj': R`Gelombang bunyi di udara`,
+  '1fihbxywv60': R`Gelombang pada senar gitar`,
+  '8kibhwikbe': R`Riak di permukaan kolam`,
+  '1agvj61o6u1': R`Gelombang pada tali yang digoyang ke samping`,
+  'u5kqz20fqg': R`Pada bunyi, partikel udara bergerak maju-mundur searah rambat gelombang, membentuk rapatan dan regangan.`,
+  '1ykuzp6v50l': R`Sebuah gelombang merambat dari air dalam ke air dangkal, tempat cepat rambatnya lebih kecil. Apa yang tetap sama?`,
+  'jx89ugpgu3': R`Frekuensinya`,
+  '191uw403sez': R`Cepat rambatnya`,
+  '1t3vrgkwj6b': R`Panjang gelombangnya`,
+  '28ydf6in6m2': R`Arahnya, selalu`,
+  '6b9ks5f4ky': R`Frekuensi ditentukan oleh sumber dan tidak berubah. Karena $v = f\lambda$, cepat rambat yang lebih kecil berarti panjang gelombang yang lebih pendek.`,
+  '114v5emv6pf': R`
+<p>Bunyi adalah gelombang mekanik <b>longitudinal</b>: pola rapatan dan regangan yang merambat. Bunyi memerlukan medium dan tidak dapat merambat di ruang hampa. Di udara pada suhu ruang cepat rambatnya sekitar $340\,\mathrm{m/s}$; di air sekitar $1500\,\mathrm{m/s}$; di baja lebih cepat lagi.</p>
+<h3>Gema</h3>
+<p>Gema merambat ke permukaan pemantul lalu kembali, jadi jarak ke permukaan itu $d = \dfrac{v t}{2}$. Kelelawar, sonar kapal, dan alat USG semuanya memakai prinsip ini.</p>
+<h3>Tinggi nada dan kenyaringan</h3>
+<p><b>Tinggi nada</b> ditentukan oleh frekuensi dan <b>kenyaringan</b> terutama oleh amplitudo. Manusia dapat mendengar sekitar $20\,\mathrm{Hz}$ sampai $20\,000\,\mathrm{Hz}$; di atasnya ultrasonik, di bawahnya infrasonik.</p>
+⟦0⟧
+<h3>Efek Doppler</h3>
+<p>Jika sumber dan pendengar saling mendekat, pendengar mendengar frekuensi yang lebih tinggi; jika saling menjauh, lebih rendah. Dengan cepat rambat bunyi $v$, kelajuan pendengar $v_p$, dan kelajuan sumber $v_s$:</p>
+⟦1⟧
+<p>Pakai tanda atas jika keduanya saling mendekat dan tanda bawah jika saling menjauh.</p>
+<h3>Pipa organa</h3>
+<p>Kolom udara beresonansi seperti senar. Pipa organa terbuka memiliki $f_n = \dfrac{n v}{2L}$; pipa organa tertutup hanya memiliki harmonik ganjil, $f = \dfrac{(2n-1) v}{4L}$, jadi nada dasarnya $\dfrac{v}{4L}$.</p>
+⟦2⟧`,
+  '1v6x9695ich': R`<p><b>Intensitas</b> adalah daya per satuan luas. Dari sumber kecil yang memancar ke segala arah:</p><p>$$I = \frac{P}{4\pi r^2}.$$</p><p>Kenyaringan diukur dengan skala logaritmik <b>desibel</b>:</p><p>$$\beta = 10 \log_{10}\frac{I}{I_0}\ \mathrm{dB}, \qquad I_0 = 10^{-12}\,\mathrm{W/m^2}.$$</p><p>Setiap tambahan $10\,\mathrm{dB}$ berarti intensitasnya sepuluh kali lipat.</p>`,
+  '86oxii1rtz': R`<p>Jangan lupa membagi dua waktu gema: bunyi pergi <i>dan</i> kembali.</p>`,
+  'd0x50jw74k': R`Pulsa sonar sebuah kapal kembali dari dasar laut setelah ⟦0⟧. Berapa kedalaman laut di tempat itu? (Cepat rambat bunyi di air: $1500\,\mathrm{m/s}$.)`,
+  '15heivdhpiv': R`Seorang anak bertepuk tangan dan mendengar gema dari tebing ⟦0⟧ kemudian. Berapa jarak tebing itu? (Cepat rambat bunyi: $340\,\mathrm{m/s}$.)`,
+  '39gi56wibv': R`Bunyi pergi dan kembali, jadi $d = \frac{vt}{2} = \frac{⟦0⟧ \cdot ⟦1⟧}{2} = ⟦2⟧$.`,
+  '1urmwnl3qqi': R`Sebuah garpu tala bergetar dengan frekuensi ⟦0⟧. Berapa panjang gelombang bunyinya di udara? (Cepat rambat bunyi: $340\,\mathrm{m/s}$.)`,
+  '1l3ye3wbjc5': R`Sebuah pengeras suara kecil memancarkan bunyi berdaya ⟦0⟧ sama rata ke segala arah. Berapa intensitasnya pada jarak ⟦1⟧?`,
+  '1i1b97whjwx': R`Ketik perpangkatan sepuluh seperti 3,2e-3.`,
+  '1qqih20eqfn': R`Sebuah bunyi memiliki intensitas $⟦0⟧\,\mathrm{W/m^2}$. Berapa taraf intensitasnya dalam desibel? ($I_0 = 10^{-12}\,\mathrm{W/m^2}$.)`,
+  'vumsl4uhq7': R`Sebuah jalan raya ⟦0⟧ lebih nyaring daripada ruangan yang sunyi. Berapa kali lebih besar intensitas bunyinya?`,
+  '1ve3aa8xaq6': R`Setiap $10\,\mathrm{dB}$ mengalikan intensitas dengan 10, jadi $⟦0⟧\,\mathrm{dB}$ berarti faktor $10^{⟦1⟧} = ⟦2⟧$.`,
+  '1g3ch28rzb8': R`Satu mesin menghasilkan taraf intensitas ⟦0⟧. Berapa taraf intensitasnya jika ⟦1⟧ mesin identik dinyalakan bersamaan?`,
+  '203gmn6rig5': R`Intensitasnya ⟦0⟧ kali lebih besar, menambah $10\log_{10}⟦1⟧ = ⟦2⟧\,\mathrm{dB}$: taraf intensitasnya ⟦3⟧.`,
+  '1lwcvywbox7': R`Sirene ambulans memancarkan bunyi ⟦0⟧. Ambulans itu bergerak dengan kelajuan ⟦1⟧ ⟦2⟧ seseorang yang diam. Berapa frekuensi yang didengar orang itu? (Cepat rambat bunyi: $340\,\mathrm{m/s}$.)`,
+  '1bmhjp5ttrv': R`mendekati`,
+  '1jxkdr9wig4': R`menjauhi`,
+  '2cgbic1xeqi': R`$f_p = f_s \frac{v}{v ⟦0⟧ v_s} = ⟦1⟧ \cdot \frac{340}{340 ⟦2⟧ ⟦3⟧} = ⟦4⟧$. Nadanya ⟦5⟧ daripada nada sirene itu sendiri.`,
+  '13ta03l38kj': R`lebih tinggi`,
+  '9nl2sip6fg': R`lebih rendah`,
+  '1b2ywt8flwh': R`Berapa frekuensi nada dasar pipa organa terbuka sepanjang ⟦0⟧? (Cepat rambat bunyi: $340\,\mathrm{m/s}$.)`,
+  '226oo8pzme3': R`Berapa frekuensi nada dasar pipa organa tertutup sepanjang ⟦0⟧? (Cepat rambat bunyi: $340\,\mathrm{m/s}$.)`,
+  'av5e2ab412': R`Pipa terbuka: $f_1 = \frac{v}{2L} = \frac{340}{2 \cdot ⟦0⟧} = ⟦1⟧$.`,
+  '555dzhesdt': R`Pipa tertutup: $f_1 = \frac{v}{4L} = \frac{340}{4 \cdot ⟦0⟧} = ⟦1⟧$.`,
+});
+
+/* Bahasa Indonesia — 13-thermal-b */
+addT('id', {
+  '21dhslug5zb': R`
+<p>Gas terdiri atas sangat banyak molekul yang bergerak acak dan saling bertumbukan serta menumbuk dinding wadahnya. Tumbukan dengan dinding itulah yang menimbulkan <b>tekanan</b> gas.</p>
+<h3>Hukum-hukum gas</h3>
+<ul><li><b>Hukum Boyle</b> (suhu tetap): $p_1 V_1 = p_2 V_2$. Mampatkan gas menjadi setengah volumenya, tekanannya menjadi dua kali lipat.</li><li><b>Hukum Charles</b> (tekanan tetap): $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$.</li><li><b>Hukum Gay-Lussac</b> (volume tetap): $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$.</li></ul>
+⟦0⟧
+<h3>Teori kinetik</h3>
+<p>Suhu gas menyatakan energi kinetik rata-rata molekul-molekulnya:</p>
+⟦1⟧
+<p>Kelajuan khas (akar rata-rata kuadrat) molekul bermassa molar $M$ (dalam $\mathrm{kg/mol}$) adalah $v_{\text{rms}} = \sqrt{\dfrac{3RT}{M}}$: pada suhu yang sama, molekul yang lebih ringan bergerak lebih cepat.</p>
+⟦2⟧`,
+  'gdeenhkvil': R`<p>Ketiganya bergabung menjadi <b>persamaan gas ideal</b>:</p><p>$$pV = nRT, \qquad R = 8{,}31\,\mathrm{J/(mol\,K)},$$</p><p>dengan $n$ banyaknya mol dan $T$ <b>suhu mutlak dalam kelvin</b>. Untuk jumlah gas yang tetap, $\dfrac{p_1 V_1}{T_1} = \dfrac{p_2 V_2}{T_2}$.</p>`,
+  '1jw8grqalm0': R`\bar{E}_k = \tfrac32 k T, \qquad k = 1{,}38 \times 10^{-23}\,\mathrm{J/K}`,
+  '177cn244pf2': R`<p>Selalu pakai kelvin dalam hukum-hukum gas. Menggandakan suhu dari $20^\circ\mathrm{C}$ ke $40^\circ\mathrm{C}$ <i>tidak</i> menggandakan suhu mutlaknya: $293\,\mathrm{K} \to 313\,\mathrm{K}$.</p>`,
+  '10v52vx7nsx': R`Gas bertekanan ⟦0⟧ menempati volume ⟦1⟧. Gas itu dimampatkan pada suhu tetap menjadi ⟦2⟧. Berapa tekanannya sekarang?`,
+  '1c2ectlxyhb': R`Hukum Boyle: $p_2 = \frac{p_1 V_1}{V_2} = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  'a41nl1n09z': R`Sebuah balon berisi ⟦0⟧ gas bersuhu ⟦1⟧. Pada tekanan tetap gas itu dipanaskan sampai ⟦2⟧. Berapa volumenya sekarang?`,
+  '1vb179ctxsx': R`Dalam kelvin: $T_1 = ⟦0⟧\,\mathrm{K}$, $T_2 = ⟦1⟧\,\mathrm{K}$. Hukum Charles: $V_2 = V_1 \frac{T_2}{T_1} = ⟦2⟧ \cdot \frac{⟦3⟧}{⟦4⟧} = ⟦5⟧$.`,
+  '1bgzfoo4khm': R`Tekanan ban mobil ⟦0⟧ pada suhu ⟦1⟧. Setelah perjalanan jauh, suhu udara di dalamnya ⟦2⟧. Jika volumenya dianggap tetap, berapa tekanannya sekarang?`,
+  'gsgiyrvyko': R`$\frac{p_1}{T_1} = \frac{p_2}{T_2}$ dalam kelvin: $p_2 = ⟦0⟧ \cdot \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  '20coww4vnja': R`Berapa tekanan ⟦0⟧ mol gas ideal di dalam wadah ⟦1⟧ pada suhu ⟦2⟧? ($R = 8{,}31\,\mathrm{J/(mol\,K)}$.)`,
+  '9kkrn7wmpa': R`$V = ⟦0⟧\,\mathrm{m^3}$ dan $T = ⟦1⟧\,\mathrm{K}$, jadi $p = \frac{nRT}{V} = \frac{⟦2⟧ \cdot 8{,}31 \cdot ⟦3⟧}{⟦4⟧} = ⟦5⟧\,\mathrm{Pa} = ⟦6⟧$.`,
+  '1zttn7v8yhj': R`Berapa energi kinetik rata-rata sebuah molekul gas pada suhu ⟦0⟧? ($k = 1{,}38 \times 10^{-23}\,\mathrm{J/K}$.)`,
+  'q7nv0kelbx': R`Ketik perpangkatan sepuluh seperti 6,2e-21.`,
+  '1esnafleeus': R`$T = ⟦0⟧\,\mathrm{K}$, jadi $\bar{E}_k = \tfrac32 kT = 1{,}5 \cdot 1{,}38 \times 10^{-23} \cdot ⟦1⟧ = ⟦2⟧\,\mathrm{J}$.`,
+  'cfjxyls3fe': R`oksigen`,
+  '2fxtzvme6xl': R`nitrogen`,
+  '2tgzvy1zg8': R`helium`,
+  '12yy0cxsfrt': R`hidrogen`,
+  'aml98t038j': R`karbon dioksida`,
+  'pfxelfi2eb': R`Berapa kelajuan rms molekul ⟦0⟧ (massa molar ⟦1⟧) pada suhu ⟦2⟧? ($R = 8{,}31\,\mathrm{J/(mol\,K)}$.)`,
+  '2byj0la7hyf': R`$v_{\text{rms}} = \sqrt{\frac{3RT}{M}} = \sqrt{\frac{3 \cdot 8{,}31 \cdot ⟦0⟧}{⟦1⟧}} = ⟦2⟧$.`,
+  '2417l7n2be2': R`Suhu mutlak suatu gas dijadikan dua kali lipat. Apa yang terjadi pada energi kinetik rata-rata molekulnya?`,
+  's2bzamjkkl': R`Menjadi empat kali lipat`,
+  '1h3f1i6xxtc': R`Bertambah $\sqrt2$ kali`,
+  '185uhcvfxvw': R`$\bar{E}_k = \tfrac32 kT$ sebanding dengan suhu mutlak, jadi menjadi dua kali lipat. (Kelajuan rms hanya bertambah $\sqrt2$ kali.)`,
+  '29sy64nmqhy': R`
+<h3>Hukum I termodinamika</h3>
+<p><b>Energi dalam</b> $U$ suatu gas adalah jumlah energi kinetik molekul-molekulnya (untuk gas ideal hanya bergantung pada suhu). Energi dalam berubah ketika kalor masuk atau ketika gas melakukan usaha:</p>
+⟦0⟧
+<p>$Q$ adalah kalor yang diberikan <i>kepada</i> gas dan $W$ adalah usaha yang dilakukan <i>oleh</i> gas. Ini adalah hukum kekekalan energi.</p>
+<h3>Usaha oleh gas</h3>
+<p>Gas yang memuai pada tekanan tetap $p$ dari $V_1$ ke $V_2$ melakukan usaha $W = p\,\Delta V$. Pada diagram $p$–$V$, usaha sama dengan luas di bawah kurva.</p>
+⟦1⟧
+⟦2⟧
+<h3>Hukum II termodinamika dan mesin pendingin</h3>
+<p>Kalor dengan sendirinya hanya mengalir dari benda panas ke benda dingin, dan tidak ada mesin yang dapat mengubah seluruh kalornya menjadi usaha. Mesin pendingin memakai usaha $W$ untuk memindahkan kalor $Q_C$ keluar dari bagian dalamnya yang dingin; koefisien kinerjanya $\mathrm{COP} = \dfrac{Q_C}{W}$.</p>
+⟦3⟧`,
+  '137ld4xmfi': R`Proses`,
+  'mib91nk34z': R`Yang tetap`,
+  'pnj7ezbtfu': R`Akibatnya`,
+  '17rdmizan4j': R`Isobarik`,
+  '1m1e6xhh7se': R`Isokhorik`,
+  '5j483cstu': R`Isotermal`,
+  'ipe0dpgzd1': R`Adiabatik`,
+  '1599mpblhsw': R`tidak ada aliran kalor`,
+  '2f8vl3mzmme': R`<p><b>Mesin kalor</b> menyerap kalor $Q_H$ dari reservoir panas, melakukan usaha $W$, dan membuang kalor $Q_C$ ke reservoir dingin: $W = Q_H - Q_C$. Efisiensinya</p><p>$$\eta = \frac{W}{Q_H} = 1 - \frac{Q_C}{Q_H}.$$</p><p>Tidak ada mesin yang bekerja di antara suhu mutlak $T_H$ dan $T_C$ yang dapat melampaui <b>efisiensi Carnot</b> $\eta_{\max} = 1 - \dfrac{T_C}{T_H}$.</p>`,
+  'hppfy94p9s': R`<p>Perhatikan tandanya: kalor yang <i>dilepas</i> gas membuat $Q$ negatif, dan usaha yang dilakukan <i>pada</i> gas (pemampatan) membuat $W$ negatif.</p>`,
+  '2bdwxcz15vn': R`Suatu gas menyerap kalor ⟦0⟧ dan melakukan usaha ⟦1⟧ terhadap lingkungannya. Berapa perubahan energi dalamnya?`,
+  '1me3vahniil': R`Gas pada tekanan tetap ⟦0⟧ memuai dari ⟦1⟧ menjadi ⟦2⟧. Berapa usaha yang dilakukannya?`,
+  '22rorg6f8cm': R`Sebuah mesin menyerap kalor ⟦0⟧ per siklus dan melakukan usaha ⟦1⟧. Berapa efisiensinya?`,
+  'abfrawf3tu': R`Sebuah mesin dengan efisiensi ⟦0⟧% menyerap kalor ⟦1⟧ per siklus. Berapa kalor yang dibuangnya ke reservoir dingin?`,
+  '26jj1pyk0pu': R`$W = \eta Q_H = ⟦0⟧\,\mathrm{J}$, jadi $Q_C = Q_H - W = ⟦1⟧ - ⟦2⟧ = ⟦3⟧$.`,
+  '1fhpveb0e6e': R`Berapa efisiensi maksimum yang mungkin bagi mesin yang bekerja di antara ⟦0⟧ dan ⟦1⟧?`,
+  '14b85v5vqgj': R`Pakai kelvin: $T_H = ⟦0⟧\,\mathrm{K}$, $T_C = ⟦1⟧\,\mathrm{K}$. $\eta_{\max} = 1 - \frac{⟦2⟧}{⟦3⟧} = ⟦4⟧$, yaitu ⟦5⟧%.`,
+  '1ujhd6xwp04': R`Sebuah lemari es dengan koefisien kinerja ⟦0⟧ memakai usaha listrik ⟦1⟧. Berapa kalor yang dipindahkannya dari ruang penyimpanan?`,
+  '2f4ijqrr0id': R`$\mathrm{COP} = \frac{Q_C}{W}$, jadi $Q_C = ⟦0⟧ \cdot ⟦1⟧ = ⟦2⟧$.`,
+  '4v290q5jvu': R`Suatu gas dimampatkan begitu cepat sehingga tidak ada kalor yang sempat masuk atau keluar. Proses apakah ini, dan apa yang terjadi pada suhunya?`,
+  '1e2tloekk25': R`Adiabatik; suhunya naik`,
+  '1f4jyi07576': R`Isotermal; suhunya tetap`,
+  'edare2qu9m': R`Adiabatik; suhunya turun`,
+  'lv3kuk7ifj': R`Isokhorik; suhunya tetap`,
+  '1z0ld1ou7h3': R`Dengan $Q = 0$, $\Delta U = -W$. Pemampatan berarti usaha dilakukan pada gas ($W \lt 0$), jadi $\Delta U \gt 0$ dan suhunya naik, seperti pada pompa sepeda.`,
+  '2bkn4a7uqio': R`Mengapa tidak ada mesin kalor yang efisiensinya 100%?`,
+  '11z80mn170j': R`Sebagian kalor selalu harus dibuang ke reservoir yang lebih dingin`,
+  '2b8ina7h909': R`Gesekan tidak pernah bisa dihilangkan sepenuhnya`,
+  'neirk4q8uo': R`Energi dimusnahkan di dalam mesin`,
+  '84zp6s3gd5': R`Mesin kalor selalu bocor gas`,
+  '1s2kt2odl2q': R`Hukum II termodinamika: mesin yang bekerja dalam siklus harus membuang sebagian kalor ke reservoir dingin, jadi $W \lt Q_H$ walaupun tanpa gesekan sama sekali.`,
+  'kzd3elszlv': R`
+<p>Kalor selalu mengalir dari tempat yang lebih panas ke tempat yang lebih dingin, dengan tiga cara yang berbeda.</p>
+<h3>Konduksi</h3>
+<p>Di dalam zat padat, partikel yang berenergi tinggi memberikan energinya kepada partikel di sebelahnya. Logam menghantarkan kalor dengan baik karena elektron bebasnya membawa energi dengan cepat; kayu, plastik, udara diam, dan wol adalah penghantar yang buruk, atau <b>isolator</b>. Laju aliran kalor melalui lempeng seluas $A$ dan setebal $L$ dengan beda suhu $\Delta T$ adalah</p>
+⟦0⟧
+<p>dengan $k$ adalah konduktivitas termal dalam $\mathrm{W/(m\,K)}$ (tembaga sekitar 400, kaca sekitar 0,8, udara sekitar 0,025).</p>
+<h3>Konveksi</h3>
+<p>Di dalam zat cair dan gas, fluida yang hangat memuai, menjadi kurang rapat, lalu naik, sedangkan fluida yang lebih dingin turun menggantikannya. <b>Arus konveksi</b> ini memanaskan ruangan dari pemanas, menimbulkan angin laut, dan menggerakkan cuaca di Bumi.</p>
+<h3>Radiasi</h3>
+<p>Setiap benda memancarkan radiasi elektromagnetik (sebagian besar inframerah pada suhu sehari-hari). Radiasi tidak memerlukan medium; begitulah panas Matahari menyeberangi ruang angkasa. Daya yang dipancarkan adalah</p>
+⟦1⟧
+<p>dengan $T$ dalam kelvin dan emisivitas $e$ antara 0 dan 1. Permukaan hitam kusam adalah pemancar dan penyerap yang baik; permukaan perak mengilap buruk untuk keduanya.</p>
+⟦2⟧
+⟦3⟧`,
+  'hwi1w49rkj': R`P = e \sigma A T^4, \qquad \sigma = 5{,}67 \times 10^{-8}\,\mathrm{W/(m^2\,K^4)}`,
+  '13p3tgpadv1': R`<p>Termos menghambat ketiganya: ruang hampa di antara dinding gandanya menghentikan konduksi dan konveksi, dan dindingnya yang dilapisi perak mengurangi radiasi.</p>`,
+  'x5fi8nnpex': R`<p>Pangkat empat membuat radiasi sangat peka terhadap suhu: menggandakan suhu mutlak mengalikan daya pancar dengan $2^4 = 16$.</p>`,
+  '73nrxfby7i': R`Sebuah jendela kaca memiliki luas ⟦0⟧ dan tebal ⟦1⟧. Permukaan dalamnya ⟦2⟧ lebih hangat daripada permukaan luarnya. Berapa kalor yang dihantarkan melaluinya setiap sekon? (Konduktivitas termal kaca: ⟦3⟧.)`,
+  '21rgdv0o589': R`$L = ⟦0⟧\,\mathrm{m}$, jadi $P = \frac{kA\Delta T}{L} = \frac{⟦1⟧ \cdot ⟦2⟧ \cdot ⟦3⟧}{⟦4⟧} = ⟦5⟧$.`,
+  '528rvzugsb': R`Lapisan isolasi sebuah dinding dibuat ⟦0⟧ kali lebih tebal, sedangkan yang lain tetap. Bagaimana perubahan laju konduksi kalornya?`,
+  's96qwuou68': R`Menjadi 1/⟦0⟧ kali semula`,
+  '22ieohw7pjy': R`Menjadi ⟦0⟧ kali lipat`,
+  '59zn95ul7w': R`$P = \frac{kA\Delta T}{L}$ berbanding terbalik dengan tebal $L$.`,
+  '18frjv8vh76': R`Sebuah dinding diganti dengan dinding dari bahan dan tebal yang sama tetapi luasnya ⟦0⟧ kali lipat. Bagaimana perubahan laju konduksi kalornya?`,
+  '2cgmim5wtwe': R`$P = \frac{kA\Delta T}{L}$ sebanding dengan luas $A$.`,
+  '2gm63by7pu1': R`Beda suhu pada sebuah dinding menjadi ⟦0⟧ kali lipat. Bagaimana perubahan laju konduksi kalornya?`,
+  '1u52hu070ys': R`$P = \frac{kA\Delta T}{L}$ sebanding dengan beda suhu $\Delta T$.`,
+  '25bckdhtcde': R`Sebuah permukaan dengan luas ⟦0⟧ dan emisivitas ⟦1⟧ bersuhu ⟦2⟧. Berapa daya yang dipancarkannya? ($\sigma = 5{,}67 \times 10^{-8}\,\mathrm{W/(m^2\,K^4)}$.)`,
+  '1untac5cb1c': R`$T = ⟦0⟧\,\mathrm{K}$, jadi $P = e\sigma A T^4 = ⟦1⟧ \cdot 5{,}67 \times 10^{-8} \cdot ⟦2⟧ \cdot ⟦3⟧^4 = ⟦4⟧$.`,
+  'zoku9j1ouz': R`Suhu mutlak sebuah benda berpijar naik ⟦0⟧ kali. Berapa kali lipat kenaikan daya yang dipancarkannya?`,
+  '1qxkhjd1gxs': R`$P \propto T^4$, jadi dayanya naik $⟦0⟧^4 = ⟦1⟧$ kali.`,
+  '2536d4hpnet': R`Bagaimana panas Matahari sampai ke Bumi?`,
+  '2ftsfx7l5gx': R`Secara radiasi`,
+  '22o59w2wgq0': R`Secara konduksi`,
+  'b7h98503gn': R`Secara konveksi`,
+  '1vta82qnar': R`Secara konduksi dan konveksi bersama-sama`,
+  'wx08q4h08d': R`Ruang angkasa hampir hampa, jadi tidak ada yang dapat menghantarkan atau membawa kalor. Hanya radiasi elektromagnetik yang dapat menyeberanginya.`,
+  'lnii1a1qox': R`Sebuah sendok logam dan sendok kayu sudah berjam-jam berada di ruangan yang sama. Sendok logam terasa lebih dingin saat disentuh. Mengapa?`,
+  '1h5ed6vv71q': R`Logam menghantarkan kalor dari tanganmu lebih cepat`,
+  '38ke9qjns8': R`Suhu sendok logam lebih rendah`,
+  '1c2rq2pqbzl': R`Kayu menghasilkan panasnya sendiri`,
+  'ydlg5svt3f': R`Logam memancarkan dingin`,
+  'we71n9ei4q': R`Keduanya bersuhu ruang. Logam adalah penghantar yang baik, jadi logam menarik kalor dari tanganmu yang lebih hangat dengan cepat, dan kulitmu merasakan kehilangan kalor itu sebagai dingin.`,
+  'y0vlcntwbz': R`Mengapa pemanas ruangan biasanya dipasang rendah, dekat lantai?`,
+  'qocl7x706v': R`Udara hangat naik dan menimbulkan arus konveksi yang beredar ke seluruh ruangan`,
+  '12zp8cbky5k': R`Kalor hanya dapat mengalir ke bawah`,
+  '12gls28grzn': R`Lantai menghantarkan kalor ke seluruh ruangan`,
+  '1qsoe2y4dcg': R`Radiasi hanya bekerja di dekat lantai`,
+  '1vge02fkmw4': R`Udara yang dipanaskan pemanas menjadi kurang rapat dan naik; udara yang lebih dingin turun dan mengalir masuk untuk dipanaskan. Seluruh ruangan menjadi hangat oleh arus konveksi ini.`,
 });
 
 /* Bahasa Indonesia — 2-foundations */

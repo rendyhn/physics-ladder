@@ -1,0 +1,130 @@
+/* Bahasa Indonesia — 13-thermal-b */
+addT('id', {
+  '21dhslug5zb': R`
+<p>Gas terdiri atas sangat banyak molekul yang bergerak acak dan saling bertumbukan serta menumbuk dinding wadahnya. Tumbukan dengan dinding itulah yang menimbulkan <b>tekanan</b> gas.</p>
+<h3>Hukum-hukum gas</h3>
+<ul><li><b>Hukum Boyle</b> (suhu tetap): $p_1 V_1 = p_2 V_2$. Mampatkan gas menjadi setengah volumenya, tekanannya menjadi dua kali lipat.</li><li><b>Hukum Charles</b> (tekanan tetap): $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$.</li><li><b>Hukum Gay-Lussac</b> (volume tetap): $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$.</li></ul>
+⟦0⟧
+<h3>Teori kinetik</h3>
+<p>Suhu gas menyatakan energi kinetik rata-rata molekul-molekulnya:</p>
+⟦1⟧
+<p>Kelajuan khas (akar rata-rata kuadrat) molekul bermassa molar $M$ (dalam $\mathrm{kg/mol}$) adalah $v_{\text{rms}} = \sqrt{\dfrac{3RT}{M}}$: pada suhu yang sama, molekul yang lebih ringan bergerak lebih cepat.</p>
+⟦2⟧`,
+  'gdeenhkvil': R`<p>Ketiganya bergabung menjadi <b>persamaan gas ideal</b>:</p><p>$$pV = nRT, \qquad R = 8{,}31\,\mathrm{J/(mol\,K)},$$</p><p>dengan $n$ banyaknya mol dan $T$ <b>suhu mutlak dalam kelvin</b>. Untuk jumlah gas yang tetap, $\dfrac{p_1 V_1}{T_1} = \dfrac{p_2 V_2}{T_2}$.</p>`,
+  '1jw8grqalm0': R`\bar{E}_k = \tfrac32 k T, \qquad k = 1{,}38 \times 10^{-23}\,\mathrm{J/K}`,
+  '177cn244pf2': R`<p>Selalu pakai kelvin dalam hukum-hukum gas. Menggandakan suhu dari $20^\circ\mathrm{C}$ ke $40^\circ\mathrm{C}$ <i>tidak</i> menggandakan suhu mutlaknya: $293\,\mathrm{K} \to 313\,\mathrm{K}$.</p>`,
+  '10v52vx7nsx': R`Gas bertekanan ⟦0⟧ menempati volume ⟦1⟧. Gas itu dimampatkan pada suhu tetap menjadi ⟦2⟧. Berapa tekanannya sekarang?`,
+  '1c2ectlxyhb': R`Hukum Boyle: $p_2 = \frac{p_1 V_1}{V_2} = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  'a41nl1n09z': R`Sebuah balon berisi ⟦0⟧ gas bersuhu ⟦1⟧. Pada tekanan tetap gas itu dipanaskan sampai ⟦2⟧. Berapa volumenya sekarang?`,
+  '1vb179ctxsx': R`Dalam kelvin: $T_1 = ⟦0⟧\,\mathrm{K}$, $T_2 = ⟦1⟧\,\mathrm{K}$. Hukum Charles: $V_2 = V_1 \frac{T_2}{T_1} = ⟦2⟧ \cdot \frac{⟦3⟧}{⟦4⟧} = ⟦5⟧$.`,
+  '1bgzfoo4khm': R`Tekanan ban mobil ⟦0⟧ pada suhu ⟦1⟧. Setelah perjalanan jauh, suhu udara di dalamnya ⟦2⟧. Jika volumenya dianggap tetap, berapa tekanannya sekarang?`,
+  'gsgiyrvyko': R`$\frac{p_1}{T_1} = \frac{p_2}{T_2}$ dalam kelvin: $p_2 = ⟦0⟧ \cdot \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  '20coww4vnja': R`Berapa tekanan ⟦0⟧ mol gas ideal di dalam wadah ⟦1⟧ pada suhu ⟦2⟧? ($R = 8{,}31\,\mathrm{J/(mol\,K)}$.)`,
+  '9kkrn7wmpa': R`$V = ⟦0⟧\,\mathrm{m^3}$ dan $T = ⟦1⟧\,\mathrm{K}$, jadi $p = \frac{nRT}{V} = \frac{⟦2⟧ \cdot 8{,}31 \cdot ⟦3⟧}{⟦4⟧} = ⟦5⟧\,\mathrm{Pa} = ⟦6⟧$.`,
+  '1zttn7v8yhj': R`Berapa energi kinetik rata-rata sebuah molekul gas pada suhu ⟦0⟧? ($k = 1{,}38 \times 10^{-23}\,\mathrm{J/K}$.)`,
+  'q7nv0kelbx': R`Ketik perpangkatan sepuluh seperti 6,2e-21.`,
+  '1esnafleeus': R`$T = ⟦0⟧\,\mathrm{K}$, jadi $\bar{E}_k = \tfrac32 kT = 1{,}5 \cdot 1{,}38 \times 10^{-23} \cdot ⟦1⟧ = ⟦2⟧\,\mathrm{J}$.`,
+  'cfjxyls3fe': R`oksigen`,
+  '2fxtzvme6xl': R`nitrogen`,
+  '2tgzvy1zg8': R`helium`,
+  '12yy0cxsfrt': R`hidrogen`,
+  'aml98t038j': R`karbon dioksida`,
+  'pfxelfi2eb': R`Berapa kelajuan rms molekul ⟦0⟧ (massa molar ⟦1⟧) pada suhu ⟦2⟧? ($R = 8{,}31\,\mathrm{J/(mol\,K)}$.)`,
+  '2byj0la7hyf': R`$v_{\text{rms}} = \sqrt{\frac{3RT}{M}} = \sqrt{\frac{3 \cdot 8{,}31 \cdot ⟦0⟧}{⟦1⟧}} = ⟦2⟧$.`,
+  '2417l7n2be2': R`Suhu mutlak suatu gas dijadikan dua kali lipat. Apa yang terjadi pada energi kinetik rata-rata molekulnya?`,
+  's2bzamjkkl': R`Menjadi empat kali lipat`,
+  '1h3f1i6xxtc': R`Bertambah $\sqrt2$ kali`,
+  '185uhcvfxvw': R`$\bar{E}_k = \tfrac32 kT$ sebanding dengan suhu mutlak, jadi menjadi dua kali lipat. (Kelajuan rms hanya bertambah $\sqrt2$ kali.)`,
+  '29sy64nmqhy': R`
+<h3>Hukum I termodinamika</h3>
+<p><b>Energi dalam</b> $U$ suatu gas adalah jumlah energi kinetik molekul-molekulnya (untuk gas ideal hanya bergantung pada suhu). Energi dalam berubah ketika kalor masuk atau ketika gas melakukan usaha:</p>
+⟦0⟧
+<p>$Q$ adalah kalor yang diberikan <i>kepada</i> gas dan $W$ adalah usaha yang dilakukan <i>oleh</i> gas. Ini adalah hukum kekekalan energi.</p>
+<h3>Usaha oleh gas</h3>
+<p>Gas yang memuai pada tekanan tetap $p$ dari $V_1$ ke $V_2$ melakukan usaha $W = p\,\Delta V$. Pada diagram $p$–$V$, usaha sama dengan luas di bawah kurva.</p>
+⟦1⟧
+⟦2⟧
+<h3>Hukum II termodinamika dan mesin pendingin</h3>
+<p>Kalor dengan sendirinya hanya mengalir dari benda panas ke benda dingin, dan tidak ada mesin yang dapat mengubah seluruh kalornya menjadi usaha. Mesin pendingin memakai usaha $W$ untuk memindahkan kalor $Q_C$ keluar dari bagian dalamnya yang dingin; koefisien kinerjanya $\mathrm{COP} = \dfrac{Q_C}{W}$.</p>
+⟦3⟧`,
+  '137ld4xmfi': R`Proses`,
+  'mib91nk34z': R`Yang tetap`,
+  'pnj7ezbtfu': R`Akibatnya`,
+  '17rdmizan4j': R`Isobarik`,
+  '1m1e6xhh7se': R`Isokhorik`,
+  '5j483cstu': R`Isotermal`,
+  'ipe0dpgzd1': R`Adiabatik`,
+  '1599mpblhsw': R`tidak ada aliran kalor`,
+  '2f8vl3mzmme': R`<p><b>Mesin kalor</b> menyerap kalor $Q_H$ dari reservoir panas, melakukan usaha $W$, dan membuang kalor $Q_C$ ke reservoir dingin: $W = Q_H - Q_C$. Efisiensinya</p><p>$$\eta = \frac{W}{Q_H} = 1 - \frac{Q_C}{Q_H}.$$</p><p>Tidak ada mesin yang bekerja di antara suhu mutlak $T_H$ dan $T_C$ yang dapat melampaui <b>efisiensi Carnot</b> $\eta_{\max} = 1 - \dfrac{T_C}{T_H}$.</p>`,
+  'hppfy94p9s': R`<p>Perhatikan tandanya: kalor yang <i>dilepas</i> gas membuat $Q$ negatif, dan usaha yang dilakukan <i>pada</i> gas (pemampatan) membuat $W$ negatif.</p>`,
+  '2bdwxcz15vn': R`Suatu gas menyerap kalor ⟦0⟧ dan melakukan usaha ⟦1⟧ terhadap lingkungannya. Berapa perubahan energi dalamnya?`,
+  '1me3vahniil': R`Gas pada tekanan tetap ⟦0⟧ memuai dari ⟦1⟧ menjadi ⟦2⟧. Berapa usaha yang dilakukannya?`,
+  '22rorg6f8cm': R`Sebuah mesin menyerap kalor ⟦0⟧ per siklus dan melakukan usaha ⟦1⟧. Berapa efisiensinya?`,
+  'abfrawf3tu': R`Sebuah mesin dengan efisiensi ⟦0⟧% menyerap kalor ⟦1⟧ per siklus. Berapa kalor yang dibuangnya ke reservoir dingin?`,
+  '26jj1pyk0pu': R`$W = \eta Q_H = ⟦0⟧\,\mathrm{J}$, jadi $Q_C = Q_H - W = ⟦1⟧ - ⟦2⟧ = ⟦3⟧$.`,
+  '1fhpveb0e6e': R`Berapa efisiensi maksimum yang mungkin bagi mesin yang bekerja di antara ⟦0⟧ dan ⟦1⟧?`,
+  '14b85v5vqgj': R`Pakai kelvin: $T_H = ⟦0⟧\,\mathrm{K}$, $T_C = ⟦1⟧\,\mathrm{K}$. $\eta_{\max} = 1 - \frac{⟦2⟧}{⟦3⟧} = ⟦4⟧$, yaitu ⟦5⟧%.`,
+  '1ujhd6xwp04': R`Sebuah lemari es dengan koefisien kinerja ⟦0⟧ memakai usaha listrik ⟦1⟧. Berapa kalor yang dipindahkannya dari ruang penyimpanan?`,
+  '2f4ijqrr0id': R`$\mathrm{COP} = \frac{Q_C}{W}$, jadi $Q_C = ⟦0⟧ \cdot ⟦1⟧ = ⟦2⟧$.`,
+  '4v290q5jvu': R`Suatu gas dimampatkan begitu cepat sehingga tidak ada kalor yang sempat masuk atau keluar. Proses apakah ini, dan apa yang terjadi pada suhunya?`,
+  '1e2tloekk25': R`Adiabatik; suhunya naik`,
+  '1f4jyi07576': R`Isotermal; suhunya tetap`,
+  'edare2qu9m': R`Adiabatik; suhunya turun`,
+  'lv3kuk7ifj': R`Isokhorik; suhunya tetap`,
+  '1z0ld1ou7h3': R`Dengan $Q = 0$, $\Delta U = -W$. Pemampatan berarti usaha dilakukan pada gas ($W \lt 0$), jadi $\Delta U \gt 0$ dan suhunya naik, seperti pada pompa sepeda.`,
+  '2bkn4a7uqio': R`Mengapa tidak ada mesin kalor yang efisiensinya 100%?`,
+  '11z80mn170j': R`Sebagian kalor selalu harus dibuang ke reservoir yang lebih dingin`,
+  '2b8ina7h909': R`Gesekan tidak pernah bisa dihilangkan sepenuhnya`,
+  'neirk4q8uo': R`Energi dimusnahkan di dalam mesin`,
+  '84zp6s3gd5': R`Mesin kalor selalu bocor gas`,
+  '1s2kt2odl2q': R`Hukum II termodinamika: mesin yang bekerja dalam siklus harus membuang sebagian kalor ke reservoir dingin, jadi $W \lt Q_H$ walaupun tanpa gesekan sama sekali.`,
+  'kzd3elszlv': R`
+<p>Kalor selalu mengalir dari tempat yang lebih panas ke tempat yang lebih dingin, dengan tiga cara yang berbeda.</p>
+<h3>Konduksi</h3>
+<p>Di dalam zat padat, partikel yang berenergi tinggi memberikan energinya kepada partikel di sebelahnya. Logam menghantarkan kalor dengan baik karena elektron bebasnya membawa energi dengan cepat; kayu, plastik, udara diam, dan wol adalah penghantar yang buruk, atau <b>isolator</b>. Laju aliran kalor melalui lempeng seluas $A$ dan setebal $L$ dengan beda suhu $\Delta T$ adalah</p>
+⟦0⟧
+<p>dengan $k$ adalah konduktivitas termal dalam $\mathrm{W/(m\,K)}$ (tembaga sekitar 400, kaca sekitar 0,8, udara sekitar 0,025).</p>
+<h3>Konveksi</h3>
+<p>Di dalam zat cair dan gas, fluida yang hangat memuai, menjadi kurang rapat, lalu naik, sedangkan fluida yang lebih dingin turun menggantikannya. <b>Arus konveksi</b> ini memanaskan ruangan dari pemanas, menimbulkan angin laut, dan menggerakkan cuaca di Bumi.</p>
+<h3>Radiasi</h3>
+<p>Setiap benda memancarkan radiasi elektromagnetik (sebagian besar inframerah pada suhu sehari-hari). Radiasi tidak memerlukan medium; begitulah panas Matahari menyeberangi ruang angkasa. Daya yang dipancarkan adalah</p>
+⟦1⟧
+<p>dengan $T$ dalam kelvin dan emisivitas $e$ antara 0 dan 1. Permukaan hitam kusam adalah pemancar dan penyerap yang baik; permukaan perak mengilap buruk untuk keduanya.</p>
+⟦2⟧
+⟦3⟧`,
+  'hwi1w49rkj': R`P = e \sigma A T^4, \qquad \sigma = 5{,}67 \times 10^{-8}\,\mathrm{W/(m^2\,K^4)}`,
+  '13p3tgpadv1': R`<p>Termos menghambat ketiganya: ruang hampa di antara dinding gandanya menghentikan konduksi dan konveksi, dan dindingnya yang dilapisi perak mengurangi radiasi.</p>`,
+  'x5fi8nnpex': R`<p>Pangkat empat membuat radiasi sangat peka terhadap suhu: menggandakan suhu mutlak mengalikan daya pancar dengan $2^4 = 16$.</p>`,
+  '73nrxfby7i': R`Sebuah jendela kaca memiliki luas ⟦0⟧ dan tebal ⟦1⟧. Permukaan dalamnya ⟦2⟧ lebih hangat daripada permukaan luarnya. Berapa kalor yang dihantarkan melaluinya setiap sekon? (Konduktivitas termal kaca: ⟦3⟧.)`,
+  '21rgdv0o589': R`$L = ⟦0⟧\,\mathrm{m}$, jadi $P = \frac{kA\Delta T}{L} = \frac{⟦1⟧ \cdot ⟦2⟧ \cdot ⟦3⟧}{⟦4⟧} = ⟦5⟧$.`,
+  '528rvzugsb': R`Lapisan isolasi sebuah dinding dibuat ⟦0⟧ kali lebih tebal, sedangkan yang lain tetap. Bagaimana perubahan laju konduksi kalornya?`,
+  's96qwuou68': R`Menjadi 1/⟦0⟧ kali semula`,
+  '22ieohw7pjy': R`Menjadi ⟦0⟧ kali lipat`,
+  '59zn95ul7w': R`$P = \frac{kA\Delta T}{L}$ berbanding terbalik dengan tebal $L$.`,
+  '18frjv8vh76': R`Sebuah dinding diganti dengan dinding dari bahan dan tebal yang sama tetapi luasnya ⟦0⟧ kali lipat. Bagaimana perubahan laju konduksi kalornya?`,
+  '2cgmim5wtwe': R`$P = \frac{kA\Delta T}{L}$ sebanding dengan luas $A$.`,
+  '2gm63by7pu1': R`Beda suhu pada sebuah dinding menjadi ⟦0⟧ kali lipat. Bagaimana perubahan laju konduksi kalornya?`,
+  '1u52hu070ys': R`$P = \frac{kA\Delta T}{L}$ sebanding dengan beda suhu $\Delta T$.`,
+  '25bckdhtcde': R`Sebuah permukaan dengan luas ⟦0⟧ dan emisivitas ⟦1⟧ bersuhu ⟦2⟧. Berapa daya yang dipancarkannya? ($\sigma = 5{,}67 \times 10^{-8}\,\mathrm{W/(m^2\,K^4)}$.)`,
+  '1untac5cb1c': R`$T = ⟦0⟧\,\mathrm{K}$, jadi $P = e\sigma A T^4 = ⟦1⟧ \cdot 5{,}67 \times 10^{-8} \cdot ⟦2⟧ \cdot ⟦3⟧^4 = ⟦4⟧$.`,
+  'zoku9j1ouz': R`Suhu mutlak sebuah benda berpijar naik ⟦0⟧ kali. Berapa kali lipat kenaikan daya yang dipancarkannya?`,
+  '1qxkhjd1gxs': R`$P \propto T^4$, jadi dayanya naik $⟦0⟧^4 = ⟦1⟧$ kali.`,
+  '2536d4hpnet': R`Bagaimana panas Matahari sampai ke Bumi?`,
+  '2ftsfx7l5gx': R`Secara radiasi`,
+  '22o59w2wgq0': R`Secara konduksi`,
+  'b7h98503gn': R`Secara konveksi`,
+  '1vta82qnar': R`Secara konduksi dan konveksi bersama-sama`,
+  'wx08q4h08d': R`Ruang angkasa hampir hampa, jadi tidak ada yang dapat menghantarkan atau membawa kalor. Hanya radiasi elektromagnetik yang dapat menyeberanginya.`,
+  'lnii1a1qox': R`Sebuah sendok logam dan sendok kayu sudah berjam-jam berada di ruangan yang sama. Sendok logam terasa lebih dingin saat disentuh. Mengapa?`,
+  '1h5ed6vv71q': R`Logam menghantarkan kalor dari tanganmu lebih cepat`,
+  '38ke9qjns8': R`Suhu sendok logam lebih rendah`,
+  '1c2rq2pqbzl': R`Kayu menghasilkan panasnya sendiri`,
+  'ydlg5svt3f': R`Logam memancarkan dingin`,
+  'we71n9ei4q': R`Keduanya bersuhu ruang. Logam adalah penghantar yang baik, jadi logam menarik kalor dari tanganmu yang lebih hangat dengan cepat, dan kulitmu merasakan kehilangan kalor itu sebagai dingin.`,
+  'y0vlcntwbz': R`Mengapa pemanas ruangan biasanya dipasang rendah, dekat lantai?`,
+  'qocl7x706v': R`Udara hangat naik dan menimbulkan arus konveksi yang beredar ke seluruh ruangan`,
+  '12zp8cbky5k': R`Kalor hanya dapat mengalir ke bawah`,
+  '12gls28grzn': R`Lantai menghantarkan kalor ke seluruh ruangan`,
+  '1qsoe2y4dcg': R`Radiasi hanya bekerja di dekat lantai`,
+  '1vge02fkmw4': R`Udara yang dipanaskan pemanas menjadi kurang rapat dan naik; udara yang lebih dingin turun dan mengalir masuk untuk dipanaskan. Seluruh ruangan menjadi hangat oleh arus konveksi ini.`,
+});

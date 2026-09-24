@@ -86,3 +86,230 @@ They contain the same amount of heat
 Temperature and heat mean the same thing
 @1hpbnii9bln
 Temperature measures how hot something is; the total thermal energy also depends on how much material there is. A large mass of warm water can store more energy than a small mass of very hot water.
+
+##### gases
+@21dhslug5zb  ; 0=Key(T`<p>All three combine into the <b>i | 1=Fm(T`\bar{E}_k = \tfrac32 k T, \qquad k  | 2=Tip(T`<p>Always use kelvin in the gas la
+
+<p>A gas is made of a huge number of molecules moving randomly and colliding with each other and the walls of their container. The collisions with the walls cause the gas <b>pressure</b>.</p>
+<h3>The gas laws</h3>
+<ul><li><b>Boyle's law</b> (constant temperature): $p_1 V_1 = p_2 V_2$. Squeeze a gas into half the volume and its pressure doubles.</li><li><b>Charles's law</b> (constant pressure): $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$.</li><li><b>Gay-Lussac's law</b> (constant volume): $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$.</li></ul>
+⟦0⟧
+<h3>Kinetic theory</h3>
+<p>The temperature of a gas measures the average kinetic energy of its molecules:</p>
+⟦1⟧
+<p>The typical (root-mean-square) speed of molecules of molar mass $M$ (in $\mathrm{kg/mol}$) is $v_{\text{rms}} = \sqrt{\dfrac{3RT}{M}}$: lighter molecules move faster at the same temperature.</p>
+⟦2⟧
+@gdeenhkvil
+<p>All three combine into the <b>ideal gas equation</b>:</p><p>$$pV = nRT, \qquad R = 8.31\,\mathrm{J/(mol\,K)},$$</p><p>where $n$ is the number of moles and $T$ the <b>absolute temperature in kelvin</b>. For a fixed amount of gas, $\dfrac{p_1 V_1}{T_1} = \dfrac{p_2 V_2}{T_2}$.</p>
+@1jw8grqalm0
+\bar{E}_k = \tfrac32 k T, \qquad k = 1.38 \times 10^{-23}\,\mathrm{J/K}
+@177cn244pf2
+<p>Always use kelvin in the gas laws. Doubling the temperature from $20^\circ\mathrm{C}$ to $40^\circ\mathrm{C}$ does <i>not</i> double the absolute temperature: $293\,\mathrm{K} \to 313\,\mathrm{K}$.</p>
+@10v52vx7nsx  ; 0=Q(p1, 'kPa') | 1=Q(V1, 'L') | 2=Q(V2, 'L')
+A gas at ⟦0⟧ occupies ⟦1⟧. It is compressed at constant temperature to ⟦2⟧. What is its new pressure?
+@1c2ectlxyhb  ; 0=p1 | 1=V1 | 2=V2 | 3=QT(p2, 'kPa')
+Boyle's law: $p_2 = \frac{p_1 V_1}{V_2} = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧} = ⟦3⟧$.
+@a41nl1n09z  ; 0=Q(V1, 'L') | 1=Q(t1, '°C') | 2=Q(t2, '°C')
+A balloon holds ⟦0⟧ of gas at ⟦1⟧. At constant pressure it is heated to ⟦2⟧. What is its new volume?
+@1vb179ctxsx  ; 0=t1 + 273 | 1=t2 + 273 | 2=V1 | 3=t2 + 273 | 4=t1 + 273 | 5=QT(V2, 'L')
+In kelvin: $T_1 = ⟦0⟧\,\mathrm{K}$, $T_2 = ⟦1⟧\,\mathrm{K}$. Charles's law: $V_2 = V_1 \frac{T_2}{T_1} = ⟦2⟧ \cdot \frac{⟦3⟧}{⟦4⟧} = ⟦5⟧$.
+@1bgzfoo4khm  ; 0=Q(p1, 'kPa') | 1=Q(t1, '°C') | 2=Q(t2, '°C')
+A car tyre is at ⟦0⟧ and ⟦1⟧. After a long drive the air in it is at ⟦2⟧. Assuming the volume stays the same, what is the new pressure?
+@gsgiyrvyko  ; 0=p1 | 1=t2 + 273 | 2=t1 + 273 | 3=QT(p2, 'kPa')
+$\frac{p_1}{T_1} = \frac{p_2}{T_2}$ with kelvin: $p_2 = ⟦0⟧ \cdot \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.
+@20coww4vnja  ; 0=NUM(n) | 1=Q(V * 1000, 'L') | 2=Q(t, '°C')
+What is the pressure of ⟦0⟧ mol of an ideal gas in a ⟦1⟧ container at ⟦2⟧? ($R = 8.31\,\mathrm{J/(mol\,K)}$.)
+@9kkrn7wmpa  ; 0=M(V) | 1=t + 273 | 2=M(n) | 3=t + 273 | 4=M(V) | 5=M(p) | 6=QT(sig(p / 1000), 'kPa')
+$V = ⟦0⟧\,\mathrm{m^3}$ and $T = ⟦1⟧\,\mathrm{K}$, so $p = \frac{nRT}{V} = \frac{⟦2⟧ \cdot 8.31 \cdot ⟦3⟧}{⟦4⟧} = ⟦5⟧\,\mathrm{Pa} = ⟦6⟧$.
+@1zttn7v8yhj  ; 0=Q(t, '°C')
+What is the average kinetic energy of a molecule in a gas at ⟦0⟧? ($k = 1.38 \times 10^{-23}\,\mathrm{J/K}$.)
+@q7nv0kelbx
+Type a power of ten like 6.2e-21.
+@1esnafleeus  ; 0=t + 273 | 1=t + 273 | 2=sciT(E)
+$T = ⟦0⟧\,\mathrm{K}$, so $\bar{E}_k = \tfrac32 kT = 1.5 \cdot 1.38 \times 10^{-23} \cdot ⟦1⟧ = ⟦2⟧\,\mathrm{J}$.
+@cfjxyls3fe
+oxygen
+@2fxtzvme6xl
+nitrogen
+@2tgzvy1zg8
+helium
+@12yy0cxsfrt
+hydrogen
+@aml98t038j
+carbon dioxide
+@pfxelfi2eb  ; 0=gas | 1=Q(Mm, 'kg/mol') | 2=Q(t, '°C')
+What is the rms speed of ⟦0⟧ molecules (molar mass ⟦1⟧) at ⟦2⟧? ($R = 8.31\,\mathrm{J/(mol\,K)}$.)
+@2byj0la7hyf  ; 0=t + 273 | 1=M(Mm) | 2=QT(v, 'm/s')
+$v_{\text{rms}} = \sqrt{\frac{3RT}{M}} = \sqrt{\frac{3 \cdot 8.31 \cdot ⟦0⟧}{⟦1⟧}} = ⟦2⟧$.
+@2417l7n2be2
+The absolute temperature of a gas is doubled. What happens to the average kinetic energy of its molecules?
+@s2bzamjkkl
+It becomes four times as large
+@1h3f1i6xxtc
+It increases by a factor of $\sqrt2$
+@185uhcvfxvw
+$\bar{E}_k = \tfrac32 kT$ is proportional to the absolute temperature, so it doubles. (The rms speed grows only by $\sqrt2$.)
+
+##### thermo-laws
+@29sy64nmqhy  ; 0=Fm(T`\Delta U = Q - W`) | 1=Tbl([T`Process`, T`What stays fixed`, T` | 2=Key(T`<p>A <b>heat engine</b> takes in h | 3=Tip(T`<p>Watch the signs: heat <i>remove
+
+<h3>The first law</h3>
+<p>The <b>internal energy</b> $U$ of a gas is the total kinetic energy of its molecules (for an ideal gas it depends only on temperature). It changes when heat flows in or when the gas does work:</p>
+⟦0⟧
+<p>$Q$ is the heat added <i>to</i> the gas and $W$ the work done <i>by</i> the gas. This is conservation of energy.</p>
+<h3>Work done by a gas</h3>
+<p>A gas expanding at constant pressure $p$ from $V_1$ to $V_2$ does work $W = p\,\Delta V$. On a $p$–$V$ diagram, the work is the area under the curve.</p>
+⟦1⟧
+⟦2⟧
+<h3>The second law and refrigerators</h3>
+<p>Heat flows by itself only from hot to cold, and no engine can turn all of its heat into work. A refrigerator uses work $W$ to move heat $Q_C$ out of its cold interior; its coefficient of performance is $\mathrm{COP} = \dfrac{Q_C}{W}$.</p>
+⟦3⟧
+@137ld4xmfi
+Process
+@mib91nk34z
+What stays fixed
+@pnj7ezbtfu
+Consequence
+@17rdmizan4j
+Isobaric
+@1m1e6xhh7se
+Isochoric
+@5j483cstu
+Isothermal
+@ipe0dpgzd1
+Adiabatic
+@1599mpblhsw
+no heat flow
+@2f8vl3mzmme
+<p>A <b>heat engine</b> takes in heat $Q_H$ from a hot source, does work $W$ and rejects heat $Q_C$ to a cold sink: $W = Q_H - Q_C$. Its efficiency is</p><p>$$\eta = \frac{W}{Q_H} = 1 - \frac{Q_C}{Q_H}.$$</p><p>No engine working between absolute temperatures $T_H$ and $T_C$ can beat the <b>Carnot efficiency</b> $\eta_{\max} = 1 - \dfrac{T_C}{T_H}$.</p>
+@hppfy94p9s
+<p>Watch the signs: heat <i>removed</i> from the gas makes $Q$ negative, and work done <i>on</i> the gas (compression) makes $W$ negative.</p>
+@2bdwxcz15vn  ; 0=Q(Qh, 'J') | 1=Q(W, 'J')
+A gas absorbs ⟦0⟧ of heat and does ⟦1⟧ of work on its surroundings. What is the change in its internal energy?
+@1me3vahniil  ; 0=Q(p, 'kPa') | 1=Q(V1, 'L') | 2=Q(V1 + dV, 'L')
+A gas at a constant pressure of ⟦0⟧ expands from ⟦1⟧ to ⟦2⟧. How much work does it do?
+@22rorg6f8cm  ; 0=Q(Qh, 'J') | 1=Q(W, 'J')
+An engine takes in ⟦0⟧ of heat per cycle and does ⟦1⟧ of work. What is its efficiency?
+@abfrawf3tu  ; 0=NUM(eta) | 1=Q(Qh, 'J')
+An engine with an efficiency of ⟦0⟧% takes in ⟦1⟧ of heat per cycle. How much heat does it reject to the cold sink?
+@26jj1pyk0pu  ; 0=M(W) | 1=Qh | 2=M(W) | 3=QT(Qh - W, 'J')
+$W = \eta Q_H = ⟦0⟧\,\mathrm{J}$, so $Q_C = Q_H - W = ⟦1⟧ - ⟦2⟧ = ⟦3⟧$.
+@1fhpveb0e6e  ; 0=Q(tH, '°C') | 1=Q(tC, '°C')
+What is the maximum possible efficiency of an engine working between ⟦0⟧ and ⟦1⟧?
+@14b85v5vqgj  ; 0=tH + 273 | 1=tC + 273 | 2=tC + 273 | 3=tH + 273 | 4=M(sig(eta / 100)) | 5=NUM(eta)
+Use kelvin: $T_H = ⟦0⟧\,\mathrm{K}$, $T_C = ⟦1⟧\,\mathrm{K}$. $\eta_{\max} = 1 - \frac{⟦2⟧}{⟦3⟧} = ⟦4⟧$, that is ⟦5⟧%.
+@1ujhd6xwp04  ; 0=NUM(cop) | 1=Q(W, 'J')
+A refrigerator with a coefficient of performance of ⟦0⟧ uses ⟦1⟧ of electrical work. How much heat does it remove from the food compartment?
+@2f4ijqrr0id  ; 0=M(cop) | 1=W | 2=QT(Qc, 'J')
+$\mathrm{COP} = \frac{Q_C}{W}$, so $Q_C = ⟦0⟧ \cdot ⟦1⟧ = ⟦2⟧$.
+@4v290q5jvu
+A gas is compressed so quickly that no heat can flow in or out. What kind of process is this, and what happens to its temperature?
+@1e2tloekk25
+Adiabatic; its temperature rises
+@1f4jyi07576
+Isothermal; its temperature stays the same
+@edare2qu9m
+Adiabatic; its temperature falls
+@lv3kuk7ifj
+Isochoric; its temperature stays the same
+@1z0ld1ou7h3
+With $Q = 0$, $\Delta U = -W$. Compression means work is done on the gas ($W \lt 0$), so $\Delta U \gt 0$ and the temperature rises, as in a bicycle pump.
+@2bkn4a7uqio
+Why can no heat engine be 100% efficient?
+@11z80mn170j
+Some heat must always be rejected to a colder sink
+@2b8ina7h909
+Friction can never be removed completely
+@neirk4q8uo
+Energy is destroyed inside the engine
+@84zp6s3gd5
+Heat engines always leak gas
+@1s2kt2odl2q
+The second law of thermodynamics: an engine working in a cycle must reject some heat to a cold sink, so $W \lt Q_H$ even with no friction at all.
+
+##### heat-transfer
+@kzd3elszlv  ; 0=Fm(T`P = \frac{k A \Delta T}{L}`) | 1=Fm(T`P = e \sigma A T^4, \qquad \sigma = | 2=Key(T`<p>A vacuum flask blocks all three | 3=Tip(T`<p>The fourth power makes radiatio
+
+<p>Heat always flows from a hotter place to a colder one, in three different ways.</p>
+<h3>Conduction</h3>
+<p>In a solid, energetic particles pass energy to their neighbours. Metals conduct well because their free electrons carry energy quickly; wood, plastic, still air and wool are poor conductors, or <b>insulators</b>. The rate of heat flow through a slab of area $A$ and thickness $L$ with temperature difference $\Delta T$ is</p>
+⟦0⟧
+<p>where $k$ is the thermal conductivity in $\mathrm{W/(m\,K)}$ (copper about 400, glass about 0.8, air about 0.025).</p>
+<h3>Convection</h3>
+<p>In liquids and gases, warm fluid expands, becomes less dense and rises, while cooler fluid sinks to take its place. These <b>convection currents</b> heat a room from a heater, drive sea breezes and move the Earth's weather.</p>
+<h3>Radiation</h3>
+<p>Every object emits electromagnetic radiation (mostly infrared at everyday temperatures). Radiation needs no medium, which is how the Sun's heat crosses space. The power radiated is</p>
+⟦1⟧
+<p>with $T$ in kelvin and emissivity $e$ between 0 and 1. Dull black surfaces are good emitters and good absorbers; shiny silver surfaces are poor at both.</p>
+⟦2⟧
+⟦3⟧
+@hwi1w49rkj
+P = e \sigma A T^4, \qquad \sigma = 5.67 \times 10^{-8}\,\mathrm{W/(m^2\,K^4)}
+@13p3tgpadv1
+<p>A vacuum flask blocks all three: the vacuum between its double walls stops conduction and convection, and the silvered walls reduce radiation.</p>
+@x5fi8nnpex
+<p>The fourth power makes radiation very sensitive to temperature: doubling the absolute temperature multiplies the radiated power by $2^4 = 16$.</p>
+@73nrxfby7i  ; 0=Q(A, 'm^2') | 1=Q(L * 1000, 'mm') | 2=Q(dT, '°C') | 3=Q(k, 'W/(m\\,K)')
+A glass window has an area of ⟦0⟧ and a thickness of ⟦1⟧. The inside surface is ⟦2⟧ warmer than the outside surface. How much heat is conducted through it per second? (Thermal conductivity of glass: ⟦3⟧.)
+@21rgdv0o589  ; 0=M(L) | 1=M(k) | 2=A | 3=dT | 4=M(L) | 5=QT(P, 'W')
+$L = ⟦0⟧\,\mathrm{m}$, so $P = \frac{kA\Delta T}{L} = \frac{⟦1⟧ \cdot ⟦2⟧ \cdot ⟦3⟧}{⟦4⟧} = ⟦5⟧$.
+@528rvzugsb  ; 0=f
+The insulation in a wall is made ⟦0⟧ times thicker, with everything else unchanged. How does the rate of heat conduction change?
+@s96qwuou68  ; 0=f
+It becomes ⟦0⟧ times smaller
+@22ieohw7pjy  ; 0=f
+It becomes ⟦0⟧ times larger
+@59zn95ul7w
+$P = \frac{kA\Delta T}{L}$ is inversely proportional to the thickness $L$.
+@18frjv8vh76  ; 0=f
+A wall is replaced by one of the same material and thickness but ⟦0⟧ times the area. How does the rate of heat conduction change?
+@2cgmim5wtwe
+$P = \frac{kA\Delta T}{L}$ is proportional to the area $A$.
+@2gm63by7pu1  ; 0=f
+The temperature difference across a wall becomes ⟦0⟧ times as large. How does the rate of heat conduction change?
+@1u52hu070ys
+$P = \frac{kA\Delta T}{L}$ is proportional to the temperature difference $\Delta T$.
+@25bckdhtcde  ; 0=Q(A, 'm^2') | 1=NUM(e) | 2=Q(t, '°C')
+A surface of area ⟦0⟧ and emissivity ⟦1⟧ is at ⟦2⟧. How much power does it radiate? ($\sigma = 5.67 \times 10^{-8}\,\mathrm{W/(m^2\,K^4)}$.)
+@1untac5cb1c  ; 0=T0 | 1=M(e) | 2=M(A) | 3=T0 | 4=QT(P, 'W')
+$T = ⟦0⟧\,\mathrm{K}$, so $P = e\sigma A T^4 = ⟦1⟧ \cdot 5.67 \times 10^{-8} \cdot ⟦2⟧ \cdot ⟦3⟧^4 = ⟦4⟧$.
+@zoku9j1ouz  ; 0=NUM(f)
+The absolute temperature of a glowing object rises by a factor of ⟦0⟧. By what factor does the power it radiates increase?
+@1qxkhjd1gxs  ; 0=M(f) | 1=M(r)
+$P \propto T^4$, so the power rises by $⟦0⟧^4 = ⟦1⟧$.
+@2536d4hpnet
+How does heat from the Sun reach the Earth?
+@2ftsfx7l5gx
+By radiation
+@22o59w2wgq0
+By conduction
+@b7h98503gn
+By convection
+@1vta82qnar
+By conduction and convection together
+@wx08q4h08d
+Space is almost a vacuum, so there is nothing to conduct or carry the heat. Only electromagnetic radiation can cross it.
+@lnii1a1qox
+A metal spoon and a wooden spoon have been in the same room for hours. The metal one feels colder to touch. Why?
+@1h5ed6vv71q
+Metal conducts heat away from your hand faster
+@38ke9qjns8
+The metal spoon is at a lower temperature
+@1c2rq2pqbzl
+Wood produces its own heat
+@ydlg5svt3f
+Metal radiates cold
+@we71n9ei4q
+Both are at room temperature. Metal is a good conductor, so it draws heat from your warmer hand quickly, and your skin senses that heat loss as cold.
+@y0vlcntwbz
+Why is a room heater usually placed low down, near the floor?
+@qocl7x706v
+Warm air rises, setting up convection currents that circulate through the room
+@12zp8cbky5k
+Heat can only travel downwards
+@12gls28grzn
+The floor conducts heat around the room
+@1qsoe2y4dcg
+Radiation only works near the floor
+@1vge02fkmw4
+Air warmed by the heater becomes less dense and rises; cooler air sinks and flows in to be heated. The whole room is warmed by this convection current.

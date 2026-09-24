@@ -1,0 +1,208 @@
+##### shm
+@1i3485l57l3  ; 0=Fig(graphSvg(Array.from({ length: 121 }, | 1=Key(T`<p>Periods of the two standard osc | 2=Tip(T`<p>Use SI units inside the square 
+
+<p>An object oscillates in <b>simple harmonic motion</b> (SHM) when the force pulling it back to its rest position is proportional to how far it has been moved: $F = -kx$. A mass on a spring and a pendulum swinging through small angles are the classic examples.</p>
+⟦0⟧
+<h3>Describing an oscillation</h3>
+<ul><li><b>Amplitude</b> $A$: the largest displacement from the rest position.</li><li><b>Period</b> $T$: the time for one complete oscillation; <b>frequency</b> $f = 1/T$; <b>angular frequency</b> $\omega = 2\pi f$.</li><li>The displacement follows a sine or cosine curve: $x = A\cos(\omega t)$.</li></ul>
+⟦1⟧
+<h3>Speed, acceleration and energy</h3>
+<ul><li>The speed is greatest at the centre: $v_{\max} = A\omega$. At displacement $x$: $v = \omega\sqrt{A^2 - x^2}$.</li><li>The acceleration is greatest at the ends: $a_{\max} = A\omega^2$, always pointing back to the centre.</li><li>The total energy stays constant, $E = \tfrac12 k A^2$; it changes back and forth between kinetic and potential energy.</li></ul>
+⟦2⟧
+@9pqe4ezwqq
+Displacement against time for an oscillation with amplitude 4 cm and period 3 s
+@gnp8qkykr1
+Amplitude $A = 4\,\mathrm{cm}$, period $T = 3\,\mathrm{s}$.
+@6jvoipk1c7
+<p>Periods of the two standard oscillators:</p><p>$$\text{mass on a spring: } T = 2\pi\sqrt{\frac{m}{k}} \qquad \text{simple pendulum: } T = 2\pi\sqrt{\frac{L}{g}}$$</p><p>Neither depends on the amplitude. The pendulum's period does not depend on its mass either.</p>
+@ztuj449fxe
+<p>Use SI units inside the square roots: mass in kg, length in m. A $50\,\mathrm{cm}$ pendulum has $L = 0.5\,\mathrm{m}$.</p>
+@22y4iw6i15l  ; 0=Q(m, 'kg') | 1=QT(k, 'N/m')
+A ⟦0⟧ mass hangs on a spring with $k = ⟦1⟧$. What is the period of its vertical oscillations?
+@1f2ky331xgd  ; 0=Q(T0, 's') | 1=gNote(g)
+A pendulum clock needs a period of ⟦0⟧. How long should its pendulum be? ⟦1⟧
+@a1jdfy14a8  ; 0=M(g) | 1=M(T0) | 2=QT(sig(L), 'm')
+$T = 2\pi\sqrt{L/g}$, so $L = g\left(\frac{T}{2\pi}\right)^2 = ⟦0⟧\left(\frac{⟦1⟧}{2\pi}\right)^2 = ⟦2⟧$.
+@p3ith2qya4  ; 0=Q(L, 'm') | 1=gNote(g)
+What is the period of a simple pendulum ⟦0⟧ long? ⟦1⟧
+@1l9xl6dqu34  ; 0=Q(A * 100, 'cm') | 1=Q(f, 'Hz') | 2=askA ? T`acceleration` : T`speed`
+An object oscillates in SHM with amplitude ⟦0⟧ and frequency ⟦1⟧. What is its maximum ⟦2⟧?
+@18fa0getwbu  ; 0=M(sig(w)) | 1=M(A) | 2=M(sig(w)) | 3=QT(a, 'm/s^2')
+$\omega = 2\pi f = ⟦0⟧\,\mathrm{rad/s}$, so $a_{\max} = A\omega^2 = ⟦1⟧ \cdot ⟦2⟧^2 = ⟦3⟧$.
+@mv2mk76t00  ; 0=M(sig(w)) | 1=M(A) | 2=M(sig(w)) | 3=QT(v, 'm/s')
+$\omega = 2\pi f = ⟦0⟧\,\mathrm{rad/s}$, so $v_{\max} = A\omega = ⟦1⟧ \cdot ⟦2⟧ = ⟦3⟧$.
+@1lchwdg6ceu  ; 0=Q(A, 'cm') | 1=Q(w, 'rad/s') | 2=Q(x, 'cm')
+A mass oscillates with amplitude ⟦0⟧ and angular frequency ⟦1⟧. How fast is it moving when it is ⟦2⟧ from the centre?
+@15inzlixgu1  ; 0=QT(k, 'N/m') | 1=Q(A * 100, 'cm')
+A spring with $k = ⟦0⟧$ oscillates with an amplitude of ⟦1⟧. What is the total energy of the oscillation?
+@1c3sz9vebxm
+A pendulum is set swinging with a larger amplitude (still small). What happens to its period?
+@wd2gq68rwy
+It increases
+@jvkkvevhx9
+It decreases
+@1lzjojr1jnc
+It doubles
+@ac5vxrzmc8
+For small swings $T = 2\pi\sqrt{L/g}$, which contains no amplitude: a bigger swing covers more distance but moves faster.
+@1s5j1a71s65
+A pendulum clock is taken to the Moon, where $g$ is about one sixth of its value on Earth. What happens to the period of its pendulum?
+@ratubbdd9j
+It becomes about 2.45 times longer
+@2bzcbdko0w8
+It becomes 6 times longer
+@pgt5z6i3q
+It becomes shorter
+@akk3tbuht3
+$T \propto 1/\sqrt{g}$, so dividing $g$ by 6 multiplies $T$ by $\sqrt6 \approx 2.45$. The clock runs slow.
+@1ge7ofuh1pi
+At which point of its oscillation does a mass on a spring have its greatest speed?
+@2e889ojppn3
+As it passes through the centre (rest position)
+@kap86cmi06
+At the two ends of its motion
+@1q326t4g0i1
+Halfway between the centre and an end
+@23y0ansr5sj
+Its speed is the same everywhere
+@28zytuoytx3
+At the centre all the energy is kinetic, so the speed is greatest; at the ends the mass stops for an instant.
+
+##### mech-waves
+@8z6fbnnl86  ; 0=Fig(waveSvg(2, 3, 5, { label: T`A transv | 1=Key(T`<p>In one period a wave moves forw | 2=Fm(T`f_n = \frac{n v}{2L}, \qquad n = 1, | 3=Tip(T`<p>A crest and the next trough are
+
+<p>A <b>wave</b> carries energy from place to place without carrying the material along with it. In a mechanical wave, each particle of the medium oscillates about its own position and passes the motion on to its neighbour.</p>
+<h3>Two kinds of wave</h3>
+<ul><li><b>Transverse:</b> the particles move at right angles to the direction the wave travels. Waves on a string, ripples on water.</li><li><b>Longitudinal:</b> the particles move back and forth along the direction of travel, making compressions and rarefactions. Sound, a pushed slinky.</li></ul>
+⟦0⟧
+<h3>Describing a wave</h3>
+<ul><li><b>Wavelength</b> $\lambda$: the length of one complete wave, for example crest to crest.</li><li><b>Frequency</b> $f$: waves passing a point per second; <b>period</b> $T = 1/f$.</li><li><b>Amplitude</b>: the largest displacement from the rest position.</li></ul>
+⟦1⟧
+<h3>Waves on a string and standing waves</h3>
+<p>On a string with tension $F$ and mass per unit length $\mu$, $v = \sqrt{F/\mu}$. A string fixed at both ends vibrates in <b>standing waves</b> whose length fits a whole number of half-wavelengths: $L = n\frac{\lambda}{2}$, so</p>
+⟦2⟧
+<p>The lowest, $f_1$, is the <b>fundamental</b>; the others are harmonics. Guitar strings are tuned by changing their tension.</p>
+⟦3⟧
+@kp4lbl7udc
+A transverse wave with wavelength 2 m and amplitude 3 cm
+@1zm6py874qx
+Wavelength $\lambda = 2\,\mathrm{m}$ (crest to crest), amplitude $3\,\mathrm{cm}$.
+@bglc9ofl2o
+<p>In one period a wave moves forward one wavelength, so its speed is</p><p>$$v = f\lambda = \frac{\lambda}{T}.$$</p><p>The speed is set by the medium; the frequency is set by the source.</p>
+@1jnkp0gh44x
+<p>A crest and the next trough are half a wavelength apart, not a whole one.</p>
+@ie8wf5nukd  ; 0=Q(f, 'Hz') | 1=Q(lam, 'm')
+A wave has a frequency of ⟦0⟧ and a wavelength of ⟦1⟧. How fast does it travel?
+@1msis8skok2  ; 0=Q(v, 'm/s') | 1=Q(lam, 'm')
+A wave travels at ⟦0⟧ with a wavelength of ⟦1⟧. What is its frequency?
+@1jdnxuku9ds  ; 0=Q(v, 'm/s') | 1=Q(f, 'Hz')
+A wave travels at ⟦0⟧ with a frequency of ⟦1⟧. What is its wavelength?
+@1q5mbsbi04x
+A snapshot of a wave on a rope
+@1d7y6igctu
+The graph shows a snapshot of a wave on a rope. What is its wavelength?
+@mtgrxeu6hv  ; 0=Q(lam, 'm')
+One complete wave (crest to crest, or one full cycle of the curve) spans ⟦0⟧.
+@1mlp49e0emv  ; 0=Q(T0, 's')
+The graph shows a snapshot of a wave on a rope. Each point of the rope makes one full oscillation every ⟦0⟧. How fast does the wave travel?
+@26oej5eyfks  ; 0=QT(lam, 'm') | 1=M(lam) | 2=M(T0) | 3=QT(v, 'm/s')
+From the graph $\lambda = ⟦0⟧$. So $v = \frac{\lambda}{T} = \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.
+@1gm9faoax5k  ; 0=Q(mu * 1000, 'g') | 1=Q(F, 'N')
+A string with a mass of ⟦0⟧ per metre is stretched with a tension of ⟦1⟧. What is the speed of waves on it?
+@1gyij8yhy49  ; 0=M(mu) | 1=F | 2=M(mu) | 3=QT(v, 'm/s')
+$\mu = ⟦0⟧\,\mathrm{kg/m}$, so $v = \sqrt{\frac{F}{\mu}} = \sqrt{\frac{⟦1⟧}{⟦2⟧}} = ⟦3⟧$.
+@2fkcsa11ofq  ; 0=Q(L, 'm') | 1=Q(v, 'm/s')
+A guitar string ⟦0⟧ long is fixed at both ends, and waves travel along it at ⟦1⟧. What is its fundamental frequency?
+@27rnf38usgi  ; 0=Q(L, 'm') | 1=Q(v, 'm/s') | 2=n
+A string ⟦0⟧ long is fixed at both ends, and waves travel along it at ⟦1⟧. What is the frequency of harmonic number ⟦2⟧?
+@101kbhi2ki4  ; 0=Q(lam, 'm')
+A water wave has a wavelength of ⟦0⟧. What is the horizontal distance between a crest and the next trough?
+@1jzf6mz8i0  ; 0=Q(d, 'm')
+A crest and the next trough are half a wavelength apart: ⟦0⟧.
+@631lfrkrbk
+Which of these is a longitudinal wave?
+@15621awlnrj
+A sound wave in air
+@1fihbxywv60
+A wave on a guitar string
+@8kibhwikbe
+A ripple on a pond
+@1agvj61o6u1
+A wave sent along a rope by shaking it sideways
+@u5kqz20fqg
+In sound the air particles move back and forth along the direction the wave travels, forming compressions and rarefactions.
+@1ykuzp6v50l
+A wave passes from deep water into shallow water, where it travels more slowly. What stays the same?
+@jx89ugpgu3
+Its frequency
+@191uw403sez
+Its speed
+@1t3vrgkwj6b
+Its wavelength
+@28ydf6in6m2
+Its direction always
+@6b9ks5f4ky
+The frequency is set by the source and does not change. Since $v = f\lambda$, a lower speed means a shorter wavelength.
+
+##### sound
+@114v5emv6pf  ; 0=Key(T`<p>The <b>intensity</b> is the pow | 1=Fm(T`f_L = f_S\,\frac{v \pm v_L}{v \mp v | 2=Tip(T`<p>Do not forget to halve the echo
+
+<p>Sound is a <b>longitudinal</b> mechanical wave: a travelling pattern of compressions and rarefactions. It needs a medium and cannot cross a vacuum. In air at room temperature it travels at about $340\,\mathrm{m/s}$; in water at about $1500\,\mathrm{m/s}$; in steel even faster.</p>
+<h3>Echoes</h3>
+<p>An echo travels to a reflecting surface and back, so the distance to the surface is $d = \dfrac{v t}{2}$. Bats, ships' sonar and ultrasound scanners all use this.</p>
+<h3>Pitch and loudness</h3>
+<p>The <b>pitch</b> of a sound is set by its frequency and the <b>loudness</b> mostly by its amplitude. People hear roughly $20\,\mathrm{Hz}$ to $20\,000\,\mathrm{Hz}$; above that is ultrasound, below it infrasound.</p>
+⟦0⟧
+<h3>The Doppler effect</h3>
+<p>When a source and a listener move towards each other, the listener hears a higher frequency; moving apart, a lower one. With the speed of sound $v$, listener speed $v_L$ and source speed $v_S$:</p>
+⟦1⟧
+<p>Use the upper signs when they approach each other and the lower signs when they move apart.</p>
+<h3>Pipes</h3>
+<p>An air column resonates like a string. A pipe open at both ends has $f_n = \dfrac{n v}{2L}$; a pipe closed at one end has only odd harmonics, $f = \dfrac{(2n-1) v}{4L}$, so its fundamental is $\dfrac{v}{4L}$.</p>
+⟦2⟧
+@1v6x9695ich
+<p>The <b>intensity</b> is the power per unit area. From a small source spreading out in all directions:</p><p>$$I = \frac{P}{4\pi r^2}.$$</p><p>Loudness is measured on the logarithmic <b>decibel</b> scale:</p><p>$$\beta = 10 \log_{10}\frac{I}{I_0}\ \mathrm{dB}, \qquad I_0 = 10^{-12}\,\mathrm{W/m^2}.$$</p><p>Every $10\,\mathrm{dB}$ more means ten times the intensity.</p>
+@86oxii1rtz
+<p>Do not forget to halve the echo time: the sound goes there <i>and</i> back.</p>
+@d0x50jw74k  ; 0=Q(t, 's')
+A ship's sonar pulse returns from the sea bed after ⟦0⟧. How deep is the sea there? (Speed of sound in water: $1500\,\mathrm{m/s}$.)
+@15heivdhpiv  ; 0=Q(t, 's')
+A girl claps and hears the echo from a cliff ⟦0⟧ later. How far away is the cliff? (Speed of sound: $340\,\mathrm{m/s}$.)
+@39gi56wibv  ; 0=v | 1=M(t) | 2=QT(d, 'm')
+The sound travels there and back, so $d = \frac{vt}{2} = \frac{⟦0⟧ \cdot ⟦1⟧}{2} = ⟦2⟧$.
+@1urmwnl3qqi  ; 0=Q(f, 'Hz')
+A tuning fork vibrates at ⟦0⟧. What is the wavelength of the sound in air? (Speed of sound: $340\,\mathrm{m/s}$.)
+@1l3ye3wbjc5  ; 0=Q(P, 'W') | 1=Q(r, 'm')
+A small loudspeaker radiates ⟦0⟧ of sound equally in all directions. What is the intensity ⟦1⟧ away?
+@1i1b97whjwx
+Type a power of ten like 3.2e-3.
+@1qqih20eqfn  ; 0=sciT(I, 1)
+A sound has an intensity of $⟦0⟧\,\mathrm{W/m^2}$. What is its sound level in decibels? ($I_0 = 10^{-12}\,\mathrm{W/m^2}$.)
+@vumsl4uhq7  ; 0=Q(d, 'dB')
+A street is ⟦0⟧ louder than a quiet room. How many times greater is its sound intensity?
+@1ve3aa8xaq6  ; 0=d | 1=d / 10 | 2=M(k)
+Each $10\,\mathrm{dB}$ multiplies the intensity by 10, so $⟦0⟧\,\mathrm{dB}$ is a factor of $10^{⟦1⟧} = ⟦2⟧$.
+@1g3ch28rzb8  ; 0=Q(80, 'dB') | 1=n
+One machine produces a sound level of ⟦0⟧. What is the level when ⟦1⟧ identical machines run together?
+@203gmn6rig5  ; 0=n | 1=n | 2=M(sig(10 * Math.log10(n))) | 3=Q(sig(80 + 10 * Math.log10(n)), 'dB')
+The intensity is ⟦0⟧ times larger, adding $10\log_{10}⟦1⟧ = ⟦2⟧\,\mathrm{dB}$: the level is ⟦3⟧.
+@1lwcvywbox7  ; 0=Q(f, 'Hz') | 1=Q(vs, 'm/s') | 2=toward ? T`towards` : T`away from`
+An ambulance siren emits ⟦0⟧. The ambulance moves at ⟦1⟧ ⟦2⟧ a person standing still. What frequency does the person hear? (Speed of sound: $340\,\mathrm{m/s}$.)
+@1bmhjp5ttrv
+towards
+@1jxkdr9wig4
+away from
+@2cgbic1xeqi  ; 0=toward ? '-' : '+' | 1=f | 2=toward ? '-' : '+' | 3=vs | 4=QT(fL, 'Hz') | 5=toward ? T`higher` : T`lower`
+$f_L = f_S \frac{v}{v ⟦0⟧ v_S} = ⟦1⟧ \cdot \frac{340}{340 ⟦2⟧ ⟦3⟧} = ⟦4⟧$. The pitch is ⟦5⟧ than the siren's own.
+@13ta03l38kj
+higher
+@9nl2sip6fg
+lower
+@1b2ywt8flwh  ; 0=Q(L, 'm')
+What is the fundamental frequency of a pipe ⟦0⟧ long that is open at both ends? (Speed of sound: $340\,\mathrm{m/s}$.)
+@226oo8pzme3  ; 0=Q(L, 'm')
+What is the fundamental frequency of a pipe ⟦0⟧ long that is closed at one end? (Speed of sound: $340\,\mathrm{m/s}$.)
+@av5e2ab412  ; 0=M(L) | 1=QT(f, 'Hz')
+Open pipe: $f_1 = \frac{v}{2L} = \frac{340}{2 \cdot ⟦0⟧} = ⟦1⟧$.
+@555dzhesdt  ; 0=M(L) | 1=QT(f, 'Hz')
+Closed pipe: $f_1 = \frac{v}{4L} = \frac{340}{4 \cdot ⟦0⟧} = ⟦1⟧$.

@@ -48,17 +48,17 @@ function tipLabel(x1, y1, x2, y2, s, gap = 16) {
 
 /* ---------- a line graph with labelled axes (for motion graphs) ---------- */
 /* pts: [[x, y], …] in data units; xs, ys: axis maxima; xl, yl: axis labels */
-function graphSvg(pts, { xMax, yMax, yMin = 0, xl = 't (s)', yl = 'v (m/s)', xStep, yStep, label }) {
+function graphSvg(pts, { xMax, yMax, yMin = 0, xl = 't (s)', yl = 'v (m/s)', xStep, yStep, label, dots = true }) {
   const W = 420, H = 250, L = 52, R = 18, Tp = 16, B = 40;
   const X = x => L + (x / xMax) * (W - L - R), Y = y => Tp + ((yMax - y) / (yMax - yMin)) * (H - Tp - B);
   let s = svgOpen(W, H, label || yl + ' – ' + xl);
   for (let x = xStep; x <= xMax + 1e-9; x += xStep) s += `<line class="fig-grid" x1="${X(x)}" y1="${Y(yMin)}" x2="${X(x)}" y2="${Y(yMax)}"/>` + txt(X(x), Y(yMin) + 18, F(x), 'fig-small');
-  for (let y = yMin; y <= yMax + 1e-9; y += yStep) { if (y !== yMin) s += `<line class="fig-grid" x1="${X(0)}" y1="${Y(y)}" x2="${X(xMax)}" y2="${Y(y)}"/>`; s += txt(X(0) - 8, Y(y) + 4, F(y), 'fig-small', 'end'); }
+  for (let y = Math.ceil(yMin / yStep - 1e-9) * yStep; y <= yMax + 1e-9; y += yStep) { if (Math.abs(y - yMin) > 1e-9) s += `<line class="fig-grid" x1="${X(0)}" y1="${Y(y)}" x2="${X(xMax)}" y2="${Y(y)}"/>`; s += txt(X(0) - 8, Y(y) + 4, F(y), 'fig-small', 'end'); }
   if (yMin < 0) s += `<line class="fig-line" x1="${X(0)}" y1="${Y(0)}" x2="${X(xMax)}" y2="${Y(0)}"/>`;
   s += arrow(X(0), Y(yMin), X(xMax) + 12, Y(yMin), 'c', 1.5) + arrow(X(0), Y(yMin), X(0), Y(yMax) - 10, 'c', 1.5);
   s += txt(X(xMax), Y(yMin) + 34, xl, 'fig-small', 'end') + txt(X(0) + 6, Tp + 2, yl, 'fig-small', 'start');
   s += `<polyline class="fig-plot" points="${pts.map(([x, y]) => `${X(x).toFixed(1)},${Y(y).toFixed(1)}`).join(' ')}"/>`;
-  pts.forEach(([x, y]) => { s += `<circle class="fig-dot" cx="${X(x).toFixed(1)}" cy="${Y(y).toFixed(1)}" r="3"/>`; });
+  if (dots) pts.forEach(([x, y]) => { s += `<circle class="fig-dot" cx="${X(x).toFixed(1)}" cy="${Y(y).toFixed(1)}" r="3"/>`; });
   return s + '</svg>';
 }
 
@@ -216,4 +216,10 @@ function circleSvg(label) {
   s += arrow(px, py, px - 70 * Math.sin(a), py - 70 * Math.cos(a), 'a') + tipLabel(px, py, px - 70 * Math.sin(a), py - 70 * Math.cos(a), 'v');
   s += arrow(px, py, px - 55 * Math.cos(a), py + 55 * Math.sin(a), 'b') + txt(px - 60 * Math.cos(a) + 4, py + 60 * Math.sin(a) + 20, 'a', 'fig-text', 'start');
   return s + '</svg>';
+}
+
+/* a sine wave y = A sin(2πx/λ) drawn to scale on labelled axes */
+function waveSvg(lambda, A, span, { xl = 'x (m)', yl = 'y (cm)', label, xStep } = {}) {
+  const pts = []; for (let i = 0; i <= 160; i++) { const x = span * i / 160; pts.push([x, A * Math.sin(2 * Math.PI * x / lambda)]); }
+  return graphSvg(pts, { xMax: span, yMax: A * 1.25, yMin: -A * 1.25, xl, yl, xStep: xStep || lambda / 2, yStep: A, label, dots: false });
 }

@@ -702,17 +702,17 @@ function tipLabel(x1, y1, x2, y2, s, gap = 16) {
 
 /* ---------- a line graph with labelled axes (for motion graphs) ---------- */
 /* pts: [[x, y], …] in data units; xs, ys: axis maxima; xl, yl: axis labels */
-function graphSvg(pts, { xMax, yMax, yMin = 0, xl = 't (s)', yl = 'v (m/s)', xStep, yStep, label }) {
+function graphSvg(pts, { xMax, yMax, yMin = 0, xl = 't (s)', yl = 'v (m/s)', xStep, yStep, label, dots = true }) {
   const W = 420, H = 250, L = 52, R = 18, Tp = 16, B = 40;
   const X = x => L + (x / xMax) * (W - L - R), Y = y => Tp + ((yMax - y) / (yMax - yMin)) * (H - Tp - B);
   let s = svgOpen(W, H, label || yl + ' – ' + xl);
   for (let x = xStep; x <= xMax + 1e-9; x += xStep) s += `<line class="fig-grid" x1="${X(x)}" y1="${Y(yMin)}" x2="${X(x)}" y2="${Y(yMax)}"/>` + txt(X(x), Y(yMin) + 18, F(x), 'fig-small');
-  for (let y = yMin; y <= yMax + 1e-9; y += yStep) { if (y !== yMin) s += `<line class="fig-grid" x1="${X(0)}" y1="${Y(y)}" x2="${X(xMax)}" y2="${Y(y)}"/>`; s += txt(X(0) - 8, Y(y) + 4, F(y), 'fig-small', 'end'); }
+  for (let y = Math.ceil(yMin / yStep - 1e-9) * yStep; y <= yMax + 1e-9; y += yStep) { if (Math.abs(y - yMin) > 1e-9) s += `<line class="fig-grid" x1="${X(0)}" y1="${Y(y)}" x2="${X(xMax)}" y2="${Y(y)}"/>`; s += txt(X(0) - 8, Y(y) + 4, F(y), 'fig-small', 'end'); }
   if (yMin < 0) s += `<line class="fig-line" x1="${X(0)}" y1="${Y(0)}" x2="${X(xMax)}" y2="${Y(0)}"/>`;
   s += arrow(X(0), Y(yMin), X(xMax) + 12, Y(yMin), 'c', 1.5) + arrow(X(0), Y(yMin), X(0), Y(yMax) - 10, 'c', 1.5);
   s += txt(X(xMax), Y(yMin) + 34, xl, 'fig-small', 'end') + txt(X(0) + 6, Tp + 2, yl, 'fig-small', 'start');
   s += `<polyline class="fig-plot" points="${pts.map(([x, y]) => `${X(x).toFixed(1)},${Y(y).toFixed(1)}`).join(' ')}"/>`;
-  pts.forEach(([x, y]) => { s += `<circle class="fig-dot" cx="${X(x).toFixed(1)}" cy="${Y(y).toFixed(1)}" r="3"/>`; });
+  if (dots) pts.forEach(([x, y]) => { s += `<circle class="fig-dot" cx="${X(x).toFixed(1)}" cy="${Y(y).toFixed(1)}" r="3"/>`; });
   return s + '</svg>';
 }
 
@@ -870,6 +870,12 @@ function circleSvg(label) {
   s += arrow(px, py, px - 70 * Math.sin(a), py - 70 * Math.cos(a), 'a') + tipLabel(px, py, px - 70 * Math.sin(a), py - 70 * Math.cos(a), 'v');
   s += arrow(px, py, px - 55 * Math.cos(a), py + 55 * Math.sin(a), 'b') + txt(px - 60 * Math.cos(a) + 4, py + 60 * Math.sin(a) + 20, 'a', 'fig-text', 'start');
   return s + '</svg>';
+}
+
+/* a sine wave y = A sin(2πx/λ) drawn to scale on labelled axes */
+function waveSvg(lambda, A, span, { xl = 'x (m)', yl = 'y (cm)', label, xStep } = {}) {
+  const pts = []; for (let i = 0; i <= 160; i++) { const x = span * i / 160; pts.push([x, A * Math.sin(2 * Math.PI * x / lambda)]); }
+  return graphSvg(pts, { xMax: span, yMax: A * 1.25, yMin: -A * 1.25, xl, yl, xStep: xStep || lambda / 2, yStep: A, label, dots: false });
 }
 
 /* ==========================================================================
@@ -1888,9 +1894,158 @@ level({
   id: 'waves', mark: 'C', name: 'Waves & Sound', short: 'Waves', band: 'Oscillations · waves · sound', color: 'lv3',
   blurb: 'Things that repeat: oscillations, the waves they send out, and sound.',
   topics: [
-    { id: 'shm', stage: 'sh', soon: true, title: 'Simple Harmonic Motion' },
-    { id: 'mech-waves', stage: 'sh', soon: true, title: 'Mechanical Waves' },
-    { id: 'sound', stage: 'sh', soon: true, title: 'Sound: Intensity, Decibels & the Doppler Effect' },
+{
+  id: 'shm', stage: 'sh', title: 'Simple Harmonic Motion',
+  blurb: 'Oscillations with a restoring force: mass on a spring, simple pendulum, period and frequency, maximum speed and energy.',
+  lesson: () => T`
+<p>An object oscillates in <b>simple harmonic motion</b> (SHM) when the force pulling it back to its rest position is proportional to how far it has been moved: $F = -kx$. A mass on a spring and a pendulum swinging through small angles are the classic examples.</p>
+${Fig(graphSvg(Array.from({ length: 121 }, (_, i) => [i / 20, 4 * Math.cos(2 * Math.PI * i / 60)]), { xMax: 6, yMax: 5, yMin: -5, xStep: 1, yStep: 2, xl: 't (s)', yl: 'x (cm)', dots: false, label: T`Displacement against time for an oscillation with amplitude 4 cm and period 3 s` }), T`Amplitude $A = 4\,\mathrm{cm}$, period $T = 3\,\mathrm{s}$.`)}
+<h3>Describing an oscillation</h3>
+<ul><li><b>Amplitude</b> $A$: the largest displacement from the rest position.</li><li><b>Period</b> $T$: the time for one complete oscillation; <b>frequency</b> $f = 1/T$; <b>angular frequency</b> $\omega = 2\pi f$.</li><li>The displacement follows a sine or cosine curve: $x = A\cos(\omega t)$.</li></ul>
+${Key(T`<p>Periods of the two standard oscillators:</p><p>$$\text{mass on a spring: } T = 2\pi\sqrt{\frac{m}{k}} \qquad \text{simple pendulum: } T = 2\pi\sqrt{\frac{L}{g}}$$</p><p>Neither depends on the amplitude. The pendulum's period does not depend on its mass either.</p>`)}
+<h3>Speed, acceleration and energy</h3>
+<ul><li>The speed is greatest at the centre: $v_{\max} = A\omega$. At displacement $x$: $v = \omega\sqrt{A^2 - x^2}$.</li><li>The acceleration is greatest at the ends: $a_{\max} = A\omega^2$, always pointing back to the centre.</li><li>The total energy stays constant, $E = \tfrac12 k A^2$; it changes back and forth between kinetic and potential energy.</li></ul>
+${Tip(T`<p>Use SI units inside the square roots: mass in kg, length in m. A $50\,\mathrm{cm}$ pendulum has $L = 0.5\,\mathrm{m}$.</p>`)}`,
+  gens: [
+    () => {
+      const m = pick([0.1, 0.2, 0.25, 0.4, 0.5, 1, 2]), k = ri(2, 40) * 10, T0 = sig(2 * Math.PI * Math.sqrt(m / k));
+      return { q: T`A ${Q(m, 'kg')} mass hangs on a spring with $k = ${QT(k, 'N/m')}$. What is the period of its vertical oscillations?`, a: T0, u: 's', w: [sig(2 * Math.PI * Math.sqrt(k / m)), sig(Math.sqrt(m / k)), sig(2 * Math.PI * m / k)],
+        s: T`$T = 2\pi\sqrt{\frac{m}{k}} = 2\pi\sqrt{\frac{${M(m)}}{${k}}} = ${QT(T0, 's')}$.` };
+    },
+    () => {
+      const g = gPick(), L = ri(1, 40) / 10, T0 = sig(2 * Math.PI * Math.sqrt(L / g)), askL = chance();
+      return askL
+        ? { q: T`A pendulum clock needs a period of ${Q(T0, 's')}. How long should its pendulum be? ${gNote(g)}`, a: sig(L), u: 'm', w: [sig(g * T0 / (2 * Math.PI)), sig(L * 2), sig(Math.sqrt(L))], s: T`$T = 2\pi\sqrt{L/g}$, so $L = g\left(\frac{T}{2\pi}\right)^2 = ${M(g)}\left(\frac{${M(T0)}}{2\pi}\right)^2 = ${QT(sig(L), 'm')}$.` }
+        : { q: T`What is the period of a simple pendulum ${Q(L, 'm')} long? ${gNote(g)}`, a: T0, u: 's', w: [sig(2 * Math.PI * Math.sqrt(g / L)), sig(2 * Math.PI * L / g), sig(Math.sqrt(L / g))], s: T`$T = 2\pi\sqrt{\frac{L}{g}} = 2\pi\sqrt{\frac{${M(L)}}{${M(g)}}} = ${QT(T0, 's')}$.` };
+    },
+    () => {
+      const A = ri(2, 20) / 100, f = ri(1, 10) / 2, w = 2 * Math.PI * f, askA = chance(), v = sig(A * w), a = sig(A * w * w);
+      return { q: T`An object oscillates in SHM with amplitude ${Q(A * 100, 'cm')} and frequency ${Q(f, 'Hz')}. What is its maximum ${askA ? T`acceleration` : T`speed`}?`, a: askA ? a : v, u: askA ? 'm/s²' : 'm/s', w: askA ? [v, sig(A * w * w * 100), sig(A * f * f)] : [a, sig(A * f), sig(A * w * 100)],
+        s: askA ? T`$\omega = 2\pi f = ${M(sig(w))}\,\mathrm{rad/s}$, so $a_{\max} = A\omega^2 = ${M(A)} \cdot ${M(sig(w))}^2 = ${QT(a, 'm/s^2')}$.` : T`$\omega = 2\pi f = ${M(sig(w))}\,\mathrm{rad/s}$, so $v_{\max} = A\omega = ${M(A)} \cdot ${M(sig(w))} = ${QT(v, 'm/s')}$.` };
+    },
+    () => {
+      const A = ri(5, 20), x = ri(1, A - 1), w = ri(2, 10), v = sig(w * Math.sqrt(A * A - x * x) / 100);
+      return { q: T`A mass oscillates with amplitude ${Q(A, 'cm')} and angular frequency ${Q(w, 'rad/s')}. How fast is it moving when it is ${Q(x, 'cm')} from the centre?`, a: v, u: 'm/s', w: [sig(w * A / 100), sig(w * (A - x) / 100), sig(w * x / 100)],
+        s: T`$v = \omega\sqrt{A^2 - x^2} = ${w}\sqrt{${M(A / 100)}^2 - ${M(x / 100)}^2} = ${QT(v, 'm/s')}$.` };
+    },
+    () => {
+      const k = ri(2, 40) * 10, A = ri(2, 15) / 100, E = sig(0.5 * k * A * A);
+      return { q: T`A spring with $k = ${QT(k, 'N/m')}$ oscillates with an amplitude of ${Q(A * 100, 'cm')}. What is the total energy of the oscillation?`, a: E, u: 'J', w: [sig(k * A * A), sig(0.5 * k * A), sig(0.5 * k * (A * 100) ** 2 / 100)],
+        s: T`$E = \tfrac12 k A^2 = \tfrac12 \cdot ${k} \cdot ${M(A)}^2 = ${QT(E, 'J')}$.` };
+    },
+    () => pick([
+      { q: T`A pendulum is set swinging with a larger amplitude (still small). What happens to its period?`, a: T`It stays the same`, w: [T`It increases`, T`It decreases`, T`It doubles`], only: 'mc', s: T`For small swings $T = 2\pi\sqrt{L/g}$, which contains no amplitude: a bigger swing covers more distance but moves faster.` },
+      { q: T`A pendulum clock is taken to the Moon, where $g$ is about one sixth of its value on Earth. What happens to the period of its pendulum?`, a: T`It becomes about 2.45 times longer`, w: [T`It becomes 6 times longer`, T`It stays the same`, T`It becomes shorter`], only: 'mc', s: T`$T \propto 1/\sqrt{g}$, so dividing $g$ by 6 multiplies $T$ by $\sqrt6 \approx 2.45$. The clock runs slow.` },
+      { q: T`At which point of its oscillation does a mass on a spring have its greatest speed?`, a: T`As it passes through the centre (rest position)`, w: [T`At the two ends of its motion`, T`Halfway between the centre and an end`, T`Its speed is the same everywhere`], only: 'mc', s: T`At the centre all the energy is kinetic, so the speed is greatest; at the ends the mass stops for an instant.` },
+    ]),
+  ],
+},
+{
+  id: 'mech-waves', stage: 'sh', title: 'Mechanical Waves',
+  blurb: 'Transverse and longitudinal waves, wavelength, frequency and wave speed, waves on strings and standing waves.',
+  lesson: () => T`
+<p>A <b>wave</b> carries energy from place to place without carrying the material along with it. In a mechanical wave, each particle of the medium oscillates about its own position and passes the motion on to its neighbour.</p>
+<h3>Two kinds of wave</h3>
+<ul><li><b>Transverse:</b> the particles move at right angles to the direction the wave travels. Waves on a string, ripples on water.</li><li><b>Longitudinal:</b> the particles move back and forth along the direction of travel, making compressions and rarefactions. Sound, a pushed slinky.</li></ul>
+${Fig(waveSvg(2, 3, 5, { label: T`A transverse wave with wavelength 2 m and amplitude 3 cm` }), T`Wavelength $\lambda = 2\,\mathrm{m}$ (crest to crest), amplitude $3\,\mathrm{cm}$.`)}
+<h3>Describing a wave</h3>
+<ul><li><b>Wavelength</b> $\lambda$: the length of one complete wave, for example crest to crest.</li><li><b>Frequency</b> $f$: waves passing a point per second; <b>period</b> $T = 1/f$.</li><li><b>Amplitude</b>: the largest displacement from the rest position.</li></ul>
+${Key(T`<p>In one period a wave moves forward one wavelength, so its speed is</p><p>$$v = f\lambda = \frac{\lambda}{T}.$$</p><p>The speed is set by the medium; the frequency is set by the source.</p>`)}
+<h3>Waves on a string and standing waves</h3>
+<p>On a string with tension $F$ and mass per unit length $\mu$, $v = \sqrt{F/\mu}$. A string fixed at both ends vibrates in <b>standing waves</b> whose length fits a whole number of half-wavelengths: $L = n\frac{\lambda}{2}$, so</p>
+${Fm(T`f_n = \frac{n v}{2L}, \qquad n = 1, 2, 3, \dots`)}
+<p>The lowest, $f_1$, is the <b>fundamental</b>; the others are harmonics. Guitar strings are tuned by changing their tension.</p>
+${Tip(T`<p>A crest and the next trough are half a wavelength apart, not a whole one.</p>`)}`,
+  gens: [
+    () => {
+      const f = pick([2, 4, 5, 10, 20, 50, 100, 250, 500]), lam = pick([0.2, 0.5, 0.8, 1.5, 2, 3, 4]), v = sig(f * lam), ask = pick(['v', 'f', 'l']);
+      if (ask === 'v') return { q: T`A wave has a frequency of ${Q(f, 'Hz')} and a wavelength of ${Q(lam, 'm')}. How fast does it travel?`, a: v, u: 'm/s', w: [sig(f / lam), sig(lam / f), sig(f * lam * 2)], s: T`$v = f\lambda = ${f} \cdot ${M(lam)} = ${QT(v, 'm/s')}$.` };
+      if (ask === 'f') return { q: T`A wave travels at ${Q(v, 'm/s')} with a wavelength of ${Q(lam, 'm')}. What is its frequency?`, a: f, u: 'Hz', w: [sig(v * lam), sig(lam / v), sig(f * 2)], s: T`$f = \frac{v}{\lambda} = \frac{${M(v)}}{${M(lam)}} = ${QT(f, 'Hz')}$.` };
+      return { q: T`A wave travels at ${Q(v, 'm/s')} with a frequency of ${Q(f, 'Hz')}. What is its wavelength?`, a: lam, u: 'm', w: [sig(v * f), sig(f / v), sig(lam * 2)], s: T`$\lambda = \frac{v}{f} = \frac{${M(v)}}{${f}} = ${QT(lam, 'm')}$.` };
+    },
+    () => {
+      const lam = pick([1, 2, 4, 5]) * pick([0.5, 1, 2]), A = ri(2, 6), span = lam * 2.5, T0 = pick([0.5, 1, 2, 4]), v = sig(lam / T0), askL = chance();
+      const fig = Fig(waveSvg(lam, A, span, { label: T`A snapshot of a wave on a rope`, xStep: lam / 2 }));
+      return askL
+        ? { q: T`The graph shows a snapshot of a wave on a rope. What is its wavelength?` + fig, a: lam, u: 'm', w: [lam / 2, lam * 2, A], s: T`One complete wave (crest to crest, or one full cycle of the curve) spans ${Q(lam, 'm')}.` }
+        : { q: T`The graph shows a snapshot of a wave on a rope. Each point of the rope makes one full oscillation every ${Q(T0, 's')}. How fast does the wave travel?` + fig, a: v, u: 'm/s', w: [sig(lam * T0), sig(lam / 2 / T0), sig(A / T0)], s: T`From the graph $\lambda = ${QT(lam, 'm')}$. So $v = \frac{\lambda}{T} = \frac{${M(lam)}}{${M(T0)}} = ${QT(v, 'm/s')}$.` };
+    },
+    () => {
+      const F = ri(2, 40) * 10, mu = pick([0.001, 0.002, 0.005, 0.01, 0.02]), v = sig(Math.sqrt(F / mu));
+      return { q: T`A string with a mass of ${Q(mu * 1000, 'g')} per metre is stretched with a tension of ${Q(F, 'N')}. What is the speed of waves on it?`, a: v, u: 'm/s', w: [sig(F / mu), sig(Math.sqrt(F * mu), 3), sig(Math.sqrt(F / (mu * 1000)))],
+        s: T`$\mu = ${M(mu)}\,\mathrm{kg/m}$, so $v = \sqrt{\frac{F}{\mu}} = \sqrt{\frac{${F}}{${M(mu)}}} = ${QT(v, 'm/s')}$.` };
+    },
+    () => {
+      const L = ri(3, 12) / 10, v = ri(10, 60) * 10, n = pick([1, 1, 2, 3]), f = sig(n * v / (2 * L));
+      return { q: n === 1 ? T`A guitar string ${Q(L, 'm')} long is fixed at both ends, and waves travel along it at ${Q(v, 'm/s')}. What is its fundamental frequency?` : T`A string ${Q(L, 'm')} long is fixed at both ends, and waves travel along it at ${Q(v, 'm/s')}. What is the frequency of harmonic number ${n}?`,
+        a: f, u: 'Hz', w: [sig(n * v / L), sig(n * v / (4 * L)), sig(v / (2 * L))].filter(x => x !== f), s: T`$f_n = \frac{n v}{2L} = \frac{${n} \cdot ${v}}{2 \cdot ${M(L)}} = ${QT(f, 'Hz')}$.` };
+    },
+    () => {
+      const lam = ri(2, 20) / 2, d = sig(lam / 2);
+      return { q: T`A water wave has a wavelength of ${Q(lam, 'm')}. What is the horizontal distance between a crest and the next trough?`, a: d, u: 'm', w: [lam, sig(lam / 4), lam * 2], s: T`A crest and the next trough are half a wavelength apart: ${Q(d, 'm')}.` };
+    },
+    () => pick([
+      { q: T`Which of these is a longitudinal wave?`, a: T`A sound wave in air`, w: [T`A wave on a guitar string`, T`A ripple on a pond`, T`A wave sent along a rope by shaking it sideways`], only: 'mc', s: T`In sound the air particles move back and forth along the direction the wave travels, forming compressions and rarefactions.` },
+      { q: T`A wave passes from deep water into shallow water, where it travels more slowly. What stays the same?`, a: T`Its frequency`, w: [T`Its speed`, T`Its wavelength`, T`Its direction always`], only: 'mc', s: T`The frequency is set by the source and does not change. Since $v = f\lambda$, a lower speed means a shorter wavelength.` },
+    ]),
+  ],
+},
+{
+  id: 'sound', stage: 'sh', title: 'Sound: Intensity, Decibels & the Doppler Effect',
+  blurb: 'Speed of sound and echoes, pitch and loudness, intensity and the decibel scale, the Doppler effect and pipes.',
+  lesson: () => T`
+<p>Sound is a <b>longitudinal</b> mechanical wave: a travelling pattern of compressions and rarefactions. It needs a medium and cannot cross a vacuum. In air at room temperature it travels at about $340\,\mathrm{m/s}$; in water at about $1500\,\mathrm{m/s}$; in steel even faster.</p>
+<h3>Echoes</h3>
+<p>An echo travels to a reflecting surface and back, so the distance to the surface is $d = \dfrac{v t}{2}$. Bats, ships' sonar and ultrasound scanners all use this.</p>
+<h3>Pitch and loudness</h3>
+<p>The <b>pitch</b> of a sound is set by its frequency and the <b>loudness</b> mostly by its amplitude. People hear roughly $20\,\mathrm{Hz}$ to $20\,000\,\mathrm{Hz}$; above that is ultrasound, below it infrasound.</p>
+${Key(T`<p>The <b>intensity</b> is the power per unit area. From a small source spreading out in all directions:</p><p>$$I = \frac{P}{4\pi r^2}.$$</p><p>Loudness is measured on the logarithmic <b>decibel</b> scale:</p><p>$$\beta = 10 \log_{10}\frac{I}{I_0}\ \mathrm{dB}, \qquad I_0 = 10^{-12}\,\mathrm{W/m^2}.$$</p><p>Every $10\,\mathrm{dB}$ more means ten times the intensity.</p>`)}
+<h3>The Doppler effect</h3>
+<p>When a source and a listener move towards each other, the listener hears a higher frequency; moving apart, a lower one. With the speed of sound $v$, listener speed $v_L$ and source speed $v_S$:</p>
+${Fm(T`f_L = f_S\,\frac{v \pm v_L}{v \mp v_S}`)}
+<p>Use the upper signs when they approach each other and the lower signs when they move apart.</p>
+<h3>Pipes</h3>
+<p>An air column resonates like a string. A pipe open at both ends has $f_n = \dfrac{n v}{2L}$; a pipe closed at one end has only odd harmonics, $f = \dfrac{(2n-1) v}{4L}$, so its fundamental is $\dfrac{v}{4L}$.</p>
+${Tip(T`<p>Do not forget to halve the echo time: the sound goes there <i>and</i> back.</p>`)}`,
+  gens: [
+    () => {
+      const water = chance(), v = water ? 1500 : 340, t = water ? ri(2, 40) / 10 : ri(2, 30) / 10, d = sig(v * t / 2);
+      return { q: water ? T`A ship's sonar pulse returns from the sea bed after ${Q(t, 's')}. How deep is the sea there? (Speed of sound in water: $1500\,\mathrm{m/s}$.)` : T`A girl claps and hears the echo from a cliff ${Q(t, 's')} later. How far away is the cliff? (Speed of sound: $340\,\mathrm{m/s}$.)`,
+        a: d, u: 'm', w: [sig(v * t), sig(v / t), sig(v * t / 4)], s: T`The sound travels there and back, so $d = \frac{vt}{2} = \frac{${v} \cdot ${M(t)}}{2} = ${QT(d, 'm')}$.` };
+    },
+    () => {
+      const f = pick([85, 170, 256, 340, 440, 680, 1000, 2000, 3400]), lam = sig(340 / f);
+      return { q: T`A tuning fork vibrates at ${Q(f, 'Hz')}. What is the wavelength of the sound in air? (Speed of sound: $340\,\mathrm{m/s}$.)`, a: lam, u: 'm', w: [sig(f / 340), sig(340 * f / 1000), sig(lam * 2)], s: T`$\lambda = \frac{v}{f} = \frac{340}{${f}} = ${QT(lam, 'm')}$.` };
+    },
+    () => {
+      const P = pick([0.1, 0.5, 1, 2, 5, 10, 50]), r = ri(1, 20), I = P / (4 * Math.PI * r * r);
+      return { q: T`A small loudspeaker radiates ${Q(P, 'W')} of sound equally in all directions. What is the intensity ${Q(r, 'm')} away?`, a: `$${sciT(I)}\\,\\mathrm{W/m^2}$`, w: [`$${sciT(P / (4 * Math.PI * r))}\\,\\mathrm{W/m^2}$`, `$${sciT(P / (Math.PI * r * r))}\\,\\mathrm{W/m^2}$`, `$${sciT(I * 10)}\\,\\mathrm{W/m^2}$`], v: I, rtol: 0.02, h: T`Type a power of ten like 3.2e-3.`,
+        s: T`$I = \frac{P}{4\pi r^2} = \frac{${M(P)}}{4\pi \cdot ${r}^2} = ${sciT(I)}\,\mathrm{W/m^2}$.` };
+    },
+    () => {
+      const e = ri(-9, -2), m = pick([1, 2, 5]), I = m * 10 ** e, B = sig(10 * Math.log10(I / 1e-12));
+      return { q: T`A sound has an intensity of $${sciT(I, 1)}\,\mathrm{W/m^2}$. What is its sound level in decibels? ($I_0 = 10^{-12}\,\mathrm{W/m^2}$.)`, a: B, u: 'dB', w: [sig(B / 10), sig(10 * Math.log10(I)), sig(B + 10)], neg: true,
+        s: T`$\beta = 10\log_{10}\frac{I}{I_0} = 10\log_{10}\frac{${sciT(I, 1)}}{10^{-12}} = ${QT(B, 'dB')}$.` };
+    },
+    () => {
+      const d = pick([10, 20, 30, 40]), k = 10 ** (d / 10), n = pick([2, 10, 100]);
+      return chance()
+        ? { q: T`A street is ${Q(d, 'dB')} louder than a quiet room. How many times greater is its sound intensity?`, a: k, w: [d, d / 10, k / 10], s: T`Each $10\,\mathrm{dB}$ multiplies the intensity by 10, so $${d}\,\mathrm{dB}$ is a factor of $10^{${d / 10}} = ${M(k)}$.` }
+        : { q: T`One machine produces a sound level of ${Q(80, 'dB')}. What is the level when ${n} identical machines run together?`, a: sig(80 + 10 * Math.log10(n)), u: 'dB', w: [80 * n, 80 + n, sig(80 * Math.log10(n) + 80)], s: T`The intensity is ${n} times larger, adding $10\log_{10}${n} = ${M(sig(10 * Math.log10(n)))}\,\mathrm{dB}$: the level is ${Q(sig(80 + 10 * Math.log10(n)), 'dB')}.` };
+    },
+    () => {
+      const f = pick([300, 400, 500, 600, 800, 1000]), vs = ri(10, 40), toward = chance(), fL = sig(f * 340 / (toward ? 340 - vs : 340 + vs));
+      return { q: T`An ambulance siren emits ${Q(f, 'Hz')}. The ambulance moves at ${Q(vs, 'm/s')} ${toward ? T`towards` : T`away from`} a person standing still. What frequency does the person hear? (Speed of sound: $340\,\mathrm{m/s}$.)`, a: fL, u: 'Hz', w: [sig(f * 340 / (toward ? 340 + vs : 340 - vs)), f, sig(f * (340 + (toward ? vs : -vs)) / 340)],
+        s: T`$f_L = f_S \frac{v}{v ${toward ? '-' : '+'} v_S} = ${f} \cdot \frac{340}{340 ${toward ? '-' : '+'} ${vs}} = ${QT(fL, 'Hz')}$. The pitch is ${toward ? T`higher` : T`lower`} than the siren's own.` };
+    },
+    () => {
+      const L = ri(2, 20) / 10, open = chance(), f = sig(open ? 340 / (2 * L) : 340 / (4 * L));
+      return { q: open ? T`What is the fundamental frequency of a pipe ${Q(L, 'm')} long that is open at both ends? (Speed of sound: $340\,\mathrm{m/s}$.)` : T`What is the fundamental frequency of a pipe ${Q(L, 'm')} long that is closed at one end? (Speed of sound: $340\,\mathrm{m/s}$.)`,
+        a: f, u: 'Hz', w: open ? [sig(340 / (4 * L)), sig(340 / L), sig(340 * L)] : [sig(340 / (2 * L)), sig(340 / L), sig(340 * L)],
+        s: open ? T`Open pipe: $f_1 = \frac{v}{2L} = \frac{340}{2 \cdot ${M(L)}} = ${QT(f, 'Hz')}$.` : T`Closed pipe: $f_1 = \frac{v}{4L} = \frac{340}{4 \cdot ${M(L)}} = ${QT(f, 'Hz')}$.` };
+    },
+  ],
+},
   ],
 });
 
@@ -1973,9 +2128,147 @@ ${Tip(T`<p>In $Q = mc\Delta T$ the mass must be in kilograms: $250\,\mathrm{g} =
   ],
 },
 /* ------------------------------------------------------------------ */
-{ id: 'gases', stage: 'sh', soon: true, title: 'Kinetic Theory & Ideal Gases' },
-{ id: 'thermo-laws', stage: 'sh', soon: true, title: 'Laws of Thermodynamics & Heat Engines' },
-{ id: 'heat-transfer', stage: 'jh', soon: true, title: 'Heat Transfer: Conduction, Convection & Radiation' },
+{
+  id: 'gases', stage: 'sh', title: 'Kinetic Theory & Ideal Gases',
+  blurb: 'Boyle’s, Charles’s and Gay-Lussac’s laws, the ideal gas equation, moles, and the kinetic energy and speed of gas molecules.',
+  lesson: () => T`
+<p>A gas is made of a huge number of molecules moving randomly and colliding with each other and the walls of their container. The collisions with the walls cause the gas <b>pressure</b>.</p>
+<h3>The gas laws</h3>
+<ul><li><b>Boyle's law</b> (constant temperature): $p_1 V_1 = p_2 V_2$. Squeeze a gas into half the volume and its pressure doubles.</li><li><b>Charles's law</b> (constant pressure): $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$.</li><li><b>Gay-Lussac's law</b> (constant volume): $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$.</li></ul>
+${Key(T`<p>All three combine into the <b>ideal gas equation</b>:</p><p>$$pV = nRT, \qquad R = 8.31\,\mathrm{J/(mol\,K)},$$</p><p>where $n$ is the number of moles and $T$ the <b>absolute temperature in kelvin</b>. For a fixed amount of gas, $\dfrac{p_1 V_1}{T_1} = \dfrac{p_2 V_2}{T_2}$.</p>`)}
+<h3>Kinetic theory</h3>
+<p>The temperature of a gas measures the average kinetic energy of its molecules:</p>
+${Fm(T`\bar{E}_k = \tfrac32 k T, \qquad k = 1.38 \times 10^{-23}\,\mathrm{J/K}`)}
+<p>The typical (root-mean-square) speed of molecules of molar mass $M$ (in $\mathrm{kg/mol}$) is $v_{\text{rms}} = \sqrt{\dfrac{3RT}{M}}$: lighter molecules move faster at the same temperature.</p>
+${Tip(T`<p>Always use kelvin in the gas laws. Doubling the temperature from $20^\circ\mathrm{C}$ to $40^\circ\mathrm{C}$ does <i>not</i> double the absolute temperature: $293\,\mathrm{K} \to 313\,\mathrm{K}$.</p>`)}`,
+  gens: [
+    () => {
+      const p1 = ri(1, 5) * 100, V1 = ri(2, 20), V2 = ri(1, V1 - 1) || 1, p2 = sig(p1 * V1 / V2);
+      return { q: T`A gas at ${Q(p1, 'kPa')} occupies ${Q(V1, 'L')}. It is compressed at constant temperature to ${Q(V2, 'L')}. What is its new pressure?`, a: p2, u: 'kPa', w: [sig(p1 * V2 / V1), sig(p1 + V1 - V2), sig(p1 * V1 * V2 / 10)],
+        s: T`Boyle's law: $p_2 = \frac{p_1 V_1}{V_2} = \frac{${p1} \cdot ${V1}}{${V2}} = ${QT(p2, 'kPa')}$.` };
+    },
+    () => {
+      const V1 = ri(2, 20), t1 = ri(0, 40), t2 = t1 + ri(20, 150), V2 = sig(V1 * (t2 + 273) / (t1 + 273));
+      return { q: T`A balloon holds ${Q(V1, 'L')} of gas at ${Q(t1, '°C')}. At constant pressure it is heated to ${Q(t2, '°C')}. What is its new volume?`, a: V2, u: 'L', w: [sig(V1 * t2 / (t1 || 1)), sig(V1 * (t1 + 273) / (t2 + 273)), V1],
+        s: T`In kelvin: $T_1 = ${t1 + 273}\,\mathrm{K}$, $T_2 = ${t2 + 273}\,\mathrm{K}$. Charles's law: $V_2 = V_1 \frac{T_2}{T_1} = ${V1} \cdot \frac{${t2 + 273}}{${t1 + 273}} = ${QT(V2, 'L')}$.` };
+    },
+    () => {
+      const p1 = ri(180, 250), t1 = ri(10, 30), t2 = t1 + ri(10, 40), p2 = sig(p1 * (t2 + 273) / (t1 + 273));
+      return { q: T`A car tyre is at ${Q(p1, 'kPa')} and ${Q(t1, '°C')}. After a long drive the air in it is at ${Q(t2, '°C')}. Assuming the volume stays the same, what is the new pressure?`, a: p2, u: 'kPa', w: [sig(p1 * t2 / t1), p1, sig(p1 * (t1 + 273) / (t2 + 273))],
+        s: T`$\frac{p_1}{T_1} = \frac{p_2}{T_2}$ with kelvin: $p_2 = ${p1} \cdot \frac{${t2 + 273}}{${t1 + 273}} = ${QT(p2, 'kPa')}$.` };
+    },
+    () => {
+      const n = ri(1, 20) / 2, t = ri(0, 50), V = pick([0.01, 0.02, 0.025, 0.05, 0.1]), p = sig(n * 8.31 * (t + 273) / V);
+      return { q: T`What is the pressure of ${NUM(n)} mol of an ideal gas in a ${Q(V * 1000, 'L')} container at ${Q(t, '°C')}? ($R = 8.31\,\mathrm{J/(mol\,K)}$.)`, a: sig(p / 1000), u: 'kPa', w: [sig(n * 8.31 * t / V / 1000), sig(p / 1e6), sig(n * 8.31 * (t + 273) / (V * 1000) / 1000)],
+        s: T`$V = ${M(V)}\,\mathrm{m^3}$ and $T = ${t + 273}\,\mathrm{K}$, so $p = \frac{nRT}{V} = \frac{${M(n)} \cdot 8.31 \cdot ${t + 273}}{${M(V)}} = ${M(p)}\,\mathrm{Pa} = ${QT(sig(p / 1000), 'kPa')}$.` };
+    },
+    () => {
+      const t = ri(-50, 500), E = 1.5 * 1.38e-23 * (t + 273);
+      return { q: T`What is the average kinetic energy of a molecule in a gas at ${Q(t, '°C')}? ($k = 1.38 \times 10^{-23}\,\mathrm{J/K}$.)`, a: `$${sciT(E)}\\,\\mathrm{J}$`, w: [`$${sciT(1.5 * 1.38e-23 * Math.max(t, 1))}\\,\\mathrm{J}$`, `$${sciT(E / 1.5)}\\,\\mathrm{J}$`, `$${sciT(E * 2)}\\,\\mathrm{J}$`], v: E, rtol: 0.02, h: T`Type a power of ten like 6.2e-21.`,
+        s: T`$T = ${t + 273}\,\mathrm{K}$, so $\bar{E}_k = \tfrac32 kT = 1.5 \cdot 1.38 \times 10^{-23} \cdot ${t + 273} = ${sciT(E)}\,\mathrm{J}$.` };
+    },
+    () => {
+      const [gas, Mm] = pick([[T`oxygen`, 0.032], [T`nitrogen`, 0.028], [T`helium`, 0.004], [T`hydrogen`, 0.002], [T`carbon dioxide`, 0.044]]), t = ri(0, 100), v = sig(Math.sqrt(3 * 8.31 * (t + 273) / Mm));
+      return { q: T`What is the rms speed of ${gas} molecules (molar mass ${Q(Mm, 'kg/mol')}) at ${Q(t, '°C')}? ($R = 8.31\,\mathrm{J/(mol\,K)}$.)`, a: v, u: 'm/s', w: [sig(Math.sqrt(3 * 8.31 * (t + 273) / (Mm * 1000))), sig(Math.sqrt(8.31 * (t + 273) / Mm)), sig(Math.sqrt(3 * 8.31 * Math.max(t, 1) / Mm))],
+        s: T`$v_{\text{rms}} = \sqrt{\frac{3RT}{M}} = \sqrt{\frac{3 \cdot 8.31 \cdot ${t + 273}}{${M(Mm)}}} = ${QT(v, 'm/s')}$.` };
+    },
+    () => ({ q: T`The absolute temperature of a gas is doubled. What happens to the average kinetic energy of its molecules?`, a: T`It doubles`, w: [T`It becomes four times as large`, T`It increases by a factor of $\sqrt2$`, T`It stays the same`], only: 'mc',
+      s: T`$\bar{E}_k = \tfrac32 kT$ is proportional to the absolute temperature, so it doubles. (The rms speed grows only by $\sqrt2$.)` }),
+  ],
+},
+{
+  id: 'thermo-laws', stage: 'sh', title: 'Laws of Thermodynamics & Heat Engines',
+  blurb: 'Internal energy and the first law, work done by a gas, thermodynamic processes, heat engines, the Carnot limit and refrigerators.',
+  lesson: () => T`
+<h3>The first law</h3>
+<p>The <b>internal energy</b> $U$ of a gas is the total kinetic energy of its molecules (for an ideal gas it depends only on temperature). It changes when heat flows in or when the gas does work:</p>
+${Fm(T`\Delta U = Q - W`)}
+<p>$Q$ is the heat added <i>to</i> the gas and $W$ the work done <i>by</i> the gas. This is conservation of energy.</p>
+<h3>Work done by a gas</h3>
+<p>A gas expanding at constant pressure $p$ from $V_1$ to $V_2$ does work $W = p\,\Delta V$. On a $p$–$V$ diagram, the work is the area under the curve.</p>
+${Tbl([T`Process`, T`What stays fixed`, T`Consequence`], [[T`Isobaric`, T`pressure`, '$W = p\\Delta V$'], [T`Isochoric`, T`volume`, '$W = 0$, $\\Delta U = Q$'], [T`Isothermal`, T`temperature`, '$\\Delta U = 0$, $Q = W$'], [T`Adiabatic`, T`no heat flow`, '$Q = 0$, $\\Delta U = -W$']])}
+${Key(T`<p>A <b>heat engine</b> takes in heat $Q_H$ from a hot source, does work $W$ and rejects heat $Q_C$ to a cold sink: $W = Q_H - Q_C$. Its efficiency is</p><p>$$\eta = \frac{W}{Q_H} = 1 - \frac{Q_C}{Q_H}.$$</p><p>No engine working between absolute temperatures $T_H$ and $T_C$ can beat the <b>Carnot efficiency</b> $\eta_{\max} = 1 - \dfrac{T_C}{T_H}$.</p>`)}
+<h3>The second law and refrigerators</h3>
+<p>Heat flows by itself only from hot to cold, and no engine can turn all of its heat into work. A refrigerator uses work $W$ to move heat $Q_C$ out of its cold interior; its coefficient of performance is $\mathrm{COP} = \dfrac{Q_C}{W}$.</p>
+${Tip(T`<p>Watch the signs: heat <i>removed</i> from the gas makes $Q$ negative, and work done <i>on</i> the gas (compression) makes $W$ negative.</p>`)}`,
+  gens: [
+    () => {
+      const Qh = ri(2, 50) * 100, W = ri(1, 40) * 50, dU = Qh - W;
+      return { q: T`A gas absorbs ${Q(Qh, 'J')} of heat and does ${Q(W, 'J')} of work on its surroundings. What is the change in its internal energy?`, a: dU, u: 'J', w: [Qh + W, W - Qh, Qh], neg: true, s: T`$\Delta U = Q - W = ${Qh} - ${W} = ${QT(dU, 'J')}$.` };
+    },
+    () => {
+      const p = ri(1, 5) * 100, V1 = ri(1, 10), dV = ri(1, 10), W = p * dV;
+      return { q: T`A gas at a constant pressure of ${Q(p, 'kPa')} expands from ${Q(V1, 'L')} to ${Q(V1 + dV, 'L')}. How much work does it do?`, a: W, u: 'J', w: [W * 1000, p * (V1 + dV), sig(W / 1000)],
+        s: T`$W = p\Delta V = ${p} \times 10^{3}\,\mathrm{Pa} \cdot ${dV} \times 10^{-3}\,\mathrm{m^3} = ${QT(W, 'J')}$.` };
+    },
+    () => {
+      const Qh = ri(5, 50) * 100, eta = ri(10, 40), W = Qh * eta / 100, askEta = chance();
+      return askEta
+        ? { q: T`An engine takes in ${Q(Qh, 'J')} of heat per cycle and does ${Q(W, 'J')} of work. What is its efficiency?`, a: eta, u: '%', w: [100 - eta, sig(Qh / W), sig((Qh - W) / Qh * 100)].filter(x => x !== eta), s: T`$\eta = \frac{W}{Q_H} = \frac{${M(W)}}{${Qh}} = ${M(eta / 100)} = ${M(eta)}\%$.` }
+        : { q: T`An engine with an efficiency of ${NUM(eta)}% takes in ${Q(Qh, 'J')} of heat per cycle. How much heat does it reject to the cold sink?`, a: Qh - W, u: 'J', w: [W, Qh, Qh + W], s: T`$W = \eta Q_H = ${M(W)}\,\mathrm{J}$, so $Q_C = Q_H - W = ${Qh} - ${M(W)} = ${QT(Qh - W, 'J')}$.` };
+    },
+    () => {
+      const tH = ri(10, 60) * 10, tC = ri(0, 8) * 5, eta = sig((1 - (tC + 273) / (tH + 273)) * 100);
+      return { q: T`What is the maximum possible efficiency of an engine working between ${Q(tH, '°C')} and ${Q(tC, '°C')}?`, a: eta, u: '%', w: [sig((1 - tC / tH) * 100), sig((tC + 273) / (tH + 273) * 100), sig(eta / 2)],
+        s: T`Use kelvin: $T_H = ${tH + 273}\,\mathrm{K}$, $T_C = ${tC + 273}\,\mathrm{K}$. $\eta_{\max} = 1 - \frac{${tC + 273}}{${tH + 273}} = ${M(sig(eta / 100))}$, that is ${NUM(eta)}%.` };
+    },
+    () => {
+      const W = ri(1, 20) * 50, cop = pick([2, 2.5, 3, 4, 5]), Qc = W * cop;
+      return { q: T`A refrigerator with a coefficient of performance of ${NUM(cop)} uses ${Q(W, 'J')} of electrical work. How much heat does it remove from the food compartment?`, a: Qc, u: 'J', w: [sig(W / cop), W + cop, Qc + W], s: T`$\mathrm{COP} = \frac{Q_C}{W}$, so $Q_C = ${M(cop)} \cdot ${W} = ${QT(Qc, 'J')}$.` };
+    },
+    () => pick([
+      { q: T`A gas is compressed so quickly that no heat can flow in or out. What kind of process is this, and what happens to its temperature?`, a: T`Adiabatic; its temperature rises`, w: [T`Isothermal; its temperature stays the same`, T`Adiabatic; its temperature falls`, T`Isochoric; its temperature stays the same`], only: 'mc', s: T`With $Q = 0$, $\Delta U = -W$. Compression means work is done on the gas ($W \lt 0$), so $\Delta U \gt 0$ and the temperature rises, as in a bicycle pump.` },
+      { q: T`Why can no heat engine be 100% efficient?`, a: T`Some heat must always be rejected to a colder sink`, w: [T`Friction can never be removed completely`, T`Energy is destroyed inside the engine`, T`Heat engines always leak gas`], only: 'mc', s: T`The second law of thermodynamics: an engine working in a cycle must reject some heat to a cold sink, so $W \lt Q_H$ even with no friction at all.` },
+    ]),
+  ],
+},
+{
+  id: 'heat-transfer', stage: 'jh', title: 'Heat Transfer: Conduction, Convection & Radiation',
+  blurb: 'The three ways heat travels, the rate of conduction through a wall, radiation and the fourth-power law, and insulation.',
+  lesson: () => T`
+<p>Heat always flows from a hotter place to a colder one, in three different ways.</p>
+<h3>Conduction</h3>
+<p>In a solid, energetic particles pass energy to their neighbours. Metals conduct well because their free electrons carry energy quickly; wood, plastic, still air and wool are poor conductors, or <b>insulators</b>. The rate of heat flow through a slab of area $A$ and thickness $L$ with temperature difference $\Delta T$ is</p>
+${Fm(T`P = \frac{k A \Delta T}{L}`)}
+<p>where $k$ is the thermal conductivity in $\mathrm{W/(m\,K)}$ (copper about 400, glass about 0.8, air about 0.025).</p>
+<h3>Convection</h3>
+<p>In liquids and gases, warm fluid expands, becomes less dense and rises, while cooler fluid sinks to take its place. These <b>convection currents</b> heat a room from a heater, drive sea breezes and move the Earth's weather.</p>
+<h3>Radiation</h3>
+<p>Every object emits electromagnetic radiation (mostly infrared at everyday temperatures). Radiation needs no medium, which is how the Sun's heat crosses space. The power radiated is</p>
+${Fm(T`P = e \sigma A T^4, \qquad \sigma = 5.67 \times 10^{-8}\,\mathrm{W/(m^2\,K^4)}`)}
+<p>with $T$ in kelvin and emissivity $e$ between 0 and 1. Dull black surfaces are good emitters and good absorbers; shiny silver surfaces are poor at both.</p>
+${Key(T`<p>A vacuum flask blocks all three: the vacuum between its double walls stops conduction and convection, and the silvered walls reduce radiation.</p>`)}
+${Tip(T`<p>The fourth power makes radiation very sensitive to temperature: doubling the absolute temperature multiplies the radiated power by $2^4 = 16$.</p>`)}`,
+  gens: [
+    () => {
+      const k = pick([0.8, 1.0]), A = ri(1, 6), L = pick([3, 4, 5, 6, 8]) / 1000, dT = ri(2, 10) / 2, P = sig(k * A * dT / L);
+      return { q: T`A glass window has an area of ${Q(A, 'm^2')} and a thickness of ${Q(L * 1000, 'mm')}. The inside surface is ${Q(dT, '°C')} warmer than the outside surface. How much heat is conducted through it per second? (Thermal conductivity of glass: ${Q(k, 'W/(m\\,K)')}.)`,
+        a: P, u: 'W', w: [sig(k * A * dT / (L * 1000)), sig(k * A * dT * L), sig(P * 2)], s: T`$L = ${M(L)}\,\mathrm{m}$, so $P = \frac{kA\Delta T}{L} = \frac{${M(k)} \cdot ${A} \cdot ${dT}}{${M(L)}} = ${QT(P, 'W')}$.` };
+    },
+    () => {
+      const change = pick(['thick', 'area', 'dT']), f = pick([2, 3, 4]);
+      return change === 'thick'
+        ? { q: T`The insulation in a wall is made ${f} times thicker, with everything else unchanged. How does the rate of heat conduction change?`, a: T`It becomes ${f} times smaller`, w: [T`It becomes ${f} times larger`, T`It becomes ${f * f} times smaller`, T`It stays the same`], only: 'mc', s: T`$P = \frac{kA\Delta T}{L}$ is inversely proportional to the thickness $L$.` }
+        : change === 'area'
+          ? { q: T`A wall is replaced by one of the same material and thickness but ${f} times the area. How does the rate of heat conduction change?`, a: T`It becomes ${f} times larger`, w: [T`It becomes ${f} times smaller`, T`It becomes ${f * f} times larger`, T`It stays the same`], only: 'mc', s: T`$P = \frac{kA\Delta T}{L}$ is proportional to the area $A$.` }
+          : { q: T`The temperature difference across a wall becomes ${f} times as large. How does the rate of heat conduction change?`, a: T`It becomes ${f} times larger`, w: [T`It becomes ${f * f} times larger`, T`It becomes ${f} times smaller`, T`It stays the same`], only: 'mc', s: T`$P = \frac{kA\Delta T}{L}$ is proportional to the temperature difference $\Delta T$.` };
+    },
+    () => {
+      const e = pick([0.9, 0.95, 1]), A = pick([0.5, 1, 1.5, 2]), t = ri(20, 400), T0 = t + 273, P = sig(e * 5.67e-8 * A * T0 ** 4);
+      return { q: T`A surface of area ${Q(A, 'm^2')} and emissivity ${NUM(e)} is at ${Q(t, '°C')}. How much power does it radiate? ($\sigma = 5.67 \times 10^{-8}\,\mathrm{W/(m^2\,K^4)}$.)`, a: P, u: 'W', w: [sig(e * 5.67e-8 * A * t ** 4), sig(P / 4), sig(e * 5.67e-8 * A * T0 ** 3)],
+        s: T`$T = ${T0}\,\mathrm{K}$, so $P = e\sigma A T^4 = ${M(e)} \cdot 5.67 \times 10^{-8} \cdot ${M(A)} \cdot ${T0}^4 = ${QT(P, 'W')}$.` };
+    },
+    () => {
+      const f = pick([2, 3, 1.5]), r = sig(f ** 4);
+      return { q: T`The absolute temperature of a glowing object rises by a factor of ${NUM(f)}. By what factor does the power it radiates increase?`, a: r, w: [f, sig(f * f), sig(f ** 3)], s: T`$P \propto T^4$, so the power rises by $${M(f)}^4 = ${M(r)}$.` };
+    },
+    () => pick([
+      { q: T`How does heat from the Sun reach the Earth?`, a: T`By radiation`, w: [T`By conduction`, T`By convection`, T`By conduction and convection together`], only: 'mc', s: T`Space is almost a vacuum, so there is nothing to conduct or carry the heat. Only electromagnetic radiation can cross it.` },
+      { q: T`A metal spoon and a wooden spoon have been in the same room for hours. The metal one feels colder to touch. Why?`, a: T`Metal conducts heat away from your hand faster`, w: [T`The metal spoon is at a lower temperature`, T`Wood produces its own heat`, T`Metal radiates cold`], only: 'mc', s: T`Both are at room temperature. Metal is a good conductor, so it draws heat from your warmer hand quickly, and your skin senses that heat loss as cold.` },
+      { q: T`Why is a room heater usually placed low down, near the floor?`, a: T`Warm air rises, setting up convection currents that circulate through the room`, w: [T`Heat can only travel downwards`, T`The floor conducts heat around the room`, T`Radiation only works near the floor`], only: 'mc', s: T`Air warmed by the heater becomes less dense and rises; cooler air sinks and flows in to be heated. The whole room is warmed by this convection current.` },
+    ]),
+  ],
+},
   ],
 });
 })();

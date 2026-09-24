@@ -1,0 +1,121 @@
+/* Bahasa Indonesia — 12-waves */
+addT('id', {
+  '1i3485l57l3': R`
+<p>Sebuah benda bergerak <b>harmonik sederhana</b> (GHS) jika gaya yang menariknya kembali ke posisi setimbang sebanding dengan simpangannya: $F = -kx$. Beban pada pegas dan bandul yang berayun dengan sudut kecil adalah contoh klasiknya.</p>
+⟦0⟧
+<h3>Menggambarkan getaran</h3>
+<ul><li><b>Amplitudo</b> $A$: simpangan terbesar dari posisi setimbang.</li><li><b>Periode</b> $T$: waktu untuk satu getaran penuh; <b>frekuensi</b> $f = 1/T$; <b>frekuensi sudut</b> $\omega = 2\pi f$.</li><li>Simpangannya mengikuti kurva sinus atau kosinus: $x = A\cos(\omega t)$.</li></ul>
+⟦1⟧
+<h3>Kecepatan, percepatan, dan energi</h3>
+<ul><li>Kelajuan terbesar di titik setimbang: $v_{\max} = A\omega$. Pada simpangan $x$: $v = \omega\sqrt{A^2 - x^2}$.</li><li>Percepatan terbesar di kedua ujung: $a_{\max} = A\omega^2$, selalu mengarah kembali ke titik setimbang.</li><li>Energi totalnya tetap, $E = \tfrac12 k A^2$; energi ini berganti-ganti antara energi kinetik dan energi potensial.</li></ul>
+⟦2⟧`,
+  '9pqe4ezwqq': R`Grafik simpangan terhadap waktu untuk getaran dengan amplitudo 4 cm dan periode 3 s`,
+  'gnp8qkykr1': R`Amplitudo $A = 4\,\mathrm{cm}$, periode $T = 3\,\mathrm{s}$.`,
+  '6jvoipk1c7': R`<p>Periode dua osilator baku:</p><p>$$\text{beban pada pegas: } T = 2\pi\sqrt{\frac{m}{k}} \qquad \text{bandul sederhana: } T = 2\pi\sqrt{\frac{L}{g}}$$</p><p>Keduanya tidak bergantung pada amplitudo. Periode bandul juga tidak bergantung pada massanya.</p>`,
+  'ztuj449fxe': R`<p>Pakai satuan SI di dalam akar: massa dalam kg, panjang dalam m. Bandul $50\,\mathrm{cm}$ memiliki $L = 0{,}5\,\mathrm{m}$.</p>`,
+  '22y4iw6i15l': R`Beban ⟦0⟧ digantung pada pegas dengan $k = ⟦1⟧$. Berapa periode getaran vertikalnya?`,
+  '1f2ky331xgd': R`Sebuah jam bandul memerlukan periode ⟦0⟧. Berapa panjang bandulnya? ⟦1⟧`,
+  'a1jdfy14a8': R`$T = 2\pi\sqrt{L/g}$, jadi $L = g\left(\frac{T}{2\pi}\right)^2 = ⟦0⟧\left(\frac{⟦1⟧}{2\pi}\right)^2 = ⟦2⟧$.`,
+  'p3ith2qya4': R`Berapa periode bandul sederhana yang panjangnya ⟦0⟧? ⟦1⟧`,
+  '1l9xl6dqu34': R`Sebuah benda bergerak harmonik sederhana dengan amplitudo ⟦0⟧ dan frekuensi ⟦1⟧. Berapa ⟦2⟧ maksimumnya?`,
+  '18fa0getwbu': R`$\omega = 2\pi f = ⟦0⟧\,\mathrm{rad/s}$, jadi $a_{\max} = A\omega^2 = ⟦1⟧ \cdot ⟦2⟧^2 = ⟦3⟧$.`,
+  'mv2mk76t00': R`$\omega = 2\pi f = ⟦0⟧\,\mathrm{rad/s}$, jadi $v_{\max} = A\omega = ⟦1⟧ \cdot ⟦2⟧ = ⟦3⟧$.`,
+  '1lchwdg6ceu': R`Sebuah beban bergetar dengan amplitudo ⟦0⟧ dan frekuensi sudut ⟦1⟧. Berapa kelajuannya saat berada ⟦2⟧ dari titik setimbang?`,
+  '15inzlixgu1': R`Sebuah pegas dengan $k = ⟦0⟧$ bergetar dengan amplitudo ⟦1⟧. Berapa energi total getarannya?`,
+  '1c3sz9vebxm': R`Sebuah bandul diayunkan dengan amplitudo yang lebih besar (tetapi masih kecil). Apa yang terjadi pada periodenya?`,
+  'wd2gq68rwy': R`Bertambah`,
+  'jvkkvevhx9': R`Berkurang`,
+  '1lzjojr1jnc': R`Menjadi dua kali lipat`,
+  'ac5vxrzmc8': R`Untuk ayunan kecil $T = 2\pi\sqrt{L/g}$, yang tidak memuat amplitudo: ayunan yang lebih besar menempuh jarak lebih jauh tetapi bergerak lebih cepat.`,
+  '1s5j1a71s65': R`Sebuah jam bandul dibawa ke Bulan, tempat $g$ sekitar seperenam nilainya di Bumi. Apa yang terjadi pada periode bandulnya?`,
+  'ratubbdd9j': R`Menjadi sekitar 2,45 kali lebih lama`,
+  '2bzcbdko0w8': R`Menjadi 6 kali lebih lama`,
+  'pgt5z6i3q': R`Menjadi lebih singkat`,
+  'akk3tbuht3': R`$T \propto 1/\sqrt{g}$, jadi membagi $g$ dengan 6 mengalikan $T$ dengan $\sqrt6 \approx 2{,}45$. Jam itu menjadi lambat.`,
+  '1ge7ofuh1pi': R`Di titik mana beban pada pegas memiliki kelajuan terbesar?`,
+  '2e889ojppn3': R`Saat melewati titik setimbang`,
+  'kap86cmi06': R`Di kedua ujung geraknya`,
+  '1q326t4g0i1': R`Di tengah-tengah antara titik setimbang dan ujung`,
+  '23y0ansr5sj': R`Kelajuannya sama di mana pun`,
+  '28zytuoytx3': R`Di titik setimbang seluruh energinya adalah energi kinetik, jadi kelajuannya terbesar; di ujung-ujung beban berhenti sesaat.`,
+  '8z6fbnnl86': R`
+<p><b>Gelombang</b> memindahkan energi dari satu tempat ke tempat lain tanpa memindahkan mediumnya. Pada gelombang mekanik, setiap partikel medium bergetar di sekitar posisinya sendiri dan meneruskan getaran itu ke partikel di sebelahnya.</p>
+<h3>Dua jenis gelombang</h3>
+<ul><li><b>Transversal:</b> partikel bergerak tegak lurus terhadap arah rambat gelombang. Gelombang pada tali, riak di permukaan air.</li><li><b>Longitudinal:</b> partikel bergerak maju-mundur searah rambat gelombang, membentuk rapatan dan regangan. Bunyi, slinki yang didorong.</li></ul>
+⟦0⟧
+<h3>Menggambarkan gelombang</h3>
+<ul><li><b>Panjang gelombang</b> $\lambda$: panjang satu gelombang penuh, misalnya dari puncak ke puncak.</li><li><b>Frekuensi</b> $f$: banyak gelombang yang melewati suatu titik per sekon; <b>periode</b> $T = 1/f$.</li><li><b>Amplitudo</b>: simpangan terbesar dari posisi setimbang.</li></ul>
+⟦1⟧
+<h3>Gelombang pada tali dan gelombang stasioner</h3>
+<p>Pada tali dengan tegangan $F$ dan massa per satuan panjang $\mu$, $v = \sqrt{F/\mu}$. Tali yang terikat di kedua ujungnya bergetar dalam <b>gelombang stasioner</b> yang panjangnya memuat bilangan bulat kali setengah panjang gelombang: $L = n\frac{\lambda}{2}$, jadi</p>
+⟦2⟧
+<p>Frekuensi terendah, $f_1$, adalah <b>nada dasar</b>; yang lain adalah nada atas (harmonik). Senar gitar disetel dengan mengubah tegangannya.</p>
+⟦3⟧`,
+  'kp4lbl7udc': R`Gelombang transversal dengan panjang gelombang 2 m dan amplitudo 3 cm`,
+  '1zm6py874qx': R`Panjang gelombang $\lambda = 2\,\mathrm{m}$ (puncak ke puncak), amplitudo $3\,\mathrm{cm}$.`,
+  'bglc9ofl2o': R`<p>Dalam satu periode gelombang maju sejauh satu panjang gelombang, jadi cepat rambatnya</p><p>$$v = f\lambda = \frac{\lambda}{T}.$$</p><p>Cepat rambat ditentukan oleh medium; frekuensi ditentukan oleh sumber.</p>`,
+  '1jnkp0gh44x': R`<p>Puncak dan lembah berikutnya berjarak setengah panjang gelombang, bukan satu.</p>`,
+  'ie8wf5nukd': R`Sebuah gelombang memiliki frekuensi ⟦0⟧ dan panjang gelombang ⟦1⟧. Berapa cepat rambatnya?`,
+  '1msis8skok2': R`Sebuah gelombang merambat dengan kelajuan ⟦0⟧ dan panjang gelombang ⟦1⟧. Berapa frekuensinya?`,
+  '1jdnxuku9ds': R`Sebuah gelombang merambat dengan kelajuan ⟦0⟧ dan frekuensi ⟦1⟧. Berapa panjang gelombangnya?`,
+  '1q5mbsbi04x': R`Potret sesaat gelombang pada tali`,
+  '1d7y6igctu': R`Grafik berikut adalah potret sesaat gelombang pada tali. Berapa panjang gelombangnya?`,
+  'mtgrxeu6hv': R`Satu gelombang penuh (puncak ke puncak, atau satu siklus penuh kurva) panjangnya ⟦0⟧.`,
+  '1mlp49e0emv': R`Grafik berikut adalah potret sesaat gelombang pada tali. Setiap titik tali melakukan satu getaran penuh setiap ⟦0⟧. Berapa cepat rambat gelombangnya?`,
+  '26oej5eyfks': R`Dari grafik $\lambda = ⟦0⟧$. Jadi $v = \frac{\lambda}{T} = \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  '1gm9faoax5k': R`Sebuah tali bermassa ⟦0⟧ per meter ditegangkan dengan gaya ⟦1⟧. Berapa cepat rambat gelombang pada tali itu?`,
+  '1gyij8yhy49': R`$\mu = ⟦0⟧\,\mathrm{kg/m}$, jadi $v = \sqrt{\frac{F}{\mu}} = \sqrt{\frac{⟦1⟧}{⟦2⟧}} = ⟦3⟧$.`,
+  '2fkcsa11ofq': R`Sebuah senar gitar sepanjang ⟦0⟧ terikat di kedua ujungnya, dan gelombang merambat padanya dengan kelajuan ⟦1⟧. Berapa frekuensi nada dasarnya?`,
+  '27rnf38usgi': R`Sebuah senar sepanjang ⟦0⟧ terikat di kedua ujungnya, dan gelombang merambat padanya dengan kelajuan ⟦1⟧. Berapa frekuensi harmonik ke-⟦2⟧?`,
+  '101kbhi2ki4': R`Sebuah gelombang air memiliki panjang gelombang ⟦0⟧. Berapa jarak mendatar antara sebuah puncak dan lembah berikutnya?`,
+  '1jzf6mz8i0': R`Puncak dan lembah berikutnya berjarak setengah panjang gelombang: ⟦0⟧.`,
+  '631lfrkrbk': R`Manakah yang merupakan gelombang longitudinal?`,
+  '15621awlnrj': R`Gelombang bunyi di udara`,
+  '1fihbxywv60': R`Gelombang pada senar gitar`,
+  '8kibhwikbe': R`Riak di permukaan kolam`,
+  '1agvj61o6u1': R`Gelombang pada tali yang digoyang ke samping`,
+  'u5kqz20fqg': R`Pada bunyi, partikel udara bergerak maju-mundur searah rambat gelombang, membentuk rapatan dan regangan.`,
+  '1ykuzp6v50l': R`Sebuah gelombang merambat dari air dalam ke air dangkal, tempat cepat rambatnya lebih kecil. Apa yang tetap sama?`,
+  'jx89ugpgu3': R`Frekuensinya`,
+  '191uw403sez': R`Cepat rambatnya`,
+  '1t3vrgkwj6b': R`Panjang gelombangnya`,
+  '28ydf6in6m2': R`Arahnya, selalu`,
+  '6b9ks5f4ky': R`Frekuensi ditentukan oleh sumber dan tidak berubah. Karena $v = f\lambda$, cepat rambat yang lebih kecil berarti panjang gelombang yang lebih pendek.`,
+  '114v5emv6pf': R`
+<p>Bunyi adalah gelombang mekanik <b>longitudinal</b>: pola rapatan dan regangan yang merambat. Bunyi memerlukan medium dan tidak dapat merambat di ruang hampa. Di udara pada suhu ruang cepat rambatnya sekitar $340\,\mathrm{m/s}$; di air sekitar $1500\,\mathrm{m/s}$; di baja lebih cepat lagi.</p>
+<h3>Gema</h3>
+<p>Gema merambat ke permukaan pemantul lalu kembali, jadi jarak ke permukaan itu $d = \dfrac{v t}{2}$. Kelelawar, sonar kapal, dan alat USG semuanya memakai prinsip ini.</p>
+<h3>Tinggi nada dan kenyaringan</h3>
+<p><b>Tinggi nada</b> ditentukan oleh frekuensi dan <b>kenyaringan</b> terutama oleh amplitudo. Manusia dapat mendengar sekitar $20\,\mathrm{Hz}$ sampai $20\,000\,\mathrm{Hz}$; di atasnya ultrasonik, di bawahnya infrasonik.</p>
+⟦0⟧
+<h3>Efek Doppler</h3>
+<p>Jika sumber dan pendengar saling mendekat, pendengar mendengar frekuensi yang lebih tinggi; jika saling menjauh, lebih rendah. Dengan cepat rambat bunyi $v$, kelajuan pendengar $v_p$, dan kelajuan sumber $v_s$:</p>
+⟦1⟧
+<p>Pakai tanda atas jika keduanya saling mendekat dan tanda bawah jika saling menjauh.</p>
+<h3>Pipa organa</h3>
+<p>Kolom udara beresonansi seperti senar. Pipa organa terbuka memiliki $f_n = \dfrac{n v}{2L}$; pipa organa tertutup hanya memiliki harmonik ganjil, $f = \dfrac{(2n-1) v}{4L}$, jadi nada dasarnya $\dfrac{v}{4L}$.</p>
+⟦2⟧`,
+  '1v6x9695ich': R`<p><b>Intensitas</b> adalah daya per satuan luas. Dari sumber kecil yang memancar ke segala arah:</p><p>$$I = \frac{P}{4\pi r^2}.$$</p><p>Kenyaringan diukur dengan skala logaritmik <b>desibel</b>:</p><p>$$\beta = 10 \log_{10}\frac{I}{I_0}\ \mathrm{dB}, \qquad I_0 = 10^{-12}\,\mathrm{W/m^2}.$$</p><p>Setiap tambahan $10\,\mathrm{dB}$ berarti intensitasnya sepuluh kali lipat.</p>`,
+  '86oxii1rtz': R`<p>Jangan lupa membagi dua waktu gema: bunyi pergi <i>dan</i> kembali.</p>`,
+  'd0x50jw74k': R`Pulsa sonar sebuah kapal kembali dari dasar laut setelah ⟦0⟧. Berapa kedalaman laut di tempat itu? (Cepat rambat bunyi di air: $1500\,\mathrm{m/s}$.)`,
+  '15heivdhpiv': R`Seorang anak bertepuk tangan dan mendengar gema dari tebing ⟦0⟧ kemudian. Berapa jarak tebing itu? (Cepat rambat bunyi: $340\,\mathrm{m/s}$.)`,
+  '39gi56wibv': R`Bunyi pergi dan kembali, jadi $d = \frac{vt}{2} = \frac{⟦0⟧ \cdot ⟦1⟧}{2} = ⟦2⟧$.`,
+  '1urmwnl3qqi': R`Sebuah garpu tala bergetar dengan frekuensi ⟦0⟧. Berapa panjang gelombang bunyinya di udara? (Cepat rambat bunyi: $340\,\mathrm{m/s}$.)`,
+  '1l3ye3wbjc5': R`Sebuah pengeras suara kecil memancarkan bunyi berdaya ⟦0⟧ sama rata ke segala arah. Berapa intensitasnya pada jarak ⟦1⟧?`,
+  '1i1b97whjwx': R`Ketik perpangkatan sepuluh seperti 3,2e-3.`,
+  '1qqih20eqfn': R`Sebuah bunyi memiliki intensitas $⟦0⟧\,\mathrm{W/m^2}$. Berapa taraf intensitasnya dalam desibel? ($I_0 = 10^{-12}\,\mathrm{W/m^2}$.)`,
+  'vumsl4uhq7': R`Sebuah jalan raya ⟦0⟧ lebih nyaring daripada ruangan yang sunyi. Berapa kali lebih besar intensitas bunyinya?`,
+  '1ve3aa8xaq6': R`Setiap $10\,\mathrm{dB}$ mengalikan intensitas dengan 10, jadi $⟦0⟧\,\mathrm{dB}$ berarti faktor $10^{⟦1⟧} = ⟦2⟧$.`,
+  '1g3ch28rzb8': R`Satu mesin menghasilkan taraf intensitas ⟦0⟧. Berapa taraf intensitasnya jika ⟦1⟧ mesin identik dinyalakan bersamaan?`,
+  '203gmn6rig5': R`Intensitasnya ⟦0⟧ kali lebih besar, menambah $10\log_{10}⟦1⟧ = ⟦2⟧\,\mathrm{dB}$: taraf intensitasnya ⟦3⟧.`,
+  '1lwcvywbox7': R`Sirene ambulans memancarkan bunyi ⟦0⟧. Ambulans itu bergerak dengan kelajuan ⟦1⟧ ⟦2⟧ seseorang yang diam. Berapa frekuensi yang didengar orang itu? (Cepat rambat bunyi: $340\,\mathrm{m/s}$.)`,
+  '1bmhjp5ttrv': R`mendekati`,
+  '1jxkdr9wig4': R`menjauhi`,
+  '2cgbic1xeqi': R`$f_p = f_s \frac{v}{v ⟦0⟧ v_s} = ⟦1⟧ \cdot \frac{340}{340 ⟦2⟧ ⟦3⟧} = ⟦4⟧$. Nadanya ⟦5⟧ daripada nada sirene itu sendiri.`,
+  '13ta03l38kj': R`lebih tinggi`,
+  '9nl2sip6fg': R`lebih rendah`,
+  '1b2ywt8flwh': R`Berapa frekuensi nada dasar pipa organa terbuka sepanjang ⟦0⟧? (Cepat rambat bunyi: $340\,\mathrm{m/s}$.)`,
+  '226oo8pzme3': R`Berapa frekuensi nada dasar pipa organa tertutup sepanjang ⟦0⟧? (Cepat rambat bunyi: $340\,\mathrm{m/s}$.)`,
+  'av5e2ab412': R`Pipa terbuka: $f_1 = \frac{v}{2L} = \frac{340}{2 \cdot ⟦0⟧} = ⟦1⟧$.`,
+  '555dzhesdt': R`Pipa tertutup: $f_1 = \frac{v}{4L} = \frac{340}{4 \cdot ⟦0⟧} = ⟦1⟧$.`,
+});
