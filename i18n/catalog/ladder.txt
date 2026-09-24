@@ -1,0 +1,177 @@
+##### core
+@1coe40ngxs5
+Very large and very small physical quantities are written in scientific notation.
+@2fvp7hjuvx8
+Converting a unit means multiplying by a ratio that is equal to 1.
+@4ps7qaltcv
+Repeated measurements are summarised by their mean and their spread.
+@9ar53jdlzi
+The components of a vector are found with sine and cosine.
+@1ycnpep1c8u
+Vectors in physics follow the same rules as vectors in mathematics, with units attached.
+@1n01f5ujqe0
+Uniform motion gives straight-line graphs, and the slope of a position–time graph is the velocity.
+@nxwrb3yv9k
+Each equation of motion is rearranged for one unknown, like a linear equation.
+@1f18tgo8nnd
+Finding when a thrown object is at a given height means solving a quadratic equation in $t$.
+@268fupx3mmy
+The path of a projectile is a parabola.
+@1phayl6xk8w
+The launch velocity is split into components with sine and cosine.
+@19l42per4hw
+The weight on a slope is resolved using the sine and cosine of the angle.
+@m8nywyw6wn
+The work done by a changing force is the area under the force–distance graph, an integral.
+@1vpf2g549kv
+Circular motion uses the radius and circumference of the circle.
+@dgniul6juf
+Newton's law of gravitation is an inverse-square law.
+@mug393b479
+A mixing problem is a linear equation for the final temperature.
+@2d72yqu512v
+Ohm's law says that the current is proportional to the voltage.
+@1zm85ayvtal
+Parallel resistances are combined by adding reciprocals, as with fractions.
+@7t5nzhvpot
+Kirchhoff's rules give simultaneous linear equations for the unknown currents.
+@149m1gn5r3o
+Simple harmonic motion is described by sine and cosine functions of time.
+@qddlv3ngbf
+The equation of simple harmonic motion is a second-order differential equation.
+@1w7mcy4besh
+The decibel scale for loudness is logarithmic.
+@3ibgo6m8q2
+Faraday's law involves the rate of change of magnetic flux, a derivative.
+@nxctn9b7po
+Alternating-current circuits are analysed neatly with complex numbers.
+@1vs6kc6zo1a
+The mirror equation adds the reciprocals of the object and image distances.
+@25xypn9tlcu
+Snell's law of refraction relates the sines of two angles.
+@26cgilwwobk
+Radioactive decay is exponential, and half-life problems use logarithms.
+@vujfj9ngyv
+Every measurement is a number together with a unit.
+@2df03wjpc7h
+Every vector quantity has a magnitude with a unit.
+@lrp965gf7h
+Speeds and times must be in consistent units, such as m/s and s, before using the equations of motion.
+@1dh5w6b9pog
+Heat problems mix units such as g, kg, J and °C that often need converting.
+@16onektetoy
+Current, voltage and resistance each have their own SI unit: A, V and Ω.
+@17l28cmlo38
+Projectile motion treats the velocity as two perpendicular components.
+@19jb7cnmlui
+Forces are vectors, and the net force is their vector sum.
+@15hgw0pap7d
+Electric forces and fields from several charges add as vectors.
+@20wkzrj6ux9
+Free fall is motion with a constant acceleration $g$.
+@1756g62so7y
+The vertical part of a projectile's motion is free fall.
+@2c6e0os6aqe
+Newton's second law links forces to the acceleration described in kinematics.
+@2cp25cgrdgu
+Circular motion extends speed and acceleration to motion around a circle.
+@1z2nu5r4pay
+Friction and slope problems are solved with $\Sigma F = ma$.
+@1p0xy1by1fr
+Work is done by the same forces that Newton's laws describe.
+@r756vcn4t0
+Impulse is Newton's second law written as $F\,\Delta t = \Delta p$.
+@xxbc3h2twy
+Collisions are classified by comparing kinetic energy before and after.
+@1ciehtfy1hb
+A centripetal force is needed to keep an object moving in a circle.
+@16brdz46ql0
+Rotation uses angular speed and angular acceleration, as in circular motion.
+@mwg4hzj2fy
+Torque does for rotation what force does for motion in a straight line.
+@s6jwf89mr2
+A rigid body is in equilibrium when both the net force and the net torque are zero.
+@1cgeat4v53
+An orbit is circular motion with gravity providing the centripetal force.
+@1becfqf4mje
+The spring force $F = kx$ enters Newton's laws like any other force.
+@12ebgdzaojy
+Pressure is force per area, and buoyancy is found by balancing forces.
+@1s32hgwm82s
+Moving fluids build on the ideas of pressure and density.
+@vvu4484wmv
+Bernoulli's equation is conservation of energy for a flowing fluid.
+@1v5cupz1gwb
+The centre of mass moves as if the whole momentum were carried by one particle.
+@3a8gbek07z
+Angular momentum is the rotational version of momentum.
+@1b484ymuzk8
+A mass on a spring is the standard example of simple harmonic motion.
+@o15kq7841g
+Simple harmonic motion is the shadow of uniform circular motion.
+@12bzxxr6nr7
+A wave is a chain of oscillations passed from particle to particle.
+@apn3dami97
+Sound is a longitudinal mechanical wave.
+@1rmrwfdoeej
+The gas laws use absolute temperature, in kelvin.
+@7o56cwb1wd
+The laws of thermodynamics are applied to gases being heated, expanded and compressed.
+@1ga48tyytir
+The first law of thermodynamics is conservation of energy with heat included.
+@1f2mnzvbaat
+Heat transfer describes how heat travels from hot places to cold ones.
+@2g1vb28h76z
+Electrical power and energy use the same definitions as in mechanics: $P = W/t$.
+@1bxrmzxgxu0
+Every part of a circuit obeys $V = IR$.
+@1r7xwvnnbk8
+Electric potential is the energy per unit charge in an electric field.
+@18m0tw155br
+Capacitors are charged and discharged through resistors in circuits.
+@1stx14l8swi
+A current in a wire produces a magnetic field and feels a force in one.
+@zf1fp23zd1
+Induction is caused by a changing magnetic field.
+@bjzp4zzkbj
+Generators use induction to produce alternating current.
+@w3mztknrsy
+AC circuits extend resistance, current and power from DC circuits.
+@zxwxr822vy
+Changing electric and magnetic fields create each other and travel as light.
+@1vhpi0t6m0q
+Electromagnetic waves obey the same wave equation, $v = f\lambda$.
+@9l16pl2qd3
+Lenses use the same ray diagrams and the same equation as mirrors.
+@v0nkdom46u
+Eyes, magnifiers, microscopes and telescopes are built from lenses.
+@1zzvida7sq1
+Interference happens for every kind of wave, including light.
+@7c9pva9ltd
+Interference and diffraction show that light is a wave.
+@svosohh48a
+Relativity revisits what speed, time and distance mean close to the speed of light.
+@1kpvhfi5hig
+Light that travels as a wave also arrives in packets of energy called photons.
+@1tb1861knvx
+Photon energies are often given in electronvolts, the energy an electron gains across 1 V.
+@1tdq09cjxyv
+Atoms emit and absorb light as photons of particular energies.
+@1bu2jpzn4dz
+Radioactivity happens in the nucleus at the centre of the atom.
+@1oeov210770
+Fission and fusion release the binding energy of nuclei.
+@1f790wdjz1y
+$E = mc^2$ gives the energy released when mass is lost.
+@hlk24s0rbk
+Every energy source is judged by the energy and power it can deliver.
+@1y28wavtvbp
+Wind turbines and power-station generators rely on induction.
+@15l5a025vcr
+The greenhouse effect is about how the Earth absorbs and radiates heat.
+@136qwr186sy
+Greenhouse gases absorb infrared radiation.
+@2dli2iyrxpz
+Electronic circuits follow the same rules for current and voltage.
+@1rgwobb5j30
+Semiconductors are explained by the energy levels of electrons in solids.

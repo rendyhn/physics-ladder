@@ -1,0 +1,3 @@
+##### core
+@12yoll1koil  ; 0=QT(g, 'm/s^2')
+Use $g = ⟦0⟧$.

@@ -1,0 +1,253 @@
+##### core
+@4ynf6btmh8
+Quantity
+@gx0xjjk8im
+SI unit
+@1enmf10cxcv
+Symbol
+@1yt0gqcalpk
+Length
+@btv4d35670
+metre
+@1pzczs2mse4
+Mass
+@125uhkom03s
+kilogram
+@1ellrod4539
+Time
+@1vgw1pr4sir
+second
+@27qio3xtic1
+Electric current
+@212aoaeh3x2
+ampere
+@54nifvgzcz
+Temperature
+@lgkc1kgjrw
+kelvin
+@ekfe0tbez5
+Amount of substance
+@1tskssmp6l2
+mole
+@1go9d211bvr
+Luminous intensity
+@w3u8dpxovc
+candela
+@1vt4z8db5g
+Prefix
+@11k1h4apbv2
+Factor
+@2dhg7w95nrw
+newton (force)
+@240b972wn9q
+joule (energy)
+@14lzl0vzv8l
+watt (power)
+@5dttmikgbw
+pascal (pressure)
+
+##### units
+@5xqht7vwgh  ; 0=siTable() | 1=prefixTable() | 2=Key(T`<p>To convert, multiply by a facto | 3=Fm(T`1\,\mathrm{km/h} = \frac{1000\,\mat | 4=Tip(T`<p>Check the units at the end of e
+
+<p>A <b>physical quantity</b> is anything we can measure, and every measurement has two parts: a <b>number</b> and a <b>unit</b>. "The table is 1.5" means nothing; "the table is $1.5\,\mathrm{m}$ long" is a measurement.</p>
+<h3>SI base units</h3>
+<p>Scientists everywhere use the International System of Units (SI). It starts from seven base quantities:</p>
+⟦0⟧
+<p>Every other unit is a <b>derived unit</b> built from these. Speed is distance divided by time, so its unit is $\mathrm{m/s}$. Force is mass times acceleration, so $1\,\mathrm{N} = 1\,\mathrm{kg\,m/s^2}$. Energy is force times distance, so $1\,\mathrm{J} = 1\,\mathrm{N\,m} = 1\,\mathrm{kg\,m^2/s^2}$.</p>
+<h3>Prefixes</h3>
+<p>Prefixes scale a unit up or down by powers of ten:</p>
+⟦1⟧
+⟦2⟧
+<h3>Squared and cubed units</h3>
+<p>A square metre is a square $100\,\mathrm{cm}$ on each side, so $1\,\mathrm{m^2} = 100 \times 100 = 10\,000\,\mathrm{cm^2}$. For volumes the factor is cubed: $1\,\mathrm{m^3} = 1\,000\,000\,\mathrm{cm^3}$. Also $1\,\mathrm{L} = 1000\,\mathrm{cm^3}$ and $1\,\mathrm{m^3} = 1000\,\mathrm{L}$.</p>
+<h3>Speeds: km/h and m/s</h3>
+⟦3⟧
+<p>So divide by 3.6 to go from km/h to m/s, and multiply by 3.6 to go back: $72\,\mathrm{km/h} = 20\,\mathrm{m/s}$.</p>
+<h3>Scientific notation</h3>
+<p>Very large and very small numbers are written as $a \times 10^n$ with $1 \le a \lt 10$. The speed of light is $3.0 \times 10^{8}\,\mathrm{m/s}$; the charge of an electron is $1.6 \times 10^{-19}\,\mathrm{C}$. In a calculator or on this site you can type these as <code>3e8</code> and <code>1.6e-19</code>.</p>
+⟦4⟧
+@k5dfx6kr0n
+<p>To convert, multiply by a factor that equals 1. Since $1\,\mathrm{km} = 1000\,\mathrm{m}$,</p><p>$$3.2\,\mathrm{km} \times \frac{1000\,\mathrm{m}}{1\,\mathrm{km}} = 3200\,\mathrm{m}.$$</p><p>The unit you want goes on top, the unit you are removing goes underneath, and the old units cancel.</p>
+@thgftg5cc1
+1\,\mathrm{km/h} = \frac{1000\,\mathrm{m}}{3600\,\mathrm{s}} = \frac{1}{3.6}\,\mathrm{m/s}
+@16er3rbte4x
+<p>Check the units at the end of every calculation. If you were finding a speed and your answer comes out in $\mathrm{m\,s}$, something went wrong along the way.</p>
+@252ru7uazz9  ; 0=Q(v, from) | 1=to
+Convert ⟦0⟧ to $\mathrm{⟦1⟧}$.
+@mh2dty64xz  ; 0=from | 1=f >= 1 ? M(f) : sciT(f) | 2=to | 3=Q(v, from) | 4=M(v) | 5=f >= 1 ? M(f) : sciT(f) | 6=to | 7=QT(a, to)
+$1\,\mathrm{⟦0⟧} = ⟦1⟧\,\mathrm{⟦2⟧}$, so ⟦3⟧ $= ⟦4⟧ \times ⟦5⟧\,\mathrm{⟦6⟧} = ⟦7⟧$.
+@2bibbtlntnk  ; 0=Q(kmh, 'km/h')
+A car travels at ⟦0⟧. What is this speed in m/s?
+@13ee3uayv4w  ; 0=M(kmh) | 1=QT(ms, 'm/s')
+Divide by 3.6: $⟦0⟧ \div 3.6 = ⟦1⟧$.
+@1prx0dpq863  ; 0=Q(ms, 'm/s')
+A runner moves at ⟦0⟧. What is this speed in km/h?
+@e1kidfew1y  ; 0=M(ms) | 1=QT(kmh, 'km/h')
+Multiply by 3.6: $⟦0⟧ \times 3.6 = ⟦1⟧$.
+@wv89tlbxhx  ; 0=Q(v, 'm^2')
+Convert ⟦0⟧ to $\mathrm{cm^2}$.
+@q0czfgh47k  ; 0=M(v) | 1=QT(sig(v * 1e4, 6), 'cm^2')
+$1\,\mathrm{m^2} = 100 \times 100 = 10\,000\,\mathrm{cm^2}$, so the area is $⟦0⟧ \times 10\,000 = ⟦1⟧$.
+@lzqqfaqgni  ; 0=Q(v, 'cm^2')
+Convert ⟦0⟧ to $\mathrm{m^2}$.
+@23t5s6trdb9  ; 0=M(v) | 1=QT(sig(v / 1e4, 6), 'm^2')
+$1\,\mathrm{m^2} = 10\,000\,\mathrm{cm^2}$, so divide: $⟦0⟧ \div 10\,000 = ⟦1⟧$.
+@38v6exlo5e  ; 0=Q(v, 'cm^3')
+How many litres is ⟦0⟧?
+@9n1ncp7zpz  ; 0=M(v) | 1=QT(sig(v / 1000, 6), 'L')
+$1\,\mathrm{L} = 1000\,\mathrm{cm^3}$, so $⟦0⟧ \div 1000 = ⟦1⟧$.
+@648d7ams5n  ; 0=Q(v, 'm^3')
+A tank holds ⟦0⟧ of water. How many litres is that?
+@4mhd66u3el  ; 0=M(v) | 1=QT(sig(v * 1000, 6), 'L')
+$1\,\mathrm{m^3} = 1000\,\mathrm{L}$, so $⟦0⟧ \times 1000 = ⟦1⟧$.
+@1jl1f7quddk  ; 0=F(x)
+Write ⟦0⟧ in scientific notation.
+@4fy6rvenfa  ; 0=F(x) | 1=M(m) | 2=e | 3=e > 0 ? T`The point moved ${e} places to
+Move the decimal point so that one non-zero digit is in front of it: ⟦0⟧ $= ⟦1⟧ \times 10^{⟦2⟧}$. ⟦3⟧
+@1eszzi4ocba  ; 0=e
+The point moved ⟦0⟧ places to the left, so the power is positive.
+@rn04vwcstn  ; 0=-e
+The point moved ⟦0⟧ places to the right, so the power is negative.
+@2c0bpo6z0bd  ; 0=name | 1=sym | 2=sym
+The ⟦0⟧ is written $\mathrm{⟦1⟧}$. Which combination of base units is equal to $1\,\mathrm{⟦2⟧}$?
+@1hsbjudk5ki  ; 0=right
+$F = ma$, so $\mathrm{N} = \mathrm{kg} \times \mathrm{m/s^2} = ⟦0⟧$.
+@1aoryd3ugz7  ; 0=right
+Work is force times distance: $\mathrm{J} = \mathrm{N\,m} = \mathrm{kg\,m/s^2} \times \mathrm{m} = ⟦0⟧$.
+@2d5h3ujfwt3  ; 0=right
+Power is energy per second: $\mathrm{W} = \mathrm{J/s} = \mathrm{kg\,m^2/s^2} \div \mathrm{s} = ⟦0⟧$.
+@252hegq4exo  ; 0=right
+Pressure is force per area: $\mathrm{Pa} = \mathrm{N/m^2} = \mathrm{kg\,m/s^2} \div \mathrm{m^2} = ⟦0⟧$.
+@18hnwk5w424
+mass
+@1w9k6zlt9b0
+time
+@2gl56ryueaa
+electric current
+@ha0vxz0dwr
+temperature
+@20ozsepa7tk
+length
+@1mlq3iku1zg
+speed
+@7gh9nbyw5x
+force
+@yqjppktdav
+energy
+@k09bmoejv5
+area
+@nnyigx5cm4
+pressure
+@2as9qcfk7zd
+density
+@1og51r28uop
+volume
+@x3hy3x6be8
+power
+@mrew38ivck
+Which of these is an SI <b>base</b> quantity?
+@28guof6cc23
+Which of these is a <b>derived</b> quantity (not one of the SI base quantities)?
+@2ecslf547i1  ; 0=pickBase ? T`speed or force` : a
+The seven SI base quantities are length, mass, time, electric current, temperature, amount of substance and luminous intensity. Everything else, such as ⟦0⟧, is derived from them.
+@ec6esltyky
+speed or force
+
+##### vectors
+@1rjwcbf0ldf  ; 0=Tbl([T`Scalars`, T`Vectors`], [[T`distan | 1=Fm(T`A_x = A\cos\theta \qquad A_y = A\si | 2=Fig(vectorSvg([{ x: 5.2, y: 3, label: 'A | 3=Key(T`<p>For vectors at any angle, add t | 4=Ex(T`<p>Forces of $6\,\mathrm{N}$ and $8 | 5=Tip(T`<p>The angle in $R = \sqrt{A^2 + B
+
+<p>Some quantities are fully described by a size alone: a mass of $5\,\mathrm{kg}$, a temperature of $30^\circ\mathrm{C}$. These are <b>scalars</b>. Others also need a direction: a displacement of $5\,\mathrm{m}$ <i>north</i>, a force of $20\,\mathrm{N}$ <i>downwards</i>. These are <b>vectors</b>.</p>
+⟦0⟧
+<p>A vector is drawn as an arrow. Its length shows the <b>magnitude</b> and the arrowhead shows the <b>direction</b>. In print a vector is written in bold, $\mathbf{F}$, or with an arrow, $\vec{F}$; its magnitude is written $F$ or $|\vec{F}|$.</p>
+<h3>Components</h3>
+<p>A vector of magnitude $A$ at angle $\theta$ above the positive $x$-axis can be split into two perpendicular parts:</p>
+⟦1⟧
+⟦2⟧
+<h3>Adding vectors</h3>
+<p>To add vectors, place them head to tail; the <b>resultant</b> runs from the first tail to the last head.</p>
+<ul><li>Same direction: add the magnitudes. $3\,\mathrm{N} + 4\,\mathrm{N}$ to the right gives $7\,\mathrm{N}$ to the right.</li><li>Opposite directions: subtract, and the resultant points the way of the larger one.</li><li>Perpendicular: use Pythagoras. $3\,\mathrm{N}$ east and $4\,\mathrm{N}$ north give $\sqrt{3^2 + 4^2} = 5\,\mathrm{N}$.</li></ul>
+⟦3⟧
+⟦4⟧
+⟦5⟧
+@1dv40p014tv
+Scalars
+@1ih3cm1us94
+Vectors
+@1pwdg77dscu
+distance, speed
+@qnylwl3wd
+displacement, velocity
+@1wr1ag8cgke
+mass, time
+@15vxyitil0d
+acceleration, force
+@10yjtihrol6
+energy, work, power
+@19ss52odqew
+momentum, impulse
+@13t5onqhs1p
+temperature, charge
+@132i26b41lj
+electric field, weight
+@sjhh2tp1c7
+A vector A split into a horizontal component and a vertical component
+@1bus56gqak5
+The components $A_x$ and $A_y$ add up to $\vec{A}$.
+@1skqvdcrwsz
+<p>For vectors at any angle, add the components:</p><p>$$R_x = A_x + B_x, \qquad R_y = A_y + B_y,$$</p><p>$$R = \sqrt{R_x^2 + R_y^2}, \qquad \tan\varphi = \frac{R_y}{R_x}.$$</p><p>For two vectors $A$ and $B$ with angle $\alpha$ between them, this gives the shortcut $R = \sqrt{A^2 + B^2 + 2AB\cos\alpha}$.</p>
+@1902q7pwfqk
+<p>Forces of $6\,\mathrm{N}$ and $8\,\mathrm{N}$ pull on a ring with $60^\circ$ between them. Find the resultant.</p><p>$$R = \sqrt{6^2 + 8^2 + 2 \cdot 6 \cdot 8 \cos 60^\circ} = \sqrt{36 + 64 + 48} = \sqrt{148} \approx 12.2\,\mathrm{N}.$$</p>
+@1bx1s9f5zi9
+<p>The angle in $R = \sqrt{A^2 + B^2 + 2AB\cos\alpha}$ is the angle <i>between the two vectors</i> when they start from the same point, not the angle inside the head-to-tail triangle.</p>
+@1j9nigqce8r  ; 0=Q(A, 'N') | 1=Q(th, '°') | 2=yComp ? T`vertical` : T`horizontal`
+A force of ⟦0⟧ acts at ⟦1⟧ above the horizontal. What is its ⟦2⟧ component?
+@uitcf2ovul
+vertical
+@7hffy34fim
+horizontal
+@i3ewstaget
+A force vector at an angle above the horizontal
+@1hceww5kch7  ; 0=Q(a, 'N') | 1=Q(b, 'N')
+A boat is pushed ⟦0⟧ east by its engine and ⟦1⟧ north by the current. What is the magnitude of the resultant force?
+@8tgw4ysra3  ; 0=a | 1=b | 2=a * a + b * b | 3=QT(r * k, 'N')
+The forces are perpendicular, so $R = \sqrt{⟦0⟧^2 + ⟦1⟧^2} = \sqrt{⟦2⟧} = ⟦3⟧$.
+@2c6kleshfz  ; 0=Q(a, 'N') | 1=Q(b, 'N')
+Two forces of ⟦0⟧ and ⟦1⟧ act on an object in the <b>same</b> direction. What is the magnitude of the resultant?
+@o4gezsanjy  ; 0=Q(a, 'N') | 1=Q(b, 'N')
+Two forces of ⟦0⟧ and ⟦1⟧ act on an object in <b>opposite</b> directions. What is the magnitude of the resultant?
+@d2ejrci8sa  ; 0=a | 1=b | 2=QT(a + b, 'N')
+Same direction: add, $⟦0⟧ + ⟦1⟧ = ⟦2⟧$.
+@11b4of2us50  ; 0=a | 1=b | 2=QT(Math.abs(a - b), 'N')
+Opposite directions: subtract, $|⟦0⟧ - ⟦1⟧| = ⟦2⟧$, in the direction of the larger force.
+@12zkdedzh4t  ; 0=Q(A, 'N') | 1=Q(B, 'N') | 2=Q(al, '°')
+Two forces, ⟦0⟧ and ⟦1⟧, act from the same point with an angle of ⟦2⟧ between them. Find the magnitude of the resultant.
+@23ddtfvjnu  ; 0=QT(rx, 'm') | 1=QT(ry, 'm') | 2=askAng ? T`At what angle above the posit
+A displacement has components $R_x = ⟦0⟧$ and $R_y = ⟦1⟧$. ⟦2⟧
+@908iteetw1
+At what angle above the positive $x$-axis does it point?
+@1x7npf5ie2g
+What is its magnitude?
+@24kz9ov1lhj
+A displacement vector drawn from the origin
+@19lxvgkh1c8  ; 0=ry | 1=rx | 2=M(sig(ry / rx, 4)) | 3=M(ang)
+$\tan\varphi = \frac{R_y}{R_x} = \frac{⟦0⟧}{⟦1⟧}$, so $\varphi = \tan^{-1}(⟦2⟧) \approx ⟦3⟧^\circ$.
+@1a7zhf2631o
+velocity
+@1yn66u39sli
+displacement
+@4qgshwmjk6
+acceleration
+@8bp05squge
+momentum
+@2b9k1qfuxg4
+weight
+@oz2j2pgqw9
+distance
+@2broaio5x4x
+Which of these quantities is a <b>vector</b>?
+@gu5b4idsdf
+Which of these quantities is a <b>scalar</b>?
+@y26ywmu64b  ; 0=a
+A vector needs a direction as well as a size: ⟦0⟧ has one, while the others are fully described by a number and a unit.
+@1yxlrt52dl  ; 0=a
+A scalar is described by a size alone: ⟦0⟧ has no direction, while the others do.

@@ -1,0 +1,59 @@
+/* Bahasa Indonesia — 6-thermal */
+addT('id', {
+  'fvac4t57w5': R`air`,
+  '29s3flj4o7q': R`aluminium`,
+  '1kodlvhytf0': R`besi`,
+  'aohwz19hxq': R`tembaga`,
+  '15qut058har': R`kaca`,
+  'uafnwtb3g0': R`
+<p><b>Suhu</b> menyatakan seberapa panas suatu benda; suhu mengukur energi kinetik rata-rata partikel-partikelnya. <b>Kalor</b> adalah energi yang mengalir dari benda yang lebih panas ke benda yang lebih dingin karena perbedaan suhu. Kalor diukur dalam joule.</p>
+<h3>Skala suhu</h3>
+⟦0⟧
+<p>Perubahan $1^\circ\mathrm{C}$ sama dengan perubahan $1\,\mathrm{K}$. Air membeku pada $0^\circ\mathrm{C} = 273\,\mathrm{K} = 32^\circ\mathrm{F}$ dan mendidih pada $100^\circ\mathrm{C} = 373\,\mathrm{K} = 212^\circ\mathrm{F}$. (Lebih tepatnya, $0^\circ\mathrm{C} = 273{,}15\,\mathrm{K}$.)</p>
+<h3>Kalor jenis</h3>
+<p>Kalor yang diperlukan untuk mengubah suhu benda bermassa $m$ sebesar $\Delta T$ adalah</p>
+⟦1⟧
+<p>dengan $c$ adalah <b>kalor jenis</b> bahan, dalam $\mathrm{J/(kg\,{}^\circ C)}$: kalor yang diperlukan untuk menaikkan suhu $1\,\mathrm{kg}$ bahan sebesar $1^\circ\mathrm{C}$. Kalor jenis air sangat besar, sekitar $4200\,\mathrm{J/(kg\,{}^\circ C)}$, itulah sebabnya laut lambat menjadi panas dan lambat menjadi dingin.</p>
+<h3>Perubahan wujud</h3>
+<p>Selama zat mencair atau mendidih, suhunya tetap walaupun kalor terus masuk. Kalor yang diperlukan adalah</p>
+⟦2⟧
+<p>dengan $L$ adalah <b>kalor laten</b>: sekitar $3{,}34 \times 10^{5}\,\mathrm{J/kg}$ untuk melebur es dan $2{,}26 \times 10^{6}\,\mathrm{J/kg}$ untuk menguapkan air.</p>
+⟦3⟧
+⟦4⟧
+<h3>Pemuaian</h3>
+<p>Sebagian besar bahan memuai ketika dipanaskan. Batang dengan panjang $L_0$ bertambah panjang sebesar</p>
+⟦5⟧
+<p>dengan $\alpha$ adalah koefisien muai panjang (baja: sekitar $1{,}2 \times 10^{-5}\,/{}^\circ\mathrm{C}$). Luas memuai dengan koefisien sekitar $2\alpha$ dan volume sekitar $3\alpha$. Karena itulah rel kereta dan jembatan diberi celah.</p>
+⟦6⟧`,
+  '1uuqrvazom': R`<p><b>Kalorimetri (asas Black):</b> jika benda panas dan benda dingin dicampur di wadah yang terisolasi, kalor yang dilepas benda panas sama dengan kalor yang diterima benda dingin:</p><p>$$m_1 c_1 (T_1 - T) = m_2 c_2 (T - T_2),$$</p><p>dengan $T$ adalah suhu akhir campuran.</p>`,
+  '9stuz8e92g': R`<p>$0{,}2\,\mathrm{kg}$ air bersuhu $80^\circ\mathrm{C}$ dicampur dengan $0{,}3\,\mathrm{kg}$ air bersuhu $20^\circ\mathrm{C}$. Nilai $c$ di kedua ruas sama, jadi saling mencoret:</p><p>$$0{,}2(80 - T) = 0{,}3(T - 20) \;\Rightarrow\; 16 + 6 = 0{,}5T \;\Rightarrow\; T = 44^\circ\mathrm{C}.$$</p>`,
+  '1jky8g714ti': R`<p>Pada $Q = mc\Delta T$ massa harus dalam kilogram: $250\,\mathrm{g} = 0{,}25\,\mathrm{kg}$.</p>`,
+  '2fahhg3g8wg': R`Ubah ⟦0⟧ ke kelvin.`,
+  '1tcnbz5qw4k': R`Suhu suatu gas ⟦0⟧. Berapa suhu itu dalam derajat Celsius?`,
+  'jj9xwk0a8z': R`Ubah ⟦0⟧ ke derajat Fahrenheit.`,
+  '1qempowggbu': R`Sebuah termometer menunjukkan $⟦0⟧^\circ\mathrm{F}$. Berapa suhu itu dalam derajat Celsius?`,
+  '22qwx7iqe3s': R`Berapa kalor yang diperlukan untuk menaikkan suhu ⟦0⟧ ⟦1⟧ sebesar ⟦2⟧? (Kalor jenis: ⟦3⟧.)`,
+  '1oksnrtswg2': R`Kalor sebesar ⟦0⟧ diberikan pada ⟦1⟧ ⟦2⟧ (⟦3⟧). Berapa kenaikan suhunya?`,
+  '24jzo7em2e': R`Berapa kalor yang diperlukan untuk mengubah ⟦0⟧ air bersuhu $100^\circ\mathrm{C}$ seluruhnya menjadi uap bersuhu $100^\circ\mathrm{C}$? (Kalor uap: $⟦1⟧\,\mathrm{J/kg}$.)`,
+  '7w05lf3o11': R`Berapa kalor yang diperlukan untuk meleburkan ⟦0⟧ es bersuhu $0^\circ\mathrm{C}$ menjadi air bersuhu $0^\circ\mathrm{C}$? (Kalor lebur: $⟦1⟧\,\mathrm{J/kg}$.)`,
+  '1fm9x8hwj6i': R`Suhunya tidak berubah, jadi hanya kalor laten yang diperlukan: $Q = mL = ⟦0⟧ \cdot ⟦1⟧ = ⟦2⟧\,\mathrm{J}$.`,
+  'klqkqbfngv': R`⟦0⟧ air bersuhu ⟦1⟧ dituangkan ke dalam ⟦2⟧ air bersuhu ⟦3⟧ di dalam termos. Berapa suhu akhirnya?`,
+  '1var2yosrpv': R`Kalor yang dilepas = kalor yang diterima, dan $c$ saling mencoret: $⟦0⟧(⟦1⟧ - T) = ⟦2⟧(T - ⟦3⟧)$, jadi $T = \frac{⟦4⟧ \cdot ⟦5⟧ + ⟦6⟧ \cdot ⟦7⟧}{⟦8⟧} = ⟦9⟧$.`,
+  '1f3ox0zk0xx': R`Sebuah balok ⟦1⟧ bermassa ⟦0⟧ (⟦2⟧) bersuhu ⟦3⟧ dimasukkan ke dalam ⟦4⟧ air ($4200\,\mathrm{J/(kg\,{}^\circ C)}$) bersuhu ⟦5⟧. Jika kalor yang hilang ke lingkungan diabaikan, berapa suhu akhirnya?`,
+  '15iyy764mj1': R`$m_1 c_1 (T_1 - T) = m_2 c_w (T - T_2)$ menghasilkan $T = \frac{m_1 c_1 T_1 + m_2 c_w T_2}{m_1 c_1 + m_2 c_w} = \frac{⟦0⟧ + ⟦1⟧}{⟦2⟧ + ⟦3⟧} \approx ⟦4⟧$.`,
+  '1wx1582nq2p': R`baja`,
+  '23zmjtwm2kj': R`kuningan`,
+  'oole13wunn': R`Sebuah batang ⟦0⟧ panjangnya ⟦1⟧ pada suhu ruang. Berapa milimeter pertambahan panjangnya jika dipanaskan sebesar ⟦2⟧? ($\alpha = ⟦3⟧\,/{}^\circ\mathrm{C}$.)`,
+  '6j79ix0k4p': R`Es bersuhu $0^\circ\mathrm{C}$ dipanaskan terus-menerus dan mulai mencair. Apa yang terjadi pada suhunya selama mencair?`,
+  '1rm9dhyux9b': R`Tetap $0^\circ\mathrm{C}$ sampai seluruh es mencair`,
+  '2fsggefhpre': R`Naik terus secara teratur`,
+  '4xgzpv3li3': R`Turun`,
+  'j6b3yyma3d': R`Langsung melonjak ke $100^\circ\mathrm{C}$`,
+  '2g4pkxz9iih': R`Selama perubahan wujud, kalor dipakai untuk memutuskan ikatan antarpartikel (kalor laten), bukan untuk menaikkan suhu.`,
+  '1yl1lpmb03i': R`Satu bak besar berisi air hangat dibandingkan dengan secangkir air mendidih. Pernyataan mana yang benar?`,
+  'isgsna15xi': R`Suhu air di cangkir lebih tinggi, tetapi air di bak dapat menyimpan energi kalor yang lebih banyak`,
+  '1phjkatqti4': R`Suhu air di bak lebih tinggi karena volumenya lebih besar`,
+  '1ogzoeurfnr': R`Keduanya mengandung kalor yang sama banyak`,
+  '1biujbq55ys': R`Suhu dan kalor artinya sama`,
+  '1hpbnii9bln': R`Suhu mengukur seberapa panas suatu benda; energi termal totalnya juga bergantung pada banyaknya bahan. Air hangat dalam jumlah besar dapat menyimpan energi lebih banyak daripada air yang sangat panas dalam jumlah sedikit.`,
+});

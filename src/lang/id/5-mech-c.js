@@ -1,0 +1,75 @@
+/* Bahasa Indonesia — 5-mech-c */
+addT('id', {
+  '1h2arje5kvu': R`tidak lebih dari`,
+  '1f2cwjym872': R`gaya gesek statis tidak mampu menahannya dan balok meluncur`,
+  '18elpp37r93': R`gaya gesek statis mampu menahannya`,
+  'ezxbtjc7z8': R`
+<p><b>Energi</b> adalah kemampuan untuk melakukan usaha, dan <b>usaha</b> adalah energi yang dipindahkan oleh gaya. Keduanya diukur dalam joule ($\mathrm{J}$).</p>
+<h3>Usaha</h3>
+⟦0⟧
+<p>Di sini $F$ adalah gaya, $s$ perpindahan, dan $\theta$ sudut di antara keduanya. Hanya bagian gaya yang searah gerak yang melakukan usaha. Gaya yang tegak lurus gerak (seperti gaya normal di lantai datar) tidak melakukan usaha; gaya yang melawan gerak (seperti gaya gesek) melakukan usaha negatif.</p>
+<h3>Energi kinetik dan energi potensial</h3>
+⟦1⟧
+<p>Energi kinetik dimiliki benda karena geraknya; energi potensial gravitasi karena ketinggiannya di atas bidang acuan yang dipilih.</p>
+⟦2⟧
+⟦3⟧
+<h3>Daya dan efisiensi</h3>
+⟦4⟧
+<p>Daya diukur dalam watt: $1\,\mathrm{W} = 1\,\mathrm{J/s}$.</p>
+⟦5⟧`,
+  '1gysejys4zp': R`<p><b>Teorema usaha–energi:</b> usaha total pada benda sama dengan perubahan energi kinetiknya, $W_{\text{total}} = \Delta E_k$.</p><p><b>Hukum kekekalan energi mekanik:</b> jika hanya gravitasi yang melakukan usaha (tanpa gesekan),</p><p>$$E_k + E_p = \text{tetap}, \qquad \tfrac12 m v_1^2 + m g h_1 = \tfrac12 m v_2^2 + m g h_2.$$</p>`,
+  'wjax83ohbn': R`<p>Sebuah kereta roller coaster mulai dari diam pada ketinggian $20\,\mathrm{m}$ di atas dasar lintasan yang licin ($g = 10\,\mathrm{m/s^2}$). Di dasar lintasan, seluruh energi potensialnya telah berubah menjadi energi kinetik:</p><p>$$mgh = \tfrac12 m v^2 \;\Rightarrow\; v = \sqrt{2gh} = \sqrt{400} = 20\,\mathrm{m/s}.$$</p><p>Massanya saling mencoret, jadi setiap kereta mencapai kelajuan yang sama.</p>`,
+  '1aka3dk0wtz': R`P = \frac{W}{t} = F v \qquad \eta = \frac{\text{keluaran berguna}}{\text{masukan}} \times 100\%`,
+  '2sxeyeb2ug': R`<p>Kelajuan pada $\tfrac12 m v^2$ dikuadratkan: menggandakan kelajuan membuat energi kinetik menjadi empat kali lipat.</p>`,
+  '2cbk699y6eq': R`Seorang anak menarik kereta luncur sejauh ⟦0⟧ di atas salju yang datar dengan tali yang membentuk sudut ⟦1⟧ terhadap tanah. Tegangan talinya ⟦2⟧. Berapa usaha yang dilakukan tali?`,
+  '1s3yw9rj8oe': R`Seorang pekerja mendorong troli sejauh ⟦0⟧ di sepanjang lorong dengan gaya mendatar tetap ⟦1⟧. Berapa usaha yang dilakukan pekerja itu?`,
+  'm3zfl7upd5': R`Berapa energi kinetik benda bermassa ⟦0⟧ yang bergerak dengan kelajuan ⟦1⟧?`,
+  'icru3bka9y': R`Sebuah beban bermassa ⟦0⟧ diangkat lurus ke atas setinggi ⟦1⟧. Berapa pertambahan energi potensial gravitasinya? ⟦2⟧`,
+  '1ouorng82sl': R`Seorang pemain skateboard yang bergerak ⟦0⟧ meluncur menuruni lintasan licin dan turun setinggi ⟦1⟧. Berapa kelajuannya di bagian bawah? ⟦2⟧`,
+  'v45sku4nxi': R`Sebuah bola dilepas dari keadaan diam dan menggelinding menuruni lintasan licin, turun setinggi ⟦0⟧. Berapa kelajuannya di bagian bawah? ⟦1⟧`,
+  '28d88nmzpyc': R`$\tfrac12 m v^2 = \tfrac12 m v_0^2 + mgh$, jadi $v = \sqrt{v_0^2 + 2gh} = \sqrt{⟦0⟧ + 2 \cdot ⟦1⟧ \cdot ⟦2⟧} = ⟦3⟧$.`,
+  'a6qtfe5prk': R`$mgh = \tfrac12 m v^2$, jadi $v = \sqrt{2gh} = \sqrt{2 \cdot ⟦0⟧ \cdot ⟦1⟧} = ⟦2⟧$.`,
+  'fpcufhit6f': R`Sebuah derek mengangkat beban bermassa ⟦0⟧ setinggi ⟦1⟧ dengan kelajuan tetap dalam ⟦2⟧. Berapa daya keluaran bergunanya? ⟦3⟧`,
+  '2bfp28opvyy': R`Usaha: $W = mgh = ⟦0⟧ \cdot ⟦1⟧ \cdot ⟦2⟧ = ⟦3⟧\,\mathrm{J}$. Daya: $P = \frac{W}{t} = \frac{⟦4⟧}{⟦5⟧} = ⟦6⟧$.`,
+  '2ab7fau2uzl': R`Sebuah mobil bermassa ⟦0⟧ yang melaju ⟦1⟧ direm hingga berhenti dalam jarak ⟦2⟧. Berapa gaya pengereman rata-ratanya?`,
+  '1w4797q7x8x': R`Gaya pengereman menghabiskan seluruh energi kinetik: $F s = \tfrac12 m v^2$, jadi $F = \frac{\tfrac12 \cdot ⟦0⟧ \cdot ⟦1⟧^2}{⟦2⟧} = \frac{⟦3⟧}{⟦4⟧} = ⟦5⟧$.`,
+  '1oikjxho9kg': R`Sebuah motor listrik menerima daya ⟦0⟧ dan menghasilkan daya mekanik berguna ⟦1⟧. Berapa efisiensinya?`,
+  '29o0ervjcr6': R`$\eta = \frac{P_{\text{keluar}}}{P_{\text{masuk}}} \times 100\% = \frac{⟦0⟧}{⟦1⟧} \times 100\% = ⟦2⟧\%$.`,
+  '1iaymfx9g29': R`Sebuah pompa memiliki efisiensi ⟦0⟧% dan menerima daya ⟦1⟧. Berapa daya berguna yang dihasilkannya?`,
+  '1pmbvzbfiyv': R`$P_{\text{keluar}} = \eta \times P_{\text{masuk}} = ⟦0⟧ \times ⟦1⟧ = ⟦2⟧$.`,
+  '9luwz9hbip': R`
+<p><b>Momentum</b> sebuah benda adalah massa dikali kecepatannya. Momentum adalah vektor yang searah dengan kecepatan, dan satuannya $\mathrm{kg\,m/s}$.</p>
+⟦0⟧
+<h3>Impuls</h3>
+<p>Gaya yang bekerja selama selang waktu tertentu mengubah momentum. Hasil kali $F\,\Delta t$ disebut <b>impuls</b>:</p>
+⟦1⟧
+<p>Inilah sebabnya kantong udara (airbag) dan zona remuk pada mobil menyelamatkan nyawa: perubahan momentum yang sama disebar ke waktu yang lebih lama, sehingga gayanya lebih kecil.</p>
+⟦2⟧
+<h3>Jenis tumbukan</h3>
+<ul><li><b>Tidak lenting sama sekali:</b> benda-benda menempel dan bergerak bersama dengan satu kecepatan $v' = \dfrac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$. Sebagian energi kinetik hilang (menjadi panas, bunyi, perubahan bentuk).</li><li><b>Lenting sempurna:</b> energi kinetik juga kekal. Jika dua benda bermassa sama bertumbukan lenting sempurna secara sentral, keduanya bertukar kecepatan.</li><li>Kebanyakan tumbukan nyata berada di antara keduanya: momentum kekal, sebagian energi kinetik hilang.</li></ul>
+⟦3⟧
+<h3>Gaya dorong balik (rekoil)</h3>
+<p>Sebelum senapan ditembakkan, momentum totalnya nol, jadi setelahnya momentum peluru ke depan diimbangi momentum senapan ke belakang: $m_p v_p = m_s v_s$.</p>
+⟦4⟧`,
+  '2e2tqc5my45': R`<p><b>Hukum kekekalan momentum:</b> jika tidak ada gaya luar yang bekerja pada suatu sistem, momentum totalnya tetap. Untuk dua benda yang bertumbukan:</p><p>$$m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'.$$</p><p>Pilih arah positif, lalu beri tanda minus pada kecepatan yang berlawanan arah.</p>`,
+  '2frhwamgtv6': R`<p>Sebuah kereta $2\,\mathrm{kg}$ yang bergerak $6\,\mathrm{m/s}$ menabrak kereta $1\,\mathrm{kg}$ yang diam, lalu keduanya menempel. $v' = \frac{2 \cdot 6 + 1 \cdot 0}{3} = 4\,\mathrm{m/s}$. Energi kinetik sebelum: $36\,\mathrm{J}$; sesudah: $\tfrac12 \cdot 3 \cdot 4^2 = 24\,\mathrm{J}$, jadi $12\,\mathrm{J}$ hilang.</p>`,
+  'rfdx8x7xt6': R`<p>Saat bola memantul balik, tanda kecepatannya berubah. Memantul dari $+5\,\mathrm{m/s}$ menjadi $-5\,\mathrm{m/s}$ berarti perubahannya $10\,\mathrm{m/s}$, bukan nol.</p>`,
+  'rivcwpwaw': R`Berapa momentum benda bermassa ⟦0⟧ yang bergerak dengan kecepatan ⟦1⟧?`,
+  '1uudmu47gge': R`Sebuah pemukul memukul bola dengan gaya rata-rata ⟦0⟧ selama ⟦1⟧. Berapa impuls yang diberikan pada bola?`,
+  '1s7xbd9m9ij': R`Sebuah bola bermassa ⟦0⟧ menumbuk dinding dengan kecepatan ⟦1⟧ lalu memantul lurus kembali dengan kecepatan ⟦2⟧. Berapa besar perubahan momentumnya?`,
+  'oi0pbkm3ls': R`Ambil arah datangnya bola sebagai positif: $\Delta p = m(v - v_0) = ⟦0⟧(-⟦1⟧ - ⟦2⟧) = -⟦3⟧\,\mathrm{kg\,m/s}$. Besarnya ⟦4⟧.`,
+  '1gkiv8m3sir': R`Troli bermassa ⟦0⟧ yang bergerak ke kanan dengan kecepatan ⟦1⟧ bertumbukan dengan troli bermassa ⟦2⟧ yang bergerak ke kiri dengan kecepatan ⟦3⟧. Keduanya menempel. Berapa kecepatan keduanya sesaat setelah tumbukan (positif = ke kanan)?`,
+  'h9mmw9vbxe': R`Troli bermassa ⟦0⟧ yang bergerak dengan kecepatan ⟦1⟧ menabrak troli bermassa ⟦2⟧ yang diam, lalu keduanya menempel. Berapa kelajuan bersamanya?`,
+  '8ekgze5ojs': R`Momentum kekal: $v' = \frac{m_1 v_1 + m_2 v_2}{m_1 + m_2} = \frac{⟦0⟧ \cdot ⟦1⟧ + ⟦2⟧ \cdot ⟦3⟧}{⟦4⟧} = ⟦5⟧$.`,
+  '1yeoaqmr30g': R`Sebuah senapan bermassa ⟦0⟧ menembakkan peluru bermassa ⟦1⟧ dengan kecepatan ⟦2⟧. Berapa kelajuan dorong balik (rekoil) senapan?`,
+  '266a88c5um9': R`Momentum total nol sebelum dan sesudah penembakan: $m_s v_s = m_p v_p$, jadi $v_s = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧} = ⟦3⟧$ (ingat $⟦4⟧\,\mathrm{g} = ⟦5⟧\,\mathrm{kg}$).`,
+  '159jkdy7uid': R`Sebuah kereta bermassa ⟦0⟧ yang bergerak ⟦1⟧ menabrak kereta bermassa ⟦2⟧ yang diam, lalu keduanya menempel. Berapa energi kinetik yang hilang dalam tumbukan itu?`,
+  '2ep7jh1nrgj': R`Kecepatan bersama: $v' = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧} = ⟦3⟧\,\mathrm{m/s}$. Energi kinetik sebelum: $\tfrac12 \cdot ⟦4⟧ \cdot ⟦5⟧^2 = ⟦6⟧\,\mathrm{J}$; sesudah: $\tfrac12 \cdot ⟦7⟧ \cdot ⟦8⟧^2 = ⟦9⟧\,\mathrm{J}$. Yang hilang: ⟦10⟧.`,
+  '1zw4r2rkwfv': R`Di lintasan licin, sebuah kereta yang bergerak bertumbukan sentral dan lenting sempurna dengan kereta identik yang diam. Apa yang terjadi?`,
+  '16kcm3dctwu': R`Kereta yang bergerak berhenti dan kereta lainnya bergerak dengan kecepatan kereta pertama`,
+  'ci0melk3ou': R`Kedua kereta bergerak bersama dengan setengah kelajuan`,
+  '20vjmnlst7y': R`Kereta yang bergerak memantul balik dengan kelajuan yang sama`,
+  '266z72mxakq': R`Kedua kereta berhenti`,
+  '1l7txfm8jz6': R`Pada tumbukan sentral lenting sempurna antara dua massa yang sama, momentum dan energi kinetik sama-sama kekal, dan satu-satunya penyelesaiannya adalah kedua kereta bertukar kecepatan.`,
+  '247lx4ne2z5': R`Grafik kecepatan–waktu`,
+});

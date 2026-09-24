@@ -1,0 +1,158 @@
+##### core
+@8pmwod04x2
+A circuit diagram with a battery and resistors
+
+##### current-ohm
+@1tctsbl174k  ; 0=Fm(T`I = \frac{Q}{t}`) | 1=Key(T`<p><b>Ohm's law:</b> for a metal c | 2=Fm(T`R = \rho\,\frac{L}{A}`) | 3=Fm(T`P = V I = I^2 R = \frac{V^2}{R} \qq | 4=Ex(T`<p>A kettle is rated $2000\,\mathrm | 5=Tip(T`<p>Convert areas in $\mathrm{mm^2}
+
+<p>An electric <b>current</b> is a flow of charge. In metal wires the moving charges are electrons, each carrying $e = 1.6 \times 10^{-19}\,\mathrm{C}$ (coulomb).</p>
+⟦0⟧
+<p>Current is measured in amperes: $1\,\mathrm{A}$ means $1\,\mathrm{C}$ of charge passing a point every second. By convention current flows from $+$ to $-$ outside the battery, the opposite way to the electrons.</p>
+<h3>Potential difference and resistance</h3>
+<p>The <b>potential difference</b> (voltage) $V$ between two points is the energy given to or taken from each coulomb of charge: $1\,\mathrm{V} = 1\,\mathrm{J/C}$. The <b>resistance</b> $R$ of a component tells us how much voltage is needed to push a current through it.</p>
+⟦1⟧
+<h3>Resistivity</h3>
+<p>A wire's resistance depends on its material, length $L$ and cross-sectional area $A$:</p>
+⟦2⟧
+<p>$\rho$ is the <b>resistivity</b> of the material in $\Omega\,\mathrm{m}$ (copper: $1.7 \times 10^{-8}\,\Omega\,\mathrm{m}$). A longer wire has more resistance; a thicker one has less.</p>
+<h3>Electrical power and energy</h3>
+⟦3⟧
+<p>Electricity bills use the <b>kilowatt-hour</b>: $1\,\mathrm{kWh}$ is the energy used by a $1\,\mathrm{kW}$ appliance in one hour, $3.6 \times 10^{6}\,\mathrm{J}$.</p>
+⟦4⟧
+⟦5⟧
+@oimy8jns8d
+<p><b>Ohm's law:</b> for a metal conductor at constant temperature the current is proportional to the voltage:</p><p>$$V = I\,R$$</p><p>Resistance is measured in ohms: $1\,\Omega = 1\,\mathrm{V/A}$.</p>
+@th33vhvuaq
+<p>A kettle is rated $2000\,\mathrm{W}$ at $220\,\mathrm{V}$. Current: $I = P/V = 2000/220 \approx 9.1\,\mathrm{A}$. Used for $15$ minutes a day for $30$ days: $2\,\mathrm{kW} \times 0.25\,\mathrm{h} \times 30 = 15\,\mathrm{kWh}$.</p>
+@2dchhuclfv
+<p>Convert areas in $\mathrm{mm^2}$ to $\mathrm{m^2}$ before using $R = \rho L / A$: $1\,\mathrm{mm^2} = 10^{-6}\,\mathrm{m^2}$.</p>
+@1fw532pm0wv  ; 0=Q(Qc, 'C') | 1=Q(t, 's')
+A charge of ⟦0⟧ flows through a lamp in ⟦1⟧. What is the current?
+@1j39kyh2dta  ; 0=Q(I, 'A') | 1=Q(t, 's')
+A current of ⟦0⟧ flows for ⟦1⟧. How many electrons pass a point in the wire? ($e = 1.6 \times 10^{-19}\,\mathrm{C}$.)
+@1qqx9gtt5iy
+Type a power of ten like 1.5e19.
+@196tvgo7x5c  ; 0=M(I) | 1=t | 2=M(sig(I * t)) | 3=M(sig(I * t)) | 4=sciT(n)
+Charge: $Q = It = ⟦0⟧ \cdot ⟦1⟧ = ⟦2⟧\,\mathrm{C}$. Number of electrons: $n = \frac{Q}{e} = \frac{⟦3⟧}{1.6 \times 10^{-19}} = ⟦4⟧$.
+@120s451lo7k  ; 0=Q(I, 'A') | 1=Q(R, 'Ω')
+A current of ⟦0⟧ flows through a ⟦1⟧ resistor. What is the voltage across it?
+@1kmc8j9nvt3  ; 0=Q(R, 'Ω') | 1=Q(V, 'V')
+A ⟦0⟧ resistor is connected to ⟦1⟧. What current flows?
+@pbzsr6l0at  ; 0=Q(V, 'V') | 1=Q(I, 'A')
+When ⟦0⟧ is applied across a heating element, a current of ⟦1⟧ flows. What is its resistance?
+@2c9mw9a3bgy
+nichrome
+@o0ek0hoh7t  ; 0=mat | 1=sciT(rho) | 2=Q(sig(L, 4), 'm') | 3=Q(A, 'mm^2')
+A wire made of ⟦0⟧, with resistivity $⟦1⟧\,\Omega\,\mathrm{m}$, is ⟦2⟧ long and has a cross-sectional area of ⟦3⟧. What is its resistance?
+@wjkwzggyvq  ; 0=M(A) | 1=sciT(A * 1e-6) | 2=sciT(rho) | 3=M(sig(L, 4)) | 4=sciT(A * 1e-6) | 5=QT(R, 'Ω')
+$A = ⟦0⟧\,\mathrm{mm^2} = ⟦1⟧\,\mathrm{m^2}$, so $R = \rho\frac{L}{A} = \frac{⟦2⟧ \cdot ⟦3⟧}{⟦4⟧} = ⟦5⟧$.
+@1ih746d53j8  ; 0=Q(I, 'A') | 1=Q(V, 'V')
+An appliance draws ⟦0⟧ from a ⟦1⟧ supply. What is its power?
+@l433zztoo9  ; 0=Q(R, 'Ω') | 1=Q(V, 'V')
+A ⟦0⟧ resistor is connected to a ⟦1⟧ battery. How much power does it dissipate?
+@ztldj1jj20  ; 0=Q(P, 'W') | 1=Q(V, 'V')
+A ⟦0⟧ appliance is plugged into a ⟦1⟧ socket. What current does it draw?
+@1fwylqzu0u4  ; 0=Q(P, 'W') | 1=Q(h, 'h') | 2=d
+A ⟦0⟧ appliance is used for ⟦1⟧ every day for ⟦2⟧ days. How much electrical energy does it use, in kWh?
+@p6x8s2afi5
+The voltage across a resistor is doubled while its resistance stays the same. What happens to the current and to the power?
+@1tz4iu4g6rw
+The current doubles and the power becomes four times as large
+@qhuyitrq9b
+Both double
+@whqrzzb55h
+The current doubles and the power stays the same
+@17gcgm7tfee
+The current halves and the power doubles
+@nepb6j9dlj
+$I = V/R$, so doubling $V$ doubles $I$. $P = V^2/R$, so doubling $V$ multiplies $P$ by $2^2 = 4$.
+
+##### dc-circuits
+@te90xpu5gv  ; 0=Fig(circuitSvg('series', ['R₁', 'R₂', 'R | 1=Fig(circuitSvg('parallel', ['R₁', 'R₂',  | 2=Key(T`<p>For a mixed circuit, replace ea | 3=Ex(T`<p>$R_1 = 4\,\Omega$ in series with | 4=Fm(T`I = \frac{\varepsilon}{R + r} \qqua | 5=Tip(T`<p><b>Kirchhoff's rules</b> summar
+
+<p>A circuit is a closed loop through which charge can flow. The same two rules decide everything in a circuit of resistors.</p>
+<h3>Series</h3>
+⟦0⟧
+<ul><li>The <b>same current</b> flows through every component.</li><li>The voltages add up: $V = V_1 + V_2 + V_3$.</li><li>The resistances add: $R_s = R_1 + R_2 + R_3$.</li></ul>
+<h3>Parallel</h3>
+⟦1⟧
+<ul><li>Every branch has the <b>same voltage</b>.</li><li>The currents add up: $I = I_1 + I_2 + I_3$.</li><li>$\dfrac{1}{R_p} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \dfrac{1}{R_3}$. For just two resistors: $R_p = \dfrac{R_1 R_2}{R_1 + R_2}$.</li></ul>
+<p>The combined resistance of a parallel group is always smaller than its smallest resistor, because each extra branch gives the current another path.</p>
+⟦2⟧
+⟦3⟧
+<h3>EMF and internal resistance</h3>
+<p>A real battery has an <b>electromotive force</b> $\varepsilon$ (the energy it gives each coulomb) and a small <b>internal resistance</b> $r$. With an external resistance $R$:</p>
+⟦4⟧
+⟦5⟧
+@1znip64d7e6
+Three resistors in series: one path for the current.
+@1fagoc02t7p
+Three resistors in parallel: the current splits between the branches.
+@252ypvrul5e
+<p>For a mixed circuit, replace each parallel group by its equivalent resistance, then add the series parts. Find the total current from $I = V/R_{\text{total}}$, then work back through the circuit using $V = IR$ for each part.</p>
+@a0ecipa7io
+<p>$R_1 = 4\,\Omega$ in series with $R_2 = 6\,\Omega$ and $R_3 = 3\,\Omega$ in parallel, on a $12\,\mathrm{V}$ battery. $R_{23} = \frac{6 \cdot 3}{9} = 2\,\Omega$, total $6\,\Omega$, so $I = 2\,\mathrm{A}$. $V_1 = 8\,\mathrm{V}$, and the parallel pair gets $4\,\mathrm{V}$: $I_2 = \frac{4}{6} \approx 0.67\,\mathrm{A}$, $I_3 = \frac{4}{3} \approx 1.33\,\mathrm{A}$.</p>
+@84ftgywrj7
+I = \frac{\varepsilon}{R + r} \qquad V_{\text{terminal}} = \varepsilon - I r
+@12082awfh82
+<p><b>Kirchhoff's rules</b> summarise all of this: the currents into a junction equal the currents out, and around any closed loop the voltage rises equal the voltage drops.</p>
+@yf6oo2fbh9  ; 0=Q(V, 'V') | 1=listF(Rs.map(r => r + ' Ω'))
+In the circuit below, the battery is ⟦0⟧ and the resistors are ⟦1⟧ in series. What current flows?
+@298cww5yyq6  ; 0=Rs.join(' + ') | 1=R | 2=V | 3=R | 4=QT(I, 'A')
+$R = ⟦0⟧ = ⟦1⟧\,\Omega$, so $I = \frac{V}{R} = \frac{⟦2⟧}{⟦3⟧} = ⟦4⟧$.
+@ua8pner10l  ; 0=listF(Rs.map(r => r + ' Ω'))
+What is the total resistance of ⟦0⟧ connected in series?
+@260qe1wfcwr  ; 0=Rs.join(' + ') | 1=QT(R, 'Ω')
+In series the resistances add: $⟦0⟧ = ⟦1⟧$.
+@23qeiclxmuu  ; 0=Q(a, 'Ω') | 1=Q(b, 'Ω') | 2=Q(V, 'V')
+A ⟦0⟧ and a ⟦1⟧ resistor are connected in parallel to a ⟦2⟧ battery. What current does the battery supply?
+@1n1zniyp9og  ; 0=a | 1=b | 2=a | 3=b | 4=M(Rp) | 5=V | 6=M(Rp) | 7=QT(I, 'A') | 8=V | 9=a | 10=V | 11=b | 12=M(sig(V / a + V / b))
+$R_p = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧ + ⟦3⟧} = ⟦4⟧\,\Omega$, so $I = \frac{⟦5⟧}{⟦6⟧} = ⟦7⟧$. (Check: $\frac{⟦8⟧}{⟦9⟧} + \frac{⟦10⟧}{⟦11⟧} = ⟦12⟧\,\mathrm{A}$.)
+@l7jb0jhtv1  ; 0=Q(a, 'Ω') | 1=Q(b, 'Ω')
+What is the combined resistance of ⟦0⟧ and ⟦1⟧ connected in parallel?
+@a9uurdfpsu  ; 0=Q(V, 'V')
+In the circuit shown, what current flows from the ⟦0⟧ battery?
+@16euw8w5z7i  ; 0=a | 1=b | 2=a + b | 3=M(sig(Rp)) | 4=r1 | 5=M(sig(Rp)) | 6=M(Rt) | 7=V | 8=M(Rt) | 9=QT(I, 'A')
+Parallel pair: $\frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧} = ⟦3⟧\,\Omega$. Total: $⟦4⟧ + ⟦5⟧ = ⟦6⟧\,\Omega$. Current: $I = \frac{⟦7⟧}{⟦8⟧} = ⟦9⟧$.
+@15a2jz2fckv
+What is the total resistance of the circuit shown?
+@1g35ihr6jp5  ; 0=a | 1=b | 2=a | 3=b | 4=M(sig(Rp)) | 5=r1 | 6=M(sig(Rp)) | 7=QT(Rt, 'Ω')
+First the parallel pair: $\frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧ + ⟦3⟧} = ⟦4⟧\,\Omega$. Then add the series resistor: $⟦5⟧ + ⟦6⟧ = ⟦7⟧$.
+@21x8m376ny5  ; 0=Q(R1, 'Ω') | 1=Q(R2, 'Ω') | 2=Q(V, 'V') | 3=Q(R2, 'Ω')
+A ⟦0⟧ and a ⟦1⟧ resistor are in series with a ⟦2⟧ battery. What is the voltage across the ⟦3⟧ resistor?
+@15u4u1zbmu4  ; 0=V | 1=R1 | 2=R2 | 3=M(sig(V / (R1 + R2))) | 4=M(sig(V / (R1 + R2))) | 5=R2 | 6=QT(V2, 'V')
+$I = \frac{⟦0⟧}{⟦1⟧ + ⟦2⟧} = ⟦3⟧\,\mathrm{A}$, so $V_2 = IR_2 = ⟦4⟧ \cdot ⟦5⟧ = ⟦6⟧$. (Voltage divides in proportion to resistance.)
+@ub3sp9x1gf  ; 0=Q(a, 'Ω') | 1=Q(b, 'Ω') | 2=Q(V, 'V') | 3=Q(b, 'Ω')
+A ⟦0⟧ and a ⟦1⟧ resistor are connected in parallel to ⟦2⟧. What current flows through the ⟦3⟧ resistor?
+@1h4qss68xsm  ; 0=Q(V, 'V') | 1=V | 2=b | 3=QT(Ib, 'A')
+Each branch has the full ⟦0⟧ across it, so $I = \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.
+@2fcecxbp7dm  ; 0=Q(e, 'V') | 1=Q(r, 'Ω') | 2=Q(R, 'Ω')
+A battery with EMF ⟦0⟧ and internal resistance ⟦1⟧ is connected to a ⟦2⟧ lamp. What is the terminal voltage?
+@25lzeddc0hj  ; 0=M(e) | 1=M(R + r) | 2=M(I) | 3=M(e) | 4=M(I) | 5=M(r) | 6=QT(Vt, 'V')
+$I = \frac{\varepsilon}{R + r} = \frac{⟦0⟧}{⟦1⟧} = ⟦2⟧\,\mathrm{A}$, so $V = \varepsilon - Ir = ⟦3⟧ - ⟦4⟧ \cdot ⟦5⟧ = ⟦6⟧$.
+@ftsbr7be30  ; 0=Q(e, 'V') | 1=Q(r, 'Ω') | 2=Q(R, 'Ω')
+A battery with EMF ⟦0⟧ and internal resistance ⟦1⟧ is connected to a ⟦2⟧ resistor. What current flows?
+@18bx6c1idkr
+Three identical lamps are connected in parallel to a battery. One lamp blows. What happens to the other two?
+@vwz7nun4sd
+They stay lit with the same brightness
+@npp6fgi5b2
+They both go out
+@1xrq1u2jbiy
+They get brighter
+@a5mtd300wt
+They get dimmer
+@4c9hvgbskh
+Each parallel branch has its own path and still gets the full battery voltage, so the other lamps are unaffected (for an ideal battery). This is why household sockets are wired in parallel.
+@hh620cyi1q
+Two identical lamps are connected in series to a battery. A third identical lamp is added in series. What happens to the brightness of the lamps?
+@a184d6rdix
+They all become dimmer
+@27cxonr7lvn
+They stay the same
+@22rr8bg0hsm
+They become brighter
+@qya5fqgigs
+Only the new lamp is dim
+@1jz4r3knger
+The total resistance goes up, so the current through every lamp goes down, and $P = I^2 R$ for each lamp falls.
