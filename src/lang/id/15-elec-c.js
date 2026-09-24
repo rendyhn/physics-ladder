@@ -1,0 +1,145 @@
+/* Bahasa Indonesia — 15-elec-c */
+addT('id', {
+  '22d5m88u78o': R`
+<p>Medan magnet yang berubah dapat membangkitkan arus. Inilah <b>induksi elektromagnetik</b>, yang ditemukan Faraday pada tahun 1831, dan dengan cara inilah hampir semua listrik kita dibangkitkan.</p>
+<h3>Fluks magnetik</h3>
+⟦0⟧
+<p>Fluks (dalam weber, $\mathrm{Wb}$) menyatakan seberapa banyak medan magnet yang menembus kumparan seluas $A$; $\theta$ adalah sudut antara medan dan garis normal bidang kumparan.</p>
+⟦1⟧
+<h3>Batang yang bergerak</h3>
+<p>Batang sepanjang $L$ yang bergerak dengan kelajuan $v$ tegak lurus medan $B$ menyapu fluks, sehingga timbul GGL $\varepsilon = B L v$ di antara kedua ujungnya.</p>
+<h3>Generator dan transformator</h3>
+<p>Generator memutar kumparan di dalam medan magnet sehingga menghasilkan GGL bolak-balik. <b>Transformator</b> memakai arus yang berubah pada satu kumparan untuk menginduksi GGL pada kumparan lain yang dililitkan pada inti besi yang sama:</p>
+⟦2⟧
+<p>Listrik disalurkan ke seluruh negeri dengan tegangan sangat tinggi: untuk daya yang sama arusnya kecil, sehingga daya yang hilang menjadi panas di kabel, $P = I^2 R$, juga kecil.</p>
+⟦3⟧`,
+  '2ea3ecpuvs2': R`<p><b>Hukum Faraday:</b> GGL yang diinduksi pada kumparan dengan $N$ lilitan sama dengan laju perubahan fluks yang dilingkupinya:</p><p>$$\varepsilon = -N\frac{\Delta \Phi}{\Delta t}.$$</p><p><b>Hukum Lenz</b> (tanda minus): arus induksi mengalir sedemikian rupa sehingga melawan perubahan yang menimbulkannya.</p>`,
+  '1kmpv0qnsr6': R`\frac{V_s}{V_p} = \frac{N_s}{N_p} \qquad \text{ideal: } V_p I_p = V_s I_s`,
+  '23yc30r4bok': R`<p>Transformator hanya bekerja dengan arus bolak-balik. Arus searah yang tetap tidak menghasilkan fluks yang berubah, jadi tidak ada yang diinduksi.</p>`,
+  'k6dk3lag86': R`Sebuah kumparan persegi bersisi ⟦0⟧ berada dalam medan homogen ⟦1⟧; medan membentuk sudut ⟦2⟧ dengan garis normal kumparan. Berapa fluks yang menembus kumparan, dalam miliweber?`,
+  'xkr97k2c83': R`Sebuah kumparan persegi bersisi ⟦0⟧ berada tegak lurus medan homogen ⟦1⟧. Berapa fluks magnetik yang menembusnya, dalam miliweber?`,
+  '349uiev3m7': R`$A = (⟦0⟧)^2 = ⟦1⟧\,\mathrm{m^2}$, jadi $\Phi = BA\cos\theta = ⟦2⟧ \cdot ⟦3⟧ \cos ⟦4⟧^\circ = ⟦5⟧$.`,
+  '22bm1f4jscx': R`Fluks magnetik yang menembus kumparan ⟦0⟧ lilitan berubah sebesar ⟦1⟧ dalam ⟦2⟧. Berapa GGL yang diinduksi?`,
+  'txxm8tn7xs': R`Sebuah batang logam sepanjang ⟦0⟧ bergerak dengan kelajuan ⟦1⟧ tegak lurus medan magnet ⟦2⟧. Berapa GGL yang diinduksi di antara kedua ujungnya?`,
+  '17qahcny3cm': R`Sebuah transformator memiliki ⟦0⟧ lilitan primer dan ⟦1⟧ lilitan sekunder. Kumparan primernya dihubungkan ke tegangan AC ⟦2⟧. Berapa tegangan sekundernya?`,
+  '1r6evcmyt2p': R`Ini adalah transformator step-up (penaik tegangan).`,
+  '1tdsgnc3rp0': R`Ini adalah transformator step-down (penurun tegangan).`,
+  '8jveodhxn9': R`Sebuah transformator ideal menurunkan tegangan ⟦0⟧ menjadi ⟦1⟧. Kumparan sekundernya mengalirkan arus ⟦2⟧ ke sebuah lampu. Berapa arus pada kumparan primer?`,
+  '1i908nlqs08': R`Daya masuk = daya keluar: $I_p = \frac{V_s I_s}{V_p} = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  '11lwosjgbyp': R`Sebuah pembangkit listrik mengirim daya yang sama melalui kabel yang sama, tetapi dengan tegangan ⟦0⟧ kali lipat. Berapa kali perubahan daya yang hilang menjadi panas di kabel?`,
+  '1euyx88na9e': R`Tidak berubah`,
+  'mkx1z8zj97': R`Untuk daya yang sama, tegangan ⟦0⟧ kali lipat berarti arusnya $\frac{1}{⟦1⟧}$ kali. Kehilangan daya $P = I^2R$ karena itu turun dengan faktor $⟦2⟧^2 = ⟦3⟧$.`,
+  '2ewbatn2zdt': R`Kutub utara sebuah magnet didorong masuk ke dalam kumparan. Menurut hukum Lenz, arus induksi pada kumparan:`,
+  '1jxxkl6h653': R`menjadikan ujung kumparan yang dekat sebagai kutub utara, sehingga menolak magnet`,
+  'aizvfjmiv6': R`menjadikan ujung kumparan yang dekat sebagai kutub selatan, sehingga menarik magnet`,
+  '1fyztwry1gw': R`baru mengalir setelah magnet berhenti`,
+  '5od1ko8pf0': R`nol, karena magnet tidak menyentuh kumparan`,
+  '1532uspzmii': R`Arus induksi melawan perubahan yang menimbulkannya: kumparan mendorong balik kutub utara yang mendekat dengan membentuk kutub utaranya sendiri. Usaha yang dilakukan untuk melawan dorongan ini berubah menjadi energi listrik.`,
+  'y5gumibg5a': R`
+<p>Listrik PLN adalah <b>arus bolak-balik</b>: tegangannya berayun bolak-balik secara sinusoidal, $V = V_0 \sin(\omega t)$ dengan $\omega = 2\pi f$. Di Indonesia frekuensinya $50\,\mathrm{Hz}$.</p>
+<h3>Nilai efektif (rms)</h3>
+<p>Nilai <b>efektif</b> (akar rata-rata kuadrat, rms) adalah nilai DC tetap yang menghasilkan panas yang sama: $V_{\text{rms}} = \dfrac{V_0}{\sqrt2}$ dan $I_{\text{rms}} = \dfrac{I_0}{\sqrt2}$. Ketika listrik rumah disebut $220\,\mathrm{V}$, itu adalah nilai efektifnya; nilai puncaknya $220\sqrt2 \approx 311\,\mathrm{V}$. Daya rata-rata pada resistor $P = I_{\text{rms}}^2 R = V_{\text{rms}} I_{\text{rms}}$.</p>
+⟦0⟧
+<h3>Resonansi</h3>
+<p>Jika $X_L = X_C$, impedansinya paling kecil ($Z = R$) dan arusnya paling besar. Hal ini terjadi pada <b>frekuensi resonansi</b></p>
+⟦1⟧
+<p>Radio memilih satu stasiun dengan menala rangkaian LC agar beresonansi pada frekuensi stasiun itu.</p>
+⟦2⟧`,
+  '24cuq7xxpts': R`<p>Induktor dan kapasitor menghambat arus AC dengan <b>reaktansi</b> (dalam ohm) yang bergantung pada frekuensi:</p><p>$$X_L = \omega L = 2\pi f L \qquad X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}$$</p><p>Pada rangkaian seri RLC, <b>impedansinya</b> $Z = \sqrt{R^2 + (X_L - X_C)^2}$ dan $I = V/Z$.</p>`,
+  'qjvaxdjfgn': R`<p>Induktor mudah dilalui frekuensi rendah dan menghambat frekuensi tinggi; kapasitor sebaliknya.</p>`,
+  'vxzrwkqo76': R`Sebuah sumber listrik PLN bertegangan efektif ⟦0⟧. Berapa tegangan puncaknya?`,
+  '7tz13n7aau': R`$V_0 = \sqrt2\,V_{\text{rms}} = \sqrt2 \cdot ⟦0⟧ = ⟦1⟧$.`,
+  '18slhir0247': R`Sebuah tegangan AC memiliki nilai puncak ⟦0⟧. Berapa nilai efektifnya?`,
+  '2057045ehw': R`$V_{\text{rms}} = \frac{V_0}{\sqrt2} = \frac{⟦0⟧}{\sqrt2} = ⟦1⟧$.`,
+  'ccyevn9ex9': R`Sebuah pemanas ⟦0⟧ dihubungkan ke listrik PLN bertegangan efektif ⟦1⟧. Berapa ⟦2⟧?`,
+  '15h2baho1ao': R`daya rata-ratanya`,
+  '2duebexd1q3': R`arus efektifnya`,
+  '8whs0zqi38': R`$P = \frac{V_{\text{rms}}^2}{R} = \frac{⟦0⟧^2}{⟦1⟧} = ⟦2⟧$.`,
+  'gpu9imahyz': R`$I_{\text{rms}} = \frac{V_{\text{rms}}}{R} = \frac{⟦0⟧}{⟦1⟧} = ⟦2⟧$.`,
+  'maq9xsyvbo': R`Berapa reaktansi induktor ⟦0⟧ pada frekuensi ⟦1⟧?`,
+  'zvm292sxld': R`Berapa reaktansi kapasitor ⟦0⟧ pada frekuensi ⟦1⟧?`,
+  '1kpcewxis9b': R`Sebuah rangkaian seri memiliki $R = ⟦0⟧$, $X_L = ⟦1⟧$, dan $X_C = ⟦2⟧$. ⟦3⟧`,
+  'zr8xxlagrt': R`Rangkaian itu dihubungkan ke tegangan efektif ⟦0⟧. Berapa arus efektif yang mengalir?`,
+  'g44fovq2je': R`Berapa impedansinya?`,
+  'giat3icggx': R` Jadi $I = \frac{V}{Z} = \frac{⟦0⟧}{⟦1⟧} = ⟦2⟧$.`,
+  'mclschp1h9': R`Sebuah rangkaian penala memiliki induktansi ⟦0⟧ dan kapasitas ⟦1⟧. Pada frekuensi berapa rangkaian itu beresonansi, dalam kHz?`,
+  '1nshm2jw437': R`Frekuensi sumber AC pada rangkaian yang hanya berisi kapasitor dinaikkan. Apa yang terjadi pada arusnya?`,
+  '1jo8ynty2dz': R`Bertambah, karena reaktansi kapasitor berkurang`,
+  'iih9cpv5l9': R`Berkurang, karena reaktansinya bertambah`,
+  '1s74f5x9ne': R`Menjadi nol`,
+  '2dlx2efv192': R`$X_C = \frac{1}{2\pi f C}$ berkurang ketika $f$ naik, jadi untuk tegangan yang sama arusnya lebih besar. (Pada induktor yang terjadi sebaliknya.)`,
+  '9izp365vqi': R`
+<p>Medan listrik dan medan magnet yang berubah saling membangkitkan dan merambat bersama di ruang angkasa sebagai <b>gelombang elektromagnetik (EM)</b>. Gelombang EM bersifat transversal, tidak memerlukan medium, dan di ruang hampa semuanya merambat dengan kelajuan cahaya, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.</p>
+⟦0⟧
+<h3>Spektrum elektromagnetik</h3>
+⟦1⟧
+<p>Dari gelombang radio sampai sinar gamma, panjang gelombangnya makin pendek dan frekuensinya makin tinggi. Frekuensi yang lebih tinggi juga berarti energi yang dibawa setiap foton lebih besar; itulah sebabnya ultraviolet, sinar-X, dan sinar gamma dapat merusak sel makhluk hidup.</p>
+⟦2⟧
+⟦3⟧`,
+  'k7wfdtk1dy': R`Jenis`,
+  '1aruppbi3k2': R`Panjang gelombang khas`,
+  '1ha6u65qfqw': R`Kegunaan`,
+  'kg5a0pcoqb': R`Gelombang radio`,
+  'ajj1xqfr5g': R`meter sampai kilometer`,
+  '1zfigbu5icn': R`radio, TV, komunikasi`,
+  '2bb7nzdx8et': R`Gelombang mikro`,
+  '16irnit174x': R`milimeter sampai sentimeter`,
+  '214rh9q5gq4': R`ponsel, Wi-Fi, radar, memasak`,
+  '2525h8ds9ed': R`Inframerah`,
+  '1g4wn3vyekg': R`mikrometer`,
+  '11fk8cgrd51': R`remote control, kamera termal, pemanas`,
+  '9e3x9zcqzs': R`Cahaya tampak`,
+  '283sayyc0en': R`400–700 nm`,
+  '2fsj5ftmylt': R`penglihatan, serat optik`,
+  'z9se1fk6eg': R`Ultraviolet`,
+  '2e5q01smzn4': R`10–400 nm`,
+  '1k5rc04s08b': R`sterilisasi, fluoresensi; menyebabkan kulit terbakar matahari`,
+  '1pmxtafyazx': R`Sinar-X`,
+  '12h3ova35jm': R`sekitar 0,01–10 nm`,
+  '1vebyz2yqxd': R`pencitraan medis, pemeriksaan keamanan bandara`,
+  '22m99nftv5f': R`Sinar gamma`,
+  '2bd6ejs2hgu': R`di bawah sekitar 0,01 nm`,
+  '1at5hnehda9': R`terapi kanker, sterilisasi peralatan`,
+  '160b38lwc4i': R`<p><b>Polarisasi</b> menunjukkan bahwa gelombang EM bersifat transversal. Filter polarisasi hanya meloloskan bagian gelombang yang bergetar dalam satu arah. Untuk cahaya terpolarisasi dengan intensitas $I_0$ yang mengenai filter bersudut $\theta$ terhadap arah polarisasinya (hukum Malus):</p><p>$$I = I_0 \cos^2\theta.$$</p><p>Cahaya tak terpolarisasi kehilangan setengah intensitasnya pada filter pertama.</p>`,
+  '15uelhhpvsd': R`<p>1 nanometer $= 10^{-9}\,\mathrm{m}$. Cahaya hijau $500\,\mathrm{nm}$ memiliki $f = \frac{3 \times 10^{8}}{500 \times 10^{-9}} = 6 \times 10^{14}\,\mathrm{Hz}$.</p>`,
+  'eti0g2qdas': R`Sebuah stasiun radio FM memancar pada frekuensi ⟦0⟧. Berapa panjang gelombangnya? ($c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  'b8hc30b31a': R`Sebuah stasiun radio AM memancar pada frekuensi ⟦0⟧. Berapa panjang gelombangnya? ($c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  'hlinbrozgt': R`$\lambda = \frac{c}{f} = \frac{3{,}0 \times 10^{8}}{⟦0⟧ \times 10^{⟦1⟧}} = ⟦2⟧$.`,
+  '11094dw5mp3': R`Cahaya memiliki panjang gelombang ⟦0⟧. Berapa frekuensinya? ($c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  '17u7bjme1ai': R`Ketik perpangkatan sepuluh seperti 5e14.`,
+  'rbnrp73oon': R`$f = \frac{c}{\lambda} = \frac{3{,}0 \times 10^{8}}{⟦0⟧ \times 10^{-9}} = ⟦1⟧\,\mathrm{Hz}$.`,
+  '1iuej85qe31': R`Matahari`,
+  '5pf1ljh0sw': R`satelit geostasioner`,
+  'xp1y5xph1': R`Berapa lama cahaya (atau sinyal radio) merambat dari ⟦0⟧ ke Bumi, yang berjarak $⟦1⟧\,\mathrm{m}$? ($c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.)`,
+  '1s9eom0w3z7': R`$t = \frac{d}{c} = \frac{⟦0⟧}{3{,}0 \times 10^{8}} = ⟦1⟧$⟦2⟧.`,
+  'lkdw428lq9': R`, sekitar ⟦0⟧ menit`,
+  '8x6om03jx6': R`Cahaya tak terpolarisasi dengan intensitas ⟦0⟧ melewati dua filter polarisasi yang sumbunya membentuk sudut ⟦1⟧ satu sama lain. Berapa intensitas yang keluar?`,
+  '1ceohe1bpv': R`Filter pertama membagi dua intensitasnya: ⟦0⟧. Kemudian $I = \frac{I_0}{2}\cos^2\theta = ⟦1⟧ \cos^2 ⟦2⟧^\circ = ⟦3⟧$.`,
+  's4mhnh60wj': R`Cahaya terpolarisasi dengan intensitas ⟦0⟧ mengenai filter polarisasi yang sumbunya membentuk sudut ⟦1⟧ dengan arah polarisasi cahaya. Berapa intensitas yang diteruskan?`,
+  '1xrrw3xpu5c': R`Hukum Malus: $I = I_0\cos^2\theta = ⟦0⟧ \cos^2 ⟦1⟧^\circ = ⟦2⟧$.`,
+  'yuq28g03y3': R`gelombang radio`,
+  '9asaykptj6': R`gelombang mikro`,
+  'p8y0yqvd3i': R`inframerah`,
+  'aho590qdl': R`cahaya tampak`,
+  '2gjunky6i8': R`ultraviolet`,
+  'h61of69pr0': R`sinar gamma`,
+  '27u26ulth06': R`Mana yang frekuensinya lebih <b>tinggi</b>: ⟦0⟧ atau ⟦1⟧?`,
+  '1xukqxhye7h': R`Mana yang panjang gelombangnya lebih <b>panjang</b>: ⟦0⟧ atau ⟦1⟧?`,
+  'mp2qhoezfj': R`Keduanya sama`,
+  'ierw8e75c9': R`Urutan dari frekuensi terendah (panjang gelombang terpanjang): radio, gelombang mikro, inframerah, cahaya tampak, ultraviolet, sinar-X, sinar gamma.`,
+  '1487ma5q0bd': R`Jenis radiasi elektromagnetik apa yang dipakai remote control TV?`,
+  '2ajw0f1yzgt': R`Remote control mengirim pulsa cahaya inframerah yang dideteksi sensor pada TV.`,
+  '1eytlfy91xg': R`Mengapa gelombang bunyi tidak dapat dipolarisasi, sedangkan cahaya dapat?`,
+  't7u14smdn9': R`Bunyi adalah gelombang longitudinal; hanya gelombang transversal yang dapat dipolarisasi`,
+  '1s8e6aecioo': R`Bunyi terlalu lambat`,
+  '1z12bzmrr1r': R`Frekuensi bunyi terlalu rendah`,
+  'p5sp5ihmvc': R`Cahaya membawa energi lebih besar`,
+  'r2nqewlx3r': R`Polarisasi memilih satu arah getaran yang tegak lurus arah rambat. Gelombang longitudinal bergetar searah rambatnya, jadi tidak ada arah yang dapat dipilih.`,
+  '23n8tdx2fhe': R`Apa kesamaan semua gelombang elektromagnetik di ruang hampa?`,
+  '8g67wzwnjv': R`Semuanya merambat dengan kelajuan yang sama`,
+  'apostuk4w8': R`Frekuensinya sama`,
+  '1arp4clitcm': R`Panjang gelombangnya sama`,
+  '9mjeki4grt': R`Energi per fotonnya sama`,
+  'pu1omtw1ix': R`Semua gelombang EM merambat di ruang hampa dengan kelajuan $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$; yang berbeda adalah frekuensi dan panjang gelombangnya.`,
+  'yavzaa7kh1': R`f_0 = \frac{1}{2\pi\sqrt{LC}}`,
+});

@@ -999,7 +999,7 @@ ${Tip(T`<p>A calculator shows many digits, but an answer cannot be more precise 
       const e = ri(-3, 3), n = pick([2, 3]), x = (ri(1000, 9999) / 1000) * 10 ** e, a = sig(x, n);
       if (Math.floor(Math.log10(a)) !== Math.floor(Math.log10(x))) return null;   // rounding carried into a new place
       const fmt = (y, k) => F(y, Math.max(0, k - 1 - Math.floor(Math.log10(Math.abs(y)))));   // keep trailing zeros: 3.40
-      return { q: T`Round ${F(sig(x, 4))} to ${n} significant figures.`, a: fmt(a, n), v: a, w: [fmt(sig(x, n + 1), n + 1), fmt(sig(x, Math.max(1, n - 1)), Math.max(1, n - 1)), fmt(sig(x * 10, n), n)], rtol: 0,
+      return { q: T`Round ${F(sig(x, 4))} to ${n} significant figures.`, a: fmt(a, n), v: a, w: [fmt(sig(x, n + 1), n + 1), fmt(sig(x, Math.max(1, n - 1)), Math.max(1, n - 1)), fmt(sig(x * 10, n), n), fmt(sig(a / 10, n), n), fmt(Math.trunc(x * 10 ** (n - 1 - Math.floor(Math.log10(x)))) / 10 ** (n - 1 - Math.floor(Math.log10(x))) + 10 ** (Math.floor(Math.log10(x)) - n + 1), n)], rtol: 0,
         s: T`Keep the first ${n} significant digits and look at the next one to decide whether to round up: ${F(sig(x, 4))} ≈ <b>${fmt(a, n)}</b>.` };
     },
     () => {
@@ -2284,8 +2284,99 @@ level({
   id: 'electricity', mark: 'E', name: 'Electricity & Magnetism', short: 'Electricity', band: 'Charge · circuits · fields · induction', color: 'lv5',
   blurb: 'Electric charge and current, circuits, then electric and magnetic fields, induction, alternating current and electromagnetic waves.',
   topics: [
-{ id: 'electrostatics', stage: 'sh', soon: true, title: 'Electrostatics: Charge, Force & Field' },
-{ id: 'capacitors', stage: 'sh', soon: true, title: 'Electric Potential & Capacitors' },
+{
+  id: 'electrostatics', stage: 'sh', title: 'Electrostatics: Charge, Force & Field',
+  blurb: 'Electric charge, Coulomb’s law, the inverse-square force, electric field strength and fields from point charges.',
+  lesson: () => T`
+<p>Electric charge comes in two kinds, positive and negative. Like charges repel and unlike charges attract. Charge is <b>conserved</b> and comes in whole multiples of the elementary charge $e = 1.6 \times 10^{-19}\,\mathrm{C}$. Rubbing a balloon on hair moves electrons from one to the other; nothing is created.</p>
+<h3>Coulomb's law</h3>
+${Fm(T`F = \frac{k\,q_1 q_2}{r^2}, \qquad k = 9.0 \times 10^{9}\,\mathrm{N\,m^2/C^2}`)}
+<p>Like gravity, the electric force follows an inverse-square law, but it is enormously stronger. Charges are often given in microcoulombs: $1\,\mu\mathrm{C} = 10^{-6}\,\mathrm{C}$.</p>
+${Key(T`<p>The <b>electric field</b> $E$ at a point is the force per unit positive charge placed there:</p><p>$$E = \frac{F}{q}, \qquad \text{for a point charge } Q: \; E = \frac{kQ}{r^2}.$$</p><p>Its unit is $\mathrm{N/C}$. The field points away from positive charges and towards negative ones. Fields from several charges add as vectors.</p>`)}
+${Ex(T`<p>Two charges of $+2\,\mu\mathrm{C}$ and $+3\,\mu\mathrm{C}$ are $0.3\,\mathrm{m}$ apart. $F = \frac{9 \times 10^{9} \cdot 2 \times 10^{-6} \cdot 3 \times 10^{-6}}{0.3^2} = 0.6\,\mathrm{N}$, repulsive.</p>`)}
+<h3>Field lines</h3>
+<p>Field lines start on positive charges and end on negative ones. Where they crowd together the field is strong. Between two parallel oppositely charged plates the lines are straight and evenly spaced: the field is uniform.</p>
+${Tip(T`<p>Convert $\mu\mathrm{C}$ to C and cm to m before using Coulomb's law. Forgetting the $10^{-6}$ is the most common slip.</p>`)}`,
+  gens: [
+    () => {
+      const q1 = ri(1, 9), q2 = ri(1, 9), r = ri(5, 50) / 100, F = sig(9e9 * q1 * 1e-6 * q2 * 1e-6 / (r * r));
+      return { q: T`Two small spheres carry charges of ${Q(q1, 'µC')} and ${Q(q2, 'µC')} and are ${Q(r * 100, 'cm')} apart. What is the size of the electric force between them? ($k = 9.0 \times 10^{9}\,\mathrm{N\,m^2/C^2}$.)`, a: F, u: 'N', w: [sig(F / 1e4), sig(F * r), sig(F / 2)],
+        s: T`$F = \frac{kq_1q_2}{r^2} = \frac{9 \times 10^{9} \cdot ${q1} \times 10^{-6} \cdot ${q2} \times 10^{-6}}{${M(r)}^2} = ${QT(F, 'N')}$.` };
+    },
+    () => {
+      const F0 = ri(2, 40) * 5, k = pick([2, 3, 0.5]), F1 = sig(F0 / (k * k));
+      return { q: T`Two charges repel each other with a force of ${Q(F0, 'N')}. Their separation is ${k === 0.5 ? T`halved` : T`made ${k} times larger`}. What is the new force?`, a: F1, u: 'N', w: [sig(F0 / k), sig(F0 * k * k), F0],
+        s: T`$F \propto \frac{1}{r^2}$, so the force changes by a factor of $\frac{1}{${k === 0.5 ? '(1/2)' : k}^2}$: $${F0} \cdot \frac{1}{${M(k * k)}} = ${QT(F1, 'N')}$.` };
+    },
+    () => {
+      const Q0 = ri(1, 9), r = ri(1, 10) / 10, E = 9e9 * Q0 * 1e-9 / (r * r);
+      return { q: T`What is the electric field strength ${Q(r * 100, 'cm')} from a point charge of ${Q(Q0, 'nC')}? ($k = 9.0 \times 10^{9}\,\mathrm{N\,m^2/C^2}$.)`, a: sig(E), u: 'N/C', w: [sig(E * r), sig(E / 100), sig(E * 1e3)],
+        s: T`$E = \frac{kQ}{r^2} = \frac{9 \times 10^{9} \cdot ${Q0} \times 10^{-9}}{${M(r)}^2} = ${QT(sig(E), 'N/C')}$.` };
+    },
+    () => {
+      const E = ri(1, 50) * 100, q = ri(1, 20), F = sig(E * q * 1e-6);
+      return { q: T`A charge of ${Q(q, 'µC')} is placed in a uniform electric field of ${Q(E, 'N/C')}. What force acts on it?`, a: F, u: 'N', w: [sig(E * q), sig(E / q), sig(F * 1000)], s: T`$F = qE = ${q} \times 10^{-6} \cdot ${E} = ${QT(F, 'N')}$.` };
+    },
+    () => {
+      const Qa = ri(1, 9), Qb = ri(1, 9), d = ri(2, 10) / 10, r = d / 2, Ea = 9e9 * Qa * 1e-9 / (r * r), Eb = 9e9 * Qb * 1e-9 / (r * r), same = chance(), E = sig(same ? Math.abs(Ea - Eb) : Ea + Eb);
+      if (same && Qa === Qb) return null;
+      return { q: same ? T`Two positive charges of ${Q(Qa, 'nC')} and ${Q(Qb, 'nC')} are ${Q(d * 100, 'cm')} apart. What is the electric field strength exactly halfway between them?` : T`A charge of $+${QT(Qa, 'nC')}$ and a charge of $-${QT(Qb, 'nC')}$ are ${Q(d * 100, 'cm')} apart. What is the electric field strength exactly halfway between them?`,
+        a: E, u: 'N/C', w: same ? [sig(Ea + Eb), sig(Math.abs(Ea - Eb) / 4), 0] : [sig(Math.abs(Ea - Eb)), sig((Ea + Eb) / 4), sig(Ea)],
+        s: same ? T`Each charge alone gives $E = \frac{kQ}{r^2}$ with $r = ${M(r)}\,\mathrm{m}$: ${Q(sig(Ea), 'N/C')} and ${Q(sig(Eb), 'N/C')}. Both point away from their charges, so in opposite directions at the midpoint: $|${M(sig(Ea))} - ${M(sig(Eb))}| = ${QT(E, 'N/C')}$.` : T`Each charge alone gives $E = \frac{kQ}{r^2}$ with $r = ${M(r)}\,\mathrm{m}$: ${Q(sig(Ea), 'N/C')} and ${Q(sig(Eb), 'N/C')}. At the midpoint both fields point from + towards −, so they add: ${Q(E, 'N/C')}.` };
+    },
+    () => pick([
+      { q: T`A glass rod rubbed with silk becomes positively charged. What has happened?`, a: T`Electrons have moved from the rod to the silk`, w: [T`Protons have moved from the silk to the rod`, T`Positive charge has been created in the rod`, T`Electrons have moved from the silk to the rod`], only: 'mc', s: T`Only electrons move easily. The rod loses electrons, leaving it with more protons than electrons, and the silk gains the same number of electrons: charge is conserved.` },
+      { q: T`What is the direction of the electric field at a point near an isolated negative charge?`, a: T`Towards the charge`, w: [T`Away from the charge`, T`Along a circle around the charge`, T`There is no field near a negative charge`], only: 'mc', s: T`The field direction is the direction of the force on a positive test charge, which is attracted towards the negative charge.` },
+    ]),
+  ],
+},
+{
+  id: 'capacitors', stage: 'sh', title: 'Electric Potential & Capacitors',
+  blurb: 'Potential and potential difference, uniform fields, the electronvolt, capacitance, parallel plates, stored energy and combinations.',
+  lesson: () => T`
+<h3>Potential and potential difference</h3>
+<p>The <b>electric potential</b> at a point is the potential energy per unit charge there, measured in volts ($1\,\mathrm{V} = 1\,\mathrm{J/C}$). Moving a charge $q$ through a potential difference $V$ changes its energy by</p>
+${Fm(T`W = qV`)}
+<p>Near a point charge, $V = \dfrac{kQ}{r}$. Between two parallel plates a distance $d$ apart with potential difference $V$, the field is uniform: $E = \dfrac{V}{d}$ (so $\mathrm{V/m}$ is the same unit as $\mathrm{N/C}$).</p>
+<p>An electron accelerated through $1\,\mathrm{V}$ gains $1\,\mathrm{eV} = 1.6 \times 10^{-19}\,\mathrm{J}$ of energy, the <b>electronvolt</b>.</p>
+${Key(T`<p>A <b>capacitor</b> stores charge on two conductors separated by an insulator. Its <b>capacitance</b> is the charge stored per volt:</p><p>$$C = \frac{Q}{V} \qquad \text{parallel plates: } C = \frac{\varepsilon_0 A}{d}, \; \varepsilon_0 = 8.85 \times 10^{-12}\,\mathrm{F/m}$$</p><p>The stored energy is $E = \tfrac12 C V^2 = \tfrac12 Q V$.</p>`)}
+<h3>Combining capacitors</h3>
+<ul><li><b>Parallel:</b> $C = C_1 + C_2 + \dots$ (the opposite of resistors).</li><li><b>Series:</b> $\dfrac{1}{C} = \dfrac{1}{C_1} + \dfrac{1}{C_2} + \dots$</li></ul>
+<p>Capacitance is measured in farads (F); practical values are microfarads ($\mu\mathrm{F}$), nanofarads (nF) or picofarads (pF). Camera flashes and defibrillators store energy in capacitors and release it in a fraction of a second.</p>
+${Tip(T`<p>Capacitors combine the opposite way to resistors: in parallel they simply add.</p>`)}`,
+  gens: [
+    () => {
+      const q = ri(1, 20), V = ri(2, 60) * 5, W = sig(q * 1e-6 * V);
+      return { q: T`How much work is done in moving a charge of ${Q(q, 'µC')} through a potential difference of ${Q(V, 'V')}?`, a: W, u: 'J', w: [sig(q * V), sig(q * V * 1e-3), sig(W * 100)], s: T`$W = qV = ${q} \times 10^{-6} \cdot ${V} = ${QT(W, 'J')}$.` };
+    },
+    () => {
+      const V = ri(1, 50) * 20, d = ri(1, 20) / 1000, E = sig(V / d);
+      return { q: T`Two parallel plates ${Q(d * 1000, 'mm')} apart are connected to ${Q(V, 'V')}. What is the electric field strength between them?`, a: E, u: 'V/m', w: [sig(V / (d * 1000)), sig(V * d, 3), sig(E * 10)], s: T`$E = \frac{V}{d} = \frac{${V}}{${M(d)}} = ${QT(E, 'V/m')}$.` };
+    },
+    () => {
+      const V = pick([100, 200, 500, 1000, 2000, 5000]), v = Math.sqrt(2 * 1.6e-19 * V / 9.11e-31);
+      return { q: T`An electron starts from rest and is accelerated through ${Q(V, 'V')}. How fast is it moving? ($e = 1.6 \times 10^{-19}\,\mathrm{C}$, $m_e = 9.11 \times 10^{-31}\,\mathrm{kg}$.)`, a: `$${sciT(v)}\\,\\mathrm{m/s}$`, w: [`$${sciT(v * v / 1e7)}\\,\\mathrm{m/s}$`, `$${sciT(v / Math.SQRT2)}\\,\\mathrm{m/s}$`, `$${sciT(v * 10)}\\,\\mathrm{m/s}$`], v, rtol: 0.02, h: T`Type a power of ten like 1.3e7.`,
+        s: T`$eV = \tfrac12 m v^2$, so $v = \sqrt{\frac{2eV}{m}} = \sqrt{\frac{2 \cdot 1.6 \times 10^{-19} \cdot ${V}}{9.11 \times 10^{-31}}} = ${sciT(v)}\,\mathrm{m/s}$.` };
+    },
+    () => {
+      const C = pick([1, 2, 4.7, 10, 22, 47, 100, 220, 470]), V = pick([3, 5, 6, 9, 12, 24, 50]), Qc = sig(C * V), askE = chance(), E = sig(0.5 * C * 1e-3 * V * V);   // E in mJ
+      return askE
+        ? { q: T`How much energy is stored in a ${Q(C, 'µF')} capacitor charged to ${Q(V, 'V')}? Give the answer in millijoules.`, a: E, u: 'mJ', w: [sig(E * 2), sig(E * 1000), sig(0.5 * C * 1e-3 * V)], s: T`$E = \tfrac12 C V^2 = \tfrac12 \cdot ${M(C)} \times 10^{-6} \cdot ${V}^2 = ${sciT(E / 1000)}\,\mathrm{J} = ${QT(E, 'mJ')}$.` }
+        : { q: T`A ${Q(C, 'µF')} capacitor is connected to ${Q(V, 'V')}. How much charge does it store, in microcoulombs?`, a: Qc, u: 'µC', w: [sig(C / V), sig(V / C), sig(0.5 * C * V)], s: T`$Q = CV = ${M(C)}\,\mu\mathrm{F} \cdot ${V}\,\mathrm{V} = ${QT(Qc, 'µC')}$.` };
+    },
+    () => {
+      const A = ri(1, 20) / 100, d = ri(1, 10) / 1000, C = 8.85e-12 * A / d;
+      return { q: T`A parallel-plate capacitor has plates of area ${Q(A * 1e4, 'cm^2')} separated by ${Q(d * 1000, 'mm')} of air. What is its capacitance, in picofarads? ($\varepsilon_0 = 8.85 \times 10^{-12}\,\mathrm{F/m}$.)`, a: sig(C * 1e12), u: 'pF', w: [sig(C * 1e12 * 100), sig(C * 1e12 / 10), sig(8.85 * A * d * 1e3)],
+        s: T`$A = ${M(A)}\,\mathrm{m^2}$, $d = ${M(d)}\,\mathrm{m}$: $C = \frac{\varepsilon_0 A}{d} = \frac{8.85 \times 10^{-12} \cdot ${M(A)}}{${M(d)}} = ${sciT(C)}\,\mathrm{F} = ${QT(sig(C * 1e12), 'pF')}$.` };
+    },
+    () => {
+      const c1 = pick([2, 3, 4, 6, 10, 12]), c2 = pick([2, 3, 4, 6, 10, 12]), par = chance(), C = par ? c1 + c2 : sig(c1 * c2 / (c1 + c2));
+      return { q: par ? T`Capacitors of ${Q(c1, 'µF')} and ${Q(c2, 'µF')} are connected in parallel. What is the combined capacitance?` : T`Capacitors of ${Q(c1, 'µF')} and ${Q(c2, 'µF')} are connected in series. What is the combined capacitance?`,
+        a: C, u: 'µF', w: par ? [sig(c1 * c2 / (c1 + c2)), c1 * c2, sig((c1 + c2) / 2)] : [c1 + c2, sig((c1 + c2) / 2), Math.min(c1, c2)],
+        s: par ? T`In parallel capacitances add: $${c1} + ${c2} = ${QT(C, 'µF')}$.` : T`In series: $\frac{1}{C} = \frac{1}{${c1}} + \frac{1}{${c2}}$, so $C = \frac{${c1} \cdot ${c2}}{${c1} + ${c2}} = ${QT(C, 'µF')}$.` };
+    },
+  ],
+},
 /* ------------------------------------------------------------------ */
 {
   id: 'current-ohm', stage: 'jh', title: 'Current, Voltage & Ohm’s Law',
@@ -2417,10 +2508,187 @@ ${Tip(T`<p><b>Kirchhoff's rules</b> summarise all of this: the currents into a j
   ],
 },
 /* ------------------------------------------------------------------ */
-{ id: 'magnetism', stage: 'sh', soon: true, title: 'Magnetic Fields & the Lorentz Force' },
-{ id: 'induction', stage: 'sh', soon: true, title: 'Electromagnetic Induction' },
-{ id: 'ac', stage: 'sh', soon: true, title: 'Alternating Current' },
-{ id: 'em-waves', stage: 'sh', soon: true, title: 'Electromagnetic Waves' },
+{
+  id: 'magnetism', stage: 'sh', title: 'Magnetic Fields & the Lorentz Force',
+  blurb: 'Magnetic fields of wires and coils, the force on a current-carrying wire, the force on a moving charge and circular paths.',
+  lesson: () => T`
+<p>Magnets and electric currents both produce <b>magnetic fields</b>, measured in tesla (T). The Earth's field is about $5 \times 10^{-5}\,\mathrm{T}$; a fridge magnet about $0.01\,\mathrm{T}$.</p>
+<h3>Fields made by currents</h3>
+<ul><li>Around a long straight wire the field lines are circles: $B = \dfrac{\mu_0 I}{2\pi r}$.</li><li>Inside a long solenoid with $n$ turns per metre the field is uniform: $B = \mu_0 n I$.</li></ul>
+<p>Here $\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$. Curl the fingers of your right hand around the wire with the thumb along the current: the fingers show the field direction.</p>
+${Key(T`<p>A magnetic field pushes on moving charges (the <b>Lorentz force</b>):</p><p>$$\text{on a wire: } F = B I L \sin\theta \qquad \text{on a charge: } F = q v B \sin\theta$$</p><p>$\theta$ is the angle between the current (or velocity) and the field. The force is perpendicular to both, and zero when they are parallel.</p>`)}
+<h3>Charged particles in a field</h3>
+<p>A charge moving at right angles to a uniform field feels a force perpendicular to its velocity, so it moves in a circle. Setting $qvB = \dfrac{m v^2}{r}$ gives the radius</p>
+${Fm(T`r = \frac{m v}{q B}`)}
+<p>This is how mass spectrometers sort ions and how particle accelerators steer beams. Electric motors use the force on current-carrying wires.</p>
+${Tip(T`<p>The magnetic force never speeds a charge up or slows it down, because it is always at right angles to the motion: it only changes the direction.</p>`)}`,
+  gens: [
+    () => {
+      const I = ri(1, 50), r = ri(1, 20) / 100, B = 2e-7 * I / r;
+      return { q: T`A long straight wire carries a current of ${Q(I, 'A')}. What is the magnetic field strength ${Q(r * 100, 'cm')} from it, in microtesla? ($\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$.)`, a: sig(B * 1e6), u: 'µT', w: [sig(B * 1e6 * 2 * Math.PI), sig(2e-7 * I / (r * 100) * 1e6), sig(B * 1e6 * 10)],
+        s: T`$B = \frac{\mu_0 I}{2\pi r} = \frac{4\pi \times 10^{-7} \cdot ${I}}{2\pi \cdot ${M(r)}} = ${sciT(B)}\,\mathrm{T} = ${QT(sig(B * 1e6), 'µT')}$.` };
+    },
+    () => {
+      const N = ri(1, 20) * 100, L = ri(1, 10) / 10, I = ri(1, 10) / 2, B = 4 * Math.PI * 1e-7 * (N / L) * I;
+      return { q: T`A solenoid ${Q(L * 100, 'cm')} long has ${N} turns and carries ${Q(I, 'A')}. What is the magnetic field inside it, in millitesla? ($\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$.)`, a: sig(B * 1e3), u: 'mT', w: [sig(4 * Math.PI * 1e-7 * N * I * 1e3), sig(B * 1e3 / (2 * Math.PI)), sig(B * 1e6)],
+        s: T`$n = \frac{${N}}{${M(L)}} = ${M(sig(N / L))}\,\mathrm{m^{-1}}$, so $B = \mu_0 n I = 4\pi \times 10^{-7} \cdot ${M(sig(N / L))} \cdot ${M(I)} = ${QT(sig(B * 1e3), 'mT')}$.` };
+    },
+    () => {
+      const B = ri(1, 20) / 20, I = ri(1, 20), L = ri(5, 50) / 100, th = pick([90, 90, 30, 60]), F = sig(B * I * L * sinD(th));
+      return { q: th === 90 ? T`A wire ${Q(L * 100, 'cm')} long carrying ${Q(I, 'A')} lies at right angles to a magnetic field of ${Q(B, 'T')}. What force acts on it?` : T`A wire ${Q(L * 100, 'cm')} long carrying ${Q(I, 'A')} makes an angle of ${Q(th, '°')} with a magnetic field of ${Q(B, 'T')}. What force acts on it?`,
+        a: F, u: 'N', w: [sig(B * I * L * (th === 90 ? 0.5 : cosD(th))), sig(B * I * L * 100), sig(B * I / L)], s: T`$F = BIL\sin\theta = ${M(B)} \cdot ${I} \cdot ${M(L)} \sin ${th}^\circ = ${QT(F, 'N')}$.` };
+    },
+    () => {
+      const v = ri(1, 9) * 10 ** ri(5, 6), B = ri(1, 20) / 10, F = 1.6e-19 * v * B;
+      return { q: T`A proton moves at $${sciT(v, 1)}\,\mathrm{m/s}$ at right angles to a magnetic field of ${Q(B, 'T')}. What force acts on it? ($e = 1.6 \times 10^{-19}\,\mathrm{C}$.)`, a: `$${sciT(F)}\\,\\mathrm{N}$`, w: [`$${sciT(F * 1e3)}\\,\\mathrm{N}$`, `$${sciT(F * 1e-3)}\\,\\mathrm{N}$`, `$${sciT(F / 2)}\\,\\mathrm{N}$`], v: F, rtol: 0.02, h: T`Type a power of ten like 4.8e-13.`,
+        s: T`$F = qvB = 1.6 \times 10^{-19} \cdot ${sciT(v, 1)} \cdot ${M(B)} = ${sciT(F)}\,\mathrm{N}$.` };
+    },
+    () => {
+      const [pn, m] = pick([[T`A proton`, 1.67e-27], [T`An electron`, 9.11e-31]]), v = ri(1, 9) * (m > 1e-28 ? 1e6 : 1e7), B = pick([0.01, 0.02, 0.05, 0.1, 0.5, 1]), r = m * v / (1.6e-19 * B);
+      return { q: T`${pn} moves at $${sciT(v, 1)}\,\mathrm{m/s}$ at right angles to a uniform magnetic field of ${Q(B, 'T')}. What is the radius of its circular path, in centimetres? ($m_p = 1.67 \times 10^{-27}\,\mathrm{kg}$, $m_e = 9.11 \times 10^{-31}\,\mathrm{kg}$, $e = 1.6 \times 10^{-19}\,\mathrm{C}$.)`, a: sig(r * 100), u: 'cm', w: [sig(r), sig(r * 100 * 2), sig(r * 1e4)],
+        s: T`$r = \frac{mv}{qB} = \frac{${sciT(m, 3)} \cdot ${sciT(v, 1)}}{1.6 \times 10^{-19} \cdot ${M(B)}} = ${sciT(r)}\,\mathrm{m} = ${QT(sig(r * 100), 'cm')}$.` };
+    },
+    () => pick([
+      { q: T`An electron moves exactly parallel to the field lines of a uniform magnetic field. What magnetic force acts on it?`, a: T`None`, w: [T`A force along its motion`, T`A force at right angles to its motion`, T`A force opposite to its motion`], only: 'mc', s: T`$F = qvB\sin\theta$ and $\theta = 0$, so the force is zero; the electron carries on in a straight line.` },
+      { q: T`What does the magnetic force do to a charged particle moving across a uniform magnetic field?`, a: T`It changes the particle's direction but not its speed`, w: [T`It speeds the particle up`, T`It slows the particle down`, T`It changes neither speed nor direction`], only: 'mc', s: T`The force is always perpendicular to the velocity, so it does no work. The speed stays the same while the path curves into a circle.` },
+    ]),
+  ],
+},
+{
+  id: 'induction', stage: 'sh', title: 'Electromagnetic Induction',
+  blurb: 'Magnetic flux, Faraday’s and Lenz’s laws, EMF in a moving rod, generators, transformers and power transmission.',
+  lesson: () => T`
+<p>A changing magnetic field can drive a current. This is <b>electromagnetic induction</b>, discovered by Faraday in 1831, and it is how almost all of our electricity is generated.</p>
+<h3>Magnetic flux</h3>
+${Fm(T`\Phi = B A \cos\theta`)}
+<p>The flux (in webers, $\mathrm{Wb}$) measures how much magnetic field passes through a loop of area $A$; $\theta$ is the angle between the field and the normal to the loop.</p>
+${Key(T`<p><b>Faraday's law:</b> the EMF induced in a coil of $N$ turns equals the rate of change of flux linkage:</p><p>$$\varepsilon = -N\frac{\Delta \Phi}{\Delta t}.$$</p><p><b>Lenz's law</b> (the minus sign): the induced current flows so as to oppose the change that causes it.</p>`)}
+<h3>A moving rod</h3>
+<p>A rod of length $L$ moving at speed $v$ at right angles to a field $B$ sweeps through flux, and an EMF $\varepsilon = B L v$ appears between its ends.</p>
+<h3>Generators and transformers</h3>
+<p>A generator turns a coil in a magnetic field, producing an alternating EMF. A <b>transformer</b> uses a changing current in one coil to induce an EMF in another wound on the same iron core:</p>
+${Fm(T`\frac{V_s}{V_p} = \frac{N_s}{N_p} \qquad \text{ideal: } V_p I_p = V_s I_s`)}
+<p>Power is sent across the country at very high voltage: for the same power the current is small, so the heating loss in the cables, $P = I^2 R$, is small too.</p>
+${Tip(T`<p>A transformer works only with alternating current. A steady direct current gives no changing flux, so nothing is induced.</p>`)}`,
+  gens: [
+    () => {
+      const B = ri(1, 20) / 20, a = ri(2, 20), A = (a / 100) ** 2, th = pick([0, 0, 30, 60]), Phi = B * A * cosD(th);
+      return { q: th ? T`A square loop of side ${Q(a, 'cm')} is in a uniform field of ${Q(B, 'T')}; the field makes ${Q(th, '°')} with the normal to the loop. What is the flux through the loop, in milliwebers?` : T`A square loop of side ${Q(a, 'cm')} lies at right angles to a uniform field of ${Q(B, 'T')}. What is the magnetic flux through it, in milliwebers?`,
+        a: sig(Phi * 1000), u: 'mWb', w: [sig(B * a * a), sig(B * A * 1000 * (th ? sinD(th) : 2)), sig(B * (a / 100) * 1000)], s: T`$A = (${M(a / 100)})^2 = ${M(sig(A))}\,\mathrm{m^2}$, so $\Phi = BA\cos\theta = ${M(B)} \cdot ${M(sig(A))} \cos ${th}^\circ = ${QT(sig(Phi * 1000), 'mWb')}$.` };
+    },
+    () => {
+      const N = ri(1, 20) * 50, dPhi = ri(1, 20) / 1000, dt = pick([0.01, 0.02, 0.05, 0.1, 0.2, 0.5]), e = sig(N * dPhi / dt);
+      return { q: T`The magnetic flux through a coil of ${N} turns changes by ${Q(dPhi * 1000, 'mWb')} in ${Q(dt, 's')}. What EMF is induced?`, a: e, u: 'V', w: [sig(dPhi / dt), sig(N * dPhi * dt), sig(N * dPhi / dt * 1000)], s: T`$\varepsilon = N\frac{\Delta\Phi}{\Delta t} = ${N} \cdot \frac{${M(dPhi)}}{${M(dt)}} = ${QT(e, 'V')}$.` };
+    },
+    () => {
+      const B = ri(1, 20) / 20, L = ri(1, 20) / 10, v = ri(1, 20), e = sig(B * L * v);
+      return { q: T`A metal rod ${Q(L, 'm')} long moves at ${Q(v, 'm/s')} at right angles to a magnetic field of ${Q(B, 'T')}. What EMF is induced between its ends?`, a: e, u: 'V', w: [sig(B * v / L), sig(B * L / v), sig(B * L * v * v)], s: T`$\varepsilon = BLv = ${M(B)} \cdot ${M(L)} \cdot ${v} = ${QT(e, 'V')}$.` };
+    },
+    () => {
+      const Vp = pick([220, 230, 240, 110]), Np = pick([500, 1000, 1200, 2000, 2200]), Ns = pick([50, 60, 100, 120, 240, 4000, 10000]), Vs = sig(Vp * Ns / Np);
+      return { q: T`A transformer has ${Np} turns on its primary coil and ${Ns} turns on its secondary. The primary is connected to ${Q(Vp, 'V')} AC. What is the secondary voltage?`, a: Vs, u: 'V', w: [sig(Vp * Np / Ns), sig(Vp * Ns / Np / 2), Vp], s: T`$V_s = V_p \frac{N_s}{N_p} = ${Vp} \cdot \frac{${Ns}}{${Np}} = ${QT(Vs, 'V')}$. ${Ns > Np ? T`It is a step-up transformer.` : T`It is a step-down transformer.`}` };
+    },
+    () => {
+      const Vp = 220, Vs = pick([6, 9, 12, 24]), Is = ri(1, 20) / 2, Ip = sig(Vs * Is / Vp);
+      return { q: T`An ideal transformer steps ${Q(Vp, 'V')} down to ${Q(Vs, 'V')}. The secondary supplies ${Q(Is, 'A')} to a lamp. What current flows in the primary?`, a: Ip, u: 'A', w: [sig(Vp * Is / Vs), Is, sig(Is * Vs / Vp * 10)], s: T`Power in = power out: $I_p = \frac{V_s I_s}{V_p} = \frac{${Vs} \cdot ${M(Is)}}{${Vp}} = ${QT(Ip, 'A')}$.` };
+    },
+    () => {
+      const k = pick([10, 20, 50, 100]);
+      return { q: T`A power station sends the same power along the same cables, but at ${k} times the voltage. By what factor does the power lost as heat in the cables change?`, a: T`It becomes ${k * k} times smaller`, w: [T`It becomes ${k} times smaller`, T`It becomes ${k} times larger`, T`It does not change`], only: 'mc',
+        s: T`For the same power, ${k} times the voltage means $\frac{1}{${k}}$ of the current. The loss $P = I^2R$ therefore falls by a factor of $${k}^2 = ${k * k}$.` };
+    },
+    () => ({ q: T`The north pole of a magnet is pushed into a coil. According to Lenz's law, the induced current in the coil:`, a: T`makes the near end of the coil a north pole, repelling the magnet`, w: [T`makes the near end of the coil a south pole, attracting the magnet`, T`flows only after the magnet stops`, T`is zero, because the magnet is not touching the coil`], only: 'mc',
+      s: T`The induced current opposes the change causing it: the coil pushes back on the approaching north pole by forming a north pole of its own. The work done against this push becomes electrical energy.` }),
+  ],
+},
+{
+  id: 'ac', stage: 'sh', title: 'Alternating Current',
+  blurb: 'Peak and rms values, reactance of inductors and capacitors, impedance of RLC circuits, resonance and AC power.',
+  lesson: () => T`
+<p>Mains electricity is <b>alternating current</b>: the voltage swings back and forth sinusoidally, $V = V_0 \sin(\omega t)$ with $\omega = 2\pi f$. In Indonesia the frequency is $50\,\mathrm{Hz}$.</p>
+<h3>RMS values</h3>
+<p>The <b>root-mean-square</b> (rms) value is the steady DC value that would give the same heating: $V_{\text{rms}} = \dfrac{V_0}{\sqrt2}$ and $I_{\text{rms}} = \dfrac{I_0}{\sqrt2}$. When mains is described as $220\,\mathrm{V}$ this is the rms value; the peak is $220\sqrt2 \approx 311\,\mathrm{V}$. The average power in a resistor is $P = I_{\text{rms}}^2 R = V_{\text{rms}} I_{\text{rms}}$.</p>
+${Key(T`<p>Inductors and capacitors oppose AC with a <b>reactance</b> (in ohms) that depends on the frequency:</p><p>$$X_L = \omega L = 2\pi f L \qquad X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}$$</p><p>In a series RLC circuit the <b>impedance</b> is $Z = \sqrt{R^2 + (X_L - X_C)^2}$ and $I = V/Z$.</p>`)}
+<h3>Resonance</h3>
+<p>When $X_L = X_C$, the impedance is smallest ($Z = R$) and the current largest. This happens at the <b>resonant frequency</b></p>
+${Fm(T`f_0 = \frac{1}{2\pi\sqrt{LC}}`)}
+<p>Radios select one station by tuning an LC circuit to resonate at its frequency.</p>
+${Tip(T`<p>An inductor passes low frequencies easily and blocks high ones; a capacitor does the opposite.</p>`)}`,
+  gens: [
+    () => {
+      const Vr = pick([110, 120, 220, 230, 240]), V0 = sig(Vr * Math.SQRT2), askPeak = chance();
+      return askPeak
+        ? { q: T`A mains supply is rated ${Q(Vr, 'V')} rms. What is its peak voltage?`, a: V0, u: 'V', w: [sig(Vr / Math.SQRT2), Vr * 2, Vr], s: T`$V_0 = \sqrt2\,V_{\text{rms}} = \sqrt2 \cdot ${Vr} = ${QT(V0, 'V')}$.` }
+        : { q: T`An AC voltage has a peak value of ${Q(V0, 'V')}. What is its rms value?`, a: sig(V0 / Math.SQRT2), u: 'V', w: [sig(V0 * Math.SQRT2), sig(V0 / 2), V0], s: T`$V_{\text{rms}} = \frac{V_0}{\sqrt2} = \frac{${M(V0)}}{\sqrt2} = ${QT(sig(V0 / Math.SQRT2), 'V')}$.` };
+    },
+    () => {
+      const V = 220, R = pick([22, 44, 55, 110, 220, 440]), I = sig(V / R), P = sig(V * V / R), askP = chance();
+      return { q: T`A ${Q(R, 'Ω')} heater is connected to ${Q(V, 'V')} rms mains. What is ${askP ? T`the average power` : T`the rms current`}?`, a: askP ? P : I, u: askP ? 'W' : 'A', w: askP ? [sig(2 * V * V / R), sig(V * V / R / 2), sig(V / R)] : [sig(I * Math.SQRT2), sig(I / Math.SQRT2), sig(R / V)],
+        s: askP ? T`$P = \frac{V_{\text{rms}}^2}{R} = \frac{${V}^2}{${R}} = ${QT(P, 'W')}$.` : T`$I_{\text{rms}} = \frac{V_{\text{rms}}}{R} = \frac{${V}}{${R}} = ${QT(I, 'A')}$.` };
+    },
+    () => {
+      const f = pick([50, 60, 100, 500, 1000]), ind = chance(), L = pick([0.05, 0.1, 0.2, 0.5, 1]), C = pick([1, 2, 5, 10, 47, 100]), X = sig(ind ? 2 * Math.PI * f * L : 1 / (2 * Math.PI * f * C * 1e-6));
+      return { q: ind ? T`What is the reactance of a ${Q(L * 1000, 'mH')} inductor at ${Q(f, 'Hz')}?` : T`What is the reactance of a ${Q(C, 'µF')} capacitor at ${Q(f, 'Hz')}?`, a: X, u: 'Ω', w: ind ? [sig(f * L), sig(1 / (2 * Math.PI * f * L)), sig(2 * Math.PI * f * L * 1000)] : [sig(2 * Math.PI * f * C * 1e-6, 3), sig(1 / (f * C * 1e-6)), sig(X / 1000)],
+        s: ind ? T`$X_L = 2\pi f L = 2\pi \cdot ${f} \cdot ${M(L)} = ${QT(X, 'Ω')}$.` : T`$X_C = \frac{1}{2\pi f C} = \frac{1}{2\pi \cdot ${f} \cdot ${M(C)} \times 10^{-6}} = ${QT(X, 'Ω')}$.` };
+    },
+    () => {
+      const [R, XL, XC] = pick([[30, 60, 20], [40, 50, 20], [60, 100, 20], [80, 90, 30], [120, 200, 40], [30, 20, 60], [40, 10, 40]]), Z = sig(Math.hypot(R, XL - XC)), V = pick([12, 24, 50, 100, 220]), I = sig(V / Z), askI = chance();
+      return { q: T`A series circuit has $R = ${QT(R, 'Ω')}$, $X_L = ${QT(XL, 'Ω')}$ and $X_C = ${QT(XC, 'Ω')}$. ${askI ? T`It is connected to ${Q(V, 'V')} rms. What rms current flows?` : T`What is its impedance?`}`, a: askI ? I : Z, u: askI ? 'A' : 'Ω', w: askI ? [sig(V / (R + XL + XC)), sig(V / R), sig(V / Math.hypot(R, XL + XC))] : [R + XL - XC, sig(Math.hypot(R, XL + XC)), R],
+        s: T`$Z = \sqrt{R^2 + (X_L - X_C)^2} = \sqrt{${R}^2 + ${XL - XC}^2} = ${M(Z)}\,\Omega$.${askI ? T` So $I = \frac{V}{Z} = \frac{${V}}{${M(Z)}} = ${QT(I, 'A')}$.` : ''}` };
+    },
+    () => {
+      const L = pick([1, 2, 5, 10, 50, 100]) / 1000, C = pick([1, 10, 47, 100, 220]) * 1e-9, f0 = 1 / (2 * Math.PI * Math.sqrt(L * C));
+      return { q: T`A tuning circuit has an inductance of ${Q(L * 1000, 'mH')} and a capacitance of ${Q(C * 1e9, 'nF')}. At what frequency does it resonate, in kHz?`, a: sig(f0 / 1000), u: 'kHz', w: [sig(1 / Math.sqrt(L * C) / 1000), sig(f0 / 1000 * 2 * Math.PI), sig(1 / (2 * Math.PI * L * C) / 1e6)],
+        s: T`$f_0 = \frac{1}{2\pi\sqrt{LC}} = \frac{1}{2\pi\sqrt{${sciT(L)} \cdot ${sciT(C)}}} = ${M(sig(f0))}\,\mathrm{Hz} = ${QT(sig(f0 / 1000), 'kHz')}$.` };
+    },
+    () => ({ q: T`The frequency of the AC supply to a circuit containing only a capacitor is increased. What happens to the current?`, a: T`It increases, because the capacitor's reactance falls`, w: [T`It decreases, because the reactance rises`, T`It stays the same`, T`It becomes zero`], only: 'mc',
+      s: T`$X_C = \frac{1}{2\pi f C}$ falls as $f$ rises, so for the same voltage more current flows. (For an inductor the opposite happens.)` }),
+  ],
+},
+{
+  id: 'em-waves', stage: 'sh', title: 'Electromagnetic Waves',
+  blurb: 'The electromagnetic spectrum, the speed of light, frequency and wavelength, uses and dangers, and polarisation.',
+  lesson: () => T`
+<p>Changing electric and magnetic fields create each other and travel together through space as an <b>electromagnetic (EM) wave</b>. EM waves are transverse, need no medium, and in a vacuum all travel at the speed of light, $c = 3.0 \times 10^{8}\,\mathrm{m/s}$.</p>
+${Fm(T`c = f\lambda`)}
+<h3>The electromagnetic spectrum</h3>
+${Tbl([T`Type`, T`Typical wavelength`, T`Uses`], [[T`Radio waves`, T`metres to kilometres`, T`radio, TV, communication`], [T`Microwaves`, T`millimetres to centimetres`, T`mobile phones, Wi-Fi, radar, cooking`], [T`Infrared`, T`micrometres`, T`remote controls, thermal cameras, heaters`], [T`Visible light`, T`400–700 nm`, T`seeing, optical fibres`], [T`Ultraviolet`, T`10–400 nm`, T`sterilising, fluorescence; causes sunburn`], [T`X-rays`, T`about 0.01–10 nm`, T`medical imaging, airport security`], [T`Gamma rays`, T`below about 0.01 nm`, T`cancer treatment, sterilising equipment`]])}
+<p>From radio to gamma rays the wavelength gets shorter and the frequency higher. Higher frequency also means more energy carried by each photon, which is why ultraviolet, X-rays and gamma rays can damage living cells.</p>
+${Key(T`<p><b>Polarisation</b> shows that EM waves are transverse. A polarising filter lets through only the part of the wave oscillating in one direction. For polarised light of intensity $I_0$ falling on a filter at angle $\theta$ to its direction of polarisation (Malus's law):</p><p>$$I = I_0 \cos^2\theta.$$</p><p>Unpolarised light loses half its intensity at the first filter.</p>`)}
+${Tip(T`<p>1 nanometre is $10^{-9}\,\mathrm{m}$. Green light of $500\,\mathrm{nm}$ has $f = \frac{3 \times 10^{8}}{500 \times 10^{-9}} = 6 \times 10^{14}\,\mathrm{Hz}$.</p>`)}`,
+  gens: [
+    () => {
+      const fm = chance(), f = fm ? ri(880, 1080) / 10 : ri(54, 160) * 10, lam = sig(3e8 / (f * (fm ? 1e6 : 1e3)));
+      return { q: fm ? T`An FM radio station broadcasts at ${Q(f, 'MHz')}. What is the wavelength of its waves? ($c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)` : T`An AM radio station broadcasts at ${Q(f, 'kHz')}. What is the wavelength of its waves? ($c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)`,
+        a: lam, u: 'm', w: [sig(lam * 1000), sig(lam / 1000), sig(3e8 / f / 1e3)], s: T`$\lambda = \frac{c}{f} = \frac{3.0 \times 10^{8}}{${M(f)} \times 10^{${fm ? 6 : 3}}} = ${QT(lam, 'm')}$.` };
+    },
+    () => {
+      const nm = ri(40, 70) * 10, f = 3e8 / (nm * 1e-9);
+      return { q: T`Light has a wavelength of ${Q(nm, 'nm')}. What is its frequency? ($c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)`, a: `$${sciT(f)}\\,\\mathrm{Hz}$`, w: [`$${sciT(f / 1e9)}\\,\\mathrm{Hz}$`, `$${sciT(nm * 1e-9 / 3e8)}\\,\\mathrm{Hz}$`, `$${sciT(f * 10)}\\,\\mathrm{Hz}$`], v: f, rtol: 0.02, h: T`Type a power of ten like 5e14.`,
+        s: T`$f = \frac{c}{\lambda} = \frac{3.0 \times 10^{8}}{${nm} \times 10^{-9}} = ${sciT(f)}\,\mathrm{Hz}$.` };
+    },
+    () => {
+      const [what, d] = pick([[T`the Sun`, 1.5e11], [T`the Moon`, 3.84e8], [T`a geostationary satellite`, 3.6e7]]), t = d / 3e8;
+      return { q: T`How long does light (or a radio signal) take to travel from ${what} to the Earth, a distance of $${sciT(d)}\,\mathrm{m}$? ($c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)`, a: sig(t), u: 's', w: [sig(t * 60), sig(t / 60), sig(t * 2)], s: T`$t = \frac{d}{c} = \frac{${sciT(d)}}{3.0 \times 10^{8}} = ${QT(sig(t), 's')}$${t > 120 ? T`, about ${NUM(sig(t / 60, 2))} minutes` : ''}.` };
+    },
+    () => {
+      const I0 = ri(2, 40) * 10, th = pick([30, 45, 60, 20, 70]), I = sig(I0 * cosD(th) ** 2), unpol = chance();
+      return unpol
+        ? { q: T`Unpolarised light of intensity ${Q(I0, 'W/m^2')} passes through two polarising filters whose axes are at ${Q(th, '°')} to each other. What intensity comes out?`, a: sig(I0 / 2 * cosD(th) ** 2), u: 'W/m²', w: [I, sig(I0 / 2), sig(I0 / 2 * cosD(th))], s: T`The first filter halves the intensity: ${Q(I0 / 2, 'W/m^2')}. Then $I = \frac{I_0}{2}\cos^2\theta = ${M(I0 / 2)} \cos^2 ${th}^\circ = ${QT(sig(I0 / 2 * cosD(th) ** 2), 'W/m^2')}$.` }
+        : { q: T`Polarised light of intensity ${Q(I0, 'W/m^2')} falls on a polarising filter whose axis is at ${Q(th, '°')} to the light's direction of polarisation. What intensity passes through?`, a: I, u: 'W/m²', w: [sig(I0 * cosD(th)), sig(I0 * sinD(th) ** 2), sig(I0 / 2)], s: T`Malus's law: $I = I_0\cos^2\theta = ${I0} \cos^2 ${th}^\circ = ${QT(I, 'W/m^2')}$.` };
+    },
+    () => {
+      const bands = [T`radio waves`, T`microwaves`, T`infrared`, T`visible light`, T`ultraviolet`, T`X-rays`, T`gamma rays`], i = ri(0, 5), j = ri(i + 1, 6), hi = chance();
+      return { q: hi ? T`Which has the <b>higher</b> frequency: ${bands[i]} or ${bands[j]}?` : T`Which has the <b>longer</b> wavelength: ${bands[i]} or ${bands[j]}?`, a: hi ? bands[j] : bands[i], w: [hi ? bands[i] : bands[j], T`They are the same`], only: 'mc',
+        s: T`In order of increasing frequency (and decreasing wavelength): radio, microwaves, infrared, visible, ultraviolet, X-rays, gamma rays.` };
+    },
+    () => pick([
+      { q: T`Which type of electromagnetic radiation is used by a TV remote control?`, a: T`Infrared`, w: [T`Ultraviolet`, T`X-rays`, T`Gamma rays`], only: 'mc', s: T`Remote controls send pulses of infrared light that a sensor on the TV detects.` },
+      { q: T`Why can sound waves not be polarised, while light can?`, a: T`Sound is longitudinal; only transverse waves can be polarised`, w: [T`Sound is too slow`, T`Sound has too low a frequency`, T`Light carries more energy`], only: 'mc', s: T`Polarisation picks one direction of oscillation at right angles to the travel. A longitudinal wave oscillates along its travel, so there is nothing to choose.` },
+      { q: T`What do all electromagnetic waves have in common in a vacuum?`, a: T`They travel at the same speed`, w: [T`They have the same frequency`, T`They have the same wavelength`, T`They carry the same energy per photon`], only: 'mc', s: T`All EM waves travel through a vacuum at $c = 3.0 \times 10^{8}\,\mathrm{m/s}$; they differ in frequency and wavelength.` },
+    ]),
+  ],
+},
   ],
 });
 })();
@@ -2821,7 +3089,7 @@ function cleanInput(raw) {
   s = s.replace(/(\d)[^\x00-\x7F\s\d()+\-*/^.,]+(\^[23])?$/u, '$1');      // …or a non-Latin unit written without a space (3500м, 12سم)
   return s.trim();
 }
-const PU = '(?:[kmgµμnc]?(?:ohms?|pa|hz|cal|wh|ev|n|j|w|v|a|c|g|m|s|l|k|t)|°c|°f|°|h|min|rad|rev|rpm|atm)(?:\\^?\\(?-?[123]\\)?)?';
+const PU = '(?:[kmgµμncp]?(?:ohms?|pa|hz|cal|wh|ev|n|j|w|v|a|c|g|m|s|l|k|t|f)|°c|°f|°|h|min|rad|rev|rpm|atm)(?:\\^?\\(?-?[123]\\)?)?';
 const PHYS_UNIT = new RegExp(`(?<=[\\d)\\s])\\s*${PU}(?:\\s*[*/.]?\\s*${PU})*\\s*$`, 'u');
 function parseNum(raw) {
   const s = cleanInput(raw); if (!s) return null;
@@ -2831,7 +3099,8 @@ function parseNum(raw) {
 }
 function decs(x) { const s = (Math.round(Math.abs(x) * 1e8) / 1e8).toFixed(8).replace(/0+$/, ''); const k = s.indexOf('.'); return k < 0 ? 0 : s.length - k - 1; }
 function close(x, v, tol, typed, rtol) {
-  if (rtol != null && Math.abs(x - v) <= rtol * Math.abs(v) + 1e-12) return true;
+  if (rtol != null && Math.abs(x - v) <= rtol * Math.abs(v) + 1e-12 * Math.min(1, Math.abs(v))) return true;
+  if (rtol != null && tol == null) return Math.abs(x - v) <= 1e-9 * Math.abs(v);   // physics: relative tolerance only, so tiny answers are checked properly
   if (tol != null) return Math.abs(x - v) <= tol + 1e-9;
   if (Math.abs(x - v) <= Math.max(1e-6, 1e-6 * Math.abs(v))) return true;
   if (rtol != null) return false;   // physics answers: the stated tolerance only, no coarse rounding

@@ -228,7 +228,7 @@ function cleanInput(raw) {
   s = s.replace(/(\d)[^\x00-\x7F\s\d()+\-*/^.,]+(\^[23])?$/u, '$1');      // …or a non-Latin unit written without a space (3500м, 12سم)
   return s.trim();
 }
-const PU = '(?:[kmgµμnc]?(?:ohms?|pa|hz|cal|wh|ev|n|j|w|v|a|c|g|m|s|l|k|t)|°c|°f|°|h|min|rad|rev|rpm|atm)(?:\\^?\\(?-?[123]\\)?)?';
+const PU = '(?:[kmgµμncp]?(?:ohms?|pa|hz|cal|wh|ev|n|j|w|v|a|c|g|m|s|l|k|t|f)|°c|°f|°|h|min|rad|rev|rpm|atm)(?:\\^?\\(?-?[123]\\)?)?';
 const PHYS_UNIT = new RegExp(`(?<=[\\d)\\s])\\s*${PU}(?:\\s*[*/.]?\\s*${PU})*\\s*$`, 'u');
 function parseNum(raw) {
   const s = cleanInput(raw); if (!s) return null;
@@ -238,7 +238,8 @@ function parseNum(raw) {
 }
 function decs(x) { const s = (Math.round(Math.abs(x) * 1e8) / 1e8).toFixed(8).replace(/0+$/, ''); const k = s.indexOf('.'); return k < 0 ? 0 : s.length - k - 1; }
 function close(x, v, tol, typed, rtol) {
-  if (rtol != null && Math.abs(x - v) <= rtol * Math.abs(v) + 1e-12) return true;
+  if (rtol != null && Math.abs(x - v) <= rtol * Math.abs(v) + 1e-12 * Math.min(1, Math.abs(v))) return true;
+  if (rtol != null && tol == null) return Math.abs(x - v) <= 1e-9 * Math.abs(v);   // physics: relative tolerance only, so tiny answers are checked properly
   if (tol != null) return Math.abs(x - v) <= tol + 1e-9;
   if (Math.abs(x - v) <= Math.max(1e-6, 1e-6 * Math.abs(v))) return true;
   if (rtol != null) return false;   // physics answers: the stated tolerance only, no coarse rounding

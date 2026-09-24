@@ -1,0 +1,104 @@
+/* Bahasa Indonesia — 14-elec-b */
+addT('id', {
+  '1cqh2ekaykl': R`
+<p>Muatan listrik ada dua jenis, positif dan negatif. Muatan sejenis tolak-menolak dan muatan tak sejenis tarik-menarik. Muatan bersifat <b>kekal</b> dan selalu merupakan kelipatan bulat muatan elementer $e = 1{,}6 \times 10^{-19}\,\mathrm{C}$. Menggosok balon pada rambut memindahkan elektron dari yang satu ke yang lain; tidak ada muatan yang diciptakan.</p>
+<h3>Hukum Coulomb</h3>
+⟦0⟧
+<p>Seperti gravitasi, gaya listrik mengikuti hukum kuadrat terbalik, tetapi jauh lebih kuat. Muatan sering dinyatakan dalam mikrocoulomb: $1\,\mu\mathrm{C} = 10^{-6}\,\mathrm{C}$.</p>
+⟦1⟧
+⟦2⟧
+<h3>Garis-garis medan</h3>
+<p>Garis medan berawal di muatan positif dan berakhir di muatan negatif. Di tempat garis-garisnya rapat, medannya kuat. Di antara dua keping sejajar yang muatannya berlawanan, garis-garisnya lurus dan berjarak sama: medannya homogen.</p>
+⟦3⟧`,
+  '17czmrvz2a5': R`F = \frac{k\,q_1 q_2}{r^2}, \qquad k = 9{,}0 \times 10^{9}\,\mathrm{N\,m^2/C^2}`,
+  '1k6chdh24ja': R`<p><b>Medan listrik</b> $E$ di suatu titik adalah gaya per satuan muatan positif yang diletakkan di sana:</p><p>$$E = \frac{F}{q}, \qquad \text{untuk muatan titik } Q: \; E = \frac{kQ}{r^2}.$$</p><p>Satuannya $\mathrm{N/C}$. Medan mengarah menjauhi muatan positif dan menuju muatan negatif. Medan dari beberapa muatan dijumlahkan secara vektor.</p>`,
+  '5tl2skb9q3': R`<p>Dua muatan $+2\,\mu\mathrm{C}$ dan $+3\,\mu\mathrm{C}$ berjarak $0{,}3\,\mathrm{m}$. $F = \frac{9 \times 10^{9} \cdot 2 \times 10^{-6} \cdot 3 \times 10^{-6}}{0{,}3^2} = 0{,}6\,\mathrm{N}$, tolak-menolak.</p>`,
+  '1c310i3gx3k': R`<p>Ubah $\mu\mathrm{C}$ ke C dan cm ke m sebelum memakai hukum Coulomb. Lupa faktor $10^{-6}$ adalah kesalahan yang paling sering terjadi.</p>`,
+  'm0b0xq94ad': R`Dua bola kecil bermuatan ⟦0⟧ dan ⟦1⟧ berjarak ⟦2⟧. Berapa besar gaya listrik di antara keduanya? ($k = 9{,}0 \times 10^{9}\,\mathrm{N\,m^2/C^2}$.)`,
+  'js72egdrpc': R`Dua muatan saling tolak dengan gaya ⟦0⟧. Jarak keduanya ⟦1⟧. Berapa gayanya sekarang?`,
+  '58rzq4yz89': R`dijadikan setengahnya`,
+  '1n5tg058w2q': R`dijadikan ⟦0⟧ kali lipat`,
+  '1g7zcwdd874': R`$F \propto \frac{1}{r^2}$, jadi gayanya berubah dengan faktor $\frac{1}{⟦0⟧^2}$: $⟦1⟧ \cdot \frac{1}{⟦2⟧} = ⟦3⟧$.`,
+  '74z076ehk9': R`Berapa kuat medan listrik pada jarak ⟦0⟧ dari muatan titik ⟦1⟧? ($k = 9{,}0 \times 10^{9}\,\mathrm{N\,m^2/C^2}$.)`,
+  '13r2hs8f7lt': R`Muatan ⟦0⟧ diletakkan dalam medan listrik homogen ⟦1⟧. Berapa gaya yang bekerja padanya?`,
+  'cq1ilwtk9k': R`Dua muatan positif ⟦0⟧ dan ⟦1⟧ berjarak ⟦2⟧. Berapa kuat medan listrik tepat di tengah-tengah keduanya?`,
+  'qbppapoqlc': R`Muatan $+⟦0⟧$ dan muatan $-⟦1⟧$ berjarak ⟦2⟧. Berapa kuat medan listrik tepat di tengah-tengah keduanya?`,
+  '1e5w88fww7g': R`Masing-masing muatan menghasilkan $E = \frac{kQ}{r^2}$ dengan $r = ⟦0⟧\,\mathrm{m}$: ⟦1⟧ dan ⟦2⟧. Keduanya mengarah menjauhi muatannya, jadi berlawanan arah di titik tengah: $|⟦3⟧ - ⟦4⟧| = ⟦5⟧$.`,
+  '2872nas0bpq': R`Masing-masing muatan menghasilkan $E = \frac{kQ}{r^2}$ dengan $r = ⟦0⟧\,\mathrm{m}$: ⟦1⟧ dan ⟦2⟧. Di titik tengah kedua medan mengarah dari + ke −, jadi dijumlahkan: ⟦3⟧.`,
+  't5xdw5omnt': R`Batang kaca yang digosok dengan kain sutra menjadi bermuatan positif. Apa yang terjadi?`,
+  '1txfkj3cb8x': R`Elektron berpindah dari batang ke kain sutra`,
+  '2baxe611tb2': R`Proton berpindah dari kain sutra ke batang`,
+  '17b77ccjfmz': R`Muatan positif tercipta di batang`,
+  'fkfrj066kc': R`Elektron berpindah dari kain sutra ke batang`,
+  '2cqbf6yly36': R`Hanya elektron yang mudah berpindah. Batang kehilangan elektron sehingga protonnya lebih banyak daripada elektronnya, dan kain sutra mendapat elektron sebanyak itu: muatan kekal.`,
+  '12z0hvft6v': R`Ke mana arah medan listrik di suatu titik di dekat sebuah muatan negatif yang terisolasi?`,
+  '6dtrq33og6': R`Menuju muatan itu`,
+  '21zli76f3ol': R`Menjauhi muatan itu`,
+  'fbh2xvqxd5': R`Melingkari muatan itu`,
+  '1jd6aodmgfo': R`Tidak ada medan di dekat muatan negatif`,
+  'vtva81h0ow': R`Arah medan adalah arah gaya pada muatan uji positif, yang tertarik ke arah muatan negatif.`,
+  '2ay2wqyhlpw': R`
+<h3>Potensial dan beda potensial</h3>
+<p><b>Potensial listrik</b> di suatu titik adalah energi potensial per satuan muatan di titik itu, diukur dalam volt ($1\,\mathrm{V} = 1\,\mathrm{J/C}$). Memindahkan muatan $q$ melalui beda potensial $V$ mengubah energinya sebesar</p>
+⟦0⟧
+<p>Di dekat muatan titik, $V = \dfrac{kQ}{r}$. Di antara dua keping sejajar berjarak $d$ dengan beda potensial $V$, medannya homogen: $E = \dfrac{V}{d}$ (jadi $\mathrm{V/m}$ sama dengan $\mathrm{N/C}$).</p>
+<p>Elektron yang dipercepat melalui beda potensial $1\,\mathrm{V}$ memperoleh energi $1\,\mathrm{eV} = 1{,}6 \times 10^{-19}\,\mathrm{J}$, yaitu satu <b>elektronvolt</b>.</p>
+⟦1⟧
+<h3>Susunan kapasitor</h3>
+<ul><li><b>Paralel:</b> $C = C_1 + C_2 + \dots$ (kebalikan dari resistor).</li><li><b>Seri:</b> $\dfrac{1}{C} = \dfrac{1}{C_1} + \dfrac{1}{C_2} + \dots$</li></ul>
+<p>Kapasitas diukur dalam farad (F); nilai yang umum dipakai adalah mikrofarad ($\mu\mathrm{F}$), nanofarad (nF), atau pikofarad (pF). Lampu kilat kamera dan defibrilator menyimpan energi dalam kapasitor lalu melepaskannya dalam sepersekian detik.</p>
+⟦2⟧`,
+  '1l9b5cydr9n': R`W = qV`,
+  '185hljrdzfk': R`<p><b>Kapasitor</b> menyimpan muatan pada dua konduktor yang dipisahkan isolator. <b>Kapasitas</b>-nya adalah muatan yang tersimpan per volt:</p><p>$$C = \frac{Q}{V} \qquad \text{keping sejajar: } C = \frac{\varepsilon_0 A}{d}, \; \varepsilon_0 = 8{,}85 \times 10^{-12}\,\mathrm{F/m}$$</p><p>Energi yang tersimpan $E = \tfrac12 C V^2 = \tfrac12 Q V$.</p>`,
+  '86is7o3swu': R`<p>Kapasitor disusun dengan cara yang berkebalikan dengan resistor: pada susunan paralel kapasitasnya langsung dijumlahkan.</p>`,
+  'lbscz9bi0y': R`Berapa usaha untuk memindahkan muatan ⟦0⟧ melalui beda potensial ⟦1⟧?`,
+  '1nomp9bgmmi': R`Dua keping sejajar berjarak ⟦0⟧ dihubungkan ke tegangan ⟦1⟧. Berapa kuat medan listrik di antara keduanya?`,
+  'pmnp728r1m': R`Sebuah elektron mula-mula diam lalu dipercepat melalui beda potensial ⟦0⟧. Berapa kelajuannya? ($e = 1{,}6 \times 10^{-19}\,\mathrm{C}$, $m_e = 9{,}11 \times 10^{-31}\,\mathrm{kg}$.)`,
+  'dxrmn1dq6b': R`Ketik perpangkatan sepuluh seperti 1,3e7.`,
+  'vv56j8vpno': R`$eV = \tfrac12 m v^2$, jadi $v = \sqrt{\frac{2eV}{m}} = \sqrt{\frac{2 \cdot 1{,}6 \times 10^{-19} \cdot ⟦0⟧}{9{,}11 \times 10^{-31}}} = ⟦1⟧\,\mathrm{m/s}$.`,
+  '7vequbc2if': R`Berapa energi yang tersimpan dalam kapasitor ⟦0⟧ yang diisi sampai ⟦1⟧? Tuliskan jawabannya dalam milijoule.`,
+  '28evk6hdqm9': R`Kapasitor ⟦0⟧ dihubungkan ke tegangan ⟦1⟧. Berapa muatan yang tersimpan, dalam mikrocoulomb?`,
+  '140sleg94zn': R`Sebuah kapasitor keping sejajar memiliki keping seluas ⟦0⟧ yang dipisahkan udara setebal ⟦1⟧. Berapa kapasitasnya, dalam pikofarad? ($\varepsilon_0 = 8{,}85 \times 10^{-12}\,\mathrm{F/m}$.)`,
+  '1gwzx0dvepa': R`$A = ⟦0⟧\,\mathrm{m^2}$, $d = ⟦1⟧\,\mathrm{m}$: $C = \frac{\varepsilon_0 A}{d} = \frac{8{,}85 \times 10^{-12} \cdot ⟦2⟧}{⟦3⟧} = ⟦4⟧\,\mathrm{F} = ⟦5⟧$.`,
+  '11q9nxgbqtx': R`Kapasitor ⟦0⟧ dan ⟦1⟧ disusun paralel. Berapa kapasitas gabungannya?`,
+  '27sc6dayn4a': R`Kapasitor ⟦0⟧ dan ⟦1⟧ disusun seri. Berapa kapasitas gabungannya?`,
+  '256rj2vt1iq': R`Pada susunan paralel kapasitasnya dijumlahkan: $⟦0⟧ + ⟦1⟧ = ⟦2⟧$.`,
+  'njtm8ybly6': R`Pada susunan seri: $\frac{1}{C} = \frac{1}{⟦0⟧} + \frac{1}{⟦1⟧}$, jadi $C = \frac{⟦2⟧ \cdot ⟦3⟧}{⟦4⟧ + ⟦5⟧} = ⟦6⟧$.`,
+  '2d2i19q5ocd': R`
+<p>Magnet dan arus listrik sama-sama menghasilkan <b>medan magnet</b>, yang diukur dalam tesla (T). Medan magnet Bumi sekitar $5 \times 10^{-5}\,\mathrm{T}$; magnet kulkas sekitar $0{,}01\,\mathrm{T}$.</p>
+<h3>Medan magnet dari arus</h3>
+<ul><li>Di sekitar kawat lurus panjang, garis medannya berbentuk lingkaran: $B = \dfrac{\mu_0 I}{2\pi r}$.</li><li>Di dalam solenoida panjang dengan $n$ lilitan per meter, medannya homogen: $B = \mu_0 n I$.</li></ul>
+<p>Di sini $\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$. Genggam kawat dengan tangan kanan, ibu jari searah arus: jari-jari yang menggenggam menunjukkan arah medan.</p>
+⟦0⟧
+<h3>Partikel bermuatan dalam medan magnet</h3>
+<p>Muatan yang bergerak tegak lurus medan homogen mengalami gaya yang tegak lurus kecepatannya, sehingga bergerak melingkar. Dari $qvB = \dfrac{m v^2}{r}$ diperoleh jari-jarinya</p>
+⟦1⟧
+<p>Beginilah spektrometer massa memilah ion dan akselerator partikel membelokkan berkas partikel. Motor listrik memanfaatkan gaya pada kawat berarus.</p>
+⟦2⟧`,
+  '15d7zgjyh76': R`<p>Medan magnet memberi gaya pada muatan yang bergerak (<b>gaya Lorentz</b>):</p><p>$$\text{pada kawat: } F = B I L \sin\theta \qquad \text{pada muatan: } F = q v B \sin\theta$$</p><p>$\theta$ adalah sudut antara arus (atau kecepatan) dan medan. Gayanya tegak lurus terhadap keduanya, dan nol jika keduanya sejajar.</p>`,
+  '1xiuaep425p': R`<p>Gaya magnet tidak pernah mempercepat atau memperlambat muatan, karena selalu tegak lurus arah gerak: gaya ini hanya mengubah arahnya.</p>`,
+  'l5qu1e640k': R`Sebuah kawat lurus panjang dialiri arus ⟦0⟧. Berapa kuat medan magnet pada jarak ⟦1⟧ dari kawat, dalam mikrotesla? ($\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$.)`,
+  '1gtg2hl0tjr': R`Sebuah solenoida sepanjang ⟦0⟧ memiliki ⟦1⟧ lilitan dan dialiri arus ⟦2⟧. Berapa kuat medan magnet di dalamnya, dalam militesla? ($\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$.)`,
+  '2fah86hugdl': R`$n = \frac{⟦0⟧}{⟦1⟧} = ⟦2⟧\,\mathrm{m^{-1}}$, jadi $B = \mu_0 n I = 4\pi \times 10^{-7} \cdot ⟦3⟧ \cdot ⟦4⟧ = ⟦5⟧$.`,
+  'v7lh5s416o': R`Sebuah kawat sepanjang ⟦0⟧ yang dialiri arus ⟦1⟧ berada tegak lurus medan magnet ⟦2⟧. Berapa gaya yang bekerja padanya?`,
+  '15qpg8xjsmn': R`Sebuah kawat sepanjang ⟦0⟧ yang dialiri arus ⟦1⟧ membentuk sudut ⟦2⟧ dengan medan magnet ⟦3⟧. Berapa gaya yang bekerja padanya?`,
+  'xi2beji6ff': R`Sebuah proton bergerak dengan kelajuan $⟦0⟧\,\mathrm{m/s}$ tegak lurus medan magnet ⟦1⟧. Berapa gaya yang bekerja padanya? ($e = 1{,}6 \times 10^{-19}\,\mathrm{C}$.)`,
+  'cuh35aa2d6': R`Ketik perpangkatan sepuluh seperti 4,8e-13.`,
+  '24h841b51oc': R`$F = qvB = 1{,}6 \times 10^{-19} \cdot ⟦0⟧ \cdot ⟦1⟧ = ⟦2⟧\,\mathrm{N}$.`,
+  '1vhw0gglt7': R`Sebuah proton`,
+  '25qdadsp1wm': R`Sebuah elektron`,
+  '2gkh2sjma39': R`⟦0⟧ bergerak dengan kelajuan $⟦1⟧\,\mathrm{m/s}$ tegak lurus medan magnet homogen ⟦2⟧. Berapa jari-jari lintasan melingkarnya, dalam sentimeter? ($m_p = 1{,}67 \times 10^{-27}\,\mathrm{kg}$, $m_e = 9{,}11 \times 10^{-31}\,\mathrm{kg}$, $e = 1{,}6 \times 10^{-19}\,\mathrm{C}$.)`,
+  '2skj0txhjb': R`$r = \frac{mv}{qB} = \frac{⟦0⟧ \cdot ⟦1⟧}{1{,}6 \times 10^{-19} \cdot ⟦2⟧} = ⟦3⟧\,\mathrm{m} = ⟦4⟧$.`,
+  '65u08hs3c0': R`Sebuah elektron bergerak tepat sejajar garis-garis medan magnet homogen. Berapa gaya magnet yang bekerja padanya?`,
+  'd5920flkwz': R`Tidak ada`,
+  '2rdl9g31jm': R`Gaya searah geraknya`,
+  '1byxjur1gz4': R`Gaya yang tegak lurus geraknya`,
+  '1hm2d0idx0t': R`Gaya yang berlawanan dengan geraknya`,
+  '2ab699hbdpj': R`$F = qvB\sin\theta$ dan $\theta = 0$, jadi gayanya nol; elektron terus bergerak lurus.`,
+  'x6t46w4xd3': R`Apa pengaruh gaya magnet pada partikel bermuatan yang bergerak memotong medan magnet homogen?`,
+  'krahr5cbss': R`Mengubah arah partikel tetapi tidak mengubah kelajuannya`,
+  '22wh24af9o3': R`Mempercepat partikel`,
+  '6humr4yvob': R`Memperlambat partikel`,
+  '24r297hnewt': R`Tidak mengubah kelajuan maupun arahnya`,
+  '1uw1osqwmsa': R`Gayanya selalu tegak lurus kecepatan, jadi tidak melakukan usaha. Kelajuannya tetap sementara lintasannya melengkung menjadi lingkaran.`,
+});

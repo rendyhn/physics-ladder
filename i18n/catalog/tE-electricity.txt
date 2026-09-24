@@ -2,6 +2,119 @@
 @8pmwod04x2
 A circuit diagram with a battery and resistors
 
+##### electrostatics
+@1cqh2ekaykl  ; 0=Fm(T`F = \frac{k\,q_1 q_2}{r^2}, \qquad  | 1=Key(T`<p>The <b>electric field</b> $E$ a | 2=Ex(T`<p>Two charges of $+2\,\mu\mathrm{C | 3=Tip(T`<p>Convert $\mu\mathrm{C}$ to C an
+
+<p>Electric charge comes in two kinds, positive and negative. Like charges repel and unlike charges attract. Charge is <b>conserved</b> and comes in whole multiples of the elementary charge $e = 1.6 \times 10^{-19}\,\mathrm{C}$. Rubbing a balloon on hair moves electrons from one to the other; nothing is created.</p>
+<h3>Coulomb's law</h3>
+⟦0⟧
+<p>Like gravity, the electric force follows an inverse-square law, but it is enormously stronger. Charges are often given in microcoulombs: $1\,\mu\mathrm{C} = 10^{-6}\,\mathrm{C}$.</p>
+⟦1⟧
+⟦2⟧
+<h3>Field lines</h3>
+<p>Field lines start on positive charges and end on negative ones. Where they crowd together the field is strong. Between two parallel oppositely charged plates the lines are straight and evenly spaced: the field is uniform.</p>
+⟦3⟧
+@17czmrvz2a5
+F = \frac{k\,q_1 q_2}{r^2}, \qquad k = 9.0 \times 10^{9}\,\mathrm{N\,m^2/C^2}
+@1k6chdh24ja
+<p>The <b>electric field</b> $E$ at a point is the force per unit positive charge placed there:</p><p>$$E = \frac{F}{q}, \qquad \text{for a point charge } Q: \; E = \frac{kQ}{r^2}.$$</p><p>Its unit is $\mathrm{N/C}$. The field points away from positive charges and towards negative ones. Fields from several charges add as vectors.</p>
+@5tl2skb9q3
+<p>Two charges of $+2\,\mu\mathrm{C}$ and $+3\,\mu\mathrm{C}$ are $0.3\,\mathrm{m}$ apart. $F = \frac{9 \times 10^{9} \cdot 2 \times 10^{-6} \cdot 3 \times 10^{-6}}{0.3^2} = 0.6\,\mathrm{N}$, repulsive.</p>
+@1c310i3gx3k
+<p>Convert $\mu\mathrm{C}$ to C and cm to m before using Coulomb's law. Forgetting the $10^{-6}$ is the most common slip.</p>
+@m0b0xq94ad  ; 0=Q(q1, 'µC') | 1=Q(q2, 'µC') | 2=Q(r * 100, 'cm')
+Two small spheres carry charges of ⟦0⟧ and ⟦1⟧ and are ⟦2⟧ apart. What is the size of the electric force between them? ($k = 9.0 \times 10^{9}\,\mathrm{N\,m^2/C^2}$.)
+@js72egdrpc  ; 0=Q(F0, 'N') | 1=k === 0.5 ? T`halved` : T`made ${k} time
+Two charges repel each other with a force of ⟦0⟧. Their separation is ⟦1⟧. What is the new force?
+@58rzq4yz89
+halved
+@1n5tg058w2q  ; 0=k
+made ⟦0⟧ times larger
+@1g7zcwdd874  ; 0=k === 0.5 ? '(1/2)' : k | 1=F0 | 2=M(k * k) | 3=QT(F1, 'N')
+$F \propto \frac{1}{r^2}$, so the force changes by a factor of $\frac{1}{⟦0⟧^2}$: $⟦1⟧ \cdot \frac{1}{⟦2⟧} = ⟦3⟧$.
+@74z076ehk9  ; 0=Q(r * 100, 'cm') | 1=Q(Q0, 'nC')
+What is the electric field strength ⟦0⟧ from a point charge of ⟦1⟧? ($k = 9.0 \times 10^{9}\,\mathrm{N\,m^2/C^2}$.)
+@13r2hs8f7lt  ; 0=Q(q, 'µC') | 1=Q(E, 'N/C')
+A charge of ⟦0⟧ is placed in a uniform electric field of ⟦1⟧. What force acts on it?
+@cq1ilwtk9k  ; 0=Q(Qa, 'nC') | 1=Q(Qb, 'nC') | 2=Q(d * 100, 'cm')
+Two positive charges of ⟦0⟧ and ⟦1⟧ are ⟦2⟧ apart. What is the electric field strength exactly halfway between them?
+@qbppapoqlc  ; 0=QT(Qa, 'nC') | 1=QT(Qb, 'nC') | 2=Q(d * 100, 'cm')
+A charge of $+⟦0⟧$ and a charge of $-⟦1⟧$ are ⟦2⟧ apart. What is the electric field strength exactly halfway between them?
+@1e5w88fww7g  ; 0=M(r) | 1=Q(sig(Ea), 'N/C') | 2=Q(sig(Eb), 'N/C') | 3=M(sig(Ea)) | 4=M(sig(Eb)) | 5=QT(E, 'N/C')
+Each charge alone gives $E = \frac{kQ}{r^2}$ with $r = ⟦0⟧\,\mathrm{m}$: ⟦1⟧ and ⟦2⟧. Both point away from their charges, so in opposite directions at the midpoint: $|⟦3⟧ - ⟦4⟧| = ⟦5⟧$.
+@2872nas0bpq  ; 0=M(r) | 1=Q(sig(Ea), 'N/C') | 2=Q(sig(Eb), 'N/C') | 3=Q(E, 'N/C')
+Each charge alone gives $E = \frac{kQ}{r^2}$ with $r = ⟦0⟧\,\mathrm{m}$: ⟦1⟧ and ⟦2⟧. At the midpoint both fields point from + towards −, so they add: ⟦3⟧.
+@t5xdw5omnt
+A glass rod rubbed with silk becomes positively charged. What has happened?
+@1txfkj3cb8x
+Electrons have moved from the rod to the silk
+@2baxe611tb2
+Protons have moved from the silk to the rod
+@17b77ccjfmz
+Positive charge has been created in the rod
+@fkfrj066kc
+Electrons have moved from the silk to the rod
+@2cqbf6yly36
+Only electrons move easily. The rod loses electrons, leaving it with more protons than electrons, and the silk gains the same number of electrons: charge is conserved.
+@12z0hvft6v
+What is the direction of the electric field at a point near an isolated negative charge?
+@6dtrq33og6
+Towards the charge
+@21zli76f3ol
+Away from the charge
+@fbh2xvqxd5
+Along a circle around the charge
+@1jd6aodmgfo
+There is no field near a negative charge
+@vtva81h0ow
+The field direction is the direction of the force on a positive test charge, which is attracted towards the negative charge.
+
+##### capacitors
+@2ay2wqyhlpw  ; 0=Fm(T`W = qV`) | 1=Key(T`<p>A <b>capacitor</b> stores charg | 2=Tip(T`<p>Capacitors combine the opposite
+
+<h3>Potential and potential difference</h3>
+<p>The <b>electric potential</b> at a point is the potential energy per unit charge there, measured in volts ($1\,\mathrm{V} = 1\,\mathrm{J/C}$). Moving a charge $q$ through a potential difference $V$ changes its energy by</p>
+⟦0⟧
+<p>Near a point charge, $V = \dfrac{kQ}{r}$. Between two parallel plates a distance $d$ apart with potential difference $V$, the field is uniform: $E = \dfrac{V}{d}$ (so $\mathrm{V/m}$ is the same unit as $\mathrm{N/C}$).</p>
+<p>An electron accelerated through $1\,\mathrm{V}$ gains $1\,\mathrm{eV} = 1.6 \times 10^{-19}\,\mathrm{J}$ of energy, the <b>electronvolt</b>.</p>
+⟦1⟧
+<h3>Combining capacitors</h3>
+<ul><li><b>Parallel:</b> $C = C_1 + C_2 + \dots$ (the opposite of resistors).</li><li><b>Series:</b> $\dfrac{1}{C} = \dfrac{1}{C_1} + \dfrac{1}{C_2} + \dots$</li></ul>
+<p>Capacitance is measured in farads (F); practical values are microfarads ($\mu\mathrm{F}$), nanofarads (nF) or picofarads (pF). Camera flashes and defibrillators store energy in capacitors and release it in a fraction of a second.</p>
+⟦2⟧
+@1l9b5cydr9n
+W = qV
+@185hljrdzfk
+<p>A <b>capacitor</b> stores charge on two conductors separated by an insulator. Its <b>capacitance</b> is the charge stored per volt:</p><p>$$C = \frac{Q}{V} \qquad \text{parallel plates: } C = \frac{\varepsilon_0 A}{d}, \; \varepsilon_0 = 8.85 \times 10^{-12}\,\mathrm{F/m}$$</p><p>The stored energy is $E = \tfrac12 C V^2 = \tfrac12 Q V$.</p>
+@86is7o3swu
+<p>Capacitors combine the opposite way to resistors: in parallel they simply add.</p>
+@lbscz9bi0y  ; 0=Q(q, 'µC') | 1=Q(V, 'V')
+How much work is done in moving a charge of ⟦0⟧ through a potential difference of ⟦1⟧?
+@1nomp9bgmmi  ; 0=Q(d * 1000, 'mm') | 1=Q(V, 'V')
+Two parallel plates ⟦0⟧ apart are connected to ⟦1⟧. What is the electric field strength between them?
+@pmnp728r1m  ; 0=Q(V, 'V')
+An electron starts from rest and is accelerated through ⟦0⟧. How fast is it moving? ($e = 1.6 \times 10^{-19}\,\mathrm{C}$, $m_e = 9.11 \times 10^{-31}\,\mathrm{kg}$.)
+@dxrmn1dq6b
+Type a power of ten like 1.3e7.
+@vv56j8vpno  ; 0=V | 1=sciT(v)
+$eV = \tfrac12 m v^2$, so $v = \sqrt{\frac{2eV}{m}} = \sqrt{\frac{2 \cdot 1.6 \times 10^{-19} \cdot ⟦0⟧}{9.11 \times 10^{-31}}} = ⟦1⟧\,\mathrm{m/s}$.
+@7vequbc2if  ; 0=Q(C, 'µF') | 1=Q(V, 'V')
+How much energy is stored in a ⟦0⟧ capacitor charged to ⟦1⟧? Give the answer in millijoules.
+@28evk6hdqm9  ; 0=Q(C, 'µF') | 1=Q(V, 'V')
+A ⟦0⟧ capacitor is connected to ⟦1⟧. How much charge does it store, in microcoulombs?
+@140sleg94zn  ; 0=Q(A * 1e4, 'cm^2') | 1=Q(d * 1000, 'mm')
+A parallel-plate capacitor has plates of area ⟦0⟧ separated by ⟦1⟧ of air. What is its capacitance, in picofarads? ($\varepsilon_0 = 8.85 \times 10^{-12}\,\mathrm{F/m}$.)
+@1gwzx0dvepa  ; 0=M(A) | 1=M(d) | 2=M(A) | 3=M(d) | 4=sciT(C) | 5=QT(sig(C * 1e12), 'pF')
+$A = ⟦0⟧\,\mathrm{m^2}$, $d = ⟦1⟧\,\mathrm{m}$: $C = \frac{\varepsilon_0 A}{d} = \frac{8.85 \times 10^{-12} \cdot ⟦2⟧}{⟦3⟧} = ⟦4⟧\,\mathrm{F} = ⟦5⟧$.
+@11q9nxgbqtx  ; 0=Q(c1, 'µF') | 1=Q(c2, 'µF')
+Capacitors of ⟦0⟧ and ⟦1⟧ are connected in parallel. What is the combined capacitance?
+@27sc6dayn4a  ; 0=Q(c1, 'µF') | 1=Q(c2, 'µF')
+Capacitors of ⟦0⟧ and ⟦1⟧ are connected in series. What is the combined capacitance?
+@256rj2vt1iq  ; 0=c1 | 1=c2 | 2=QT(C, 'µF')
+In parallel capacitances add: $⟦0⟧ + ⟦1⟧ = ⟦2⟧$.
+@njtm8ybly6  ; 0=c1 | 1=c2 | 2=c1 | 3=c2 | 4=c1 | 5=c2 | 6=QT(C, 'µF')
+In series: $\frac{1}{C} = \frac{1}{⟦0⟧} + \frac{1}{⟦1⟧}$, so $C = \frac{⟦2⟧ \cdot ⟦3⟧}{⟦4⟧ + ⟦5⟧} = ⟦6⟧$.
+
 ##### current-ohm
 @1tctsbl174k  ; 0=Fm(T`I = \frac{Q}{t}`) | 1=Key(T`<p><b>Ohm's law:</b> for a metal c | 2=Fm(T`R = \rho\,\frac{L}{A}`) | 3=Fm(T`P = V I = I^2 R = \frac{V^2}{R} \qq | 4=Ex(T`<p>A kettle is rated $2000\,\mathrm | 5=Tip(T`<p>Convert areas in $\mathrm{mm^2}
 
@@ -156,3 +269,331 @@ They become brighter
 Only the new lamp is dim
 @1jz4r3knger
 The total resistance goes up, so the current through every lamp goes down, and $P = I^2 R$ for each lamp falls.
+
+##### magnetism
+@2d2i19q5ocd  ; 0=Key(T`<p>A magnetic field pushes on movi | 1=Fm(T`r = \frac{m v}{q B}`) | 2=Tip(T`<p>The magnetic force never speeds
+
+<p>Magnets and electric currents both produce <b>magnetic fields</b>, measured in tesla (T). The Earth's field is about $5 \times 10^{-5}\,\mathrm{T}$; a fridge magnet about $0.01\,\mathrm{T}$.</p>
+<h3>Fields made by currents</h3>
+<ul><li>Around a long straight wire the field lines are circles: $B = \dfrac{\mu_0 I}{2\pi r}$.</li><li>Inside a long solenoid with $n$ turns per metre the field is uniform: $B = \mu_0 n I$.</li></ul>
+<p>Here $\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$. Curl the fingers of your right hand around the wire with the thumb along the current: the fingers show the field direction.</p>
+⟦0⟧
+<h3>Charged particles in a field</h3>
+<p>A charge moving at right angles to a uniform field feels a force perpendicular to its velocity, so it moves in a circle. Setting $qvB = \dfrac{m v^2}{r}$ gives the radius</p>
+⟦1⟧
+<p>This is how mass spectrometers sort ions and how particle accelerators steer beams. Electric motors use the force on current-carrying wires.</p>
+⟦2⟧
+@15d7zgjyh76
+<p>A magnetic field pushes on moving charges (the <b>Lorentz force</b>):</p><p>$$\text{on a wire: } F = B I L \sin\theta \qquad \text{on a charge: } F = q v B \sin\theta$$</p><p>$\theta$ is the angle between the current (or velocity) and the field. The force is perpendicular to both, and zero when they are parallel.</p>
+@1xiuaep425p
+<p>The magnetic force never speeds a charge up or slows it down, because it is always at right angles to the motion: it only changes the direction.</p>
+@l5qu1e640k  ; 0=Q(I, 'A') | 1=Q(r * 100, 'cm')
+A long straight wire carries a current of ⟦0⟧. What is the magnetic field strength ⟦1⟧ from it, in microtesla? ($\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$.)
+@1gtg2hl0tjr  ; 0=Q(L * 100, 'cm') | 1=N | 2=Q(I, 'A')
+A solenoid ⟦0⟧ long has ⟦1⟧ turns and carries ⟦2⟧. What is the magnetic field inside it, in millitesla? ($\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$.)
+@2fah86hugdl  ; 0=N | 1=M(L) | 2=M(sig(N / L)) | 3=M(sig(N / L)) | 4=M(I) | 5=QT(sig(B * 1e3), 'mT')
+$n = \frac{⟦0⟧}{⟦1⟧} = ⟦2⟧\,\mathrm{m^{-1}}$, so $B = \mu_0 n I = 4\pi \times 10^{-7} \cdot ⟦3⟧ \cdot ⟦4⟧ = ⟦5⟧$.
+@v7lh5s416o  ; 0=Q(L * 100, 'cm') | 1=Q(I, 'A') | 2=Q(B, 'T')
+A wire ⟦0⟧ long carrying ⟦1⟧ lies at right angles to a magnetic field of ⟦2⟧. What force acts on it?
+@15qpg8xjsmn  ; 0=Q(L * 100, 'cm') | 1=Q(I, 'A') | 2=Q(th, '°') | 3=Q(B, 'T')
+A wire ⟦0⟧ long carrying ⟦1⟧ makes an angle of ⟦2⟧ with a magnetic field of ⟦3⟧. What force acts on it?
+@xi2beji6ff  ; 0=sciT(v, 1) | 1=Q(B, 'T')
+A proton moves at $⟦0⟧\,\mathrm{m/s}$ at right angles to a magnetic field of ⟦1⟧. What force acts on it? ($e = 1.6 \times 10^{-19}\,\mathrm{C}$.)
+@cuh35aa2d6
+Type a power of ten like 4.8e-13.
+@24h841b51oc  ; 0=sciT(v, 1) | 1=M(B) | 2=sciT(F)
+$F = qvB = 1.6 \times 10^{-19} \cdot ⟦0⟧ \cdot ⟦1⟧ = ⟦2⟧\,\mathrm{N}$.
+@1vhw0gglt7
+A proton
+@25qdadsp1wm
+An electron
+@2gkh2sjma39  ; 0=pn | 1=sciT(v, 1) | 2=Q(B, 'T')
+⟦0⟧ moves at $⟦1⟧\,\mathrm{m/s}$ at right angles to a uniform magnetic field of ⟦2⟧. What is the radius of its circular path, in centimetres? ($m_p = 1.67 \times 10^{-27}\,\mathrm{kg}$, $m_e = 9.11 \times 10^{-31}\,\mathrm{kg}$, $e = 1.6 \times 10^{-19}\,\mathrm{C}$.)
+@2skj0txhjb  ; 0=sciT(m, 3) | 1=sciT(v, 1) | 2=M(B) | 3=sciT(r) | 4=QT(sig(r * 100), 'cm')
+$r = \frac{mv}{qB} = \frac{⟦0⟧ \cdot ⟦1⟧}{1.6 \times 10^{-19} \cdot ⟦2⟧} = ⟦3⟧\,\mathrm{m} = ⟦4⟧$.
+@65u08hs3c0
+An electron moves exactly parallel to the field lines of a uniform magnetic field. What magnetic force acts on it?
+@d5920flkwz
+None
+@2rdl9g31jm
+A force along its motion
+@1byxjur1gz4
+A force at right angles to its motion
+@1hm2d0idx0t
+A force opposite to its motion
+@2ab699hbdpj
+$F = qvB\sin\theta$ and $\theta = 0$, so the force is zero; the electron carries on in a straight line.
+@x6t46w4xd3
+What does the magnetic force do to a charged particle moving across a uniform magnetic field?
+@krahr5cbss
+It changes the particle's direction but not its speed
+@22wh24af9o3
+It speeds the particle up
+@6humr4yvob
+It slows the particle down
+@24r297hnewt
+It changes neither speed nor direction
+@1uw1osqwmsa
+The force is always perpendicular to the velocity, so it does no work. The speed stays the same while the path curves into a circle.
+
+##### induction
+@22d5m88u78o  ; 0=Fm(T`\Phi = B A \cos\theta`) | 1=Key(T`<p><b>Faraday's law:</b> the EMF i | 2=Fm(T`\frac{V_s}{V_p} = \frac{N_s}{N_p} \ | 3=Tip(T`<p>A transformer works only with a
+
+<p>A changing magnetic field can drive a current. This is <b>electromagnetic induction</b>, discovered by Faraday in 1831, and it is how almost all of our electricity is generated.</p>
+<h3>Magnetic flux</h3>
+⟦0⟧
+<p>The flux (in webers, $\mathrm{Wb}$) measures how much magnetic field passes through a loop of area $A$; $\theta$ is the angle between the field and the normal to the loop.</p>
+⟦1⟧
+<h3>A moving rod</h3>
+<p>A rod of length $L$ moving at speed $v$ at right angles to a field $B$ sweeps through flux, and an EMF $\varepsilon = B L v$ appears between its ends.</p>
+<h3>Generators and transformers</h3>
+<p>A generator turns a coil in a magnetic field, producing an alternating EMF. A <b>transformer</b> uses a changing current in one coil to induce an EMF in another wound on the same iron core:</p>
+⟦2⟧
+<p>Power is sent across the country at very high voltage: for the same power the current is small, so the heating loss in the cables, $P = I^2 R$, is small too.</p>
+⟦3⟧
+@2ea3ecpuvs2
+<p><b>Faraday's law:</b> the EMF induced in a coil of $N$ turns equals the rate of change of flux linkage:</p><p>$$\varepsilon = -N\frac{\Delta \Phi}{\Delta t}.$$</p><p><b>Lenz's law</b> (the minus sign): the induced current flows so as to oppose the change that causes it.</p>
+@1kmpv0qnsr6
+\frac{V_s}{V_p} = \frac{N_s}{N_p} \qquad \text{ideal: } V_p I_p = V_s I_s
+@23yc30r4bok
+<p>A transformer works only with alternating current. A steady direct current gives no changing flux, so nothing is induced.</p>
+@k6dk3lag86  ; 0=Q(a, 'cm') | 1=Q(B, 'T') | 2=Q(th, '°')
+A square loop of side ⟦0⟧ is in a uniform field of ⟦1⟧; the field makes ⟦2⟧ with the normal to the loop. What is the flux through the loop, in milliwebers?
+@xkr97k2c83  ; 0=Q(a, 'cm') | 1=Q(B, 'T')
+A square loop of side ⟦0⟧ lies at right angles to a uniform field of ⟦1⟧. What is the magnetic flux through it, in milliwebers?
+@349uiev3m7  ; 0=M(a / 100) | 1=M(sig(A)) | 2=M(B) | 3=M(sig(A)) | 4=th | 5=QT(sig(Phi * 1000), 'mWb')
+$A = (⟦0⟧)^2 = ⟦1⟧\,\mathrm{m^2}$, so $\Phi = BA\cos\theta = ⟦2⟧ \cdot ⟦3⟧ \cos ⟦4⟧^\circ = ⟦5⟧$.
+@22bm1f4jscx  ; 0=N | 1=Q(dPhi * 1000, 'mWb') | 2=Q(dt, 's')
+The magnetic flux through a coil of ⟦0⟧ turns changes by ⟦1⟧ in ⟦2⟧. What EMF is induced?
+@txxm8tn7xs  ; 0=Q(L, 'm') | 1=Q(v, 'm/s') | 2=Q(B, 'T')
+A metal rod ⟦0⟧ long moves at ⟦1⟧ at right angles to a magnetic field of ⟦2⟧. What EMF is induced between its ends?
+@17qahcny3cm  ; 0=Np | 1=Ns | 2=Q(Vp, 'V')
+A transformer has ⟦0⟧ turns on its primary coil and ⟦1⟧ turns on its secondary. The primary is connected to ⟦2⟧ AC. What is the secondary voltage?
+@1r6evcmyt2p
+It is a step-up transformer.
+@1tdsgnc3rp0
+It is a step-down transformer.
+@8jveodhxn9  ; 0=Q(Vp, 'V') | 1=Q(Vs, 'V') | 2=Q(Is, 'A')
+An ideal transformer steps ⟦0⟧ down to ⟦1⟧. The secondary supplies ⟦2⟧ to a lamp. What current flows in the primary?
+@1i908nlqs08  ; 0=Vs | 1=M(Is) | 2=Vp | 3=QT(Ip, 'A')
+Power in = power out: $I_p = \frac{V_s I_s}{V_p} = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧} = ⟦3⟧$.
+@11lwosjgbyp  ; 0=k
+A power station sends the same power along the same cables, but at ⟦0⟧ times the voltage. By what factor does the power lost as heat in the cables change?
+@1euyx88na9e
+It does not change
+@mkx1z8zj97  ; 0=k | 1=k | 2=k | 3=k * k
+For the same power, ⟦0⟧ times the voltage means $\frac{1}{⟦1⟧}$ of the current. The loss $P = I^2R$ therefore falls by a factor of $⟦2⟧^2 = ⟦3⟧$.
+@2ewbatn2zdt
+The north pole of a magnet is pushed into a coil. According to Lenz's law, the induced current in the coil:
+@1jxxkl6h653
+makes the near end of the coil a north pole, repelling the magnet
+@aizvfjmiv6
+makes the near end of the coil a south pole, attracting the magnet
+@1fyztwry1gw
+flows only after the magnet stops
+@5od1ko8pf0
+is zero, because the magnet is not touching the coil
+@1532uspzmii
+The induced current opposes the change causing it: the coil pushes back on the approaching north pole by forming a north pole of its own. The work done against this push becomes electrical energy.
+
+##### ac
+@y5gumibg5a  ; 0=Key(T`<p>Inductors and capacitors oppose | 1=Fm(T`f_0 = \frac{1}{2\pi\sqrt{LC}}`) | 2=Tip(T`<p>An inductor passes low frequenc
+
+<p>Mains electricity is <b>alternating current</b>: the voltage swings back and forth sinusoidally, $V = V_0 \sin(\omega t)$ with $\omega = 2\pi f$. In Indonesia the frequency is $50\,\mathrm{Hz}$.</p>
+<h3>RMS values</h3>
+<p>The <b>root-mean-square</b> (rms) value is the steady DC value that would give the same heating: $V_{\text{rms}} = \dfrac{V_0}{\sqrt2}$ and $I_{\text{rms}} = \dfrac{I_0}{\sqrt2}$. When mains is described as $220\,\mathrm{V}$ this is the rms value; the peak is $220\sqrt2 \approx 311\,\mathrm{V}$. The average power in a resistor is $P = I_{\text{rms}}^2 R = V_{\text{rms}} I_{\text{rms}}$.</p>
+⟦0⟧
+<h3>Resonance</h3>
+<p>When $X_L = X_C$, the impedance is smallest ($Z = R$) and the current largest. This happens at the <b>resonant frequency</b></p>
+⟦1⟧
+<p>Radios select one station by tuning an LC circuit to resonate at its frequency.</p>
+⟦2⟧
+@24cuq7xxpts
+<p>Inductors and capacitors oppose AC with a <b>reactance</b> (in ohms) that depends on the frequency:</p><p>$$X_L = \omega L = 2\pi f L \qquad X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}$$</p><p>In a series RLC circuit the <b>impedance</b> is $Z = \sqrt{R^2 + (X_L - X_C)^2}$ and $I = V/Z$.</p>
+@yavzaa7kh1
+f_0 = \frac{1}{2\pi\sqrt{LC}}
+@qjvaxdjfgn
+<p>An inductor passes low frequencies easily and blocks high ones; a capacitor does the opposite.</p>
+@vxzrwkqo76  ; 0=Q(Vr, 'V')
+A mains supply is rated ⟦0⟧ rms. What is its peak voltage?
+@7tz13n7aau  ; 0=Vr | 1=QT(V0, 'V')
+$V_0 = \sqrt2\,V_{\text{rms}} = \sqrt2 \cdot ⟦0⟧ = ⟦1⟧$.
+@18slhir0247  ; 0=Q(V0, 'V')
+An AC voltage has a peak value of ⟦0⟧. What is its rms value?
+@2057045ehw  ; 0=M(V0) | 1=QT(sig(V0 / Math.SQRT2), 'V')
+$V_{\text{rms}} = \frac{V_0}{\sqrt2} = \frac{⟦0⟧}{\sqrt2} = ⟦1⟧$.
+@ccyevn9ex9  ; 0=Q(R, 'Ω') | 1=Q(V, 'V') | 2=askP ? T`the average power` : T`the rms 
+A ⟦0⟧ heater is connected to ⟦1⟧ rms mains. What is ⟦2⟧?
+@15h2baho1ao
+the average power
+@2duebexd1q3
+the rms current
+@8whs0zqi38  ; 0=V | 1=R | 2=QT(P, 'W')
+$P = \frac{V_{\text{rms}}^2}{R} = \frac{⟦0⟧^2}{⟦1⟧} = ⟦2⟧$.
+@gpu9imahyz  ; 0=V | 1=R | 2=QT(I, 'A')
+$I_{\text{rms}} = \frac{V_{\text{rms}}}{R} = \frac{⟦0⟧}{⟦1⟧} = ⟦2⟧$.
+@maq9xsyvbo  ; 0=Q(L * 1000, 'mH') | 1=Q(f, 'Hz')
+What is the reactance of a ⟦0⟧ inductor at ⟦1⟧?
+@zvm292sxld  ; 0=Q(C, 'µF') | 1=Q(f, 'Hz')
+What is the reactance of a ⟦0⟧ capacitor at ⟦1⟧?
+@1kpcewxis9b  ; 0=QT(R, 'Ω') | 1=QT(XL, 'Ω') | 2=QT(XC, 'Ω') | 3=askI ? T`It is connected to ${Q(V, 'V')}
+A series circuit has $R = ⟦0⟧$, $X_L = ⟦1⟧$ and $X_C = ⟦2⟧$. ⟦3⟧
+@zr8xxlagrt  ; 0=Q(V, 'V')
+It is connected to ⟦0⟧ rms. What rms current flows?
+@g44fovq2je
+What is its impedance?
+@giat3icggx  ; 0=V | 1=M(Z) | 2=QT(I, 'A')
+ So $I = \frac{V}{Z} = \frac{⟦0⟧}{⟦1⟧} = ⟦2⟧$.
+@mclschp1h9  ; 0=Q(L * 1000, 'mH') | 1=Q(C * 1e9, 'nF')
+A tuning circuit has an inductance of ⟦0⟧ and a capacitance of ⟦1⟧. At what frequency does it resonate, in kHz?
+@1nshm2jw437
+The frequency of the AC supply to a circuit containing only a capacitor is increased. What happens to the current?
+@1jo8ynty2dz
+It increases, because the capacitor's reactance falls
+@iih9cpv5l9
+It decreases, because the reactance rises
+@1s74f5x9ne
+It becomes zero
+@2dlx2efv192
+$X_C = \frac{1}{2\pi f C}$ falls as $f$ rises, so for the same voltage more current flows. (For an inductor the opposite happens.)
+
+##### em-waves
+@9izp365vqi  ; 0=Fm(T`c = f\lambda`) | 1=Tbl([T`Type`, T`Typical wavelength`, T`U | 2=Key(T`<p><b>Polarisation</b> shows that  | 3=Tip(T`<p>1 nanometre is $10^{-9}\,\mathr
+
+<p>Changing electric and magnetic fields create each other and travel together through space as an <b>electromagnetic (EM) wave</b>. EM waves are transverse, need no medium, and in a vacuum all travel at the speed of light, $c = 3.0 \times 10^{8}\,\mathrm{m/s}$.</p>
+⟦0⟧
+<h3>The electromagnetic spectrum</h3>
+⟦1⟧
+<p>From radio to gamma rays the wavelength gets shorter and the frequency higher. Higher frequency also means more energy carried by each photon, which is why ultraviolet, X-rays and gamma rays can damage living cells.</p>
+⟦2⟧
+⟦3⟧
+@k7wfdtk1dy
+Type
+@1aruppbi3k2
+Typical wavelength
+@1ha6u65qfqw
+Uses
+@kg5a0pcoqb
+Radio waves
+@ajj1xqfr5g
+metres to kilometres
+@1zfigbu5icn
+radio, TV, communication
+@2bb7nzdx8et
+Microwaves
+@16irnit174x
+millimetres to centimetres
+@214rh9q5gq4
+mobile phones, Wi-Fi, radar, cooking
+@2525h8ds9ed
+Infrared
+@1g4wn3vyekg
+micrometres
+@11fk8cgrd51
+remote controls, thermal cameras, heaters
+@9e3x9zcqzs
+Visible light
+@283sayyc0en
+400–700 nm
+@2fsj5ftmylt
+seeing, optical fibres
+@z9se1fk6eg
+Ultraviolet
+@2e5q01smzn4
+10–400 nm
+@1k5rc04s08b
+sterilising, fluorescence; causes sunburn
+@1pmxtafyazx
+X-rays
+@12h3ova35jm
+about 0.01–10 nm
+@1vebyz2yqxd
+medical imaging, airport security
+@22m99nftv5f
+Gamma rays
+@2bd6ejs2hgu
+below about 0.01 nm
+@1at5hnehda9
+cancer treatment, sterilising equipment
+@160b38lwc4i
+<p><b>Polarisation</b> shows that EM waves are transverse. A polarising filter lets through only the part of the wave oscillating in one direction. For polarised light of intensity $I_0$ falling on a filter at angle $\theta$ to its direction of polarisation (Malus's law):</p><p>$$I = I_0 \cos^2\theta.$$</p><p>Unpolarised light loses half its intensity at the first filter.</p>
+@15uelhhpvsd
+<p>1 nanometre is $10^{-9}\,\mathrm{m}$. Green light of $500\,\mathrm{nm}$ has $f = \frac{3 \times 10^{8}}{500 \times 10^{-9}} = 6 \times 10^{14}\,\mathrm{Hz}$.</p>
+@eti0g2qdas  ; 0=Q(f, 'MHz')
+An FM radio station broadcasts at ⟦0⟧. What is the wavelength of its waves? ($c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)
+@b8hc30b31a  ; 0=Q(f, 'kHz')
+An AM radio station broadcasts at ⟦0⟧. What is the wavelength of its waves? ($c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)
+@hlinbrozgt  ; 0=M(f) | 1=fm ? 6 : 3 | 2=QT(lam, 'm')
+$\lambda = \frac{c}{f} = \frac{3.0 \times 10^{8}}{⟦0⟧ \times 10^{⟦1⟧}} = ⟦2⟧$.
+@11094dw5mp3  ; 0=Q(nm, 'nm')
+Light has a wavelength of ⟦0⟧. What is its frequency? ($c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)
+@17u7bjme1ai
+Type a power of ten like 5e14.
+@rbnrp73oon  ; 0=nm | 1=sciT(f)
+$f = \frac{c}{\lambda} = \frac{3.0 \times 10^{8}}{⟦0⟧ \times 10^{-9}} = ⟦1⟧\,\mathrm{Hz}$.
+@1iuej85qe31
+the Sun
+@5pf1ljh0sw
+a geostationary satellite
+@xp1y5xph1  ; 0=what | 1=sciT(d)
+How long does light (or a radio signal) take to travel from ⟦0⟧ to the Earth, a distance of $⟦1⟧\,\mathrm{m}$? ($c = 3.0 \times 10^{8}\,\mathrm{m/s}$.)
+@1s9eom0w3z7  ; 0=sciT(d) | 1=QT(sig(t), 's') | 2=t > 120 ? T`, about ${NUM(sig(t / 60, 2)
+$t = \frac{d}{c} = \frac{⟦0⟧}{3.0 \times 10^{8}} = ⟦1⟧$⟦2⟧.
+@lkdw428lq9  ; 0=NUM(sig(t / 60, 2))
+, about ⟦0⟧ minutes
+@8x6om03jx6  ; 0=Q(I0, 'W/m^2') | 1=Q(th, '°')
+Unpolarised light of intensity ⟦0⟧ passes through two polarising filters whose axes are at ⟦1⟧ to each other. What intensity comes out?
+@1ceohe1bpv  ; 0=Q(I0 / 2, 'W/m^2') | 1=M(I0 / 2) | 2=th | 3=QT(sig(I0 / 2 * cosD(th) ** 2), 'W/m^2')
+The first filter halves the intensity: ⟦0⟧. Then $I = \frac{I_0}{2}\cos^2\theta = ⟦1⟧ \cos^2 ⟦2⟧^\circ = ⟦3⟧$.
+@s4mhnh60wj  ; 0=Q(I0, 'W/m^2') | 1=Q(th, '°')
+Polarised light of intensity ⟦0⟧ falls on a polarising filter whose axis is at ⟦1⟧ to the light's direction of polarisation. What intensity passes through?
+@1xrrw3xpu5c  ; 0=I0 | 1=th | 2=QT(I, 'W/m^2')
+Malus's law: $I = I_0\cos^2\theta = ⟦0⟧ \cos^2 ⟦1⟧^\circ = ⟦2⟧$.
+@yuq28g03y3
+radio waves
+@9asaykptj6
+microwaves
+@p8y0yqvd3i
+infrared
+@aho590qdl
+visible light
+@2gjunky6i8
+ultraviolet
+@h61of69pr0
+gamma rays
+@27u26ulth06  ; 0=bands[i] | 1=bands[j]
+Which has the <b>higher</b> frequency: ⟦0⟧ or ⟦1⟧?
+@1xukqxhye7h  ; 0=bands[i] | 1=bands[j]
+Which has the <b>longer</b> wavelength: ⟦0⟧ or ⟦1⟧?
+@mp2qhoezfj
+They are the same
+@ierw8e75c9
+In order of increasing frequency (and decreasing wavelength): radio, microwaves, infrared, visible, ultraviolet, X-rays, gamma rays.
+@1487ma5q0bd
+Which type of electromagnetic radiation is used by a TV remote control?
+@2ajw0f1yzgt
+Remote controls send pulses of infrared light that a sensor on the TV detects.
+@1eytlfy91xg
+Why can sound waves not be polarised, while light can?
+@t7u14smdn9
+Sound is longitudinal; only transverse waves can be polarised
+@1s8e6aecioo
+Sound is too slow
+@1z12bzmrr1r
+Sound has too low a frequency
+@p5sp5ihmvc
+Light carries more energy
+@r2nqewlx3r
+Polarisation picks one direction of oscillation at right angles to the travel. A longitudinal wave oscillates along its travel, so there is nothing to choose.
+@23n8tdx2fhe
+What do all electromagnetic waves have in common in a vacuum?
+@8g67wzwnjv
+They travel at the same speed
+@apostuk4w8
+They have the same frequency
+@1arp4clitcm
+They have the same wavelength
+@9mjeki4grt
+They carry the same energy per photon
+@pu1omtw1ix
+All EM waves travel through a vacuum at $c = 3.0 \times 10^{8}\,\mathrm{m/s}$; they differ in frequency and wavelength.

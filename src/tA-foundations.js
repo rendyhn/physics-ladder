@@ -119,7 +119,7 @@ ${Tip(T`<p>A calculator shows many digits, but an answer cannot be more precise 
       const e = ri(-3, 3), n = pick([2, 3]), x = (ri(1000, 9999) / 1000) * 10 ** e, a = sig(x, n);
       if (Math.floor(Math.log10(a)) !== Math.floor(Math.log10(x))) return null;   // rounding carried into a new place
       const fmt = (y, k) => F(y, Math.max(0, k - 1 - Math.floor(Math.log10(Math.abs(y)))));   // keep trailing zeros: 3.40
-      return { q: T`Round ${F(sig(x, 4))} to ${n} significant figures.`, a: fmt(a, n), v: a, w: [fmt(sig(x, n + 1), n + 1), fmt(sig(x, Math.max(1, n - 1)), Math.max(1, n - 1)), fmt(sig(x * 10, n), n)], rtol: 0,
+      return { q: T`Round ${F(sig(x, 4))} to ${n} significant figures.`, a: fmt(a, n), v: a, w: [fmt(sig(x, n + 1), n + 1), fmt(sig(x, Math.max(1, n - 1)), Math.max(1, n - 1)), fmt(sig(x * 10, n), n), fmt(sig(a / 10, n), n), fmt(Math.trunc(x * 10 ** (n - 1 - Math.floor(Math.log10(x)))) / 10 ** (n - 1 - Math.floor(Math.log10(x))) + 10 ** (Math.floor(Math.log10(x)) - n + 1), n)], rtol: 0,
         s: T`Keep the first ${n} significant digits and look at the next one to decide whether to round up: ${F(sig(x, 4))} ≈ <b>${fmt(a, n)}</b>.` };
     },
     () => {
