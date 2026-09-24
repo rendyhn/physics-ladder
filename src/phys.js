@@ -43,8 +43,9 @@ function arrow(x1, y1, x2, y2, kind = 'a', width = 2.4) {
 }
 /* label placed just beyond the tip of an arrow */
 function tipLabel(x1, y1, x2, y2, s, gap = 16) {
-  const a = Math.atan2(y2 - y1, x2 - x1);
-  return txt(x2 + gap * Math.cos(a), y2 + gap * Math.sin(a) + 5, s);
+  const a = Math.atan2(y2 - y1, x2 - x1), c = Math.cos(a);
+  const anchor = c > 0.5 ? 'start' : c < -0.5 ? 'end' : 'middle', g = anchor === 'middle' ? gap : 7;   // text starts (or ends) just past a sideways tip
+  return txt(x2 + g * c, y2 + gap * Math.sin(a) + 5, s, 'fig-text', anchor);
 }
 
 /* ---------- a line graph with labelled axes (for motion graphs) ---------- */
@@ -105,7 +106,7 @@ function projectileSvg(v, angle, g, label) {
   for (let i = 0; i <= 40; i++) { const t = (T * i) / 40, x = vx * t, y = vy * t - (g * t * t) / 2; d += `${i ? 'L' : 'M'} ${X(x).toFixed(1)} ${Y(y).toFixed(1)} `; }
   let s = svgOpen(W, H, label) + `<line class="fig-line" x1="${L - 10}" y1="${Y(0)}" x2="${W - 10}" y2="${Y(0)}"/>`;
   s += `<path class="fig-plot fig-dashed" d="${d}"/>`;
-  s += arrow(X(0), Y(0), X(0) + 70 * cosD(angle), Y(0) - 70 * sinD(angle), 'a') + txt(X(0) + 80 * cosD(angle) + 6, Y(0) - 80 * sinD(angle), 'v₀', 'fig-text', 'start');
+  s += arrow(X(0), Y(0), X(0) + 70 * cosD(angle), Y(0) - 70 * sinD(angle), 'a') + txt(X(0) + 70 * cosD(angle) - 14 * sinD(angle), Y(0) - 70 * sinD(angle) - 14 * cosD(angle), 'v₀', 'fig-text', 'end');   // above the launch arrow, clear of the path
   s += `<path class="fig-line" d="M ${X(0) + 34} ${Y(0)} A 34 34 0 0 0 ${(X(0) + 34 * cosD(angle)).toFixed(1)} ${(Y(0) - 34 * sinD(angle)).toFixed(1)}"/>` + txt(X(0) + 48, Y(0) - 8, 'θ', 'fig-text', 'start');
   s += `<line class="fig-dash" x1="${X(R / 2)}" y1="${Y(0)}" x2="${X(R / 2)}" y2="${Y(Hm)}"/>` + txt(X(R / 2) + 8, Y(Hm / 2), 'H', 'fig-text', 'start');
   s += arrow(X(0), Y(0) + 16, X(R), Y(0) + 16, 'c', 1.4) + arrow(X(R), Y(0) + 16, X(0), Y(0) + 16, 'c', 1.4) + txt(X(R / 2), Y(0) + 30, 'R', 'fig-small');
@@ -120,8 +121,11 @@ function vectorSvg(vecs, label, span = 8) {
   for (let i = -span; i <= span; i++) s += `<line class="fig-grid" x1="${X(i)}" y1="${Y(-span)}" x2="${X(i)}" y2="${Y(span)}"/><line class="fig-grid" x1="${X(-span)}" y1="${Y(i)}" x2="${X(span)}" y2="${Y(i)}"/>`;
   s += arrow(X(-span), Y(0), X(span) + 8, Y(0), 'c', 1.4) + arrow(X(0), Y(-span), X(0), Y(span) - 8, 'c', 1.4) + txt(X(span) + 2, Y(0) - 8, 'x', 'fig-small') + txt(X(0) + 10, Y(span) - 2, 'y', 'fig-small');
   for (const v of vecs) {
-    const [fx, fy] = v.from || [0, 0];
-    s += arrow(X(fx), Y(fy), X(fx + v.x), Y(fy + v.y), v.kind || 'a') + tipLabel(X(fx), Y(fy), X(fx + v.x), Y(fy + v.y), v.label, 14);
+    const [fx, fy] = v.from || [0, 0], x1 = X(fx), y1 = Y(fy), x2 = X(fx + v.x), y2 = Y(fy + v.y);
+    if (v.guides) s += `<line class="fig-dash" x1="${x2}" y1="${y2}" x2="${x2}" y2="${Y(0)}"/><line class="fig-dash" x1="${x2}" y1="${y2}" x2="${X(0)}" y2="${y2}"/>`;   // dashed lines down to the axes
+    if (v.theta) { const a = Math.atan2(v.y, v.x), r = 34; s += `<path class="fig-line" fill="none" d="M${x1 + r} ${y1} A${r} ${r} 0 0 0 ${+(x1 + r * Math.cos(a)).toFixed(1)} ${+(y1 - r * Math.sin(a)).toFixed(1)}"/>` + txt(x1 + (r + 12) * Math.cos(a / 2), y1 - (r + 12) * Math.sin(a / 2) + 5, v.theta, 'fig-small'); }   // angle arc from the +x axis
+    s += arrow(x1, y1, x2, y2, v.kind || 'a');
+    s += v.mid ? txt((x1 + x2) / 2 + v.mid[0], (y1 + y2) / 2 + v.mid[1], v.label) : tipLabel(x1, y1, x2, y2, v.label, 14);   // mid: label beside the middle of the arrow, offset [dx, dy] px
   }
   return s + '</svg>';
 }
@@ -151,7 +155,7 @@ const wire = d => `<path class="fig-wire" d="${d}"/>`;
 const node = (x, y) => `<circle class="fig-dot" cx="${x}" cy="${y}" r="3.2"/>`;
 /* layout 'series': ε with R1…Rn in a loop; 'parallel': ε with R1…Rn side by side; 'mixed': R1 in series with (R2 ∥ R3) */
 function circuitSvg(kind, names, emfName, label) {
-  const W = 420, H = 230, L = 70, R = 380, Tp = 40, Bt = 200;
+  const W = 450, H = 230, L = 70, R = 380, Tp = 40, Bt = 200;   // room on the right for the last resistor's label
   let s = svgOpen(W, H, label) + battery(L, Tp, Bt, emfName);
   if (kind === 'series') {
     const n = names.length;
@@ -165,7 +169,7 @@ function circuitSvg(kind, names, emfName, label) {
   } else if (kind === 'parallel') {
     const n = names.length, xs = names.map((_, i) => L + ((R - L) * (i + 1)) / n);
     s += wire(`M ${L} ${Tp} H ${R} M ${L} ${Bt} H ${R}`);
-    xs.forEach((x, i) => { s += resistor(x, Tp, x, Bt, names[i]) + node(x, Tp) + node(x, Bt); });
+    xs.forEach((x, i) => { s += resistor(x, Tp, x, Bt, names[i]) + (i < n - 1 ? node(x, Tp) + node(x, Bt) : ''); });   // no junction dot at the far corners
   } else {   // mixed
     const xa = 250, xb = 360;
     s += resistor(L, Tp, 190, Tp, names[0]) + wire(`M 190 ${Tp} H ${xb} M ${L} ${Bt} H ${xb}`);
@@ -175,7 +179,7 @@ function circuitSvg(kind, names, emfName, label) {
 }
 
 /* ---------- vernier caliper: main scale in mm, vernier with 10 divisions over 9 mm (reads to 0.1 mm) ---------- */
-function vernierSvg(reading, label) {
+function vernierSvg(reading, label, mark = true) {   // mark: colour the vernier line that lines up (lesson only; it would give away a question)
   const W = 460, H = 150, k = 12, x0 = 30;                     // 12 px per mm
   const whole = Math.floor(reading + 1e-9), tenth = Math.round((reading - whole) * 10);
   const start = Math.max(0, whole - 8), end = start + 34, X = mm => x0 + (mm - start) * k;
@@ -183,13 +187,13 @@ function vernierSvg(reading, label) {
   for (let mm = start; mm <= end; mm++) {
     const len = mm % 10 === 0 ? 22 : mm % 5 === 0 ? 16 : 10;
     s += `<line class="fig-wire" style="stroke-width:1.2" x1="${X(mm)}" y1="70" x2="${X(mm)}" y2="${70 - len}"/>`;
-    if (mm % 10 === 0) s += txt(X(mm), 42, String(mm / 10), 'fig-small');
+    if (mm % 10 === 0 && X(mm) < W - 56) s += txt(X(mm), 42, String(mm / 10), 'fig-small');   // keep clear of the 'cm' label
   }
   s += txt(W - 22, 34, 'cm', 'fig-small', 'end');
   s += `<rect class="fig-shape" x="${X(reading) - 14}" y="70" width="${10 * 0.9 * k + 28}" height="44" rx="3"/>`;
   for (let i = 0; i <= 10; i++) {
     const x = X(reading + i * 0.9), len = i % 5 === 0 ? 18 : 11;
-    s += `<line class="fig-wire" style="stroke-width:1.2${i === tenth ? ';stroke:var(--accent)' : ''}" x1="${x.toFixed(1)}" y1="70" x2="${x.toFixed(1)}" y2="${70 + len}"/>`;
+    s += `<line class="fig-wire" style="stroke-width:1.2${mark && i === tenth ? ';stroke:var(--accent)' : ''}" x1="${x.toFixed(1)}" y1="70" x2="${x.toFixed(1)}" y2="${70 + len}"/>`;
     if (i % 5 === 0) s += txt(x, 104, String(i), 'fig-small');
   }
   return s + '</svg>';
@@ -197,12 +201,13 @@ function vernierSvg(reading, label) {
 
 /* ---------- a beam on supports with loads: items [{ x, kind: 'support' | 'load' | 'pivot', label }], x from 0 to L ---------- */
 function beamSvg(L, items, label) {
-  const W = 460, H = 170, x0 = 40, x1 = 420, y = 80, X = x => x0 + (x / L) * (x1 - x0);
+  const W = 460, H = 196, x0 = 40, x1 = 420, y = 106, X = x => x0 + (x / L) * (x1 - x0);
   let s = svgOpen(W, H, label) + `<rect class="fig-block" x="${x0}" y="${y - 7}" width="${x1 - x0}" height="14" rx="2"/>`;
+  const placed = [];   // x of load labels already drawn: a label too close to one goes on a taller arrow
   for (const it of items) {
     const x = X(it.x);
     if (it.kind === 'support' || it.kind === 'pivot') s += `<polygon class="fig-shape" points="${x},${y + 7} ${x - 14},${y + 34} ${x + 14},${y + 34}"/>` + (it.label ? txt(x, y + 52, it.label, 'fig-small') : '');
-    else s += arrow(x, y - 62, x, y - 9, it.arrow || 'a') + txt(x, y - 68, it.label, 'fig-small');
+    else { const up = placed.some(px => Math.abs(px - x) < 48) ? 26 : 0; placed.push(x); s += arrow(x, y - 62 - up, x, y - 9, it.arrow || 'a') + txt(x, y - 68 - up, it.label, 'fig-small'); }
   }
   // distance ticks under the beam at every labelled item
   return s + `<line class="fig-dash" x1="${x0}" y1="${y + 62}" x2="${x1}" y2="${y + 62}"/>` + txt(x0, y + 78, '0', 'fig-small') + txt(x1, y + 78, `${F(L)} m`, 'fig-small') + '</svg>';
@@ -212,10 +217,10 @@ function beamSvg(L, items, label) {
 function circleSvg(label) {
   const W = 300, H = 260, cx = 140, cy = 130, r = 95, a = rad(35), px = cx + r * Math.cos(a), py = cy - r * Math.sin(a);
   let s = svgOpen(W, H, label) + `<circle class="fig-line fig-dashed" cx="${cx}" cy="${cy}" r="${r}"/><circle class="fig-dot" cx="${cx}" cy="${cy}" r="3"/>`;
-  s += `<line class="fig-dash" x1="${cx}" y1="${cy}" x2="${px.toFixed(1)}" y2="${py.toFixed(1)}"/>` + txt((cx + px) / 2 - 6, (cy + py) / 2 + 16, 'r');
+  s += `<line class="fig-dash" x1="${cx}" y1="${cy}" x2="${px.toFixed(1)}" y2="${py.toFixed(1)}"/>` + txt(cx + 0.3 * (px - cx) + 14 * Math.sin(a), cy + 0.3 * (py - cy) + 14 * Math.cos(a) + 5, 'r');   // below the radius, near the centre
   s += `<circle class="fig-block" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="9"/>`;
   s += arrow(px, py, px - 70 * Math.sin(a), py - 70 * Math.cos(a), 'a') + tipLabel(px, py, px - 70 * Math.sin(a), py - 70 * Math.cos(a), 'v');
-  s += arrow(px, py, px - 55 * Math.cos(a), py + 55 * Math.sin(a), 'b') + txt(px - 60 * Math.cos(a) + 4, py + 60 * Math.sin(a) + 20, 'a', 'fig-text', 'start');
+  s += arrow(px, py, px - 55 * Math.cos(a), py + 55 * Math.sin(a), 'b') + txt(px - 55 * Math.cos(a) - 14 * Math.sin(a), py + 55 * Math.sin(a) - 14 * Math.cos(a) + 2, 'a', 'fig-text', 'end');   // above the arrow head
   return s + '</svg>';
 }
 

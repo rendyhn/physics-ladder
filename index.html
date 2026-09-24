@@ -697,8 +697,9 @@ function arrow(x1, y1, x2, y2, kind = 'a', width = 2.4) {
 }
 /* label placed just beyond the tip of an arrow */
 function tipLabel(x1, y1, x2, y2, s, gap = 16) {
-  const a = Math.atan2(y2 - y1, x2 - x1);
-  return txt(x2 + gap * Math.cos(a), y2 + gap * Math.sin(a) + 5, s);
+  const a = Math.atan2(y2 - y1, x2 - x1), c = Math.cos(a);
+  const anchor = c > 0.5 ? 'start' : c < -0.5 ? 'end' : 'middle', g = anchor === 'middle' ? gap : 7;   // text starts (or ends) just past a sideways tip
+  return txt(x2 + g * c, y2 + gap * Math.sin(a) + 5, s, 'fig-text', anchor);
 }
 
 /* ---------- a line graph with labelled axes (for motion graphs) ---------- */
@@ -759,7 +760,7 @@ function projectileSvg(v, angle, g, label) {
   for (let i = 0; i <= 40; i++) { const t = (T * i) / 40, x = vx * t, y = vy * t - (g * t * t) / 2; d += `${i ? 'L' : 'M'} ${X(x).toFixed(1)} ${Y(y).toFixed(1)} `; }
   let s = svgOpen(W, H, label) + `<line class="fig-line" x1="${L - 10}" y1="${Y(0)}" x2="${W - 10}" y2="${Y(0)}"/>`;
   s += `<path class="fig-plot fig-dashed" d="${d}"/>`;
-  s += arrow(X(0), Y(0), X(0) + 70 * cosD(angle), Y(0) - 70 * sinD(angle), 'a') + txt(X(0) + 80 * cosD(angle) + 6, Y(0) - 80 * sinD(angle), 'v₀', 'fig-text', 'start');
+  s += arrow(X(0), Y(0), X(0) + 70 * cosD(angle), Y(0) - 70 * sinD(angle), 'a') + txt(X(0) + 70 * cosD(angle) - 14 * sinD(angle), Y(0) - 70 * sinD(angle) - 14 * cosD(angle), 'v₀', 'fig-text', 'end');   // above the launch arrow, clear of the path
   s += `<path class="fig-line" d="M ${X(0) + 34} ${Y(0)} A 34 34 0 0 0 ${(X(0) + 34 * cosD(angle)).toFixed(1)} ${(Y(0) - 34 * sinD(angle)).toFixed(1)}"/>` + txt(X(0) + 48, Y(0) - 8, 'θ', 'fig-text', 'start');
   s += `<line class="fig-dash" x1="${X(R / 2)}" y1="${Y(0)}" x2="${X(R / 2)}" y2="${Y(Hm)}"/>` + txt(X(R / 2) + 8, Y(Hm / 2), 'H', 'fig-text', 'start');
   s += arrow(X(0), Y(0) + 16, X(R), Y(0) + 16, 'c', 1.4) + arrow(X(R), Y(0) + 16, X(0), Y(0) + 16, 'c', 1.4) + txt(X(R / 2), Y(0) + 30, 'R', 'fig-small');
@@ -774,8 +775,11 @@ function vectorSvg(vecs, label, span = 8) {
   for (let i = -span; i <= span; i++) s += `<line class="fig-grid" x1="${X(i)}" y1="${Y(-span)}" x2="${X(i)}" y2="${Y(span)}"/><line class="fig-grid" x1="${X(-span)}" y1="${Y(i)}" x2="${X(span)}" y2="${Y(i)}"/>`;
   s += arrow(X(-span), Y(0), X(span) + 8, Y(0), 'c', 1.4) + arrow(X(0), Y(-span), X(0), Y(span) - 8, 'c', 1.4) + txt(X(span) + 2, Y(0) - 8, 'x', 'fig-small') + txt(X(0) + 10, Y(span) - 2, 'y', 'fig-small');
   for (const v of vecs) {
-    const [fx, fy] = v.from || [0, 0];
-    s += arrow(X(fx), Y(fy), X(fx + v.x), Y(fy + v.y), v.kind || 'a') + tipLabel(X(fx), Y(fy), X(fx + v.x), Y(fy + v.y), v.label, 14);
+    const [fx, fy] = v.from || [0, 0], x1 = X(fx), y1 = Y(fy), x2 = X(fx + v.x), y2 = Y(fy + v.y);
+    if (v.guides) s += `<line class="fig-dash" x1="${x2}" y1="${y2}" x2="${x2}" y2="${Y(0)}"/><line class="fig-dash" x1="${x2}" y1="${y2}" x2="${X(0)}" y2="${y2}"/>`;   // dashed lines down to the axes
+    if (v.theta) { const a = Math.atan2(v.y, v.x), r = 34; s += `<path class="fig-line" fill="none" d="M${x1 + r} ${y1} A${r} ${r} 0 0 0 ${+(x1 + r * Math.cos(a)).toFixed(1)} ${+(y1 - r * Math.sin(a)).toFixed(1)}"/>` + txt(x1 + (r + 12) * Math.cos(a / 2), y1 - (r + 12) * Math.sin(a / 2) + 5, v.theta, 'fig-small'); }   // angle arc from the +x axis
+    s += arrow(x1, y1, x2, y2, v.kind || 'a');
+    s += v.mid ? txt((x1 + x2) / 2 + v.mid[0], (y1 + y2) / 2 + v.mid[1], v.label) : tipLabel(x1, y1, x2, y2, v.label, 14);   // mid: label beside the middle of the arrow, offset [dx, dy] px
   }
   return s + '</svg>';
 }
@@ -805,7 +809,7 @@ const wire = d => `<path class="fig-wire" d="${d}"/>`;
 const node = (x, y) => `<circle class="fig-dot" cx="${x}" cy="${y}" r="3.2"/>`;
 /* layout 'series': ε with R1…Rn in a loop; 'parallel': ε with R1…Rn side by side; 'mixed': R1 in series with (R2 ∥ R3) */
 function circuitSvg(kind, names, emfName, label) {
-  const W = 420, H = 230, L = 70, R = 380, Tp = 40, Bt = 200;
+  const W = 450, H = 230, L = 70, R = 380, Tp = 40, Bt = 200;   // room on the right for the last resistor's label
   let s = svgOpen(W, H, label) + battery(L, Tp, Bt, emfName);
   if (kind === 'series') {
     const n = names.length;
@@ -819,7 +823,7 @@ function circuitSvg(kind, names, emfName, label) {
   } else if (kind === 'parallel') {
     const n = names.length, xs = names.map((_, i) => L + ((R - L) * (i + 1)) / n);
     s += wire(`M ${L} ${Tp} H ${R} M ${L} ${Bt} H ${R}`);
-    xs.forEach((x, i) => { s += resistor(x, Tp, x, Bt, names[i]) + node(x, Tp) + node(x, Bt); });
+    xs.forEach((x, i) => { s += resistor(x, Tp, x, Bt, names[i]) + (i < n - 1 ? node(x, Tp) + node(x, Bt) : ''); });   // no junction dot at the far corners
   } else {   // mixed
     const xa = 250, xb = 360;
     s += resistor(L, Tp, 190, Tp, names[0]) + wire(`M 190 ${Tp} H ${xb} M ${L} ${Bt} H ${xb}`);
@@ -829,7 +833,7 @@ function circuitSvg(kind, names, emfName, label) {
 }
 
 /* ---------- vernier caliper: main scale in mm, vernier with 10 divisions over 9 mm (reads to 0.1 mm) ---------- */
-function vernierSvg(reading, label) {
+function vernierSvg(reading, label, mark = true) {   // mark: colour the vernier line that lines up (lesson only; it would give away a question)
   const W = 460, H = 150, k = 12, x0 = 30;                     // 12 px per mm
   const whole = Math.floor(reading + 1e-9), tenth = Math.round((reading - whole) * 10);
   const start = Math.max(0, whole - 8), end = start + 34, X = mm => x0 + (mm - start) * k;
@@ -837,13 +841,13 @@ function vernierSvg(reading, label) {
   for (let mm = start; mm <= end; mm++) {
     const len = mm % 10 === 0 ? 22 : mm % 5 === 0 ? 16 : 10;
     s += `<line class="fig-wire" style="stroke-width:1.2" x1="${X(mm)}" y1="70" x2="${X(mm)}" y2="${70 - len}"/>`;
-    if (mm % 10 === 0) s += txt(X(mm), 42, String(mm / 10), 'fig-small');
+    if (mm % 10 === 0 && X(mm) < W - 56) s += txt(X(mm), 42, String(mm / 10), 'fig-small');   // keep clear of the 'cm' label
   }
   s += txt(W - 22, 34, 'cm', 'fig-small', 'end');
   s += `<rect class="fig-shape" x="${X(reading) - 14}" y="70" width="${10 * 0.9 * k + 28}" height="44" rx="3"/>`;
   for (let i = 0; i <= 10; i++) {
     const x = X(reading + i * 0.9), len = i % 5 === 0 ? 18 : 11;
-    s += `<line class="fig-wire" style="stroke-width:1.2${i === tenth ? ';stroke:var(--accent)' : ''}" x1="${x.toFixed(1)}" y1="70" x2="${x.toFixed(1)}" y2="${70 + len}"/>`;
+    s += `<line class="fig-wire" style="stroke-width:1.2${mark && i === tenth ? ';stroke:var(--accent)' : ''}" x1="${x.toFixed(1)}" y1="70" x2="${x.toFixed(1)}" y2="${70 + len}"/>`;
     if (i % 5 === 0) s += txt(x, 104, String(i), 'fig-small');
   }
   return s + '</svg>';
@@ -851,12 +855,13 @@ function vernierSvg(reading, label) {
 
 /* ---------- a beam on supports with loads: items [{ x, kind: 'support' | 'load' | 'pivot', label }], x from 0 to L ---------- */
 function beamSvg(L, items, label) {
-  const W = 460, H = 170, x0 = 40, x1 = 420, y = 80, X = x => x0 + (x / L) * (x1 - x0);
+  const W = 460, H = 196, x0 = 40, x1 = 420, y = 106, X = x => x0 + (x / L) * (x1 - x0);
   let s = svgOpen(W, H, label) + `<rect class="fig-block" x="${x0}" y="${y - 7}" width="${x1 - x0}" height="14" rx="2"/>`;
+  const placed = [];   // x of load labels already drawn: a label too close to one goes on a taller arrow
   for (const it of items) {
     const x = X(it.x);
     if (it.kind === 'support' || it.kind === 'pivot') s += `<polygon class="fig-shape" points="${x},${y + 7} ${x - 14},${y + 34} ${x + 14},${y + 34}"/>` + (it.label ? txt(x, y + 52, it.label, 'fig-small') : '');
-    else s += arrow(x, y - 62, x, y - 9, it.arrow || 'a') + txt(x, y - 68, it.label, 'fig-small');
+    else { const up = placed.some(px => Math.abs(px - x) < 48) ? 26 : 0; placed.push(x); s += arrow(x, y - 62 - up, x, y - 9, it.arrow || 'a') + txt(x, y - 68 - up, it.label, 'fig-small'); }
   }
   // distance ticks under the beam at every labelled item
   return s + `<line class="fig-dash" x1="${x0}" y1="${y + 62}" x2="${x1}" y2="${y + 62}"/>` + txt(x0, y + 78, '0', 'fig-small') + txt(x1, y + 78, `${F(L)} m`, 'fig-small') + '</svg>';
@@ -866,10 +871,10 @@ function beamSvg(L, items, label) {
 function circleSvg(label) {
   const W = 300, H = 260, cx = 140, cy = 130, r = 95, a = rad(35), px = cx + r * Math.cos(a), py = cy - r * Math.sin(a);
   let s = svgOpen(W, H, label) + `<circle class="fig-line fig-dashed" cx="${cx}" cy="${cy}" r="${r}"/><circle class="fig-dot" cx="${cx}" cy="${cy}" r="3"/>`;
-  s += `<line class="fig-dash" x1="${cx}" y1="${cy}" x2="${px.toFixed(1)}" y2="${py.toFixed(1)}"/>` + txt((cx + px) / 2 - 6, (cy + py) / 2 + 16, 'r');
+  s += `<line class="fig-dash" x1="${cx}" y1="${cy}" x2="${px.toFixed(1)}" y2="${py.toFixed(1)}"/>` + txt(cx + 0.3 * (px - cx) + 14 * Math.sin(a), cy + 0.3 * (py - cy) + 14 * Math.cos(a) + 5, 'r');   // below the radius, near the centre
   s += `<circle class="fig-block" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="9"/>`;
   s += arrow(px, py, px - 70 * Math.sin(a), py - 70 * Math.cos(a), 'a') + tipLabel(px, py, px - 70 * Math.sin(a), py - 70 * Math.cos(a), 'v');
-  s += arrow(px, py, px - 55 * Math.cos(a), py + 55 * Math.sin(a), 'b') + txt(px - 60 * Math.cos(a) + 4, py + 60 * Math.sin(a) + 20, 'a', 'fig-text', 'start');
+  s += arrow(px, py, px - 55 * Math.cos(a), py + 55 * Math.sin(a), 'b') + txt(px - 55 * Math.cos(a) - 14 * Math.sin(a), py + 55 * Math.sin(a) - 14 * Math.cos(a) + 2, 'a', 'fig-text', 'end');   // above the arrow head
   return s + '</svg>';
 }
 
@@ -1109,7 +1114,7 @@ ${Tip(T`<p>A calculator shows many digits, but an answer cannot be more precise 
     },
     () => {
       const rd = ri(80, 450) / 10;
-      return { q: T`What is the reading on this vernier caliper, in millimetres?` + Fig(vernierSvg(rd, T`A vernier caliper reading`)), a: rd, u: 'mm', w: [Math.floor(rd), sig(rd + 1, 4), sig(Math.floor(rd) + (rd * 10 % 10) / 100, 4)], rtol: 0,
+      return { q: T`What is the reading on this vernier caliper, in millimetres?` + Fig(vernierSvg(rd, T`A vernier caliper reading`, false)), a: rd, u: 'mm', w: [Math.floor(rd), sig(rd + 1, 4), sig(Math.floor(rd) + (rd * 10 % 10) / 100, 4)], rtol: 0,
         s: T`The vernier zero is just past ${Math.floor(rd)} mm on the main scale, and vernier line ${Math.round((rd - Math.floor(rd)) * 10)} lines up with a main-scale line. Reading: $${Math.floor(rd)} + ${M(sig(rd - Math.floor(rd), 2))} = ${QT(rd, 'mm')}$.` };
     },
     () => {
@@ -1135,7 +1140,7 @@ ${Tbl([T`Scalars`, T`Vectors`], [[T`distance, speed`, T`displacement, velocity`]
 <h3>Components</h3>
 <p>A vector of magnitude $A$ at angle $\theta$ above the positive $x$-axis can be split into two perpendicular parts:</p>
 ${Fm(T`A_x = A\cos\theta \qquad A_y = A\sin\theta`)}
-${Fig(vectorSvg([{ x: 5.2, y: 3, label: 'A' }, { x: 5.2, y: 0, label: sub('A', 'x'), kind: 'c' }, { x: 0, y: 3, label: sub('A', 'y'), kind: 'c', from: [5.2, 0] }], T`A vector A split into a horizontal component and a vertical component`, 7), T`The components $A_x$ and $A_y$ add up to $\vec{A}$.`)}
+${Fig(vectorSvg([{ x: 5.2, y: 3, label: 'A', guides: true, theta: 'θ' }, { x: 5.2, y: 0, label: sub('A', 'x'), kind: 'b', mid: [0, 24] }, { x: 0, y: 3, label: sub('A', 'y'), kind: 'b', mid: [-20, 5] }], T`A vector A split into a horizontal component and a vertical component`, 7), T`The components $A_x$ and $A_y$ add up to $\vec{A}$.`)}
 <h3>Adding vectors</h3>
 <p>To add vectors, place them head to tail; the <b>resultant</b> runs from the first tail to the last head.</p>
 <ul><li>Same direction: add the magnitudes. $3\,\mathrm{N} + 4\,\mathrm{N}$ to the right gives $7\,\mathrm{N}$ to the right.</li><li>Opposite directions: subtract, and the resultant points the way of the larger one.</li><li>Perpendicular: use Pythagoras. $3\,\mathrm{N}$ east and $4\,\mathrm{N}$ north give $\sqrt{3^2 + 4^2} = 5\,\mathrm{N}$.</li></ul>
@@ -1237,7 +1242,7 @@ ${Tip(T`<p>Convert km/h to m/s before using the equations: $72\,\mathrm{km/h} = 
         : { q: T`A ship sails at a constant ${Q(v, 'm/s')}. How long does it take to cover ${Q(s, 'm')}?`, a: t, u: 's', w: [s * v, sig(v / s, 3), s - v], s: T`$t = \frac{s}{v} = \frac{${s}}{${v}} = ${QT(t, 's')}$.` };
     },
     () => {
-      const v0 = ri(0, 10), a = ri(1, 6) / (chance() ? 1 : 2), t = ri(2, 10), v = sig(v0 + a * t, 6);
+      const v0 = ri(0, 10), a = ri(1, 6) / (chance() ? 1 : 2), t = ri(2, Math.min(10, Math.floor(20 / a))), v = sig(v0 + a * t, 6);   // final speed stays below about 30 m/s
       return { q: T`A car moving at ${Q(v0, 'm/s')} speeds up to ${Q(v, 'm/s')} in ${Q(t, 's')}. What is its acceleration?`, a, u: 'm/s²', w: [sig(v / t), sig((v + v0) / t), sig((v - v0) * t)],
         s: T`$a = \frac{v - v_0}{t} = \frac{${M(v)} - ${v0}}{${t}} = ${QT(a, 'm/s^2')}$.` };
     },
@@ -1429,7 +1434,7 @@ ${Fm(T`\Sigma F = m a`)}
 <h3>Common forces</h3>
 <ul><li><b>Weight</b> $W = mg$, pulling towards the centre of the Earth.</li><li><b>Normal force</b> $N$, from a surface, perpendicular to it.</li><li><b>Tension</b> $T$, along a rope or string.</li><li><b>Friction</b> $f$, along a surface, against sliding (next topic).</li></ul>
 ${Key(T`<p>Solving a force problem:</p><ol><li>Draw a <b>free-body diagram</b>: the object alone, with every force on it as an arrow.</li><li>Choose a positive direction.</li><li>Write $\Sigma F = ma$ along that direction and solve.</li></ol>`)}
-${Fig(fbdSvg([{ ang: 90, len: 70, label: 'N', kind: 'b' }, { ang: 270, len: 70, label: 'W' }, { ang: 0, len: 90, label: 'F' }, { ang: 180, len: 45, label: 'f', kind: 'c', ground: true }], T`Free-body diagram of a block pulled along the floor: normal force up, weight down, pull to the right and friction to the left`), T`A block pulled to the right: $N$ balances $W$, and the net force is $F - f$.`)}
+${Fig(fbdSvg([{ ang: 90, len: 70, label: 'N', kind: 'b' }, { ang: 270, len: 70, label: 'W' }, { ang: 0, len: 90, label: 'F' }, { ang: 180, len: 58, label: 'f', kind: 'c', ground: true }], T`Free-body diagram of a block pulled along the floor: normal force up, weight down, pull to the right and friction to the left`), T`A block pulled to the right: $N$ balances $W$, and the net force is $F - f$.`)}
 ${Ex(T`<p>A $60\,\mathrm{kg}$ person stands on scales in a lift accelerating <b>upwards</b> at $2\,\mathrm{m/s^2}$ ($g = 10\,\mathrm{m/s^2}$). Upwards is positive:</p><p>$$N - mg = ma \;\Rightarrow\; N = m(g + a) = 60 \cdot 12 = 720\,\mathrm{N}.$$</p><p>The scales read more than the person's weight of $600\,\mathrm{N}$. Accelerating downwards, they would read $m(g - a) = 480\,\mathrm{N}$.</p>`)}`,
   gens: [
     () => {
@@ -1441,7 +1446,7 @@ ${Ex(T`<p>A $60\,\mathrm{kg}$ person stands on scales in a lift accelerating <b>
     () => {
       const m = ri(2, 20), F1 = ri(10, 60), F2 = ri(2, F1 - 4), a = sig((F1 - F2) / m);
       return { q: T`A ${Q(m, 'kg')} block on a smooth floor is pulled to the right with ${Q(F1, 'N')} and to the left with ${Q(F2, 'N')}. What is its acceleration?`
-          + Fig(fbdSvg([{ ang: 0, len: 95, label: `${F1} N` }, { ang: 180, len: Math.max(35, 95 * F2 / F1), label: `${F2} N`, kind: 'b' }], T`A block with a force to the right and a smaller force to the left`)),
+          + Fig(fbdSvg([{ ang: 0, len: 110, label: `${F1} N` }, { ang: 180, len: 45 + 65 * F2 / F1, label: `${F2} N`, kind: 'b' }], T`A block with a force to the right and a smaller force to the left`)),
         a, u: 'm/s²', w: [sig((F1 + F2) / m), sig(F1 / m), sig((F1 - F2) * m, 4)],
         s: T`The net force is $${F1} - ${F2} = ${F1 - F2}\,\mathrm{N}$ to the right, so $a = \frac{${F1 - F2}}{${m}} = ${QT(a, 'm/s^2')}$ to the right.` };
     },
@@ -1552,7 +1557,7 @@ ${Tip(T`<p>Square the speed in $\tfrac12 m v^2$: doubling the speed makes the ki
         s: T`$E_k = \tfrac12 m v^2 = \tfrac12 \cdot ${M(m)} \cdot ${v}^2 = ${QT(E, 'J')}$.` };
     },
     () => {
-      const g = gPick(), m = ri(1, 60), h = ri(2, 40), E = sig(m * g * h, 6);
+      const g = gPick(), m = ri(1, 60), h = ri(2, 40), E = sig(m * g * h);
       return { q: T`A ${Q(m, 'kg')} load is lifted ${Q(h, 'm')} straight up. By how much does its gravitational potential energy increase? ${gNote(g)}`, a: E, u: 'J', w: [m * h, sig(0.5 * m * g * h, 6), sig(m * g / h)],
         s: T`$\Delta E_p = mgh = ${m} \cdot ${M(g)} \cdot ${h} = ${QT(E, 'J')}$.` };
     },
@@ -1658,7 +1663,7 @@ ${Tip(T`<p>Angles in rotational formulas must be in radians. Convert revolutions
     () => {
       const [name, k, kT] = pick([[T`solid disc`, 0.5, '\\tfrac12'], [T`thin ring`, 1, ''], [T`solid sphere`, 0.4, '\\tfrac25']]), M0 = ri(1, 20) / 2, R = ri(1, 10) / 10, I = sig(k * M0 * R * R);
       return { q: T`What is the moment of inertia of a ${name} of mass ${Q(M0, 'kg')} and radius ${Q(R, 'm')} about its central axis?`, a: I, u: 'kg m²', w: [sig(M0 * R * R * (k === 1 ? 0.5 : 1)), sig(k * M0 * R), sig(k * M0 * R * R * 2)],
-        s: T`$I = ${kT} MR^2 = ${kT} \cdot ${M(M0)} \cdot ${M(R)}^2 = ${QT(I, 'kg\\,m^2')}$.` };
+        s: T`$I = ${kT} MR^2 = ${kT ? kT + ' \\cdot ' : ''}${M(M0)} \cdot ${M(R)}^2 = ${QT(I, 'kg\\,m^2')}$.` };
     },
     () => {
       const M0 = ri(2, 20), R = ri(1, 5) / 10, tau = ri(1, 20) / 2, I = 0.5 * M0 * R * R, al = sig(tau / I);
@@ -1707,7 +1712,7 @@ ${Tip(T`<p>Remember the beam's own weight: for a uniform beam, put it at the mid
         s: T`Moments balance: $${w1} \cdot ${M(d1)} = ${w2} \cdot d$, so $d = \frac{${M(w1 * d1)}}{${w2}} = ${QT(d2, 'm')}$.` };
     },
     () => {
-      const L = pick([2, 3, 4, 5, 6]), W = ri(4, 20) * 10, P = ri(4, 12) * 50, x = ri(1, L * 2 - 1) / 2, RB = sig((P * x + W * L / 2) / L), RA = sig(P + W - RB), askA = chance();
+      const L = pick([2, 3, 4, 5, 6]), W = ri(4, 20) * 10, P = ri(4, 12) * 50, x = pick([...Array(L * 2 - 1)].map((_, i) => (i + 1) / 2).filter(v => v !== L / 2)), RB = sig((P * x + W * L / 2) / L), RA = sig(P + W - RB), askA = chance();
       return { q: T`A uniform beam ${Q(L, 'm')} long weighing ${Q(W, 'N')} rests on supports A (left end) and B (right end). A load of ${Q(P, 'N')} hangs ${Q(x, 'm')} from A. What is the upward force at ${askA ? 'A' : 'B'}?` + Fig(beamSvg(L, [{ x: 0, kind: 'support', label: 'A' }, { x: L, kind: 'support', label: 'B' }, { x, kind: 'load', label: `${P} N` }, { x: L / 2, kind: 'load', label: 'W', arrow: 'c' }], T`A beam on two end supports with a hanging load`)),
         a: askA ? RA : RB, u: 'N', w: askA ? [RB, sig((P + W) / 2), sig(P * x / L)] : [RA, sig((P + W) / 2), sig(P * x / L)],
         s: T`Moments about A: $R_B \cdot ${L} = ${P} \cdot ${M(x)} + ${W} \cdot ${M(L / 2)}$, so $R_B = ${M(RB)}\,\mathrm{N}$. Forces: $R_A = ${P} + ${W} - ${M(RB)} = ${M(RA)}\,\mathrm{N}$. ${askA ? T`The force at A is ${Q(RA, 'N')}.` : T`The force at B is ${Q(RB, 'N')}.`}` };
@@ -1766,7 +1771,7 @@ ${Tip(T`<p>$r$ is measured from the <b>centre</b> of the planet. A satellite $40
             s: T`$r = R + h = ${sciT(r)}\,\mathrm{m}$, so $v = \sqrt{\frac{GM}{r}} = \sqrt{\frac{6.67 \times 10^{-11} \cdot 6.0 \times 10^{24}}{${sciT(r)}}} = ${M(sig(vv))}\,\mathrm{m/s} = ${QT(sig(vv / 1000), 'km/s')}$.` };
     },
     () => {
-      const k = pick([4, 9, 16, 1 / 4]), T1 = pick([1, 2, 10, 27, 90]), T2 = sig(T1 * k ** 1.5);
+      const k = pick([4, 9, 16, 1 / 4]), T1 = pick([2, 3, 10, 27, 90]), T2 = sig(T1 * k ** 1.5);
       return { q: T`Planet A orbits a star with a period of ${T1} years. Planet B orbits the same star at ${k < 1 ? T`one quarter of` : T`${k} times`} A's orbital radius. What is B's period in years?`, a: T2, u: T`years`, w: [sig(T1 * k), sig(T1 * k * k), sig(T1 * Math.sqrt(k))],
         s: T`Kepler's third law: $T^2 \propto r^3$, so $T_B = T_A \left(\frac{r_B}{r_A}\right)^{3/2} = ${T1} \cdot ${k < 1 ? '(1/4)' : k}^{3/2} = ${M(T2)}$ years.` };
     },
@@ -1814,7 +1819,7 @@ ${Tip(T`<p>Extension is the <i>change</i> in length, not the new length. A $20\,
     },
     () => {
       const [mat, E] = pick([[T`steel`, 2.0e11], [T`copper`, 1.2e11], [T`aluminium`, 7.0e10]]), L = ri(1, 10), A = pick([1, 2, 4, 5]) * 1e-6, F = ri(1, 8) * 50, dL = F * L / (A * E);
-      return { q: T`A ${mat} wire ${Q(L, 'm')} long with a cross-sectional area of ${Q(A * 1e6, 'mm^2')} carries a load of ${Q(F, 'N')}. By how many millimetres does it stretch? (Young's modulus: $${sciT(E, 2)}\,\mathrm{Pa}$.)`, a: sig(dL * 1000), u: 'mm', w: [sig(dL), sig(dL * 1e4), sig(dL * 1000 / L)],
+      return { q: T`A wire made of ${mat}, ${Q(L, 'm')} long, with a cross-sectional area of ${Q(A * 1e6, 'mm^2')} carries a load of ${Q(F, 'N')}. By how many millimetres does it stretch? (Young's modulus: $${sciT(E, 2)}\,\mathrm{Pa}$.)`, a: sig(dL * 1000), u: 'mm', w: [sig(dL), sig(dL * 1e4), sig(dL * 1000 / L)],
         s: T`$\Delta L = \frac{F L}{A E} = \frac{${F} \cdot ${L}}{${sciT(A)} \cdot ${sciT(E, 2)}} = ${sciT(dL)}\,\mathrm{m} = ${QT(sig(dL * 1000), 'mm')}$.` };
     },
     () => {
@@ -2210,9 +2215,9 @@ ${Tip(T`<p>In $Q = mc\Delta T$ the mass must be in kilograms: $250\,\mathrm{g} =
         s: T`$m_1 c_1 (T_1 - T) = m_2 c_w (T - T_2)$ gives $T = \frac{m_1 c_1 T_1 + m_2 c_w T_2}{m_1 c_1 + m_2 c_w} = \frac{${M(sig(m1 * c * T1, 6))} + ${M(sig(m2 * cw * T2, 6))}}{${M(sig(m1 * c, 6))} + ${M(sig(m2 * cw, 6))}} \approx ${QT(Tf, '°C')}$.` };
     },
     () => {
-      const [mat, al] = pick([[T`steel`, 1.2e-5], [T`aluminium`, 2.4e-5], [T`copper`, 1.7e-5], [T`brass`, 1.9e-5]]), L0 = ri(2, 50), dT = ri(2, 12) * 5, dL = sig(al * L0 * dT * 1000, 4);
+      const [mat, al] = pick([[T`steel`, 1.2e-5], [T`aluminium`, 2.4e-5], [T`copper`, 1.7e-5], [T`brass`, 1.9e-5]]), L0 = ri(1, 12) / 2, dT = ri(2, 12) * 5, dL = sig(al * L0 * dT * 1000);
       return { q: T`A ${mat} rod is ${Q(L0, 'm')} long at room temperature. By how many millimetres does it lengthen when heated by ${Q(dT, '°C')}? ($\alpha = ${sciT(al)}\,/{}^\circ\mathrm{C}$.)`, a: dL, u: 'mm', w: [sig(dL / 1000, 4), sig(dL * 10, 4), sig(dL * 3, 4)],
-        s: T`$\Delta L = \alpha L_0 \Delta T = ${sciT(al)} \cdot ${L0} \cdot ${dT} = ${sciT(al * L0 * dT)}\,\mathrm{m} = ${QT(dL, 'mm')}$.` };
+        s: T`$\Delta L = \alpha L_0 \Delta T = ${sciT(al)} \cdot ${M(L0)} \cdot ${dT} = ${sciT(al * L0 * dT)}\,\mathrm{m} = ${QT(dL, 'mm')}$.` };
     },
     () => {
       const k = pick([0, 1]);
@@ -2416,7 +2421,7 @@ ${Tip(T`<p>Convert $\mu\mathrm{C}$ to C and cm to m before using Coulomb's law. 
       if (same && Qa === Qb) return null;
       return { q: same ? T`Two positive charges of ${Q(Qa, 'nC')} and ${Q(Qb, 'nC')} are ${Q(d * 100, 'cm')} apart. What is the electric field strength exactly halfway between them?` : T`A charge of $+${QT(Qa, 'nC')}$ and a charge of $-${QT(Qb, 'nC')}$ are ${Q(d * 100, 'cm')} apart. What is the electric field strength exactly halfway between them?`,
         a: E, u: 'N/C', w: same ? [sig(Ea + Eb), sig(Math.abs(Ea - Eb) / 4), 0] : [sig(Math.abs(Ea - Eb)), sig((Ea + Eb) / 4), sig(Ea)],
-        s: same ? T`Each charge alone gives $E = \frac{kQ}{r^2}$ with $r = ${M(r)}\,\mathrm{m}$: ${Q(sig(Ea), 'N/C')} and ${Q(sig(Eb), 'N/C')}. Both point away from their charges, so in opposite directions at the midpoint: $|${M(sig(Ea))} - ${M(sig(Eb))}| = ${QT(E, 'N/C')}$.` : T`Each charge alone gives $E = \frac{kQ}{r^2}$ with $r = ${M(r)}\,\mathrm{m}$: ${Q(sig(Ea), 'N/C')} and ${Q(sig(Eb), 'N/C')}. At the midpoint both fields point from + towards −, so they add: ${Q(E, 'N/C')}.` };
+        s: same ? T`Each charge alone gives $E = \frac{kQ}{r^2}$ with $r = ${M(r)}\,\mathrm{m}$: ${Q(sig(Ea, 4), 'N/C')} and ${Q(sig(Eb, 4), 'N/C')}. Both point away from their charges, so in opposite directions at the midpoint: $|${M(sig(Ea, 4))} - ${M(sig(Eb, 4))}| \approx ${QT(E, 'N/C')}$.` : T`Each charge alone gives $E = \frac{kQ}{r^2}$ with $r = ${M(r)}\,\mathrm{m}$: ${Q(sig(Ea, 4), 'N/C')} and ${Q(sig(Eb, 4), 'N/C')}. At the midpoint both fields point from + towards −, so they add: $${M(sig(Ea, 4))} + ${M(sig(Eb, 4))} \approx ${QT(E, 'N/C')}$.` };
     },
     () => pick([
       { q: T`A glass rod rubbed with silk becomes positively charged. What has happened?`, a: T`Electrons have moved from the rod to the silk`, w: [T`Protons have moved from the silk to the rod`, T`Positive charge has been created in the rod`, T`Electrons have moved from the silk to the rod`], only: 'mc', s: T`Only electrons move easily. The rod loses electrons, leaving it with more protons than electrons, and the silk gains the same number of electrons: charge is conserved.` },

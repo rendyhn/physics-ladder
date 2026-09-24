@@ -135,7 +135,7 @@ ${Tip(T`<p>A calculator shows many digits, but an answer cannot be more precise 
     },
     () => {
       const rd = ri(80, 450) / 10;
-      return { q: T`What is the reading on this vernier caliper, in millimetres?` + Fig(vernierSvg(rd, T`A vernier caliper reading`)), a: rd, u: 'mm', w: [Math.floor(rd), sig(rd + 1, 4), sig(Math.floor(rd) + (rd * 10 % 10) / 100, 4)], rtol: 0,
+      return { q: T`What is the reading on this vernier caliper, in millimetres?` + Fig(vernierSvg(rd, T`A vernier caliper reading`, false)), a: rd, u: 'mm', w: [Math.floor(rd), sig(rd + 1, 4), sig(Math.floor(rd) + (rd * 10 % 10) / 100, 4)], rtol: 0,
         s: T`The vernier zero is just past ${Math.floor(rd)} mm on the main scale, and vernier line ${Math.round((rd - Math.floor(rd)) * 10)} lines up with a main-scale line. Reading: $${Math.floor(rd)} + ${M(sig(rd - Math.floor(rd), 2))} = ${QT(rd, 'mm')}$.` };
     },
     () => {
@@ -161,7 +161,7 @@ ${Tbl([T`Scalars`, T`Vectors`], [[T`distance, speed`, T`displacement, velocity`]
 <h3>Components</h3>
 <p>A vector of magnitude $A$ at angle $\theta$ above the positive $x$-axis can be split into two perpendicular parts:</p>
 ${Fm(T`A_x = A\cos\theta \qquad A_y = A\sin\theta`)}
-${Fig(vectorSvg([{ x: 5.2, y: 3, label: 'A' }, { x: 5.2, y: 0, label: sub('A', 'x'), kind: 'c' }, { x: 0, y: 3, label: sub('A', 'y'), kind: 'c', from: [5.2, 0] }], T`A vector A split into a horizontal component and a vertical component`, 7), T`The components $A_x$ and $A_y$ add up to $\vec{A}$.`)}
+${Fig(vectorSvg([{ x: 5.2, y: 3, label: 'A', guides: true, theta: 'θ' }, { x: 5.2, y: 0, label: sub('A', 'x'), kind: 'b', mid: [0, 24] }, { x: 0, y: 3, label: sub('A', 'y'), kind: 'b', mid: [-20, 5] }], T`A vector A split into a horizontal component and a vertical component`, 7), T`The components $A_x$ and $A_y$ add up to $\vec{A}$.`)}
 <h3>Adding vectors</h3>
 <p>To add vectors, place them head to tail; the <b>resultant</b> runs from the first tail to the last head.</p>
 <ul><li>Same direction: add the magnitudes. $3\,\mathrm{N} + 4\,\mathrm{N}$ to the right gives $7\,\mathrm{N}$ to the right.</li><li>Opposite directions: subtract, and the resultant points the way of the larger one.</li><li>Perpendicular: use Pythagoras. $3\,\mathrm{N}$ east and $4\,\mathrm{N}$ north give $\sqrt{3^2 + 4^2} = 5\,\mathrm{N}$.</li></ul>

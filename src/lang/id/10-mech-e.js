@@ -105,7 +105,7 @@ addT('id', {
   '17ewugml04e': R`Pada susunan seri $\frac{1}{k} = \frac{1}{⟦0⟧} + \frac{1}{⟦1⟧}$, jadi $k = \frac{⟦2⟧ \cdot ⟦3⟧}{⟦4⟧ + ⟦5⟧} = ⟦6⟧$.`,
   'ts6blvkpd6': R`Sebuah kawat berdiameter ⟦0⟧ menahan beban ⟦1⟧. Berapa tegangan tarik pada kawat, dalam MPa?`,
   '1j4s9hz8eyg': R`Luas penampang: $A = \pi\left(\frac{d}{2}\right)^2 = \pi (⟦0⟧)^2 = ⟦1⟧\,\mathrm{m^2}$. Tegangan: $\sigma = \frac{F}{A} = ⟦2⟧\,\mathrm{Pa} = ⟦3⟧$.`,
-  '1u7vob9uodk': R`Sebuah kawat ⟦0⟧ sepanjang ⟦1⟧ dengan luas penampang ⟦2⟧ menahan beban ⟦3⟧. Berapa milimeter pertambahan panjangnya? (Modulus Young: $⟦4⟧\,\mathrm{Pa}$.)`,
+  '21tbyjxpkpz': R`Sebuah kawat ⟦0⟧ sepanjang ⟦1⟧ dengan luas penampang ⟦2⟧ menahan beban ⟦3⟧. Berapa milimeter pertambahan panjangnya? (Modulus Young: $⟦4⟧\,\mathrm{Pa}$.)`,
   '14ov2o2z4pw': R`Sebuah peluncur mainan memakai pegas dengan $k = ⟦0⟧$ yang dimampatkan sejauh ⟦1⟧ untuk menembakkan bola ⟦2⟧ secara mendatar. Jika tidak ada energi yang hilang, berapa kelajuan bola saat lepas?`,
   'vo9el1qyj0': R`$\tfrac12 k x^2 = \tfrac12 m v^2$, jadi $v = x\sqrt{\frac{k}{m}} = ⟦0⟧\sqrt{\frac{⟦1⟧}{⟦2⟧}} = ⟦3⟧$.`,
   '26bdgc95rl6': R`Berapa energi potensial yang tersimpan pada pegas dengan $k = ⟦0⟧$ yang diregangkan sejauh ⟦1⟧?`,

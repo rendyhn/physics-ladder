@@ -65,9 +65,9 @@ ${Tip(T`<p>In $Q = mc\Delta T$ the mass must be in kilograms: $250\,\mathrm{g} =
         s: T`$m_1 c_1 (T_1 - T) = m_2 c_w (T - T_2)$ gives $T = \frac{m_1 c_1 T_1 + m_2 c_w T_2}{m_1 c_1 + m_2 c_w} = \frac{${M(sig(m1 * c * T1, 6))} + ${M(sig(m2 * cw * T2, 6))}}{${M(sig(m1 * c, 6))} + ${M(sig(m2 * cw, 6))}} \approx ${QT(Tf, '°C')}$.` };
     },
     () => {
-      const [mat, al] = pick([[T`steel`, 1.2e-5], [T`aluminium`, 2.4e-5], [T`copper`, 1.7e-5], [T`brass`, 1.9e-5]]), L0 = ri(2, 50), dT = ri(2, 12) * 5, dL = sig(al * L0 * dT * 1000, 4);
+      const [mat, al] = pick([[T`steel`, 1.2e-5], [T`aluminium`, 2.4e-5], [T`copper`, 1.7e-5], [T`brass`, 1.9e-5]]), L0 = ri(1, 12) / 2, dT = ri(2, 12) * 5, dL = sig(al * L0 * dT * 1000);
       return { q: T`A ${mat} rod is ${Q(L0, 'm')} long at room temperature. By how many millimetres does it lengthen when heated by ${Q(dT, '°C')}? ($\alpha = ${sciT(al)}\,/{}^\circ\mathrm{C}$.)`, a: dL, u: 'mm', w: [sig(dL / 1000, 4), sig(dL * 10, 4), sig(dL * 3, 4)],
-        s: T`$\Delta L = \alpha L_0 \Delta T = ${sciT(al)} \cdot ${L0} \cdot ${dT} = ${sciT(al * L0 * dT)}\,\mathrm{m} = ${QT(dL, 'mm')}$.` };
+        s: T`$\Delta L = \alpha L_0 \Delta T = ${sciT(al)} \cdot ${M(L0)} \cdot ${dT} = ${sciT(al * L0 * dT)}\,\mathrm{m} = ${QT(dL, 'mm')}$.` };
     },
     () => {
       const k = pick([0, 1]);

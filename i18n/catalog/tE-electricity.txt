@@ -40,10 +40,10 @@ A charge of ⟦0⟧ is placed in a uniform electric field of ⟦1⟧. What force
 Two positive charges of ⟦0⟧ and ⟦1⟧ are ⟦2⟧ apart. What is the electric field strength exactly halfway between them?
 @qbppapoqlc  ; 0=QT(Qa, 'nC') | 1=QT(Qb, 'nC') | 2=Q(d * 100, 'cm')
 A charge of $+⟦0⟧$ and a charge of $-⟦1⟧$ are ⟦2⟧ apart. What is the electric field strength exactly halfway between them?
-@1e5w88fww7g  ; 0=M(r) | 1=Q(sig(Ea), 'N/C') | 2=Q(sig(Eb), 'N/C') | 3=M(sig(Ea)) | 4=M(sig(Eb)) | 5=QT(E, 'N/C')
-Each charge alone gives $E = \frac{kQ}{r^2}$ with $r = ⟦0⟧\,\mathrm{m}$: ⟦1⟧ and ⟦2⟧. Both point away from their charges, so in opposite directions at the midpoint: $|⟦3⟧ - ⟦4⟧| = ⟦5⟧$.
-@2872nas0bpq  ; 0=M(r) | 1=Q(sig(Ea), 'N/C') | 2=Q(sig(Eb), 'N/C') | 3=Q(E, 'N/C')
-Each charge alone gives $E = \frac{kQ}{r^2}$ with $r = ⟦0⟧\,\mathrm{m}$: ⟦1⟧ and ⟦2⟧. At the midpoint both fields point from + towards −, so they add: ⟦3⟧.
+@1c29vlpo29x  ; 0=M(r) | 1=Q(sig(Ea, 4), 'N/C') | 2=Q(sig(Eb, 4), 'N/C') | 3=M(sig(Ea, 4)) | 4=M(sig(Eb, 4)) | 5=QT(E, 'N/C')
+Each charge alone gives $E = \frac{kQ}{r^2}$ with $r = ⟦0⟧\,\mathrm{m}$: ⟦1⟧ and ⟦2⟧. Both point away from their charges, so in opposite directions at the midpoint: $|⟦3⟧ - ⟦4⟧| \approx ⟦5⟧$.
+@d78v7qlsgv  ; 0=M(r) | 1=Q(sig(Ea, 4), 'N/C') | 2=Q(sig(Eb, 4), 'N/C') | 3=M(sig(Ea, 4)) | 4=M(sig(Eb, 4)) | 5=QT(E, 'N/C')
+Each charge alone gives $E = \frac{kQ}{r^2}$ with $r = ⟦0⟧\,\mathrm{m}$: ⟦1⟧ and ⟦2⟧. At the midpoint both fields point from + towards −, so they add: $⟦3⟧ + ⟦4⟧ \approx ⟦5⟧$.
 @t5xdw5omnt
 A glass rod rubbed with silk becomes positively charged. What has happened?
 @1txfkj3cb8x

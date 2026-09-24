@@ -797,8 +797,8 @@ steel
 copper
 @29s3flj4o7q
 aluminium
-@1u7vob9uodk  ; 0=mat | 1=Q(L, 'm') | 2=Q(A * 1e6, 'mm^2') | 3=Q(F, 'N') | 4=sciT(E, 2)
-A ⟦0⟧ wire ⟦1⟧ long with a cross-sectional area of ⟦2⟧ carries a load of ⟦3⟧. By how many millimetres does it stretch? (Young's modulus: $⟦4⟧\,\mathrm{Pa}$.)
+@21tbyjxpkpz  ; 0=mat | 1=Q(L, 'm') | 2=Q(A * 1e6, 'mm^2') | 3=Q(F, 'N') | 4=sciT(E, 2)
+A wire made of ⟦0⟧, ⟦1⟧ long, with a cross-sectional area of ⟦2⟧ carries a load of ⟦3⟧. By how many millimetres does it stretch? (Young's modulus: $⟦4⟧\,\mathrm{Pa}$.)
 @14ov2o2z4pw  ; 0=QT(k, 'N/m') | 1=Q(x * 100, 'cm') | 2=Q(m * 1000, 'g')
 A toy launcher uses a spring with $k = ⟦0⟧$ compressed by ⟦1⟧ to fire a ⟦2⟧ ball horizontally. Ignoring losses, how fast does the ball leave?
 @vo9el1qyj0  ; 0=M(x) | 1=k | 2=M(m) | 3=QT(v, 'm/s')

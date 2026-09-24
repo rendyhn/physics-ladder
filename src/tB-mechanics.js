@@ -45,7 +45,7 @@ ${Tip(T`<p>Convert km/h to m/s before using the equations: $72\,\mathrm{km/h} = 
         : { q: T`A ship sails at a constant ${Q(v, 'm/s')}. How long does it take to cover ${Q(s, 'm')}?`, a: t, u: 's', w: [s * v, sig(v / s, 3), s - v], s: T`$t = \frac{s}{v} = \frac{${s}}{${v}} = ${QT(t, 's')}$.` };
     },
     () => {
-      const v0 = ri(0, 10), a = ri(1, 6) / (chance() ? 1 : 2), t = ri(2, 10), v = sig(v0 + a * t, 6);
+      const v0 = ri(0, 10), a = ri(1, 6) / (chance() ? 1 : 2), t = ri(2, Math.min(10, Math.floor(20 / a))), v = sig(v0 + a * t, 6);   // final speed stays below about 30 m/s
       return { q: T`A car moving at ${Q(v0, 'm/s')} speeds up to ${Q(v, 'm/s')} in ${Q(t, 's')}. What is its acceleration?`, a, u: 'm/s²', w: [sig(v / t), sig((v + v0) / t), sig((v - v0) * t)],
         s: T`$a = \frac{v - v_0}{t} = \frac{${M(v)} - ${v0}}{${t}} = ${QT(a, 'm/s^2')}$.` };
     },
@@ -237,7 +237,7 @@ ${Fm(T`\Sigma F = m a`)}
 <h3>Common forces</h3>
 <ul><li><b>Weight</b> $W = mg$, pulling towards the centre of the Earth.</li><li><b>Normal force</b> $N$, from a surface, perpendicular to it.</li><li><b>Tension</b> $T$, along a rope or string.</li><li><b>Friction</b> $f$, along a surface, against sliding (next topic).</li></ul>
 ${Key(T`<p>Solving a force problem:</p><ol><li>Draw a <b>free-body diagram</b>: the object alone, with every force on it as an arrow.</li><li>Choose a positive direction.</li><li>Write $\Sigma F = ma$ along that direction and solve.</li></ol>`)}
-${Fig(fbdSvg([{ ang: 90, len: 70, label: 'N', kind: 'b' }, { ang: 270, len: 70, label: 'W' }, { ang: 0, len: 90, label: 'F' }, { ang: 180, len: 45, label: 'f', kind: 'c', ground: true }], T`Free-body diagram of a block pulled along the floor: normal force up, weight down, pull to the right and friction to the left`), T`A block pulled to the right: $N$ balances $W$, and the net force is $F - f$.`)}
+${Fig(fbdSvg([{ ang: 90, len: 70, label: 'N', kind: 'b' }, { ang: 270, len: 70, label: 'W' }, { ang: 0, len: 90, label: 'F' }, { ang: 180, len: 58, label: 'f', kind: 'c', ground: true }], T`Free-body diagram of a block pulled along the floor: normal force up, weight down, pull to the right and friction to the left`), T`A block pulled to the right: $N$ balances $W$, and the net force is $F - f$.`)}
 ${Ex(T`<p>A $60\,\mathrm{kg}$ person stands on scales in a lift accelerating <b>upwards</b> at $2\,\mathrm{m/s^2}$ ($g = 10\,\mathrm{m/s^2}$). Upwards is positive:</p><p>$$N - mg = ma \;\Rightarrow\; N = m(g + a) = 60 \cdot 12 = 720\,\mathrm{N}.$$</p><p>The scales read more than the person's weight of $600\,\mathrm{N}$. Accelerating downwards, they would read $m(g - a) = 480\,\mathrm{N}$.</p>`)}`,
   gens: [
     () => {
@@ -249,7 +249,7 @@ ${Ex(T`<p>A $60\,\mathrm{kg}$ person stands on scales in a lift accelerating <b>
     () => {
       const m = ri(2, 20), F1 = ri(10, 60), F2 = ri(2, F1 - 4), a = sig((F1 - F2) / m);
       return { q: T`A ${Q(m, 'kg')} block on a smooth floor is pulled to the right with ${Q(F1, 'N')} and to the left with ${Q(F2, 'N')}. What is its acceleration?`
-          + Fig(fbdSvg([{ ang: 0, len: 95, label: `${F1} N` }, { ang: 180, len: Math.max(35, 95 * F2 / F1), label: `${F2} N`, kind: 'b' }], T`A block with a force to the right and a smaller force to the left`)),
+          + Fig(fbdSvg([{ ang: 0, len: 110, label: `${F1} N` }, { ang: 180, len: 45 + 65 * F2 / F1, label: `${F2} N`, kind: 'b' }], T`A block with a force to the right and a smaller force to the left`)),
         a, u: 'm/s²', w: [sig((F1 + F2) / m), sig(F1 / m), sig((F1 - F2) * m, 4)],
         s: T`The net force is $${F1} - ${F2} = ${F1 - F2}\,\mathrm{N}$ to the right, so $a = \frac{${F1 - F2}}{${m}} = ${QT(a, 'm/s^2')}$ to the right.` };
     },
@@ -360,7 +360,7 @@ ${Tip(T`<p>Square the speed in $\tfrac12 m v^2$: doubling the speed makes the ki
         s: T`$E_k = \tfrac12 m v^2 = \tfrac12 \cdot ${M(m)} \cdot ${v}^2 = ${QT(E, 'J')}$.` };
     },
     () => {
-      const g = gPick(), m = ri(1, 60), h = ri(2, 40), E = sig(m * g * h, 6);
+      const g = gPick(), m = ri(1, 60), h = ri(2, 40), E = sig(m * g * h);
       return { q: T`A ${Q(m, 'kg')} load is lifted ${Q(h, 'm')} straight up. By how much does its gravitational potential energy increase? ${gNote(g)}`, a: E, u: 'J', w: [m * h, sig(0.5 * m * g * h, 6), sig(m * g / h)],
         s: T`$\Delta E_p = mgh = ${m} \cdot ${M(g)} \cdot ${h} = ${QT(E, 'J')}$.` };
     },
@@ -466,7 +466,7 @@ ${Tip(T`<p>Angles in rotational formulas must be in radians. Convert revolutions
     () => {
       const [name, k, kT] = pick([[T`solid disc`, 0.5, '\\tfrac12'], [T`thin ring`, 1, ''], [T`solid sphere`, 0.4, '\\tfrac25']]), M0 = ri(1, 20) / 2, R = ri(1, 10) / 10, I = sig(k * M0 * R * R);
       return { q: T`What is the moment of inertia of a ${name} of mass ${Q(M0, 'kg')} and radius ${Q(R, 'm')} about its central axis?`, a: I, u: 'kg m²', w: [sig(M0 * R * R * (k === 1 ? 0.5 : 1)), sig(k * M0 * R), sig(k * M0 * R * R * 2)],
-        s: T`$I = ${kT} MR^2 = ${kT} \cdot ${M(M0)} \cdot ${M(R)}^2 = ${QT(I, 'kg\\,m^2')}$.` };
+        s: T`$I = ${kT} MR^2 = ${kT ? kT + ' \\cdot ' : ''}${M(M0)} \cdot ${M(R)}^2 = ${QT(I, 'kg\\,m^2')}$.` };
     },
     () => {
       const M0 = ri(2, 20), R = ri(1, 5) / 10, tau = ri(1, 20) / 2, I = 0.5 * M0 * R * R, al = sig(tau / I);
@@ -515,7 +515,7 @@ ${Tip(T`<p>Remember the beam's own weight: for a uniform beam, put it at the mid
         s: T`Moments balance: $${w1} \cdot ${M(d1)} = ${w2} \cdot d$, so $d = \frac{${M(w1 * d1)}}{${w2}} = ${QT(d2, 'm')}$.` };
     },
     () => {
-      const L = pick([2, 3, 4, 5, 6]), W = ri(4, 20) * 10, P = ri(4, 12) * 50, x = ri(1, L * 2 - 1) / 2, RB = sig((P * x + W * L / 2) / L), RA = sig(P + W - RB), askA = chance();
+      const L = pick([2, 3, 4, 5, 6]), W = ri(4, 20) * 10, P = ri(4, 12) * 50, x = pick([...Array(L * 2 - 1)].map((_, i) => (i + 1) / 2).filter(v => v !== L / 2)), RB = sig((P * x + W * L / 2) / L), RA = sig(P + W - RB), askA = chance();
       return { q: T`A uniform beam ${Q(L, 'm')} long weighing ${Q(W, 'N')} rests on supports A (left end) and B (right end). A load of ${Q(P, 'N')} hangs ${Q(x, 'm')} from A. What is the upward force at ${askA ? 'A' : 'B'}?` + Fig(beamSvg(L, [{ x: 0, kind: 'support', label: 'A' }, { x: L, kind: 'support', label: 'B' }, { x, kind: 'load', label: `${P} N` }, { x: L / 2, kind: 'load', label: 'W', arrow: 'c' }], T`A beam on two end supports with a hanging load`)),
         a: askA ? RA : RB, u: 'N', w: askA ? [RB, sig((P + W) / 2), sig(P * x / L)] : [RA, sig((P + W) / 2), sig(P * x / L)],
         s: T`Moments about A: $R_B \cdot ${L} = ${P} \cdot ${M(x)} + ${W} \cdot ${M(L / 2)}$, so $R_B = ${M(RB)}\,\mathrm{N}$. Forces: $R_A = ${P} + ${W} - ${M(RB)} = ${M(RA)}\,\mathrm{N}$. ${askA ? T`The force at A is ${Q(RA, 'N')}.` : T`The force at B is ${Q(RB, 'N')}.`}` };
@@ -574,7 +574,7 @@ ${Tip(T`<p>$r$ is measured from the <b>centre</b> of the planet. A satellite $40
             s: T`$r = R + h = ${sciT(r)}\,\mathrm{m}$, so $v = \sqrt{\frac{GM}{r}} = \sqrt{\frac{6.67 \times 10^{-11} \cdot 6.0 \times 10^{24}}{${sciT(r)}}} = ${M(sig(vv))}\,\mathrm{m/s} = ${QT(sig(vv / 1000), 'km/s')}$.` };
     },
     () => {
-      const k = pick([4, 9, 16, 1 / 4]), T1 = pick([1, 2, 10, 27, 90]), T2 = sig(T1 * k ** 1.5);
+      const k = pick([4, 9, 16, 1 / 4]), T1 = pick([2, 3, 10, 27, 90]), T2 = sig(T1 * k ** 1.5);
       return { q: T`Planet A orbits a star with a period of ${T1} years. Planet B orbits the same star at ${k < 1 ? T`one quarter of` : T`${k} times`} A's orbital radius. What is B's period in years?`, a: T2, u: T`years`, w: [sig(T1 * k), sig(T1 * k * k), sig(T1 * Math.sqrt(k))],
         s: T`Kepler's third law: $T^2 \propto r^3$, so $T_B = T_A \left(\frac{r_B}{r_A}\right)^{3/2} = ${T1} \cdot ${k < 1 ? '(1/4)' : k}^{3/2} = ${M(T2)}$ years.` };
     },
@@ -622,7 +622,7 @@ ${Tip(T`<p>Extension is the <i>change</i> in length, not the new length. A $20\,
     },
     () => {
       const [mat, E] = pick([[T`steel`, 2.0e11], [T`copper`, 1.2e11], [T`aluminium`, 7.0e10]]), L = ri(1, 10), A = pick([1, 2, 4, 5]) * 1e-6, F = ri(1, 8) * 50, dL = F * L / (A * E);
-      return { q: T`A ${mat} wire ${Q(L, 'm')} long with a cross-sectional area of ${Q(A * 1e6, 'mm^2')} carries a load of ${Q(F, 'N')}. By how many millimetres does it stretch? (Young's modulus: $${sciT(E, 2)}\,\mathrm{Pa}$.)`, a: sig(dL * 1000), u: 'mm', w: [sig(dL), sig(dL * 1e4), sig(dL * 1000 / L)],
+      return { q: T`A wire made of ${mat}, ${Q(L, 'm')} long, with a cross-sectional area of ${Q(A * 1e6, 'mm^2')} carries a load of ${Q(F, 'N')}. By how many millimetres does it stretch? (Young's modulus: $${sciT(E, 2)}\,\mathrm{Pa}$.)`, a: sig(dL * 1000), u: 'mm', w: [sig(dL), sig(dL * 1e4), sig(dL * 1000 / L)],
         s: T`$\Delta L = \frac{F L}{A E} = \frac{${F} \cdot ${L}}{${sciT(A)} \cdot ${sciT(E, 2)}} = ${sciT(dL)}\,\mathrm{m} = ${QT(sig(dL * 1000), 'mm')}$.` };
     },
     () => {
