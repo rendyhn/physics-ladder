@@ -153,6 +153,80 @@ The seven SI base quantities are length, mass, time, electric current, temperatu
 @ec6esltyky
 speed or force
 
+##### measurement
+@23qs3p5efgc  ; 0=Tbl([T`Instrument`, T`Smallest reading`, | 1=Fig(vernierSvg(23.4, T`A vernier caliper | 2=Key(T`<p><b>Significant figures</b> are  | 3=Tip(T`<p>A calculator shows many digits,
+
+<p>No measurement is perfectly exact. A good measurement says how big something is <i>and</i> how precisely we know it.</p>
+<h3>Instruments and their precision</h3>
+⟦0⟧
+<h3>Reading a vernier caliper</h3>
+<p>Read the main scale just to the left of the vernier zero, then find the vernier line that lines up exactly with a main-scale line. With 10 vernier divisions, that line number gives tenths of a millimetre.</p>
+⟦1⟧
+<h3>Reading a micrometer</h3>
+<p>The sleeve shows whole and half millimetres; the thimble has 50 divisions of $0.01\,\mathrm{mm}$. Reading = sleeve + thimble $\times\ 0.01\,\mathrm{mm}$. A sleeve showing $5.5\,\mathrm{mm}$ with thimble line 23 gives $5.5 + 0.23 = 5.73\,\mathrm{mm}$.</p>
+<h3>Uncertainty</h3>
+<p>A single reading is usually quoted with an uncertainty of about half the smallest division, for example $12.5 \pm 0.05\,\mathrm{cm}$ on a millimetre ruler. For several readings of the same quantity, use the <b>mean</b> as the best value and let the spread of the readings show the uncertainty.</p>
+⟦2⟧
+<h3>Calculating with measurements</h3>
+<ul><li><b>Multiplying or dividing:</b> give the answer to the <i>fewest significant figures</i> of the values used. $12.5\,\mathrm{cm} \times 3.2\,\mathrm{cm} = 40.0 \to 40\,\mathrm{cm^2}$ (2 s.f.).</li><li><b>Adding or subtracting:</b> give the answer to the <i>fewest decimal places</i>. $12.52 + 3.1 = 15.62 \to 15.6$.</li></ul>
+⟦3⟧
+@1n4tjiq7o59
+Instrument
+@13gr3233qj5
+Smallest reading
+@244d6ygn4m3
+Typical use
+@3ygf7ijjre
+Ruler
+@1kb5yegr85i
+lengths of a few cm to 1 m
+@298q9fxph1z
+Vernier caliper
+@3cggu7jovh
+diameters, depths, thicknesses
+@21kpwzv4f98
+Micrometer screw gauge
+@wrmx9jfflz
+wire diameters, sheet thickness
+@8vdv1lbyml
+A vernier caliper reading
+@e1v15jhjcz
+Main scale: 23 mm. Vernier line 4 lines up. Reading: $23 + 0.4 = 23.4\,\mathrm{mm}$.
+@d202007fgc
+<p><b>Significant figures</b> are the digits that carry information about the measurement:</p><ul><li>All non-zero digits count: $4.73$ has 3.</li><li>Zeros between them count: $4.07$ has 3.</li><li>Leading zeros never count: $0.0047$ has 2.</li><li>Trailing zeros after a decimal point count: $4.70$ has 3.</li></ul>
+@1c8c59799nz
+<p>A calculator shows many digits, but an answer cannot be more precise than the measurements it came from.</p>
+@17c7snlb6td  ; 0=shown
+How many significant figures does ⟦0⟧ have?
+@1jamakr8mau  ; 0=shown | 1=n
+Leading zeros do not count; zeros between non-zero digits and trailing zeros after the decimal point do. So ⟦0⟧ has <b>⟦1⟧</b> significant figures.
+@2ftkwvd684  ; 0=F(sig(x, 4)) | 1=n
+Round ⟦0⟧ to ⟦1⟧ significant figures.
+@s0df4232ie  ; 0=n | 1=F(sig(x, 4)) | 2=fmt(a, n)
+Keep the first ⟦0⟧ significant digits and look at the next one to decide whether to round up: ⟦1⟧ ≈ <b>⟦2⟧</b>.
+@1on8wzj2bl5  ; 0=Q(a, 'cm') | 1=Q(b, 'cm')
+A rectangle is measured as ⟦0⟧ by ⟦1⟧. What is its area, given to the correct number of significant figures?
+@2680l0sdf6v  ; 0=M(a) | 1=M(b) | 2=M(sig(p, 5)) | 3=Q(ans, 'cm^2')
+$⟦0⟧ \times ⟦1⟧ = ⟦2⟧$. The shorter measurement has only 2 significant figures, so the area is ⟦3⟧.
+@15rwjl862ae  ; 0=Q(a, 'cm') | 1=Q(b, 'cm')
+Add the lengths ⟦0⟧ and ⟦1⟧, giving the answer to the correct precision.
+@285z613ghvl  ; 0=Q(b, 'cm') | 1=Q(a, 'cm')
+Subtract ⟦0⟧ from ⟦1⟧, giving the answer to the correct precision.
+@1v71mw9vcdq  ; 0=M(a) | 1=plus ? '+' : '-' | 2=M(b) | 3=M(+(plus ? a + b : a - b).toFixed(2)) | 4=Q(r, 'cm')
+$⟦0⟧ ⟦1⟧ ⟦2⟧ = ⟦3⟧$. The least precise value has one decimal place, so the answer is ⟦4⟧.
+@1h72e8kj0lr
+What is the reading on this vernier caliper, in millimetres?
+@vur5wx6g79  ; 0=Math.floor(rd) | 1=Math.round((rd - Math.floor(rd)) * 10) | 2=Math.floor(rd) | 3=M(sig(rd - Math.floor(rd), 2)) | 4=QT(rd, 'mm')
+The vernier zero is just past ⟦0⟧ mm on the main scale, and vernier line ⟦1⟧ lines up with a main-scale line. Reading: $⟦2⟧ + ⟦3⟧ = ⟦4⟧$.
+@pqk2dzdqbi  ; 0=Q(sl, 'mm') | 1=th
+A micrometer sleeve shows ⟦0⟧ and the thimble line ⟦1⟧ lines up with the reference line. What is the reading?
+@2934qdqdjm7  ; 0=M(sl) | 1=th | 2=QT(r, 'mm')
+Reading = sleeve + thimble $\times\ 0.01\,\mathrm{mm}$ $= ⟦0⟧ + ⟦1⟧ \times 0.01 = ⟦2⟧$.
+@1fi2vg8vugw  ; 0=listF(xs)
+A pendulum's period is timed five times (in seconds): ⟦0⟧. What is the mean period, to two decimal places?
+@jvtjtfkr1t  ; 0=xs.map(x => M(x)).join(' + ') | 1=M(exact) | 2=Q(mean, 's')
+Add the readings and divide by 5: $\frac{⟦0⟧}{5} = ⟦1⟧$, which is ⟦2⟧ to two decimal places, the same precision as the readings.
+
 ##### vectors
 @1rjwcbf0ldf  ; 0=Tbl([T`Scalars`, T`Vectors`], [[T`distan | 1=Fm(T`A_x = A\cos\theta \qquad A_y = A\si | 2=Fig(vectorSvg([{ x: 5.2, y: 3, label: 'A | 3=Key(T`<p>For vectors at any angle, add t | 4=Ex(T`<p>Forces of $6\,\mathrm{N}$ and $8 | 5=Tip(T`<p>The angle in $R = \sqrt{A^2 + B
 

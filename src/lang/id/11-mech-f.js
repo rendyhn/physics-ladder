@@ -1,0 +1,126 @@
+/* Bahasa Indonesia — 11-mech-f */
+addT('id', {
+  '132l0ady3rl': R`
+<h3>Massa jenis dan tekanan</h3>
+⟦0⟧
+<p>Massa jenis diukur dalam $\mathrm{kg/m^3}$ (air: $1000\,\mathrm{kg/m^3}$) dan tekanan dalam pascal, $1\,\mathrm{Pa} = 1\,\mathrm{N/m^2}$. Gaya yang sama pada luas yang lebih kecil menghasilkan tekanan yang lebih besar; itulah sebabnya pisau dibuat tajam dan sepatu salju dibuat lebar.</p>
+<h3>Tekanan hidrostatis</h3>
+⟦1⟧
+<p>Tekanan pada kedalaman $h$ adalah tekanan di permukaan $p_0$ (tekanan atmosfer, sekitar $1{,}0 \times 10^{5}\,\mathrm{Pa}$) ditambah berat zat cair di atas setiap meter persegi, $\rho g h$. Tekanan ini hanya bergantung pada kedalaman, bukan pada bentuk wadah, dan bekerja sama besar ke segala arah.</p>
+<h3>Hukum Pascal dan hidraulik</h3>
+<p>Tekanan yang diberikan pada zat cair dalam ruang tertutup diteruskan sama besar ke seluruh bagiannya. Pada pompa hidraulik atau dongkrak mobil, tekanan di bawah kedua pengisap sama, jadi</p>
+⟦2⟧
+<p>Gaya kecil pada pengisap kecil dapat mengangkat beban besar pada pengisap besar.</p>
+⟦3⟧
+⟦4⟧
+⟦5⟧`,
+  '20hy5hggcsa': R`<p><b>Hukum Archimedes:</b> benda di dalam fluida mendapat <b>gaya apung</b> ke atas yang sama dengan berat fluida yang dipindahkannya:</p><p>$$F_A = \rho_{\text{fluida}}\, g\, V_{\text{tercelup}}.$$</p><p>Benda yang terapung memindahkan fluida seberat dirinya sendiri, jadi bagian yang tercelup adalah $\dfrac{\rho_{\text{benda}}}{\rho_{\text{fluida}}}$.</p>`,
+  '1eqvj8151xy': R`<p>Sebuah batu bervolume $0{,}002\,\mathrm{m^3}$ tercelup seluruhnya di dalam air ($g = 10\,\mathrm{m/s^2}$). Gaya apung: $1000 \cdot 10 \cdot 0{,}002 = 20\,\mathrm{N}$. Jika berat batu di udara $50\,\mathrm{N}$, di dalam air beratnya seolah-olah hanya $50 - 20 = 30\,\mathrm{N}$.</p>`,
+  'jxo254idn5': R`<p>Pakai massa jenis <b>fluida</b> pada $F_A = \rho g V$, bukan massa jenis bendanya.</p>`,
+  '1gnv467hur7': R`Sebuah kotak seberat ⟦0⟧ terletak pada alas seluas ⟦1⟧. Berapa tekanan yang diberikannya pada lantai?`,
+  '6hrmh7sf7m': R`air tawar`,
+  '2c4t00nu7s6': R`air laut`,
+  '18jc6dmwg2x': R`minyak`,
+  '1508rh6iwuq': R`Seorang penyelam berada ⟦0⟧ di bawah permukaan ⟦1⟧ ($\rho = ⟦2⟧$). Jika tekanan atmosfer $1{,}0 \times 10^{5}\,\mathrm{Pa}$, berapa tekanan total yang dialami penyelam, dalam kPa? ⟦3⟧`,
+  '1pfy5e994t2': R`$p = p_0 + \rho g h = 1{,}0 \times 10^{5} + ⟦0⟧ \cdot ⟦1⟧ \cdot ⟦2⟧ = ⟦3⟧\,\mathrm{Pa} = ⟦4⟧$.`,
+  'ewbi58ptj2': R`Berapa tekanan hidrostatis (akibat zat cair saja) pada kedalaman ⟦0⟧ di dalam ⟦1⟧ ($\rho = ⟦2⟧$)? ⟦3⟧`,
+  '1ww41ixnyio': R`Pada dongkrak hidraulik mobil, luas pengisap kecil ⟦0⟧ dan luas pengisap besar ⟦1⟧. Berapa gaya pada pengisap kecil yang dapat mengangkat beban ⟦2⟧?`,
+  'c7zpr1s8pj': R`Tekanannya sama: $\frac{F_1}{⟦0⟧} = \frac{⟦1⟧}{⟦2⟧}$, jadi $F_1 = ⟦3⟧ \cdot \frac{⟦4⟧}{⟦5⟧} = ⟦6⟧$. (Satuan luas saling mencoret, jadi cm² boleh langsung dipakai.)`,
+  '1abf5pnjxgf': R`Sebuah balok logam bervolume ⟦0⟧ memiliki berat ⟦1⟧ di udara. Berapa beratnya jika tercelup seluruhnya di dalam air ($\rho = 1000\,\mathrm{kg/m^3}$)? ⟦2⟧`,
+  '1iih5fredy5': R`$V = ⟦0⟧\,\mathrm{m^3}$. Gaya apung: $F_A = \rho g V = 1000 \cdot ⟦1⟧ \cdot ⟦2⟧ = ⟦3⟧\,\mathrm{N}$. Berat semu: $⟦4⟧ - ⟦5⟧ = ⟦6⟧$.`,
+  'r8w2chsxqn': R`Sebuah benda bervolume ⟦0⟧ tercelup seluruhnya di dalam air ($\rho = 1000\,\mathrm{kg/m^3}$). Berapa gaya apung padanya? ⟦1⟧`,
+  '1oku9aiasm0': R`$V = ⟦0⟧\,\mathrm{cm^3} = ⟦1⟧\,\mathrm{m^3}$, jadi $F_A = \rho g V = 1000 \cdot ⟦2⟧ \cdot ⟦3⟧ = ⟦4⟧$.`,
+  '1dr4e9gobrz': R`balok kayu`,
+  'vz6tde3xxo': R`bongkahan es`,
+  '2cjmz9dq434': R`mainan plastik`,
+  'okcssahxev': R`Sebuah ⟦0⟧ (massa jenis ⟦1⟧) terapung di ⟦2⟧ (massa jenis ⟦3⟧). Berapa persen volumenya yang berada di bawah permukaan?`,
+  '155l1tws89r': R`Benda terapung memindahkan fluida seberat dirinya: $\rho_{\text{benda}} V = \rho_{\text{fluida}} V_{\text{tercelup}}$, jadi $\frac{V_{\text{tercelup}}}{V} = \frac{⟦0⟧}{⟦1⟧} = ⟦2⟧$, yaitu ⟦3⟧%.`,
+  '1x2jr4809pb': R`Tiga wadah berbeda bentuk diisi air sampai kedalaman yang sama. Di wadah mana tekanan air pada dasarnya paling besar?`,
+  '1qg4tsep92z': R`Sama besar pada ketiganya`,
+  '1nx0puixwj0': R`Di wadah yang paling lebar`,
+  '1gzegl86rr9': R`Di wadah yang berisi air paling banyak`,
+  'q26dyux6gg': R`Di wadah yang paling sempit`,
+  'hh3l5hpj76': R`Tekanan zat cair $p = \rho g h$ hanya bergantung pada kedalaman dan massa jenis, bukan pada bentuk wadah atau banyaknya zat cair.`,
+  '22e5wcyummc': R`Kapal baja dapat terapung walaupun baja lebih rapat daripada air. Mengapa?`,
+  '1fouw46x6wo': R`Lambungnya yang berongga memindahkan air yang beratnya sama dengan berat kapal`,
+  'abfjtna0il': R`Baja menjadi lebih ringan di air laut`,
+  '2curpr1mjxp': R`Udara di atas permukaan air menahannya`,
+  '1n10nia9hri': R`Tekanan air di permukaan nol`,
+  '21em8h1a62o': R`Lambung kapal melingkupi volume yang besar, jadi massa jenis rata-rata kapal (baja ditambah udara) lebih kecil daripada air, dan kapal hanya tenggelam sampai air yang dipindahkannya seberat kapal itu.`,
+  '21hvlad5dmf': R`
+<p>Untuk fluida ideal (tak termampatkan, tanpa gesekan, aliran tunak), dua hukum sederhana menggambarkan geraknya.</p>
+<h3>Debit dan persamaan kontinuitas</h3>
+⟦0⟧
+<p>Debit $Q$ (dalam $\mathrm{m^3/s}$) sama di sepanjang pipa, karena fluida tidak dapat menumpuk di mana pun. Di bagian pipa yang menyempit, fluida mengalir lebih cepat. Itulah sebabnya air menyemprot lebih kencang ketika ujung selang ditutup sebagian dengan ibu jari.</p>
+⟦1⟧
+<h3>Hukum Torricelli</h3>
+<p>Air yang keluar dari lubang pada kedalaman $h$ di bawah permukaan tangki terbuka memiliki kelajuan yang sama dengan benda yang jatuh bebas dari ketinggian itu:</p>
+⟦2⟧
+<h3>Penerapan</h3>
+<ul><li>Sayap pesawat membuat udara mengalir lebih cepat di permukaan atasnya, sehingga tekanan di atas lebih kecil daripada di bawah: timbul gaya angkat.</li><li>Venturimeter mengukur kelajuan aliran dari penurunan tekanan di bagian yang sempit.</li><li>Dua lembar kertas yang didekatkan akan saling mendekat ketika kamu meniup di antara keduanya.</li></ul>
+⟦3⟧`,
+  'jfct9zo3fm': R`<p><b>Persamaan Bernoulli</b> (kekekalan energi untuk fluida yang mengalir):</p><p>$$p + \tfrac12 \rho v^2 + \rho g h = \text{tetap sepanjang garis alir}.$$</p><p>Pada pipa mendatar, di bagian yang alirannya lebih cepat tekanannya lebih rendah.</p>`,
+  '1tf33n72jde': R`<p>Jika pipa dinyatakan dengan diameternya, luasnya sebanding dengan kuadrat diameter: diameter setengahnya membuat luas empat kali lebih kecil dan kelajuan empat kali lebih besar.</p>`,
+  'h7y62084hz': R`Sebuah selang mengalirkan air dengan debit ⟦0⟧. Berapa lama waktu untuk mengisi tangki ⟦1⟧?`,
+  '4tw3qt93ng': R`Air mengalir dengan kelajuan ⟦0⟧ melalui pipa dengan luas penampang ⟦1⟧. Berapa debitnya?`,
+  '240nziwbu1b': R`Air mengalir dengan kelajuan ⟦0⟧ di dalam pipa berdiameter ⟦1⟧. Pipa itu menyempit menjadi diameter ⟦2⟧. Berapa kelajuan air di bagian yang sempit?`,
+  '1fs9yrjs06m': R`$A_1 v_1 = A_2 v_2$ dan $A \propto d^2$, jadi $v_2 = v_1 \left(\frac{d_1}{d_2}\right)^2 = ⟦0⟧ \cdot \left(\frac{⟦1⟧}{⟦2⟧}\right)^2 = ⟦3⟧$.`,
+  'nqntzli8cj': R`Sebuah tangki air memiliki lubang kecil ⟦0⟧ di bawah permukaan air. Berapa kelajuan air yang keluar dari lubang? ⟦1⟧`,
+  'e65jzwfld7': R`Hukum Torricelli: $v = \sqrt{2gh} = \sqrt{2 \cdot ⟦0⟧ \cdot ⟦1⟧} = ⟦2⟧$.`,
+  '2d0eu0oix11': R`Sebuah tangki berdiri di atas tanah. Air menyemprot mendatar dari lubang kecil ⟦0⟧ di bawah permukaan air dan ⟦1⟧ di atas tanah. Seberapa jauh dari tangki pancaran air mengenai tanah? ⟦2⟧`,
+  '2exhiwywjh3': R`Kelajuan keluar: $v = \sqrt{2gh}$. Waktu jatuh: $t = \sqrt{2y/g}$. Jarak: $x = vt = \sqrt{2gh} \cdot \sqrt{\frac{2y}{g}} = 2\sqrt{hy} = 2\sqrt{⟦0⟧ \cdot ⟦1⟧} = ⟦2⟧$. Nilai $g$ saling mencoret.`,
+  '242gqtld3d4': R`udara`,
+  '1h40nwesfdh': R`⟦0⟧ (massa jenis ⟦1⟧) mengalir melalui pipa mendatar. Kelajuannya naik dari ⟦2⟧ menjadi ⟦3⟧ di bagian yang menyempit. Berapa penurunan tekanannya?`,
+  '24uhc1w9ess': R`Air`,
+  '1j3ybzcjg06': R`Udara`,
+  'glb8zbf42j': R`Bernoulli dengan ketinggian sama: $p_1 - p_2 = \tfrac12 \rho (v_2^2 - v_1^2) = \tfrac12 \cdot ⟦0⟧ \cdot (⟦1⟧^2 - ⟦2⟧^2) = ⟦3⟧$.`,
+  'kuqxk0pmyy': R`Kamu meniupkan udara di antara dua lembar kertas yang tergantung berdekatan. Apa yang terjadi?`,
+  '1bar4m9vs2x': R`Kedua lembar kertas saling mendekat`,
+  '13udhscb03t': R`Kedua lembar kertas saling menjauh`,
+  '1a2l9vqj6bq': R`Tidak terjadi apa-apa`,
+  '1q8dmovimjj': R`Keduanya berayun ke arah yang sama`,
+  'tdo9mbor33': R`Udara yang bergerak cepat di antara kertas bertekanan lebih rendah (Bernoulli), jadi udara diam di luar mendorong keduanya saling mendekat.`,
+  'tfunc89iiz': R`Air mengalir tunak melalui pipa yang menyempit. Di bagian yang sempit, dibandingkan dengan bagian yang lebar:`,
+  '1y32bib9fxn': R`kelajuannya lebih besar dan tekanannya lebih kecil`,
+  'tjbd5irxog': R`kelajuannya lebih kecil dan tekanannya lebih besar`,
+  '1z39d92s5z2': R`kelajuan dan tekanannya sama-sama lebih besar`,
+  '1n7mw09tqd0': R`debitnya lebih kecil`,
+  'p0onvirn47': R`Kontinuitas membuat air mengalir lebih cepat di bagian yang luasnya lebih kecil, lalu Bernoulli menyatakan tekanannya harus turun. Debitnya tetap sama.`,
+  '1woeplbt7b9': R`
+<h3>Pusat massa</h3>
+<p>Untuk sekumpulan massa titik, <b>pusat massa</b> adalah posisi rata-rata yang diberi bobot massa:</p>
+⟦0⟧
+<p>Pusat massa suatu sistem bergerak seolah-olah seluruh massa terkumpul di sana dan semua gaya luar bekerja padanya: $\Sigma F_{\text{luar}} = M a_{\text{pm}}$. Ketika sebuah peluru meledak di udara, pecahan-pecahannya berhamburan, tetapi pusat massanya tetap mengikuti parabola semula.</p>
+<h3>Momentum sudut</h3>
+⟦1⟧
+<p>Momentum sudut adalah padanan momentum pada gerak rotasi. Momen gaya resultan mengubahnya: $\tau = \dfrac{\Delta L}{\Delta t}$.</p>
+⟦2⟧
+⟦3⟧
+⟦4⟧`,
+  'utaagz8jc5': R`L = I\,\omega \qquad \text{(untuk massa titik: } L = m v r\text{)}`,
+  '1vqngikji5k': R`<p><b>Hukum kekekalan momentum sudut:</b> jika tidak ada momen gaya luar, $L$ tetap:</p><p>$$I_1 \omega_1 = I_2 \omega_2.$$</p><p>Penari es yang menarik lengannya ke dalam memperkecil $I$, sehingga $\omega$ naik dan ia berputar lebih cepat.</p>`,
+  '1t4hircwlm6': R`<p>Seorang penari es berputar $2\,\mathrm{put/s}$ dengan $I = 4\,\mathrm{kg\,m^2}$, lalu menarik lengannya sehingga $I = 1{,}6\,\mathrm{kg\,m^2}$. Maka $\omega_2 = \frac{4 \cdot 2}{1{,}6} = 5\,\mathrm{put/s}$. Energi kinetiknya $\tfrac12 I\omega^2$ naik $2{,}5$ kali; tambahan energinya berasal dari usaha otot-ototnya.</p>`,
+  'nwgt5xj5ul': R`<p>Pada $I_1\omega_1 = I_2\omega_2$, $\omega$ boleh tetap dalam putaran/s atau rpm, asalkan kedua ruas memakai satuan yang sama.</p>`,
+  '290ail788vn': R`Massa ⟦0⟧ berada di $x = 0$ dan massa ⟦1⟧ di $x = ⟦2⟧$. Di mana pusat massanya?`,
+  '12g2ix7akao': R`$x_{\text{pm}} = \frac{⟦0⟧ \cdot 0 + ⟦1⟧ \cdot ⟦2⟧}{⟦3⟧ + ⟦4⟧} = ⟦5⟧$. Letaknya lebih dekat ke massa yang lebih berat.`,
+  '1wdicp3rc9e': R`Massa ⟦0⟧ terletak pada satu garis, berturut-turut di $x = ⟦1⟧$. Tentukan koordinat $x$ pusat massanya.`,
+  'a6r8nz6qcn': R`$x_{\text{pm}} = \frac{⟦0⟧}{⟦1⟧} = \frac{⟦2⟧}{⟦3⟧} = ⟦4⟧$.`,
+  '2alt0mw109x': R`Sebuah roda dengan momen inersia ⟦0⟧ berputar ⟦1⟧ rpm. Berapa momentum sudutnya?`,
+  '2f0sixkrxvi': R`$\omega = 2\pi \cdot \frac{⟦0⟧}{60} = ⟦1⟧\,\mathrm{rad/s}$, jadi $L = I\omega = ⟦2⟧ \cdot ⟦3⟧ = ⟦4⟧$.`,
+  '270kkh4b302': R`Seorang penari es berputar ⟦0⟧ dengan momen inersia ⟦1⟧, lalu menarik lengannya sehingga momen inersianya menjadi ⟦2⟧. Seberapa cepat ia berputar sekarang?`,
+  '231o5c7llvs': R`Tidak ada momen gaya luar, jadi $I_1\omega_1 = I_2\omega_2$: $\omega_2 = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  '2f7cxaqxh70': R`Sebuah komidi putar di taman bermain (momen inersia ⟦0⟧) berputar bebas dengan ⟦1⟧. Seorang anak bermassa ⟦2⟧ melompat naik di tepinya, ⟦3⟧ dari sumbu. Berapa kecepatan sudut yang baru?`,
+  'cliu4kom03': R`Anak itu menambah $mr^2 = ⟦0⟧ \cdot ⟦1⟧^2 = ⟦2⟧\,\mathrm{kg\,m^2}$. Kekekalan $L$: $\omega_2 = \frac{⟦3⟧ \cdot ⟦4⟧}{⟦5⟧ + ⟦6⟧} = ⟦7⟧$.`,
+  '1ycjd56chz3': R`Sebuah kembang api yang melayang pada lintasan parabola meledak menjadi banyak pecahan. Jika hambatan udara diabaikan, apa yang terjadi pada pusat massa semua pecahan?`,
+  '1yi7snjbl9a': R`Tetap mengikuti parabola semula`,
+  '1dblvsgvwkh': R`Berhenti di titik ledakan`,
+  '1au8h1b9f0y': R`Jatuh lurus ke bawah`,
+  'cki5zklk94': R`Bergerak lurus dengan kelajuan tetap`,
+  'mkcc12d6w2': R`Gaya ledakan adalah gaya dalam. Hanya gravitasi yang bekerja dari luar, jadi pusat massa terus bergerak persis seperti kembang api yang tidak meledak.`,
+  '1il9bykoi7c': R`Seorang peloncat indah menekuk tubuhnya rapat-rapat di udara. Apa yang terjadi pada kecepatan putarnya?`,
+  'qgmnokztia': R`Bertambah, karena momen inersianya berkurang`,
+  'zxkb5luqw6': R`Berkurang, karena tubuhnya lebih ringkas`,
+  '231jc4s23vr': R`Bertambah, karena gravitasi memberinya momen gaya`,
+  '1ylan4wywz6': R`Di udara tidak ada momen gaya luar terhadap pusat massanya, jadi $I\omega$ tetap. Menekuk tubuh memperkecil $I$, sehingga $\omega$ bertambah.`,
+  'deihpxduhb': R`x_{\text{pm}} = \frac{\sum m_i x_i}{\sum m_i} \qquad y_{\text{pm}} = \frac{\sum m_i y_i}{\sum m_i}`,
+});

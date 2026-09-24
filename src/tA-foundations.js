@@ -85,7 +85,71 @@ ${Tip(T`<p>Check the units at the end of every calculation. If you were finding 
   ],
 },
 /* ------------------------------------------------------------------ */
-{ id: 'measurement', stage: 'jh', soon: true, title: 'Measurement & Significant Figures' },
+{
+  id: 'measurement', stage: 'jh', title: 'Measurement & Significant Figures',
+  blurb: 'Reading rulers, vernier calipers and micrometers, uncertainty, significant figures and averaging repeated readings.',
+  lesson: () => T`
+<p>No measurement is perfectly exact. A good measurement says how big something is <i>and</i> how precisely we know it.</p>
+<h3>Instruments and their precision</h3>
+${Tbl([T`Instrument`, T`Smallest reading`, T`Typical use`], [[T`Ruler`, Q(1, 'mm'), T`lengths of a few cm to 1 m`], [T`Vernier caliper`, Q(0.1, 'mm'), T`diameters, depths, thicknesses`], [T`Micrometer screw gauge`, Q(0.01, 'mm'), T`wire diameters, sheet thickness`]])}
+<h3>Reading a vernier caliper</h3>
+<p>Read the main scale just to the left of the vernier zero, then find the vernier line that lines up exactly with a main-scale line. With 10 vernier divisions, that line number gives tenths of a millimetre.</p>
+${Fig(vernierSvg(23.4, T`A vernier caliper reading`), T`Main scale: 23 mm. Vernier line 4 lines up. Reading: $23 + 0.4 = 23.4\,\mathrm{mm}$.`)}
+<h3>Reading a micrometer</h3>
+<p>The sleeve shows whole and half millimetres; the thimble has 50 divisions of $0.01\,\mathrm{mm}$. Reading = sleeve + thimble $\times\ 0.01\,\mathrm{mm}$. A sleeve showing $5.5\,\mathrm{mm}$ with thimble line 23 gives $5.5 + 0.23 = 5.73\,\mathrm{mm}$.</p>
+<h3>Uncertainty</h3>
+<p>A single reading is usually quoted with an uncertainty of about half the smallest division, for example $12.5 \pm 0.05\,\mathrm{cm}$ on a millimetre ruler. For several readings of the same quantity, use the <b>mean</b> as the best value and let the spread of the readings show the uncertainty.</p>
+${Key(T`<p><b>Significant figures</b> are the digits that carry information about the measurement:</p><ul><li>All non-zero digits count: $4.73$ has 3.</li><li>Zeros between them count: $4.07$ has 3.</li><li>Leading zeros never count: $0.0047$ has 2.</li><li>Trailing zeros after a decimal point count: $4.70$ has 3.</li></ul>`)}
+<h3>Calculating with measurements</h3>
+<ul><li><b>Multiplying or dividing:</b> give the answer to the <i>fewest significant figures</i> of the values used. $12.5\,\mathrm{cm} \times 3.2\,\mathrm{cm} = 40.0 \to 40\,\mathrm{cm^2}$ (2 s.f.).</li><li><b>Adding or subtracting:</b> give the answer to the <i>fewest decimal places</i>. $12.52 + 3.1 = 15.62 \to 15.6$.</li></ul>
+${Tip(T`<p>A calculator shows many digits, but an answer cannot be more precise than the measurements it came from.</p>`)}`,
+  gens: [
+    () => {
+      const kind = pick([0, 1, 2, 3]);
+      let s, n;
+      if (kind === 0) { n = ri(2, 4); const d = [ri(1, 9), ...Array.from({ length: n - 1 }, () => ri(1, 9))]; s = d.join('').replace(/^(\d)/, '$1.'); }
+      else if (kind === 1) { const zeros = ri(1, 3); n = ri(2, 3); s = '0.' + '0'.repeat(zeros) + Array.from({ length: n }, () => ri(1, 9)).join(''); }
+      else if (kind === 2) { n = 3; s = `${ri(1, 9)}0${ri(1, 9)}`; if (chance()) { s = s[0] + '.' + s.slice(1); } }
+      else { const a = ri(1, 9), b = ri(0, 9); s = `${a}.${b}0`; n = 3; }
+      const shown = F(+s, s.includes('.') ? s.split('.')[1].length : 0);
+      return { q: T`How many significant figures does ${shown} have?`, a: n, w: [n + 1, n - 1, s.replace(/[^\d]/g, '').length].filter(x => x > 0), rtol: 0,
+        s: T`Leading zeros do not count; zeros between non-zero digits and trailing zeros after the decimal point do. So ${shown} has <b>${n}</b> significant figures.` };
+    },
+    () => {
+      const e = ri(-3, 3), n = pick([2, 3]), x = (ri(1000, 9999) / 1000) * 10 ** e, a = sig(x, n);
+      if (Math.floor(Math.log10(a)) !== Math.floor(Math.log10(x))) return null;   // rounding carried into a new place
+      const fmt = (y, k) => F(y, Math.max(0, k - 1 - Math.floor(Math.log10(Math.abs(y)))));   // keep trailing zeros: 3.40
+      return { q: T`Round ${F(sig(x, 4))} to ${n} significant figures.`, a: fmt(a, n), v: a, w: [fmt(sig(x, n + 1), n + 1), fmt(sig(x, Math.max(1, n - 1)), Math.max(1, n - 1)), fmt(sig(x * 10, n), n)], rtol: 0,
+        s: T`Keep the first ${n} significant digits and look at the next one to decide whether to round up: ${F(sig(x, 4))} ≈ <b>${fmt(a, n)}</b>.` };
+    },
+    () => {
+      const a = ri(101, 999) / 10, b = ri(11, 99) / 10, p = a * b, ans = sig(p, 2);
+      return { q: T`A rectangle is measured as ${Q(a, 'cm')} by ${Q(b, 'cm')}. What is its area, given to the correct number of significant figures?`, a: ans, u: 'cm²', w: [sig(p, 4), sig(p, 3), sig(p, 1)], only: 'mc',
+        s: T`$${M(a)} \times ${M(b)} = ${M(sig(p, 5))}$. The shorter measurement has only 2 significant figures, so the area is ${Q(ans, 'cm^2')}.` };
+    },
+    () => {
+      const a = ri(1001, 9999) / 100, b = ri(11, 99) / 10, s = +(a + b).toFixed(1), plus = chance(), r = plus ? s : +(a - b).toFixed(1);
+      return { q: plus ? T`Add the lengths ${Q(a, 'cm')} and ${Q(b, 'cm')}, giving the answer to the correct precision.` : T`Subtract ${Q(b, 'cm')} from ${Q(a, 'cm')}, giving the answer to the correct precision.`,
+        a: r, u: 'cm', w: [+(plus ? a + b : a - b).toFixed(2), sig(plus ? a + b : a - b, 2), +(plus ? a + b : a - b).toFixed(0)], only: 'mc',
+        s: T`$${M(a)} ${plus ? '+' : '-'} ${M(b)} = ${M(+(plus ? a + b : a - b).toFixed(2))}$. The least precise value has one decimal place, so the answer is ${Q(r, 'cm')}.` };
+    },
+    () => {
+      const rd = ri(80, 450) / 10;
+      return { q: T`What is the reading on this vernier caliper, in millimetres?` + Fig(vernierSvg(rd, T`A vernier caliper reading`)), a: rd, u: 'mm', w: [Math.floor(rd), sig(rd + 1, 4), sig(Math.floor(rd) + (rd * 10 % 10) / 100, 4)], rtol: 0,
+        s: T`The vernier zero is just past ${Math.floor(rd)} mm on the main scale, and vernier line ${Math.round((rd - Math.floor(rd)) * 10)} lines up with a main-scale line. Reading: $${Math.floor(rd)} + ${M(sig(rd - Math.floor(rd), 2))} = ${QT(rd, 'mm')}$.` };
+    },
+    () => {
+      const sl = ri(2, 24) / 2, th = ri(0, 49), r = sig(sl + th / 100, 6);
+      return { q: T`A micrometer sleeve shows ${Q(sl, 'mm')} and the thimble line ${th} lines up with the reference line. What is the reading?`, a: r, u: 'mm', w: [sig(sl + th / 10, 6), sig(sl + th / 1000, 6), sig(Math.floor(sl) + th / 100, 6)], rtol: 0,
+        s: T`Reading = sleeve + thimble $\times\ 0.01\,\mathrm{mm}$ $= ${M(sl)} + ${th} \times 0.01 = ${QT(r, 'mm')}$.` };
+    },
+    () => {
+      const base = ri(200, 900), xs = Array.from({ length: 5 }, () => (base + ri(-4, 4)) / 100), mean = +(sum(xs) / 5).toFixed(2), exact = sig(sum(xs) / 5, 6);
+      return { q: T`A pendulum's period is timed five times (in seconds): ${listF(xs)}. What is the mean period, to two decimal places?`, a: mean, u: 's', w: [+(median(xs) + 0.01).toFixed(2), Math.max(...xs), +((Math.max(...xs) + Math.min(...xs)) / 2 + 0.02).toFixed(2)], tol: 0.005, rtol: 0,
+        s: T`Add the readings and divide by 5: $\frac{${xs.map(x => M(x)).join(' + ')}}{5} = ${M(exact)}$, which is ${Q(mean, 's')} to two decimal places, the same precision as the readings.` };
+    },
+  ],
+},
 /* ------------------------------------------------------------------ */
 {
   id: 'vectors', stage: 'sh', title: 'Vectors in Physics',

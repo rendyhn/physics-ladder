@@ -1,12 +1,6 @@
 ##### core
-@fvac4t57w5
-water
-@29s3flj4o7q
-aluminium
 @1kodlvhytf0
 iron
-@aohwz19hxq
-copper
 @15qut058har
 glass
 
@@ -64,8 +58,6 @@ Heat lost = heat gained, and $c$ cancels: $⟦0⟧(⟦1⟧ - T) = ⟦2⟧(T - �
 A ⟦0⟧ block of ⟦1⟧ (⟦2⟧) at ⟦3⟧ is dropped into ⟦4⟧ of water ($4200\,\mathrm{J/(kg\,{}^\circ C)}$) at ⟦5⟧. Ignoring heat lost to the surroundings, what is the final temperature?
 @15iyy764mj1  ; 0=M(sig(m1 * c * T1, 6)) | 1=M(sig(m2 * cw * T2, 6)) | 2=M(sig(m1 * c, 6)) | 3=M(sig(m2 * cw, 6)) | 4=QT(Tf, '°C')
 $m_1 c_1 (T_1 - T) = m_2 c_w (T - T_2)$ gives $T = \frac{m_1 c_1 T_1 + m_2 c_w T_2}{m_1 c_1 + m_2 c_w} = \frac{⟦0⟧ + ⟦1⟧}{⟦2⟧ + ⟦3⟧} \approx ⟦4⟧$.
-@1wx1582nq2p
-steel
 @23zmjtwm2kj
 brass
 @oole13wunn  ; 0=mat | 1=Q(L0, 'm') | 2=Q(dT, '°C') | 3=sciT(al)

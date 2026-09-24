@@ -99,23 +99,23 @@ addMeta('id', {
   },
   topics: {
     'units': [R`Besaran, Satuan & Konversi`, R`Satuan pokok SI, satuan turunan, awalan, konversi satuan, dan notasi ilmiah.`],
-    'measurement': [R`Pengukuran & Angka Penting`],
+    'measurement': [R`Pengukuran & Angka Penting`, R`Membaca mistar, jangka sorong, dan mikrometer sekrup, ketidakpastian, angka penting, dan rata-rata pengukuran berulang.`],
     'vectors': [R`Vektor dalam Fisika`, R`Skalar dan vektor, komponen vektor, penjumlahan vektor, serta besar dan arah resultan.`],
     'linear-motion': [R`Gerak Lurus`, R`Jarak dan perpindahan, kelajuan dan kecepatan, percepatan, persamaan GLB dan GLBB, serta grafik gerak.`],
     'free-fall': [R`Gerak Vertikal & Jatuh Bebas`, R`Menjatuhkan dan melempar benda: jatuh bebas dengan g tetap, waktu jatuh, kelajuan saat menyentuh tanah, dan tinggi maksimum.`],
     'projectile': [R`Gerak Parabola`, R`Gerak dua dimensi: lemparan mendatar, waktu terbang, tinggi maksimum, dan jarak jangkauan.`],
-    'circular': [R`Gerak Melingkar`],
+    'circular': [R`Gerak Melingkar`, R`Periode dan frekuensi, kecepatan sudut, percepatan dan gaya sentripetal, mobil di tikungan, dan lintasan melingkar vertikal.`],
     'newton': [R`Hukum Newton tentang Gerak`, R`Kelembaman, F = ma, aksi dan reaksi, berat dan gaya normal, diagram gaya bebas, lift, dan benda-benda yang terhubung.`],
     'friction-incline': [R`Gaya Gesek & Bidang Miring`, R`Gesekan statis dan kinetis, koefisien gesek, serta benda di bidang miring licin dan kasar.`],
     'work-energy': [R`Usaha, Energi & Daya`, R`Usaha oleh gaya, energi kinetik dan potensial, kekekalan energi mekanik, daya, dan efisiensi.`],
     'momentum': [R`Momentum, Impuls & Tumbukan`, R`Momentum dan impuls, kekekalan momentum, tumbukan yang menempel, rekoil, dan tumbukan lenting sempurna.`],
-    'rotation': [R`Dinamika Rotasi & Momen Gaya`],
-    'equilibrium': [R`Kesetimbangan Benda Tegar`],
-    'gravitation': [R`Gravitasi & Orbit`],
-    'elasticity': [R`Elastisitas & Pegas`],
-    'fluid-statics': [R`Fluida Statis`],
-    'fluid-dynamics': [R`Fluida Dinamis`],
-    'center-of-mass': [R`Pusat Massa & Momentum Sudut`],
+    'rotation': [R`Dinamika Rotasi & Momen Gaya`, R`Momen gaya, momen inersia, hukum II Newton untuk rotasi, energi kinetik rotasi, dan gerak menggelinding.`],
+    'equilibrium': [R`Kesetimbangan Benda Tegar`, R`Dua syarat kesetimbangan, momen gaya dan tuas, batang pada penopang, titik berat, dan kestabilan.`],
+    'gravitation': [R`Gravitasi & Orbit`, R`Hukum gravitasi Newton, nilai g di planet lain dan di ketinggian, kelajuan dan periode orbit, hukum III Kepler, dan kecepatan lepas.`],
+    'elasticity': [R`Elastisitas & Pegas`, R`Hukum Hooke, susunan pegas seri dan paralel, tegangan, regangan, modulus Young, dan energi potensial pegas.`],
+    'fluid-statics': [R`Fluida Statis`, R`Massa jenis dan tekanan, tekanan hidrostatis, dongkrak hidraulik (Pascal), gaya apung (Archimedes), terapung dan tenggelam.`],
+    'fluid-dynamics': [R`Fluida Dinamis`, R`Debit, persamaan kontinuitas, asas Bernoulli, hukum Torricelli, dan mengapa fluida yang lebih cepat bertekanan lebih rendah.`],
+    'center-of-mass': [R`Pusat Massa & Momentum Sudut`, R`Menentukan pusat massa, gerak pusat massa, momentum sudut dan kekekalannya, penari es dan komidi putar.`],
     'shm': [R`Gerak Harmonik Sederhana`],
     'mech-waves': [R`Gelombang Mekanik`],
     'sound': [R`Bunyi: Intensitas, Desibel & Efek Doppler`],
@@ -178,6 +178,252 @@ addT('id', {
   '1oy7dzvank8': R`Contoh soal`,
   '1q1jscvjv55': R`Hati-hati`,
   '12yoll1koil': R`Gunakan $g = ⟦0⟧$.`,
+});
+
+/* Bahasa Indonesia — 10-mech-e */
+addT('id', {
+  '2bgoc0bt7g7': R`
+<p>Benda tegar berada dalam <b>kesetimbangan</b> jika tidak bertambah cepat dan tidak mulai berputar. Untuk itu diperlukan dua syarat sekaligus.</p>
+⟦0⟧
+<p><b>Momen gaya</b> terhadap suatu titik adalah gaya dikali jarak tegak lurusnya dari titik itu. Memilih titik tempat gaya yang belum diketahui bekerja akan menghilangkan gaya itu dari persamaan momen, sehingga soal menjadi jauh lebih singkat.</p>
+<h3>Tuas dan jungkat-jungkit</h3>
+⟦1⟧
+<p>Jungkat-jungkit seimbang jika $F_1 d_1 = F_2 d_2$. Tuas memungkinkan kuasa kecil mengangkat beban besar jika kuasa berada jauh lebih jauh dari titik tumpu daripada beban.</p>
+⟦2⟧
+<h3>Titik berat dan kestabilan</h3>
+<p>Berat suatu benda bekerja seolah-olah pada satu titik, yaitu <b>titik berat</b>; untuk batang homogen titik itu berada di tengah. Benda yang berdiri di atas alasnya akan terguling jika garis vertikal melalui titik beratnya jatuh di luar alas. Titik berat yang rendah dan alas yang lebar membuat benda lebih stabil.</p>
+⟦3⟧`,
+  '1xo6yn5lhts': R`<p><b>Syarat kesetimbangan</b></p><ol><li>Gaya resultan nol: $\Sigma F_x = 0$ dan $\Sigma F_y = 0$.</li><li>Momen gaya resultan terhadap titik <i>mana pun</i> nol: jumlah momen searah jarum jam = jumlah momen berlawanan arah jarum jam.</li></ol>`,
+  '23g7vlo9231': R`Jungkat-jungkit yang seimbang pada titik tumpu di tengah dengan beban sama pada jarak sama`,
+  '1ia7igse039': R`Momen yang sama terhadap titik tumpu: $300 \times 1{,}5 = 300 \times 1{,}5$.`,
+  '2dnb66q652e': R`<p>Sebuah papan homogen sepanjang $4\,\mathrm{m}$ dengan berat $200\,\mathrm{N}$ ditopang di kedua ujungnya. Seseorang yang beratnya $600\,\mathrm{N}$ berdiri $1\,\mathrm{m}$ dari ujung kiri. Momen terhadap penopang kiri: $R_B \cdot 4 = 600 \cdot 1 + 200 \cdot 2$, jadi $R_B = 250\,\mathrm{N}$. Maka $R_A = 800 - 250 = 550\,\mathrm{N}$.</p>`,
+  '1v1bcfnsxbs': R`<p>Jangan lupakan berat batang itu sendiri: untuk batang homogen, letakkan beratnya di titik tengah saat menghitung momen.</p>`,
+  '27ai89vg7lv': R`Seorang anak yang beratnya ⟦0⟧ duduk ⟦1⟧ dari titik tumpu jungkat-jungkit. Pada jarak berapa dari titik tumpu, di sisi lain, anak yang beratnya ⟦2⟧ harus duduk agar seimbang?`,
+  '1s44hqasu41': R`Momen seimbang: $⟦0⟧ \cdot ⟦1⟧ = ⟦2⟧ \cdot d$, jadi $d = \frac{⟦3⟧}{⟦4⟧} = ⟦5⟧$.`,
+  '5ygurfvrnu': R`Sebuah batang homogen sepanjang ⟦0⟧ dengan berat ⟦1⟧ ditopang oleh penopang A (ujung kiri) dan B (ujung kanan). Sebuah beban ⟦2⟧ digantung ⟦3⟧ dari A. Berapa gaya ke atas di ⟦4⟧?`,
+  '251gwkboy2w': R`Batang pada dua penopang di ujungnya dengan beban yang tergantung`,
+  '12vla2beoys': R`Momen terhadap A: $R_B \cdot ⟦0⟧ = ⟦1⟧ \cdot ⟦2⟧ + ⟦3⟧ \cdot ⟦4⟧$, jadi $R_B = ⟦5⟧\,\mathrm{N}$. Gaya: $R_A = ⟦6⟧ + ⟦7⟧ - ⟦8⟧ = ⟦9⟧\,\mathrm{N}$. ⟦10⟧`,
+  'kak71bjidq': R`Gaya di A adalah ⟦0⟧.`,
+  'jkd7ktncls': R`Gaya di B adalah ⟦0⟧.`,
+  '1lbtu27g29e': R`Sebuah linggis dipakai untuk mengangkat batu seberat ⟦0⟧. Batu berada ⟦1⟧ dari titik tumpu dan kuasa diberikan ⟦2⟧ dari titik tumpu di sisi lain. Berapa kuasa yang diperlukan?`,
+  '1vmb9kccllx': R`Momen terhadap titik tumpu: $F \cdot ⟦0⟧ = ⟦1⟧ \cdot ⟦2⟧$, jadi $F = ⟦3⟧$. Tuas melipatgandakan gaya sebesar $\frac{⟦4⟧}{⟦5⟧}$.`,
+  'qcmphssyet': R`Sebuah lampu seberat ⟦0⟧ digantung pada dua kabel identik, masing-masing membentuk sudut ⟦1⟧ terhadap vertikal. Berapa tegangan pada setiap kabel?`,
+  'h8o3lybcu5': R`Arah vertikal: $2T\cos\theta = W$, jadi $T = \frac{⟦0⟧}{2\cos ⟦1⟧^\circ} = ⟦2⟧$. Komponen horizontalnya saling meniadakan.`,
+  '167msv1x6cy': R`Perubahan mana yang membuat bus lebih kecil kemungkinannya terguling di tikungan tajam?`,
+  'jvryot0a6s': R`Menurunkan titik beratnya`,
+  '3wg5r12qsa': R`Menaikkan titik beratnya`,
+  '1lmhktj0gmu': R`Mempersempit jarak antarroda kiri dan kanan`,
+  'a1ysyrhwbh': R`Menaruh barang berat di atap`,
+  '1gg3pi1fr3h': R`Bus terguling jika garis melalui titik beratnya lewat di luar roda-rodanya. Titik berat yang rendah dan alas yang lebar menjaga garis itu tetap di dalam.`,
+  'qn0n12hmx': R`Sebuah tangga bersandar pada dinding tanpa bergerak. Pernyataan mana yang pasti benar?`,
+  '14l1rv9s9kz': R`Gaya resultan dan momen gaya resultan padanya sama-sama nol`,
+  '1gl9w1xwd40': R`Hanya gaya resultannya yang nol`,
+  '1krwrnhumij': R`Hanya momen gaya resultannya yang nol`,
+  '1b1n53la2iv': R`Beratnya sama dengan gaya normal dari dinding`,
+  '1d4mywo9186': R`Benda tegar yang setimbang memerlukan kedua syarat: tidak ada gaya resultan dan tidak ada momen gaya resultan.`,
+  'nvjcaa6b85': R`
+<p>Setiap massa menarik setiap massa lainnya. Hukum gravitasi Newton menyatakan besar tarikan antara dua massa titik (atau bola) yang pusatnya berjarak $r$:</p>
+⟦0⟧
+<p>Ini adalah <b>hukum kuadrat terbalik</b>: menggandakan jarak membuat gayanya empat kali lebih kecil.</p>
+<h3>Kuat medan gravitasi $g$</h3>
+<p>Di permukaan planet bermassa $M$ dan berjari-jari $R$, $g = \dfrac{GM}{R^2}$. Untuk Bumi ($M = 6{,}0 \times 10^{24}\,\mathrm{kg}$, $R = 6{,}4 \times 10^{6}\,\mathrm{m}$) hasilnya sekitar $9{,}8\,\mathrm{m/s^2}$. Pada ketinggian $h$ di atas permukaan, $g_h = g \left(\dfrac{R}{R + h}\right)^2$.</p>
+⟦1⟧
+<h3>Kecepatan lepas</h3>
+<p>Kelajuan yang diperlukan untuk meninggalkan permukaan planet untuk selamanya (tanpa hambatan udara) adalah $v_{\text{lepas}} = \sqrt{\dfrac{2GM}{R}}$, sekitar $11{,}2\,\mathrm{km/s}$ untuk Bumi.</p>
+⟦2⟧`,
+  '1c9bn1b3459': R`F = \frac{G m_1 m_2}{r^2}, \qquad G = 6{,}67 \times 10^{-11}\,\mathrm{N\,m^2/kg^2}`,
+  'zpmy0epgmu': R`<p>Untuk satelit pada orbit lingkaran berjari-jari $r$, gravitasi menyediakan gaya sentripetal:</p><p>$$\frac{GMm}{r^2} = \frac{m v^2}{r} \;\Rightarrow\; v = \sqrt{\frac{GM}{r}}, \qquad T = \frac{2\pi r}{v}.$$</p><p>Dari sini diperoleh <b>hukum III Kepler</b>: $T^2 \propto r^3$ untuk semua benda yang mengorbit massa pusat yang sama.</p>`,
+  '1nsox0r2osf': R`<p>$r$ diukur dari <b>pusat</b> planet. Satelit yang berada $400\,\mathrm{km}$ di atas permukaan mengorbit pada $r = R + 400\,\mathrm{km}$.</p>`,
+  'd9s18hv7kt': R`Dua orang bermassa ⟦0⟧ dan ⟦1⟧ berdiri berjarak ⟦2⟧. Berapa gaya gravitasi di antara keduanya? ($G = 6{,}67 \times 10^{-11}\,\mathrm{N\,m^2/kg^2}$.)`,
+  '191a1v6mrdv': R`Ketik perpangkatan sepuluh seperti 3,1e-7.`,
+  '1n460b59i4j': R`$F = \frac{G m_1 m_2}{r^2} = \frac{6{,}67 \times 10^{-11} \cdot ⟦0⟧ \cdot ⟦1⟧}{⟦2⟧^2} = ⟦3⟧\,\mathrm{N}$. Sangat kecil, itulah sebabnya kita tidak pernah merasakannya.`,
+  '117fki377nt': R`Sebuah satelit dipindahkan dari jarak $r$ ke jarak ⟦0⟧ dari pusat Bumi. Jika kuat medan gravitasinya mula-mula ⟦1⟧, berapa nilainya sekarang?`,
+  '1of8a8mu78': R`$g \propto \frac{1}{r^2}$, jadi nilai barunya $\frac{⟦0⟧}{⟦1⟧^2} = ⟦2⟧$.`,
+  '75p7fgtqjv': R`Mars`,
+  '1dhvua7kc4g': R`Bulan`,
+  'qi9j0e7a0t': R`Jupiter`,
+  '1cmkxhdnzgx': R`Venus`,
+  '1xtetd4vl32': R`⟦0⟧ memiliki massa $⟦1⟧\,\mathrm{kg}$ dan jari-jari $⟦2⟧\,\mathrm{m}$. Berapa kuat medan gravitasi di permukaannya? ($G = 6{,}67 \times 10^{-11}\,\mathrm{N\,m^2/kg^2}$.)`,
+  'tvn3o2yi8l': R`$g = \frac{GM}{R^2} = \frac{6{,}67 \times 10^{-11} \cdot ⟦0⟧}{(⟦1⟧)^2} = ⟦2⟧$.`,
+  '17j8u992tis': R`Sebuah satelit mengorbit ⟦0⟧ di atas permukaan Bumi. Berapa periode orbitnya, dalam menit? (Bumi: $M = 6{,}0 \times 10^{24}\,\mathrm{kg}$, $R = 6{,}4 \times 10^{6}\,\mathrm{m}$, $G = 6{,}67 \times 10^{-11}$.)`,
+  '1nq4xd0236f': R`$r = R + h = ⟦0⟧\,\mathrm{m}$, $v = \sqrt{\frac{GM}{r}} = ⟦1⟧\,\mathrm{m/s}$, dan $T = \frac{2\pi r}{v} = ⟦2⟧\,\mathrm{s} = ⟦3⟧$.`,
+  '1sob76l6hv2': R`Sebuah satelit mengorbit ⟦0⟧ di atas permukaan Bumi. Berapa kelajuan orbitnya, dalam km/s? (Bumi: $M = 6{,}0 \times 10^{24}\,\mathrm{kg}$, $R = 6{,}4 \times 10^{6}\,\mathrm{m}$, $G = 6{,}67 \times 10^{-11}$.)`,
+  'kegnt1tr43': R`$r = R + h = ⟦0⟧\,\mathrm{m}$, jadi $v = \sqrt{\frac{GM}{r}} = \sqrt{\frac{6{,}67 \times 10^{-11} \cdot 6{,}0 \times 10^{24}}{⟦1⟧}} = ⟦2⟧\,\mathrm{m/s} = ⟦3⟧$.`,
+  '1sbvsslw1sk': R`Planet A mengorbit sebuah bintang dengan periode ⟦0⟧ tahun. Planet B mengorbit bintang yang sama pada jarak ⟦1⟧ jari-jari orbit A. Berapa periode B dalam tahun?`,
+  'ujxecb65pt': R`seperempat`,
+  '1t22a86absg': R`⟦0⟧ kali`,
+  '1dg7mtcy0c9': R`tahun`,
+  '2de7rvzumk5': R`Hukum III Kepler: $T^2 \propto r^3$, jadi $T_B = T_A \left(\frac{r_B}{r_A}\right)^{3/2} = ⟦0⟧ \cdot ⟦1⟧^{3/2} = ⟦2⟧$ tahun.`,
+  '1g8kpgyyykl': R`Bumi`,
+  'tcwjm5cc30': R`Berapa kecepatan lepas dari permukaan ⟦0⟧, dalam km/s? ($M = ⟦1⟧\,\mathrm{kg}$, $R = ⟦2⟧\,\mathrm{m}$, $G = 6{,}67 \times 10^{-11}$.)`,
+  'woexht7fd1': R`$v_{\text{lepas}} = \sqrt{\frac{2GM}{R}} = \sqrt{\frac{2 \cdot 6{,}67 \times 10^{-11} \cdot ⟦0⟧}{⟦1⟧}} = ⟦2⟧$.`,
+  '1t7t31zl260': R`Jarak antara dua asteroid dijadikan tiga kali lipat. Apa yang terjadi pada gaya gravitasi di antara keduanya?`,
+  '28vmwpgzn8u': R`Menjadi sepersembilannya`,
+  'z5ix874vwl': R`Menjadi sepertiganya`,
+  '11allerlng8': R`Menjadi tiga kali lipat`,
+  '1narefqxwk6': R`Tetap sama`,
+  '27b94xj9u8t': R`Gravitasi mengikuti hukum kuadrat terbalik: $F \propto 1/r^2$, jadi melipattigakan $r$ membagi gayanya dengan $3^2 = 9$.`,
+  'tht7ack1bm': R`
+<p>Bahan yang <b>elastis</b> kembali ke bentuk semula ketika gayanya dihilangkan. Pegas, karet gelang, dan kawat baja (untuk regangan kecil) semuanya bersifat demikian.</p>
+<h3>Hukum Hooke</h3>
+⟦0⟧
+<p>Pertambahan panjang $x$ sebanding dengan gaya $F$, sampai <b>batas elastis</b>. Konstanta pegas $k$ (dalam $\mathrm{N/m}$) menyatakan kekakuan: pegas yang kaku memiliki $k$ besar.</p>
+<h3>Susunan pegas</h3>
+<ul><li><b>Paralel</b> (berdampingan, berbagi beban): $k = k_1 + k_2$. Lebih kaku.</li><li><b>Seri</b> (disambung memanjang): $\dfrac{1}{k} = \dfrac{1}{k_1} + \dfrac{1}{k_2}$. Lebih lentur.</li></ul>
+<h3>Tegangan, regangan, dan modulus Young</h3>
+⟦1⟧
+<p>Tegangan $\sigma$ adalah gaya per luas (dalam $\mathrm{Pa}$); regangan $\varepsilon$ adalah perubahan panjang relatif (tanpa satuan). <b>Modulus Young</b> $E$ adalah sifat bahan, bukan sifat kawat tertentu: baja sekitar $2 \times 10^{11}\,\mathrm{Pa}$.</p>
+⟦2⟧
+⟦3⟧`,
+  '1vnn2tgh37x': R`<p>Pegas yang diregangkan atau dimampatkan menyimpan <b>energi potensial pegas</b>:</p><p>$$E_p = \tfrac12 k x^2 = \tfrac12 F x.$$</p><p>Energi ini sama dengan luas di bawah grafik gaya–pertambahan panjang, yang berbentuk segitiga.</p>`,
+  '1yajnp82ry5': R`<p>Pertambahan panjang adalah <i>perubahan</i> panjang, bukan panjang barunya. Pegas $20\,\mathrm{cm}$ yang ditarik menjadi $25\,\mathrm{cm}$ memiliki $x = 5\,\mathrm{cm} = 0{,}05\,\mathrm{m}$.</p>`,
+  '2ckt7977jyy': R`Sebuah pegas dengan konstanta ⟦0⟧ ditarik sejauh ⟦1⟧. Berapa gaya yang diperlukan?`,
+  '1grzbwq0hvi': R`$x = ⟦0⟧\,\mathrm{m}$, jadi $F = kx = ⟦1⟧ \cdot ⟦2⟧ = ⟦3⟧$.`,
+  '2efvhufet01': R`Gaya ⟦0⟧ meregangkan sebuah pegas sejauh ⟦1⟧. Berapa konstanta pegasnya?`,
+  '2dznv3ukly6': R`Sebuah pegas dengan $k = ⟦0⟧$ menahan beban ⟦1⟧. Berapa sentimeter pertambahan panjangnya?`,
+  '15ooe79rv3y': R`Dua pegas, ⟦0⟧ dan ⟦1⟧, digantung berdampingan (paralel) dan berbagi beban. Berapa konstanta pegas gabungannya?`,
+  '1y0o1z7g6q8': R`Dua pegas, ⟦0⟧ dan ⟦1⟧, disambung ujung ke ujung (seri). Berapa konstanta pegas gabungannya?`,
+  'wn3mbg9wn8': R`Pada susunan paralel, konstantanya dijumlahkan: $⟦0⟧ + ⟦1⟧ = ⟦2⟧$.`,
+  '17ewugml04e': R`Pada susunan seri $\frac{1}{k} = \frac{1}{⟦0⟧} + \frac{1}{⟦1⟧}$, jadi $k = \frac{⟦2⟧ \cdot ⟦3⟧}{⟦4⟧ + ⟦5⟧} = ⟦6⟧$.`,
+  'ts6blvkpd6': R`Sebuah kawat berdiameter ⟦0⟧ menahan beban ⟦1⟧. Berapa tegangan tarik pada kawat, dalam MPa?`,
+  '1j4s9hz8eyg': R`Luas penampang: $A = \pi\left(\frac{d}{2}\right)^2 = \pi (⟦0⟧)^2 = ⟦1⟧\,\mathrm{m^2}$. Tegangan: $\sigma = \frac{F}{A} = ⟦2⟧\,\mathrm{Pa} = ⟦3⟧$.`,
+  '1u7vob9uodk': R`Sebuah kawat ⟦0⟧ sepanjang ⟦1⟧ dengan luas penampang ⟦2⟧ menahan beban ⟦3⟧. Berapa milimeter pertambahan panjangnya? (Modulus Young: $⟦4⟧\,\mathrm{Pa}$.)`,
+  '14ov2o2z4pw': R`Sebuah peluncur mainan memakai pegas dengan $k = ⟦0⟧$ yang dimampatkan sejauh ⟦1⟧ untuk menembakkan bola ⟦2⟧ secara mendatar. Jika tidak ada energi yang hilang, berapa kelajuan bola saat lepas?`,
+  'vo9el1qyj0': R`$\tfrac12 k x^2 = \tfrac12 m v^2$, jadi $v = x\sqrt{\frac{k}{m}} = ⟦0⟧\sqrt{\frac{⟦1⟧}{⟦2⟧}} = ⟦3⟧$.`,
+  '26bdgc95rl6': R`Berapa energi potensial yang tersimpan pada pegas dengan $k = ⟦0⟧$ yang diregangkan sejauh ⟦1⟧?`,
+  'q077c0ltls': R`Dua kawat terbuat dari baja yang sama, tetapi yang satu dua kali lebih tebal (diameternya dua kali). Beban yang sama digantung pada keduanya. Bagaimana pertambahan panjang kawat tebal dibandingkan kawat tipis?`,
+  '1jdkqtnchpz': R`Seperempatnya`,
+  '22eqnhd4jx7': R`Setengahnya`,
+  '1w9p4qv2f6n': R`Sama besar`,
+  '8qjmwqttjq': R`Dua kali lipat`,
+  'a2d5ad4yl9': R`$\Delta L = \frac{FL}{AE}$. Diameter dua kali lipat membuat luas penampang $2^2 = 4$ kali lebih besar, jadi pertambahan panjangnya 4 kali lebih kecil. Modulus Young-nya sama karena bahannya sama.`,
+});
+
+/* Bahasa Indonesia — 11-mech-f */
+addT('id', {
+  '132l0ady3rl': R`
+<h3>Massa jenis dan tekanan</h3>
+⟦0⟧
+<p>Massa jenis diukur dalam $\mathrm{kg/m^3}$ (air: $1000\,\mathrm{kg/m^3}$) dan tekanan dalam pascal, $1\,\mathrm{Pa} = 1\,\mathrm{N/m^2}$. Gaya yang sama pada luas yang lebih kecil menghasilkan tekanan yang lebih besar; itulah sebabnya pisau dibuat tajam dan sepatu salju dibuat lebar.</p>
+<h3>Tekanan hidrostatis</h3>
+⟦1⟧
+<p>Tekanan pada kedalaman $h$ adalah tekanan di permukaan $p_0$ (tekanan atmosfer, sekitar $1{,}0 \times 10^{5}\,\mathrm{Pa}$) ditambah berat zat cair di atas setiap meter persegi, $\rho g h$. Tekanan ini hanya bergantung pada kedalaman, bukan pada bentuk wadah, dan bekerja sama besar ke segala arah.</p>
+<h3>Hukum Pascal dan hidraulik</h3>
+<p>Tekanan yang diberikan pada zat cair dalam ruang tertutup diteruskan sama besar ke seluruh bagiannya. Pada pompa hidraulik atau dongkrak mobil, tekanan di bawah kedua pengisap sama, jadi</p>
+⟦2⟧
+<p>Gaya kecil pada pengisap kecil dapat mengangkat beban besar pada pengisap besar.</p>
+⟦3⟧
+⟦4⟧
+⟦5⟧`,
+  '20hy5hggcsa': R`<p><b>Hukum Archimedes:</b> benda di dalam fluida mendapat <b>gaya apung</b> ke atas yang sama dengan berat fluida yang dipindahkannya:</p><p>$$F_A = \rho_{\text{fluida}}\, g\, V_{\text{tercelup}}.$$</p><p>Benda yang terapung memindahkan fluida seberat dirinya sendiri, jadi bagian yang tercelup adalah $\dfrac{\rho_{\text{benda}}}{\rho_{\text{fluida}}}$.</p>`,
+  '1eqvj8151xy': R`<p>Sebuah batu bervolume $0{,}002\,\mathrm{m^3}$ tercelup seluruhnya di dalam air ($g = 10\,\mathrm{m/s^2}$). Gaya apung: $1000 \cdot 10 \cdot 0{,}002 = 20\,\mathrm{N}$. Jika berat batu di udara $50\,\mathrm{N}$, di dalam air beratnya seolah-olah hanya $50 - 20 = 30\,\mathrm{N}$.</p>`,
+  'jxo254idn5': R`<p>Pakai massa jenis <b>fluida</b> pada $F_A = \rho g V$, bukan massa jenis bendanya.</p>`,
+  '1gnv467hur7': R`Sebuah kotak seberat ⟦0⟧ terletak pada alas seluas ⟦1⟧. Berapa tekanan yang diberikannya pada lantai?`,
+  '6hrmh7sf7m': R`air tawar`,
+  '2c4t00nu7s6': R`air laut`,
+  '18jc6dmwg2x': R`minyak`,
+  '1508rh6iwuq': R`Seorang penyelam berada ⟦0⟧ di bawah permukaan ⟦1⟧ ($\rho = ⟦2⟧$). Jika tekanan atmosfer $1{,}0 \times 10^{5}\,\mathrm{Pa}$, berapa tekanan total yang dialami penyelam, dalam kPa? ⟦3⟧`,
+  '1pfy5e994t2': R`$p = p_0 + \rho g h = 1{,}0 \times 10^{5} + ⟦0⟧ \cdot ⟦1⟧ \cdot ⟦2⟧ = ⟦3⟧\,\mathrm{Pa} = ⟦4⟧$.`,
+  'ewbi58ptj2': R`Berapa tekanan hidrostatis (akibat zat cair saja) pada kedalaman ⟦0⟧ di dalam ⟦1⟧ ($\rho = ⟦2⟧$)? ⟦3⟧`,
+  '1ww41ixnyio': R`Pada dongkrak hidraulik mobil, luas pengisap kecil ⟦0⟧ dan luas pengisap besar ⟦1⟧. Berapa gaya pada pengisap kecil yang dapat mengangkat beban ⟦2⟧?`,
+  'c7zpr1s8pj': R`Tekanannya sama: $\frac{F_1}{⟦0⟧} = \frac{⟦1⟧}{⟦2⟧}$, jadi $F_1 = ⟦3⟧ \cdot \frac{⟦4⟧}{⟦5⟧} = ⟦6⟧$. (Satuan luas saling mencoret, jadi cm² boleh langsung dipakai.)`,
+  '1abf5pnjxgf': R`Sebuah balok logam bervolume ⟦0⟧ memiliki berat ⟦1⟧ di udara. Berapa beratnya jika tercelup seluruhnya di dalam air ($\rho = 1000\,\mathrm{kg/m^3}$)? ⟦2⟧`,
+  '1iih5fredy5': R`$V = ⟦0⟧\,\mathrm{m^3}$. Gaya apung: $F_A = \rho g V = 1000 \cdot ⟦1⟧ \cdot ⟦2⟧ = ⟦3⟧\,\mathrm{N}$. Berat semu: $⟦4⟧ - ⟦5⟧ = ⟦6⟧$.`,
+  'r8w2chsxqn': R`Sebuah benda bervolume ⟦0⟧ tercelup seluruhnya di dalam air ($\rho = 1000\,\mathrm{kg/m^3}$). Berapa gaya apung padanya? ⟦1⟧`,
+  '1oku9aiasm0': R`$V = ⟦0⟧\,\mathrm{cm^3} = ⟦1⟧\,\mathrm{m^3}$, jadi $F_A = \rho g V = 1000 \cdot ⟦2⟧ \cdot ⟦3⟧ = ⟦4⟧$.`,
+  '1dr4e9gobrz': R`balok kayu`,
+  'vz6tde3xxo': R`bongkahan es`,
+  '2cjmz9dq434': R`mainan plastik`,
+  'okcssahxev': R`Sebuah ⟦0⟧ (massa jenis ⟦1⟧) terapung di ⟦2⟧ (massa jenis ⟦3⟧). Berapa persen volumenya yang berada di bawah permukaan?`,
+  '155l1tws89r': R`Benda terapung memindahkan fluida seberat dirinya: $\rho_{\text{benda}} V = \rho_{\text{fluida}} V_{\text{tercelup}}$, jadi $\frac{V_{\text{tercelup}}}{V} = \frac{⟦0⟧}{⟦1⟧} = ⟦2⟧$, yaitu ⟦3⟧%.`,
+  '1x2jr4809pb': R`Tiga wadah berbeda bentuk diisi air sampai kedalaman yang sama. Di wadah mana tekanan air pada dasarnya paling besar?`,
+  '1qg4tsep92z': R`Sama besar pada ketiganya`,
+  '1nx0puixwj0': R`Di wadah yang paling lebar`,
+  '1gzegl86rr9': R`Di wadah yang berisi air paling banyak`,
+  'q26dyux6gg': R`Di wadah yang paling sempit`,
+  'hh3l5hpj76': R`Tekanan zat cair $p = \rho g h$ hanya bergantung pada kedalaman dan massa jenis, bukan pada bentuk wadah atau banyaknya zat cair.`,
+  '22e5wcyummc': R`Kapal baja dapat terapung walaupun baja lebih rapat daripada air. Mengapa?`,
+  '1fouw46x6wo': R`Lambungnya yang berongga memindahkan air yang beratnya sama dengan berat kapal`,
+  'abfjtna0il': R`Baja menjadi lebih ringan di air laut`,
+  '2curpr1mjxp': R`Udara di atas permukaan air menahannya`,
+  '1n10nia9hri': R`Tekanan air di permukaan nol`,
+  '21em8h1a62o': R`Lambung kapal melingkupi volume yang besar, jadi massa jenis rata-rata kapal (baja ditambah udara) lebih kecil daripada air, dan kapal hanya tenggelam sampai air yang dipindahkannya seberat kapal itu.`,
+  '21hvlad5dmf': R`
+<p>Untuk fluida ideal (tak termampatkan, tanpa gesekan, aliran tunak), dua hukum sederhana menggambarkan geraknya.</p>
+<h3>Debit dan persamaan kontinuitas</h3>
+⟦0⟧
+<p>Debit $Q$ (dalam $\mathrm{m^3/s}$) sama di sepanjang pipa, karena fluida tidak dapat menumpuk di mana pun. Di bagian pipa yang menyempit, fluida mengalir lebih cepat. Itulah sebabnya air menyemprot lebih kencang ketika ujung selang ditutup sebagian dengan ibu jari.</p>
+⟦1⟧
+<h3>Hukum Torricelli</h3>
+<p>Air yang keluar dari lubang pada kedalaman $h$ di bawah permukaan tangki terbuka memiliki kelajuan yang sama dengan benda yang jatuh bebas dari ketinggian itu:</p>
+⟦2⟧
+<h3>Penerapan</h3>
+<ul><li>Sayap pesawat membuat udara mengalir lebih cepat di permukaan atasnya, sehingga tekanan di atas lebih kecil daripada di bawah: timbul gaya angkat.</li><li>Venturimeter mengukur kelajuan aliran dari penurunan tekanan di bagian yang sempit.</li><li>Dua lembar kertas yang didekatkan akan saling mendekat ketika kamu meniup di antara keduanya.</li></ul>
+⟦3⟧`,
+  'jfct9zo3fm': R`<p><b>Persamaan Bernoulli</b> (kekekalan energi untuk fluida yang mengalir):</p><p>$$p + \tfrac12 \rho v^2 + \rho g h = \text{tetap sepanjang garis alir}.$$</p><p>Pada pipa mendatar, di bagian yang alirannya lebih cepat tekanannya lebih rendah.</p>`,
+  '1tf33n72jde': R`<p>Jika pipa dinyatakan dengan diameternya, luasnya sebanding dengan kuadrat diameter: diameter setengahnya membuat luas empat kali lebih kecil dan kelajuan empat kali lebih besar.</p>`,
+  'h7y62084hz': R`Sebuah selang mengalirkan air dengan debit ⟦0⟧. Berapa lama waktu untuk mengisi tangki ⟦1⟧?`,
+  '4tw3qt93ng': R`Air mengalir dengan kelajuan ⟦0⟧ melalui pipa dengan luas penampang ⟦1⟧. Berapa debitnya?`,
+  '240nziwbu1b': R`Air mengalir dengan kelajuan ⟦0⟧ di dalam pipa berdiameter ⟦1⟧. Pipa itu menyempit menjadi diameter ⟦2⟧. Berapa kelajuan air di bagian yang sempit?`,
+  '1fs9yrjs06m': R`$A_1 v_1 = A_2 v_2$ dan $A \propto d^2$, jadi $v_2 = v_1 \left(\frac{d_1}{d_2}\right)^2 = ⟦0⟧ \cdot \left(\frac{⟦1⟧}{⟦2⟧}\right)^2 = ⟦3⟧$.`,
+  'nqntzli8cj': R`Sebuah tangki air memiliki lubang kecil ⟦0⟧ di bawah permukaan air. Berapa kelajuan air yang keluar dari lubang? ⟦1⟧`,
+  'e65jzwfld7': R`Hukum Torricelli: $v = \sqrt{2gh} = \sqrt{2 \cdot ⟦0⟧ \cdot ⟦1⟧} = ⟦2⟧$.`,
+  '2d0eu0oix11': R`Sebuah tangki berdiri di atas tanah. Air menyemprot mendatar dari lubang kecil ⟦0⟧ di bawah permukaan air dan ⟦1⟧ di atas tanah. Seberapa jauh dari tangki pancaran air mengenai tanah? ⟦2⟧`,
+  '2exhiwywjh3': R`Kelajuan keluar: $v = \sqrt{2gh}$. Waktu jatuh: $t = \sqrt{2y/g}$. Jarak: $x = vt = \sqrt{2gh} \cdot \sqrt{\frac{2y}{g}} = 2\sqrt{hy} = 2\sqrt{⟦0⟧ \cdot ⟦1⟧} = ⟦2⟧$. Nilai $g$ saling mencoret.`,
+  '242gqtld3d4': R`udara`,
+  '1h40nwesfdh': R`⟦0⟧ (massa jenis ⟦1⟧) mengalir melalui pipa mendatar. Kelajuannya naik dari ⟦2⟧ menjadi ⟦3⟧ di bagian yang menyempit. Berapa penurunan tekanannya?`,
+  '24uhc1w9ess': R`Air`,
+  '1j3ybzcjg06': R`Udara`,
+  'glb8zbf42j': R`Bernoulli dengan ketinggian sama: $p_1 - p_2 = \tfrac12 \rho (v_2^2 - v_1^2) = \tfrac12 \cdot ⟦0⟧ \cdot (⟦1⟧^2 - ⟦2⟧^2) = ⟦3⟧$.`,
+  'kuqxk0pmyy': R`Kamu meniupkan udara di antara dua lembar kertas yang tergantung berdekatan. Apa yang terjadi?`,
+  '1bar4m9vs2x': R`Kedua lembar kertas saling mendekat`,
+  '13udhscb03t': R`Kedua lembar kertas saling menjauh`,
+  '1a2l9vqj6bq': R`Tidak terjadi apa-apa`,
+  '1q8dmovimjj': R`Keduanya berayun ke arah yang sama`,
+  'tdo9mbor33': R`Udara yang bergerak cepat di antara kertas bertekanan lebih rendah (Bernoulli), jadi udara diam di luar mendorong keduanya saling mendekat.`,
+  'tfunc89iiz': R`Air mengalir tunak melalui pipa yang menyempit. Di bagian yang sempit, dibandingkan dengan bagian yang lebar:`,
+  '1y32bib9fxn': R`kelajuannya lebih besar dan tekanannya lebih kecil`,
+  'tjbd5irxog': R`kelajuannya lebih kecil dan tekanannya lebih besar`,
+  '1z39d92s5z2': R`kelajuan dan tekanannya sama-sama lebih besar`,
+  '1n7mw09tqd0': R`debitnya lebih kecil`,
+  'p0onvirn47': R`Kontinuitas membuat air mengalir lebih cepat di bagian yang luasnya lebih kecil, lalu Bernoulli menyatakan tekanannya harus turun. Debitnya tetap sama.`,
+  '1woeplbt7b9': R`
+<h3>Pusat massa</h3>
+<p>Untuk sekumpulan massa titik, <b>pusat massa</b> adalah posisi rata-rata yang diberi bobot massa:</p>
+⟦0⟧
+<p>Pusat massa suatu sistem bergerak seolah-olah seluruh massa terkumpul di sana dan semua gaya luar bekerja padanya: $\Sigma F_{\text{luar}} = M a_{\text{pm}}$. Ketika sebuah peluru meledak di udara, pecahan-pecahannya berhamburan, tetapi pusat massanya tetap mengikuti parabola semula.</p>
+<h3>Momentum sudut</h3>
+⟦1⟧
+<p>Momentum sudut adalah padanan momentum pada gerak rotasi. Momen gaya resultan mengubahnya: $\tau = \dfrac{\Delta L}{\Delta t}$.</p>
+⟦2⟧
+⟦3⟧
+⟦4⟧`,
+  'utaagz8jc5': R`L = I\,\omega \qquad \text{(untuk massa titik: } L = m v r\text{)}`,
+  '1vqngikji5k': R`<p><b>Hukum kekekalan momentum sudut:</b> jika tidak ada momen gaya luar, $L$ tetap:</p><p>$$I_1 \omega_1 = I_2 \omega_2.$$</p><p>Penari es yang menarik lengannya ke dalam memperkecil $I$, sehingga $\omega$ naik dan ia berputar lebih cepat.</p>`,
+  '1t4hircwlm6': R`<p>Seorang penari es berputar $2\,\mathrm{put/s}$ dengan $I = 4\,\mathrm{kg\,m^2}$, lalu menarik lengannya sehingga $I = 1{,}6\,\mathrm{kg\,m^2}$. Maka $\omega_2 = \frac{4 \cdot 2}{1{,}6} = 5\,\mathrm{put/s}$. Energi kinetiknya $\tfrac12 I\omega^2$ naik $2{,}5$ kali; tambahan energinya berasal dari usaha otot-ototnya.</p>`,
+  'nwgt5xj5ul': R`<p>Pada $I_1\omega_1 = I_2\omega_2$, $\omega$ boleh tetap dalam putaran/s atau rpm, asalkan kedua ruas memakai satuan yang sama.</p>`,
+  '290ail788vn': R`Massa ⟦0⟧ berada di $x = 0$ dan massa ⟦1⟧ di $x = ⟦2⟧$. Di mana pusat massanya?`,
+  '12g2ix7akao': R`$x_{\text{pm}} = \frac{⟦0⟧ \cdot 0 + ⟦1⟧ \cdot ⟦2⟧}{⟦3⟧ + ⟦4⟧} = ⟦5⟧$. Letaknya lebih dekat ke massa yang lebih berat.`,
+  '1wdicp3rc9e': R`Massa ⟦0⟧ terletak pada satu garis, berturut-turut di $x = ⟦1⟧$. Tentukan koordinat $x$ pusat massanya.`,
+  'a6r8nz6qcn': R`$x_{\text{pm}} = \frac{⟦0⟧}{⟦1⟧} = \frac{⟦2⟧}{⟦3⟧} = ⟦4⟧$.`,
+  '2alt0mw109x': R`Sebuah roda dengan momen inersia ⟦0⟧ berputar ⟦1⟧ rpm. Berapa momentum sudutnya?`,
+  '2f0sixkrxvi': R`$\omega = 2\pi \cdot \frac{⟦0⟧}{60} = ⟦1⟧\,\mathrm{rad/s}$, jadi $L = I\omega = ⟦2⟧ \cdot ⟦3⟧ = ⟦4⟧$.`,
+  '270kkh4b302': R`Seorang penari es berputar ⟦0⟧ dengan momen inersia ⟦1⟧, lalu menarik lengannya sehingga momen inersianya menjadi ⟦2⟧. Seberapa cepat ia berputar sekarang?`,
+  '231o5c7llvs': R`Tidak ada momen gaya luar, jadi $I_1\omega_1 = I_2\omega_2$: $\omega_2 = \frac{⟦0⟧ \cdot ⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  '2f7cxaqxh70': R`Sebuah komidi putar di taman bermain (momen inersia ⟦0⟧) berputar bebas dengan ⟦1⟧. Seorang anak bermassa ⟦2⟧ melompat naik di tepinya, ⟦3⟧ dari sumbu. Berapa kecepatan sudut yang baru?`,
+  'cliu4kom03': R`Anak itu menambah $mr^2 = ⟦0⟧ \cdot ⟦1⟧^2 = ⟦2⟧\,\mathrm{kg\,m^2}$. Kekekalan $L$: $\omega_2 = \frac{⟦3⟧ \cdot ⟦4⟧}{⟦5⟧ + ⟦6⟧} = ⟦7⟧$.`,
+  '1ycjd56chz3': R`Sebuah kembang api yang melayang pada lintasan parabola meledak menjadi banyak pecahan. Jika hambatan udara diabaikan, apa yang terjadi pada pusat massa semua pecahan?`,
+  '1yi7snjbl9a': R`Tetap mengikuti parabola semula`,
+  '1dblvsgvwkh': R`Berhenti di titik ledakan`,
+  '1au8h1b9f0y': R`Jatuh lurus ke bawah`,
+  'cki5zklk94': R`Bergerak lurus dengan kelajuan tetap`,
+  'mkcc12d6w2': R`Gaya ledakan adalah gaya dalam. Hanya gravitasi yang bekerja dari luar, jadi pusat massa terus bergerak persis seperti kembang api yang tidak meledak.`,
+  '1il9bykoi7c': R`Seorang peloncat indah menekuk tubuhnya rapat-rapat di udara. Apa yang terjadi pada kecepatan putarnya?`,
+  'qgmnokztia': R`Bertambah, karena momen inersianya berkurang`,
+  'zxkb5luqw6': R`Berkurang, karena tubuhnya lebih ringkas`,
+  '231jc4s23vr': R`Bertambah, karena gravitasi memberinya momen gaya`,
+  '1ylan4wywz6': R`Di udara tidak ada momen gaya luar terhadap pusat massanya, jadi $I\omega$ tetap. Menekuk tubuh memperkecil $I$, sehingga $\omega$ bertambah.`,
+  'deihpxduhb': R`x_{\text{pm}} = \frac{\sum m_i x_i}{\sum m_i} \qquad y_{\text{pm}} = \frac{\sum m_i y_i}{\sum m_i}`,
 });
 
 /* Bahasa Indonesia — 2-foundations */
@@ -844,4 +1090,134 @@ addT('id', {
   '136qwr186sy': R`Gas rumah kaca menyerap radiasi inframerah.`,
   '2dli2iyrxpz': R`Rangkaian elektronik mengikuti aturan yang sama untuk arus dan tegangan.`,
   '1rgwobb5j30': R`Semikonduktor dijelaskan dengan tingkat energi elektron di dalam zat padat.`,
+});
+
+/* Bahasa Indonesia — 9-mech-d */
+addT('id', {
+  '23qs3p5efgc': R`
+<p>Tidak ada pengukuran yang benar-benar tepat. Hasil pengukuran yang baik menyatakan seberapa besar sesuatu <i>dan</i> seberapa teliti kita mengetahuinya.</p>
+<h3>Alat ukur dan ketelitiannya</h3>
+⟦0⟧
+<h3>Membaca jangka sorong</h3>
+<p>Baca skala utama tepat di sebelah kiri angka nol nonius, lalu cari garis nonius yang tepat segaris dengan garis skala utama. Dengan 10 skala nonius, nomor garis itu menunjukkan persepuluhan milimeter.</p>
+⟦1⟧
+<h3>Membaca mikrometer sekrup</h3>
+<p>Selubung (skala utama) menunjukkan milimeter dan setengah milimeter; selubung luar (skala putar) memiliki 50 bagian, masing-masing $0{,}01\,\mathrm{mm}$. Hasil = skala utama + skala putar $\times\ 0{,}01\,\mathrm{mm}$. Skala utama $5{,}5\,\mathrm{mm}$ dengan garis skala putar 23 menghasilkan $5{,}5 + 0{,}23 = 5{,}73\,\mathrm{mm}$.</p>
+<h3>Ketidakpastian</h3>
+<p>Satu kali pengukuran biasanya dilaporkan dengan ketidakpastian sekitar setengah skala terkecil, misalnya $12{,}5 \pm 0{,}05\,\mathrm{cm}$ dengan mistar milimeter. Untuk beberapa kali pengukuran besaran yang sama, pakai <b>rata-rata</b> sebagai nilai terbaik, dan sebaran hasilnya menunjukkan ketidakpastian.</p>
+⟦2⟧
+<h3>Berhitung dengan hasil pengukuran</h3>
+<ul><li><b>Perkalian atau pembagian:</b> hasilnya ditulis dengan <i>angka penting paling sedikit</i> dari nilai-nilai yang dipakai. $12{,}5\,\mathrm{cm} \times 3{,}2\,\mathrm{cm} = 40{,}0 \to 40\,\mathrm{cm^2}$ (2 angka penting).</li><li><b>Penjumlahan atau pengurangan:</b> hasilnya ditulis dengan <i>jumlah angka di belakang koma paling sedikit</i>. $12{,}52 + 3{,}1 = 15{,}62 \to 15{,}6$.</li></ul>
+⟦3⟧`,
+  '1n4tjiq7o59': R`Alat ukur`,
+  '13gr3233qj5': R`Skala terkecil`,
+  '244d6ygn4m3': R`Kegunaan umum`,
+  '3ygf7ijjre': R`Mistar`,
+  '1kb5yegr85i': R`panjang beberapa cm sampai 1 m`,
+  '298q9fxph1z': R`Jangka sorong`,
+  '3cggu7jovh': R`diameter, kedalaman, ketebalan`,
+  '21kpwzv4f98': R`Mikrometer sekrup`,
+  'wrmx9jfflz': R`diameter kawat, tebal lembaran`,
+  '8vdv1lbyml': R`Hasil bacaan jangka sorong`,
+  'e1v15jhjcz': R`Skala utama: 23 mm. Garis nonius ke-4 segaris. Hasil: $23 + 0{,}4 = 23{,}4\,\mathrm{mm}$.`,
+  'd202007fgc': R`<p><b>Angka penting</b> adalah angka-angka yang membawa informasi tentang hasil pengukuran:</p><ul><li>Semua angka bukan nol termasuk angka penting: $4{,}73$ memiliki 3.</li><li>Nol di antara angka bukan nol termasuk: $4{,}07$ memiliki 3.</li><li>Nol di depan tidak pernah termasuk: $0{,}0047$ memiliki 2.</li><li>Nol di belakang koma desimal termasuk: $4{,}70$ memiliki 3.</li></ul>`,
+  '1c8c59799nz': R`<p>Kalkulator menampilkan banyak angka, tetapi hasil perhitungan tidak bisa lebih teliti daripada hasil pengukuran asalnya.</p>`,
+  '17c7snlb6td': R`Berapa banyak angka penting pada ⟦0⟧?`,
+  '1jamakr8mau': R`Nol di depan tidak dihitung; nol di antara angka bukan nol dan nol di belakang koma desimal dihitung. Jadi ⟦0⟧ memiliki <b>⟦1⟧</b> angka penting.`,
+  '2ftkwvd684': R`Bulatkan ⟦0⟧ menjadi ⟦1⟧ angka penting.`,
+  's0df4232ie': R`Pertahankan ⟦0⟧ angka penting pertama dan lihat angka berikutnya untuk menentukan apakah dibulatkan ke atas: ⟦1⟧ ≈ <b>⟦2⟧</b>.`,
+  '1on8wzj2bl5': R`Sebuah persegi panjang diukur ⟦0⟧ kali ⟦1⟧. Berapa luasnya, ditulis dengan banyak angka penting yang benar?`,
+  '2680l0sdf6v': R`$⟦0⟧ \times ⟦1⟧ = ⟦2⟧$. Ukuran yang pendek hanya memiliki 2 angka penting, jadi luasnya ⟦3⟧.`,
+  '15rwjl862ae': R`Jumlahkan panjang ⟦0⟧ dan ⟦1⟧, dengan ketelitian yang benar.`,
+  '285z613ghvl': R`Kurangkan ⟦0⟧ dari ⟦1⟧, dengan ketelitian yang benar.`,
+  '1v71mw9vcdq': R`$⟦0⟧ ⟦1⟧ ⟦2⟧ = ⟦3⟧$. Nilai yang paling tidak teliti memiliki satu angka di belakang koma, jadi hasilnya ⟦4⟧.`,
+  '1h72e8kj0lr': R`Berapa hasil bacaan jangka sorong ini, dalam milimeter?`,
+  'vur5wx6g79': R`Angka nol nonius berada sedikit melewati ⟦0⟧ mm pada skala utama, dan garis nonius ke-⟦1⟧ segaris dengan garis skala utama. Hasil: $⟦2⟧ + ⟦3⟧ = ⟦4⟧$.`,
+  'pqk2dzdqbi': R`Skala utama sebuah mikrometer sekrup menunjukkan ⟦0⟧ dan garis skala putar ke-⟦1⟧ segaris dengan garis acuan. Berapa hasil bacaannya?`,
+  '2934qdqdjm7': R`Hasil = skala utama + skala putar $\times\ 0{,}01\,\mathrm{mm}$ $= ⟦0⟧ + ⟦1⟧ \times 0{,}01 = ⟦2⟧$.`,
+  '1fi2vg8vugw': R`Periode sebuah bandul diukur lima kali (dalam sekon): ⟦0⟧. Berapa periode rata-ratanya, sampai dua angka di belakang koma?`,
+  'jvtjtfkr1t': R`Jumlahkan hasilnya lalu bagi 5: $\frac{⟦0⟧}{5} = ⟦1⟧$, yaitu ⟦2⟧ jika dibulatkan sampai dua angka di belakang koma, setara ketelitian hasil pengukurannya.`,
+  'vxtqthabi0': R`
+<p>Benda yang bergerak melingkar dengan kelajuan tetap tetap mengalami <b>percepatan</b>, karena arah kecepatannya terus berubah.</p>
+⟦0⟧
+<h3>Menggambarkan gerak melingkar</h3>
+<ul><li><b>Periode</b> $T$: waktu untuk satu putaran. <b>Frekuensi</b> $f = 1/T$, dalam hertz ($\mathrm{Hz}$), yaitu putaran per sekon.</li><li><b>Kecepatan sudut</b> $\omega = \dfrac{2\pi}{T} = 2\pi f$, dalam radian per sekon.</li><li><b>Kelajuan linear</b> sepanjang lingkaran: $v = \dfrac{2\pi r}{T} = \omega r$.</li></ul>
+⟦1⟧
+⟦2⟧
+<h3>Lingkaran vertikal</h3>
+<p>Di puncak lintasan melingkar vertikal, gravitasi dapat menyediakan seluruh gaya sentripetal. Kelajuan terkecil agar bola atau kereta roller coaster tetap berada di lintasan di titik itu adalah $v_{\min} = \sqrt{g r}$.</p>
+⟦3⟧`,
+  '27o6nwir9ki': R`Benda yang bergerak melingkar, dengan kecepatan searah garis singgung dan percepatan menuju pusat`,
+  'pad2pv74vu': R`Kecepatan searah garis singgung; percepatan mengarah ke pusat.`,
+  'vw9hk837w2': R`<p><b>Percepatan sentripetal</b> mengarah ke pusat lingkaran:</p><p>$$a_s = \frac{v^2}{r} = \omega^2 r.$$</p><p>Menurut hukum II Newton, diperlukan gaya resultan ke arah pusat, yaitu <b>gaya sentripetal</b> $F_s = \dfrac{m v^2}{r}$. Ini bukan jenis gaya baru: gaya ini disediakan oleh tegangan tali, gaya gesek, gravitasi, atau gaya normal.</p>`,
+  '1vd3hiih900': R`<p>Mobil bermassa $1000\,\mathrm{kg}$ melewati tikungan datar berjari-jari $50\,\mathrm{m}$ dengan kelajuan $10\,\mathrm{m/s}$. Gaya gesek pada ban harus menyediakan $F_s = \frac{1000 \cdot 10^2}{50} = 2000\,\mathrm{N}$. Jika gaya gesek maksimum $\mu m g$, kelajuan aman terbesar adalah $v_{\max} = \sqrt{\mu g r}$.</p>`,
+  'fsbpqux5b7': R`<p>Jika tali bola yang diputar putus, bola terlempar searah <b>garis singgung</b>, bukan keluar searah jari-jari. Tidak ada "gaya sentrifugal" yang menariknya keluar; bola hanya terus bergerak lurus.</p>`,
+  '2d2ecrbq62t': R`Sebuah baling-baling kipas berputar ⟦0⟧ kali dalam ⟦1⟧. Berapa ⟦2⟧-nya?`,
+  '1vfxi7eu8yc': R`periode`,
+  '5d1hrhu8sp': R`frekuensi`,
+  '9l6k9vhxgq': R`Sebuah roda berputar ⟦0⟧ putaran per menit. Berapa kecepatan sudutnya dalam rad/s?`,
+  '16ijlenak76': R`$f = \frac{⟦0⟧}{60} = ⟦1⟧\,\mathrm{Hz}$, jadi $\omega = 2\pi f = ⟦2⟧$.`,
+  '2atxziitdc6': R`Sebuah batu yang diikat tali bergerak melingkar horizontal dengan jari-jari ⟦0⟧, satu putaran setiap ⟦1⟧. Berapa percepatan sentripetalnya?`,
+  'jd4w6lqos1': R`$v = \frac{2\pi r}{T} = ⟦0⟧\,\mathrm{m/s}$, jadi $a_s = \frac{v^2}{r} = \frac{⟦1⟧^2}{⟦2⟧} = ⟦3⟧$.`,
+  '1j79evzosj3': R`Sebuah batu yang diikat tali bergerak melingkar dengan jari-jari ⟦0⟧, satu putaran setiap ⟦1⟧. Berapa kelajuannya?`,
+  '17ynm7tv06s': R`Berapa gaya sentripetal yang diperlukan agar benda bermassa ⟦0⟧ tetap bergerak ⟦1⟧ pada lingkaran berjari-jari ⟦2⟧?`,
+  '27buy4581iw': R`Sebuah mobil melewati tikungan datar (tidak miring) berjari-jari ⟦0⟧. Koefisien gesek antara ban dan jalan ⟦1⟧. Berapa kelajuan terbesar agar mobil dapat melewati tikungan tanpa tergelincir? ⟦2⟧`,
+  'gwh349zzwy': R`Gaya gesek menyediakan gaya sentripetal: $\mu m g = \frac{m v^2}{r}$, jadi $v = \sqrt{\mu g r} = \sqrt{⟦0⟧ \cdot ⟦1⟧ \cdot ⟦2⟧} = ⟦3⟧$.`,
+  '1fmhfybl1q1': R`Lintasan melingkar sebuah roller coaster berjari-jari ⟦0⟧ di bagian puncaknya. Berapa kelajuan minimum kereta di puncak agar tetap berada di lintasan? ⟦1⟧`,
+  'yyn8qw9oi7': R`Pada kelajuan minimum, gravitasi saja yang menyediakan gaya sentripetal: $mg = \frac{m v^2}{r}$, jadi $v = \sqrt{gr} = \sqrt{⟦0⟧ \cdot ⟦1⟧} = ⟦2⟧$.`,
+  '26jhxi8dcp1': R`Sebuah bola yang diikat tali diputar melingkar horizontal. Tiba-tiba talinya putus. Ke arah mana bola bergerak sesaat setelahnya?`,
+  '3kafahouaz': R`Searah garis singgung lingkaran`,
+  'p2huwmqqhe': R`Lurus keluar, menjauhi pusat`,
+  '18gqls7b3qp': R`Lurus menuju pusat`,
+  'su6w26mgdq': R`Tetap bergerak melingkar`,
+  '2d95ms77nym': R`Setelah tali putus tidak ada lagi gaya sentripetal, jadi bola mempertahankan kecepatannya saat itu, yang arahnya searah garis singgung.`,
+  '1ospit6ox9f': R`Sebuah benda bergerak melingkar dengan kelajuan tetap. Pernyataan mana yang benar?`,
+  '1z3dufls9ki': R`Benda mengalami percepatan menuju pusat`,
+  'bsd452ytlc': R`Benda tidak mengalami percepatan karena kelajuannya tetap`,
+  '1o5er8u1bkw': R`Benda mengalami percepatan searah geraknya`,
+  '1ugh3u0y905': R`Benda mengalami percepatan menjauhi pusat`,
+  'kgw7obehup': R`Arah kecepatannya berubah terus-menerus, jadi ada percepatan $v^2/r$ yang mengarah ke pusat.`,
+  '1iz3ty5e7jw': R`
+<p>Gaya membuat benda bertambah cepat pada gerak lurus; <b>momen gaya (torsi)</b> membuat benda berputar makin cepat atau makin lambat.</p>
+<h3>Momen gaya</h3>
+⟦0⟧
+<p>$r$ adalah jarak dari sumbu putar ke titik kerja gaya dan $\theta$ adalah sudut antara $r$ dan $F$. Satuannya $\mathrm{N\,m}$. Gaya yang mengarah lurus ke sumbu ($\theta = 0$) tidak menghasilkan momen gaya; itulah sebabnya gagang pintu dipasang jauh dari engsel.</p>
+<h3>Momen inersia</h3>
+<p>Padanan massa pada gerak rotasi adalah <b>momen inersia</b> $I = \sum m r^2$. Massa yang jauh dari sumbu jauh lebih berpengaruh daripada massa yang dekat dengan sumbu.</p>
+⟦1⟧
+⟦2⟧
+<h3>Menggelinding</h3>
+<p>Benda yang menggelinding memiliki kedua jenis energi kinetik: $E_k = \tfrac12 m v^2 + \tfrac12 I\omega^2$ dengan $v = \omega r$. Menggelinding dari diam menuruni lereng setinggi $h$, bola pejal mencapai $v = \sqrt{\tfrac{10}{7} g h}$ dan silinder pejal $v = \sqrt{\tfrac43 g h}$: keduanya lebih lambat daripada balok yang meluncur tanpa gesekan ($\sqrt{2gh}$), karena sebagian energinya dipakai untuk berputar.</p>
+⟦3⟧`,
+  '1rn864qo94t': R`Benda (sumbu melalui pusat, kecuali disebutkan lain)`,
+  '1f6y3bd30el': R`Cincin tipis`,
+  '1xulwtm601d': R`Piringan atau silinder pejal`,
+  'luhvphcfm6': R`Bola pejal`,
+  'lodpmsximy': R`Batang tipis, sumbu di tengah`,
+  'xva7g3vr1b': R`Batang tipis, sumbu di salah satu ujung`,
+  '208n52kjwqn': R`<p>Gerak rotasi mencerminkan gerak lurus:</p><p>$$\tau = I\alpha \qquad E_{k,\text{rot}} = \tfrac12 I \omega^2 \qquad \omega = \omega_0 + \alpha t \qquad \theta = \omega_0 t + \tfrac12 \alpha t^2$$</p><p>Di sini $\alpha$ adalah percepatan sudut dalam $\mathrm{rad/s^2}$ dan $\theta$ sudut yang ditempuh dalam radian (satu putaran $= 2\pi$).</p>`,
+  'tf9h21qy37': R`<p>Sudut dalam rumus rotasi harus dalam radian. Ubah putaran dengan $1\,\mathrm{putaran} = 2\pi\,\mathrm{rad}$ dan rpm dengan $\omega = 2\pi \cdot \frac{\text{rpm}}{60}$.</p>`,
+  '1kcjc3bpnti': R`Sebuah kunci pas sepanjang ⟦0⟧ didorong dengan gaya ⟦1⟧ tegak lurus gagangnya. Berapa momen gaya pada mur?`,
+  'yaf2uhrkah': R`Gaya ⟦0⟧ diberikan ⟦1⟧ dari engsel, membentuk sudut ⟦2⟧ terhadap daun pintu. Berapa momen gaya terhadap engsel?`,
+  '48kunbfs9i': R`piringan pejal`,
+  '1y8x44ajqhg': R`cincin tipis`,
+  '1joyak4vqow': R`bola pejal`,
+  '1tnwtge0o0c': R`Berapa momen inersia sebuah ⟦0⟧ bermassa ⟦1⟧ dan berjari-jari ⟦2⟧ terhadap sumbu pusatnya?`,
+  'x9n72jp9y2': R`Momen gaya ⟦0⟧ bekerja pada piringan pejal (massa ⟦1⟧, jari-jari ⟦2⟧) yang dapat berputar pada porosnya. Berapa percepatan sudutnya?`,
+  '2d2c5wiclu': R`$I = \tfrac12 MR^2 = ⟦0⟧\,\mathrm{kg\,m^2}$, jadi $\alpha = \frac{\tau}{I} = \frac{⟦1⟧}{⟦2⟧} = ⟦3⟧$.`,
+  'ebq74goxs1': R`Sebuah piringan putar mulai dari diam dengan percepatan sudut ⟦0⟧. Berapa putaran yang ditempuhnya dalam ⟦1⟧?`,
+  '1gj28jcmq1g': R`$\theta = \tfrac12 \alpha t^2 = \tfrac12 \cdot ⟦0⟧ \cdot ⟦1⟧^2 = ⟦2⟧\,\mathrm{rad}$, yaitu $\frac{⟦3⟧}{2\pi} = ⟦4⟧$ putaran.`,
+  '81bzicgpfj': R`Sebuah roda mulai dari diam dengan percepatan sudut ⟦0⟧. Berapa kecepatan sudutnya setelah ⟦1⟧?`,
+  '17ezh4zvy3m': R`Sebuah roda gila dengan momen inersia ⟦0⟧ berputar dengan ⟦1⟧. Berapa energi kinetik rotasi yang disimpannya?`,
+  '1njnqcvfw23': R`Sebuah ⟦0⟧ menggelinding tanpa tergelincir dari diam menuruni lereng, turun setinggi ⟦1⟧. Berapa kelajuannya di bagian bawah? ⟦2⟧`,
+  's3jus5mtdg': R`bola pejal`,
+  'if7cud9yrw': R`silinder pejal`,
+  '1vw0t590dtv': R`$mgh = \tfrac12 m v^2 + \tfrac12 \cdot \tfrac25 m r^2 \cdot \frac{v^2}{r^2} = \tfrac{7}{10} m v^2$, jadi $v = \sqrt{\tfrac{10}{7} g h} = ⟦0⟧$.`,
+  '28vtr4w1n22': R`$mgh = \tfrac12 m v^2 + \tfrac12 \cdot \tfrac12 m r^2 \cdot \frac{v^2}{r^2} = \tfrac34 m v^2$, jadi $v = \sqrt{\tfrac43 g h} = ⟦0⟧$.`,
+  'sdowtvgkaz': R`Sebuah piringan pejal dan sebuah cincin memiliki massa dan jari-jari yang sama. Keduanya diberi momen gaya yang sama dari keadaan diam. Mana yang lebih cepat bertambah putarannya?`,
+  'cfnj7rti4r': R`Piringan, karena momen inersianya lebih kecil`,
+  '1dvd050ijgr': R`Cincin, karena massanya berada di tepi`,
+  '1ftsj3mwiak': R`Keduanya sama cepat`,
+  'i5n970tn66': R`Cincin, karena momen inersianya lebih kecil`,
+  '27bcntxrdhs': R`$\alpha = \tau / I$. Piringan memiliki $I = \tfrac12 MR^2$ dan cincin $I = MR^2$, jadi momen gaya yang sama memberi piringan percepatan sudut dua kali lipat.`,
 });

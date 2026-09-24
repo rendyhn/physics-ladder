@@ -13,7 +13,7 @@ function uT(u) {
   if (!u) return '';
   if (u === '°C') return '^\\circ\\mathrm{C}';
   if (u === '°') return '^\\circ';
-  return '\\mathrm{' + un(u).replace(/Ω/g, '\\Omega').replace(/·/g, '\\cdot ') + '}';   // un(): local unit words, e.g. km/jam
+  return '\\mathrm{' + un(u).replace(/Ω/g, '\\Omega').replace(/·/g, '\\cdot ').replace(/ /g, '\\,') + '}';   // un(): local unit words, e.g. km/jam
 }
 const QT = (x, u, fixed) => `${M(x, fixed)}${u === '°' || u === '°C' ? '' : '\\,'}${uT(u)}`;   // quantity inside $…$
 const Q = (x, u, fixed) => `$${QT(x, u, fixed)}$`;                                           // quantity as inline maths
@@ -170,5 +170,50 @@ function circuitSvg(kind, names, emfName, label) {
     s += resistor(L, Tp, 190, Tp, names[0]) + wire(`M 190 ${Tp} H ${xb} M ${L} ${Bt} H ${xb}`);
     s += resistor(xa, Tp, xa, Bt, names[1]) + resistor(xb, Tp, xb, Bt, names[2]) + node(xa, Tp) + node(xa, Bt);
   }
+  return s + '</svg>';
+}
+
+/* ---------- vernier caliper: main scale in mm, vernier with 10 divisions over 9 mm (reads to 0.1 mm) ---------- */
+function vernierSvg(reading, label) {
+  const W = 460, H = 150, k = 12, x0 = 30;                     // 12 px per mm
+  const whole = Math.floor(reading + 1e-9), tenth = Math.round((reading - whole) * 10);
+  const start = Math.max(0, whole - 8), end = start + 34, X = mm => x0 + (mm - start) * k;
+  let s = svgOpen(W, H, label) + `<rect class="fig-block" x="${x0 - 10}" y="20" width="${W - 40}" height="50" rx="3"/>`;
+  for (let mm = start; mm <= end; mm++) {
+    const len = mm % 10 === 0 ? 22 : mm % 5 === 0 ? 16 : 10;
+    s += `<line class="fig-wire" style="stroke-width:1.2" x1="${X(mm)}" y1="70" x2="${X(mm)}" y2="${70 - len}"/>`;
+    if (mm % 10 === 0) s += txt(X(mm), 42, String(mm / 10), 'fig-small');
+  }
+  s += txt(W - 22, 34, 'cm', 'fig-small', 'end');
+  s += `<rect class="fig-shape" x="${X(reading) - 14}" y="70" width="${10 * 0.9 * k + 28}" height="44" rx="3"/>`;
+  for (let i = 0; i <= 10; i++) {
+    const x = X(reading + i * 0.9), len = i % 5 === 0 ? 18 : 11;
+    s += `<line class="fig-wire" style="stroke-width:1.2${i === tenth ? ';stroke:var(--accent)' : ''}" x1="${x.toFixed(1)}" y1="70" x2="${x.toFixed(1)}" y2="${70 + len}"/>`;
+    if (i % 5 === 0) s += txt(x, 104, String(i), 'fig-small');
+  }
+  return s + '</svg>';
+}
+
+/* ---------- a beam on supports with loads: items [{ x, kind: 'support' | 'load' | 'pivot', label }], x from 0 to L ---------- */
+function beamSvg(L, items, label) {
+  const W = 460, H = 170, x0 = 40, x1 = 420, y = 80, X = x => x0 + (x / L) * (x1 - x0);
+  let s = svgOpen(W, H, label) + `<rect class="fig-block" x="${x0}" y="${y - 7}" width="${x1 - x0}" height="14" rx="2"/>`;
+  for (const it of items) {
+    const x = X(it.x);
+    if (it.kind === 'support' || it.kind === 'pivot') s += `<polygon class="fig-shape" points="${x},${y + 7} ${x - 14},${y + 34} ${x + 14},${y + 34}"/>` + (it.label ? txt(x, y + 52, it.label, 'fig-small') : '');
+    else s += arrow(x, y - 62, x, y - 9, it.arrow || 'a') + txt(x, y - 68, it.label, 'fig-small');
+  }
+  // distance ticks under the beam at every labelled item
+  return s + `<line class="fig-dash" x1="${x0}" y1="${y + 62}" x2="${x1}" y2="${y + 62}"/>` + txt(x0, y + 78, '0', 'fig-small') + txt(x1, y + 78, `${F(L)} m`, 'fig-small') + '</svg>';
+}
+
+/* ---------- uniform circular motion: object on a circle with velocity (tangent) and centripetal acceleration ---------- */
+function circleSvg(label) {
+  const W = 300, H = 260, cx = 140, cy = 130, r = 95, a = rad(35), px = cx + r * Math.cos(a), py = cy - r * Math.sin(a);
+  let s = svgOpen(W, H, label) + `<circle class="fig-line fig-dashed" cx="${cx}" cy="${cy}" r="${r}"/><circle class="fig-dot" cx="${cx}" cy="${cy}" r="3"/>`;
+  s += `<line class="fig-dash" x1="${cx}" y1="${cy}" x2="${px.toFixed(1)}" y2="${py.toFixed(1)}"/>` + txt((cx + px) / 2 - 6, (cy + py) / 2 + 16, 'r');
+  s += `<circle class="fig-block" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="9"/>`;
+  s += arrow(px, py, px - 70 * Math.sin(a), py - 70 * Math.cos(a), 'a') + tipLabel(px, py, px - 70 * Math.sin(a), py - 70 * Math.cos(a), 'v');
+  s += arrow(px, py, px - 55 * Math.cos(a), py + 55 * Math.sin(a), 'b') + txt(px - 60 * Math.cos(a) + 4, py + 60 * Math.sin(a) + 20, 'a', 'fig-text', 'start');
   return s + '</svg>';
 }

@@ -667,7 +667,7 @@ function uT(u) {
   if (!u) return '';
   if (u === '°C') return '^\\circ\\mathrm{C}';
   if (u === '°') return '^\\circ';
-  return '\\mathrm{' + un(u).replace(/Ω/g, '\\Omega').replace(/·/g, '\\cdot ') + '}';   // un(): local unit words, e.g. km/jam
+  return '\\mathrm{' + un(u).replace(/Ω/g, '\\Omega').replace(/·/g, '\\cdot ').replace(/ /g, '\\,') + '}';   // un(): local unit words, e.g. km/jam
 }
 const QT = (x, u, fixed) => `${M(x, fixed)}${u === '°' || u === '°C' ? '' : '\\,'}${uT(u)}`;   // quantity inside $…$
 const Q = (x, u, fixed) => `$${QT(x, u, fixed)}$`;                                           // quantity as inline maths
@@ -827,6 +827,51 @@ function circuitSvg(kind, names, emfName, label) {
   return s + '</svg>';
 }
 
+/* ---------- vernier caliper: main scale in mm, vernier with 10 divisions over 9 mm (reads to 0.1 mm) ---------- */
+function vernierSvg(reading, label) {
+  const W = 460, H = 150, k = 12, x0 = 30;                     // 12 px per mm
+  const whole = Math.floor(reading + 1e-9), tenth = Math.round((reading - whole) * 10);
+  const start = Math.max(0, whole - 8), end = start + 34, X = mm => x0 + (mm - start) * k;
+  let s = svgOpen(W, H, label) + `<rect class="fig-block" x="${x0 - 10}" y="20" width="${W - 40}" height="50" rx="3"/>`;
+  for (let mm = start; mm <= end; mm++) {
+    const len = mm % 10 === 0 ? 22 : mm % 5 === 0 ? 16 : 10;
+    s += `<line class="fig-wire" style="stroke-width:1.2" x1="${X(mm)}" y1="70" x2="${X(mm)}" y2="${70 - len}"/>`;
+    if (mm % 10 === 0) s += txt(X(mm), 42, String(mm / 10), 'fig-small');
+  }
+  s += txt(W - 22, 34, 'cm', 'fig-small', 'end');
+  s += `<rect class="fig-shape" x="${X(reading) - 14}" y="70" width="${10 * 0.9 * k + 28}" height="44" rx="3"/>`;
+  for (let i = 0; i <= 10; i++) {
+    const x = X(reading + i * 0.9), len = i % 5 === 0 ? 18 : 11;
+    s += `<line class="fig-wire" style="stroke-width:1.2${i === tenth ? ';stroke:var(--accent)' : ''}" x1="${x.toFixed(1)}" y1="70" x2="${x.toFixed(1)}" y2="${70 + len}"/>`;
+    if (i % 5 === 0) s += txt(x, 104, String(i), 'fig-small');
+  }
+  return s + '</svg>';
+}
+
+/* ---------- a beam on supports with loads: items [{ x, kind: 'support' | 'load' | 'pivot', label }], x from 0 to L ---------- */
+function beamSvg(L, items, label) {
+  const W = 460, H = 170, x0 = 40, x1 = 420, y = 80, X = x => x0 + (x / L) * (x1 - x0);
+  let s = svgOpen(W, H, label) + `<rect class="fig-block" x="${x0}" y="${y - 7}" width="${x1 - x0}" height="14" rx="2"/>`;
+  for (const it of items) {
+    const x = X(it.x);
+    if (it.kind === 'support' || it.kind === 'pivot') s += `<polygon class="fig-shape" points="${x},${y + 7} ${x - 14},${y + 34} ${x + 14},${y + 34}"/>` + (it.label ? txt(x, y + 52, it.label, 'fig-small') : '');
+    else s += arrow(x, y - 62, x, y - 9, it.arrow || 'a') + txt(x, y - 68, it.label, 'fig-small');
+  }
+  // distance ticks under the beam at every labelled item
+  return s + `<line class="fig-dash" x1="${x0}" y1="${y + 62}" x2="${x1}" y2="${y + 62}"/>` + txt(x0, y + 78, '0', 'fig-small') + txt(x1, y + 78, `${F(L)} m`, 'fig-small') + '</svg>';
+}
+
+/* ---------- uniform circular motion: object on a circle with velocity (tangent) and centripetal acceleration ---------- */
+function circleSvg(label) {
+  const W = 300, H = 260, cx = 140, cy = 130, r = 95, a = rad(35), px = cx + r * Math.cos(a), py = cy - r * Math.sin(a);
+  let s = svgOpen(W, H, label) + `<circle class="fig-line fig-dashed" cx="${cx}" cy="${cy}" r="${r}"/><circle class="fig-dot" cx="${cx}" cy="${cy}" r="3"/>`;
+  s += `<line class="fig-dash" x1="${cx}" y1="${cy}" x2="${px.toFixed(1)}" y2="${py.toFixed(1)}"/>` + txt((cx + px) / 2 - 6, (cy + py) / 2 + 16, 'r');
+  s += `<circle class="fig-block" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="9"/>`;
+  s += arrow(px, py, px - 70 * Math.sin(a), py - 70 * Math.cos(a), 'a') + tipLabel(px, py, px - 70 * Math.sin(a), py - 70 * Math.cos(a), 'v');
+  s += arrow(px, py, px - 55 * Math.cos(a), py + 55 * Math.sin(a), 'b') + txt(px - 60 * Math.cos(a) + 4, py + 60 * Math.sin(a) + 20, 'a', 'fig-text', 'start');
+  return s + '</svg>';
+}
+
 /* ==========================================================================
    TRACK A — Foundations: units, measurement, vectors
    ========================================================================== */
@@ -914,7 +959,71 @@ ${Tip(T`<p>Check the units at the end of every calculation. If you were finding 
   ],
 },
 /* ------------------------------------------------------------------ */
-{ id: 'measurement', stage: 'jh', soon: true, title: 'Measurement & Significant Figures' },
+{
+  id: 'measurement', stage: 'jh', title: 'Measurement & Significant Figures',
+  blurb: 'Reading rulers, vernier calipers and micrometers, uncertainty, significant figures and averaging repeated readings.',
+  lesson: () => T`
+<p>No measurement is perfectly exact. A good measurement says how big something is <i>and</i> how precisely we know it.</p>
+<h3>Instruments and their precision</h3>
+${Tbl([T`Instrument`, T`Smallest reading`, T`Typical use`], [[T`Ruler`, Q(1, 'mm'), T`lengths of a few cm to 1 m`], [T`Vernier caliper`, Q(0.1, 'mm'), T`diameters, depths, thicknesses`], [T`Micrometer screw gauge`, Q(0.01, 'mm'), T`wire diameters, sheet thickness`]])}
+<h3>Reading a vernier caliper</h3>
+<p>Read the main scale just to the left of the vernier zero, then find the vernier line that lines up exactly with a main-scale line. With 10 vernier divisions, that line number gives tenths of a millimetre.</p>
+${Fig(vernierSvg(23.4, T`A vernier caliper reading`), T`Main scale: 23 mm. Vernier line 4 lines up. Reading: $23 + 0.4 = 23.4\,\mathrm{mm}$.`)}
+<h3>Reading a micrometer</h3>
+<p>The sleeve shows whole and half millimetres; the thimble has 50 divisions of $0.01\,\mathrm{mm}$. Reading = sleeve + thimble $\times\ 0.01\,\mathrm{mm}$. A sleeve showing $5.5\,\mathrm{mm}$ with thimble line 23 gives $5.5 + 0.23 = 5.73\,\mathrm{mm}$.</p>
+<h3>Uncertainty</h3>
+<p>A single reading is usually quoted with an uncertainty of about half the smallest division, for example $12.5 \pm 0.05\,\mathrm{cm}$ on a millimetre ruler. For several readings of the same quantity, use the <b>mean</b> as the best value and let the spread of the readings show the uncertainty.</p>
+${Key(T`<p><b>Significant figures</b> are the digits that carry information about the measurement:</p><ul><li>All non-zero digits count: $4.73$ has 3.</li><li>Zeros between them count: $4.07$ has 3.</li><li>Leading zeros never count: $0.0047$ has 2.</li><li>Trailing zeros after a decimal point count: $4.70$ has 3.</li></ul>`)}
+<h3>Calculating with measurements</h3>
+<ul><li><b>Multiplying or dividing:</b> give the answer to the <i>fewest significant figures</i> of the values used. $12.5\,\mathrm{cm} \times 3.2\,\mathrm{cm} = 40.0 \to 40\,\mathrm{cm^2}$ (2 s.f.).</li><li><b>Adding or subtracting:</b> give the answer to the <i>fewest decimal places</i>. $12.52 + 3.1 = 15.62 \to 15.6$.</li></ul>
+${Tip(T`<p>A calculator shows many digits, but an answer cannot be more precise than the measurements it came from.</p>`)}`,
+  gens: [
+    () => {
+      const kind = pick([0, 1, 2, 3]);
+      let s, n;
+      if (kind === 0) { n = ri(2, 4); const d = [ri(1, 9), ...Array.from({ length: n - 1 }, () => ri(1, 9))]; s = d.join('').replace(/^(\d)/, '$1.'); }
+      else if (kind === 1) { const zeros = ri(1, 3); n = ri(2, 3); s = '0.' + '0'.repeat(zeros) + Array.from({ length: n }, () => ri(1, 9)).join(''); }
+      else if (kind === 2) { n = 3; s = `${ri(1, 9)}0${ri(1, 9)}`; if (chance()) { s = s[0] + '.' + s.slice(1); } }
+      else { const a = ri(1, 9), b = ri(0, 9); s = `${a}.${b}0`; n = 3; }
+      const shown = F(+s, s.includes('.') ? s.split('.')[1].length : 0);
+      return { q: T`How many significant figures does ${shown} have?`, a: n, w: [n + 1, n - 1, s.replace(/[^\d]/g, '').length].filter(x => x > 0), rtol: 0,
+        s: T`Leading zeros do not count; zeros between non-zero digits and trailing zeros after the decimal point do. So ${shown} has <b>${n}</b> significant figures.` };
+    },
+    () => {
+      const e = ri(-3, 3), n = pick([2, 3]), x = (ri(1000, 9999) / 1000) * 10 ** e, a = sig(x, n);
+      if (Math.floor(Math.log10(a)) !== Math.floor(Math.log10(x))) return null;   // rounding carried into a new place
+      const fmt = (y, k) => F(y, Math.max(0, k - 1 - Math.floor(Math.log10(Math.abs(y)))));   // keep trailing zeros: 3.40
+      return { q: T`Round ${F(sig(x, 4))} to ${n} significant figures.`, a: fmt(a, n), v: a, w: [fmt(sig(x, n + 1), n + 1), fmt(sig(x, Math.max(1, n - 1)), Math.max(1, n - 1)), fmt(sig(x * 10, n), n)], rtol: 0,
+        s: T`Keep the first ${n} significant digits and look at the next one to decide whether to round up: ${F(sig(x, 4))} ≈ <b>${fmt(a, n)}</b>.` };
+    },
+    () => {
+      const a = ri(101, 999) / 10, b = ri(11, 99) / 10, p = a * b, ans = sig(p, 2);
+      return { q: T`A rectangle is measured as ${Q(a, 'cm')} by ${Q(b, 'cm')}. What is its area, given to the correct number of significant figures?`, a: ans, u: 'cm²', w: [sig(p, 4), sig(p, 3), sig(p, 1)], only: 'mc',
+        s: T`$${M(a)} \times ${M(b)} = ${M(sig(p, 5))}$. The shorter measurement has only 2 significant figures, so the area is ${Q(ans, 'cm^2')}.` };
+    },
+    () => {
+      const a = ri(1001, 9999) / 100, b = ri(11, 99) / 10, s = +(a + b).toFixed(1), plus = chance(), r = plus ? s : +(a - b).toFixed(1);
+      return { q: plus ? T`Add the lengths ${Q(a, 'cm')} and ${Q(b, 'cm')}, giving the answer to the correct precision.` : T`Subtract ${Q(b, 'cm')} from ${Q(a, 'cm')}, giving the answer to the correct precision.`,
+        a: r, u: 'cm', w: [+(plus ? a + b : a - b).toFixed(2), sig(plus ? a + b : a - b, 2), +(plus ? a + b : a - b).toFixed(0)], only: 'mc',
+        s: T`$${M(a)} ${plus ? '+' : '-'} ${M(b)} = ${M(+(plus ? a + b : a - b).toFixed(2))}$. The least precise value has one decimal place, so the answer is ${Q(r, 'cm')}.` };
+    },
+    () => {
+      const rd = ri(80, 450) / 10;
+      return { q: T`What is the reading on this vernier caliper, in millimetres?` + Fig(vernierSvg(rd, T`A vernier caliper reading`)), a: rd, u: 'mm', w: [Math.floor(rd), sig(rd + 1, 4), sig(Math.floor(rd) + (rd * 10 % 10) / 100, 4)], rtol: 0,
+        s: T`The vernier zero is just past ${Math.floor(rd)} mm on the main scale, and vernier line ${Math.round((rd - Math.floor(rd)) * 10)} lines up with a main-scale line. Reading: $${Math.floor(rd)} + ${M(sig(rd - Math.floor(rd), 2))} = ${QT(rd, 'mm')}$.` };
+    },
+    () => {
+      const sl = ri(2, 24) / 2, th = ri(0, 49), r = sig(sl + th / 100, 6);
+      return { q: T`A micrometer sleeve shows ${Q(sl, 'mm')} and the thimble line ${th} lines up with the reference line. What is the reading?`, a: r, u: 'mm', w: [sig(sl + th / 10, 6), sig(sl + th / 1000, 6), sig(Math.floor(sl) + th / 100, 6)], rtol: 0,
+        s: T`Reading = sleeve + thimble $\times\ 0.01\,\mathrm{mm}$ $= ${M(sl)} + ${th} \times 0.01 = ${QT(r, 'mm')}$.` };
+    },
+    () => {
+      const base = ri(200, 900), xs = Array.from({ length: 5 }, () => (base + ri(-4, 4)) / 100), mean = +(sum(xs) / 5).toFixed(2), exact = sig(sum(xs) / 5, 6);
+      return { q: T`A pendulum's period is timed five times (in seconds): ${listF(xs)}. What is the mean period, to two decimal places?`, a: mean, u: 's', w: [+(median(xs) + 0.01).toFixed(2), Math.max(...xs), +((Math.max(...xs) + Math.min(...xs)) / 2 + 0.02).toFixed(2)], tol: 0.005, rtol: 0,
+        s: T`Add the readings and divide by 5: $\frac{${xs.map(x => M(x)).join(' + ')}}{5} = ${M(exact)}$, which is ${Q(mean, 's')} to two decimal places, the same precision as the readings.` };
+    },
+  ],
+},
 /* ------------------------------------------------------------------ */
 {
   id: 'vectors', stage: 'sh', title: 'Vectors in Physics',
@@ -1153,7 +1262,57 @@ ${Tip(T`<p>At the top of the path the vertical velocity is zero, but the horizon
   ],
 },
 /* ------------------------------------------------------------------ */
-{ id: 'circular', stage: 'sh', soon: true, title: 'Circular Motion' },
+{
+  id: 'circular', stage: 'sh', title: 'Circular Motion',
+  blurb: 'Period and frequency, angular speed, centripetal acceleration and force, cars on bends and vertical loops.',
+  lesson: () => T`
+<p>An object moving around a circle at constant speed is still <b>accelerating</b>, because the direction of its velocity keeps changing.</p>
+${Fig(circleSvg(T`An object moving on a circle, with its velocity along the tangent and its acceleration towards the centre`), T`The velocity is along the tangent; the acceleration points to the centre.`)}
+<h3>Describing the motion</h3>
+<ul><li><b>Period</b> $T$: the time for one revolution. <b>Frequency</b> $f = 1/T$, in hertz ($\mathrm{Hz}$), revolutions per second.</li><li><b>Angular speed</b> $\omega = \dfrac{2\pi}{T} = 2\pi f$, in radians per second.</li><li><b>Speed</b> along the circle: $v = \dfrac{2\pi r}{T} = \omega r$.</li></ul>
+${Key(T`<p>The <b>centripetal acceleration</b> points to the centre of the circle:</p><p>$$a_c = \frac{v^2}{r} = \omega^2 r.$$</p><p>By Newton's second law this needs a net force towards the centre, the <b>centripetal force</b> $F_c = \dfrac{m v^2}{r}$. It is not a new kind of force: tension, friction, gravity or a normal force provides it.</p>`)}
+${Ex(T`<p>A car of mass $1000\,\mathrm{kg}$ takes a flat bend of radius $50\,\mathrm{m}$ at $10\,\mathrm{m/s}$. The friction on the tyres must provide $F_c = \frac{1000 \cdot 10^2}{50} = 2000\,\mathrm{N}$. If the maximum friction is $\mu m g$, the fastest safe speed is $v_{\max} = \sqrt{\mu g r}$.</p>`)}
+<h3>Vertical circles</h3>
+<p>At the top of a vertical loop, gravity can provide the whole centripetal force. The smallest speed that keeps a ball or a roller-coaster car on the track there is $v_{\min} = \sqrt{g r}$.</p>
+${Tip(T`<p>If the string of a whirling ball breaks, the ball flies off along the <b>tangent</b>, not outwards along the radius. There is no "centrifugal force" pulling it out; it simply keeps moving in a straight line.</p>`)}`,
+  gens: [
+    () => {
+      const n = ri(2, 30) * 5, t = ri(2, 30) * 2, T0 = sig(t / n), f = sig(n / t), askT = chance();
+      return { q: T`A fan blade makes ${n} revolutions in ${Q(t, 's')}. What is its ${askT ? T`period` : T`frequency`}?`, a: askT ? T0 : f, u: askT ? 's' : 'Hz', w: askT ? [f, sig(t * n, 4), sig(2 * Math.PI * t / n)] : [T0, sig(n * t, 4), sig(2 * Math.PI * n / t)],
+        s: askT ? T`$T = \frac{t}{n} = \frac{${t}}{${n}} = ${QT(T0, 's')}$.` : T`$f = \frac{n}{t} = \frac{${n}}{${t}} = ${QT(f, 'Hz')}$.` };
+    },
+    () => {
+      const rpm = pick([30, 45, 60, 90, 120, 300, 600, 1200]), w = sig(2 * Math.PI * rpm / 60);
+      return { q: T`A wheel turns at ${rpm} revolutions per minute. What is its angular speed in rad/s?`, a: w, u: 'rad/s', w: [sig(rpm / 60), sig(2 * Math.PI * rpm), sig(Math.PI * rpm / 60)],
+        s: T`$f = \frac{${rpm}}{60} = ${M(sig(rpm / 60))}\,\mathrm{Hz}$, so $\omega = 2\pi f = ${QT(w, 'rad/s')}$.` };
+    },
+    () => {
+      const r = ri(2, 30) / 10, T0 = ri(2, 20) / 10, v = sig(2 * Math.PI * r / T0), ac = sig(4 * Math.PI ** 2 * r / T0 ** 2), askA = chance();
+      return askA
+        ? { q: T`A stone on a string moves in a horizontal circle of radius ${Q(r, 'm')}, making one revolution every ${Q(T0, 's')}. What is its centripetal acceleration?`, a: ac, u: 'm/s²', w: [v, sig(v / r), sig(2 * Math.PI * r / T0 ** 2)], s: T`$v = \frac{2\pi r}{T} = ${M(v)}\,\mathrm{m/s}$, so $a_c = \frac{v^2}{r} = \frac{${M(v)}^2}{${M(r)}} = ${QT(ac, 'm/s^2')}$.` }
+        : { q: T`A stone on a string moves in a circle of radius ${Q(r, 'm')}, making one revolution every ${Q(T0, 's')}. What is its speed?`, a: v, u: 'm/s', w: [sig(r / T0), sig(Math.PI * r / T0), ac], s: T`$v = \frac{2\pi r}{T} = \frac{2\pi \cdot ${M(r)}}{${M(T0)}} = ${QT(v, 'm/s')}$.` };
+    },
+    () => {
+      const m = pick([0.2, 0.5, 1, 2, 5, 60, 900, 1200]), v = ri(2, 25), r = ri(2, 60), F = sig(m * v * v / r);
+      return { q: T`What centripetal force is needed to keep a ${Q(m, 'kg')} object moving at ${Q(v, 'm/s')} in a circle of radius ${Q(r, 'm')}?`, a: F, u: 'N', w: [sig(m * v / r), sig(m * v * v * r, 4), sig(v * v / r)],
+        s: T`$F_c = \frac{m v^2}{r} = \frac{${M(m)} \cdot ${v}^2}{${r}} = ${QT(F, 'N')}$.` };
+    },
+    () => {
+      const g = gPick(), mu = ri(3, 9) / 10, r = ri(2, 20) * 10, v = sig(Math.sqrt(mu * g * r));
+      return { q: T`A car rounds a flat, unbanked bend of radius ${Q(r, 'm')}. The coefficient of friction between tyres and road is ${NUM(mu)}. What is the greatest speed at which it can take the bend without skidding? ${gNote(g)}`, a: v, u: 'm/s', w: [sig(mu * g * r), sig(Math.sqrt(g * r)), sig(Math.sqrt(mu * r))],
+        s: T`Friction provides the centripetal force: $\mu m g = \frac{m v^2}{r}$, so $v = \sqrt{\mu g r} = \sqrt{${M(mu)} \cdot ${M(g)} \cdot ${r}} = ${QT(v, 'm/s')}$.` };
+    },
+    () => {
+      const g = gPick(), r = ri(4, 30) / 2, v = sig(Math.sqrt(g * r));
+      return { q: T`A roller-coaster loop has a radius of ${Q(r, 'm')} at the top. What is the minimum speed a car must have at the top to stay on the track? ${gNote(g)}`, a: v, u: 'm/s', w: [sig(Math.sqrt(2 * g * r)), sig(g * r), sig(Math.sqrt(g / r) * 10)],
+        s: T`At the minimum speed gravity alone provides the centripetal force: $mg = \frac{m v^2}{r}$, so $v = \sqrt{gr} = \sqrt{${M(g)} \cdot ${M(r)}} = ${QT(v, 'm/s')}$.` };
+    },
+    () => pick([
+      { q: T`A ball whirled on a string moves in a horizontal circle. The string suddenly breaks. In which direction does the ball move just afterwards?`, a: T`Along the tangent to the circle`, w: [T`Straight outwards, away from the centre`, T`Straight towards the centre`, T`It keeps moving in the circle`], only: 'mc', s: T`Once the string breaks there is no centripetal force, so the ball keeps its velocity at that instant, which points along the tangent.` },
+      { q: T`An object moves in a circle at constant speed. Which statement is true?`, a: T`It is accelerating towards the centre`, w: [T`It is not accelerating, because its speed is constant`, T`It is accelerating along its direction of motion`, T`It is accelerating away from the centre`], only: 'mc', s: T`The direction of the velocity changes all the time, so there is an acceleration $v^2/r$ pointing to the centre.` },
+    ]),
+  ],
+},
 /* ------------------------------------------------------------------ */
 {
   id: 'newton', stage: 'sh', title: 'Newton’s Laws of Motion',
@@ -1374,13 +1533,350 @@ ${Tip(T`<p>When a ball bounces back, its velocity changes sign. Bouncing from $+
   ],
 },
 /* ------------------------------------------------------------------ */
-{ id: 'rotation', stage: 'sh', soon: true, title: 'Rotational Dynamics & Torque' },
-{ id: 'equilibrium', stage: 'sh', soon: true, title: 'Equilibrium of Rigid Bodies' },
-{ id: 'gravitation', stage: 'sh', soon: true, title: 'Gravitation & Orbits' },
-{ id: 'elasticity', stage: 'sh', soon: true, title: 'Elasticity & Springs' },
-{ id: 'fluid-statics', stage: 'sh', soon: true, title: 'Fluids at Rest' },
-{ id: 'fluid-dynamics', stage: 'sh', soon: true, title: 'Fluids in Motion' },
-{ id: 'center-of-mass', stage: 'uni', soon: true, title: 'Centre of Mass & Angular Momentum' },
+{
+  id: 'rotation', stage: 'sh', title: 'Rotational Dynamics & Torque',
+  blurb: 'Torque, moment of inertia, Newton’s second law for rotation, rotational kinetic energy and rolling.',
+  lesson: () => T`
+<p>Forces make things speed up in a straight line; <b>torques</b> make them spin faster or slower.</p>
+<h3>Torque</h3>
+${Fm(T`\tau = r F \sin\theta`)}
+<p>$r$ is the distance from the axis to where the force acts and $\theta$ the angle between $r$ and $F$. The unit is $\mathrm{N\,m}$. A force pointing straight at the axis ($\theta = 0$) produces no torque, which is why door handles are far from the hinges.</p>
+<h3>Moment of inertia</h3>
+<p>The rotational version of mass is the <b>moment of inertia</b> $I = \sum m r^2$. Mass far from the axis counts much more than mass close to it.</p>
+${Tbl([T`Object (axis through centre unless stated)`, '$I$'], [[T`Thin ring or hoop`, '$MR^2$'], [T`Solid disc or cylinder`, '$\\tfrac12 MR^2$'], [T`Solid sphere`, '$\\tfrac25 MR^2$'], [T`Thin rod, about its centre`, '$\\tfrac1{12} ML^2$'], [T`Thin rod, about one end`, '$\\tfrac13 ML^2$']])}
+${Key(T`<p>Rotation mirrors straight-line motion:</p><p>$$\tau = I\alpha \qquad E_{k,\text{rot}} = \tfrac12 I \omega^2 \qquad \omega = \omega_0 + \alpha t \qquad \theta = \omega_0 t + \tfrac12 \alpha t^2$$</p><p>Here $\alpha$ is the angular acceleration in $\mathrm{rad/s^2}$ and $\theta$ the angle turned in radians (one revolution is $2\pi$).</p>`)}
+<h3>Rolling</h3>
+<p>A rolling object has both kinds of kinetic energy: $E_k = \tfrac12 m v^2 + \tfrac12 I\omega^2$ with $v = \omega r$. Rolling down a slope of height $h$ from rest, a solid sphere reaches $v = \sqrt{\tfrac{10}{7} g h}$ and a solid cylinder $v = \sqrt{\tfrac43 g h}$: both slower than a block sliding without friction ($\sqrt{2gh}$), because part of the energy goes into spinning.</p>
+${Tip(T`<p>Angles in rotational formulas must be in radians. Convert revolutions with $1\,\mathrm{rev} = 2\pi\,\mathrm{rad}$ and rpm with $\omega = 2\pi \cdot \frac{\text{rpm}}{60}$.</p>`)}`,
+  gens: [
+    () => {
+      const F = ri(4, 40) * 5, r = ri(2, 12) / 10, th = pick([90, 90, 30, 45, 60]), tau = sig(r * F * sinD(th));
+      return { q: th === 90 ? T`A spanner ${Q(r, 'm')} long is pushed with ${Q(F, 'N')} at right angles to its handle. What torque is applied to the nut?` : T`A force of ${Q(F, 'N')} is applied ${Q(r, 'm')} from a hinge, at ${Q(th, '°')} to the door. What torque does it produce about the hinge?`,
+        a: tau, u: 'N m', w: th === 90 ? [sig(F / r), sig(F + r), sig(r * F / 2)] : [sig(r * F), sig(r * F * cosD(th)), sig(F / r)],
+        s: th === 90 ? T`$\tau = rF = ${M(r)} \cdot ${F} = ${QT(tau, 'N\\,m')}$.` : T`$\tau = rF\sin\theta = ${M(r)} \cdot ${F} \sin ${th}^\circ = ${QT(tau, 'N\\,m')}$.` };
+    },
+    () => {
+      const [name, k, kT] = pick([[T`solid disc`, 0.5, '\\tfrac12'], [T`thin ring`, 1, ''], [T`solid sphere`, 0.4, '\\tfrac25']]), M0 = ri(1, 20) / 2, R = ri(1, 10) / 10, I = sig(k * M0 * R * R);
+      return { q: T`What is the moment of inertia of a ${name} of mass ${Q(M0, 'kg')} and radius ${Q(R, 'm')} about its central axis?`, a: I, u: 'kg m²', w: [sig(M0 * R * R * (k === 1 ? 0.5 : 1)), sig(k * M0 * R), sig(k * M0 * R * R * 2)],
+        s: T`$I = ${kT} MR^2 = ${kT} \cdot ${M(M0)} \cdot ${M(R)}^2 = ${QT(I, 'kg\\,m^2')}$.` };
+    },
+    () => {
+      const M0 = ri(2, 20), R = ri(1, 5) / 10, tau = ri(1, 20) / 2, I = 0.5 * M0 * R * R, al = sig(tau / I);
+      return { q: T`A torque of ${Q(tau, 'N m')} acts on a solid disc (mass ${Q(M0, 'kg')}, radius ${Q(R, 'm')}) that can spin about its axle. What is its angular acceleration?`, a: al, u: 'rad/s²', w: [sig(tau / (M0 * R * R)), sig(tau * I, 4), sig(tau / (M0 * R))],
+        s: T`$I = \tfrac12 MR^2 = ${M(sig(I))}\,\mathrm{kg\,m^2}$, so $\alpha = \frac{\tau}{I} = \frac{${M(tau)}}{${M(sig(I))}} = ${QT(al, 'rad/s^2')}$.` };
+    },
+    () => {
+      const al = ri(1, 10), t = ri(2, 10), w = al * t, th = 0.5 * al * t * t, rev = sig(th / (2 * Math.PI)), askRev = chance();
+      return askRev
+        ? { q: T`A turntable starts from rest with an angular acceleration of ${Q(al, 'rad/s^2')}. How many revolutions does it make in ${Q(t, 's')}?`, a: rev, w: [sig(th), sig(w / (2 * Math.PI)), sig(al * t * t / (2 * Math.PI))], s: T`$\theta = \tfrac12 \alpha t^2 = \tfrac12 \cdot ${al} \cdot ${t}^2 = ${M(th)}\,\mathrm{rad}$, which is $\frac{${M(th)}}{2\pi} = ${M(rev)}$ revolutions.` }
+        : { q: T`A wheel starts from rest with an angular acceleration of ${Q(al, 'rad/s^2')}. What is its angular speed after ${Q(t, 's')}?`, a: w, u: 'rad/s', w: [th, sig(w / (2 * Math.PI)), al + t], s: T`$\omega = \omega_0 + \alpha t = 0 + ${al} \cdot ${t} = ${QT(w, 'rad/s')}$.` };
+    },
+    () => {
+      const I = ri(1, 40) / 10, w = ri(5, 60), E = sig(0.5 * I * w * w);
+      return { q: T`A flywheel with moment of inertia ${Q(I, 'kg m^2')} spins at ${Q(w, 'rad/s')}. How much rotational kinetic energy does it store?`, a: E, u: 'J', w: [sig(I * w * w), sig(0.5 * I * w), sig(I * w)],
+        s: T`$E_k = \tfrac12 I \omega^2 = \tfrac12 \cdot ${M(I)} \cdot ${w}^2 = ${QT(E, 'J')}$.` };
+    },
+    () => {
+      const g = gPick(), h = ri(2, 20) / 2, sphere = chance(), v = sig(Math.sqrt((sphere ? 10 / 7 : 4 / 3) * g * h));
+      return { q: T`A ${sphere ? T`solid ball` : T`solid cylinder`} rolls without slipping from rest down a slope, dropping ${Q(h, 'm')} in height. How fast is it moving at the bottom? ${gNote(g)}`, a: v, u: 'm/s', w: [sig(Math.sqrt(2 * g * h)), sig(Math.sqrt((sphere ? 4 / 3 : 10 / 7) * g * h)), sig(Math.sqrt(g * h))],
+        s: sphere ? T`$mgh = \tfrac12 m v^2 + \tfrac12 \cdot \tfrac25 m r^2 \cdot \frac{v^2}{r^2} = \tfrac{7}{10} m v^2$, so $v = \sqrt{\tfrac{10}{7} g h} = ${QT(v, 'm/s')}$.` : T`$mgh = \tfrac12 m v^2 + \tfrac12 \cdot \tfrac12 m r^2 \cdot \frac{v^2}{r^2} = \tfrac34 m v^2$, so $v = \sqrt{\tfrac43 g h} = ${QT(v, 'm/s')}$.` };
+    },
+    () => ({ q: T`A solid disc and a ring have the same mass and radius. Both are given the same torque from rest. Which spins up faster?`, a: T`The disc, because its moment of inertia is smaller`, w: [T`The ring, because its mass is at the edge`, T`Both spin up equally fast`, T`The ring, because its moment of inertia is smaller`], only: 'mc',
+      s: T`$\alpha = \tau / I$. The disc has $I = \tfrac12 MR^2$ and the ring $I = MR^2$, so the same torque gives the disc twice the angular acceleration.` }),
+  ],
+},
+{
+  id: 'equilibrium', stage: 'sh', title: 'Equilibrium of Rigid Bodies',
+  blurb: 'The two conditions for equilibrium, moments and levers, beams on supports, centre of gravity and stability.',
+  lesson: () => T`
+<p>A rigid body is in <b>equilibrium</b> when it neither speeds up nor starts to turn. That needs two conditions at once.</p>
+${Key(T`<p><b>Conditions for equilibrium</b></p><ol><li>The net force is zero: $\Sigma F_x = 0$ and $\Sigma F_y = 0$.</li><li>The net torque (moment) about <i>any</i> point is zero: clockwise moments = anticlockwise moments.</li></ol>`)}
+<p>The <b>moment</b> of a force about a point is the force times its perpendicular distance from that point. Choosing the point where an unknown force acts removes that force from the moment equation, which makes problems much shorter.</p>
+<h3>Levers and seesaws</h3>
+${Fig(beamSvg(4, [{ x: 2, kind: 'pivot' }, { x: 0.5, kind: 'load', label: '300 N' }, { x: 3.5, kind: 'load', label: '300 N' }], T`A seesaw balanced on a central pivot with equal loads at equal distances`), T`Equal moments about the pivot: $300 \times 1.5 = 300 \times 1.5$.`)}
+<p>A seesaw balances when $F_1 d_1 = F_2 d_2$. A lever lets a small effort lift a large load when the effort is much farther from the pivot than the load.</p>
+${Ex(T`<p>A uniform $4\,\mathrm{m}$ plank of weight $200\,\mathrm{N}$ rests on supports at its two ends. A $600\,\mathrm{N}$ person stands $1\,\mathrm{m}$ from the left end. Taking moments about the left support: $R_B \cdot 4 = 600 \cdot 1 + 200 \cdot 2$, so $R_B = 250\,\mathrm{N}$. Then $R_A = 800 - 250 = 550\,\mathrm{N}$.</p>`)}
+<h3>Centre of gravity and stability</h3>
+<p>The weight of a body acts as if at one point, its <b>centre of gravity</b>; for a uniform beam that is the middle. An object resting on a base topples when the vertical line through its centre of gravity falls outside the base. A low centre of gravity and a wide base make an object more stable.</p>
+${Tip(T`<p>Remember the beam's own weight: for a uniform beam, put it at the midpoint when you take moments.</p>`)}`,
+  gens: [
+    () => {
+      const w1 = ri(20, 60) * 10, d1 = ri(4, 20) / 10, w2 = ri(20, 60) * 10, d2 = sig(w1 * d1 / w2);
+      if (d2 > 3) return null;
+      return { q: T`A child weighing ${Q(w1, 'N')} sits ${Q(d1, 'm')} from the pivot of a seesaw. How far from the pivot, on the other side, must a child weighing ${Q(w2, 'N')} sit to balance it?`, a: d2, u: 'm', w: [sig(w2 * d1 / w1), d1, sig(d1 * (w1 + w2) / w2 / 2)],
+        s: T`Moments balance: $${w1} \cdot ${M(d1)} = ${w2} \cdot d$, so $d = \frac{${M(w1 * d1)}}{${w2}} = ${QT(d2, 'm')}$.` };
+    },
+    () => {
+      const L = pick([2, 3, 4, 5, 6]), W = ri(4, 20) * 10, P = ri(4, 12) * 50, x = ri(1, L * 2 - 1) / 2, RB = sig((P * x + W * L / 2) / L), RA = sig(P + W - RB), askA = chance();
+      return { q: T`A uniform beam ${Q(L, 'm')} long weighing ${Q(W, 'N')} rests on supports A (left end) and B (right end). A load of ${Q(P, 'N')} hangs ${Q(x, 'm')} from A. What is the upward force at ${askA ? 'A' : 'B'}?` + Fig(beamSvg(L, [{ x: 0, kind: 'support', label: 'A' }, { x: L, kind: 'support', label: 'B' }, { x, kind: 'load', label: `${P} N` }, { x: L / 2, kind: 'load', label: 'W', arrow: 'c' }], T`A beam on two end supports with a hanging load`)),
+        a: askA ? RA : RB, u: 'N', w: askA ? [RB, sig((P + W) / 2), sig(P * x / L)] : [RA, sig((P + W) / 2), sig(P * x / L)],
+        s: T`Moments about A: $R_B \cdot ${L} = ${P} \cdot ${M(x)} + ${W} \cdot ${M(L / 2)}$, so $R_B = ${M(RB)}\,\mathrm{N}$. Forces: $R_A = ${P} + ${W} - ${M(RB)} = ${M(RA)}\,\mathrm{N}$. ${askA ? T`The force at A is ${Q(RA, 'N')}.` : T`The force at B is ${Q(RB, 'N')}.`}` };
+    },
+    () => {
+      const load = ri(20, 100) * 10, dl = ri(1, 5) / 10, de = ri(8, 20) / 10, E = sig(load * dl / de);
+      return { q: T`A crowbar is used to lift a ${Q(load, 'N')} rock. The rock is ${Q(dl, 'm')} from the pivot and the effort is applied ${Q(de, 'm')} from the pivot on the other side. What effort is needed?`, a: E, u: 'N', w: [sig(load * de / dl), sig(load - de * 100), sig(load / 2)],
+        s: T`Moments about the pivot: $F \cdot ${M(de)} = ${load} \cdot ${M(dl)}$, so $F = ${QT(E, 'N')}$. The lever multiplies the force by $\frac{${M(de)}}{${M(dl)}}$.` };
+    },
+    () => {
+      const W = ri(4, 40) * 10, th = pick([20, 30, 37, 45, 53, 60]), T2 = sig(W / (2 * cosD(th)));
+      return { q: T`A lamp of weight ${Q(W, 'N')} hangs from two identical cables, each making ${Q(th, '°')} with the vertical. What is the tension in each cable?`, a: T2, u: 'N', w: [sig(W / 2), sig(W / (2 * sinD(th))), sig(W / cosD(th))],
+        s: T`Vertically: $2T\cos\theta = W$, so $T = \frac{${W}}{2\cos ${th}^\circ} = ${QT(T2, 'N')}$. The horizontal parts cancel.` };
+    },
+    () => pick([
+      { q: T`Which change makes a bus less likely to tip over on a sharp bend?`, a: T`Lowering its centre of gravity`, w: [T`Raising its centre of gravity`, T`Making its wheelbase narrower`, T`Loading heavy luggage on the roof`], only: 'mc', s: T`A bus topples when the line through its centre of gravity passes outside its wheels. A low centre of gravity and a wide base keep that line inside.` },
+      { q: T`A ladder rests against a wall without moving. Which statement must be true?`, a: T`The net force and the net torque on it are both zero`, w: [T`Only the net force is zero`, T`Only the net torque is zero`, T`The weight equals the normal force from the wall`], only: 'mc', s: T`A rigid body in equilibrium needs both conditions: no net force and no net torque.` },
+    ]),
+  ],
+},
+{
+  id: 'gravitation', stage: 'sh', title: 'Gravitation & Orbits',
+  blurb: 'Newton’s law of gravitation, g on other planets and at altitude, orbital speed and period, Kepler’s third law and escape speed.',
+  lesson: () => T`
+<p>Every mass attracts every other mass. Newton's law of gravitation gives the size of the pull between two point masses (or spheres) whose centres are a distance $r$ apart:</p>
+${Fm(T`F = \frac{G m_1 m_2}{r^2}, \qquad G = 6.67 \times 10^{-11}\,\mathrm{N\,m^2/kg^2}`)}
+<p>It is an <b>inverse-square law</b>: doubling the distance makes the force four times smaller.</p>
+<h3>The gravitational field strength $g$</h3>
+<p>At the surface of a planet of mass $M$ and radius $R$, $g = \dfrac{GM}{R^2}$. For the Earth ($M = 6.0 \times 10^{24}\,\mathrm{kg}$, $R = 6.4 \times 10^{6}\,\mathrm{m}$) this gives about $9.8\,\mathrm{m/s^2}$. At a height $h$ above the surface, $g_h = g \left(\dfrac{R}{R + h}\right)^2$.</p>
+${Key(T`<p>For a satellite in a circular orbit of radius $r$, gravity provides the centripetal force:</p><p>$$\frac{GMm}{r^2} = \frac{m v^2}{r} \;\Rightarrow\; v = \sqrt{\frac{GM}{r}}, \qquad T = \frac{2\pi r}{v}.$$</p><p>From this follows <b>Kepler's third law</b>: $T^2 \propto r^3$ for all bodies orbiting the same central mass.</p>`)}
+<h3>Escape speed</h3>
+<p>The speed needed to leave a planet's surface for good (ignoring air) is $v_{\text{esc}} = \sqrt{\dfrac{2GM}{R}}$, about $11.2\,\mathrm{km/s}$ for the Earth.</p>
+${Tip(T`<p>$r$ is measured from the <b>centre</b> of the planet. A satellite $400\,\mathrm{km}$ up orbits at $r = R + 400\,\mathrm{km}$.</p>`)}`,
+  gens: [
+    () => {
+      const m1 = ri(20, 90), m2 = ri(20, 90), r = ri(5, 30) / 10, F = 6.67e-11 * m1 * m2 / (r * r);
+      return { q: T`Two people of masses ${Q(m1, 'kg')} and ${Q(m2, 'kg')} stand ${Q(r, 'm')} apart. What is the gravitational force between them? ($G = 6.67 \times 10^{-11}\,\mathrm{N\,m^2/kg^2}$.)`, a: `$${sciT(F)}$`, w: [`$${sciT(F * r)}$`, `$${sciT(F * 1e3)}$`, `$${sciT(F / 1e3)}$`], v: F, rtol: 0.02, u: 'N', h: T`Type a power of ten like 3.1e-7.`,
+        s: T`$F = \frac{G m_1 m_2}{r^2} = \frac{6.67 \times 10^{-11} \cdot ${m1} \cdot ${m2}}{${M(r)}^2} = ${sciT(F)}\,\mathrm{N}$. Tiny, which is why we never notice it.` };
+    },
+    () => {
+      const k = pick([2, 3, 4, 0.5]), g0 = gPick(), g2 = sig(g0 / (k * k));
+      return { q: T`A satellite is moved from a distance $r$ to a distance ${k === 0.5 ? '$r/2$' : `$${k}r$`} from the centre of the Earth. If the gravitational field strength was ${Q(g0, 'm/s^2')} at first, what is it now?`, a: g2, u: 'm/s²', w: [sig(g0 / k), sig(g0 * k * k), g0],
+        s: T`$g \propto \frac{1}{r^2}$, so the new value is $\frac{${M(g0)}}{${k === 0.5 ? '(1/2)' : k}^2} = ${QT(g2, 'm/s^2')}$.` };
+    },
+    () => {
+      const [name, Mp, Rp] = pick([[T`Mars`, 6.4e23, 3.4e6], [T`the Moon`, 7.3e22, 1.74e6], [T`Jupiter`, 1.9e27, 7.0e7], [T`Venus`, 4.9e24, 6.1e6]]), g = sig(6.67e-11 * Mp / (Rp * Rp));
+      return { q: T`${name} has a mass of $${sciT(Mp, 2)}\,\mathrm{kg}$ and a radius of $${sciT(Rp, 3)}\,\mathrm{m}$. What is the gravitational field strength at its surface? ($G = 6.67 \times 10^{-11}\,\mathrm{N\,m^2/kg^2}$.)`, a: g, u: 'm/s²', w: [sig(6.67e-11 * Mp / Rp / 1e6), sig(g * 2), sig(g / 3)],
+        s: T`$g = \frac{GM}{R^2} = \frac{6.67 \times 10^{-11} \cdot ${sciT(Mp, 2)}}{(${sciT(Rp, 3)})^2} = ${QT(g, 'm/s^2')}$.` };
+    },
+    () => {
+      const h = pick([300, 400, 500, 800, 1000, 2000, 20000, 35800]), r = 6.4e6 + h * 1e3, v = 6.67e-11 * 6.0e24 / r, vv = Math.sqrt(v), T0 = 2 * Math.PI * r / vv, askT = chance();
+      return askT
+        ? { q: T`A satellite orbits ${Q(h, 'km')} above the Earth's surface. What is its orbital period, in minutes? (Earth: $M = 6.0 \times 10^{24}\,\mathrm{kg}$, $R = 6.4 \times 10^{6}\,\mathrm{m}$, $G = 6.67 \times 10^{-11}$.)`, a: sig(T0 / 60), u: 'min', w: [sig(T0 / 3600), sig(T0 / 60 / 2), sig(T0 / 60 * 1.5)],
+            s: T`$r = R + h = ${sciT(r)}\,\mathrm{m}$, $v = \sqrt{\frac{GM}{r}} = ${M(sig(vv))}\,\mathrm{m/s}$, and $T = \frac{2\pi r}{v} = ${M(sig(T0))}\,\mathrm{s} = ${QT(sig(T0 / 60), 'min')}$.` }
+        : { q: T`A satellite orbits ${Q(h, 'km')} above the Earth's surface. What is its orbital speed, in km/s? (Earth: $M = 6.0 \times 10^{24}\,\mathrm{kg}$, $R = 6.4 \times 10^{6}\,\mathrm{m}$, $G = 6.67 \times 10^{-11}$.)`, a: sig(vv / 1000), u: 'km/s', w: [sig(Math.sqrt(6.67e-11 * 6.0e24 / 6.4e6) / 1000 * (h > 5000 ? 1 : 1.4)), sig(Math.sqrt(2) * vv / 1000), sig(vv / 1000 / 2)],
+            s: T`$r = R + h = ${sciT(r)}\,\mathrm{m}$, so $v = \sqrt{\frac{GM}{r}} = \sqrt{\frac{6.67 \times 10^{-11} \cdot 6.0 \times 10^{24}}{${sciT(r)}}} = ${M(sig(vv))}\,\mathrm{m/s} = ${QT(sig(vv / 1000), 'km/s')}$.` };
+    },
+    () => {
+      const k = pick([4, 9, 16, 1 / 4]), T1 = pick([1, 2, 10, 27, 90]), T2 = sig(T1 * k ** 1.5);
+      return { q: T`Planet A orbits a star with a period of ${T1} years. Planet B orbits the same star at ${k < 1 ? T`one quarter of` : T`${k} times`} A's orbital radius. What is B's period in years?`, a: T2, u: T`years`, w: [sig(T1 * k), sig(T1 * k * k), sig(T1 * Math.sqrt(k))],
+        s: T`Kepler's third law: $T^2 \propto r^3$, so $T_B = T_A \left(\frac{r_B}{r_A}\right)^{3/2} = ${T1} \cdot ${k < 1 ? '(1/4)' : k}^{3/2} = ${M(T2)}$ years.` };
+    },
+    () => {
+      const [name, Mp, Rp] = pick([[T`the Earth`, 6.0e24, 6.4e6], [T`Mars`, 6.4e23, 3.4e6], [T`the Moon`, 7.3e22, 1.74e6]]), v = sig(Math.sqrt(2 * 6.67e-11 * Mp / Rp) / 1000);
+      return { q: T`What is the escape speed from the surface of ${name}, in km/s? ($M = ${sciT(Mp, 2)}\,\mathrm{kg}$, $R = ${sciT(Rp, 3)}\,\mathrm{m}$, $G = 6.67 \times 10^{-11}$.)`, a: v, u: 'km/s', w: [sig(v / Math.SQRT2), sig(v * 2), sig(v * v)],
+        s: T`$v_{\text{esc}} = \sqrt{\frac{2GM}{R}} = \sqrt{\frac{2 \cdot 6.67 \times 10^{-11} \cdot ${sciT(Mp, 2)}}{${sciT(Rp, 3)}}} = ${QT(v, 'km/s')}$.` };
+    },
+    () => ({ q: T`The distance between two asteroids is tripled. What happens to the gravitational force between them?`, a: T`It becomes one ninth as large`, w: [T`It becomes one third as large`, T`It becomes three times as large`, T`It stays the same`], only: 'mc',
+      s: T`Gravity is an inverse-square law: $F \propto 1/r^2$, so tripling $r$ divides the force by $3^2 = 9$.` }),
+  ],
+},
+{
+  id: 'elasticity', stage: 'sh', title: 'Elasticity & Springs',
+  blurb: 'Hooke’s law, springs in series and parallel, stress, strain, Young’s modulus and elastic potential energy.',
+  lesson: () => T`
+<p>An <b>elastic</b> material returns to its original shape when the force is removed. Springs, rubber bands, and steel wires (for small stretches) all behave this way.</p>
+<h3>Hooke's law</h3>
+${Fm(T`F = k\,x`)}
+<p>The extension $x$ is proportional to the force $F$, up to the <b>elastic limit</b>. The spring constant $k$ (in $\mathrm{N/m}$) measures stiffness: a stiff spring has a large $k$.</p>
+<h3>Combining springs</h3>
+<ul><li><b>Parallel</b> (side by side, sharing the load): $k = k_1 + k_2$. Stiffer.</li><li><b>Series</b> (one below the other): $\dfrac{1}{k} = \dfrac{1}{k_1} + \dfrac{1}{k_2}$. Softer.</li></ul>
+<h3>Stress, strain and Young's modulus</h3>
+${Fm(T`\sigma = \frac{F}{A} \qquad \varepsilon = \frac{\Delta L}{L} \qquad E = \frac{\sigma}{\varepsilon} = \frac{F L}{A\,\Delta L}`)}
+<p>Stress $\sigma$ is force per area (in $\mathrm{Pa}$); strain $\varepsilon$ is the fractional change in length (no unit). The <b>Young's modulus</b> $E$ is a property of the material, not of the particular wire: steel has about $2 \times 10^{11}\,\mathrm{Pa}$.</p>
+${Key(T`<p>A stretched or compressed spring stores <b>elastic potential energy</b>:</p><p>$$E_p = \tfrac12 k x^2 = \tfrac12 F x.$$</p><p>It is the area under the force–extension graph, a triangle.</p>`)}
+${Tip(T`<p>Extension is the <i>change</i> in length, not the new length. A $20\,\mathrm{cm}$ spring stretched to $25\,\mathrm{cm}$ has $x = 5\,\mathrm{cm} = 0.05\,\mathrm{m}$.</p>`)}`,
+  gens: [
+    () => {
+      const k = ri(2, 60) * 10, x = ri(1, 20) / 100, F = sig(k * x), ask = pick(['F', 'k', 'x']);
+      if (ask === 'F') return { q: T`A spring with spring constant ${Q(k, 'N/m')} is stretched by ${Q(x * 100, 'cm')}. What force is needed?`, a: F, u: 'N', w: [sig(k * x * 100), sig(k / x), sig(0.5 * k * x * x, 3)], s: T`$x = ${M(x)}\,\mathrm{m}$, so $F = kx = ${k} \cdot ${M(x)} = ${QT(F, 'N')}$.` };
+      if (ask === 'k') return { q: T`A force of ${Q(F, 'N')} stretches a spring by ${Q(x * 100, 'cm')}. What is its spring constant?`, a: k, u: 'N/m', w: [sig(F / (x * 100)), sig(F * x, 3), sig(k * 2)], s: T`$k = \frac{F}{x} = \frac{${M(F)}}{${M(x)}} = ${QT(k, 'N/m')}$.` };
+      return { q: T`A spring with $k = ${QT(k, 'N/m')}$ carries a load of ${Q(F, 'N')}. By how many centimetres does it stretch?`, a: sig(x * 100), u: 'cm', w: [sig(x), sig(x * 1000), sig(k / F)], s: T`$x = \frac{F}{k} = \frac{${M(F)}}{${k}} = ${M(x)}\,\mathrm{m} = ${QT(sig(x * 100), 'cm')}$.` };
+    },
+    () => {
+      const k1 = ri(1, 20) * 50, k2 = ri(1, 20) * 50, par = chance(), k = par ? k1 + k2 : sig(k1 * k2 / (k1 + k2));
+      return { q: par ? T`Two springs, ${Q(k1, 'N/m')} and ${Q(k2, 'N/m')}, are hung side by side (in parallel) and share a load. What is the combined spring constant?` : T`Two springs, ${Q(k1, 'N/m')} and ${Q(k2, 'N/m')}, are joined end to end (in series). What is the combined spring constant?`,
+        a: k, u: 'N/m', w: par ? [sig(k1 * k2 / (k1 + k2)), sig((k1 + k2) / 2), Math.abs(k1 - k2) || k1 * 2] : [k1 + k2, sig((k1 + k2) / 2), Math.min(k1, k2)],
+        s: par ? T`In parallel the constants add: $${k1} + ${k2} = ${QT(k, 'N/m')}$.` : T`In series $\frac{1}{k} = \frac{1}{${k1}} + \frac{1}{${k2}}$, so $k = \frac{${k1} \cdot ${k2}}{${k1} + ${k2}} = ${QT(k, 'N/m')}$.` };
+    },
+    () => {
+      const F = ri(1, 10) * 50, d = pick([1, 1.5, 2, 3]), A = Math.PI * (d / 2000) ** 2, st = F / A;
+      return { q: T`A wire of diameter ${Q(d, 'mm')} supports a load of ${Q(F, 'N')}. What is the tensile stress in the wire, in MPa?`, a: sig(st / 1e6), u: 'MPa', w: [sig(F / (Math.PI * (d / 1000) ** 2) / 1e6), sig(st / 1e3), sig(F / d)],
+        s: T`Cross-sectional area: $A = \pi\left(\frac{d}{2}\right)^2 = \pi (${M(d / 2000)})^2 = ${sciT(A)}\,\mathrm{m^2}$. Stress: $\sigma = \frac{F}{A} = ${sciT(st)}\,\mathrm{Pa} = ${QT(sig(st / 1e6), 'MPa')}$.` };
+    },
+    () => {
+      const [mat, E] = pick([[T`steel`, 2.0e11], [T`copper`, 1.2e11], [T`aluminium`, 7.0e10]]), L = ri(1, 10), A = pick([1, 2, 4, 5]) * 1e-6, F = ri(1, 8) * 50, dL = F * L / (A * E);
+      return { q: T`A ${mat} wire ${Q(L, 'm')} long with a cross-sectional area of ${Q(A * 1e6, 'mm^2')} carries a load of ${Q(F, 'N')}. By how many millimetres does it stretch? (Young's modulus: $${sciT(E, 2)}\,\mathrm{Pa}$.)`, a: sig(dL * 1000), u: 'mm', w: [sig(dL), sig(dL * 1e4), sig(dL * 1000 / L)],
+        s: T`$\Delta L = \frac{F L}{A E} = \frac{${F} \cdot ${L}}{${sciT(A)} \cdot ${sciT(E, 2)}} = ${sciT(dL)}\,\mathrm{m} = ${QT(sig(dL * 1000), 'mm')}$.` };
+    },
+    () => {
+      const k = ri(2, 10) * 50, x = ri(2, 8) / 100, E = sig(0.5 * k * x * x), m = pick([0.02, 0.05, 0.1]), v = sig(Math.sqrt(k * x * x / m)), askV = chance();
+      return askV
+        ? { q: T`A toy launcher uses a spring with $k = ${QT(k, 'N/m')}$ compressed by ${Q(x * 100, 'cm')} to fire a ${Q(m * 1000, 'g')} ball horizontally. Ignoring losses, how fast does the ball leave?`, a: v, u: 'm/s', w: [sig(Math.sqrt(0.5 * k * x * x / m)), sig(k * x / m / 10), sig(Math.sqrt(k * x / m))],
+            s: T`$\tfrac12 k x^2 = \tfrac12 m v^2$, so $v = x\sqrt{\frac{k}{m}} = ${M(x)}\sqrt{\frac{${k}}{${M(m)}}} = ${QT(v, 'm/s')}$.` }
+        : { q: T`How much elastic potential energy is stored in a spring with $k = ${QT(k, 'N/m')}$ stretched by ${Q(x * 100, 'cm')}?`, a: E, u: 'J', w: [sig(k * x * x), sig(0.5 * k * x), sig(0.5 * k * (x * 100) ** 2 / 1000)],
+            s: T`$E_p = \tfrac12 k x^2 = \tfrac12 \cdot ${k} \cdot ${M(x)}^2 = ${QT(E, 'J')}$.` };
+    },
+    () => ({ q: T`Two wires are made of the same steel, but one is twice as thick (twice the diameter). The same load hangs on each. How does the stretch of the thick wire compare with the thin one?`, a: T`It stretches one quarter as much`, w: [T`It stretches half as much`, T`It stretches the same amount`, T`It stretches twice as much`], only: 'mc',
+      s: T`$\Delta L = \frac{FL}{AE}$. Doubling the diameter makes the area $2^2 = 4$ times larger, so the stretch is 4 times smaller. The Young's modulus is the same because the material is the same.` }),
+  ],
+},
+{
+  id: 'fluid-statics', stage: 'sh', title: 'Fluids at Rest',
+  blurb: 'Density and pressure, pressure at depth, hydraulic presses (Pascal) and buoyancy (Archimedes), floating and sinking.',
+  lesson: () => T`
+<h3>Density and pressure</h3>
+${Fm(T`\rho = \frac{m}{V} \qquad p = \frac{F}{A}`)}
+<p>Density is measured in $\mathrm{kg/m^3}$ (water: $1000\,\mathrm{kg/m^3}$) and pressure in pascals, $1\,\mathrm{Pa} = 1\,\mathrm{N/m^2}$. The same force on a smaller area gives a larger pressure, which is why knives are sharp and snowshoes are wide.</p>
+<h3>Pressure in a liquid</h3>
+${Fm(T`p = p_0 + \rho g h`)}
+<p>The pressure at depth $h$ is the pressure at the surface $p_0$ (atmospheric pressure, about $1.0 \times 10^{5}\,\mathrm{Pa}$) plus the weight of the liquid above each square metre, $\rho g h$. It depends only on depth, not on the shape of the container, and acts equally in all directions.</p>
+<h3>Pascal's principle and hydraulics</h3>
+<p>Pressure applied to an enclosed liquid is passed on undiminished to every part of it. In a hydraulic press or car lift the pressure is the same under both pistons, so</p>
+${Fm(T`\frac{F_1}{A_1} = \frac{F_2}{A_2}`)}
+<p>A small force on a small piston lifts a large load on a large piston.</p>
+${Key(T`<p><b>Archimedes' principle:</b> a body in a fluid feels an upward <b>buoyant force</b> equal to the weight of the fluid it displaces:</p><p>$$F_B = \rho_{\text{fluid}}\, g\, V_{\text{submerged}}.$$</p><p>A floating object displaces its own weight of fluid, so the fraction under the surface is $\dfrac{\rho_{\text{object}}}{\rho_{\text{fluid}}}$.</p>`)}
+${Ex(T`<p>A $0.002\,\mathrm{m^3}$ stone is fully under water ($g = 10\,\mathrm{m/s^2}$). Buoyant force: $1000 \cdot 10 \cdot 0.002 = 20\,\mathrm{N}$. If the stone weighs $50\,\mathrm{N}$ in air, it seems to weigh only $50 - 20 = 30\,\mathrm{N}$ in the water.</p>`)}
+${Tip(T`<p>Use the density of the <b>fluid</b> in $F_B = \rho g V$, not the density of the object.</p>`)}`,
+  gens: [
+    () => {
+      const F = ri(2, 80) * 10, A = pick([0.01, 0.02, 0.05, 0.1, 0.25, 0.5]), p = sig(F / A);
+      return { q: T`A box weighing ${Q(F, 'N')} rests on a base of area ${Q(A, 'm^2')}. What pressure does it exert on the floor?`, a: p, u: 'Pa', w: [sig(F * A), sig(F / A / 100), sig(F / (A * 1e4))], s: T`$p = \frac{F}{A} = \frac{${F}}{${M(A)}} = ${QT(p, 'Pa')}$.` };
+    },
+    () => {
+      const g = gPick(), [liq, rho] = pick([[T`fresh water`, 1000], [T`sea water`, 1030], [T`oil`, 800]]), h = ri(1, 40), p = sig(rho * g * h), total = chance();
+      return total
+        ? { q: T`A diver is ${Q(h, 'm')} below the surface of ${liq} ($\rho = ${QT(rho, 'kg/m^3')}$). Taking atmospheric pressure as $1.0 \times 10^{5}\,\mathrm{Pa}$, what is the total pressure on the diver, in kPa? ${gNote(g)}`, a: sig((p + 1e5) / 1000), u: 'kPa', w: [sig(p / 1000), sig((p + 1e5) / 1e5), sig((rho * h + 1e5) / 1000)],
+            s: T`$p = p_0 + \rho g h = 1.0 \times 10^{5} + ${rho} \cdot ${M(g)} \cdot ${h} = ${M(sig(p + 1e5, 6))}\,\mathrm{Pa} = ${QT(sig((p + 1e5) / 1000), 'kPa')}$.` }
+        : { q: T`What is the pressure due to the liquid alone at a depth of ${Q(h, 'm')} in ${liq} ($\rho = ${QT(rho, 'kg/m^3')}$)? ${gNote(g)}`, a: p, u: 'Pa', w: [sig(rho * h), sig(p + 1e5), sig(rho * g / h)], s: T`$p = \rho g h = ${rho} \cdot ${M(g)} \cdot ${h} = ${QT(p, 'Pa')}$.` };
+    },
+    () => {
+      const A1 = pick([2, 4, 5, 10, 20]), A2 = A1 * pick([10, 20, 25, 50, 100]), F2 = ri(5, 40) * 100, F1 = sig(F2 * A1 / A2);
+      return { q: T`In a hydraulic car lift the small piston has an area of ${Q(A1, 'cm^2')} and the large piston ${Q(A2, 'cm^2')}. What force on the small piston lifts a load of ${Q(F2, 'N')}?`, a: F1, u: 'N', w: [sig(F2 * A2 / A1), sig(F2 * Math.sqrt(A1 / A2)), sig(F2 / 2)],
+        s: T`The pressure is the same: $\frac{F_1}{${A1}} = \frac{${F2}}{${A2}}$, so $F_1 = ${F2} \cdot \frac{${A1}}{${A2}} = ${QT(F1, 'N')}$. (The units of area cancel, so cm² can be used directly.)` };
+    },
+    () => {
+      const g = gPick(), V = ri(1, 50) / 1000, W = sig(V * pick([2500, 2700, 7800, 8900]) * g), Fb = sig(1000 * g * V), app = chance();
+      return app
+        ? { q: T`A metal block of volume ${Q(V * 1e6, 'cm^3')} weighs ${Q(W, 'N')} in air. What does it seem to weigh when fully under water ($\rho = 1000\,\mathrm{kg/m^3}$)? ${gNote(g)}`, a: sig(W - Fb), u: 'N', w: [Fb, sig(W + Fb), W],
+            s: T`$V = ${M(V)}\,\mathrm{m^3}$. Buoyant force: $F_B = \rho g V = 1000 \cdot ${M(g)} \cdot ${M(V)} = ${M(Fb)}\,\mathrm{N}$. Apparent weight: $${M(W)} - ${M(Fb)} = ${QT(sig(W - Fb), 'N')}$.` }
+        : { q: T`An object of volume ${Q(V * 1e6, 'cm^3')} is completely submerged in water ($\rho = 1000\,\mathrm{kg/m^3}$). What is the buoyant force on it? ${gNote(g)}`, a: Fb, u: 'N', w: [sig(Fb * 1000), sig(1000 * V), sig(Fb / g)],
+            s: T`$V = ${M(V * 1e6)}\,\mathrm{cm^3} = ${M(V)}\,\mathrm{m^3}$, so $F_B = \rho g V = 1000 \cdot ${M(g)} \cdot ${M(V)} = ${QT(Fb, 'N')}$.` };
+    },
+    () => {
+      const [obj, ro] = pick([[T`block of wood`, pick([500, 600, 700, 800])], [T`block of ice`, 920], [T`plastic toy`, pick([300, 400, 950])]]), [liq, rl] = pick([[T`fresh water`, 1000], [T`sea water`, 1030]]), f = sig(ro / rl * 100);
+      return { q: T`A ${obj} (density ${Q(ro, 'kg/m^3')}) floats in ${liq} (density ${Q(rl, 'kg/m^3')}). What percentage of its volume is below the surface?`, a: f, u: '%', w: [sig(100 - f), sig(rl / ro * 100 > 100 ? 100 * ro / 1000 + 5 : rl / ro * 100), 50],
+        s: T`A floating body displaces its own weight: $\rho_{\text{object}} V = \rho_{\text{fluid}} V_{\text{sub}}$, so $\frac{V_{\text{sub}}}{V} = \frac{${ro}}{${rl}} = ${M(sig(f / 100))}$, that is ${NUM(f)}%.` };
+    },
+    () => pick([
+      { q: T`Three differently shaped containers are filled with water to the same depth. Where is the water pressure on the base greatest?`, a: T`It is the same in all three`, w: [T`In the widest container`, T`In the container holding the most water`, T`In the narrowest container`], only: 'mc', s: T`Liquid pressure $p = \rho g h$ depends only on the depth and the density, not on the shape of the container or the amount of liquid.` },
+      { q: T`A steel ship floats although steel is denser than water. Why?`, a: T`Its hollow hull displaces a weight of water equal to the ship's weight`, w: [T`Steel becomes lighter in sea water`, T`The air above the water holds it up`, T`Water pressure is zero at the surface`], only: 'mc', s: T`The hull encloses a large volume, so the ship's average density (steel plus air) is less than that of water, and it sinks only until the displaced water weighs as much as the ship.` },
+    ]),
+  ],
+},
+{
+  id: 'fluid-dynamics', stage: 'sh', title: 'Fluids in Motion',
+  blurb: 'Flow rate, the continuity equation, Bernoulli’s principle, Torricelli’s law and why faster fluid has lower pressure.',
+  lesson: () => T`
+<p>For an ideal fluid (incompressible, no friction, steady flow) two simple laws describe the motion.</p>
+<h3>Flow rate and continuity</h3>
+${Fm(T`Q = \frac{V}{t} = A\,v \qquad A_1 v_1 = A_2 v_2`)}
+<p>The volume flow rate $Q$ (in $\mathrm{m^3/s}$) is the same all along a pipe, because the fluid cannot pile up anywhere. Where the pipe narrows, the fluid speeds up. Putting your thumb over a garden hose makes the water squirt faster for this reason.</p>
+${Key(T`<p><b>Bernoulli's equation</b> (conservation of energy for a flowing fluid):</p><p>$$p + \tfrac12 \rho v^2 + \rho g h = \text{constant along a streamline}.$$</p><p>In a horizontal pipe, where the fluid flows faster its pressure is lower.</p>`)}
+<h3>Torricelli's law</h3>
+<p>Water leaking from a hole a depth $h$ below the surface of an open tank comes out at the speed of a free fall from that height:</p>
+${Fm(T`v = \sqrt{2 g h}`)}
+<h3>Applications</h3>
+<ul><li>An aircraft wing makes air flow faster over its top surface, so the pressure above is lower than below: lift.</li><li>A Venturi meter measures flow speed from the pressure drop in a narrow section.</li><li>Two sheets of paper held close together are pushed towards each other when you blow between them.</li></ul>
+${Tip(T`<p>If a pipe is described by its diameter, the area goes with the square: halving the diameter makes the area four times smaller and the speed four times larger.</p>`)}`,
+  gens: [
+    () => {
+      const Q0 = ri(2, 40) / 10, V = ri(2, 20) * 100, t = sig(V / Q0), askT = chance();
+      return askT
+        ? { q: T`A hose delivers water at ${Q(Q0, 'L/s')}. How long does it take to fill a ${Q(V, 'L')} tank?`, a: t, u: 's', w: [sig(V * Q0), sig(t / 60), sig(Q0 / V * 1000)], s: T`$t = \frac{V}{Q} = \frac{${V}}{${M(Q0)}} = ${QT(t, 's')}$.` }
+        : { q: T`Water flows at ${Q(Q0, 'm/s')} through a pipe with a cross-sectional area of ${Q(V / 1e4, 'm^2')}. What is the volume flow rate?`, a: sig(Q0 * V / 1e4), u: 'm³/s', w: [sig(Q0 / (V / 1e4)), sig(Q0 * V / 1e3), sig(V / 1e4 / Q0)], s: T`$Q = Av = ${M(V / 1e4)} \cdot ${M(Q0)} = ${QT(sig(Q0 * V / 1e4), 'm^3/s')}$.` };
+    },
+    () => {
+      const d2 = pick([1, 1.5, 2, 2.5, 3, 4]), d1 = sig(d2 * pick([1.5, 2, 2.5, 3]), 3), v1 = ri(1, 6) / 2;
+      const v2 = sig(v1 * (d1 / d2) ** 2);
+      return { q: T`Water flows at ${Q(v1, 'm/s')} in a pipe of diameter ${Q(d1, 'cm')}. The pipe narrows to a diameter of ${Q(d2, 'cm')}. How fast does the water flow in the narrow part?`, a: v2, u: 'm/s', w: [sig(v1 * d1 / d2), sig(v1 * d2 / d1), sig(v1 * (d2 / d1) ** 2)],
+        s: T`$A_1 v_1 = A_2 v_2$ and $A \propto d^2$, so $v_2 = v_1 \left(\frac{d_1}{d_2}\right)^2 = ${M(v1)} \cdot \left(\frac{${M(d1)}}{${M(d2)}}\right)^2 = ${QT(v2, 'm/s')}$.` };
+    },
+    () => {
+      const g = gPick(), h = ri(1, 40) / 5, v = sig(Math.sqrt(2 * g * h));
+      return { q: T`A water tank has a small hole ${Q(h, 'm')} below the water surface. How fast does the water come out of the hole? ${gNote(g)}`, a: v, u: 'm/s', w: [sig(Math.sqrt(g * h)), sig(2 * g * h), sig(g * h)],
+        s: T`Torricelli's law: $v = \sqrt{2gh} = \sqrt{2 \cdot ${M(g)} \cdot ${M(h)}} = ${QT(v, 'm/s')}$.` };
+    },
+    () => {
+      const g = gPick(), h = ri(1, 10) / 2, y = ri(1, 10) / 2, x = sig(2 * Math.sqrt(h * y));
+      return { q: T`A tank stands on the ground. Water spurts horizontally from a small hole ${Q(h, 'm')} below the water surface and ${Q(y, 'm')} above the ground. How far from the tank does the jet hit the ground? ${gNote(g)}`, a: x, u: 'm', w: [sig(Math.sqrt(h * y)), sig(h + y), sig(2 * h * y)],
+        s: T`Exit speed: $v = \sqrt{2gh}$. Falling time: $t = \sqrt{2y/g}$. Distance: $x = vt = \sqrt{2gh} \cdot \sqrt{\frac{2y}{g}} = 2\sqrt{hy} = 2\sqrt{${M(h)} \cdot ${M(y)}} = ${QT(x, 'm')}$. The value of $g$ cancels.` };
+    },
+    () => {
+      const [fl, rho] = pick([[T`water`, 1000], [T`air`, 1.2]]), v1 = ri(1, 10), v2 = v1 + ri(2, 20), dp = sig(0.5 * rho * (v2 * v2 - v1 * v1));
+      return { q: T`${fl === T`water` ? T`Water` : T`Air`} (density ${Q(rho, 'kg/m^3')}) flows through a horizontal pipe. Its speed rises from ${Q(v1, 'm/s')} to ${Q(v2, 'm/s')} at a narrowing. By how much does the pressure drop?`, a: dp, u: 'Pa', w: [sig(0.5 * rho * (v2 - v1) ** 2), sig(rho * (v2 * v2 - v1 * v1)), sig(0.5 * rho * v2 * v2)],
+        s: T`Bernoulli with equal heights: $p_1 - p_2 = \tfrac12 \rho (v_2^2 - v_1^2) = \tfrac12 \cdot ${M(rho)} \cdot (${v2}^2 - ${v1}^2) = ${QT(dp, 'Pa')}$.` };
+    },
+    () => pick([
+      { q: T`You blow a stream of air between two sheets of paper hanging close together. What happens?`, a: T`The sheets move towards each other`, w: [T`The sheets move apart`, T`Nothing happens`, T`Both sheets swing the same way`], only: 'mc', s: T`The fast-moving air between the sheets has a lower pressure (Bernoulli), so the still air outside pushes them together.` },
+      { q: T`Water flows steadily through a pipe that becomes narrower. In the narrow part, compared with the wide part:`, a: T`the speed is higher and the pressure is lower`, w: [T`the speed is lower and the pressure is higher`, T`the speed and pressure are both higher`, T`the flow rate is smaller`], only: 'mc', s: T`Continuity makes the water speed up where the area is smaller, and Bernoulli then says its pressure must drop. The volume flow rate stays the same.` },
+    ]),
+  ],
+},
+{
+  id: 'center-of-mass', stage: 'uni', title: 'Centre of Mass & Angular Momentum',
+  blurb: 'Finding the centre of mass, how it moves, angular momentum and its conservation, spinning skaters and turntables.',
+  lesson: () => T`
+<h3>Centre of mass</h3>
+<p>For a set of point masses, the <b>centre of mass</b> is the mass-weighted average position:</p>
+${Fm(T`x_{\text{cm}} = \frac{\sum m_i x_i}{\sum m_i} \qquad y_{\text{cm}} = \frac{\sum m_i y_i}{\sum m_i}`)}
+<p>The centre of mass of a system moves as if all the mass were concentrated there and all the external forces acted on it: $\Sigma F_{\text{ext}} = M a_{\text{cm}}$. When a shell explodes in mid-air, its fragments fly apart, but their centre of mass keeps following the original parabola.</p>
+<h3>Angular momentum</h3>
+${Fm(T`L = I\,\omega \qquad \text{(for a point mass: } L = m v r\text{)}`)}
+<p>Angular momentum is the rotational counterpart of momentum. A net torque changes it: $\tau = \dfrac{\Delta L}{\Delta t}$.</p>
+${Key(T`<p><b>Conservation of angular momentum:</b> if no external torque acts, $L$ stays constant:</p><p>$$I_1 \omega_1 = I_2 \omega_2.$$</p><p>A figure skater who pulls in her arms reduces $I$, so $\omega$ goes up and she spins faster.</p>`)}
+${Ex(T`<p>A skater spins at $2\,\mathrm{rev/s}$ with $I = 4\,\mathrm{kg\,m^2}$ and pulls her arms in to $I = 1.6\,\mathrm{kg\,m^2}$. Then $\omega_2 = \frac{4 \cdot 2}{1.6} = 5\,\mathrm{rev/s}$. Her kinetic energy $\tfrac12 I\omega^2$ rises by a factor of $2.5$; the extra energy comes from the work her muscles do.</p>`)}
+${Tip(T`<p>In $I_1\omega_1 = I_2\omega_2$ you can keep $\omega$ in rev/s or rpm, as long as both sides use the same unit.</p>`)}`,
+  gens: [
+    () => {
+      const m1 = ri(1, 10), m2 = ri(1, 10), x1 = 0, x2 = ri(2, 20) / 2, x = sig(m2 * x2 / (m1 + m2));
+      return { q: T`A ${Q(m1, 'kg')} mass sits at $x = 0$ and a ${Q(m2, 'kg')} mass at $x = ${QT(x2, 'm')}$. Where is their centre of mass?`, a: x, u: 'm', w: [sig(x2 / 2), sig(m1 * x2 / (m1 + m2)), sig(m2 * x2 / m1)],
+        s: T`$x_{\text{cm}} = \frac{${m1} \cdot 0 + ${m2} \cdot ${M(x2)}}{${m1} + ${m2}} = ${QT(x, 'm')}$. It is nearer the heavier mass.` };
+    },
+    () => {
+      const ms = Array.from({ length: 3 }, () => ri(1, 6)), xs = [0, ri(1, 4), ri(5, 9)], x = sig(ms.reduce((s, m, i) => s + m * xs[i], 0) / sum(ms));
+      return { q: T`Masses of ${ms.map(m => Q(m, 'kg')).join(LS())} lie on a line at $x = ${xs.map(v => QT(v, 'm')).join(LS())}$ respectively. Find the $x$-coordinate of their centre of mass.`, a: x, u: 'm', w: [sig(sum(xs) / 3), sig(ms.reduce((s, m, i) => s + m * xs[i], 0) / 3), sig(x + 1)],
+        s: T`$x_{\text{cm}} = \frac{${ms.map((m, i) => `${m} \\cdot ${xs[i]}`).join(' + ')}}{${ms.join(' + ')}} = \frac{${ms.reduce((s, m, i) => s + m * xs[i], 0)}}{${sum(ms)}} = ${QT(x, 'm')}$.` };
+    },
+    () => {
+      const I = ri(1, 40) / 10, rpm = pick([30, 45, 60, 120, 300]), w = 2 * Math.PI * rpm / 60, L = sig(I * w);
+      return { q: T`A wheel with moment of inertia ${Q(I, 'kg m^2')} spins at ${rpm} rpm. What is its angular momentum?`, a: L, u: 'kg m²/s', w: [sig(I * rpm), sig(0.5 * I * w * w), sig(I * rpm / 60)],
+        s: T`$\omega = 2\pi \cdot \frac{${rpm}}{60} = ${M(sig(w))}\,\mathrm{rad/s}$, so $L = I\omega = ${M(I)} \cdot ${M(sig(w))} = ${QT(L, 'kg\\,m^2/s')}$.` };
+    },
+    () => {
+      const I1 = ri(20, 60) / 10, I2 = sig(I1 / pick([1.5, 2, 2.5, 3, 4]), 3), w1 = ri(2, 8) / 2, w2 = sig(I1 * w1 / I2);
+      return { q: T`A skater spinning at ${Q(w1, 'rev/s')} with a moment of inertia of ${Q(I1, 'kg m^2')} pulls in her arms, reducing it to ${Q(I2, 'kg m^2')}. How fast does she now spin?`, a: w2, u: 'rev/s', w: [sig(I2 * w1 / I1), sig(w1 * Math.sqrt(I1 / I2)), w1],
+        s: T`No external torque, so $I_1\omega_1 = I_2\omega_2$: $\omega_2 = \frac{${M(I1)} \cdot ${M(w1)}}{${M(I2)}} = ${QT(w2, 'rev/s')}$.` };
+    },
+    () => {
+      const I = ri(100, 500), w = ri(4, 20) / 10, m = ri(20, 50), r = ri(10, 25) / 10, w2 = sig(I * w / (I + m * r * r));
+      return { q: T`A playground roundabout (moment of inertia ${Q(I, 'kg m^2')}) turns freely at ${Q(w, 'rad/s')}. A ${Q(m, 'kg')} child jumps on at its edge, ${Q(r, 'm')} from the axis. What is the new angular speed?`, a: w2, u: 'rad/s', w: [sig(I * w / (I + m * r)), sig(w * m / I), w],
+        s: T`The child adds $mr^2 = ${m} \cdot ${M(r)}^2 = ${M(sig(m * r * r))}\,\mathrm{kg\,m^2}$. Conserving $L$: $\omega_2 = \frac{${I} \cdot ${M(w)}}{${I} + ${M(sig(m * r * r))}} = ${QT(w2, 'rad/s')}$.` };
+    },
+    () => pick([
+      { q: T`A firework shell flying along a parabola explodes into many pieces. Ignoring air resistance, what happens to the centre of mass of all the pieces?`, a: T`It continues along the original parabola`, w: [T`It stops at the point of the explosion`, T`It falls straight down`, T`It moves in a straight line at constant speed`], only: 'mc', s: T`The explosion forces are internal. Only gravity acts from outside, so the centre of mass carries on exactly as the unexploded shell would have.` },
+      { q: T`A diver tucks into a tight ball in mid-air. What happens to her rate of spin?`, a: T`It increases, because her moment of inertia decreases`, w: [T`It decreases, because she is more compact`, T`It stays the same`, T`It increases, because gravity gives her a torque`], only: 'mc', s: T`In the air there is no external torque about her centre of mass, so $I\omega$ is constant. Tucking in reduces $I$, so $\omega$ increases.` },
+    ]),
+  ],
+},
   ],
 });
 })();
@@ -2032,7 +2528,7 @@ function cleanInput(raw) {
   s = s.replace(/(\d)[^\x00-\x7F\s\d()+\-*/^.,]+(\^[23])?$/u, '$1');      // …or a non-Latin unit written without a space (3500м, 12سم)
   return s.trim();
 }
-const PU = '(?:[kmgµμnc]?(?:ohms?|pa|hz|cal|wh|ev|n|j|w|v|a|c|g|m|s|l|k|t)|°c|°f|°|h|min|rad|atm)(?:\\^?\\(?-?[123]\\)?)?';
+const PU = '(?:[kmgµμnc]?(?:ohms?|pa|hz|cal|wh|ev|n|j|w|v|a|c|g|m|s|l|k|t)|°c|°f|°|h|min|rad|rev|rpm|atm)(?:\\^?\\(?-?[123]\\)?)?';
 const PHYS_UNIT = new RegExp(`(?<=[\\d)\\s])\\s*${PU}(?:\\s*[*/.]?\\s*${PU})*\\s*$`, 'u');
 function parseNum(raw) {
   const s = cleanInput(raw); if (!s) return null;
@@ -2045,6 +2541,7 @@ function close(x, v, tol, typed, rtol) {
   if (rtol != null && Math.abs(x - v) <= rtol * Math.abs(v) + 1e-12) return true;
   if (tol != null) return Math.abs(x - v) <= tol + 1e-9;
   if (Math.abs(x - v) <= Math.max(1e-6, 1e-6 * Math.abs(v))) return true;
+  if (rtol != null) return false;   // physics answers: the stated tolerance only, no coarse rounding
   const m = /^-?\d*\.(\d+)$/.exec(cleanInput(typed));
   if (m && m[1].length >= 2 && decs(v) > m[1].length) return Math.abs(x - v) <= 0.5 * 10 ** -m[1].length + 1e-9;   // correctly rounded decimal
   return false;
