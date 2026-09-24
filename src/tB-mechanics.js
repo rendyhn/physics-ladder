@@ -33,7 +33,8 @@ ${Fig(graphSvg([[0, 4], [4, 12], [8, 12]], { xMax: 8, yMax: 14, xStep: 2, yStep:
 ${Tip(T`<p>Convert km/h to m/s before using the equations: $72\,\mathrm{km/h} = 20\,\mathrm{m/s}$.</p>`)}`,
   gens: [
     () => {
-      const d = ri(12, 90) * 10, t = ri(4, 20) * 5, v = sig(d / t);
+      let d, t; do { d = ri(12, 90) * 10; t = ri(6, 30) * 5; } while (d / t > 12 || d / t < 2);
+      const v = sig(d / t);
       return { q: T`A cyclist rides ${Q(d, 'm')} in ${Q(t, 's')}. What is the average speed?`, a: v, u: 'm/s', w: [sig(t / d, 3), sig(d * t, 3), sig(d / t * 3.6)],
         s: T`Average speed $= \frac{\text{distance}}{\text{time}} = \frac{${d}}{${t}} = ${QT(v, 'm/s')}$.` };
     },
@@ -361,7 +362,7 @@ ${Tip(T`<p>When a ball bounces back, its velocity changes sign. Bouncing from $+
       return { q: T`What is the momentum of a ${Q(m, 'kg')} object moving at ${Q(v, 'm/s')}?`, a: p, u: 'kg m/s', w: [sig(0.5 * m * v * v, 6), sig(m / v, 4), sig(m * v * v, 6)], s: T`$p = mv = ${M(m)} \cdot ${v} = ${QT(p, 'kg\\,m/s')}$.` };
     },
     () => {
-      const F = ri(2, 50) * 10, dt = pick([0.01, 0.02, 0.05, 0.1, 0.2, 0.5]), J = sig(F * dt, 6);
+      const F = ri(5, 60) * 50, dt = pick([0.002, 0.004, 0.005, 0.008, 0.01, 0.02]), J = sig(F * dt, 6);
       return { q: T`A bat hits a ball with an average force of ${Q(F, 'N')} for ${Q(dt, 's')}. What impulse does it give the ball?`, a: J, u: 'N s', w: [sig(F / dt, 4), sig(F * dt * 10, 4), sig(F * dt / 2, 4)], s: T`$J = F\Delta t = ${F} \cdot ${M(dt)} = ${QT(J, 'N\\,s')}$.` };
     },
     () => {

@@ -164,7 +164,7 @@ mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width:
 .tbl th, .tbl td { border: 1px solid var(--rule); padding: 7px 10px; text-align: start; vertical-align: middle; }
 .tbl thead th, .tbl-q th { background: var(--sunken); font-weight: 700; }
 .tbl-q { min-width: 0; width: auto; } .tbl-q td, .tbl-q th { text-align: center; }
-.fig { margin: 1.4em 0; } .fig svg { width: 100%; max-width: 520px; height: auto; display: block; }
+.fig { margin: 1.4em 0; } .fig > svg { width: 100%; max-width: 520px; height: auto; display: block; }   /* direct child only: MathJax output in a caption is SVG too */
 .fig figcaption { font-size: 0.85rem; color: var(--ink-3); margin-top: 6px; }
 .fig-shape { fill: var(--accent-soft); stroke: var(--ink-2); stroke-width: 1.5; }
 .fig-alpha { fill-opacity: 0.55; }
