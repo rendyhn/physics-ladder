@@ -1,5 +1,7 @@
 # Physics Ladder
 
+<img src="logo.svg" width="96" alt="">
+
 Physics lessons and practice worksheets, topic by topic, from units and motion to electricity, heat and modern physics. Every worksheet is generated fresh when it opens, with worked solutions, an answer key and print-ready pages. English and Bahasa Indonesia.
 
 A companion to [Math Ladder](https://github.com/rendyhn/math-ladder): each topic lists the mathematics it relies on and links straight to it.

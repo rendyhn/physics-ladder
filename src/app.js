@@ -228,6 +228,7 @@ function cleanInput(raw) {
   s = s.normalize('NFKC')                                            // full-width digits and signs from CJK keyboards
     .replace(/[٠-٩]/g, d => d.charCodeAt(0) - 0x660).replace(/[۰-۹]/g, d => d.charCodeAt(0) - 0x6F0)   // Arabic / Persian digits
     .replace(/٫/g, '.').replace(/٬/g, '').replace(/[  ]/g, ' ');
+  if (decComma() && /^-?\d{1,3}(\.\d{3})+(,\d+)?(?!\d)/.test(s)) s = s.replace(/\.(?=\d{3}(?!\d))/g, '');   // 50.000 -> 50000 (dot as thousands separator)
   if (decComma()) s = s.replace(/(\d),(?=\d)/g, '$1.');           // 2,5 -> 2.5
   s = s.replace(/(\d) (?=\d{3}(?!\d))/g, '$1');                    // 3 500 -> 3500 (space as thousands separator)
   s = s.replace(/^[a-z](_?\d)?\s*=\s*/, '');
@@ -410,6 +411,7 @@ function renderHome() {
   main.innerHTML = `
   <section class="hero">
     <div class="hero-copy">
+      <div class="hero-logo" aria-hidden="true"><svg viewBox="0 0 64 64"><rect x='1' y='1' width='62' height='62' rx='14' fill='#141B2B' stroke='#FFFFFF' stroke-opacity='0.14' stroke-width='2'/><ellipse cx='32' cy='32' rx='23' ry='8.6' fill='none' stroke='#34CDB8' stroke-width='3'/><ellipse cx='32' cy='32' rx='23' ry='8.6' fill='none' stroke='#A9B2FF' stroke-width='3' transform='rotate(60 32 32)'/><ellipse cx='32' cy='32' rx='23' ry='8.6' fill='none' stroke='#F58BB0' stroke-width='3' transform='rotate(-60 32 32)'/><circle cx='32' cy='32' r='5.6' fill='#FB8B52'/><circle cx='55' cy='32' r='3.2' fill='#FFFFFF'/></svg></div>
       <p class="eyebrow">${esc(ui('heroEyebrow'))}</p>
       <h1>${esc(ui('heroTitle'))}</h1>
       <p class="lede">${esc(ui('heroLede', ALL.length))}</p>
