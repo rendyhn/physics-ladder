@@ -47,6 +47,7 @@ svg { flex: none; }
 .btn svg, .key-toggle svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 mjx-container { font-size: 104% !important; }
 mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; max-width: 100%; padding-block: 2px; }
+mjx-container.mjx-wide { display: block; overflow-x: auto; overflow-y: hidden; max-width: 100%; padding-block: 2px; margin: 0.35em 0; }   /* a long inline formula on its own scrolling line */
 .fbm { font-family: 'Cambria Math', 'Times New Roman', serif; font-style: italic; white-space: nowrap; }
 .fbm-d { display: block; text-align: center; margin: 0.6em 0; white-space: normal; }
 
@@ -332,7 +333,7 @@ mjx-container { direction: ltr; unicode-bidi: isolate; }
   }
   .site-mark { display: none !important; }
   .print-source { font: 8.5pt var(--f-mono); color: #555; margin: 8px 0 0; }
-  .q-text, .choice-body, .key-ans, .key-sol, .formula, .tbl-wrap, mjx-container[display="true"] { overflow: visible !important; }
+  .q-text, .choice-body, .key-ans, .key-sol, .formula, .tbl-wrap, mjx-container[display="true"], mjx-container.mjx-wide { overflow: visible !important; }
   .fill input::placeholder { color: transparent; }
   mjx-container svg [stroke-width="0"] { stroke: none; }
   :root, :root:not([data-theme="light"]), :root[data-theme="dark"] {

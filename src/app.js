@@ -179,9 +179,20 @@ function texLite(t) {
 function fallbackStr(html) {
   return html.replace(/\$\$([\s\S]+?)\$\$|\$([^$]+?)\$/g, (m, d, i) => `<span class="fbm${d ? ' fbm-d' : ''}">${texLite(d || i)}</span>`);
 }
+/* an inline formula wider than its line cannot wrap: show it on a line of its own that scrolls sideways (phones) */
+function markWide(root) {
+  root.querySelectorAll('mjx-container:not([display="true"])').forEach(m => {
+    if (m.closest('.tbl-wrap')) return;                     // tables already scroll
+    m.classList.remove('mjx-wide');
+    const blk = m.parentElement && m.parentElement.closest('p, li, div, figcaption, dd, label'), box = blk && blk.getBoundingClientRect();
+    if (box && box.width && m.getBoundingClientRect().width > box.width + 1) m.classList.add('mjx-wide');
+  });
+}
+let wideTimer;
+window.addEventListener('resize', () => { clearTimeout(wideTimer); wideTimer = setTimeout(() => { const el = document.getElementById('main'); if (el) markWide(el); }, 150); });
 function typeset(el) {
   if (!el) return;
-  if (mjState === 'ready') mjChain = mjChain.then(() => window.MathJax.typesetPromise([el])).catch(err => console.warn('MathJax:', err));
+  if (mjState === 'ready') mjChain = mjChain.then(() => window.MathJax.typesetPromise([el])).then(() => markWide(el)).catch(err => console.warn('MathJax:', err));
   else if (mjState === 'loading') pending.add(el);
 }
 function setHTML(el, html) {
