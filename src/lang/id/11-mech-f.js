@@ -1,19 +1,5 @@
 /* Bahasa Indonesia — 11-mech-f */
 addT('id', {
-  '132l0ady3rl': R`
-<h3>Massa jenis dan tekanan</h3>
-⟦0⟧
-<p>Massa jenis diukur dalam $\mathrm{kg/m^3}$ (air: $1000\,\mathrm{kg/m^3}$) dan tekanan dalam pascal, $1\,\mathrm{Pa} = 1\,\mathrm{N/m^2}$. Gaya yang sama pada luas yang lebih kecil menghasilkan tekanan yang lebih besar; itulah sebabnya pisau dibuat tajam dan sepatu salju dibuat lebar.</p>
-<h3>Tekanan hidrostatis</h3>
-⟦1⟧
-<p>Tekanan pada kedalaman $h$ adalah tekanan di permukaan $p_0$ (tekanan atmosfer, sekitar $1{,}0 \times 10^{5}\,\mathrm{Pa}$) ditambah berat zat cair di atas setiap meter persegi, $\rho g h$. Tekanan ini hanya bergantung pada kedalaman, bukan pada bentuk wadah, dan bekerja sama besar ke segala arah.</p>
-<h3>Hukum Pascal dan hidraulik</h3>
-<p>Tekanan yang diberikan pada zat cair dalam ruang tertutup diteruskan sama besar ke seluruh bagiannya. Pada pompa hidraulik atau dongkrak mobil, tekanan di bawah kedua pengisap sama, jadi</p>
-⟦2⟧
-<p>Gaya kecil pada pengisap kecil dapat mengangkat beban besar pada pengisap besar.</p>
-⟦3⟧
-⟦4⟧
-⟦5⟧`,
   '20hy5hggcsa': R`<p><b>Hukum Archimedes:</b> benda di dalam fluida mendapat <b>gaya apung</b> ke atas yang sama dengan berat fluida yang dipindahkannya:</p><p>$$F_A = \rho_{\text{fluida}}\, g\, V_{\text{tercelup}}.$$</p><p>Benda yang terapung memindahkan fluida seberat dirinya sendiri, jadi bagian yang tercelup adalah $\dfrac{\rho_{\text{benda}}}{\rho_{\text{fluida}}}$.</p>`,
   '1eqvj8151xy': R`<p>Sebuah batu bervolume $0{,}002\,\mathrm{m^3}$ tercelup seluruhnya di dalam air ($g = 10\,\mathrm{m/s^2}$). Gaya apung: $1000 \cdot 10 \cdot 0{,}002 = 20\,\mathrm{N}$. Jika berat batu di udara $50\,\mathrm{N}$, di dalam air beratnya seolah-olah hanya $50 - 20 = 30\,\mathrm{N}$.</p>`,
   'jxo254idn5': R`<p>Pakai massa jenis <b>fluida</b> pada $F_A = \rho g V$, bukan massa jenis bendanya.</p>`,
@@ -47,18 +33,6 @@ addT('id', {
   '2curpr1mjxp': R`Udara di atas permukaan air menahannya`,
   '1n10nia9hri': R`Tekanan air di permukaan nol`,
   '21em8h1a62o': R`Lambung kapal melingkupi volume yang besar, jadi massa jenis rata-rata kapal (baja ditambah udara) lebih kecil daripada air, dan kapal hanya tenggelam sampai air yang dipindahkannya seberat kapal itu.`,
-  '21hvlad5dmf': R`
-<p>Untuk fluida ideal (tak termampatkan, tanpa gesekan, aliran tunak), dua hukum sederhana menggambarkan geraknya.</p>
-<h3>Debit dan persamaan kontinuitas</h3>
-⟦0⟧
-<p>Debit $Q$ (dalam $\mathrm{m^3/s}$) sama di sepanjang pipa, karena fluida tidak dapat menumpuk di mana pun. Di bagian pipa yang menyempit, fluida mengalir lebih cepat. Itulah sebabnya air menyemprot lebih kencang ketika ujung selang ditutup sebagian dengan ibu jari.</p>
-⟦1⟧
-<h3>Hukum Torricelli</h3>
-<p>Air yang keluar dari lubang pada kedalaman $h$ di bawah permukaan tangki terbuka memiliki kelajuan yang sama dengan benda yang jatuh bebas dari ketinggian itu:</p>
-⟦2⟧
-<h3>Penerapan</h3>
-<ul><li>Sayap pesawat membuat udara mengalir lebih cepat di permukaan atasnya, sehingga tekanan di atas lebih kecil daripada di bawah: timbul gaya angkat.</li><li>Venturimeter mengukur kelajuan aliran dari penurunan tekanan di bagian yang sempit.</li><li>Dua lembar kertas yang didekatkan akan saling mendekat ketika kamu meniup di antara keduanya.</li></ul>
-⟦3⟧`,
   'jfct9zo3fm': R`<p><b>Persamaan Bernoulli</b> (kekekalan energi untuk fluida yang mengalir):</p><p>$$p + \tfrac12 \rho v^2 + \rho g h = \text{tetap sepanjang garis alir}.$$</p><p>Pada pipa mendatar, di bagian yang alirannya lebih cepat tekanannya lebih rendah.</p>`,
   '1tf33n72jde': R`<p>Jika pipa dinyatakan dengan diameternya, luasnya sebanding dengan kuadrat diameter: diameter setengahnya membuat luas empat kali lebih kecil dan kelajuan empat kali lebih besar.</p>`,
   'h7y62084hz': R`Sebuah selang mengalirkan air dengan debit ⟦0⟧. Berapa lama waktu untuk mengisi tangki ⟦1⟧?`,
@@ -86,17 +60,6 @@ addT('id', {
   '1z39d92s5z2': R`kelajuan dan tekanannya sama-sama lebih besar`,
   '1n7mw09tqd0': R`debitnya lebih kecil`,
   'p0onvirn47': R`Kontinuitas membuat air mengalir lebih cepat di bagian yang luasnya lebih kecil, lalu Bernoulli menyatakan tekanannya harus turun. Debitnya tetap sama.`,
-  '1woeplbt7b9': R`
-<h3>Pusat massa</h3>
-<p>Untuk sekumpulan massa titik, <b>pusat massa</b> adalah posisi rata-rata yang diberi bobot massa:</p>
-⟦0⟧
-<p>Pusat massa suatu sistem bergerak seolah-olah seluruh massa terkumpul di sana dan semua gaya luar bekerja padanya: $\Sigma F_{\text{luar}} = M a_{\text{pm}}$. Ketika sebuah peluru meledak di udara, pecahan-pecahannya berhamburan, tetapi pusat massanya tetap mengikuti parabola semula.</p>
-<h3>Momentum sudut</h3>
-⟦1⟧
-<p>Momentum sudut adalah padanan momentum pada gerak rotasi. Momen gaya resultan mengubahnya: $\tau = \dfrac{\Delta L}{\Delta t}$.</p>
-⟦2⟧
-⟦3⟧
-⟦4⟧`,
   'utaagz8jc5': R`L = I\,\omega \qquad \text{(untuk massa titik: } L = m v r\text{)}`,
   '1vqngikji5k': R`<p><b>Hukum kekekalan momentum sudut:</b> jika tidak ada momen gaya luar, $L$ tetap:</p><p>$$I_1 \omega_1 = I_2 \omega_2.$$</p><p>Penari es yang menarik lengannya ke dalam memperkecil $I$, sehingga $\omega$ naik dan ia berputar lebih cepat.</p>`,
   '1t4hircwlm6': R`<p>Seorang penari es berputar $2\,\mathrm{put/s}$ dengan $I = 4\,\mathrm{kg\,m^2}$, lalu menarik lengannya sehingga $I = 1{,}6\,\mathrm{kg\,m^2}$. Maka $\omega_2 = \frac{4 \cdot 2}{1{,}6} = 5\,\mathrm{put/s}$. Energi kinetiknya $\tfrac12 I\omega^2$ naik $2{,}5$ kali; tambahan energinya berasal dari usaha otot-ototnya.</p>`,

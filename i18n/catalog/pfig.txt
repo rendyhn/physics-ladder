@@ -1,0 +1,241 @@
+##### core
+@12vufoyzvkf
+precise
+@jtvc8ire6n
+accurate
+@6uehs980g1
+not accurate
+@j162ed7mr5
+not precise
+@d7u1kp20zf
+Four targets showing accurate and precise, precise but not accurate, accurate but not precise, and neither
+@71hx5npkqn
+Two ticker tapes: equal gaps for constant velocity and growing gaps for speeding up
+@f5b2ppyxps
+constant velocity: equal gaps
+@21fbernmd8y
+speeding up: growing gaps
+@29hh3k98dmu
+Positions of a dropped ball every second: 0, 5, 20, 45 and 80 metres below the start
+@rav3jgtyo0
+Ball on a string in a vertical circle: at the top tension and weight both point down, at the bottom tension points up and weight down
+@24iu7z6wy7w
+Two blocks pushing on each other with equal and opposite forces
+@ox41d4vu4e
+A on B
+@1whfaf7d1r
+B on A
+@1cuuue0vvvc
+A box pulled by a rope at 30 degrees; only the horizontal component F cos theta does work along the floor
+@1t67qkkdkpz
+Before: a 2 kg cart at 6 m/s moves towards a 1 kg cart at rest. After: they move together at 4 m/s
+@n44dld9jmf
+before
+@je85qvhtch
+after
+@m09gqn5e56
+A spanner turned about a bolt: the force F at angle theta to the handle, a distance r from the axis
+@1rpxmggepx0
+axis
+@1vtbloqjnr7
+falls back
+@90rizt3cqh
+topples
+@1196zvtc649
+Two tilted boxes: when the vertical line through the centre of gravity stays over the base the box falls back; when it passes outside, the box topples
+@hhh1re5p62
+A satellite of mass m in a circular orbit of radius r around a planet of mass M; gravity points to the centre and the velocity along the tangent
+@2dcghahmm3g
+A single spring, two springs in parallel and two springs in series, each holding a load
+@w48fc8x78m
+single: k
+@jew35car1h
+parallel: k₁ + k₂
+@1vqsvq53670
+series: softer
+@1g3kcl02ngt
+A tank of water with arrows on the wall that grow longer with depth, showing that pressure increases with depth
+@20lwhusqhbk
+higher pressure
+@f3q9vu1yjk
+Hydraulic press: a small force on a small piston produces a large force on a large piston
+@2cm2xw0ri9p
+load
+@21nyk8m96f4
+A stone under water: its weight acts down and the buoyant force acts up
+@1ccmrqxwuvs
+A pipe that narrows: the fluid moves faster in the narrow part and the pressure there is lower, shown by the lower column in the gauge tube
+@v5hqfbx5n4
+higher p
+@jlerrcby96
+lower p
+@1ufi7flanbm
+Water leaving a hole at depth h below the surface of an open tank, with speed root 2gh
+@um5s63y773
+A 2 kg mass and a 1 kg mass 3 m apart on a light rod; the centre of mass is 1 m from the heavier mass
+@yjev2pjez8
+centre of mass
+@1aj3ickeqff
+A mass on a spring oscillating between minus A and plus A, and a pendulum swinging about its lowest point
+@16hhify4is7
+oscillates
+@1j51kyl8y1p
+pendulum
+@2g4q36xsf8t
+A longitudinal wave: bunched-up regions (compressions) and spread-out regions (rarefactions) along the direction of travel
+@2wu4du54ak
+travel
+@1dl456qy249
+Wavefronts from a moving source are squeezed together in front of it and stretched out behind it
+@1jgfzjvegc
+higher f
+@sr6l8mw2t1
+lower f
+@2e2uggj4co7
+Celsius, kelvin and Fahrenheit thermometers with the boiling and freezing points of water marked
+@1lj9b26v2ob
+water boils
+@1xd57rhx2n5
+water freezes
+@1pnu3sw05mr
+Heat engine: heat from the hot source, part turned into work, the rest rejected to the cold sink
+@13oh3fvxizo
+hot source
+@ay0ty3ogqo
+cold sink
+@hkowm32pt
+engine
+@1hr8mw8d6x1
+Conduction along a metal rod, convection currents in a heated pan of water, and radiation from the Sun
+@26dy7ims9zg
+conduction
+@2c3fqocjfz8
+convection
+@lhwvqty77e
+radiation
+@nku2fz78if
+Electric field lines: pointing outward from a positive charge, curving from positive to negative for a pair, and straight and evenly spaced between charged plates
+@5i8utsntfl
+A parallel-plate capacitor: charges +Q and −Q on plates a distance d apart with a uniform field between them
+@176t20216lq
+Left: magnetic field circles around a wire carrying current into the page. Right: a positive charge moving in a circle in a field pointing out of the page
+@8v41s37teh
+current into page
+@elh7q2l520
+B out of page
+@18dbef77j68
+A rod sliding at speed v along two rails in a magnetic field into the page, with a resistor joining the rails
+@f9tnui3sga
+B into page
+@573rg6t9fd
+A transformer: primary coil with few turns and secondary coil with more turns on a shared iron core
+@1mirz7zf8si
+iron core
+@7kefr80vmo
+An electromagnetic wave: electric and magnetic fields oscillate at right angles to each other and to the direction of travel
+@6zumy96um3
+radio
+@29dvn7pbxuk
+micro
+@p8y0yqvd3i
+infrared
+@1pmxtafyazx
+X-rays
+@hq4u9elubm
+The electromagnetic spectrum from radio waves to gamma rays on a scale of wavelength, with the narrow visible band
+@aho590qdl
+visible light
+@1w7vqnowhdu
+longer wavelength, lower frequency
+@290503g358w
+shorter wavelength, more energy
+@gqq8ipryz3
+Law of reflection: the incident ray and the reflected ray make equal angles with the normal
+@2gcw8nbq1wl
+normal
+@19z76dzltim
+mirror
+@m287pemmfo
+Plane mirror: the image is as far behind the mirror as the object is in front
+@22cgndj55f4
+object
+@1wzro8a5tao
+image
+@23wp9tccuu
+Three rays from glass to air: below the critical angle the ray refracts out, at the critical angle it runs along the surface, beyond it the light is totally reflected
+@242gqtld3d4
+air
+@15qut058har
+glass
+@5u7sc2r2ih
+refracted
+@12qb3nni1ki
+critical angle
+@yagoucwk6q
+totally reflected
+@13eqycmbq2v
+Normal eye: parallel rays focus on the retina
+@19lgqa2109z
+Short-sighted eye: parallel rays focus in front of the retina
+@14u2h38zqtk
+A diverging lens spreads the rays so they focus on the retina
+@234v001jcfb
+retina
+@1ejgq67dgiz
+Refracting telescope: a long-focus objective and a short-focus eyepiece separated by the sum of their focal lengths
+@1uzm8wa0ul4
+objective
+@1kdt8ddpi53
+eyepiece
+@1t5kve4v6rd
+Light clock: at rest the light goes straight up and down; seen moving, it travels a longer zigzag path, so each tick takes longer
+@2ci3kdwh5cf
+clock at rest
+@2fi2rh0fz37
+moving clock
+@1a9vpamyza3
+A photon of energy hf hits a metal surface and knocks out an electron
+@1x2n3s3pprw
+metal
+@59noi6ree1
+Gold-foil experiment: most alpha particles pass straight through the atom, a few are deflected and very few bounce back from the tiny nucleus
+@17devtqz4j1
+nucleus (not to scale)
+@1q9b1ffez41
+Visible line spectrum of hydrogen with lines at 656, 486, 434 and 410 nanometres
+@eh72o0x7nv
+Alpha is stopped by paper, beta by a few millimetres of aluminium, and gamma is only reduced by thick lead
+@3ux99rswho
+paper
+@29s3flj4o7q
+aluminium
+@1v3xbr4l41i
+lead
+@1l002se04aq
+Chain reaction: a neutron splits uranium-235 into two fragments and releases more neutrons, which split further nuclei
+@1hgb6n91ozq
+… and so on
+@ue2mzd3qgh
+Greenhouse effect: sunlight passes through the atmosphere, the ground emits infrared, and greenhouse gases absorb and re-emit part of it back down
+@1ut5tbthoof
+greenhouse gases
+@19u4p3nyfv3
+sunlight
+@239fr0slyd7
+some IR escapes
+@1jp2mb0mq7i
+absorbed and re-emitted
+@6fvlyf6bxl
+ground
+@22hhm49t7xo
+Energy bands: in a conductor the bands overlap, a semiconductor has a small gap and an insulator a large gap
+@ggkdh5auvg
+conductor
+@1iuse023suq
+semiconductor
+@ow1oicqqit
+insulator
+@hv31pdtshr
+conduction band
+@1vko0libqfr
+valence band

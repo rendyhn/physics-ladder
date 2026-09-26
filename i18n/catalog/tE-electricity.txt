@@ -3,7 +3,7 @@
 A circuit diagram with a battery and resistors
 
 ##### electrostatics
-@1cqh2ekaykl  ; 0=Fm(T`F = \frac{k\,q_1 q_2}{r^2}, \qquad  | 1=Key(T`<p>The <b>electric field</b> $E$ a | 2=Ex(T`<p>Two charges of $+2\,\mu\mathrm{C | 3=Tip(T`<p>Convert $\mu\mathrm{C}$ to C an
+@2fb6t3vjybf  ; 0=Fm(T`F = \frac{k\,q_1 q_2}{r^2}, \qquad  | 1=Key(T`<p>The <b>electric field</b> $E$ a | 2=Ex(T`<p>Two charges of $+2\,\mu\mathrm{C | 3=FigW(fieldLinesSvg(), T`Field lines leav | 4=Tip(T`<p>Convert $\mu\mathrm{C}$ to C an
 
 <p>Electric charge comes in two kinds, positive and negative. Like charges repel and unlike charges attract. Charge is <b>conserved</b> and comes in whole multiples of the elementary charge $e = 1.6 \times 10^{-19}\,\mathrm{C}$. Rubbing a balloon on hair moves electrons from one to the other; nothing is created.</p>
 <h3>Coulomb's law</h3>
@@ -14,12 +14,15 @@ A circuit diagram with a battery and resistors
 <h3>Field lines</h3>
 <p>Field lines start on positive charges and end on negative ones. Where they crowd together the field is strong. Between two parallel oppositely charged plates the lines are straight and evenly spaced: the field is uniform.</p>
 ⟦3⟧
+⟦4⟧
 @17czmrvz2a5
 F = \frac{k\,q_1 q_2}{r^2}, \qquad k = 9.0 \times 10^{9}\,\mathrm{N\,m^2/C^2}
 @1k6chdh24ja
 <p>The <b>electric field</b> $E$ at a point is the force per unit positive charge placed there:</p><p>$$E = \frac{F}{q}, \qquad \text{for a point charge } Q: \; E = \frac{kQ}{r^2}.$$</p><p>Its unit is $\mathrm{N/C}$. The field points away from positive charges and towards negative ones. Fields from several charges add as vectors.</p>
 @5tl2skb9q3
 <p>Two charges of $+2\,\mu\mathrm{C}$ and $+3\,\mu\mathrm{C}$ are $0.3\,\mathrm{m}$ apart. $F = \frac{9 \times 10^{9} \cdot 2 \times 10^{-6} \cdot 3 \times 10^{-6}}{0.3^2} = 0.6\,\mathrm{N}$, repulsive.</p>
+@tx5ulg2tpb
+Field lines leave positive charges and end on negative ones. Between parallel plates the field is uniform.
 @1c310i3gx3k
 <p>Convert $\mu\mathrm{C}$ to C and cm to m before using Coulomb's law. Forgetting the $10^{-6}$ is the most common slip.</p>
 @m0b0xq94ad  ; 0=Q(q1, 'µC') | 1=Q(q2, 'µC') | 2=Q(r * 100, 'cm')
@@ -70,7 +73,7 @@ There is no field near a negative charge
 The field direction is the direction of the force on a positive test charge, which is attracted towards the negative charge.
 
 ##### capacitors
-@2ay2wqyhlpw  ; 0=Fm(T`W = qV`) | 1=Key(T`<p>A <b>capacitor</b> stores charg | 2=Tip(T`<p>Capacitors combine the opposite
+@18q0bd1e6pk  ; 0=Fm(T`W = qV`) | 1=Key(T`<p>A <b>capacitor</b> stores charg | 2=Fig(capacitorSvg(), T`A parallel-plate c | 3=Fig(planeSvg({ W: 320, H: 200, x: [0, 6] | 4=Tip(T`<p>Capacitors combine the opposite
 
 <h3>Potential and potential difference</h3>
 <p>The <b>electric potential</b> at a point is the potential energy per unit charge there, measured in volts ($1\,\mathrm{V} = 1\,\mathrm{J/C}$). Moving a charge $q$ through a potential difference $V$ changes its energy by</p>
@@ -78,14 +81,24 @@ The field direction is the direction of the force on a positive test charge, whi
 <p>Near a point charge, $V = \dfrac{kQ}{r}$. Between two parallel plates a distance $d$ apart with potential difference $V$, the field is uniform: $E = \dfrac{V}{d}$ (so $\mathrm{V/m}$ is the same unit as $\mathrm{N/C}$).</p>
 <p>An electron accelerated through $1\,\mathrm{V}$ gains $1\,\mathrm{eV} = 1.6 \times 10^{-19}\,\mathrm{J}$ of energy, the <b>electronvolt</b>.</p>
 ⟦1⟧
+⟦2⟧
 <h3>Combining capacitors</h3>
 <ul><li><b>Parallel:</b> $C = C_1 + C_2 + \dots$ (the opposite of resistors).</li><li><b>Series:</b> $\dfrac{1}{C} = \dfrac{1}{C_1} + \dfrac{1}{C_2} + \dots$</li></ul>
 <p>Capacitance is measured in farads (F); practical values are microfarads ($\mu\mathrm{F}$), nanofarads (nF) or picofarads (pF). Camera flashes and defibrillators store energy in capacitors and release it in a fraction of a second.</p>
-⟦2⟧
+⟦3⟧
+⟦4⟧
 @1l9b5cydr9n
 W = qV
 @185hljrdzfk
 <p>A <b>capacitor</b> stores charge on two conductors separated by an insulator. Its <b>capacitance</b> is the charge stored per volt:</p><p>$$C = \frac{Q}{V} \qquad \text{parallel plates: } C = \frac{\varepsilon_0 A}{d}, \; \varepsilon_0 = 8.85 \times 10^{-12}\,\mathrm{F/m}$$</p><p>The stored energy is $E = \tfrac12 C V^2 = \tfrac12 Q V$.</p>
+@1lsf6xk4bxo
+A parallel-plate capacitor: equal and opposite charges on the plates and a uniform field $E = V/d$ between them.
+@1f21xuuoj2a
+slope = C
+@2bv04crxebx
+Charge against voltage for a capacitor: a straight line of slope C; the triangle under it is the stored energy
+@reh6s5apzs
+$Q$ is proportional to $V$ (slope $C$). The area under the line is the stored energy, $E = \tfrac12 QV = \tfrac12 CV^2$.
 @86is7o3swu
 <p>Capacitors combine the opposite way to resistors: in parallel they simply add.</p>
 @lbscz9bi0y  ; 0=Q(q, 'µC') | 1=Q(V, 'V')
@@ -116,7 +129,7 @@ In parallel capacitances add: $⟦0⟧ + ⟦1⟧ = ⟦2⟧$.
 In series: $\frac{1}{C} = \frac{1}{⟦0⟧} + \frac{1}{⟦1⟧}$, so $C = \frac{⟦2⟧ \cdot ⟦3⟧}{⟦4⟧ + ⟦5⟧} = ⟦6⟧$.
 
 ##### current-ohm
-@1tctsbl174k  ; 0=Fm(T`I = \frac{Q}{t}`) | 1=Key(T`<p><b>Ohm's law:</b> for a metal c | 2=Fm(T`R = \rho\,\frac{L}{A}`) | 3=Fm(T`P = V I = I^2 R = \frac{V^2}{R} \qq | 4=Ex(T`<p>A kettle is rated $2000\,\mathrm | 5=Tip(T`<p>Convert areas in $\mathrm{mm^2}
+@yjvzdzkhz  ; 0=Fm(T`I = \frac{Q}{t}`) | 1=Key(T`<p><b>Ohm's law:</b> for a metal c | 2=FigRow([[planeSvg({ W: 250, H: 190, x: [ | 3=Fm(T`R = \rho\,\frac{L}{A}`) | 4=Fm(T`P = V I = I^2 R = \frac{V^2}{R} \qq | 5=Ex(T`<p>A kettle is rated $2000\,\mathrm | 6=Tip(T`<p>Convert areas in $\mathrm{mm^2}
 
 <p>An electric <b>current</b> is a flow of charge. In metal wires the moving charges are electrons, each carrying $e = 1.6 \times 10^{-19}\,\mathrm{C}$ (coulomb).</p>
 ⟦0⟧
@@ -124,17 +137,28 @@ In series: $\frac{1}{C} = \frac{1}{⟦0⟧} + \frac{1}{⟦1⟧}$, so $C = \frac{
 <h3>Potential difference and resistance</h3>
 <p>The <b>potential difference</b> (voltage) $V$ between two points is the energy given to or taken from each coulomb of charge: $1\,\mathrm{V} = 1\,\mathrm{J/C}$. The <b>resistance</b> $R$ of a component tells us how much voltage is needed to push a current through it.</p>
 ⟦1⟧
+⟦2⟧
 <h3>Resistivity</h3>
 <p>A wire's resistance depends on its material, length $L$ and cross-sectional area $A$:</p>
-⟦2⟧
+⟦3⟧
 <p>$\rho$ is the <b>resistivity</b> of the material in $\Omega\,\mathrm{m}$ (copper: $1.7 \times 10^{-8}\,\Omega\,\mathrm{m}$). A longer wire has more resistance; a thicker one has less.</p>
 <h3>Electrical power and energy</h3>
-⟦3⟧
-<p>Electricity bills use the <b>kilowatt-hour</b>: $1\,\mathrm{kWh}$ is the energy used by a $1\,\mathrm{kW}$ appliance in one hour, $3.6 \times 10^{6}\,\mathrm{J}$.</p>
 ⟦4⟧
+<p>Electricity bills use the <b>kilowatt-hour</b>: $1\,\mathrm{kWh}$ is the energy used by a $1\,\mathrm{kW}$ appliance in one hour, $3.6 \times 10^{6}\,\mathrm{J}$.</p>
 ⟦5⟧
+⟦6⟧
 @oimy8jns8d
 <p><b>Ohm's law:</b> for a metal conductor at constant temperature the current is proportional to the voltage:</p><p>$$V = I\,R$$</p><p>Resistance is measured in ohms: $1\,\Omega = 1\,\mathrm{V/A}$.</p>
+@895m3t7bu5
+Current against voltage for a resistor: a straight line through the origin
+@1itdr9583qv
+resistor (ohmic): straight line
+@20ke3cxvu0x
+Current against voltage for a filament lamp: a curve that flattens as the filament heats up
+@1ov8l7irhex
+filament lamp: curve flattens
+@frhopaz42d
+For an ohmic conductor $I \propto V$. A lamp filament heats up, so its resistance rises and the graph bends over.
 @th33vhvuaq
 <p>A kettle is rated $2000\,\mathrm{W}$ at $220\,\mathrm{V}$. Current: $I = P/V = 2000/220 \approx 9.1\,\mathrm{A}$. Used for $15$ minutes a day for $30$ days: $2\,\mathrm{kW} \times 0.25\,\mathrm{h} \times 30 = 15\,\mathrm{kWh}$.</p>
 @2dchhuclfv
@@ -181,7 +205,7 @@ The current halves and the power doubles
 $I = V/R$, so doubling $V$ doubles $I$. $P = V^2/R$, so doubling $V$ multiplies $P$ by $2^2 = 4$.
 
 ##### dc-circuits
-@te90xpu5gv  ; 0=Fig(circuitSvg('series', ['R₁', 'R₂', 'R | 1=Fig(circuitSvg('parallel', ['R₁', 'R₂',  | 2=Key(T`<p>For a mixed circuit, replace ea | 3=Ex(T`<p>$R_1 = 4\,\Omega$ in series with | 4=Fm(T`I = \frac{\varepsilon}{R + r} \qqua | 5=Tip(T`<p><b>Kirchhoff's rules</b> summar
+@8mmnfpfzvl  ; 0=Fig(circuitSvg('series', ['R₁', 'R₂', 'R | 1=Fig(circuitSvg('parallel', ['R₁', 'R₂',  | 2=Key(T`<p>For a mixed circuit, replace ea | 3=Ex(T`<p>$R_1 = 4\,\Omega$ in series with | 4=Fm(T`I = \frac{\varepsilon}{R + r} \qqua | 5=Fig(planeSvg({ W: 320, H: 200, x: [0, 6. | 6=Tip(T`<p><b>Kirchhoff's rules</b> summar
 
 <p>A circuit is a closed loop through which charge can flow. The same two rules decide everything in a circuit of resistors.</p>
 <h3>Series</h3>
@@ -197,6 +221,7 @@ $I = V/R$, so doubling $V$ doubles $I$. $P = V^2/R$, so doubling $V$ multiplies 
 <p>A real battery has an <b>electromotive force</b> $\varepsilon$ (the energy it gives each coulomb) and a small <b>internal resistance</b> $r$. With an external resistance $R$:</p>
 ⟦4⟧
 ⟦5⟧
+⟦6⟧
 @1znip64d7e6
 Three resistors in series: one path for the current.
 @1fagoc02t7p
@@ -207,6 +232,12 @@ Three resistors in parallel: the current splits between the branches.
 <p>$R_1 = 4\,\Omega$ in series with $R_2 = 6\,\Omega$ and $R_3 = 3\,\Omega$ in parallel, on a $12\,\mathrm{V}$ battery. $R_{23} = \frac{6 \cdot 3}{9} = 2\,\Omega$, total $6\,\Omega$, so $I = 2\,\mathrm{A}$. $V_1 = 8\,\mathrm{V}$, and the parallel pair gets $4\,\mathrm{V}$: $I_2 = \frac{4}{6} \approx 0.67\,\mathrm{A}$, $I_3 = \frac{4}{3} \approx 1.33\,\mathrm{A}$.</p>
 @84ftgywrj7
 I = \frac{\varepsilon}{R + r} \qquad V_{\text{terminal}} = \varepsilon - I r
+@2bzezmwe086
+slope = −r
+@1s4mjhbf6l0
+Terminal voltage falling linearly with current for a 12 volt battery with 2 ohm internal resistance
+@abj5q7tfeo
+Terminal voltage $V = \varepsilon - Ir$ for $\varepsilon = 12\,\mathrm{V}$, $r = 2\,\Omega$: it equals the EMF only when no current flows.
 @12082awfh82
 <p><b>Kirchhoff's rules</b> summarise all of this: the currents into a junction equal the currents out, and around any closed loop the voltage rises equal the voltage drops.</p>
 @yf6oo2fbh9  ; 0=Q(V, 'V') | 1=listF(Rs.map(r => r + ' Ω'))
@@ -271,18 +302,21 @@ Only the new lamp is dim
 The total resistance goes up, so the current through every lamp goes down, and $P = I^2 R$ for each lamp falls.
 
 ##### magnetism
-@2d2i19q5ocd  ; 0=Key(T`<p>A magnetic field pushes on movi | 1=Fm(T`r = \frac{m v}{q B}`) | 2=Tip(T`<p>The magnetic force never speeds
+@h7xy033e7  ; 0=FigW(wireFieldSvg(), T`Left: circular fi | 1=Key(T`<p>A magnetic field pushes on movi | 2=Fm(T`r = \frac{m v}{q B}`) | 3=Tip(T`<p>The magnetic force never speeds
 
 <p>Magnets and electric currents both produce <b>magnetic fields</b>, measured in tesla (T). The Earth's field is about $5 \times 10^{-5}\,\mathrm{T}$; a fridge magnet about $0.01\,\mathrm{T}$.</p>
 <h3>Fields made by currents</h3>
 <ul><li>Around a long straight wire the field lines are circles: $B = \dfrac{\mu_0 I}{2\pi r}$.</li><li>Inside a long solenoid with $n$ turns per metre the field is uniform: $B = \mu_0 n I$.</li></ul>
 <p>Here $\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$. Curl the fingers of your right hand around the wire with the thumb along the current: the fingers show the field direction.</p>
 ⟦0⟧
+⟦1⟧
 <h3>Charged particles in a field</h3>
 <p>A charge moving at right angles to a uniform field feels a force perpendicular to its velocity, so it moves in a circle. Setting $qvB = \dfrac{m v^2}{r}$ gives the radius</p>
-⟦1⟧
-<p>This is how mass spectrometers sort ions and how particle accelerators steer beams. Electric motors use the force on current-carrying wires.</p>
 ⟦2⟧
+<p>This is how mass spectrometers sort ions and how particle accelerators steer beams. Electric motors use the force on current-carrying wires.</p>
+⟦3⟧
+@23o2s0b5rb6
+Left: circular field lines around a straight current (right-hand grip rule). Right: in a uniform field the magnetic force is always perpendicular to the velocity, so the charge moves in a circle.
 @15d7zgjyh76
 <p>A magnetic field pushes on moving charges (the <b>Lorentz force</b>):</p><p>$$\text{on a wire: } F = B I L \sin\theta \qquad \text{on a charge: } F = q v B \sin\theta$$</p><p>$\theta$ is the angle between the current (or velocity) and the field. The force is perpendicular to both, and zero when they are parallel.</p>
 @1xiuaep425p
@@ -337,7 +371,7 @@ It changes neither speed nor direction
 The force is always perpendicular to the velocity, so it does no work. The speed stays the same while the path curves into a circle.
 
 ##### induction
-@22d5m88u78o  ; 0=Fm(T`\Phi = B A \cos\theta`) | 1=Key(T`<p><b>Faraday's law:</b> the EMF i | 2=Fm(T`\frac{V_s}{V_p} = \frac{N_s}{N_p} \ | 3=Tip(T`<p>A transformer works only with a
+@u2g9mni8vb  ; 0=Fm(T`\Phi = B A \cos\theta`) | 1=Key(T`<p><b>Faraday's law:</b> the EMF i | 2=Fig(railsSvg(), T`As the rod slides it s | 3=Fm(T`\frac{V_s}{V_p} = \frac{N_s}{N_p} \ | 4=Fig(transformerSvg(), T`A step-up transf | 5=Tip(T`<p>A transformer works only with a
 
 <p>A changing magnetic field can drive a current. This is <b>electromagnetic induction</b>, discovered by Faraday in 1831, and it is how almost all of our electricity is generated.</p>
 <h3>Magnetic flux</h3>
@@ -346,15 +380,21 @@ The force is always perpendicular to the velocity, so it does no work. The speed
 ⟦1⟧
 <h3>A moving rod</h3>
 <p>A rod of length $L$ moving at speed $v$ at right angles to a field $B$ sweeps through flux, and an EMF $\varepsilon = B L v$ appears between its ends.</p>
+⟦2⟧
 <h3>Generators and transformers</h3>
 <p>A generator turns a coil in a magnetic field, producing an alternating EMF. A <b>transformer</b> uses a changing current in one coil to induce an EMF in another wound on the same iron core:</p>
-⟦2⟧
-<p>Power is sent across the country at very high voltage: for the same power the current is small, so the heating loss in the cables, $P = I^2 R$, is small too.</p>
 ⟦3⟧
+⟦4⟧
+<p>Power is sent across the country at very high voltage: for the same power the current is small, so the heating loss in the cables, $P = I^2 R$, is small too.</p>
+⟦5⟧
 @2ea3ecpuvs2
 <p><b>Faraday's law:</b> the EMF induced in a coil of $N$ turns equals the rate of change of flux linkage:</p><p>$$\varepsilon = -N\frac{\Delta \Phi}{\Delta t}.$$</p><p><b>Lenz's law</b> (the minus sign): the induced current flows so as to oppose the change that causes it.</p>
+@eol51idnox
+As the rod slides it sweeps through magnetic flux, so an EMF $\varepsilon = BLv$ drives a current round the circuit.
 @1kmpv0qnsr6
 \frac{V_s}{V_p} = \frac{N_s}{N_p} \qquad \text{ideal: } V_p I_p = V_s I_s
+@1xzy4tatnny
+A step-up transformer: twice as many turns on the secondary gives twice the voltage (and half the current).
 @23yc30r4bok
 <p>A transformer works only with alternating current. A steady direct current gives no changing flux, so nothing is induced.</p>
 @k6dk3lag86  ; 0=Q(a, 'cm') | 1=Q(B, 'T') | 2=Q(th, '°')
@@ -397,21 +437,35 @@ is zero, because the magnet is not touching the coil
 The induced current opposes the change causing it: the coil pushes back on the approaching north pole by forming a north pole of its own. The work done against this push becomes electrical energy.
 
 ##### ac
-@y5gumibg5a  ; 0=Key(T`<p>Inductors and capacitors oppose | 1=Fm(T`f_0 = \frac{1}{2\pi\sqrt{LC}}`) | 2=Tip(T`<p>An inductor passes low frequenc
+@2cb2bsytx0b  ; 0=FigW(planeSvg({ W: 540, H: 230, x: [0, 4 | 1=Key(T`<p>Inductors and capacitors oppose | 2=Fm(T`f_0 = \frac{1}{2\pi\sqrt{LC}}`) | 3=Fig(planeSvg({ W: 340, H: 200, x: [0, 3. | 4=Tip(T`<p>An inductor passes low frequenc
 
 <p>Mains electricity is <b>alternating current</b>: the voltage swings back and forth sinusoidally, $V = V_0 \sin(\omega t)$ with $\omega = 2\pi f$. In Indonesia the frequency is $50\,\mathrm{Hz}$.</p>
 <h3>RMS values</h3>
 <p>The <b>root-mean-square</b> (rms) value is the steady DC value that would give the same heating: $V_{\text{rms}} = \dfrac{V_0}{\sqrt2}$ and $I_{\text{rms}} = \dfrac{I_0}{\sqrt2}$. When mains is described as $220\,\mathrm{V}$ this is the rms value; the peak is $220\sqrt2 \approx 311\,\mathrm{V}$. The average power in a resistor is $P = I_{\text{rms}}^2 R = V_{\text{rms}} I_{\text{rms}}$.</p>
 ⟦0⟧
+⟦1⟧
 <h3>Resonance</h3>
 <p>When $X_L = X_C$, the impedance is smallest ($Z = R$) and the current largest. This happens at the <b>resonant frequency</b></p>
-⟦1⟧
-<p>Radios select one station by tuning an LC circuit to resonate at its frequency.</p>
 ⟦2⟧
+⟦3⟧
+<p>Radios select one station by tuning an LC circuit to resonate at its frequency.</p>
+⟦4⟧
+@mrr4o094cy
+rms 220 V
+@rmzwb4xm6b
+peak 311 V
+@1lt345ieyot
+Mains voltage in Indonesia: a 50 hertz sine wave with peak 311 volts and rms 220 volts
+@1sc5gm2cch0
+Indonesian mains: $V_{\text{rms}} = 220\,\mathrm{V}$ at $50\,\mathrm{Hz}$, so the peak is $220\sqrt2 \approx 311\,\mathrm{V}$ and one cycle takes $20\,\mathrm{ms}$.
 @24cuq7xxpts
 <p>Inductors and capacitors oppose AC with a <b>reactance</b> (in ohms) that depends on the frequency:</p><p>$$X_L = \omega L = 2\pi f L \qquad X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}$$</p><p>In a series RLC circuit the <b>impedance</b> is $Z = \sqrt{R^2 + (X_L - X_C)^2}$ and $I = V/Z$.</p>
 @yavzaa7kh1
 f_0 = \frac{1}{2\pi\sqrt{LC}}
+@1o53t724cus
+Resonance curve: the current peaks sharply at the resonant frequency
+@gx96nnc380
+The current in an LCR circuit peaks at the resonant frequency $f_0$, where $X_L = X_C$.
 @qjvaxdjfgn
 <p>An inductor passes low frequencies easily and blocks high ones; a capacitor does the opposite.</p>
 @vxzrwkqo76  ; 0=Q(Vr, 'V')
@@ -458,15 +512,19 @@ It becomes zero
 $X_C = \frac{1}{2\pi f C}$ falls as $f$ rises, so for the same voltage more current flows. (For an inductor the opposite happens.)
 
 ##### em-waves
-@9izp365vqi  ; 0=Fm(T`c = f\lambda`) | 1=Tbl([T`Type`, T`Typical wavelength`, T`U | 2=Key(T`<p><b>Polarisation</b> shows that  | 3=Tip(T`<p>1 nanometre is $10^{-9}\,\mathr
+@xwfzlqslwo  ; 0=Fm(T`c = f\lambda`) | 1=FigW(emWaveSvg(), T`In an EM wave the el | 2=Tbl([T`Type`, T`Typical wavelength`, T`U | 3=FigW(spectrumSvg(), T`The electromagneti | 4=Key(T`<p><b>Polarisation</b> shows that  | 5=Tip(T`<p>1 nanometre is $10^{-9}\,\mathr
 
 <p>Changing electric and magnetic fields create each other and travel together through space as an <b>electromagnetic (EM) wave</b>. EM waves are transverse, need no medium, and in a vacuum all travel at the speed of light, $c = 3.0 \times 10^{8}\,\mathrm{m/s}$.</p>
 ⟦0⟧
-<h3>The electromagnetic spectrum</h3>
 ⟦1⟧
-<p>From radio to gamma rays the wavelength gets shorter and the frequency higher. Higher frequency also means more energy carried by each photon, which is why ultraviolet, X-rays and gamma rays can damage living cells.</p>
+<h3>The electromagnetic spectrum</h3>
 ⟦2⟧
 ⟦3⟧
+<p>From radio to gamma rays the wavelength gets shorter and the frequency higher. Higher frequency also means more energy carried by each photon, which is why ultraviolet, X-rays and gamma rays can damage living cells.</p>
+⟦4⟧
+⟦5⟧
+@2ddxseetjnq
+In an EM wave the electric field $E$ and magnetic field $B$ oscillate in step, at right angles to each other and to the direction of travel.
 @k7wfdtk1dy
 Type
 @1aruppbi3k2
@@ -503,8 +561,6 @@ Ultraviolet
 10–400 nm
 @1k5rc04s08b
 sterilising, fluorescence; causes sunburn
-@1pmxtafyazx
-X-rays
 @12h3ova35jm
 about 0.01–10 nm
 @1vebyz2yqxd
@@ -515,6 +571,8 @@ Gamma rays
 below about 0.01 nm
 @1at5hnehda9
 cancer treatment, sterilising equipment
+@pnov4h3lro
+The electromagnetic spectrum on a wavelength scale (each tick is a factor of 1,000). Visible light, 400–700 nm, is a tiny slice (ranges as used by NASA).
 @160b38lwc4i
 <p><b>Polarisation</b> shows that EM waves are transverse. A polarising filter lets through only the part of the wave oscillating in one direction. For polarised light of intensity $I_0$ falling on a filter at angle $\theta$ to its direction of polarisation (Malus's law):</p><p>$$I = I_0 \cos^2\theta.$$</p><p>Unpolarised light loses half its intensity at the first filter.</p>
 @15uelhhpvsd
@@ -553,10 +611,6 @@ Malus's law: $I = I_0\cos^2\theta = ⟦0⟧ \cos^2 ⟦1⟧^\circ = ⟦2⟧$.
 radio waves
 @9asaykptj6
 microwaves
-@p8y0yqvd3i
-infrared
-@aho590qdl
-visible light
 @2gjunky6i8
 ultraviolet
 @h61of69pr0

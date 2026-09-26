@@ -1,18 +1,5 @@
 /* Bahasa Indonesia — 15-elec-c */
 addT('id', {
-  '22d5m88u78o': R`
-<p>Medan magnet yang berubah dapat membangkitkan arus. Inilah <b>induksi elektromagnetik</b>, yang ditemukan Faraday pada tahun 1831, dan dengan cara inilah hampir semua listrik kita dibangkitkan.</p>
-<h3>Fluks magnetik</h3>
-⟦0⟧
-<p>Fluks (dalam weber, $\mathrm{Wb}$) menyatakan seberapa banyak medan magnet yang menembus kumparan seluas $A$; $\theta$ adalah sudut antara medan dan garis normal bidang kumparan.</p>
-⟦1⟧
-<h3>Batang yang bergerak</h3>
-<p>Batang sepanjang $L$ yang bergerak dengan kelajuan $v$ tegak lurus medan $B$ menyapu fluks, sehingga timbul GGL $\varepsilon = B L v$ di antara kedua ujungnya.</p>
-<h3>Generator dan transformator</h3>
-<p>Generator memutar kumparan di dalam medan magnet sehingga menghasilkan GGL bolak-balik. <b>Transformator</b> memakai arus yang berubah pada satu kumparan untuk menginduksi GGL pada kumparan lain yang dililitkan pada inti besi yang sama:</p>
-⟦2⟧
-<p>Listrik disalurkan ke seluruh negeri dengan tegangan sangat tinggi: untuk daya yang sama arusnya kecil, sehingga daya yang hilang menjadi panas di kabel, $P = I^2 R$, juga kecil.</p>
-⟦3⟧`,
   '2ea3ecpuvs2': R`<p><b>Hukum Faraday:</b> GGL yang diinduksi pada kumparan dengan $N$ lilitan sama dengan laju perubahan fluks yang dilingkupinya:</p><p>$$\varepsilon = -N\frac{\Delta \Phi}{\Delta t}.$$</p><p><b>Hukum Lenz</b> (tanda minus): arus induksi mengalir sedemikian rupa sehingga melawan perubahan yang menimbulkannya.</p>`,
   '1kmpv0qnsr6': R`\frac{V_s}{V_p} = \frac{N_s}{N_p} \qquad \text{ideal: } V_p I_p = V_s I_s`,
   '23yc30r4bok': R`<p>Transformator hanya bekerja dengan arus bolak-balik. Arus searah yang tetap tidak menghasilkan fluks yang berubah, jadi tidak ada yang diinduksi.</p>`,
@@ -35,16 +22,6 @@ addT('id', {
   '1fyztwry1gw': R`baru mengalir setelah magnet berhenti`,
   '5od1ko8pf0': R`nol, karena magnet tidak menyentuh kumparan`,
   '1532uspzmii': R`Arus induksi melawan perubahan yang menimbulkannya: kumparan mendorong balik kutub utara yang mendekat dengan membentuk kutub utaranya sendiri. Usaha yang dilakukan untuk melawan dorongan ini berubah menjadi energi listrik.`,
-  'y5gumibg5a': R`
-<p>Listrik PLN adalah <b>arus bolak-balik</b>: tegangannya berayun bolak-balik secara sinusoidal, $V = V_0 \sin(\omega t)$ dengan $\omega = 2\pi f$. Di Indonesia frekuensinya $50\,\mathrm{Hz}$.</p>
-<h3>Nilai efektif (rms)</h3>
-<p>Nilai <b>efektif</b> (akar rata-rata kuadrat, rms) adalah nilai DC tetap yang menghasilkan panas yang sama: $V_{\text{rms}} = \dfrac{V_0}{\sqrt2}$ dan $I_{\text{rms}} = \dfrac{I_0}{\sqrt2}$. Ketika listrik rumah disebut $220\,\mathrm{V}$, itu adalah nilai efektifnya; nilai puncaknya $220\sqrt2 \approx 311\,\mathrm{V}$. Daya rata-rata pada resistor $P = I_{\text{rms}}^2 R = V_{\text{rms}} I_{\text{rms}}$.</p>
-⟦0⟧
-<h3>Resonansi</h3>
-<p>Jika $X_L = X_C$, impedansinya paling kecil ($Z = R$) dan arusnya paling besar. Hal ini terjadi pada <b>frekuensi resonansi</b></p>
-⟦1⟧
-<p>Radio memilih satu stasiun dengan menala rangkaian LC agar beresonansi pada frekuensi stasiun itu.</p>
-⟦2⟧`,
   '24cuq7xxpts': R`<p>Induktor dan kapasitor menghambat arus AC dengan <b>reaktansi</b> (dalam ohm) yang bergantung pada frekuensi:</p><p>$$X_L = \omega L = 2\pi f L \qquad X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}$$</p><p>Pada rangkaian seri RLC, <b>impedansinya</b> $Z = \sqrt{R^2 + (X_L - X_C)^2}$ dan $I = V/Z$.</p>`,
   'qjvaxdjfgn': R`<p>Induktor mudah dilalui frekuensi rendah dan menghambat frekuensi tinggi; kapasitor sebaliknya.</p>`,
   'vxzrwkqo76': R`Sebuah sumber listrik PLN bertegangan efektif ⟦0⟧. Berapa tegangan puncaknya?`,
@@ -68,14 +45,6 @@ addT('id', {
   'iih9cpv5l9': R`Berkurang, karena reaktansinya bertambah`,
   '1s74f5x9ne': R`Menjadi nol`,
   '2dlx2efv192': R`$X_C = \frac{1}{2\pi f C}$ berkurang ketika $f$ naik, jadi untuk tegangan yang sama arusnya lebih besar. (Pada induktor yang terjadi sebaliknya.)`,
-  '9izp365vqi': R`
-<p>Medan listrik dan medan magnet yang berubah saling membangkitkan dan merambat bersama di ruang angkasa sebagai <b>gelombang elektromagnetik (EM)</b>. Gelombang EM bersifat transversal, tidak memerlukan medium, dan di ruang hampa semuanya merambat dengan kelajuan cahaya, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.</p>
-⟦0⟧
-<h3>Spektrum elektromagnetik</h3>
-⟦1⟧
-<p>Dari gelombang radio sampai sinar gamma, panjang gelombangnya makin pendek dan frekuensinya makin tinggi. Frekuensi yang lebih tinggi juga berarti energi yang dibawa setiap foton lebih besar; itulah sebabnya ultraviolet, sinar-X, dan sinar gamma dapat merusak sel makhluk hidup.</p>
-⟦2⟧
-⟦3⟧`,
   'k7wfdtk1dy': R`Jenis`,
   '1aruppbi3k2': R`Panjang gelombang khas`,
   '1ha6u65qfqw': R`Kegunaan`,

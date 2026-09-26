@@ -195,6 +195,39 @@ mjx-container.mjx-wide { display: block; overflow-x: auto; overflow-y: hidden; m
 .fig-dot { fill: var(--ink); }
 .fig-text { fill: var(--ink); font: italic 600 15px var(--f-body); }
 .fig-small { fill: var(--ink-2); font: 12px var(--f-body); }
+.fig.fig-wide > svg { max-width: 680px; }
+.fig-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; max-width: 680px; }
+.fig-row svg { width: 100%; height: auto; display: block; }
+.fig-row .cap { font-size: 0.8rem; color: var(--ink-3); text-align: center; margin-top: 4px; }
+/* figure library (src/fig.js) */
+.mf-grid { stroke: var(--rule-soft); stroke-width: 1; }
+.mf-axis { stroke: var(--ink-3); stroke-width: 1.4; fill: none; }
+.mf-line { stroke: var(--ink-2); stroke-width: 1.6; fill: none; }
+.mf-thin { stroke: var(--ink-3); stroke-width: 0.8; fill: none; }
+.mf-ink { fill: var(--ink-2); } .mf-ink3 { fill: var(--ink-3); }
+.mf-c1, .mf-c2, .mf-c3, .mf-c4 { fill: none; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.mf-c1 { stroke: var(--accent); } .mf-c2 { stroke: var(--lv1); } .mf-c3 { stroke: var(--lv2); } .mf-c4 { stroke: var(--lv4); }
+.mf-s1 { fill: var(--accent); } .mf-s2 { fill: var(--lv1); } .mf-s3 { fill: var(--lv2); } .mf-s4 { fill: var(--lv4); }
+.mf-f1 { fill: var(--accent); fill-opacity: 0.18; } .mf-f2 { fill: var(--lv1); fill-opacity: 0.22; } .mf-f3 { fill: var(--lv2); fill-opacity: 0.22; } .mf-f4 { fill: var(--lv4); fill-opacity: 0.2; }
+.mf-s1l, .mf-s2l, .mf-s3l, .mf-s4l { stroke: var(--ink-2); }
+.mf-s1l { fill: color-mix(in srgb, var(--accent) 26%, var(--paper)); } .mf-s2l { fill: color-mix(in srgb, var(--lv1) 26%, var(--paper)); }
+.mf-s3l { fill: color-mix(in srgb, var(--lv2) 26%, var(--paper)); } .mf-s4l { fill: color-mix(in srgb, var(--lv4) 24%, var(--paper)); }
+.mf-shape { fill: var(--accent-soft); stroke: var(--ink-2); stroke-width: 1.6; }
+.mf-cell { fill: var(--paper); stroke: var(--ink-3); }
+.mf-cellc { fill: var(--sunken); stroke: var(--rule); }
+.mf-frame, .mf-ring { fill: none; stroke: var(--ink-2); stroke-width: 1.8; }
+.mf-paper { fill: var(--paper); }
+.mf-dot { fill: var(--ink); } .mf-open { fill: var(--paper); stroke: var(--ink); stroke-width: 2; }
+.mf-open-c { fill: var(--paper); stroke: var(--accent); stroke-width: 2.6; }
+.mf-prime { fill: color-mix(in srgb, var(--lv1) 24%, var(--paper)); stroke: var(--lv1); stroke-width: 2; }
+.mf-node-c { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 2; }
+.mf-lab, .mf-lab-b, .mf-small, .mf-var, .mf-node { paint-order: stroke; stroke: var(--paper); stroke-width: 3.5px; stroke-linejoin: round; }
+.mf-lab { fill: var(--ink); font: 13px var(--f-body); } .mf-lab-b { fill: var(--ink); font: 700 13px var(--f-body); }
+.mf-small { fill: var(--ink-2); font: 11.5px var(--f-body); }
+.mf-var { fill: var(--ink); font: italic 600 15px 'Times New Roman', Georgia, serif; }
+.mf-node { fill: var(--ink); font: 700 15px var(--f-body); }
+.mf-node-a { fill: var(--accent); font: 700 15px var(--f-body); paint-order: stroke; stroke: var(--paper); stroke-width: 3.5px; }
+.mf-carry { fill: var(--lv4, var(--accent)); font: 700 12px var(--f-body); }
 .lesson-foot { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--rule); display: grid; gap: 20px; }
 .lesson-foot > .btn { justify-self: start; }
 .pager { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -980,6 +1013,749 @@ function levelsSvg(nMax, a, b, label) {
 }
 
 /* ==========================================================================
+   Figures: small SVG builders for the lessons and questions.
+   Colours come from CSS classes (.mf-*) so every figure follows light/dark mode.
+   ========================================================================== */
+const f1 = n => String(Math.round(n * 10) / 10);
+const svgBox = (w, h, label) => `<svg viewBox="0 0 ${w} ${h}" style="max-width:${Math.round(w * 1.3)}px" role="img" aria-label="${String(label || '').split('"').join('&quot;')}">`;   // small figures do not blow up to full width
+const niceStep = (top, n = 4) => { const raw = top / n, p = 10 ** Math.floor(Math.log10(raw)), m = raw / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * p; };
+const sT = (x, y, t, cls = 'mf-lab', anchor = 'middle', extra = '') => `<text x="${f1(x)}" y="${f1(y)}" class="${cls}" text-anchor="${anchor}"${extra}>${t}</text>`;
+const sL = (x1, y1, x2, y2, cls = 'mf-line', extra = '') => `<line x1="${f1(x1)}" y1="${f1(y1)}" x2="${f1(x2)}" y2="${f1(y2)}" class="${cls}"${extra}/>`;
+const sC = (cx, cy, r, cls = 'mf-shape', extra = '') => `<circle cx="${f1(cx)}" cy="${f1(cy)}" r="${f1(r)}" class="${cls}"${extra}/>`;
+const sR = (x, y, w, h, cls = 'mf-shape', rx = 0, extra = '') => `<rect x="${f1(x)}" y="${f1(y)}" width="${f1(w)}" height="${f1(h)}" rx="${rx}" class="${cls}"${extra}/>`;
+const sP = (d, cls = 'mf-line', extra = '') => `<path d="${d}" class="${cls}"${extra}/>`;
+const sPoly = (pts, cls = 'mf-shape', extra = '') => `<polygon points="${pts.map(p => f1(p[0]) + ',' + f1(p[1])).join(' ')}" class="${cls}"${extra}/>`;
+const sPline = (pts, cls = 'mf-line', extra = '') => `<polyline points="${pts.map(p => f1(p[0]) + ',' + f1(p[1])).join(' ')}" class="${cls}"${extra}/>`;
+function sArrow(x1, y1, x2, y2, cls = 'mf-line', head = 8) {   // line with a filled head; cls may be a curve class (mf-c1 …)
+  const a = Math.atan2(y2 - y1, x2 - x1), bx = x2 - head * Math.cos(a), by = y2 - head * Math.sin(a), w = head * 0.45;
+  const hc = cls.replace(/mf-c(\d)/, 'mf-s$1').replace('mf-line', 'mf-ink').replace('mf-axis', 'mf-ink3');
+  return sL(x1, y1, bx, by, cls) + sPoly([[x2, y2], [bx + w * Math.sin(a), by - w * Math.cos(a)], [bx - w * Math.sin(a), by + w * Math.cos(a)]], hc);
+}
+const sAngle = (cx, cy, r, a1, a2, cls = 'mf-line') => {   // arc between two directions (degrees, maths convention, y up)
+  const p = a => [cx + r * Math.cos(a * Math.PI / 180), cy - r * Math.sin(a * Math.PI / 180)], [x1, y1] = p(a1), [x2, y2] = p(a2);
+  return sP(`M${f1(x1)} ${f1(y1)} A${r} ${r} 0 ${Math.abs(a2 - a1) > 180 ? 1 : 0} 0 ${f1(x2)} ${f1(y2)}`, cls, ' fill="none"');
+};
+const sRight = (x, y, ux, uy, vx, vy, s = 11) => sPline([[x + ux * s, y + uy * s], [x + ux * s + vx * s, y + uy * s + vy * s], [x + vx * s, y + vy * s]], 'mf-line');   // right-angle mark
+
+/* ---------- coordinate plane with curves, points, segments and shading ---------- */
+function planeSvg(o) {
+  const W = o.W || 420, [a, b] = o.x, [c, d] = o.y, L = 34, R = 16, Tp = 14, B = 26;
+  const H = o.H || (o.equal ? Math.round((W - L - R) * (d - c) / (b - a) + Tp + B) : 300);
+  const X = x => L + (x - a) / (b - a) * (W - L - R), Y = y => Tp + (d - y) / (d - c) * (H - Tp - B);
+  const [sx, sy] = o.step || [1, 1];
+  let s = svgBox(W, H, o.label);
+  if (o.grid !== false) {
+    for (let x = Math.ceil(a / sx) * sx; x <= b + 1e-9; x += sx) s += sL(X(x), Y(d), X(x), Y(c), 'mf-grid');
+    for (let y = Math.ceil(c / sy) * sy; y <= d + 1e-9; y += sy) s += sL(X(a), Y(y), X(b), Y(y), 'mf-grid');
+  }
+  (o.shade || []).forEach(({ f, g = () => 0, from, to, cls = 'mf-f1' }) => {
+    const n = 80, top = [], bot = [];
+    for (let i = 0; i <= n; i++) { const x = from + (to - from) * i / n; top.push([X(x), Y(Math.max(c, Math.min(d, f(x))))]); bot.push([X(x), Y(Math.max(c, Math.min(d, g(x))))]); }
+    s += sPoly(top.concat(bot.reverse()), cls);
+  });
+  (o.polys || []).forEach(({ pts, cls = 'mf-f1' }) => { s += sPoly(pts.map(([x, y]) => [X(x), Y(y)]), cls); });
+  (o.rects || []).forEach(([x, y, w, h, cls = 'mf-f2']) => { s += sR(X(x), Y(y + h), X(x + w) - X(x), Y(y) - Y(y + h), cls); });
+  const y0 = Math.max(c, Math.min(d, 0)), x0 = Math.max(a, Math.min(b, 0));
+  s += sArrow(X(a), Y(y0), X(b) + 8, Y(y0), 'mf-axis', 7) + sArrow(X(x0), Y(c), X(x0), Y(d) - 8, 'mf-axis', 7);
+  if (o.ticks !== false) {
+    const lx = o.tickX || sx, ly = o.tickY || sy, fx0 = o.fmtX || F, fy0 = o.fmtY || F;
+    for (let x = Math.ceil(a / lx) * lx; x <= b + 1e-9; x += lx) if (Math.abs(x) > 1e-9) s += sL(X(x), Y(y0) - 3, X(x), Y(y0) + 3, 'mf-axis') + sT(X(x), Y(y0) + 15, fx0(+x.toFixed(6)), 'mf-small');
+    for (let y = Math.ceil(c / ly) * ly; y <= d + 1e-9; y += ly) if (Math.abs(y) > 1e-9) s += sL(X(x0) - 3, Y(y), X(x0) + 3, Y(y), 'mf-axis') + sT(X(x0) - 6, Y(y) + 4, fy0(+y.toFixed(6)), 'mf-small', 'end');
+    if (a <= 0 && b >= 0 && c <= 0 && d >= 0) s += sT(X(0) - 6, Y(0) + 14, '0', 'mf-small', 'end');
+  }
+  s += sT(X(b) + 4, Y(y0) - 8, o.xl || 'x', 'mf-var', 'end') + sT(X(x0) + 8, Y(d) + 4, o.yl || 'y', 'mf-var', 'start');
+  (o.segs || []).forEach(([x1, y1, x2, y2, cls = 'mf-line', dash]) => { s += sL(X(x1), Y(y1), X(x2), Y(y2), cls, dash ? ' stroke-dasharray="5 4"' : ''); });
+  (o.vecs || []).forEach(([x1, y1, x2, y2, cls = 'mf-c1']) => { s += sArrow(X(x1), Y(y1), X(x2), Y(y2), cls, 9); });
+  (o.circles || []).forEach(([cx, cy, r, cls = 'mf-c1']) => { s += `<ellipse cx="${f1(X(cx))}" cy="${f1(Y(cy))}" rx="${f1(X(cx + r) - X(cx))}" ry="${f1(Y(cy) - Y(cy + r))}" class="${cls}" fill="none"/>`; });
+  (o.fns || []).forEach(({ f, cls = 'mf-c1', from = a, to = b, n = 240, label, at, dx = 6, dy = -6, anchor = 'start', dash }) => {
+    let dstr = '', pen = false;
+    for (let i = 0; i <= n; i++) {
+      const x = from + (to - from) * i / n, y = f(x);
+      if (!isFinite(y) || y > d + (d - c) * 0.6 || y < c - (d - c) * 0.6) { pen = false; continue; }
+      dstr += `${pen ? 'L' : 'M'}${f1(X(x))} ${f1(Y(Math.max(c - (d - c) * 0.05, Math.min(d + (d - c) * 0.05, y))))}`; pen = true;
+    }
+    s += `<clipPath id="cp${++planeSvg.n}"><rect x="${L}" y="${Tp}" width="${W - L - R}" height="${H - Tp - B}"/></clipPath>` + sP(dstr, cls, ` fill="none" clip-path="url(#cp${planeSvg.n})"${dash ? ' stroke-dasharray="6 5"' : ''}`);
+    if (label) { const xa = at != null ? at : to; s += sT(X(xa) + dx, Y(f(xa)) + dy, label, 'mf-lab', anchor); }
+  });
+  (o.pts || []).forEach(([x, y, label, anchor = 'start', open, dx = 7, dy = -7]) => { s += sC(X(x), Y(y), 4, open ? 'mf-open' : 'mf-dot') + (label ? sT(X(x) + (anchor === 'end' ? -dx : anchor === 'middle' ? 0 : dx), Y(y) + dy, label, 'mf-lab', anchor) : ''); });
+  (o.texts || []).forEach(([x, y, t, anchor = 'middle', cls = 'mf-lab']) => { s += sT(X(x), Y(y), t, cls, anchor); });
+  return s + (o.extra ? o.extra(X, Y) : '') + '</svg>';
+}
+planeSvg.n = 0;
+
+/* ---------- number line ---------- */
+function numberLineSvg(o) {
+  const W = o.W || 460, H = o.H || 90, L = 24, R = 24, y = o.y || 52, { min, max } = o, step = o.step || 1, X = v => L + (v - min) / (max - min) * (W - L - R);
+  let s = svgBox(W, H, o.label) + sArrow(L - 10, y, W - 6, y, 'mf-axis', 7) + sArrow(L + 2, y, L - 12, y, 'mf-axis', 7);
+  const every = o.labelEvery || step, fmt = o.fmt || F;
+  for (let v = min, i = 0; v <= max + 1e-9; v = +(min + step * ++i).toFixed(9)) {
+    const major = Math.abs(v / every - Math.round(v / every)) < 1e-6;
+    s += sL(X(v), y - (major ? 6 : 3.5), X(v), y + (major ? 6 : 3.5), 'mf-axis') + (major && o.ticks !== false ? sT(X(v), y + 22, fmt(v), 'mf-small') : '');
+  }
+  if (o.ray) { const { from, dir, open } = o.ray, end = dir > 0 ? W - 10 : L - 10; s += sL(X(from), y, end, y, 'mf-c1', ' stroke-width="5" stroke-opacity="0.75"') + sC(X(from), y, 6, open ? 'mf-open-c' : 'mf-s1'); }
+  if (o.seg) { const [p, q, oa, ob] = o.seg; s += sL(X(p), y, X(q), y, 'mf-c1', ' stroke-width="5" stroke-opacity="0.75"') + sC(X(p), y, 6, oa ? 'mf-open-c' : 'mf-s1') + sC(X(q), y, 6, ob ? 'mf-open-c' : 'mf-s1'); }
+  (o.jumps || []).forEach(({ from, to, label, cls = 'mf-c2' }, i) => {
+    const x1 = X(from), x2 = X(to), h = Math.min(34, Math.abs(x2 - x1) * 0.5 + 10), mx = (x1 + x2) / 2;
+    s += sP(`M${f1(x1)} ${y - 6} Q${f1(mx)} ${f1(y - 6 - 2 * h)} ${f1(x2)} ${y - 6}`, cls, ' fill="none"') + sArrow(x2 - (x2 > x1 ? 7 : -7), y - 13, x2, y - 6, cls, 7);
+    if (label) s += sT(mx, y - 10 - h, label, 'mf-lab');
+  });
+  (o.marks || []).forEach(({ v, label, cls = 'mf-s1', below, open }) => { s += sC(X(v), y, 5.5, open ? 'mf-open-c' : cls) + (label ? sT(X(v), below ? y + 38 : y - 14, label, 'mf-lab') : ''); });
+  return s + '</svg>';
+}
+
+/* ---------- fraction bars, pies and grids ---------- */
+function fracBarsSvg(rows, { label, W = 440, total = 1, names } = {}) {   // rows: [n, d, text]
+  const rowH = 34, H = rows.length * (rowH + 10) + 6, L = names === false ? 8 : 64, bw = W - L - 10;
+  let s = svgBox(W, H, label);
+  rows.forEach(([n, d, t, cls = 'mf-s1'], r) => {
+    const y = 4 + r * (rowH + 10), cw = bw * total / d;
+    for (let i = 0; i < d; i++) s += sR(L + i * cw, y, cw, rowH, i < n ? cls : 'mf-cell', 0, ' stroke-width="1.5"');
+    s += sR(L, y, cw * d, rowH, 'mf-frame', 3);
+    if (t != null) s += sT(L - 10, y + rowH / 2 + 5, t, 'mf-lab-b', 'end');
+  });
+  return s + '</svg>';
+}
+function piesSvg(items, { label, r = 44 } = {}) {   // items: [n, d, text]
+  const W = items.length * (2 * r + 30) + 10, H = 2 * r + 40;
+  let s = svgBox(W, H, label);
+  items.forEach(([n, d, t, cls = 'mf-s1'], k) => {
+    const cx = 20 + r + k * (2 * r + 30), cy = r + 8;
+    for (let i = 0; i < d; i++) {
+      const a0 = -90 + 360 * i / d, a1 = -90 + 360 * (i + 1) / d, p = a => [cx + r * Math.cos(a * Math.PI / 180), cy + r * Math.sin(a * Math.PI / 180)], [x0, y0] = p(a0), [x1, y1] = p(a1);
+      s += d === 1 ? sC(cx, cy, r, i < n ? cls : 'mf-cell') : sP(`M${cx} ${cy} L${f1(x0)} ${f1(y0)} A${r} ${r} 0 ${a1 - a0 > 180 ? 1 : 0} 1 ${f1(x1)} ${f1(y1)}Z`, i < n ? cls : 'mf-cell', ' stroke-width="1.5"');
+    }
+    s += sC(cx, cy, r, 'mf-frame') + (t != null ? sT(cx, cy + r + 24, t, 'mf-lab-b') : '');
+  });
+  return s + '</svg>';
+}
+function gridSvg(rows, cols, shaded, { label, cell = 22, dots = false, cls = 'mf-s1', caption } = {}) {   // shaded: count (row by row) or function (r, c) => class | false
+  const W = Math.max(cols * cell + 8, caption ? String(caption).length * 7.6 : 0), H = rows * cell + 8 + (caption ? 22 : 0), x0 = (W - cols * cell) / 2;
+  let s = svgBox(W, H, label);
+  for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) {
+    const on = typeof shaded === 'function' ? shaded(r, c) : r * cols + c < shaded, x = x0 + c * cell, y = 4 + r * cell;
+    if (on === null) continue;   // null leaves the cell out entirely
+    s += dots ? sC(x + cell / 2, y + cell / 2, cell * 0.32, on ? (typeof on === 'string' ? on : cls) : 'mf-cell') : sR(x, y, cell, cell, on ? (typeof on === 'string' ? on : cls) : 'mf-cell', 0, ' stroke-width="1.2"');
+  }
+  if (!dots) s += sR(x0, 4, cols * cell, rows * cell, 'mf-frame', 2);
+  return s + (caption ? sT(W / 2, H - 4, caption, 'mf-lab') : '') + '</svg>';
+}
+
+/* ---------- area model for multiplication or expanding brackets ---------- */
+function areaModelSvg(top, side, { label, cells, total } = {}) {   // top/side: [value or text, …] with sizes
+  const W = 440, L = 60, Tp = 34, sizes = v => v.map(p => p[1]);
+  const tw = sizes(top).reduce((x, y) => x + y, 0), sh = sizes(side).reduce((x, y) => x + y, 0), k = Math.min((W - L - 16) / tw, 190 / sh), H = Tp + sh * k + 12 + (total ? 24 : 0);
+  let s = svgBox(W, H, label), x = L;
+  top.forEach(([t, w]) => { s += sT(x + w * k / 2, Tp - 10, t, 'mf-lab-b'); x += w * k; });
+  let y = Tp;
+  side.forEach(([t, h], i) => {
+    s += sT(L - 10, y + h * k / 2 + 5, t, 'mf-lab-b', 'end'); let xx = L;
+    top.forEach(([, w], j) => { s += sR(xx, y, w * k, h * k, ['mf-s1l', 'mf-s2l', 'mf-s3l', 'mf-s4l'][(i + j) % 4], 0, ' stroke-width="1.5"') + sT(xx + w * k / 2, y + h * k / 2 + 5, cells ? cells[i][j] : '', 'mf-lab'); xx += w * k; });
+    y += h * k;
+  });
+  return s + (total ? sT(L, H - 6, total, 'mf-lab', 'start') : '') + '</svg>';
+}
+
+/* ---------- factor tree ---------- */
+function factorTreeSvg(n, { label } = {}) {
+  const chain = []; let m = n;
+  while (true) { let p = 2; while (m % p) p++; if (p === m) break; chain.push(p); m /= p; }
+  const depth = chain.length, W = 70 + 40 * depth + 90, H = 50 * depth + 58;
+  let s = svgBox(W, H, label), x = 50, y = 24, v = n;
+  s += sT(x, y + 5, F(v), 'mf-node');
+  chain.forEach(p => {
+    const q = v / p;
+    s += sL(x - 5, y + 10, x - 24, y + 36) + sL(x + 5, y + 10, x + 24, y + 36) + sC(x - 30, y + 48, 14, 'mf-prime') + sT(x - 30, y + 53, F(p), 'mf-lab-b');
+    x += 30; y += 50; v = q;
+    s += q === m && chain[chain.length - 1] === p ? sC(x, y - 2, 14, 'mf-prime') + sT(x, y + 3, F(q), 'mf-lab-b') : sT(x, y + 3, F(q), 'mf-node');
+  });
+  return s + '</svg>';
+}
+/* ---------- simple charts ---------- */
+function barsSvg(items, { label, yMax, step, W = 440, H = 240, hist = false, yl = '', values = true, cls = 'mf-s1' } = {}) {
+  const L = 40, R = 10, Tp = 18, B = 34, n = items.length, st = step || niceStep((yMax || Math.max(...items.map(i => i[1]))) * 1.1), top = yMax || Math.ceil(Math.max(...items.map(i => i[1])) * 1.1 / st) * st;
+  const X = i => L + i * (W - L - R) / n, Y = v => Tp + (1 - v / top) * (H - Tp - B), bw = (W - L - R) / n * (hist ? 1 : 0.62);
+  let s = svgBox(W, H, label);
+  for (let v = 0; v <= top + 1e-9; v += st) s += sL(L, Y(v), W - R, Y(v), 'mf-grid') + sT(L - 6, Y(v) + 4, F(+v.toFixed(6)), 'mf-small', 'end');
+  items.forEach(([t, v, c], i) => { const x = X(i) + ((W - L - R) / n - bw) / 2; s += sR(x, Y(v), bw, Y(0) - Y(v), c || cls, hist ? 0 : 2, hist ? ' stroke-width="1.5"' : '') + (hist ? '' : sT(x + bw / 2, H - B + 16, t, 'mf-small')) + (values ? sT(x + bw / 2, Y(v) - 5, F(v), 'mf-small') : ''); });
+  if (hist) items.forEach(([t], i) => { s += sT(X(i), H - B + 16, t, 'mf-small'); });
+  if (hist && items.length && items[items.length - 1][3] != null) s += sT(X(n), H - B + 16, items[n - 1][3], 'mf-small');
+  return s + sL(L, Y(0), W - R, Y(0), 'mf-axis') + sL(L, Tp - 4, L, Y(0), 'mf-axis') + (yl ? sT(L - 4, Tp - 6, yl, 'mf-small', 'start') : '') + '</svg>';
+}
+function dotPlotSvg(data, { label, min, max, marks = [] } = {}) {
+  const W = 440, lo = min != null ? min : Math.min(...data), hi = max != null ? max : Math.max(...data), cnt = {};
+  data.forEach(v => { cnt[v] = (cnt[v] || 0) + 1; });
+  const mh = marks.length ? (marks.length > 1 ? 38 : 22) : 0, H = 60 + 14 * Math.max(...Object.values(cnt)) + mh, L = 24, R = 24, y = H - 34 - mh, X = v => L + (v - lo) / (hi - lo || 1) * (W - L - R);
+  let s = svgBox(W, H, label) + sL(L - 8, y, W - R + 8, y, 'mf-axis');
+  for (let v = lo; v <= hi; v++) s += sL(X(v), y, X(v), y + 5, 'mf-axis') + sT(X(v), y + 19, F(v), 'mf-small');
+  Object.entries(cnt).forEach(([v, k]) => { for (let i = 0; i < k; i++) s += sC(X(+v), y - 9 - i * 14, 5.5, 'mf-s1'); });
+  marks.forEach(([v, t, cls], i) => { s += sL(X(v), 12, X(v), y, cls || 'mf-c2', ' stroke-dasharray="4 3" stroke-width="2"') + sT(X(v), H - 6 - (marks.length > 1 && i % 2 === 0 ? 16 : 0), t, 'mf-lab'); });
+  return s + '</svg>';
+}
+function boxPlotSvg([mn, q1, md, q3, mx], { label, lo, hi, step = 1, names } = {}) {
+  const W = 440, H = 118, L = 24, R = 24, y = 44, a = lo != null ? lo : mn, b = hi != null ? hi : mx, X = v => L + (v - a) / (b - a) * (W - L - R);
+  let s = svgBox(W, H, label) + sL(X(mn), y, X(q1), y) + sL(X(q3), y, X(mx), y) + sL(X(mn), y - 10, X(mn), y + 10) + sL(X(mx), y - 10, X(mx), y + 10);
+  s += sR(X(q1), y - 18, X(q3) - X(q1), 36, 'mf-s1l', 3, ' stroke-width="1.8"') + sL(X(md), y - 18, X(md), y + 18, 'mf-c2', ' stroke-width="3"');
+  s += sL(L - 6, 88, W - R + 6, 88, 'mf-axis');
+  for (let v = a; v <= b + 1e-9; v += step) s += sL(X(v), 88, X(v), 93, 'mf-axis') + sT(X(v), 108, F(+v.toFixed(6)), 'mf-small');
+  const nm = names || ['min', 'Q₁', T`median`, 'Q₃', 'max'];
+  [mn, q1, md, q3, mx].forEach((v, i) => { s += sT(X(v), i % 2 ? 72 : 18, nm[i], 'mf-small'); });
+  return s + '</svg>';
+}
+
+/* ---------- geometry ---------- */
+function triangleSvg(P, { label, sides = [], verts = [], angles = [], right, fill = 'mf-shape', H = 220, W = 360 } = {}) {   // P: three points in px
+  let s = svgBox(W, H, label) + sPoly(P, fill);
+  const cen = [(P[0][0] + P[1][0] + P[2][0]) / 3, (P[0][1] + P[1][1] + P[2][1]) / 3];
+  sides.forEach((t, i) => { if (!t) return; const A = P[i], Bp = P[(i + 1) % 3], mx = (A[0] + Bp[0]) / 2, my = (A[1] + Bp[1]) / 2, dx = mx - cen[0], dy = my - cen[1], k = 16 / Math.hypot(dx, dy); s += sT(mx + dx * k, my + dy * k + 5, t, 'mf-var'); });
+  verts.forEach((t, i) => { if (!t) return; const dx = P[i][0] - cen[0], dy = P[i][1] - cen[1], k = 16 / Math.hypot(dx, dy); s += sT(P[i][0] + dx * k, P[i][1] + dy * k + 5, t, 'mf-lab-b'); });
+  angles.forEach((t, i) => {
+    if (!t) return; const A = P[i], u = P[(i + 1) % 3], v = P[(i + 2) % 3], a1 = Math.atan2(A[1] - u[1], u[0] - A[0]) * 180 / Math.PI, a2 = Math.atan2(A[1] - v[1], v[0] - A[0]) * 180 / Math.PI;
+    let lo = Math.min(a1, a2), hi = Math.max(a1, a2); if (hi - lo > 180) [lo, hi] = [hi, lo + 360];
+    const mid = (lo + hi) / 2 * Math.PI / 180; s += sAngle(A[0], A[1], 22, lo, hi, 'mf-c2') + sT(A[0] + 36 * Math.cos(mid), A[1] - 36 * Math.sin(mid) + 5, t, 'mf-var');
+  });
+  if (right != null) { const A = P[right], u = P[(right + 1) % 3], v = P[(right + 2) % 3], nu = Math.hypot(u[0] - A[0], u[1] - A[1]), nv = Math.hypot(v[0] - A[0], v[1] - A[1]); s += sRight(A[0], A[1], (u[0] - A[0]) / nu, (u[1] - A[1]) / nu, (v[0] - A[0]) / nv, (v[1] - A[1]) / nv); }
+  return s + '</svg>';
+}
+function anglesRowSvg(items, { label } = {}) {   // items: [degrees, name]
+  const cw = 130, W = items.length * cw, H = 128;
+  let s = svgBox(W, H, label);
+  items.forEach(([deg, name], i) => {
+    const r = 70, a = deg * Math.PI / 180, e = Math.max(0, -0.8 * r * Math.cos(a)), cx = i * cw + 10 + e, cy = 82, rr = Math.min(r, cw - 20 - e);
+    s += sL(cx, cy, cx + rr, cy, 'mf-line', ' stroke-width="2"') + sL(cx, cy, cx + r * Math.cos(a) * (deg > 90 ? 0.8 : 1), cy - r * Math.sin(a) * (deg > 90 ? 0.8 : 1), 'mf-line', ' stroke-width="2"');
+    s += deg === 90 ? sRight(cx, cy, 1, 0, 0, -1, 14) : sAngle(cx, cy, 20, 0, deg, 'mf-c2');
+    s += sT(cx + (deg > 120 ? 20 : 34), cy - 22 - (deg > 150 ? 6 : 0), `${deg}°`, 'mf-small', 'start') + sT(i * cw + cw / 2, H - 8, name, 'mf-lab-b');
+  });
+  return s + '</svg>';
+}
+function polygonsSvg(items, { label } = {}) {   // items: [sides, name]
+  const cw = 104, W = items.length * cw, H = 124;
+  let s = svgBox(W, H, label);
+  items.forEach(([n, name], i) => {
+    const cx = i * cw + cw / 2, cy = 50, r = 38, pts = [...Array(n)].map((_, k) => [cx + r * Math.cos(-Math.PI / 2 + 2 * Math.PI * k / n + (n % 2 ? 0 : Math.PI / n)), cy + r * Math.sin(-Math.PI / 2 + 2 * Math.PI * k / n + (n % 2 ? 0 : Math.PI / n))]);
+    s += sPoly(pts, ['mf-s1l', 'mf-s2l', 'mf-s3l', 'mf-s4l'][i % 4], ' stroke-width="1.8"') + sT(cx, 110, name, 'mf-lab-b');
+  });
+  return s + '</svg>';
+}
+/* a cuboid in oblique projection; optional unit cubes and labels */
+function cuboidSvg(l, w, h, { label, unit = 26, cubes = false, labels } = {}) {
+  const dx = unit * 0.5, dy = unit * 0.35, W = l * unit + w * dx + 90, H = h * unit + w * dy + 50, x0 = 44, y0 = H - 30;
+  const P = (x, y, z) => [x0 + x * unit + y * dx, y0 - z * unit - y * dy];
+  let s = svgBox(W, H, label);
+  const face = (pts, cls) => sPoly(pts.map(p => P(...p)), cls, ' stroke-width="1.6"');
+  s += face([[0, 0, 0], [l, 0, 0], [l, 0, h], [0, 0, h]], 'mf-s1l') + face([[0, 0, h], [l, 0, h], [l, w, h], [0, w, h]], 'mf-s2l') + face([[l, 0, 0], [l, w, 0], [l, w, h], [l, 0, h]], 'mf-s3l');
+  if (cubes) {
+    for (let i = 1; i < l; i++) s += sL(...P(i, 0, 0), ...P(i, 0, h), 'mf-thin') + sL(...P(i, 0, h), ...P(i, w, h), 'mf-thin');
+    for (let k = 1; k < h; k++) s += sL(...P(0, 0, k), ...P(l, 0, k), 'mf-thin') + sL(...P(l, 0, k), ...P(l, w, k), 'mf-thin');
+    for (let j = 1; j < w; j++) s += sL(...P(0, j, h), ...P(l, j, h), 'mf-thin') + sL(...P(l, j, 0), ...P(l, j, h), 'mf-thin');
+  }
+  const [lt, wt, ht] = labels || [`${l}`, `${w}`, `${h}`];
+  s += sT((P(0, 0, 0)[0] + P(l, 0, 0)[0]) / 2, y0 + 20, lt, 'mf-var') + sT(P(l, w / 2, 0)[0] + 16, P(l, w / 2, 0)[1] + 4, wt, 'mf-var', 'start') + sT(x0 - 10, (P(0, 0, 0)[1] + P(0, 0, h)[1]) / 2 + 5, ht, 'mf-var', 'end');
+  return s + '</svg>';
+}
+/* common solids side by side: 'cube' | 'cylinder' | 'cone' | 'sphere' | 'pyramid' | 'prism' */
+function solidsSvg(items, { label } = {}) {   // items: [kind, name]
+  const cw = 112, W = items.length * cw, H = 150;
+  let s = svgBox(W, H, label);
+  items.forEach(([k, name], i) => {
+    const cx = i * cw + cw / 2, by = 110;
+    if (k === 'cube' || k === 'prism') {
+      const a = 50, d = 20, x = cx - 34, y = by - a;
+      if (k === 'cube') s += sR(x, y, a, a, 'mf-s1l', 0, ' stroke-width="1.6"') + sPoly([[x, y], [x + d, y - d], [x + a + d, y - d], [x + a, y]], 'mf-s2l', ' stroke-width="1.6"') + sPoly([[x + a, y], [x + a + d, y - d], [x + a + d, by - d], [x + a, by]], 'mf-s3l', ' stroke-width="1.6"');
+      else s += sPoly([[x, by], [x + 36, by], [x + 18, by - 44]], 'mf-s1l', ' stroke-width="1.6"') + sPoly([[x + 36, by], [x + 68, by - 18], [x + 50, by - 62], [x + 18, by - 44]], 'mf-s3l', ' stroke-width="1.6"');
+    } else if (k === 'cylinder') s += sP(`M${cx - 30} ${by - 70} L${cx - 30} ${by} A30 9 0 0 0 ${cx + 30} ${by} L${cx + 30} ${by - 70}`, 'mf-s1l', ' stroke-width="1.6"') + `<ellipse cx="${cx}" cy="${by - 70}" rx="30" ry="9" class="mf-s2l" stroke-width="1.6"/>`;
+    else if (k === 'cone') s += sP(`M${cx - 32} ${by} L${cx} ${by - 78} L${cx + 32} ${by} A32 9 0 0 1 ${cx - 32} ${by}Z`, 'mf-s1l', ' stroke-width="1.6"') + sP(`M${cx - 32} ${by} A32 9 0 0 1 ${cx + 32} ${by}`, 'mf-line', ' fill="none" stroke-dasharray="4 3"');
+    else if (k === 'sphere') s += sC(cx, by - 38, 38, 'mf-s1l', ' stroke-width="1.6"') + `<ellipse cx="${cx}" cy="${by - 38}" rx="38" ry="11" fill="none" class="mf-line" stroke-dasharray="4 3"/>`;
+    else if (k === 'pyramid') s += sPoly([[cx - 36, by], [cx + 22, by], [cx, by - 76]], 'mf-s1l', ' stroke-width="1.6"') + sPoly([[cx + 22, by], [cx + 40, by - 16], [cx, by - 76]], 'mf-s3l', ' stroke-width="1.6"');
+    s += sT(cx, H - 10, name, 'mf-lab-b');
+  });
+  return s + '</svg>';
+}
+
+/* ---------- diagrams ---------- */
+function treeSvg(levels, { label, W = 440, leaf } = {}) {   // levels: [[labels of the first branches with probabilities], [...second level per branch]]
+  const [lv1, lv2] = levels, n1 = lv1.length, n2 = lv2 ? lv2[0].length : 0, leaves = n1 * Math.max(1, n2), H = Math.max(140, leaves * 36 + 20);
+  const x0 = 20, x1 = lv2 ? 180 : 260, x2 = 340, rowY = i => 18 + (i + 0.5) * (H - 30) / leaves;
+  let s = svgBox(W, H, label) + sC(x0, H / 2, 4, 'mf-dot');
+  lv1.forEach(([t, p], i) => {
+    const y1 = lv2 ? (rowY(i * n2) + rowY(i * n2 + n2 - 1)) / 2 : rowY(i);
+    s += sL(x0, H / 2, x1 - 20, y1, 'mf-c1') + sT((x0 + x1) / 2 - 8, (H / 2 + y1) / 2 - 6, p, 'mf-small') + sT(x1 - 12, y1 + 5, t, 'mf-lab-b', 'start');
+    if (lv2) lv2[i].forEach(([t2, p2], j) => {
+      const y2 = rowY(i * n2 + j);
+      s += sL(x1 + 20, y1, x2 - 20, y2, 'mf-c2') + sT((x1 + x2) / 2 + 6, (y1 + y2) / 2 - 6, p2, 'mf-small') + sT(x2 - 12, y2 + 5, t2, 'mf-lab-b', 'start') + (leaf ? sT(x2 + 26, y2 + 5, leaf[i][j], 'mf-small', 'start') : '');
+    });
+  });
+  return s + '</svg>';
+}
+function venn2Svg({ label, a = 'A', b = 'B', shade = [], texts = {} } = {}) {   // shade: any of 'a' (A only), 'ab', 'b', 'out'
+  const W = 320, H = 190, id = 'vn' + (++venn2Svg.n);
+  let s = svgBox(W, H, label) + `<defs><clipPath id="${id}a"><circle cx="125" cy="98" r="64"/></clipPath><clipPath id="${id}b"><circle cx="195" cy="98" r="64"/></clipPath></defs>`;
+  if (shade.includes('out')) s += sR(6, 6, 308, 178, 'mf-s1l', 4);
+  if (shade.includes('a') || shade.includes('out')) s += sC(125, 98, 64, shade.includes('a') ? 'mf-s1l' : 'mf-paper');
+  if (shade.includes('b') || shade.includes('out')) s += sC(195, 98, 64, shade.includes('b') ? 'mf-s1l' : 'mf-paper');
+  if (shade.includes('ab')) s += `<circle cx="195" cy="98" r="64" class="mf-s2" clip-path="url(#${id}a)" fill-opacity="0.55"/>`;
+  else if (shade.includes('a') || shade.includes('b') || shade.includes('out')) s += `<circle cx="195" cy="98" r="64" class="mf-paper" clip-path="url(#${id}a)"/>`;
+  s += sR(6, 6, 308, 178, 'mf-frame', 4) + sC(125, 98, 64, 'mf-ring') + sC(195, 98, 64, 'mf-ring') + sT(18, 26, 'U', 'mf-var', 'start') + sT(72, 36, a, 'mf-var') + sT(248, 36, b, 'mf-var');
+  Object.entries(texts).forEach(([k, t]) => { const p = { a: [98, 103], ab: [160, 103], b: [222, 103], out: [160, 178] }[k]; s += sT(p[0], p[1], t, 'mf-lab'); });
+  return s + '</svg>';
+}
+venn2Svg.n = 0;
+function balanceSvg(left, right, { label, tilt = 0 } = {}) {   // left/right: text on each pan
+  const W = 420, H = 200, cx = 210, t = tilt * 8;
+  let s = svgBox(W, H, label) + sPoly([[cx - 26, 186], [cx + 26, 186], [cx, 70]], 'mf-s3l', ' stroke-width="1.6"') + sL(cx - 150, 70 + t, cx + 150, 70 - t, 'mf-line', ' stroke-width="4"') + sC(cx, 70, 6, 'mf-dot');
+  [[cx - 150, 70 + t, left], [cx + 150, 70 - t, right]].forEach(([x, y, txt]) => { s += sL(x, y, x - 50, y + 50) + sL(x, y, x + 50, y + 50) + sP(`M${x - 64} ${y + 50} L${x + 64} ${y + 50} Q${x} ${y + 84} ${x - 64} ${y + 50}Z`, 'mf-s1l', ' stroke-width="1.6"') + sT(x, y + 40, txt, 'mf-lab-b'); });
+  return s + '</svg>';
+}
+function stepsSvg(items, { label, W = 460, down = true, arrowText } = {}) {   // a staircase of boxes, e.g. metric units
+  const n = items.length, bw = (W - 20) / n, H = 40 + n * 16 + 40;
+  let s = svgBox(W, H, label);
+  items.forEach((t, i) => { const x = 10 + i * bw, y = 20 + (down ? i : n - 1 - i) * 16; s += sR(x + 3, y, bw - 6, 34, ['mf-s1l', 'mf-s2l', 'mf-s3l', 'mf-s4l'][i % 4], 6, ' stroke-width="1.5"') + sT(x + bw / 2, y + 22, t, 'mf-lab-b'); if (i < n - 1 && arrowText) s += sT(x + bw, y + 58, arrowText, 'mf-small'); });
+  return s + '</svg>';
+}
+function flowSvg(items, { label, W = 460 } = {}) {   // vertical flow of boxes joined by arrows
+  const bh = 38, gap = 22, H = items.length * (bh + gap) - gap + 8;
+  let s = svgBox(W, H, label);
+  items.forEach((t, i) => { const y = 4 + i * (bh + gap); s += sR(30, y, W - 60, bh, ['mf-s1l', 'mf-s2l', 'mf-s3l', 'mf-s4l'][i % 4], 8, ' stroke-width="1.5"') + sT(W / 2, y + bh / 2 + 5, t, 'mf-lab-b'); if (i < items.length - 1) s += sArrow(W / 2, y + bh + 2, W / 2, y + bh + gap - 2, 'mf-line', 8); });
+  return s + '</svg>';
+}
+function networkSvg(nodes, edges, { label, W = 360, H = 220, degrees = false, highlight = [] } = {}) {   // nodes: [[x, y, name]] in px
+  let s = svgBox(W, H, label);
+  edges.forEach(([i, j, t]) => { const [x1, y1] = nodes[i], [x2, y2] = nodes[j], hl = highlight.some(([a, b]) => (a === i && b === j) || (a === j && b === i)); s += sL(x1, y1, x2, y2, hl ? 'mf-c2' : 'mf-line', hl ? ' stroke-width="4"' : ' stroke-width="2"') + (t != null ? sT((x1 + x2) / 2, (y1 + y2) / 2 - 5, t, 'mf-small') : ''); });
+  nodes.forEach(([x, y, t], i) => { const d = edges.filter(e => e[0] === i || e[1] === i).length; s += sC(x, y, 15, 'mf-node-c') + sT(x, y + 5, t, 'mf-lab-b') + (degrees ? sT(x + 20, y - 14, `d=${d}`, 'mf-small', 'start') : ''); });
+  return s + '</svg>';
+}
+function pascalSvg(rows, { label, hl = [] } = {}) {
+  const W = 40 * rows + 40, H = 30 * rows + 16;
+  let s = svgBox(W, H, label);
+  for (let n = 0; n < rows; n++) for (let k = 0; k <= n; k++) { const x = W / 2 + (k - n / 2) * 40, y = 22 + n * 30, on = hl.some(([a, b]) => a === n && b === k); s += sC(x, y - 5, 14, on ? 'mf-s2l' : 'mf-cellc') + sT(x, y, F(nCr(n, k)), 'mf-lab'); }
+  return s + '</svg>';
+}
+
+/* ---------- more builders for the elementary topics ---------- */
+const FigRow = (items, cap) => `<figure class="fig"><div class="fig-row">${items.map(([svg, c]) => `<div>${svg}${c ? `<div class="cap">${c}</div>` : ''}</div>`).join('')}</div>${cap ? `<figcaption>${cap}</figcaption>` : ''}</figure>`;
+const FigW = (svg, cap) => Fig(svg, cap).replace('class="fig"', 'class="fig fig-wide"');
+function placeChartSvg(heads, digits, { label, values, hl = -1 } = {}) {   // a row of place-value columns: header, digit, value
+  const n = heads.length, cw = 78, W = n * cw + 8, H = values ? 124 : 96;
+  let s = svgBox(W, H, label);
+  heads.forEach((h, i) => {
+    const x = 4 + i * cw, on = i === hl;
+    s += sR(x, 4, cw, 34, ['mf-s1l', 'mf-s2l', 'mf-s3l', 'mf-s4l'][Math.floor((n - 1 - i) / 3) % 4], 0, ' stroke-width="1.4"') + sT(x + cw / 2, 25, h, 'mf-small');
+    s += sR(x, 38, cw, 46, on ? 'mf-s2l' : 'mf-cell', 0, ' stroke-width="1.4"') + sT(x + cw / 2, 70, digits[i], 'mf-node');
+    if (values) s += sT(x + cw / 2, 108, values[i], 'mf-small');
+  });
+  return s + '</svg>';
+}
+function columnSvg(a, b, op = '+', { label } = {}) {   // column addition or subtraction with carries / borrows shown above
+  const r = op === '+' ? a + b : a - b, len = Math.max(String(a).length, String(b).length, String(r).length), cw = 34, W = (len + 2) * cw, H = 170, x0 = W - cw;
+  const dig = (n, i) => { const s = String(n); return i < s.length ? s[s.length - 1 - i] : ''; };
+  let s = svgBox(W, H, label), carry = 0;
+  for (let i = 0; i < len; i++) {
+    const x = x0 - i * cw - cw / 2, da = +(dig(a, i) || 0), db = +(dig(b, i) || 0);
+    if (op === '+') { if (carry) s += sT(x, 28, '1', 'mf-carry'); carry = da + db + carry >= 10 ? 1 : 0; }
+    s += sT(x, 62, dig(a, i), 'mf-node') + sT(x, 96, dig(b, i), 'mf-node') + sT(x, 150, dig(r, i), 'mf-node-a');
+  }
+  if (op === '-') {   // mark the columns that had to borrow
+    let bor = 0;
+    for (let i = 0; i < len; i++) { const da = +(dig(a, i) || 0) - bor, db = +(dig(b, i) || 0); bor = da < db ? 1 : 0; if (bor) s += sT(x0 - i * cw - cw / 2, 28, '+10', 'mf-carry'); }
+  }
+  return s + sT(x0 - len * cw - 4, 96, op === '+' ? '+' : '−', 'mf-node') + sL(x0 - len * cw - 14, 112, x0 + 4, 112, 'mf-line', ' stroke-width="2"') + '</svg>';
+}
+function barModelSvg(parts, { label, W = 440, top, bottom } = {}) {   // parts: [text, weight, cls]
+  const tot = parts.reduce((x, p) => x + p[1], 0), bw = W - 20, H = 64 + (top ? 28 : 0) + (bottom ? 26 : 0), y = top ? 32 : 8;
+  let s = svgBox(W, H, label), x = 10;
+  if (top) s += sP(`M10 ${y - 6} q0 -10 10 -10 H${W - 20} q10 0 10 10`, 'mf-line', ' fill="none"') + sT(W / 2, y - 20, top, 'mf-lab-b');
+  parts.forEach(([t, w, cls = 'mf-s1l']) => { const pw = bw * w / tot; s += sR(x, y, pw, 44, cls, 0, ' stroke-width="1.6"') + sT(x + pw / 2, y + 27, t, 'mf-lab-b'); x += pw; });
+  if (bottom) s += sT(W / 2, y + 66, bottom, 'mf-lab');
+  return s + '</svg>';
+}
+function netSvg(l, w, h, { label, unit = 22 } = {}) {   // net of a cuboid (cross shape)
+  const u = unit, W = (2 * l + 2 * w) * u + 20, H = (2 * w + h) * u + 20, x0 = 10 + w * u, y0 = 10;
+  const R = (x, y, ww, hh, cls, t) => sR(x, y, ww * u, hh * u, cls, 0, ' stroke-width="1.6"') + sT(x + ww * u / 2, y + hh * u / 2 + 5, t, 'mf-small');
+  let s = svgBox(W, H, label);
+  s += R(x0, y0, l, w, 'mf-s2l', T`top`) + R(x0, y0 + w * u, l, h, 'mf-s1l', T`front`) + R(x0, y0 + (w + h) * u, l, w, 'mf-s2l', T`bottom`);
+  s += R(x0 - w * u, y0 + w * u, w, h, 'mf-s3l', T`side`) + R(x0 + l * u, y0 + w * u, w, h, 'mf-s3l', T`side`) + R(x0 + (l + w) * u, y0 + w * u, l, h, 'mf-s1l', T`back`);
+  return s + '</svg>';
+}
+const cP = (...v) => `(${v.map(x => F(x)).join(LS())})`;   // a coordinate label that follows the language's decimal comma, e.g. (1; 2,5)
+
+/* ==========================================================================
+   Physics figures built on fig.js: apparatus, set-ups and motion diagrams.
+   ========================================================================== */
+const zigzag = (x1, y1, x2, y2, n = 8, w = 7) => {   // a spring drawn as a zigzag between two points
+  const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L, px = -uy, py = ux, pts = [[x1, y1], [x1 + ux * 6, y1 + uy * 6]];
+  for (let i = 0; i < n; i++) { const t = 6 + (L - 12) * (i + 0.5) / n, s = i % 2 ? -w : w; pts.push([x1 + ux * t + px * s, y1 + uy * t + py * s]); }
+  pts.push([x2 - ux * 6, y2 - uy * 6], [x2, y2]);
+  return sPline(pts, 'mf-line', ' stroke-width="1.8"');
+};
+const ball = (x, y, r = 9, cls = 'mf-s1') => sC(x, y, r, cls, ' stroke="var(--ink-2)" stroke-width="1.2"');
+const water = (x, y, w, h) => sR(x, y, w, h, 'mf-f1');
+
+/* --- A. foundations --- */
+function targetsSvg() {
+  const cw = 120, pts = [[[0, 0], [3, -2], [-2, 3], [2, 2], [-3, -1], [1, -3]], [[22, -18], [26, -15], [19, -21], [24, -22], [20, -14], [27, -19]], [[0, -24], [22, 6], [-20, 12], [8, 22], [-14, -16], [18, -12]], [[30, 10], [-8, -28], [16, 30], [-30, 4], [34, -20], [0, 16]]];
+  const lab = [[T`precise`, T`accurate`], [T`precise`, T`not accurate`], [T`not precise`, T`accurate`], [T`not precise`, T`not accurate`]];
+  let s = svgBox(cw * 4, 150, T`Four targets showing accurate and precise, precise but not accurate, accurate but not precise, and neither`);
+  pts.forEach((set, i) => {
+    const cx = i * cw + cw / 2, cy = 56;
+    s += sC(cx, cy, 46, 'mf-cell', ' stroke-width="1.4"') + sC(cx, cy, 31, 'mf-s2l', ' stroke-width="1.2"') + sC(cx, cy, 15, 'mf-s4l', ' stroke-width="1.2"');
+    s += set.map(([dx, dy]) => sC(cx + dx, cy + dy, 3.6, 'mf-dot')).join('') + sT(cx, 124, lab[i][0], 'mf-small') + sT(cx, 140, lab[i][1], 'mf-small');
+  });
+  return s + '</svg>';
+}
+
+/* --- B. mechanics --- */
+function tickerSvg() {
+  let s = svgBox(460, 130, T`Two ticker tapes: equal gaps for constant velocity and growing gaps for speeding up`);
+  [[T`constant velocity: equal gaps`, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(i => i * 34)], [T`speeding up: growing gaps`, [0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => i * i * 5.2)]].forEach(([t, xs], k) => {
+    const y = 34 + k * 62;
+    s += sT(10, y - 12, t, 'mf-small', 'start') + sR(10, y - 8, 440, 16, 'mf-cellc', 2) + xs.map(x => sC(24 + x, y, 3.4, 'mf-dot')).join('');
+  });
+  return s + '</svg>';
+}
+function strobeSvg() {   // a dropped ball photographed every second (g = 10 m/s²)
+  const k = 3.3, y0 = 24;
+  let s = svgBox(320, 300, T`Positions of a dropped ball every second: 0, 5, 20, 45 and 80 metres below the start`);
+  s += sL(70, y0, 70, y0 + 80 * k, 'mf-axis');
+  for (let h = 0; h <= 80; h += 10) s += sL(64, y0 + h * k, 70, y0 + h * k, 'mf-axis') + (h % 20 === 0 ? sT(58, y0 + h * k + 4, `${h} m`, 'mf-small', 'end') : '');
+  [0, 1, 2, 3, 4].forEach(t => { const y = y0 + 5 * t * t * k; s += ball(110, y, 6, t ? 'mf-s1' : 'mf-s4') + sT(128, y + 4, `t = ${t} s`, 'mf-small', 'start') + (t ? sT(200, y + 4, `v = ${10 * t} m/s`, 'mf-small', 'start') : ''); });
+  return s + '</svg>';
+}
+function loopSvg() {   // forces on a ball whirled in a vertical circle
+  const cx = 150, cy = 120, r = 78;
+  let s = svgBox(300, 240, T`Ball on a string in a vertical circle: at the top tension and weight both point down, at the bottom tension points up and weight down`) + sC(cx, cy, r, 'mf-ring', ' stroke-dasharray="5 4"') + sC(cx, cy, 3, 'mf-dot');
+  s += sL(cx, cy, cx, cy - r, 'mf-thin') + sL(cx, cy, cx, cy + r, 'mf-thin');
+  s += ball(cx, cy - r) + sArrow(cx - 12, cy - r + 4, cx - 12, cy - r + 40, 'mf-c1', 8) + sArrow(cx + 12, cy - r + 4, cx + 12, cy - r + 34, 'mf-c2', 8) + sT(cx - 18, cy - r + 36, 'T', 'mf-var', 'end') + sT(cx + 18, cy - r + 32, 'mg', 'mf-var', 'start');
+  s += ball(cx, cy + r) + sArrow(cx - 12, cy + r - 4, cx - 12, cy + r - 58, 'mf-c1', 8) + sArrow(cx + 12, cy + r + 4, cx + 12, cy + r + 34, 'mf-c2', 8) + sT(cx - 18, cy + r - 40, 'T', 'mf-var', 'end') + sT(cx + 18, cy + r + 30, 'mg', 'mf-var', 'start');
+  return s + sT(cx + 30, cy - r - 6, T`top`, 'mf-small', 'start') + sT(cx + 30, cy + r + 8, T`bottom`, 'mf-small', 'start') + '</svg>';
+}
+function thirdLawSvg() {
+  let s = svgBox(340, 150, T`Two blocks pushing on each other with equal and opposite forces`);
+  s += sL(10, 120, 330, 120, 'mf-axis') + sR(60, 50, 110, 70, 'mf-s1l', 4, ' stroke-width="1.6"') + sR(170, 50, 110, 70, 'mf-s2l', 4, ' stroke-width="1.6"');
+  s += sT(115, 110, 'A', 'mf-var') + sT(225, 110, 'B', 'mf-var');
+  s += sArrow(172, 72, 250, 72, 'mf-c1', 9) + sArrow(168, 92, 90, 92, 'mf-c2', 9) + sT(212, 64, T`A on B`, 'mf-small') + sT(128, 86, T`B on A`, 'mf-small');
+  return s + '</svg>';
+}
+function workAngleSvg() {
+  const x0 = 90, y0 = 110, a = 30 * Math.PI / 180, L = 120;
+  let s = svgBox(340, 150, T`A box pulled by a rope at 30 degrees; only the horizontal component F cos theta does work along the floor`);
+  s += sL(10, 130, 330, 130, 'mf-axis') + sR(30, 90, 60, 40, 'mf-s1l', 3, ' stroke-width="1.6"');
+  s += sArrow(x0, y0, x0 + L * Math.cos(a), y0 - L * Math.sin(a), 'mf-c1', 9) + sArrow(x0, y0, x0 + L * Math.cos(a), y0, 'mf-c2', 9) + sL(x0 + L * Math.cos(a), y0, x0 + L * Math.cos(a), y0 - L * Math.sin(a), 'mf-thin', ' stroke-dasharray="4 3"');
+  s += sAngle(x0, y0, 34, 0, 30, 'mf-c4') + sT(x0 + 42, y0 - 8, 'θ', 'mf-var', 'start') + sT(x0 + L * Math.cos(a) + 8, y0 - L * Math.sin(a), 'F', 'mf-var', 'start') + sT(x0 + L * Math.cos(a) + 8, y0 + 4, 'F cos θ', 'mf-lab', 'start');
+  return s + sArrow(200, 145, 290, 145, 'mf-line', 7) + sT(245, 141, 's', 'mf-var') + '</svg>';
+}
+function cart(x, y, w, t, cls) { return sR(x, y, w, 30, cls, 5, ' stroke-width="1.6"') + sC(x + 12, y + 34, 6, 'mf-cellc', ' stroke="var(--ink-2)"') + sC(x + w - 12, y + 34, 6, 'mf-cellc', ' stroke="var(--ink-2)"') + sT(x + w / 2, y + 20, t, 'mf-lab-b'); }
+function collisionSvg() {
+  let s = svgBox(440, 200, T`Before: a 2 kg cart at 6 m/s moves towards a 1 kg cart at rest. After: they move together at 4 m/s`);
+  s += sT(10, 22, T`before`, 'mf-lab-b', 'start') + sL(10, 76, 430, 76, 'mf-axis') + cart(40, 36, 70, '2 kg', 'mf-s1l') + sArrow(114, 51, 170, 51, 'mf-c1', 8) + sT(142, 44, '6 m/s', 'mf-small') + cart(250, 36, 50, '1 kg', 'mf-s2l') + sT(275, 30, 'v = 0', 'mf-small');
+  s += sT(10, 118, T`after`, 'mf-lab-b', 'start') + sL(10, 172, 430, 172, 'mf-axis') + cart(200, 132, 70, '2 kg', 'mf-s1l') + cart(270, 132, 50, '1 kg', 'mf-s2l') + sArrow(324, 147, 364, 147, 'mf-c1', 8) + sT(344, 140, '4 m/s', 'mf-small');
+  return s + '</svg>';
+}
+function wrenchSvg() {
+  const px = 50, py = 110, ex = 280, a = 60 * Math.PI / 180, L = 76;
+  let s = svgBox(360, 160, T`A spanner turned about a bolt: the force F at angle theta to the handle, a distance r from the axis`);
+  s += sL(px, py, ex + 14, py, 'mf-line', ' stroke-width="12" stroke-linecap="round"') + sC(px, py, 16, 'mf-s2l', ' stroke-width="1.6"') + sC(px, py, 4, 'mf-dot');
+  s += sArrow(ex, py, ex + L * Math.cos(a), py - L * Math.sin(a), 'mf-c1', 9) + sArrow(ex, py, ex, py - L * Math.sin(a), 'mf-c2', 8) + sAngle(ex, py, 26, 0, 60, 'mf-c4');
+  s += sT(ex + L * Math.cos(a) + 6, py - L * Math.sin(a) + 4, 'F', 'mf-var', 'start') + sT(ex - 8, py - L * Math.sin(a) / 2, 'F sin θ', 'mf-lab', 'end') + sT(ex + 30, py - 8, 'θ', 'mf-var', 'start');
+  return s + sArrow(px, py + 26, ex, py + 26, 'mf-line', 7) + sArrow(ex, py + 26, px, py + 26, 'mf-line', 7) + sT((px + ex) / 2, py + 44, 'r', 'mf-var') + sT(px, py - 24, T`axis`, 'mf-small') + '</svg>';
+}
+function toppleSvg() {
+  const one = (ox, tilt, ok) => {
+    const w = 50, h = 120, a = tilt * Math.PI / 180, P = (x, y) => [ox + x * Math.cos(a) - y * Math.sin(a), 170 - x * Math.sin(a) - y * Math.cos(a)];
+    const c = P(-w / 2, h / 2);
+    let t = sPoly([P(0, 0), P(-w, 0), P(-w, h), P(0, h)], ok ? 'mf-s2l' : 'mf-s4l', ' stroke-width="1.6"') + sC(...c, 5, 'mf-dot') + sL(c[0], c[1], c[0], 170, 'mf-c1', ' stroke-dasharray="5 4" stroke-width="2"') + sC(ox, 170, 4, 'mf-open');
+    return t + sT(ox - 30, 196, ok ? T`falls back` : T`topples`, 'mf-lab-b');
+  };
+  return svgBox(360, 206, T`Two tilted boxes: when the vertical line through the centre of gravity stays over the base the box falls back; when it passes outside, the box topples`) + sL(10, 170, 350, 170, 'mf-axis') + one(130, 12, true) + one(300, 35, false) + '</svg>';
+}
+function orbitSvg() {
+  const cx = 130, cy = 120, R = 40, r = 96, a = 40 * Math.PI / 180, sx = cx + r * Math.cos(a), sy = cy - r * Math.sin(a);
+  let s = svgBox(300, 240, T`A satellite of mass m in a circular orbit of radius r around a planet of mass M; gravity points to the centre and the velocity along the tangent`);
+  s += sC(cx, cy, r, 'mf-ring', ' stroke-dasharray="5 4"') + sC(cx, cy, R, 'mf-s2l', ' stroke-width="1.6"') + sT(cx, cy + 5, 'M', 'mf-var') + sL(cx, cy, sx, sy, 'mf-thin') + sT((cx + sx) / 2 - 8, (cy + sy) / 2 - 6, 'r', 'mf-var', 'end');
+  s += sArrow(sx, sy, sx - 40 * Math.cos(a), sy + 40 * Math.sin(a), 'mf-c2', 8) + sArrow(sx, sy, sx - 60 * Math.sin(a), sy - 60 * Math.cos(a), 'mf-c1', 8) + ball(sx, sy, 7, 'mf-s4');
+  return s + sT(sx + 12, sy + 2, 'm', 'mf-var', 'start') + sT(sx - 60 * Math.sin(a) - 4, sy - 60 * Math.cos(a) - 6, 'v', 'mf-var', 'end') + sT(sx - 44 * Math.cos(a) + 4, sy + 44 * Math.sin(a) + 14, 'F', 'mf-var') + '</svg>';
+}
+function springsSvg() {
+  const block = (x, y, t) => sR(x - 22, y, 44, 26, 'mf-s1l', 3, ' stroke-width="1.6"') + sT(x, y + 18, t, 'mf-small');
+  let s = svgBox(380, 230, T`A single spring, two springs in parallel and two springs in series, each holding a load`) + sL(20, 20, 360, 20, 'mf-line', ' stroke-width="3"');
+  s += zigzag(70, 20, 70, 120) + block(70, 120, 'm') + sT(70, 176, T`single: k`, 'mf-small');
+  s += zigzag(170, 20, 170, 100) + zigzag(210, 20, 210, 100) + sR(160, 100, 60, 6, 'mf-ink', 1) + block(190, 106, 'm') + sT(190, 176, T`parallel: k₁ + k₂`, 'mf-small');
+  s += zigzag(310, 20, 310, 80, 6) + sC(310, 83, 3, 'mf-dot') + zigzag(310, 86, 310, 146, 6) + block(310, 146, 'm') + sT(310, 196, T`series: softer`, 'mf-small');
+  return s + '</svg>';
+}
+function tankSvg() {   // pressure grows with depth
+  let s = svgBox(320, 250, T`A tank of water with arrows on the wall that grow longer with depth, showing that pressure increases with depth`);
+  s += water(40, 40, 170, 190) + sPline([[40, 20], [40, 230], [210, 230], [210, 20]], 'mf-line', ' stroke-width="2.5"') + sL(40, 40, 210, 40, 'mf-c1', ' stroke-width="1.5"');
+  [[80, 12], [120, 26], [160, 40], [200, 54]].forEach(([y, L]) => { s += sArrow(214, y, 214 + L, y, 'mf-c2', 7); });
+  s += sArrow(20, 44, 20, 196, 'mf-line', 7) + sT(14, 124, 'h', 'mf-var', 'end') + sC(120, 200, 3, 'mf-dot') + sT(112, 196, 'p = p₀ + ρgh', 'mf-small', 'end');
+  return s + sT(274, 210, T`higher pressure`, 'mf-small', 'end') + '</svg>';
+}
+function hydraulicSvg() {
+  let s = svgBox(380, 230, T`Hydraulic press: a small force on a small piston produces a large force on a large piston`);
+  s += water(50, 70, 30, 120) + water(50, 170, 280, 30) + water(210, 100, 120, 80);
+  s += sPline([[50, 30], [50, 200], [330, 200], [330, 60]], 'mf-line', ' stroke-width="2.5"') + sPline([[80, 30], [80, 170], [210, 170], [210, 60]], 'mf-line', ' stroke-width="2.5"');
+  s += sR(50, 62, 30, 10, 'mf-ink') + sR(210, 92, 120, 10, 'mf-ink') + sR(236, 56, 68, 36, 'mf-s4l', 3, ' stroke-width="1.4"') + sT(270, 79, T`load`, 'mf-small');
+  s += sArrow(65, 18, 65, 58, 'mf-c1', 8) + sT(74, 30, 'F₁', 'mf-var', 'start') + sArrow(350, 96, 350, 30, 'mf-c2', 9) + sT(356, 50, 'F₂', 'mf-var', 'start');
+  return s + sT(65, 220, 'A₁', 'mf-var') + sT(270, 220, 'A₂', 'mf-var') + '</svg>';
+}
+function buoyancySvg() {
+  let s = svgBox(280, 220, T`A stone under water: its weight acts down and the buoyant force acts up`);
+  s += water(20, 40, 240, 170) + sL(20, 40, 260, 40, 'mf-c1', ' stroke-width="1.5"') + sR(110, 100, 60, 50, 'mf-s4l', 6, ' stroke-width="1.6"');
+  s += sArrow(140, 100, 140, 56, 'mf-c2', 9) + sArrow(140, 150, 140, 200, 'mf-c1', 9) + sT(148, 66, sub('F', 'B') + ' = ρgV', 'mf-lab-b', 'start') + sT(148, 196, 'W = mg', 'mf-lab-b', 'start');
+  return s + '</svg>';
+}
+function pipeSvg() {   // Venturi: narrow section, faster flow, lower pressure
+  let s = svgBox(420, 220, T`A pipe that narrows: the fluid moves faster in the narrow part and the pressure there is lower, shown by the lower column in the gauge tube`);
+  const top = 'M20 80 L150 80 C190 80 200 110 240 110 L400 110', bot = 'L400 170 L240 170 C200 170 190 200 150 200 L20 200 Z';
+  s += sP(top + ' ' + bot, 'mf-s1l', ' stroke="none"') + sP(top, 'mf-line', ' fill="none" stroke-width="2.5"') + sP('M20 200 L150 200 C190 200 200 170 240 170 L400 170', 'mf-line', ' fill="none" stroke-width="2.5"');
+  s += sR(80, 20, 16, 60, 'mf-cell') + sR(80, 36, 16, 44, 'mf-f1') + sR(310, 50, 16, 60, 'mf-cell') + sR(310, 82, 16, 28, 'mf-f1');
+  [120, 160].forEach(y => { s += sArrow(40, y, 80, y, 'mf-c2', 7); }); [128, 152].forEach(y => { s += sArrow(260, y, 350, y, 'mf-c2', 7); });
+  return s + sT(60, 186, 'A₁, v₁', 'mf-lab', 'start') + sT(300, 186, 'A₂, v₂', 'mf-lab') + sT(104, 30, T`higher p`, 'mf-small', 'start') + sT(334, 60, T`lower p`, 'mf-small', 'start') + '</svg>';
+}
+function torricelliSvg() {
+  let s = svgBox(360, 230, T`Water leaving a hole at depth h below the surface of an open tank, with speed root 2gh`);
+  s += water(30, 40, 120, 170) + sPline([[30, 20], [30, 210], [150, 210], [150, 20]], 'mf-line', ' stroke-width="2.5"') + sL(30, 40, 150, 40, 'mf-c1', ' stroke-width="1.5"');
+  const hy = 150; s += sArrow(170, 40, 170, hy, 'mf-line', 7) + sArrow(170, hy, 170, 40, 'mf-line', 7) + sT(178, 100, 'h', 'mf-var', 'start');
+  s += sP(`M150 ${hy} Q230 ${hy} 290 222`, 'mf-c1', ' fill="none" stroke-width="5" stroke-opacity="0.6"') + sArrow(152, hy, 196, hy, 'mf-c2', 8) + sT(200, hy - 8, 'v = √(2gh)', 'mf-lab-b', 'start');
+  return s + '</svg>';
+}
+function comSvg() {
+  let s = svgBox(360, 140, T`A 2 kg mass and a 1 kg mass 3 m apart on a light rod; the centre of mass is 1 m from the heavier mass`);
+  s += sL(60, 60, 300, 60, 'mf-line', ' stroke-width="4"') + ball(60, 60, 22, 'mf-s1l') + sT(60, 65, '2 kg', 'mf-small') + ball(300, 60, 15, 'mf-s2l') + sT(300, 64, '1 kg', 'mf-small');
+  s += sPoly([[140, 64], [130, 84], [150, 84]], 'mf-s4') + sT(140, 100, T`centre of mass`, 'mf-small');
+  return s + sArrow(60, 118, 140, 118, 'mf-line', 6) + sArrow(140, 118, 60, 118, 'mf-line', 6) + sT(100, 132, '1 m', 'mf-small') + sArrow(140, 118, 300, 118, 'mf-line', 6) + sArrow(300, 118, 140, 118, 'mf-line', 6) + sT(220, 132, '2 m', 'mf-small') + '</svg>';
+}
+
+/* --- C. waves and sound --- */
+function oscSvg() {   // mass on a spring and a simple pendulum
+  let s = svgBox(460, 190, T`A mass on a spring oscillating between minus A and plus A, and a pendulum swinging about its lowest point`);
+  s += sL(20, 30, 20, 110, 'mf-line', ' stroke-width="4"') + sL(20, 110, 240, 110, 'mf-axis');
+  s += zigzag(20, 80, 150, 80, 10) + sR(150, 60, 40, 40, 'mf-s1l', 4, ' stroke-width="1.6"');
+  [[90, '−A'], [130, '0'], [170, '+A']].forEach(([x, t]) => { s += sR(x, 60, 40, 40, 'mf-frame', 4, ' stroke-dasharray="4 3"') + sT(x + 20, 132, t, 'mf-lab'); });
+  s += sArrow(110, 150, 190, 150, 'mf-c2', 7) + sArrow(190, 150, 110, 150, 'mf-c2', 7) + sT(150, 170, T`oscillates`, 'mf-small');
+  const px = 350, py = 24, L = 120, a = 22 * Math.PI / 180, bx = px + L * Math.sin(a), by = py + L * Math.cos(a);
+  s += sL(300, py, 400, py, 'mf-line', ' stroke-width="3"') + sL(px, py, px, py + L + 10, 'mf-grid', ' stroke-dasharray="4 3"') + sL(px, py, px - L * Math.sin(a), py + L * Math.cos(a), 'mf-thin', ' stroke-dasharray="4 3"') + sL(px, py, bx, by, 'mf-line', ' stroke-width="1.8"');
+  s += ball(px - L * Math.sin(a), py + L * Math.cos(a), 10, 'mf-cell') + ball(bx, by, 10) + sP(`M${f1(px - L * Math.sin(a))} ${f1(py + L * Math.cos(a) + 16)} Q${px} ${py + L + 26} ${f1(bx)} ${f1(by + 16)}`, 'mf-c2', ' fill="none"');
+  return s + sT(px + 26, py + 60, 'L', 'mf-var', 'start') + sT(px, py + L + 44, T`pendulum`, 'mf-small') + '</svg>';
+}
+function longWaveSvg() {
+  const lam = 96, xs = []; for (let i = 0; i < 44; i++) { const x0 = 16 + i * 10; xs.push(x0 + 7 * Math.sin(2 * Math.PI * x0 / lam)); }
+  let s = svgBox(460, 130, T`A longitudinal wave: bunched-up regions (compressions) and spread-out regions (rarefactions) along the direction of travel`);
+  s += xs.map(x => sL(x, 34, x, 90, 'mf-line', ' stroke-width="1.6"')).join('');
+  const c1 = 16 + lam / 2, c2 = c1 + lam;   // compressions where the displacement gradient packs lines together
+  s += sT(c1, 24, 'C', 'mf-lab-b') + sT(c2, 24, 'C', 'mf-lab-b') + sT(c1 + lam / 2, 24, 'R', 'mf-lab-b') + sT(c2 + lam / 2, 24, 'R', 'mf-lab-b');
+  return s + sArrow(c1, 106, c2, 106, 'mf-c2', 7) + sArrow(c2, 106, c1, 106, 'mf-c2', 7) + sT((c1 + c2) / 2, 122, 'λ', 'mf-var') + sArrow(360, 112, 440, 112, 'mf-line', 7) + sT(400, 126, T`travel`, 'mf-small') + '</svg>';
+}
+function dopplerSvg() {
+  const xs = 250, vs = 16, v = 30;
+  let s = svgBox(420, 220, T`Wavefronts from a moving source are squeezed together in front of it and stretched out behind it`);
+  for (let k = 1; k <= 5; k++) s += sC(xs - k * vs, 110, k * v, 'mf-ring', ' stroke-width="1.4"');
+  s += ball(xs, 110, 7, 'mf-s4') + sArrow(xs + 10, 110, xs + 44, 110, 'mf-c1', 7);
+  return s + sT(404, 30, T`higher f`, 'mf-lab-b', 'end') + sT(16, 30, T`lower f`, 'mf-lab-b', 'start') + '</svg>';
+}
+/* --- D. heat --- */
+function thermometersSvg() {
+  const col = (x, name, top, bot, zero) => sR(x - 9, 30, 18, 180, 'mf-cell', 9, ' stroke-width="1.5"') + sR(x - 5, 110, 10, 96, 'mf-s4', 4) + sC(x, 214, 12, 'mf-s4') + sT(x, 20, name, 'mf-lab-b') + sT(x + 16, 64, top, 'mf-small', 'start') + sT(x + 16, 154, bot, 'mf-small', 'start') + (zero ? sT(x + 16, 196, zero, 'mf-small', 'start') : '');
+  let s = svgBox(360, 236, T`Celsius, kelvin and Fahrenheit thermometers with the boiling and freezing points of water marked`);
+  s += sL(20, 60, 340, 60, 'mf-c1', ' stroke-dasharray="5 4"') + sL(20, 150, 340, 150, 'mf-c2', ' stroke-dasharray="5 4"');
+  return s + col(70, '°C', '100', '0') + col(180, 'K', '373', '273') + col(290, '°F', '212', '32') + sT(20, 54, T`water boils`, 'mf-small', 'start') + sT(20, 144, T`water freezes`, 'mf-small', 'start') + '</svg>';
+}
+function engineSvg() {
+  let s = svgBox(320, 230, T`Heat engine: heat from the hot source, part turned into work, the rest rejected to the cold sink`);
+  s += sR(60, 10, 200, 40, 'mf-s4l', 6, ' stroke-width="1.6"') + sT(160, 35, T`hot source`, 'mf-lab-b') + sR(60, 180, 200, 40, 'mf-s1l', 6, ' stroke-width="1.6"') + sT(160, 205, T`cold sink`, 'mf-lab-b');
+  s += sC(160, 115, 30, 'mf-s2l', ' stroke-width="1.6"') + sT(160, 120, T`engine`, 'mf-small');
+  s += sL(160, 50, 160, 85, 'mf-c4', ' stroke-width="10"') + sArrow(160, 60, 160, 88, 'mf-c4', 12) + sT(174, 72, sub('Q', 'H'), 'mf-var', 'start');
+  s += sL(160, 145, 160, 172, 'mf-c1', ' stroke-width="5"') + sArrow(160, 150, 160, 178, 'mf-c1', 10) + sT(174, 166, sub('Q', 'C'), 'mf-var', 'start');
+  return s + sL(190, 115, 262, 115, 'mf-c2', ' stroke-width="6"') + sArrow(200, 115, 280, 115, 'mf-c2', 11) + sT(250, 105, 'W', 'mf-var') + '</svg>';
+}
+function heatWaysSvg() {
+  let s = svgBox(480, 190, T`Conduction along a metal rod, convection currents in a heated pan of water, and radiation from the Sun`);
+  // conduction
+  s += sR(20, 70, 130, 16, 'mf-s4l', 3, ' stroke-width="1.4"') + sP('M26 118 q8 -18 0 -30 q14 10 10 30 q10 -8 8 -18 q10 14 0 18 z', 'mf-s4') + [50, 80, 110].map(x => sArrow(x, 60, x + 22, 60, 'mf-c4', 6)).join('') + sT(85, 170, T`conduction`, 'mf-lab-b');
+  // convection
+  s += sPline([[180, 50], [180, 130], [300, 130], [300, 50]], 'mf-line', ' stroke-width="2.4"') + water(182, 62, 116, 66) + sP('M205 120 C200 80 225 70 240 80 C255 90 275 80 270 120', 'mf-c1', ' fill="none" stroke-width="2"') + sArrow(206, 100, 206, 80, 'mf-c4', 7) + sArrow(270, 90, 270, 110, 'mf-c1', 7) + sP('M232 150 q8 -18 0 -16 q14 10 10 16 z', 'mf-s4') + sT(240, 170, T`convection`, 'mf-lab-b');
+  // radiation
+  s += sC(360, 90, 24, 'mf-s4l', ' stroke-width="1.4"') + [60, 90, 120].map(y => sP(`M390 ${y} q6 -8 12 0 t12 0 t12 0 t12 0 t12 0`, 'mf-c4', ' fill="none" stroke-width="1.8"') + sArrow(446, y, 460, y, 'mf-c4', 6)).join('') + sT(410, 170, T`radiation`, 'mf-lab-b');
+  return s + '</svg>';
+}
+/* --- E. electricity and magnetism --- */
+const chargeSign = (x, y, q, r = 12) => sC(x, y, r, q > 0 ? 'mf-s4l' : 'mf-s1l', ' stroke-width="1.6"') + sT(x, y + 5, q > 0 ? '+' : '−', 'mf-lab-b');
+function fieldLinesSvg() {
+  let s = svgBox(480, 170, T`Electric field lines: pointing outward from a positive charge, curving from positive to negative for a pair, and straight and evenly spaced between charged plates`);
+  for (let k = 0; k < 12; k++) { const a = k * Math.PI / 6; s += sArrow(70 + 16 * Math.cos(a), 80 + 16 * Math.sin(a), 70 + 58 * Math.cos(a), 80 + 58 * Math.sin(a), 'mf-c4', 6); }
+  s += chargeSign(70, 80, 1);
+  const ax = 180, bx = 290, y = 80;
+  [-60, -34, -14, 14, 34, 60].forEach(h => { s += sP(`M${ax + 12} ${y} Q${(ax + bx) / 2} ${y + 2 * h} ${bx - 12} ${y}`, 'mf-c4', ' fill="none" stroke-width="1.4"'); });
+  s += sL(ax + 12, y, bx - 12, y, 'mf-c4', ' stroke-width="1.4"') + sArrow((ax + bx) / 2 - 4, y, (ax + bx) / 2 + 6, y, 'mf-c4', 7) + chargeSign(ax, y, 1) + chargeSign(bx, y, -1);
+  s += sR(350, 20, 8, 120, 'mf-s4l', 1, ' stroke-width="1.4"') + sR(452, 20, 8, 120, 'mf-s1l', 1, ' stroke-width="1.4"');
+  for (let yy = 32; yy <= 128; yy += 24) s += sArrow(360, yy, 450, yy, 'mf-c4', 6);
+  s += sT(354, 158, '+', 'mf-lab-b') + sT(456, 158, '−', 'mf-lab-b');
+  return s + '</svg>';
+}
+function capacitorSvg() {
+  let s = svgBox(320, 190, T`A parallel-plate capacitor: charges +Q and −Q on plates a distance d apart with a uniform field between them`);
+  s += sR(80, 20, 10, 130, 'mf-s4l', 1, ' stroke-width="1.6"') + sR(230, 20, 10, 130, 'mf-s1l', 1, ' stroke-width="1.6"');
+  for (let y = 34; y <= 136; y += 17) s += sT(72, y + 5, '+', 'mf-lab-b', 'end') + sT(250, y + 5, '−', 'mf-lab-b', 'start') + (y % 34 === 0 ? '' : sArrow(94, y, 226, y, 'mf-c4', 6));
+  return s + sT(60, 90, '+Q', 'mf-var', 'end') + sT(268, 90, '−Q', 'mf-var', 'start') + sArrow(90, 170, 230, 170, 'mf-line', 6) + sArrow(230, 170, 90, 170, 'mf-line', 6) + sT(160, 186, 'd', 'mf-var') + sT(160, 16, 'E = V/d', 'mf-lab') + '</svg>';
+}
+function wireFieldSvg() {
+  const cx = 110, cy = 100;
+  let s = svgBox(420, 200, T`Left: magnetic field circles around a wire carrying current into the page. Right: a positive charge moving in a circle in a field pointing out of the page`);
+  [26, 50, 74].forEach(r => { s += sC(cx, cy, r, 'mf-ring', ' stroke="var(--lv1)"'); s += sArrow(cx + 6, cy - r, cx + 12, cy - r + 0.8, 'mf-c2', 8) + sArrow(cx - 6, cy + r, cx - 12, cy + r - 0.8, 'mf-c2', 8); });
+  s += sC(cx, cy, 10, 'mf-cell', ' stroke-width="1.6"') + sL(cx - 6, cy - 6, cx + 6, cy + 6, 'mf-line') + sL(cx - 6, cy + 6, cx + 6, cy - 6, 'mf-line') + sT(cx, 196, T`current into page`, 'mf-small');
+  for (let x = 250; x <= 400; x += 30) for (let y = 30; y <= 170; y += 30) s += sC(x, y, 2.4, 'mf-dot');
+  const ox = 322, oy = 104, r = 54;
+  s += sC(ox, oy, r, 'mf-ring', ' stroke-dasharray="5 4"') + ball(ox, oy - r, 7, 'mf-s4') + sArrow(ox + 8, oy - r, ox + 48, oy - r, 'mf-c1', 7) + sArrow(ox, oy - r + 8, ox, oy - r + 40, 'mf-c2', 7);
+  return s + sT(ox + 52, oy - r - 8, 'v', 'mf-var') + sT(ox + 6, oy - r + 36, 'F', 'mf-var', 'start') + sT(ox, 196, T`B out of page`, 'mf-small') + '</svg>';
+}
+function railsSvg() {
+  let s = svgBox(400, 200, T`A rod sliding at speed v along two rails in a magnetic field into the page, with a resistor joining the rails`);
+  for (let x = 40; x <= 380; x += 34) for (let y = 40; y <= 160; y += 30) s += sL(x - 3, y - 3, x + 3, y + 3, 'mf-thin') + sL(x - 3, y + 3, x + 3, y - 3, 'mf-thin');
+  s += sL(40, 30, 380, 30, 'mf-line', ' stroke-width="3"') + sL(40, 170, 380, 170, 'mf-line', ' stroke-width="3"') + zigzag(40, 30, 40, 170, 6, 6) + sT(30, 104, 'R', 'mf-var', 'end');
+  s += sR(222, 22, 10, 156, 'mf-s4l', 2, ' stroke-width="1.6"') + sArrow(236, 100, 290, 100, 'mf-c1', 8) + sT(292, 94, 'v', 'mf-var', 'start') + sT(214, 104, 'L', 'mf-var', 'end');
+  return s + sT(340, 196, T`B into page`, 'mf-small') + sT(120, 196, 'ε = BLv', 'mf-lab-b') + '</svg>';
+}
+function transformerSvg() {
+  let s = svgBox(380, 210, T`A transformer: primary coil with few turns and secondary coil with more turns on a shared iron core`);
+  s += `<path d="M110 30 H270 V180 H110 Z M140 60 V150 H240 V60 Z" class="mf-s3l" fill-rule="evenodd" stroke="var(--ink-2)" stroke-width="1.4"/>`;
+  for (let i = 0; i < 4; i++) s += `<ellipse cx="125" cy="${72 + i * 22}" rx="22" ry="7" fill="none" class="mf-c1" stroke-width="2.4"/>`;
+  for (let i = 0; i < 8; i++) s += `<ellipse cx="255" cy="${66 + i * 11.5}" rx="22" ry="5" fill="none" class="mf-c2" stroke-width="2.2"/>`;
+  s += sL(103, 72, 50, 72, 'mf-c1', ' stroke-width="2"') + sL(103, 138, 50, 138, 'mf-c1', ' stroke-width="2"') + sL(277, 66, 330, 66, 'mf-c2', ' stroke-width="2"') + sL(277, 147, 330, 147, 'mf-c2', ' stroke-width="2"');
+  return s + sT(40, 110, 'Vₚ', 'mf-var', 'end') + sT(340, 110, 'Vₛ', 'mf-var', 'start') + sT(125, 200, 'Nₚ', 'mf-var') + sT(255, 200, 'Nₛ', 'mf-var') + sT(190, 22, T`iron core`, 'mf-small') + '</svg>';
+}
+function emWaveSvg() {
+  let s = svgBox(480, 200, T`An electromagnetic wave: electric and magnetic fields oscillate at right angles to each other and to the direction of travel`), e = [], b = [];
+  for (let i = 0; i <= 120; i++) { const x = 30 + i * 3.4, ph = Math.sin(2 * Math.PI * i / 60); e.push([x, 100 - 60 * ph]); b.push([x - 26 * ph, 100 + 26 * ph]); }
+  s += sL(20, 100, 460, 100, 'mf-axis') + sPline(e, 'mf-c1', ' stroke-width="2.2"') + sPline(b, 'mf-c2', ' stroke-width="2.2"');
+  for (let i = 0; i <= 120; i += 6) { const x = 30 + i * 3.4, ph = Math.sin(2 * Math.PI * i / 60); s += sL(x, 100, x, 100 - 60 * ph, 'mf-c1', ' stroke-width="0.8"') + sL(x, 100, x - 26 * ph, 100 + 26 * ph, 'mf-c2', ' stroke-width="0.8"'); }
+  return s + sT(72, 30, 'E', 'mf-var') + sT(40, 140, 'B', 'mf-var') + sArrow(420, 170, 470, 170, 'mf-line', 7) + sT(446, 162, 'c', 'mf-var') + '</svg>';
+}
+function spectrumSvg() {
+  const W = 560, L = 20, R = 20, X = v => L + (3 - v) / 15 * (W - L - R);   // v = log10(wavelength in m), from 10³ to 10⁻¹²
+  const bands = [[3, 0, T`radio`, 'mf-s1l'], [0, -3, T`micro`, 'mf-s2l'], [-3, -6.15, T`infrared`, 'mf-s4l'], [-6.4, -8, 'UV', 'mf-s3l'], [-8, -11, T`X-rays`, 'mf-s1l'], [-11, -12, 'γ', 'mf-s2l']];
+  let s = svgBox(W, 170, T`The electromagnetic spectrum from radio waves to gamma rays on a scale of wavelength, with the narrow visible band`);
+  bands.forEach(([a, b, t, cls]) => { s += sR(X(a), 40, X(b) - X(a), 40, cls, 0, ' stroke-width="1"') + sT((X(a) + X(b)) / 2, 65, t, 'mf-small'); });
+  s += `<defs><linearGradient id="rbw"><stop offset="0" stop-color="#d7263d"/><stop offset=".25" stop-color="#f49d37"/><stop offset=".45" stop-color="#f7e733"/><stop offset=".65" stop-color="#3bb273"/><stop offset=".85" stop-color="#2e86de"/><stop offset="1" stop-color="#7d3cff"/></linearGradient></defs>`;
+  s += sR(X(-6.15), 40, X(-6.4) - X(-6.15), 40, '', 0, ' fill="url(#rbw)"') + sP(`M${f1(X(-6.15))} 80 L200 120 M${f1(X(-6.4))} 80 L360 120`, 'mf-thin', ' fill="none"') + sR(200, 120, 160, 18, '', 2, ' fill="url(#rbw)"') + sT(200, 152, '700 nm', 'mf-small') + sT(360, 152, '400 nm', 'mf-small') + sT(280, 152, T`visible light`, 'mf-lab-b');
+  [3, 0, -3, -6, -9, -12].forEach(v => { s += sL(X(v), 82, X(v), 88, 'mf-axis') + sT(X(v), 100, ['1 km', '1 m', '1 mm', '1 µm', '1 nm', '1 pm'][[3, 0, -3, -6, -9, -12].indexOf(v)], 'mf-small'); });
+  return s + sT(L, 30, T`longer wavelength, lower frequency`, 'mf-small', 'start') + sT(W - R, 30, T`shorter wavelength, more energy`, 'mf-small', 'end') + '</svg>';
+}
+
+/* --- F. optics --- */
+function reflectionSvg() {
+  const cx = 170, cy = 150, a = 40 * Math.PI / 180, L = 120;
+  let s = svgBox(340, 180, T`Law of reflection: the incident ray and the reflected ray make equal angles with the normal`);
+  s += sR(40, cy, 260, 10, 'mf-s3l', 0, ' stroke-width="1.4"') + sL(cx, cy, cx, 20, 'mf-grid', ' stroke-dasharray="5 4" stroke-width="1.6"') + sT(cx, 14, T`normal`, 'mf-small');
+  s += sL(cx - L * Math.sin(a), cy - L * Math.cos(a), cx, cy, 'mf-c4', ' stroke-width="2.2"') + sArrow(cx - L * Math.sin(a) * 0.5 - 1, cy - L * Math.cos(a) * 0.5 - 1, cx - L * Math.sin(a) * 0.45, cy - L * Math.cos(a) * 0.45, 'mf-c4', 9);
+  s += sArrow(cx, cy, cx + L * Math.sin(a), cy - L * Math.cos(a), 'mf-c4', 9) + sAngle(cx, cy, 34, 90, 130, 'mf-c1') + sAngle(cx, cy, 40, 50, 90, 'mf-c2');
+  return s + sT(cx - 22, cy - 44, 'i', 'mf-var') + sT(cx + 24, cy - 50, 'r', 'mf-var') + sT(60, 172, T`mirror`, 'mf-small', 'start') + '</svg>';
+}
+function planeMirrorSvg() {
+  const m = 200;
+  let s = svgBox(400, 180, T`Plane mirror: the image is as far behind the mirror as the object is in front`);
+  s += sR(m - 3, 20, 6, 150, 'mf-s3l', 0, ' stroke-width="1.4"');
+  const arrowObj = (x, cls, dash) => sL(x, 150, x, 70, cls, ' stroke-width="4"' + (dash ? ' stroke-dasharray="6 4"' : '')) + sPoly([[x - 10, 78], [x + 10, 78], [x, 60]], dash ? 'mf-cell' : 'mf-s4', dash ? ' stroke="var(--ink-2)" stroke-dasharray="3 2"' : '');
+  s += arrowObj(90, 'mf-c4') + arrowObj(310, 'mf-c4', true);
+  s += sL(90, 64, m, 100, 'mf-c1', ' stroke-width="1.6"') + sArrow(m, 100, 60, 136, 'mf-c1', 8) + sL(m, 100, 310, 64, 'mf-c1', ' stroke-dasharray="4 4"');
+  return s + sArrow(90, 166, m, 166, 'mf-line', 6) + sArrow(m, 166, 90, 166, 'mf-line', 6) + sArrow(m, 166, 310, 166, 'mf-line', 6) + sArrow(310, 166, m, 166, 'mf-line', 6) + sT(145, 160, 'd', 'mf-var') + sT(255, 160, 'd', 'mf-var') + sT(90, 44, T`object`, 'mf-small') + sT(310, 44, T`image`, 'mf-small') + '</svg>';
+}
+function tirSvg() {   // glass (below) to air (above): refraction, critical angle, total internal reflection
+  const y = 100;
+  let s = svgBox(480, 190, T`Three rays from glass to air: below the critical angle the ray refracts out, at the critical angle it runs along the surface, beyond it the light is totally reflected`);
+  s += sR(10, y, 460, 80, 'mf-s3l', 0, ' stroke="none"') + sL(10, y, 470, y, 'mf-line') + sT(20, y - 8, T`air`, 'mf-small', 'start') + sT(20, y + 18, T`glass`, 'mf-small', 'start');
+  [[85, 30, 50], [240, 42, 90], [395, 55, null]].forEach(([x, ai, ao], k) => {
+    const a = ai * Math.PI / 180; s += sL(x, y - 60, x, y + 70, 'mf-grid', ' stroke-dasharray="4 3"') + sL(x - 70 * Math.tan(a), y + 70, x, y, 'mf-c4', ' stroke-width="2"');
+    if (ao === 50) s += sArrow(x, y, x + 60 * Math.tan(ao * Math.PI / 180), y - 60, 'mf-c4', 8) + sArrow(x, y, x + 50 * Math.tan(a), y + 50, 'mf-c4', 6);
+    else if (ao === 90) s += sArrow(x, y, x + 64, y, 'mf-c4', 8) + sArrow(x, y, x + 50 * Math.tan(a), y + 50, 'mf-c4', 6);
+    else s += sArrow(x, y, x + 70 * Math.tan(a), y + 70, 'mf-c4', 8);
+    s += sT(x, 186, [T`refracted`, T`critical angle`, T`totally reflected`][k], 'mf-small');
+  });
+  return s + '</svg>';
+}
+function eyeSvg(kind) {   // 'normal' | 'myopia' | 'corrected'
+  const cx = 120, cy = 70, R = 46, fx = kind === 'myopia' ? cx + 22 : cx + R - 2;
+  let s = svgBox(200, 140, kind === 'normal' ? T`Normal eye: parallel rays focus on the retina` : kind === 'myopia' ? T`Short-sighted eye: parallel rays focus in front of the retina` : T`A diverging lens spreads the rays so they focus on the retina`);
+  s += sC(cx, cy, R, 'mf-cell', ' stroke-width="1.6"') + sP(`M${cx + R * Math.cos(1.1)} ${cy - R * Math.sin(1.1)} A${R} ${R} 0 0 1 ${cx + R * Math.cos(1.1)} ${cy + R * Math.sin(1.1)}`, 'mf-c2', ' fill="none" stroke-width="4"') + `<ellipse cx="${cx - R + 12}" cy="${cy}" rx="7" ry="20" class="mf-s1l" stroke-width="1.4"/>`;
+  const lx = cx - R + 12, xs = kind === 'corrected' ? 30 : 0;
+  [-16, 0, 16].forEach(dy => {
+    if (kind === 'corrected') { const spread = dy * 1.35; s += sL(4, cy + dy, 30, cy + dy, 'mf-c4', ' stroke-width="1.6"') + sL(30, cy + dy, lx, cy + spread, 'mf-c4', ' stroke-width="1.6"') + sL(lx, cy + spread, fx, cy, 'mf-c4', ' stroke-width="1.6"'); }
+    else s += sL(4, cy + dy, lx, cy + dy, 'mf-c4', ' stroke-width="1.6"') + sL(lx, cy + dy, fx, cy, 'mf-c4', ' stroke-width="1.6"') + (kind === 'myopia' ? sL(fx, cy, cx + R - 4, cy - dy * 0.9, 'mf-c4', ' stroke-width="1.2" stroke-dasharray="3 2"') : '');
+  });
+  if (kind === 'corrected') s += sP(`M${xs - 6} ${cy - 26} Q${xs + 2} ${cy} ${xs - 6} ${cy + 26} L${xs + 6} ${cy + 26} Q${xs - 2} ${cy} ${xs + 6} ${cy - 26} Z`, 'mf-s2l', ' stroke-width="1.2"');
+  return s + sC(fx, cy, 3, 'mf-dot') + sT(cx + R + 4, cy + R - 4, T`retina`, 'mf-small', 'end') + '</svg>';
+}
+function telescopeSvg() {
+  const lens = (x, h) => `<ellipse cx="${x}" cy="90" rx="7" ry="${h}" class="mf-s1l" stroke-width="1.4"/>`, fo = 230, fe = 70, x1 = 60, x2 = x1 + fo + fe, F = x1 + fo;
+  let s = svgBox(460, 180, T`Refracting telescope: a long-focus objective and a short-focus eyepiece separated by the sum of their focal lengths`);
+  s += sL(20, 90, 440, 90, 'mf-grid', ' stroke-dasharray="4 3"') + lens(x1, 50) + lens(x2, 30);
+  [-30, 30].forEach(dy => { const yE = 90 - dy * fe / fo; s += sL(20, 90 + dy, x1, 90 + dy, 'mf-c4', ' stroke-width="1.6"') + sL(x1, 90 + dy, x2, yE, 'mf-c4', ' stroke-width="1.6"') + sArrow(x2, yE, 440, yE, 'mf-c4', 7); });
+  s += sC(F, 90, 3, 'mf-dot') + sT(F, 110, 'F', 'mf-var');
+  return s + sArrow(x1, 160, F, 160, 'mf-line', 6) + sArrow(F, 160, x1, 160, 'mf-line', 6) + sArrow(F, 160, x2, 160, 'mf-line', 6) + sArrow(x2, 160, F, 160, 'mf-line', 6) + sT((x1 + F) / 2, 176, sub('f', 'ob'), 'mf-var') + sT((F + x2) / 2, 176, sub('f', 'ok'), 'mf-var') + sT(x1, 30, T`objective`, 'mf-small') + sT(x2, 50, T`eyepiece`, 'mf-small') + '</svg>';
+}
+/* --- G. modern physics --- */
+function lightClockSvg() {
+  let s = svgBox(440, 190, T`Light clock: at rest the light goes straight up and down; seen moving, it travels a longer zigzag path, so each tick takes longer`);
+  const mirrors = (x, y) => sR(x - 20, y, 40, 5, 'mf-s3l') + sR(x - 20, y + 110, 40, 5, 'mf-s3l');
+  s += mirrors(60, 30) + sArrow(56, 116, 56, 38, 'mf-c4', 7) + sArrow(64, 38, 64, 116, 'mf-c4', 7) + sT(60, 170, T`clock at rest`, 'mf-small');
+  [180, 280, 380].forEach(x => { s += mirrors(x, 30); });
+  s += sArrow(180, 138, 280, 38, 'mf-c4', 8) + sArrow(280, 38, 380, 138, 'mf-c4', 8) + sArrow(310, 168, 400, 168, 'mf-line', 6) + sT(260, 170, T`moving clock`, 'mf-small') + sT(355, 162, 'v', 'mf-var');
+  return s + '</svg>';
+}
+function photoSvg() {
+  let s = svgBox(360, 170, T`A photon of energy hf hits a metal surface and knocks out an electron`);
+  s += sR(40, 110, 280, 40, 'mf-s3l', 3, ' stroke-width="1.4"') + sT(180, 136, T`metal`, 'mf-lab-b');
+  s += sP('M40 20 q8 -8 16 0 t16 0 t16 0 t16 0 t16 0 t16 0', 'mf-c4', ' fill="none" stroke-width="2"') + sArrow(132, 20, 176, 100, 'mf-c4', 8) + sT(80, 44, 'hf', 'mf-var');
+  s += ball(190, 104, 7, 'mf-s1') + sT(190, 108, '−', 'mf-small') + sArrow(200, 96, 290, 30, 'mf-c1', 8) + sT(296, 30, 'e⁻', 'mf-var', 'start') + sT(260, 80, sub('E', 'k,max'), 'mf-lab', 'start');
+  return s + '</svg>';
+}
+function goldFoilSvg() {
+  let s = svgBox(420, 190, T`Gold-foil experiment: most alpha particles pass straight through the atom, a few are deflected and very few bounce back from the tiny nucleus`);
+  s += sC(260, 95, 70, 'mf-cellc', ' stroke-dasharray="4 3" stroke="var(--ink-3)"') + sC(260, 95, 6, 'mf-s4');
+  [15, 35, 155, 175].forEach(y => { s += sArrow(10, y, 410, y, 'mf-c1', 7); });
+  s += sP('M10 70 L220 70 Q250 68 290 40 L360 5', 'mf-c1', ' fill="none" stroke-width="1.8"') + sP('M10 120 L220 120 Q250 122 290 150 L360 185', 'mf-c1', ' fill="none" stroke-width="1.8"');
+  s += sP('M10 95 L236 95 Q248 95 230 88 L120 58', 'mf-c2', ' fill="none" stroke-width="2"') + sArrow(140, 64, 110, 55, 'mf-c2', 8);
+  return s + sT(260, 186, T`nucleus (not to scale)`, 'mf-small') + sT(12, 88, 'α', 'mf-var', 'start') + '</svg>';
+}
+function balmerSvg() {   // hydrogen visible lines (NIST, nm)
+  const X = l => 30 + (700 - l) / 320 * 400, lines = [[656, '#e02020', 'Hα'], [486, '#2aa7c9', 'Hβ'], [434, '#4f4ff0', 'Hγ'], [410, '#7b3fe0', 'Hδ']];
+  let s = svgBox(460, 140, T`Visible line spectrum of hydrogen with lines at 656, 486, 434 and 410 nanometres`);
+  s += sR(30, 20, 400, 50, '', 3, ' fill="#0b0b12"') + lines.map(([l, c, n]) => sR(X(l) - 2, 20, 4, 50, '', 0, ` fill="${c}"`) + sT(X(l), 90 + (l === 410 ? 30 : 0), `${l} nm`, 'mf-small') + sT(X(l), 106 + (l === 410 ? 30 : 0), n, 'mf-small')).join('');
+  return s + sT(30, 14, '700 nm', 'mf-small', 'start') + sT(430, 14, '380 nm', 'mf-small', 'end') + '</svg>';
+}
+function penetrationSvg() {
+  let s = svgBox(440, 170, T`Alpha is stopped by paper, beta by a few millimetres of aluminium, and gamma is only reduced by thick lead`);
+  s += sR(140, 20, 6, 120, 'mf-s3l', 0, ' stroke-width="1.2"') + sR(240, 20, 16, 120, 'mf-s2l', 0, ' stroke-width="1.2"') + sR(340, 20, 40, 120, 'mf-s1l', 0, ' stroke-width="1.2"');
+  s += sT(143, 158, T`paper`, 'mf-small') + sT(248, 158, T`aluminium`, 'mf-small') + sT(360, 158, T`lead`, 'mf-small');
+  s += sArrow(30, 45, 136, 45, 'mf-c4', 8) + sT(20, 50, 'α', 'mf-var', 'end') + sArrow(30, 80, 236, 80, 'mf-c1', 8) + sT(20, 85, 'β', 'mf-var', 'end');
+  s += sL(30, 115, 340, 115, 'mf-c2', ' stroke-width="2.4"') + sArrow(380, 115, 430, 115, 'mf-c2', 7) + sL(380, 115, 400, 115, 'mf-c2', ' stroke-width="1" stroke-dasharray="3 3"') + sT(20, 120, 'γ', 'mf-var', 'end');
+  return s + '</svg>';
+}
+function fissionSvg() {
+  const nuc = (x, y, r, t, cls) => sC(x, y, r, cls, ' stroke-width="1.4"') + sT(x, y + 4, t, 'mf-small');
+  let s = svgBox(460, 200, T`Chain reaction: a neutron splits uranium-235 into two fragments and releases more neutrons, which split further nuclei`);
+  s += ball(20, 100, 5, 'mf-s2') + sArrow(28, 100, 64, 100, 'mf-line', 6) + nuc(90, 100, 22, 'U-235', 'mf-s4l');
+  s += nuc(170, 60, 15, 'Ba', 'mf-s1l') + nuc(170, 140, 13, 'Kr', 'mf-s1l') + sArrow(110, 88, 152, 66, 'mf-line', 6) + sArrow(110, 112, 154, 134, 'mf-line', 6);
+  [[60, 280, 30], [100, 280, 100], [140, 280, 170]].forEach(([y0, x, y]) => { s += ball(200, y0 + (y - y0) * 0.1, 4, 'mf-s2') + sArrow(206, y0 + (y - y0) * 0.1, x - 26, y, 'mf-c2', 6) + nuc(x, y, 18, 'U', 'mf-s4l') + sArrow(x + 20, y - 6, x + 60, y - 18, 'mf-c2', 5) + sArrow(x + 20, y + 6, x + 60, y + 18, 'mf-c2', 5); });
+  return s + sT(20, 88, 'n', 'mf-var') + sT(420, 196, T`… and so on`, 'mf-small', 'end') + '</svg>';
+}
+/* --- H. technology --- */
+function greenhouseSvg() {
+  let s = svgBox(460, 220, T`Greenhouse effect: sunlight passes through the atmosphere, the ground emits infrared, and greenhouse gases absorb and re-emit part of it back down`);
+  s += sR(0, 180, 460, 40, 'mf-s2l') + sR(0, 60, 460, 40, 'mf-f1') + sT(450, 84, T`greenhouse gases`, 'mf-small', 'end') + sC(40, 30, 22, 'mf-s4l', ' stroke-width="1.4"');
+  s += sArrow(64, 40, 150, 176, 'mf-c4', 9) + sT(90, 130, T`sunlight`, 'mf-small', 'end');
+  s += sP('M190 176 q6 -10 0 -20 t0 -20 t0 -20 t0 -20 t0 -20 t0 -20 t0 -20', 'mf-c2', ' fill="none" stroke-width="2"') + sArrow(190, 40, 190, 20, 'mf-c2', 7) + sT(198, 30, T`some IR escapes`, 'mf-small', 'start');
+  s += sP('M240 176 q6 -10 0 -20 t0 -20 t0 -20 t0 -16', 'mf-c2', ' fill="none" stroke-width="2"') + sC(240, 86, 5, 'mf-s4') + sP('M250 92 q6 10 0 20 t0 20 t0 20 t0 16', 'mf-c1', ' fill="none" stroke-width="2"') + sArrow(250, 168, 250, 178, 'mf-c1', 7);
+  return s + sT(268, 140, T`absorbed and re-emitted`, 'mf-small', 'start') + sT(230, 206, T`ground`, 'mf-small') + '</svg>';
+}
+function bandsSvg() {
+  let s = svgBox(420, 190, T`Energy bands: in a conductor the bands overlap, a semiconductor has a small gap and an insulator a large gap`);
+  [[70, 0, T`conductor`], [210, 24, T`semiconductor`], [350, 80, T`insulator`]].forEach(([x, gap, t]) => {
+    const vb = 150, cb = vb - 34 - gap;
+    s += sR(x - 50, vb - 34, 100, 34, 'mf-s1l', 2, ' stroke-width="1.2"') + sR(x - 50, cb - 34 + (gap ? 0 : 14), 100, 34, 'mf-s4l', 2, ' stroke-width="1.2" fill-opacity="0.8"') + sT(x, 184, t, 'mf-lab-b');
+    if (gap) s += sArrow(x + 58, vb - 34, x + 58, cb, 'mf-line', 5) + sArrow(x + 58, cb, x + 58, vb - 34, 'mf-line', 5);
+  });
+  return s + sT(410, 52, T`conduction band`, 'mf-small', 'end') + sT(410, 166, T`valence band`, 'mf-small', 'end') + '</svg>';
+}
+
+/* ==========================================================================
    TRACK A — Foundations: units, measurement, vectors
    ========================================================================== */
 (() => {
@@ -1012,9 +1788,11 @@ ${siTable()}
 <h3>Prefixes</h3>
 <p>Prefixes scale a unit up or down by powers of ten:</p>
 ${prefixTable()}
+${FigW(numberLineSvg({ min: -9, max: 9, step: 1, labelEvery: 3, W: 560, H: 104, fmt: v => '10' + String(v).replace('-', '⁻').replace(/\d/g, d => '⁰¹²³⁴⁵⁶⁷⁸⁹'[d]), marks: [{ v: -9, label: 'n' }, { v: -6, label: 'µ' }, { v: -3, label: 'm' }, { v: -2, label: 'c', below: true, cls: 'mf-s2' }, { v: 0, label: T`base unit`, cls: 'mf-s4' }, { v: 3, label: 'k' }, { v: 6, label: 'M' }, { v: 9, label: 'G' }], label: T`Scale of prefixes from nano to giga as powers of ten` }), T`The common prefixes on a powers-of-ten scale: each step of three is a factor of 1,000 (milli → base → kilo → mega).`)}
 ${Key(T`<p>To convert, multiply by a factor that equals 1. Since $1\,\mathrm{km} = 1000\,\mathrm{m}$,</p><p>$$3.2\,\mathrm{km} \times \frac{1000\,\mathrm{m}}{1\,\mathrm{km}} = 3200\,\mathrm{m}.$$</p><p>The unit you want goes on top, the unit you are removing goes underneath, and the old units cancel.</p>`)}
 <h3>Squared and cubed units</h3>
 <p>A square metre is a square $100\,\mathrm{cm}$ on each side, so $1\,\mathrm{m^2} = 100 \times 100 = 10\,000\,\mathrm{cm^2}$. For volumes the factor is cubed: $1\,\mathrm{m^3} = 1\,000\,000\,\mathrm{cm^3}$. Also $1\,\mathrm{L} = 1000\,\mathrm{cm^3}$ and $1\,\mathrm{m^3} = 1000\,\mathrm{L}$.</p>
+${Fig(gridSvg(10, 10, (r, c) => r === 0 && c === 0 ? 'mf-s1' : 'mf-s2l', { cell: 18, label: T`A 10 by 10 square of small squares with one highlighted`, caption: '10 cm × 10 cm = 100 cm²' }), T`Make each side 10 times longer and the area grows $10 \times 10 = 100$ times: the big square holds 100 of the highlighted $1\,\mathrm{cm^2}$ squares. A metre is 100 cm, so $1\,\mathrm{m^2} = 10\,000\,\mathrm{cm^2}$.`)}
 <h3>Speeds: km/h and m/s</h3>
 ${Fm(T`1\,\mathrm{km/h} = \frac{1000\,\mathrm{m}}{3600\,\mathrm{s}} = \frac{1}{3.6}\,\mathrm{m/s}`)}
 <p>So divide by 3.6 to go from km/h to m/s, and multiply by 3.6 to go back: $72\,\mathrm{km/h} = 20\,\mathrm{m/s}$.</p>
@@ -1080,6 +1858,7 @@ ${Fig(vernierSvg(23.4, T`A vernier caliper reading`), T`Main scale: 23 mm. Verni
 <p>The sleeve shows whole and half millimetres; the thimble has 50 divisions of $0.01\,\mathrm{mm}$. Reading = sleeve + thimble $\times\ 0.01\,\mathrm{mm}$. A sleeve showing $5.5\,\mathrm{mm}$ with thimble line 23 gives $5.5 + 0.23 = 5.73\,\mathrm{mm}$.</p>
 <h3>Uncertainty</h3>
 <p>A single reading is usually quoted with an uncertainty of about half the smallest division, for example $12.5 \pm 0.05\,\mathrm{cm}$ on a millimetre ruler. For several readings of the same quantity, use the <b>mean</b> as the best value and let the spread of the readings show the uncertainty.</p>
+${FigW(targetsSvg(), T`<b>Precision</b> is how close repeated readings are to each other; <b>accuracy</b> is how close they are to the true value (the centre).`)}
 ${Key(T`<p><b>Significant figures</b> are the digits that carry information about the measurement:</p><ul><li>All non-zero digits count: $4.73$ has 3.</li><li>Zeros between them count: $4.07$ has 3.</li><li>Leading zeros never count: $0.0047$ has 2.</li><li>Trailing zeros after a decimal point count: $4.70$ has 3.</li></ul>`)}
 <h3>Calculating with measurements</h3>
 <ul><li><b>Multiplying or dividing:</b> give the answer to the <i>fewest significant figures</i> of the values used. $12.5\,\mathrm{cm} \times 3.2\,\mathrm{cm} = 40.0 \to 40\,\mathrm{cm^2}$ (2 s.f.).</li><li><b>Adding or subtracting:</b> give the answer to the <i>fewest decimal places</i>. $12.52 + 3.1 = 15.62 \to 15.6$.</li></ul>
@@ -1144,6 +1923,7 @@ ${Tbl([T`Scalars`, T`Vectors`], [[T`distance, speed`, T`displacement, velocity`]
 ${Fm(T`A_x = A\cos\theta \qquad A_y = A\sin\theta`)}
 ${Fig(vectorSvg([{ x: 5.2, y: 3, label: 'A', guides: true, theta: 'θ' }, { x: 5.2, y: 0, label: sub('A', 'x'), kind: 'b', mid: [0, 24] }, { x: 0, y: 3, label: sub('A', 'y'), kind: 'b', mid: [-20, 5] }], T`A vector A split into a horizontal component and a vertical component`, 7), T`The components $A_x$ and $A_y$ add up to $\vec{A}$.`)}
 <h3>Adding vectors</h3>
+${Fig(planeSvg({ W: 300, x: [-0.5, 6], y: [-0.5, 5], equal: true, grid: true, ticks: false, xl: ' ', yl: ' ', vecs: [[0, 0, 4, 1, 'mf-c1'], [4, 1, 5, 4, 'mf-c2'], [0, 0, 5, 4, 'mf-c3']], texts: [[2, 0.2, 'A', 'middle', 'mf-var'], [4.75, 2.3, 'B', 'start', 'mf-var'], [2.2, 2.4, 'R = A + B', 'end', 'mf-var']], label: T`Head-to-tail addition of vectors A and B giving the resultant R` }), T`Head to tail: draw $\mathbf{B}$ from the tip of $\mathbf{A}$; the resultant $\mathbf{R}$ joins the first tail to the last head.`)}
 <p>To add vectors, place them head to tail; the <b>resultant</b> runs from the first tail to the last head.</p>
 <ul><li>Same direction: add the magnitudes. $3\,\mathrm{N} + 4\,\mathrm{N}$ to the right gives $7\,\mathrm{N}$ to the right.</li><li>Opposite directions: subtract, and the resultant points the way of the larger one.</li><li>Perpendicular: use Pythagoras. $3\,\mathrm{N}$ east and $4\,\mathrm{N}$ north give $\sqrt{3^2 + 4^2} = 5\,\mathrm{N}$.</li></ul>
 ${Key(T`<p>For vectors at any angle, add the components:</p><p>$$R_x = A_x + B_x, \qquad R_y = A_y + B_y,$$</p><p>$$R = \sqrt{R_x^2 + R_y^2}, \qquad \tan\varphi = \frac{R_y}{R_x}.$$</p><p>For two vectors $A$ and $B$ with angle $\alpha$ between them, this gives the shortcut $R = \sqrt{A^2 + B^2 + 2AB\cos\alpha}$.</p>`)}
@@ -1219,6 +1999,7 @@ level({
 <h3>Uniform motion</h3>
 <p>If the velocity is constant, the object covers equal distances in equal times:</p>
 ${Fm(T`s = v\,t`)}
+${FigW(tickerSvg(), T`A ticker timer prints a dot at equal time intervals. Equal gaps mean constant velocity; growing gaps mean the object is speeding up.`)}
 <h3>Acceleration</h3>
 <p><b>Acceleration</b> is the rate of change of velocity. Its unit is $\mathrm{m/s}$ per second, written $\mathrm{m/s^2}$:</p>
 ${Fm(T`a = \frac{\Delta v}{\Delta t} = \frac{v - v_0}{t}`)}
@@ -1227,6 +2008,7 @@ ${Key(T`<p>For <b>constant acceleration</b>, with initial velocity $v_0$, final 
 ${Ex(T`<p>A car at $20\,\mathrm{m/s}$ brakes with a deceleration of $5\,\mathrm{m/s^2}$. How far does it travel before stopping?</p><p>We know $v_0 = 20$, $v = 0$, $a = -5$ and want $s$, so use $v^2 = v_0^2 + 2as$:</p><p>$$0 = 20^2 + 2(-5)s \;\Rightarrow\; s = \frac{400}{10} = 40\,\mathrm{m}.$$</p>`)}
 <h3>Motion graphs</h3>
 ${Fig(graphSvg([[0, 4], [4, 12], [8, 12]], { xMax: 8, yMax: 14, xStep: 2, yStep: 2, label: vtLabel() }), T`Speeding up for 4 s, then moving at a constant 12 m/s.`)}
+${FigRow([[planeSvg({ W: 250, H: 190, x: [0, 5], y: [0, 26], step: [1, 5], xl: 't', yl: 's', fns: [{ f: t => 5 * t }], label: T`Position-time graph for constant velocity: a straight line` }), T`constant velocity: straight line`], [planeSvg({ W: 250, H: 190, x: [0, 5], y: [0, 26], step: [1, 5], xl: 't', yl: 's', fns: [{ f: t => t * t, cls: 'mf-c2' }], label: T`Position-time graph for constant acceleration: a curve getting steeper` }), T`speeding up: curve gets steeper`]], T`On a position–time graph the slope is the velocity: constant slope for steady motion, increasing slope when accelerating.`)}
 <ul><li>On a <b>position–time</b> graph the slope is the velocity.</li><li>On a <b>velocity–time</b> graph the slope is the acceleration and the <b>area under the graph</b> is the displacement.</li></ul>
 <p>In the graph above the acceleration during the first $4\,\mathrm{s}$ is $\frac{12 - 4}{4} = 2\,\mathrm{m/s^2}$, and the displacement over $8\,\mathrm{s}$ is the trapezium $\frac{4 + 12}{2} \cdot 4 = 32\,\mathrm{m}$ plus the rectangle $12 \cdot 4 = 48\,\mathrm{m}$: $80\,\mathrm{m}$ in total.</p>
 ${Tip(T`<p>Convert km/h to m/s before using the equations: $72\,\mathrm{km/h} = 20\,\mathrm{m/s}$.</p>`)}`,
@@ -1283,9 +2065,11 @@ ${Tip(T`<p>Convert km/h to m/s before using the equations: $72\,\mathrm{km/h} = 
 <h3>Dropped from rest</h3>
 ${Fm(T`v = g t \qquad h = \tfrac12 g t^2 \qquad v = \sqrt{2 g h}`)}
 ${Ex(T`<p>A stone is dropped from a bridge $45\,\mathrm{m}$ above the water ($g = 10\,\mathrm{m/s^2}$).</p><p>Time to fall: $45 = \tfrac12 \cdot 10 \cdot t^2 \Rightarrow t^2 = 9 \Rightarrow t = 3\,\mathrm{s}$.</p><p>Speed on impact: $v = gt = 30\,\mathrm{m/s}$, or $v = \sqrt{2 \cdot 10 \cdot 45} = 30\,\mathrm{m/s}$.</p>`)}
+${Fig(strobeSvg(), T`A dropped ball photographed once a second ($g = 10\,\mathrm{m/s^2}$): it falls 5, 15, 25, 35 m in successive seconds, so the gaps grow.`)}
 <h3>Thrown straight up</h3>
 <p>Take upwards as positive; then $a = -g$. The ball slows down, stops for an instant at the top, and falls back.</p>
 ${Key(T`<p>For a ball thrown up at $v_0$:</p><ul><li>time to the top: $t_{\text{up}} = \dfrac{v_0}{g}$</li><li>maximum height: $h_{\max} = \dfrac{v_0^2}{2g}$</li><li>it returns to the launch point after $2t_{\text{up}}$, with the same speed it started with.</li></ul>`)}
+${Fig(planeSvg({ W: 340, H: 220, x: [0, 4.4], y: [-22, 22], step: [1, 5], tickY: 10, xl: 't (s)', yl: 'v (m/s)', fns: [{ f: t => 20 - 10 * t, to: 4 }], pts: [[2, 0, T`top: v = 0`, 'start', false, 8, -8]], label: T`Velocity-time graph of a ball thrown up at 20 m/s: a straight line falling through zero at 2 s` }), T`Thrown up at $20\,\mathrm{m/s}$: the velocity falls by $10\,\mathrm{m/s}$ every second, passes zero at the top ($t = 2\,\mathrm{s}$) and becomes negative on the way down. The slope, $-g$, never changes.`)}
 ${Tip(T`<p>At the top the <b>velocity</b> is zero, but the <b>acceleration</b> is still $g$ downwards. If it were zero, the ball would stay up there.</p>`)}`,
   gens: [
     () => {
@@ -1336,6 +2120,7 @@ ${Key(T`<p>Split the motion into two parts that do not affect each other:</p><ul
 <p>A launch at speed $v_0$ and angle $\theta$ has components $v_{0x} = v_0\cos\theta$ and $v_{0y} = v_0\sin\theta$. On level ground:</p>
 ${Fm(T`T = \frac{2 v_0 \sin\theta}{g} \qquad H = \frac{v_0^2 \sin^2\theta}{2g} \qquad R = \frac{v_0^2 \sin 2\theta}{g}`)}
 ${Fig(projectileSvg(20, 50, 10, T`The path of a projectile with its launch velocity, maximum height and range marked`), T`Time of flight $T$, maximum height $H$ and range $R$.`)}
+${Fig(planeSvg({ W: 380, H: 220, x: [0, 44], y: [0, 16.5], step: [5, 5], xl: 'x (m)', yl: 'y (m)', fns: [[30, 'mf-c2'], [45, 'mf-c1'], [60, 'mf-c3']].map(([a, cls]) => { const r = a * Math.PI / 180; return { f: x => x * Math.tan(r) - 10 * x * x / (2 * 400 * Math.cos(r) ** 2), cls, from: 0, to: 40 * Math.sin(2 * r), label: a + '°', at: 20 * Math.sin(2 * r), dx: 0, dy: -8, anchor: 'middle' }; }), label: T`Paths of projectiles launched at 20 m/s at 30, 45 and 60 degrees` }), T`Launched at $20\,\mathrm{m/s}$ ($g = 10\,\mathrm{m/s^2}$): $45^\circ$ goes farthest ($40\,\mathrm{m}$); $30^\circ$ and $60^\circ$ land at the same point ($34.6\,\mathrm{m}$).`)}
 <p>The range is largest at $\theta = 45^\circ$ (where $\sin 2\theta = 1$). Two angles that add up to $90^\circ$, such as $30^\circ$ and $60^\circ$, give the same range.</p>
 ${Tip(T`<p>At the top of the path the vertical velocity is zero, but the horizontal velocity is not. The projectile is still moving sideways at $v_0\cos\theta$.</p>`)}`,
   gens: [
@@ -1381,6 +2166,7 @@ ${Key(T`<p>The <b>centripetal acceleration</b> points to the centre of the circl
 ${Ex(T`<p>A car of mass $1000\,\mathrm{kg}$ takes a flat bend of radius $50\,\mathrm{m}$ at $10\,\mathrm{m/s}$. The friction on the tyres must provide $F_c = \frac{1000 \cdot 10^2}{50} = 2000\,\mathrm{N}$. If the maximum friction is $\mu m g$, the fastest safe speed is $v_{\max} = \sqrt{\mu g r}$.</p>`)}
 <h3>Vertical circles</h3>
 <p>At the top of a vertical loop, gravity can provide the whole centripetal force. The smallest speed that keeps a ball or a roller-coaster car on the track there is $v_{\min} = \sqrt{g r}$.</p>
+${Fig(loopSvg(), T`In a vertical circle the net force must point to the centre. At the top: $T + mg = \frac{mv^2}{r}$; at the bottom: $T - mg = \frac{mv^2}{r}$, so the string pulls hardest at the bottom.`)}
 ${Tip(T`<p>If the string of a whirling ball breaks, the ball flies off along the <b>tangent</b>, not outwards along the radius. There is no "centrifugal force" pulling it out; it simply keeps moving in a straight line.</p>`)}`,
   gens: [
     () => {
@@ -1433,6 +2219,7 @@ ${Fm(T`\Sigma F = m a`)}
 <p>The <b>net force</b> $\Sigma F$ is the vector sum of all forces on the object. A larger net force gives a larger acceleration; a larger mass gives a smaller one. $1\,\mathrm{N}$ is the force that gives $1\,\mathrm{kg}$ an acceleration of $1\,\mathrm{m/s^2}$.</p>
 <h3>Third law: action and reaction</h3>
 <p>If body A pushes on body B, then B pushes back on A with a force of equal size in the opposite direction. The two forces act on <b>different</b> bodies, so they never cancel each other.</p>
+${Fig(thirdLawSvg(), T`Third law: A pushes B and B pushes A back with the same size of force. Each force acts on a different block.`)}
 <h3>Common forces</h3>
 <ul><li><b>Weight</b> $W = mg$, pulling towards the centre of the Earth.</li><li><b>Normal force</b> $N$, from a surface, perpendicular to it.</li><li><b>Tension</b> $T$, along a rope or string.</li><li><b>Friction</b> $f$, along a surface, against sliding (next topic).</li></ul>
 ${Key(T`<p>Solving a force problem:</p><ol><li>Draw a <b>free-body diagram</b>: the object alone, with every force on it as an arrow.</li><li>Choose a positive direction.</li><li>Write $\Sigma F = ma$ along that direction and solve.</li></ol>`)}
@@ -1488,6 +2275,7 @@ ${Ex(T`<p>A $60\,\mathrm{kg}$ person stands on scales in a lift accelerating <b>
 <h3>Static and kinetic friction</h3>
 <ul><li><b>Static friction</b> holds an object still. It grows as you push harder, up to a maximum: $f_{s,\max} = \mu_s N$.</li><li><b>Kinetic friction</b> acts once the object slides: $f_k = \mu_k N$, roughly constant.</li></ul>
 <p>$\mu_s$ and $\mu_k$ are the <b>coefficients of friction</b>. They have no unit, and usually $\mu_k \lt \mu_s$, which is why it is harder to start pushing a box than to keep it moving. On a level floor with no other vertical forces, $N = mg$.</p>
+${Fig(planeSvg({ W: 340, H: 210, x: [0, 10], y: [0, 7.5], ticks: false, xl: T`push`, yl: T`friction`, segs: [[0, 0, 6, 6, 'mf-c1'], [6, 6, 6.4, 4.5, 'mf-c1'], [6.4, 4.5, 10, 4.5, 'mf-c2']], pts: [[6, 6, 'μₛN', 'end', false, 8, -6]], texts: [[2.6, 3.6, T`static: f = push`, 'end', 'mf-small'], [8.2, 5, T`kinetic: μₖN`, 'middle', 'mf-small'], [6, 0.4, T`starts sliding`, 'middle', 'mf-small']], extra: (X, Y) => sL(X(6), Y(0), X(6), Y(6), 'mf-grid', ' stroke-dasharray="4 3"'), label: T`Friction against pushing force: static friction grows with the push up to a maximum, then drops to a constant kinetic value` }), T`Static friction matches the push until it reaches its maximum $\mu_s N$; once the box slides, friction drops to the smaller kinetic value $\mu_k N$.`)}
 ${Ex(T`<p>A $20\,\mathrm{kg}$ crate is pushed along a floor with $\mu_k = 0.3$ by a $100\,\mathrm{N}$ horizontal force ($g = 10\,\mathrm{m/s^2}$). Friction: $f = 0.3 \cdot 20 \cdot 10 = 60\,\mathrm{N}$. Net force: $100 - 60 = 40\,\mathrm{N}$, so $a = 40/20 = 2\,\mathrm{m/s^2}$.</p>`)}
 <h3>Inclined planes</h3>
 ${Fig(inclineSvg(30, T`A block on a slope inclined at angle theta, with its weight, the normal force and friction`, true), T`On a slope the weight $mg$ is split into two components.`)}
@@ -1537,11 +2325,13 @@ ${Tip(T`<p>The normal force on a slope is <b>not</b> $mg$; it is $mg\cos\theta$.
 <h3>Work</h3>
 ${Fm(T`W = F\,s\cos\theta`)}
 <p>Here $F$ is the force, $s$ the displacement and $\theta$ the angle between them. Only the part of the force along the motion does work. A force perpendicular to the motion (like the normal force on a level floor) does no work; a force against the motion (like friction) does negative work.</p>
+${Fig(workAngleSvg(), T`Only the component of the force along the motion, $F\cos\theta$, does work: $W = F s\cos\theta$.`)}
 <h3>Kinetic and potential energy</h3>
 ${Fm(T`E_k = \tfrac12 m v^2 \qquad E_p = m g h`)}
 <p>Kinetic energy belongs to motion; gravitational potential energy to height above a chosen reference level.</p>
 ${Key(T`<p><b>Work–energy theorem:</b> the net work on an object equals its change in kinetic energy, $W_{\text{net}} = \Delta E_k$.</p><p><b>Conservation of mechanical energy:</b> if only gravity does work (no friction),</p><p>$$E_k + E_p = \text{constant}, \qquad \tfrac12 m v_1^2 + m g h_1 = \tfrac12 m v_2^2 + m g h_2.$$</p>`)}
 ${Ex(T`<p>A roller-coaster car starts from rest $20\,\mathrm{m}$ above the bottom of a smooth track ($g = 10\,\mathrm{m/s^2}$). At the bottom all the potential energy has become kinetic:</p><p>$$mgh = \tfrac12 m v^2 \;\Rightarrow\; v = \sqrt{2gh} = \sqrt{400} = 20\,\mathrm{m/s}.$$</p><p>The mass cancels, so every car reaches the same speed.</p>`)}
+${Fig(planeSvg({ W: 340, H: 220, x: [0, 21], y: [0, 230], step: [5, 50], xl: T`height h (m)`, yl: T`energy (J)`, fns: [{ f: h => 10 * h, to: 20, label: sub('E', 'p') + ' = mgh', at: 16, dx: -6, dy: -6, anchor: 'end' }, { f: h => 200 - 10 * h, to: 20, cls: 'mf-c2', label: sub('E', 'k'), at: 4, dx: 6, dy: -4 }, { f: () => 200, to: 20, cls: 'mf-c4', dash: true, label: T`total`, at: 10, dx: 0, dy: -8, anchor: 'middle' }], label: T`Energy of a 1 kg car on a smooth track: potential energy rises with height, kinetic energy falls, and their total stays 200 J` }), T`A $1\,\mathrm{kg}$ car on a smooth track starting at $20\,\mathrm{m}$ ($g = 10\,\mathrm{m/s^2}$): at every height $E_p + E_k = 200\,\mathrm{J}$.`)}
 <h3>Power and efficiency</h3>
 ${Fm(T`P = \frac{W}{t} = F v \qquad \eta = \frac{\text{useful output}}{\text{input}} \times 100\%`)}
 <p>Power is measured in watts: $1\,\mathrm{W} = 1\,\mathrm{J/s}$.</p>
@@ -1598,10 +2388,12 @@ ${Fm(T`p = m v`)}
 <p>A force acting for a time changes the momentum. The product $F\,\Delta t$ is the <b>impulse</b>:</p>
 ${Fm(T`J = F\,\Delta t = \Delta p = m v - m v_0`)}
 <p>This is why airbags and crumple zones save lives: spreading the same change of momentum over a longer time means a smaller force.</p>
+${Fig(planeSvg({ W: 360, H: 210, x: [0, 90], y: [0, 7], step: [10, 1], tickX: 20, tickY: 2, xl: 't (ms)', yl: 'F (kN)', shade: [{ f: t => (t < 10 ? 0.6 * t : t < 20 ? 6 - 0.6 * (t - 10) : 0), from: 0, to: 20, cls: 'mf-f4' }, { f: t => (t < 40 ? 1.5 * t / 40 : t < 80 ? 1.5 - 1.5 * (t - 40) / 40 : 0), from: 0, to: 80, cls: 'mf-f1' }], fns: [{ f: t => (t < 10 ? 0.6 * t : t < 20 ? 6 - 0.6 * (t - 10) : 0), cls: 'mf-c4' }, { f: t => (t < 40 ? 1.5 * t / 40 : t < 80 ? 1.5 - 1.5 * (t - 40) / 40 : 0), cls: 'mf-c1' }], texts: [[21, 5.6, T`hard stop`, 'start', 'mf-small'], [52, 2.1, T`airbag`, 'start', 'mf-small']], label: T`Force-time graphs for a hard stop and an airbag: same area, but the airbag spreads it over a longer time with a lower peak force` }), T`The area under a force–time graph is the impulse. Both stops have the same area (same $\Delta p$), but the airbag's longer time means a much smaller peak force.`)}
 ${Key(T`<p><b>Conservation of momentum:</b> when no outside force acts on a system, its total momentum stays the same. For two objects colliding:</p><p>$$m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'.$$</p><p>Choose a positive direction and give velocities the other way a minus sign.</p>`)}
 <h3>Types of collision</h3>
 <ul><li><b>Perfectly inelastic:</b> the objects stick together and move off with one common velocity $v' = \dfrac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$. Kinetic energy is lost (to heat, sound, deformation).</li><li><b>Elastic:</b> kinetic energy is conserved as well. When two equal masses collide elastically head-on, they swap velocities.</li><li>Most real collisions are in between: momentum is conserved, some kinetic energy is lost.</li></ul>
 ${Ex(T`<p>A $2\,\mathrm{kg}$ cart at $6\,\mathrm{m/s}$ hits a $1\,\mathrm{kg}$ cart at rest and they stick. $v' = \frac{2 \cdot 6 + 1 \cdot 0}{3} = 4\,\mathrm{m/s}$. Kinetic energy before: $36\,\mathrm{J}$; after: $\tfrac12 \cdot 3 \cdot 4^2 = 24\,\mathrm{J}$, so $12\,\mathrm{J}$ is lost.</p>`)}
+${FigW(collisionSvg(), T`Perfectly inelastic collision: total momentum $2 \cdot 6 = 12\,\mathrm{kg\,m/s}$ before and $3 \cdot 4 = 12\,\mathrm{kg\,m/s}$ after.`)}
 <h3>Recoil</h3>
 <p>Before a gun fires, the total momentum is zero, so afterwards the bullet's forward momentum is balanced by the gun's backward momentum: $m_b v_b = m_g v_g$.</p>
 ${Tip(T`<p>When a ball bounces back, its velocity changes sign. Bouncing from $+5\,\mathrm{m/s}$ to $-5\,\mathrm{m/s}$ is a change of $10\,\mathrm{m/s}$, not zero.</p>`)}`,
@@ -1648,6 +2440,7 @@ ${Tip(T`<p>When a ball bounces back, its velocity changes sign. Bouncing from $+
 <h3>Torque</h3>
 ${Fm(T`\tau = r F \sin\theta`)}
 <p>$r$ is the distance from the axis to where the force acts and $\theta$ the angle between $r$ and $F$. The unit is $\mathrm{N\,m}$. A force pointing straight at the axis ($\theta = 0$) produces no torque, which is why door handles are far from the hinges.</p>
+${Fig(wrenchSvg(), T`Torque on a spanner: only the part of the force perpendicular to the handle, $F\sin\theta$, turns it, so $\tau = rF\sin\theta$. A longer handle (larger $r$) gives more torque for the same force.`)}
 <h3>Moment of inertia</h3>
 <p>The rotational version of mass is the <b>moment of inertia</b> $I = \sum m r^2$. Mass far from the axis counts much more than mass close to it.</p>
 ${Tbl([T`Object (axis through centre unless stated)`, '$I$'], [[T`Thin ring or hoop`, '$MR^2$'], [T`Solid disc or cylinder`, '$\\tfrac12 MR^2$'], [T`Solid sphere`, '$\\tfrac25 MR^2$'], [T`Thin rod, about its centre`, '$\\tfrac1{12} ML^2$'], [T`Thin rod, about one end`, '$\\tfrac13 ML^2$']])}
@@ -1705,6 +2498,7 @@ ${Fig(beamSvg(4, [{ x: 2, kind: 'pivot' }, { x: 0.5, kind: 'load', label: '300 N
 ${Ex(T`<p>A uniform $4\,\mathrm{m}$ plank of weight $200\,\mathrm{N}$ rests on supports at its two ends. A $600\,\mathrm{N}$ person stands $1\,\mathrm{m}$ from the left end. Taking moments about the left support: $R_B \cdot 4 = 600 \cdot 1 + 200 \cdot 2$, so $R_B = 250\,\mathrm{N}$. Then $R_A = 800 - 250 = 550\,\mathrm{N}$.</p>`)}
 <h3>Centre of gravity and stability</h3>
 <p>The weight of a body acts as if at one point, its <b>centre of gravity</b>; for a uniform beam that is the middle. An object resting on a base topples when the vertical line through its centre of gravity falls outside the base. A low centre of gravity and a wide base make an object more stable.</p>
+${Fig(toppleSvg(), T`Stability: follow the vertical line down from the centre of gravity. Inside the base, the weight turns the box back; outside the base, it tips the box over.`)}
 ${Tip(T`<p>Remember the beam's own weight: for a uniform beam, put it at the midpoint when you take moments.</p>`)}`,
   gens: [
     () => {
@@ -1742,9 +2536,11 @@ ${Tip(T`<p>Remember the beam's own weight: for a uniform beam, put it at the mid
 <p>Every mass attracts every other mass. Newton's law of gravitation gives the size of the pull between two point masses (or spheres) whose centres are a distance $r$ apart:</p>
 ${Fm(T`F = \frac{G m_1 m_2}{r^2}, \qquad G = 6.67 \times 10^{-11}\,\mathrm{N\,m^2/kg^2}`)}
 <p>It is an <b>inverse-square law</b>: doubling the distance makes the force four times smaller.</p>
+${Fig(planeSvg({ W: 340, H: 210, x: [0, 4.4], y: [0, 1.15], step: [1, 0.25], tickY: 0.5, fmtY: v => v === 1 ? 'F' : '', xl: 'r', yl: 'F', fns: [{ f: r => 1 / (r * r), from: 0.93 }], pts: [[1, 1, 'F', 'start', false, 8, -4], [2, 0.25, 'F/4', 'start', false, 8, -6], [3, 1 / 9, 'F/9', 'start', false, 8, -6]], label: T`Inverse-square law: the force falls to a quarter at twice the distance and a ninth at three times` }), T`Inverse-square law: at $2r$ the force is $\frac14$ as large, at $3r$ it is $\frac19$.`)}
 <h3>The gravitational field strength $g$</h3>
 <p>At the surface of a planet of mass $M$ and radius $R$, $g = \dfrac{GM}{R^2}$. For the Earth ($M = 6.0 \times 10^{24}\,\mathrm{kg}$, $R = 6.4 \times 10^{6}\,\mathrm{m}$) this gives about $9.8\,\mathrm{m/s^2}$. At a height $h$ above the surface, $g_h = g \left(\dfrac{R}{R + h}\right)^2$.</p>
 ${Key(T`<p>For a satellite in a circular orbit of radius $r$, gravity provides the centripetal force:</p><p>$$\frac{GMm}{r^2} = \frac{m v^2}{r} \;\Rightarrow\; v = \sqrt{\frac{GM}{r}}, \qquad T = \frac{2\pi r}{v}.$$</p><p>From this follows <b>Kepler's third law</b>: $T^2 \propto r^3$ for all bodies orbiting the same central mass.</p>`)}
+${Fig(orbitSvg(), T`In a circular orbit gravity supplies the centripetal force: it always points to the planet's centre, at right angles to the velocity.`)}
 <h3>Escape speed</h3>
 <p>The speed needed to leave a planet's surface for good (ignoring air) is $v_{\text{esc}} = \sqrt{\dfrac{2GM}{R}}$, about $11.2\,\mathrm{km/s}$ for the Earth.</p>
 ${Tip(T`<p>$r$ is measured from the <b>centre</b> of the planet. A satellite $400\,\mathrm{km}$ up orbits at $r = R + 400\,\mathrm{km}$.</p>`)}`,
@@ -1794,8 +2590,10 @@ ${Tip(T`<p>$r$ is measured from the <b>centre</b> of the planet. A satellite $40
 <h3>Hooke's law</h3>
 ${Fm(T`F = k\,x`)}
 <p>The extension $x$ is proportional to the force $F$, up to the <b>elastic limit</b>. The spring constant $k$ (in $\mathrm{N/m}$) measures stiffness: a stiff spring has a large $k$.</p>
+${Fig(planeSvg({ W: 340, H: 220, x: [0, 10], y: [0, 9], ticks: false, xl: T`extension x`, yl: T`force F`, shade: [{ f: x => x, from: 0, to: 4, cls: 'mf-f1' }], fns: [{ f: x => x, to: 6 }, { f: x => 6 + (x - 6) * 0.5 - 0.06 * (x - 6) ** 2, from: 6, to: 9.5, cls: 'mf-c2' }], pts: [[6, 6, T`elastic limit`, 'end', false, 8, -8]], texts: [[2.9, 1.1, sub('E', 'p') + ' = ½kx²', 'middle', 'mf-small'], [2, 4.2, T`slope = k`, 'end', 'mf-small']], label: T`Force-extension graph: a straight line of slope k up to the elastic limit, with the triangle under it showing stored energy` }), T`Hooke's law holds on the straight part, whose slope is $k$. The shaded triangle is the elastic energy stored at that extension.`)}
 <h3>Combining springs</h3>
 <ul><li><b>Parallel</b> (side by side, sharing the load): $k = k_1 + k_2$. Stiffer.</li><li><b>Series</b> (one below the other): $\dfrac{1}{k} = \dfrac{1}{k_1} + \dfrac{1}{k_2}$. Softer.</li></ul>
+${Fig(springsSvg(), T`Two springs side by side share the load (stiffer); one below the other each feel the whole load and both stretch (softer).`)}
 <h3>Stress, strain and Young's modulus</h3>
 ${Fm(T`\sigma = \frac{F}{A} \qquad \varepsilon = \frac{\Delta L}{L} \qquad E = \frac{\sigma}{\varepsilon} = \frac{F L}{A\,\Delta L}`)}
 <p>Stress $\sigma$ is force per area (in $\mathrm{Pa}$); strain $\varepsilon$ is the fractional change in length (no unit). The <b>Young's modulus</b> $E$ is a property of the material, not of the particular wire: steel has about $2 \times 10^{11}\,\mathrm{Pa}$.</p>
@@ -1846,12 +2644,15 @@ ${Fm(T`\rho = \frac{m}{V} \qquad p = \frac{F}{A}`)}
 <h3>Pressure in a liquid</h3>
 ${Fm(T`p = p_0 + \rho g h`)}
 <p>The pressure at depth $h$ is the pressure at the surface $p_0$ (atmospheric pressure, about $1.0 \times 10^{5}\,\mathrm{Pa}$) plus the weight of the liquid above each square metre, $\rho g h$. It depends only on depth, not on the shape of the container, and acts equally in all directions.</p>
+${Fig(tankSvg(), T`The deeper you go, the more water is above you, so the pressure on the wall grows steadily with depth.`)}
 <h3>Pascal's principle and hydraulics</h3>
 <p>Pressure applied to an enclosed liquid is passed on undiminished to every part of it. In a hydraulic press or car lift the pressure is the same under both pistons, so</p>
 ${Fm(T`\frac{F_1}{A_1} = \frac{F_2}{A_2}`)}
 <p>A small force on a small piston lifts a large load on a large piston.</p>
+${Fig(hydraulicSvg(), T`The same pressure acts under both pistons, so $F_2 = F_1 \frac{A_2}{A_1}$: a piston with 50 times the area pushes up 50 times as hard.`)}
 ${Key(T`<p><b>Archimedes' principle:</b> a body in a fluid feels an upward <b>buoyant force</b> equal to the weight of the fluid it displaces:</p><p>$$F_B = \rho_{\text{fluid}}\, g\, V_{\text{submerged}}.$$</p><p>A floating object displaces its own weight of fluid, so the fraction under the surface is $\dfrac{\rho_{\text{object}}}{\rho_{\text{fluid}}}$.</p>`)}
 ${Ex(T`<p>A $0.002\,\mathrm{m^3}$ stone is fully under water ($g = 10\,\mathrm{m/s^2}$). Buoyant force: $1000 \cdot 10 \cdot 0.002 = 20\,\mathrm{N}$. If the stone weighs $50\,\mathrm{N}$ in air, it seems to weigh only $50 - 20 = 30\,\mathrm{N}$ in the water.</p>`)}
+${Fig(buoyancySvg(), T`The buoyant force is the weight of the water the stone pushes aside. If it is less than the stone's weight, the stone sinks.`)}
 ${Tip(T`<p>Use the density of the <b>fluid</b> in $F_B = \rho g V$, not the density of the object.</p>`)}`,
   gens: [
     () => {
@@ -1898,9 +2699,11 @@ ${Tip(T`<p>Use the density of the <b>fluid</b> in $F_B = \rho g V$, not the dens
 ${Fm(T`Q = \frac{V}{t} = A\,v \qquad A_1 v_1 = A_2 v_2`)}
 <p>The volume flow rate $Q$ (in $\mathrm{m^3/s}$) is the same all along a pipe, because the fluid cannot pile up anywhere. Where the pipe narrows, the fluid speeds up. Putting your thumb over a garden hose makes the water squirt faster for this reason.</p>
 ${Key(T`<p><b>Bernoulli's equation</b> (conservation of energy for a flowing fluid):</p><p>$$p + \tfrac12 \rho v^2 + \rho g h = \text{constant along a streamline}.$$</p><p>In a horizontal pipe, where the fluid flows faster its pressure is lower.</p>`)}
+${FigW(pipeSvg(), T`In the narrow section the fluid is faster ($A_1v_1 = A_2v_2$) and, by Bernoulli, its pressure is lower — the gauge column there stands lower.`)}
 <h3>Torricelli's law</h3>
 <p>Water leaking from a hole a depth $h$ below the surface of an open tank comes out at the speed of a free fall from that height:</p>
 ${Fm(T`v = \sqrt{2 g h}`)}
+${Fig(torricelliSvg(), T`Torricelli: the jet leaves the hole as fast as a stone dropped from the water surface down to the hole.`)}
 <h3>Applications</h3>
 <ul><li>An aircraft wing makes air flow faster over its top surface, so the pressure above is lower than below: lift.</li><li>A Venturi meter measures flow speed from the pressure drop in a narrow section.</li><li>Two sheets of paper held close together are pushed towards each other when you blow between them.</li></ul>
 ${Tip(T`<p>If a pipe is described by its diameter, the area goes with the square: halving the diameter makes the area four times smaller and the speed four times larger.</p>`)}`,
@@ -1946,6 +2749,7 @@ ${Tip(T`<p>If a pipe is described by its diameter, the area goes with the square
 <p>For a set of point masses, the <b>centre of mass</b> is the mass-weighted average position:</p>
 ${Fm(T`x_{\text{cm}} = \frac{\sum m_i x_i}{\sum m_i} \qquad y_{\text{cm}} = \frac{\sum m_i y_i}{\sum m_i}`)}
 <p>The centre of mass of a system moves as if all the mass were concentrated there and all the external forces acted on it: $\Sigma F_{\text{ext}} = M a_{\text{cm}}$. When a shell explodes in mid-air, its fragments fly apart, but their centre of mass keeps following the original parabola.</p>
+${Fig(comSvg(), T`$x_{\text{cm}} = \frac{2 \cdot 0 + 1 \cdot 3}{2 + 1} = 1\,\mathrm{m}$: the centre of mass sits closer to the heavier mass.`)}
 <h3>Angular momentum</h3>
 ${Fm(T`L = I\,\omega \qquad \text{(for a point mass: } L = m v r\text{)}`)}
 <p>Angular momentum is the rotational counterpart of momentum. A net torque changes it: $\tau = \dfrac{\Delta L}{\Delta t}$.</p>
@@ -2003,9 +2807,11 @@ level({
 ${Fig(graphSvg(Array.from({ length: 121 }, (_, i) => [i / 20, 4 * Math.cos(2 * Math.PI * i / 60)]), { xMax: 6, yMax: 5, yMin: -5, xStep: 1, yStep: 2, xl: 't (s)', yl: 'x (cm)', dots: false, label: T`Displacement against time for an oscillation with amplitude 4 cm and period 3 s` }), T`Amplitude $A = 4\,\mathrm{cm}$, period $T = 3\,\mathrm{s}$.`)}
 <h3>Describing an oscillation</h3>
 <ul><li><b>Amplitude</b> $A$: the largest displacement from the rest position.</li><li><b>Period</b> $T$: the time for one complete oscillation; <b>frequency</b> $f = 1/T$; <b>angular frequency</b> $\omega = 2\pi f$.</li><li>The displacement follows a sine or cosine curve: $x = A\cos(\omega t)$.</li></ul>
+${FigW(oscSvg(), T`Two standard oscillators: a mass on a spring moves between $-A$ and $+A$ about its rest position; a pendulum of length $L$ swings about its lowest point.`)}
 ${Key(T`<p>Periods of the two standard oscillators:</p><p>$$\text{mass on a spring: } T = 2\pi\sqrt{\frac{m}{k}} \qquad \text{simple pendulum: } T = 2\pi\sqrt{\frac{L}{g}}$$</p><p>Neither depends on the amplitude. The pendulum's period does not depend on its mass either.</p>`)}
 <h3>Speed, acceleration and energy</h3>
 <ul><li>The speed is greatest at the centre: $v_{\max} = A\omega$. At displacement $x$: $v = \omega\sqrt{A^2 - x^2}$.</li><li>The acceleration is greatest at the ends: $a_{\max} = A\omega^2$, always pointing back to the centre.</li><li>The total energy stays constant, $E = \tfrac12 k A^2$; it changes back and forth between kinetic and potential energy.</li></ul>
+${Fig(planeSvg({ W: 340, H: 210, x: [-1.25, 1.25], y: [0, 1.2], step: [0.5, 0.25], ticks: false, xl: 'x', yl: 'E', fns: [{ f: x => x * x, from: -1, to: 1, label: sub('E', 'p'), at: -0.9, dx: -4, dy: -6, anchor: 'end' }, { f: x => 1 - x * x, from: -1, to: 1, cls: 'mf-c2', label: sub('E', 'k'), at: 0, dx: 0, dy: -8, anchor: 'middle' }, { f: () => 1, from: -1, to: 1, cls: 'mf-c4', dash: true, label: T`total`, at: 1, dx: 6, dy: 4 }], texts: [[-1, -0.06, '−A', 'middle', 'mf-small'], [1, -0.06, '+A', 'middle', 'mf-small']], label: T`Energy in simple harmonic motion: kinetic energy largest at the centre, potential energy largest at the ends, total constant` }), T`In SHM energy sloshes between kinetic (largest at the centre) and potential (largest at $\pm A$); the total stays constant.`)}
 ${Tip(T`<p>Use SI units inside the square roots: mass in kg, length in m. A $50\,\mathrm{cm}$ pendulum has $L = 0.5\,\mathrm{m}$.</p>`)}`,
   gens: [
     () => {
@@ -2049,12 +2855,14 @@ ${Tip(T`<p>Use SI units inside the square roots: mass in kg, length in m. A $50\
 <h3>Two kinds of wave</h3>
 <ul><li><b>Transverse:</b> the particles move at right angles to the direction the wave travels. Waves on a string, ripples on water.</li><li><b>Longitudinal:</b> the particles move back and forth along the direction of travel, making compressions and rarefactions. Sound, a pushed slinky.</li></ul>
 ${Fig(waveSvg(2, 3, 5, { label: T`A transverse wave with wavelength 2 m and amplitude 3 cm` }), T`Wavelength $\lambda = 2\,\mathrm{m}$ (crest to crest), amplitude $3\,\mathrm{cm}$.`)}
+${FigW(longWaveSvg(), T`A longitudinal wave, like sound: compressions (C) and rarefactions (R). One wavelength is the distance from one compression to the next.`)}
 <h3>Describing a wave</h3>
 <ul><li><b>Wavelength</b> $\lambda$: the length of one complete wave, for example crest to crest.</li><li><b>Frequency</b> $f$: waves passing a point per second; <b>period</b> $T = 1/f$.</li><li><b>Amplitude</b>: the largest displacement from the rest position.</li></ul>
 ${Key(T`<p>In one period a wave moves forward one wavelength, so its speed is</p><p>$$v = f\lambda = \frac{\lambda}{T}.$$</p><p>The speed is set by the medium; the frequency is set by the source.</p>`)}
 <h3>Waves on a string and standing waves</h3>
 <p>On a string with tension $F$ and mass per unit length $\mu$, $v = \sqrt{F/\mu}$. A string fixed at both ends vibrates in <b>standing waves</b> whose length fits a whole number of half-wavelengths: $L = n\frac{\lambda}{2}$, so</p>
 ${Fm(T`f_n = \frac{n v}{2L}, \qquad n = 1, 2, 3, \dots`)}
+${FigRow([1, 2, 3].map(n => [planeSvg({ W: 200, H: 110, x: [0, 1], y: [-1.3, 1.3], grid: false, ticks: false, xl: ' ', yl: ' ', fns: [{ f: x => Math.sin(n * Math.PI * x) }, { f: x => -Math.sin(n * Math.PI * x), cls: 'mf-c2', dash: true }], label: T`Standing wave pattern with ${n} loops` }), `n = ${n}`]), T`Standing waves on a string fixed at both ends: the length holds 1, 2, 3 … half-wavelengths, giving $f_1$, $2f_1$, $3f_1$ …`)}
 <p>The lowest, $f_1$, is the <b>fundamental</b>; the others are harmonics. Guitar strings are tuned by changing their tension.</p>
 ${Tip(T`<p>A crest and the next trough are half a wavelength apart, not a whole one.</p>`)}`,
   gens: [
@@ -2101,9 +2909,11 @@ ${Tip(T`<p>A crest and the next trough are half a wavelength apart, not a whole 
 <h3>Pitch and loudness</h3>
 <p>The <b>pitch</b> of a sound is set by its frequency and the <b>loudness</b> mostly by its amplitude. People hear roughly $20\,\mathrm{Hz}$ to $20\,000\,\mathrm{Hz}$; above that is ultrasound, below it infrasound.</p>
 ${Key(T`<p>The <b>intensity</b> is the power per unit area. From a small source spreading out in all directions:</p><p>$$I = \frac{P}{4\pi r^2}.$$</p><p>Loudness is measured on the logarithmic <b>decibel</b> scale:</p><p>$$\beta = 10 \log_{10}\frac{I}{I_0}\ \mathrm{dB}, \qquad I_0 = 10^{-12}\,\mathrm{W/m^2}.$$</p><p>Every $10\,\mathrm{dB}$ more means ten times the intensity.</p>`)}
+${FigW(numberLineSvg({ min: 0, max: 140, step: 10, labelEvery: 20, W: 560, H: 110, fmt: v => v + ' dB', marks: [{ v: 30, label: T`whisper` }, { v: 60, label: T`conversation`, below: true, cls: 'mf-s2' }, { v: 85, label: T`heavy traffic`, cls: 'mf-s3' }, { v: 110, label: T`rock concert`, below: true, cls: 'mf-s4' }, { v: 130, label: T`pain`, cls: 'mf-s4' }], label: T`Decibel scale with typical sound levels from a whisper to the threshold of pain` }), T`Typical sound levels (after CDC/NIOSH figures). Every 10 dB is 10 times the intensity; long exposure above about 85 dB can damage hearing.`)}
 <h3>The Doppler effect</h3>
 <p>When a source and a listener move towards each other, the listener hears a higher frequency; moving apart, a lower one. With the speed of sound $v$, listener speed $v_L$ and source speed $v_S$:</p>
 ${Fm(T`f_L = f_S\,\frac{v \pm v_L}{v \mp v_S}`)}
+${Fig(dopplerSvg(), T`A source moving to the right: the wavefronts bunch up ahead (shorter wavelength, higher pitch) and spread out behind (lower pitch).`)}
 <p>Use the upper signs when they approach each other and the lower signs when they move apart.</p>
 <h3>Pipes</h3>
 <p>An air column resonates like a string. A pipe open at both ends has $f_n = \dfrac{n v}{2L}$; a pipe closed at one end has only odd harmonics, $f = \dfrac{(2n-1) v}{4L}$, so its fundamental is $\dfrac{v}{4L}$.</p>
@@ -2169,6 +2979,7 @@ level({
 <h3>Temperature scales</h3>
 ${Fm(T`T_K = T_C + 273 \qquad T_F = \tfrac95 T_C + 32`)}
 <p>A change of $1^\circ\mathrm{C}$ is the same as a change of $1\,\mathrm{K}$. Water freezes at $0^\circ\mathrm{C} = 273\,\mathrm{K} = 32^\circ\mathrm{F}$ and boils at $100^\circ\mathrm{C} = 373\,\mathrm{K} = 212^\circ\mathrm{F}$. (More precisely, $0^\circ\mathrm{C} = 273.15\,\mathrm{K}$.)</p>
+${Fig(thermometersSvg(), T`The same two fixed points on three scales. A step of $1^\circ\mathrm{C}$ equals $1\,\mathrm{K}$, but $1.8^\circ\mathrm{F}$.`)}
 <h3>Specific heat capacity</h3>
 <p>The heat needed to change the temperature of a mass $m$ by $\Delta T$ is</p>
 ${Fm(T`Q = m\,c\,\Delta T`)}
@@ -2177,6 +2988,7 @@ ${Fm(T`Q = m\,c\,\Delta T`)}
 <p>While a substance melts or boils, its temperature stays constant even though heat is flowing in. The heat needed is</p>
 ${Fm(T`Q = m\,L`)}
 <p>where $L$ is the <b>latent heat</b>: about $3.34 \times 10^{5}\,\mathrm{J/kg}$ to melt ice and $2.26 \times 10^{6}\,\mathrm{J/kg}$ to boil water.</p>
+${Fig(planeSvg({ W: 380, H: 230, x: [0, 10.4], y: [-30, 135], step: [1, 20], ticks: false, xl: T`heat added`, yl: 'T (°C)', segs: [[0, -20, 1, 0, 'mf-c1'], [1, 0, 3, 0, 'mf-c4'], [3, 0, 5, 100, 'mf-c1'], [5, 100, 9, 100, 'mf-c4'], [9, 100, 10, 120, 'mf-c1']], texts: [[0.3, -5, T`ice`, 'start', 'mf-small'], [2, 6, T`melting`, 'middle', 'mf-small'], [4.1, 45, T`water`, 'end', 'mf-small'], [7, 106, T`boiling`, 'middle', 'mf-small'], [9.6, 124, T`steam`, 'end', 'mf-small'], [-0.15, 0, '0', 'end', 'mf-small'], [-0.15, 100, '100', 'end', 'mf-small']], label: T`Heating curve of water: temperature rises, stays flat while melting, rises, stays flat while boiling, rises again` }), T`Heating ice to steam (not to scale): the flat parts are changes of state, where the heat ($Q = mL$) breaks bonds instead of raising the temperature. Boiling needs about 7 times the heat of melting.`)}
 ${Key(T`<p><b>Calorimetry (Black's principle):</b> when hot and cold objects are mixed in an insulated container, the heat lost by the hot one equals the heat gained by the cold one:</p><p>$$m_1 c_1 (T_1 - T) = m_2 c_2 (T - T_2),$$</p><p>where $T$ is the final common temperature.</p>`)}
 ${Ex(T`<p>$0.2\,\mathrm{kg}$ of water at $80^\circ\mathrm{C}$ is mixed with $0.3\,\mathrm{kg}$ of water at $20^\circ\mathrm{C}$. The $c$ is the same on both sides, so it cancels:</p><p>$$0.2(80 - T) = 0.3(T - 20) \;\Rightarrow\; 16 + 6 = 0.5T \;\Rightarrow\; T = 44^\circ\mathrm{C}.$$</p>`)}
 <h3>Thermal expansion</h3>
@@ -2236,6 +3048,7 @@ ${Tip(T`<p>In $Q = mc\Delta T$ the mass must be in kilograms: $250\,\mathrm{g} =
 <p>A gas is made of a huge number of molecules moving randomly and colliding with each other and the walls of their container. The collisions with the walls cause the gas <b>pressure</b>.</p>
 <h3>The gas laws</h3>
 <ul><li><b>Boyle's law</b> (constant temperature): $p_1 V_1 = p_2 V_2$. Squeeze a gas into half the volume and its pressure doubles.</li><li><b>Charles's law</b> (constant pressure): $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$.</li><li><b>Gay-Lussac's law</b> (constant volume): $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$.</li></ul>
+${FigRow([[planeSvg({ W: 250, H: 190, x: [0, 5], y: [0, 5], ticks: false, xl: 'V', yl: 'p', fns: [{ f: v => 4 / v, from: 0.8 }], label: T`Boyle's law: pressure against volume is a curve` }), T`Boyle: $pV$ constant`], [planeSvg({ W: 250, H: 190, x: [-300, 120], y: [0, 5], step: [50, 1], ticks: false, xl: 'T (°C)', yl: 'V', fns: [{ f: t => 3 * (t + 273) / 373, from: 0, to: 110 }, { f: t => 3 * (t + 273) / 373, from: -273, to: 0, dash: true, cls: 'mf-c2' }], pts: [[-273, 0, '−273 °C', 'start', false, 6, -8]], label: T`Charles's law: volume against Celsius temperature is a straight line that extrapolates to zero at minus 273 degrees` }), T`Charles: $V \propto T$`]], T`Extending Charles's straight line back to zero volume gives $-273^\circ\mathrm{C}$: absolute zero, the start of the kelvin scale.`)}
 ${Key(T`<p>All three combine into the <b>ideal gas equation</b>:</p><p>$$pV = nRT, \qquad R = 8.31\,\mathrm{J/(mol\,K)},$$</p><p>where $n$ is the number of moles and $T$ the <b>absolute temperature in kelvin</b>. For a fixed amount of gas, $\dfrac{p_1 V_1}{T_1} = \dfrac{p_2 V_2}{T_2}$.</p>`)}
 <h3>Kinetic theory</h3>
 <p>The temperature of a gas measures the average kinetic energy of its molecules:</p>
@@ -2287,8 +3100,10 @@ ${Fm(T`\Delta U = Q - W`)}
 <p>$Q$ is the heat added <i>to</i> the gas and $W$ the work done <i>by</i> the gas. This is conservation of energy.</p>
 <h3>Work done by a gas</h3>
 <p>A gas expanding at constant pressure $p$ from $V_1$ to $V_2$ does work $W = p\,\Delta V$. On a $p$–$V$ diagram, the work is the area under the curve.</p>
+${Fig(planeSvg({ W: 320, H: 210, x: [0, 6], y: [0, 5], ticks: false, xl: 'V', yl: 'p', shade: [{ f: () => 3, from: 1, to: 5, cls: 'mf-f1' }], segs: [[1, 3, 5, 3, 'mf-c1']], vecs: [[2.6, 3, 3.4, 3, 'mf-c1']], pts: [[1, 3, 'V₁', 'middle', false, 0, 18], [5, 3, 'V₂', 'middle', false, 0, 18]], texts: [[3, 1.5, 'W = pΔV', 'middle', 'mf-lab-b']], label: T`Pressure-volume diagram of an expansion at constant pressure; the work is the shaded rectangle under the line` }), T`On a $p$–$V$ diagram the work done by the gas is the area under the path: here a rectangle, $W = p\,\Delta V$.`)}
 ${Tbl([T`Process`, T`What stays fixed`, T`Consequence`], [[T`Isobaric`, T`pressure`, '$W = p\\Delta V$'], [T`Isochoric`, T`volume`, '$W = 0$, $\\Delta U = Q$'], [T`Isothermal`, T`temperature`, '$\\Delta U = 0$, $Q = W$'], [T`Adiabatic`, T`no heat flow`, '$Q = 0$, $\\Delta U = -W$']])}
 ${Key(T`<p>A <b>heat engine</b> takes in heat $Q_H$ from a hot source, does work $W$ and rejects heat $Q_C$ to a cold sink: $W = Q_H - Q_C$. Its efficiency is</p><p>$$\eta = \frac{W}{Q_H} = 1 - \frac{Q_C}{Q_H}.$$</p><p>No engine working between absolute temperatures $T_H$ and $T_C$ can beat the <b>Carnot efficiency</b> $\eta_{\max} = 1 - \dfrac{T_C}{T_H}$.</p>`)}
+${Fig(engineSvg(), T`Energy flow in a heat engine: $Q_H = W + Q_C$. The wider the work arrow compared with $Q_H$, the more efficient the engine.`)}
 <h3>The second law and refrigerators</h3>
 <p>Heat flows by itself only from hot to cold, and no engine can turn all of its heat into work. A refrigerator uses work $W$ to move heat $Q_C$ out of its cold interior; its coefficient of performance is $\mathrm{COP} = \dfrac{Q_C}{W}$.</p>
 ${Tip(T`<p>Watch the signs: heat <i>removed</i> from the gas makes $Q$ negative, and work done <i>on</i> the gas (compression) makes $W$ negative.</p>`)}`,
@@ -2328,6 +3143,7 @@ ${Tip(T`<p>Watch the signs: heat <i>removed</i> from the gas makes $Q$ negative,
   blurb: 'The three ways heat travels, the rate of conduction through a wall, radiation and the fourth-power law, and insulation.',
   lesson: () => T`
 <p>Heat always flows from a hotter place to a colder one, in three different ways.</p>
+${FigW(heatWaysSvg(), T`The three ways heat travels: through a solid (conduction), carried by a moving fluid (convection), and as electromagnetic waves (radiation).`)}
 <h3>Conduction</h3>
 <p>In a solid, energetic particles pass energy to their neighbours. Metals conduct well because their free electrons carry energy quickly; wood, plastic, still air and wool are poor conductors, or <b>insulators</b>. The rate of heat flow through a slab of area $A$ and thickness $L$ with temperature difference $\Delta T$ is</p>
 ${Fm(T`P = \frac{k A \Delta T}{L}`)}
@@ -2397,6 +3213,7 @@ ${Key(T`<p>The <b>electric field</b> $E$ at a point is the force per unit positi
 ${Ex(T`<p>Two charges of $+2\,\mu\mathrm{C}$ and $+3\,\mu\mathrm{C}$ are $0.3\,\mathrm{m}$ apart. $F = \frac{9 \times 10^{9} \cdot 2 \times 10^{-6} \cdot 3 \times 10^{-6}}{0.3^2} = 0.6\,\mathrm{N}$, repulsive.</p>`)}
 <h3>Field lines</h3>
 <p>Field lines start on positive charges and end on negative ones. Where they crowd together the field is strong. Between two parallel oppositely charged plates the lines are straight and evenly spaced: the field is uniform.</p>
+${FigW(fieldLinesSvg(), T`Field lines leave positive charges and end on negative ones. Between parallel plates the field is uniform.`)}
 ${Tip(T`<p>Convert $\mu\mathrm{C}$ to C and cm to m before using Coulomb's law. Forgetting the $10^{-6}$ is the most common slip.</p>`)}`,
   gens: [
     () => {
@@ -2441,9 +3258,11 @@ ${Fm(T`W = qV`)}
 <p>Near a point charge, $V = \dfrac{kQ}{r}$. Between two parallel plates a distance $d$ apart with potential difference $V$, the field is uniform: $E = \dfrac{V}{d}$ (so $\mathrm{V/m}$ is the same unit as $\mathrm{N/C}$).</p>
 <p>An electron accelerated through $1\,\mathrm{V}$ gains $1\,\mathrm{eV} = 1.6 \times 10^{-19}\,\mathrm{J}$ of energy, the <b>electronvolt</b>.</p>
 ${Key(T`<p>A <b>capacitor</b> stores charge on two conductors separated by an insulator. Its <b>capacitance</b> is the charge stored per volt:</p><p>$$C = \frac{Q}{V} \qquad \text{parallel plates: } C = \frac{\varepsilon_0 A}{d}, \; \varepsilon_0 = 8.85 \times 10^{-12}\,\mathrm{F/m}$$</p><p>The stored energy is $E = \tfrac12 C V^2 = \tfrac12 Q V$.</p>`)}
+${Fig(capacitorSvg(), T`A parallel-plate capacitor: equal and opposite charges on the plates and a uniform field $E = V/d$ between them.`)}
 <h3>Combining capacitors</h3>
 <ul><li><b>Parallel:</b> $C = C_1 + C_2 + \dots$ (the opposite of resistors).</li><li><b>Series:</b> $\dfrac{1}{C} = \dfrac{1}{C_1} + \dfrac{1}{C_2} + \dots$</li></ul>
 <p>Capacitance is measured in farads (F); practical values are microfarads ($\mu\mathrm{F}$), nanofarads (nF) or picofarads (pF). Camera flashes and defibrillators store energy in capacitors and release it in a fraction of a second.</p>
+${Fig(planeSvg({ W: 320, H: 200, x: [0, 6], y: [0, 6], ticks: false, xl: 'V', yl: 'Q', shade: [{ f: v => v, from: 0, to: 4, cls: 'mf-f1' }], fns: [{ f: v => v, to: 5.5, label: T`slope = C`, at: 5, dx: -6, dy: -6, anchor: 'end' }], segs: [[4, 0, 4, 4, 'mf-grid', true]], texts: [[2.9, 1, 'E = ½QV', 'middle', 'mf-lab-b']], label: T`Charge against voltage for a capacitor: a straight line of slope C; the triangle under it is the stored energy` }), T`$Q$ is proportional to $V$ (slope $C$). The area under the line is the stored energy, $E = \tfrac12 QV = \tfrac12 CV^2$.`)}
 ${Tip(T`<p>Capacitors combine the opposite way to resistors: in parallel they simply add.</p>`)}`,
   gens: [
     () => {
@@ -2489,6 +3308,7 @@ ${Fm(T`I = \frac{Q}{t}`)}
 <h3>Potential difference and resistance</h3>
 <p>The <b>potential difference</b> (voltage) $V$ between two points is the energy given to or taken from each coulomb of charge: $1\,\mathrm{V} = 1\,\mathrm{J/C}$. The <b>resistance</b> $R$ of a component tells us how much voltage is needed to push a current through it.</p>
 ${Key(T`<p><b>Ohm's law:</b> for a metal conductor at constant temperature the current is proportional to the voltage:</p><p>$$V = I\,R$$</p><p>Resistance is measured in ohms: $1\,\Omega = 1\,\mathrm{V/A}$.</p>`)}
+${FigRow([[planeSvg({ W: 250, H: 190, x: [-6, 6], y: [-3, 3], ticks: false, xl: 'V', yl: 'I', fns: [{ f: v => v / 2.4 }], label: T`Current against voltage for a resistor: a straight line through the origin` }), T`resistor (ohmic): straight line`], [planeSvg({ W: 250, H: 190, x: [-6, 6], y: [-3, 3], ticks: false, xl: 'V', yl: 'I', fns: [{ f: v => 2 * Math.tanh(v / 2.2), cls: 'mf-c2' }], label: T`Current against voltage for a filament lamp: a curve that flattens as the filament heats up` }), T`filament lamp: curve flattens`]], T`For an ohmic conductor $I \propto V$. A lamp filament heats up, so its resistance rises and the graph bends over.`)}
 <h3>Resistivity</h3>
 <p>A wire's resistance depends on its material, length $L$ and cross-sectional area $A$:</p>
 ${Fm(T`R = \rho\,\frac{L}{A}`)}
@@ -2554,6 +3374,7 @@ ${Ex(T`<p>$R_1 = 4\,\Omega$ in series with $R_2 = 6\,\Omega$ and $R_3 = 3\,\Omeg
 <h3>EMF and internal resistance</h3>
 <p>A real battery has an <b>electromotive force</b> $\varepsilon$ (the energy it gives each coulomb) and a small <b>internal resistance</b> $r$. With an external resistance $R$:</p>
 ${Fm(T`I = \frac{\varepsilon}{R + r} \qquad V_{\text{terminal}} = \varepsilon - I r`)}
+${Fig(planeSvg({ W: 320, H: 200, x: [0, 6.6], y: [0, 14], step: [1, 2], xl: 'I (A)', yl: 'V (V)', fns: [{ f: i => 12 - 2 * i, to: 6 }], pts: [[0, 12, 'ε = 12 V', 'start', false, 8, -4]], texts: [[3.4, 7.5, T`slope = −r`, 'start', 'mf-small']], label: T`Terminal voltage falling linearly with current for a 12 volt battery with 2 ohm internal resistance` }), T`Terminal voltage $V = \varepsilon - Ir$ for $\varepsilon = 12\,\mathrm{V}$, $r = 2\,\Omega$: it equals the EMF only when no current flows.`)}
 ${Tip(T`<p><b>Kirchhoff's rules</b> summarise all of this: the currents into a junction equal the currents out, and around any closed loop the voltage rises equal the voltage drops.</p>`)}`,
   gens: [
     () => {
@@ -2617,6 +3438,7 @@ ${Tip(T`<p><b>Kirchhoff's rules</b> summarise all of this: the currents into a j
 <h3>Fields made by currents</h3>
 <ul><li>Around a long straight wire the field lines are circles: $B = \dfrac{\mu_0 I}{2\pi r}$.</li><li>Inside a long solenoid with $n$ turns per metre the field is uniform: $B = \mu_0 n I$.</li></ul>
 <p>Here $\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$. Curl the fingers of your right hand around the wire with the thumb along the current: the fingers show the field direction.</p>
+${FigW(wireFieldSvg(), T`Left: circular field lines around a straight current (right-hand grip rule). Right: in a uniform field the magnetic force is always perpendicular to the velocity, so the charge moves in a circle.`)}
 ${Key(T`<p>A magnetic field pushes on moving charges (the <b>Lorentz force</b>):</p><p>$$\text{on a wire: } F = B I L \sin\theta \qquad \text{on a charge: } F = q v B \sin\theta$$</p><p>$\theta$ is the angle between the current (or velocity) and the field. The force is perpendicular to both, and zero when they are parallel.</p>`)}
 <h3>Charged particles in a field</h3>
 <p>A charge moving at right angles to a uniform field feels a force perpendicular to its velocity, so it moves in a circle. Setting $qvB = \dfrac{m v^2}{r}$ gives the radius</p>
@@ -2666,9 +3488,11 @@ ${Fm(T`\Phi = B A \cos\theta`)}
 ${Key(T`<p><b>Faraday's law:</b> the EMF induced in a coil of $N$ turns equals the rate of change of flux linkage:</p><p>$$\varepsilon = -N\frac{\Delta \Phi}{\Delta t}.$$</p><p><b>Lenz's law</b> (the minus sign): the induced current flows so as to oppose the change that causes it.</p>`)}
 <h3>A moving rod</h3>
 <p>A rod of length $L$ moving at speed $v$ at right angles to a field $B$ sweeps through flux, and an EMF $\varepsilon = B L v$ appears between its ends.</p>
+${Fig(railsSvg(), T`As the rod slides it sweeps through magnetic flux, so an EMF $\varepsilon = BLv$ drives a current round the circuit.`)}
 <h3>Generators and transformers</h3>
 <p>A generator turns a coil in a magnetic field, producing an alternating EMF. A <b>transformer</b> uses a changing current in one coil to induce an EMF in another wound on the same iron core:</p>
 ${Fm(T`\frac{V_s}{V_p} = \frac{N_s}{N_p} \qquad \text{ideal: } V_p I_p = V_s I_s`)}
+${Fig(transformerSvg(), T`A step-up transformer: twice as many turns on the secondary gives twice the voltage (and half the current).`)}
 <p>Power is sent across the country at very high voltage: for the same power the current is small, so the heating loss in the cables, $P = I^2 R$, is small too.</p>
 ${Tip(T`<p>A transformer works only with alternating current. A steady direct current gives no changing flux, so nothing is induced.</p>`)}`,
   gens: [
@@ -2709,10 +3533,12 @@ ${Tip(T`<p>A transformer works only with alternating current. A steady direct cu
 <p>Mains electricity is <b>alternating current</b>: the voltage swings back and forth sinusoidally, $V = V_0 \sin(\omega t)$ with $\omega = 2\pi f$. In Indonesia the frequency is $50\,\mathrm{Hz}$.</p>
 <h3>RMS values</h3>
 <p>The <b>root-mean-square</b> (rms) value is the steady DC value that would give the same heating: $V_{\text{rms}} = \dfrac{V_0}{\sqrt2}$ and $I_{\text{rms}} = \dfrac{I_0}{\sqrt2}$. When mains is described as $220\,\mathrm{V}$ this is the rms value; the peak is $220\sqrt2 \approx 311\,\mathrm{V}$. The average power in a resistor is $P = I_{\text{rms}}^2 R = V_{\text{rms}} I_{\text{rms}}$.</p>
+${FigW(planeSvg({ W: 540, H: 230, x: [0, 42], y: [-380, 380], step: [5, 100], tickX: 10, tickY: 200, xl: 't (ms)', yl: 'V (V)', fns: [{ f: t => 311 * Math.sin(2 * Math.PI * 50 * t / 1000) }, { f: () => 220, cls: 'mf-c2', dash: true, label: T`rms 220 V`, at: 42, dx: -4, dy: -6, anchor: 'end' }], pts: [[5, 311, T`peak 311 V`, 'start', false, 8, -2]], label: T`Mains voltage in Indonesia: a 50 hertz sine wave with peak 311 volts and rms 220 volts` }), T`Indonesian mains: $V_{\text{rms}} = 220\,\mathrm{V}$ at $50\,\mathrm{Hz}$, so the peak is $220\sqrt2 \approx 311\,\mathrm{V}$ and one cycle takes $20\,\mathrm{ms}$.`)}
 ${Key(T`<p>Inductors and capacitors oppose AC with a <b>reactance</b> (in ohms) that depends on the frequency:</p><p>$$X_L = \omega L = 2\pi f L \qquad X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}$$</p><p>In a series RLC circuit the <b>impedance</b> is $Z = \sqrt{R^2 + (X_L - X_C)^2}$ and $I = V/Z$.</p>`)}
 <h3>Resonance</h3>
 <p>When $X_L = X_C$, the impedance is smallest ($Z = R$) and the current largest. This happens at the <b>resonant frequency</b></p>
 ${Fm(T`f_0 = \frac{1}{2\pi\sqrt{LC}}`)}
+${Fig(planeSvg({ W: 340, H: 200, x: [0, 3.2], y: [0, 1.15], step: [0.5, 0.25], ticks: false, xl: 'f', yl: 'I', fns: [{ f: f => 1 / Math.sqrt(1 + 16 * (f - 1 / f) ** 2), from: 0.05 }], segs: [[1, 0, 1, 1, 'mf-c2', true]], pts: [[1, 1, 'f₀', 'start', false, 8, -4]], label: T`Resonance curve: the current peaks sharply at the resonant frequency` }), T`The current in an LCR circuit peaks at the resonant frequency $f_0$, where $X_L = X_C$.`)}
 <p>Radios select one station by tuning an LC circuit to resonate at its frequency.</p>
 ${Tip(T`<p>An inductor passes low frequencies easily and blocks high ones; a capacitor does the opposite.</p>`)}`,
   gens: [
@@ -2752,8 +3578,10 @@ ${Tip(T`<p>An inductor passes low frequencies easily and blocks high ones; a cap
   lesson: () => T`
 <p>Changing electric and magnetic fields create each other and travel together through space as an <b>electromagnetic (EM) wave</b>. EM waves are transverse, need no medium, and in a vacuum all travel at the speed of light, $c = 3.0 \times 10^{8}\,\mathrm{m/s}$.</p>
 ${Fm(T`c = f\lambda`)}
+${FigW(emWaveSvg(), T`In an EM wave the electric field $E$ and magnetic field $B$ oscillate in step, at right angles to each other and to the direction of travel.`)}
 <h3>The electromagnetic spectrum</h3>
 ${Tbl([T`Type`, T`Typical wavelength`, T`Uses`], [[T`Radio waves`, T`metres to kilometres`, T`radio, TV, communication`], [T`Microwaves`, T`millimetres to centimetres`, T`mobile phones, Wi-Fi, radar, cooking`], [T`Infrared`, T`micrometres`, T`remote controls, thermal cameras, heaters`], [T`Visible light`, T`400–700 nm`, T`seeing, optical fibres`], [T`Ultraviolet`, T`10–400 nm`, T`sterilising, fluorescence; causes sunburn`], [T`X-rays`, T`about 0.01–10 nm`, T`medical imaging, airport security`], [T`Gamma rays`, T`below about 0.01 nm`, T`cancer treatment, sterilising equipment`]])}
+${FigW(spectrumSvg(), T`The electromagnetic spectrum on a wavelength scale (each tick is a factor of 1,000). Visible light, 400–700 nm, is a tiny slice (ranges as used by NASA).`)}
 <p>From radio to gamma rays the wavelength gets shorter and the frequency higher. Higher frequency also means more energy carried by each photon, which is why ultraviolet, X-rays and gamma rays can damage living cells.</p>
 ${Key(T`<p><b>Polarisation</b> shows that EM waves are transverse. A polarising filter lets through only the part of the wave oscillating in one direction. For polarised light of intensity $I_0$ falling on a filter at angle $\theta$ to its direction of polarisation (Malus's law):</p><p>$$I = I_0 \cos^2\theta.$$</p><p>Unpolarised light loses half its intensity at the first filter.</p>`)}
 ${Tip(T`<p>1 nanometre is $10^{-9}\,\mathrm{m}$. Green light of $500\,\mathrm{nm}$ has $f = \frac{3 \times 10^{8}}{500 \times 10^{-9}} = 6 \times 10^{14}\,\mathrm{Hz}$.</p>`)}`,
@@ -2807,8 +3635,10 @@ level({
   lesson: () => T`
 <p>Light travels in straight lines called <b>rays</b>. When a ray hits a smooth surface it bounces off according to the <b>law of reflection</b>:</p>
 ${Key(T`<p>The angle of incidence equals the angle of reflection, $i = r$. Both angles are measured from the <b>normal</b>, the line at right angles to the surface, and the incident ray, reflected ray and normal lie in one plane.</p>`)}
+${Fig(reflectionSvg(), T`Law of reflection: $i = r$, both measured from the normal.`)}
 <h3>Plane mirrors</h3>
 <p>The image in a flat mirror is <b>virtual</b> (the light only seems to come from it), <b>upright</b>, the <b>same size</b> as the object, <b>laterally inverted</b> (left and right swapped) and as far behind the mirror as the object is in front. Two mirrors at an angle $\alpha$ form $n = \dfrac{360^\circ}{\alpha} - 1$ images.</p>
+${Fig(planeMirrorSvg(), T`A plane-mirror image is as far behind the mirror as the object is in front. The reflected rays only <i>seem</i> to come from it, so it is virtual.`)}
 <h3>Curved mirrors</h3>
 <p>A <b>concave</b> mirror (curved inwards, like the inside of a spoon) brings parallel rays together at its <b>focal point</b> F. A <b>convex</b> mirror (curved outwards) spreads them out as if they came from a focal point behind it. The focal length is half the radius of curvature, $f = \frac{R}{2}$.</p>
 ${Fig(opticsSvg('concave', 10, 25, T`Ray diagram: an object beyond C in front of a concave mirror forms a real, inverted, smaller image between F and C`), T`Object beyond C: the image is real, inverted and smaller.`)}
@@ -2874,6 +3704,7 @@ ${Fm(T`n = \frac{c}{v} \qquad n_1 \sin\theta_1 = n_2 \sin\theta_2`)}
 ${Fig(refractionSvg(40, 25, T`air`, T`glass`, T`A ray passing from air into glass bends towards the normal`), T`From air into glass the ray bends towards the normal.`)}
 <h3>Total internal reflection</h3>
 <p>Going from a denser into a less dense medium the ray bends away from the normal. Beyond the <b>critical angle</b> $C$ no light gets out at all: it is all reflected. For a medium of index $n$ against air, $\sin C = \dfrac{1}{n}$. Optical fibres and the sparkle of diamonds use total internal reflection.</p>
+${FigW(tirSvg(), T`From glass into air: below the critical angle the ray escapes (bending away from the normal); at the critical angle it skims the surface; beyond it all the light is reflected back — the principle of optical fibres.`)}
 <h3>Lenses</h3>
 <p>A <b>converging</b> (convex) lens brings parallel rays together at its focal point; a <b>diverging</b> (concave) lens spreads them out. The same equations as for mirrors apply, with $f$ positive for converging and negative for diverging lenses:</p>
 ${Fm(T`\frac{1}{f} = \frac{1}{s} + \frac{1}{s'} \qquad M = \left|\frac{s'}{s}\right| \qquad P = \frac{1}{f}`)}
@@ -2930,6 +3761,7 @@ ${Tip(T`<p>An object inside the focal length of a converging lens gives a virtua
 <h3>The eye</h3>
 <p>The cornea and the lens of the eye form a real, inverted image on the <b>retina</b>. Muscles change the shape of the lens so that both near and far objects are in focus (<b>accommodation</b>). A normal eye sees clearly from its <b>near point</b>, about $25\,\mathrm{cm}$, to its <b>far point</b> at infinity.</p>
 ${Tbl([T`Defect`, T`Problem`, T`Correction`], [[T`Short sight (myopia)`, T`far point is too close; the image forms in front of the retina`, T`diverging lens: $P = -\dfrac{100}{PR}$`], [T`Long sight (hypermetropia)`, T`near point is too far; the image forms behind the retina`, T`converging lens: $P = 4 - \dfrac{100}{PP}$`], [T`Presbyopia (old age)`, T`the lens stiffens and cannot accommodate`, T`bifocal lenses`]])}
+${FigRow([[eyeSvg('normal'), T`normal eye`], [eyeSvg('myopia'), T`short sight`], [eyeSvg('corrected'), T`corrected`]], T`Short sight: the eye focuses parallel rays in front of the retina. A diverging lens spreads the rays a little so they meet on the retina.`)}
 <p>Here $PR$ (far point) and $PP$ (near point) are in centimetres and $P$ comes out in dioptres.</p>
 <h3>Magnifying glass</h3>
 <p>A converging lens held close to the eye with the object inside its focal length. Its angular magnification is $M = \dfrac{25}{f}$ for a relaxed eye (image at infinity) and $M = \dfrac{25}{f} + 1$ when the image is at the near point ($f$ in cm).</p>
@@ -2938,6 +3770,7 @@ ${Tbl([T`Defect`, T`Problem`, T`Correction`], [[T`Short sight (myopia)`, T`far p
 ${Fm(T`M = \frac{s'_{ob}}{s_{ob}} \times \frac{25}{f_{ok}}`)}
 <p>A <b>refracting telescope</b> has a long-focus objective and a short-focus eyepiece. For a relaxed eye the lenses are $d = f_{ob} + f_{ok}$ apart and</p>
 ${Fm(T`M = \frac{f_{ob}}{f_{ok}}`)}
+${FigW(telescopeSvg(), T`A refracting telescope: parallel light is focused by the long-focus objective at F; the eyepiece, one focal length beyond F, makes it parallel again in a narrower beam. Angles are magnified by $f_{ob}/f_{ok}$.`)}
 ${Key(T`<p>A <b>camera</b> is like an eye: a converging lens forms a real, inverted, smaller image on a sensor. It focuses by moving the lens rather than changing its shape.</p>`)}
 ${Tip(T`<p>Keep centimetres throughout these formulas, and remember that the 25 is the near point in cm.</p>`)}`,
   gens: [
@@ -2978,6 +3811,7 @@ ${Tip(T`<p>Keep centimetres throughout these formulas, and remember that the 25 
   blurb: 'Superposition of light, Young’s double slit, single-slit diffraction, diffraction gratings and thin films.',
   lesson: () => T`
 <p>When two waves meet they add up (<b>superposition</b>). If crest meets crest they reinforce: <b>constructive interference</b>. If crest meets trough they cancel: <b>destructive interference</b>. To see a steady pattern the sources must be <b>coherent</b>: the same frequency and a constant phase difference.</p>
+${FigRow([[planeSvg({ W: 250, H: 170, x: [0, 2], y: [-2.3, 2.3], grid: false, ticks: false, xl: ' ', yl: ' ', fns: [{ f: x => Math.sin(2 * Math.PI * x), cls: 'mf-c3', dash: true }, { f: x => 2 * Math.sin(2 * Math.PI * x) }], label: T`Two waves in phase add to a wave of double amplitude` }), T`in phase: constructive`], [planeSvg({ W: 250, H: 170, x: [0, 2], y: [-2.3, 2.3], grid: false, ticks: false, xl: ' ', yl: ' ', fns: [{ f: x => Math.sin(2 * Math.PI * x), cls: 'mf-c3', dash: true }, { f: x => -Math.sin(2 * Math.PI * x), cls: 'mf-c2', dash: true }, { f: () => 0, cls: 'mf-c1' }], label: T`Two waves in antiphase cancel to zero` }), T`half a wave out: destructive`]], T`Superposition: in step the waves add to twice the amplitude; half a wavelength out of step they cancel.`)}
 ${Key(T`<p>Constructive where the path difference is a whole number of wavelengths, $\Delta = m\lambda$; destructive where it is a whole number plus a half, $\Delta = (m + \frac12)\lambda$.</p>`)}
 <h3>Young's double slit</h3>
 <p>Light through two narrow slits a distance $d$ apart makes bright and dark fringes on a screen a distance $L$ away. For small angles:</p>
@@ -2985,6 +3819,7 @@ ${Fig(slitSvg(T`Two slits a distance d apart, a screen a distance L away, and br
 ${Fm(T`d\sin\theta = m\lambda \qquad y_m = \frac{m\lambda L}{d} \qquad \Delta y = \frac{\lambda L}{d}`)}
 <h3>Diffraction</h3>
 <p>Waves spread out when they pass through a gap. For a single slit of width $a$ the dark fringes are at $a\sin\theta = m\lambda$, and the central bright band is twice as wide as the others. A <b>diffraction grating</b> has very many slits, $N$ per unit length, so the slit spacing is $d = 1/N$. Its bright lines are sharp and obey $d\sin\theta = m\lambda$; the highest order that can appear is the largest whole number below $d/\lambda$.</p>
+${Fig(planeSvg({ W: 380, H: 200, x: [-3.4, 3.4], y: [0, 1.1], grid: false, step: [1, 0.25], fmtX: v => (v === 0 ? '0' : (v > 0 ? '' : '−') + Math.abs(v) + 'λ/a'), fmtY: () => '', xl: 'sin θ', yl: 'I', fns: [{ f: x => { const b = Math.PI * x; return Math.abs(b) < 1e-6 ? 1 : (Math.sin(b) / b) ** 2; }, n: 400 }], label: T`Single-slit diffraction pattern: a bright central maximum twice as wide as the weaker side maxima` }), T`Single-slit pattern: the central bright band is twice as wide as the others, with dark fringes at $\sin\theta = m\lambda/a$.`)}
 ${Tip(T`<p>Work in metres: $1\,\mathrm{nm} = 10^{-9}\,\mathrm{m}$ and $1\,\mathrm{mm} = 10^{-3}\,\mathrm{m}$. A grating with 500 lines per mm has $d = \frac{1}{500}\,\mathrm{mm} = 2 \times 10^{-6}\,\mathrm{m}$.</p>`)}
 <p>The colours of soap bubbles and oil films come from <b>thin-film interference</b> between light reflected from the top and the bottom of the film.</p>`,
   gens: [
@@ -3046,7 +3881,9 @@ level({
 <p>Accepting both means that time and length depend on the observer. Everything is controlled by the <b>Lorentz factor</b></p>
 ${Fm(T`\gamma = \frac{1}{\sqrt{1 - v^2/c^2}}`)}
 <p>which is 1 at everyday speeds and grows without limit as $v$ approaches $c$. For $v = 0.6c$, $\gamma = 1.25$; for $v = 0.8c$, $\gamma = \frac53$.</p>
+${Fig(planeSvg({ W: 340, H: 220, x: [0, 1.05], y: [0, 6], step: [0.1, 1], tickX: 0.2, xl: 'v/c', yl: 'γ', fns: [{ f: v => 1 / Math.sqrt(1 - v * v), to: 0.986 }], pts: [[0.6, 1.25, 'γ = 1.25', 'end', false, 8, -6], [0.8, 5 / 3, 'γ ≈ 1.67', 'end', false, 8, -8]], segs: [[1, 0, 1, 6, 'mf-c2', true]], label: T`The Lorentz factor stays near 1 at everyday speeds and rises steeply as v approaches c` }), T`The Lorentz factor is almost exactly 1 until about $0.3c$, then shoots up towards infinity as $v \to c$.`)}
 ${Key(T`<p><b>Time dilation:</b> a moving clock runs slow, $\Delta t = \gamma\,\Delta t_0$, where $\Delta t_0$ is the <b>proper time</b> measured by a clock at rest relative to the events.</p><p><b>Length contraction:</b> a moving object is shorter along its direction of motion, $L = \dfrac{L_0}{\gamma}$, where $L_0$ is its <b>proper length</b> (measured at rest).</p>`)}
+${FigW(lightClockSvg(), T`A light clock: to an observer who sees it moving, the light travels a longer diagonal path at the same speed $c$, so each tick takes longer — time dilation.`)}
 <h3>Adding velocities</h3>
 <p>Speeds do not simply add. If a spaceship moving at $v$ fires a probe forwards at $u'$ relative to itself, an observer sees the probe move at</p>
 ${Fm(T`u = \frac{u' + v}{1 + \dfrac{u'v}{c^2}}`)}
@@ -3096,8 +3933,10 @@ ${Fm(T`E = hf = \frac{hc}{\lambda}`)}
 <p>with Planck's constant $h = 6.63 \times 10^{-34}\,\mathrm{J\,s}$. Photon energies are tiny, so they are often given in <b>electronvolts</b>: $1\,\mathrm{eV} = 1.6 \times 10^{-19}\,\mathrm{J}$, the energy an electron gains across $1\,\mathrm{V}$.</p>
 <h3>The photoelectric effect</h3>
 <p>Light shining on a clean metal can knock electrons out of it. The experiments showed:</p>
+${Fig(photoSvg(), T`One photon, one electron: the photon's energy $hf$ frees the electron (work function $\phi$) and the rest becomes its kinetic energy.`)}
 <ul><li>below a <b>threshold frequency</b> $f_0$ no electrons come out, however bright the light;</li><li>above it, electrons come out at once, and their maximum kinetic energy depends on the frequency, not the brightness;</li><li>brighter light gives <b>more</b> electrons, not faster ones.</li></ul>
 ${Key(T`<p>One photon gives all its energy to one electron. Part of it, the <b>work function</b> $\phi = hf_0$, is needed to free the electron; the rest becomes kinetic energy:</p><p>$$E_{k,\max} = hf - \phi = eV_s$$</p><p>where $V_s$ is the <b>stopping potential</b> needed to halt the fastest electrons.</p>`)}
+${Fig(planeSvg({ W: 340, H: 210, x: [0, 12], y: [-3, 4], ticks: false, xl: 'f', yl: sub('E', 'k,max'), fns: [{ f: f => 0.6 * f - 3, from: 5, to: 11.8 }, { f: f => 0.6 * f - 3, from: 0, to: 5, cls: 'mf-c2', dash: true }], pts: [[5, 0, 'f₀', 'end', false, 6, 16], [0, -3, '−φ', 'start', false, 8, 4]], texts: [[9.6, 1.6, T`slope = h`, 'end', 'mf-small']], label: T`Maximum kinetic energy of photoelectrons against frequency: zero below the threshold frequency, then a straight line of slope h` }), T`$E_{k,\max} = hf - \phi$: no electrons below $f_0$; above it a straight line of slope $h$ whose extension meets the axis at $-\phi$.`)}
 <h3>Matter waves</h3>
 <p>De Broglie suggested that particles also behave as waves, with wavelength $\lambda = \dfrac{h}{p} = \dfrac{h}{mv}$. Electron diffraction confirmed it, and electron microscopes use it to see details far smaller than light can.</p>
 ${Tip(T`<p>A handy shortcut: $hc = 1240\,\mathrm{eV\,nm}$ (to 3 significant figures, $1.24 \times 10^{3}$), so a photon of wavelength $\lambda$ in nm has an energy of about $\frac{1240}{\lambda}\,\mathrm{eV}$.</p>`)}`,
@@ -3148,11 +3987,13 @@ ${Tip(T`<p>A handy shortcut: $hc = 1240\,\mathrm{eV\,nm}$ (to 3 significant figu
 <h3>Models of the atom</h3>
 ${Tbl([T`Model`, T`Picture`, T`Problem`], [[T`Thomson (1897)`, T`a sphere of positive charge with electrons embedded, like raisins in a bun`, T`could not explain the gold-foil results`], [T`Rutherford (1911)`, T`a tiny, dense, positive nucleus with electrons orbiting far away`, T`orbiting electrons should radiate energy and spiral into the nucleus`], [T`Bohr (1913)`, T`electrons only in certain allowed orbits, each with a fixed energy`, T`works only for hydrogen-like atoms`]])}
 <p>In Rutherford's <b>gold-foil experiment</b> most alpha particles passed straight through, but a few bounced back. So the atom is mostly empty space, with its mass and positive charge concentrated in a tiny nucleus.</p>
+${Fig(goldFoilSvg(), T`Rutherford's gold foil: almost all alpha particles pass straight through; the rare large deflections reveal a tiny, dense, positive nucleus.`)}
 <h3>The Bohr model of hydrogen</h3>
 ${Fm(T`E_n = -\frac{13.6\,\mathrm{eV}}{n^2} \qquad r_n = n^2 \times 0.053\,\mathrm{nm}`)}
 ${Fig(levelsSvg(6, 3, 2, T`Energy levels of hydrogen, with an electron dropping from n = 3 to n = 2`), T`Energy levels of hydrogen (not to scale). A drop from $n = 3$ to $n = 2$ emits a red photon of $1.89\,\mathrm{eV}$.`)}
 ${Key(T`<p>When an electron drops from a higher level to a lower one it emits a photon with exactly the energy difference: $hf = E_{\text{upper}} - E_{\text{lower}}$. Absorbing a photon of exactly that energy lifts it back up. The energy needed to remove the electron completely from level $n$ is the <b>ionisation energy</b>, $\frac{13.6}{n^2}\,\mathrm{eV}$.</p>`)}
 <p>Because only certain energy differences are possible, each element emits and absorbs only certain wavelengths: its <b>line spectrum</b>, a fingerprint used to identify elements in stars. For hydrogen, drops to $n = 1$ give the ultraviolet <b>Lyman</b> series, drops to $n = 2$ the visible <b>Balmer</b> series and drops to $n = 3$ the infrared <b>Paschen</b> series.</p>
+${FigW(balmerSvg(), T`The visible (Balmer) lines of hydrogen, from electrons dropping to $n = 2$ (wavelengths from the NIST atomic spectra database).`)}
 ${Tip(T`<p>Level energies are negative because the electron is bound: you have to add energy to free it. With $hc = 1240\,\mathrm{eV\,nm}$ the wavelength of a photon is $\lambda = \frac{1240}{\Delta E}$ in nm when $\Delta E$ is in eV.</p>`)}`,
   gens: [
     () => {
@@ -3194,6 +4035,7 @@ ${Tip(T`<p>Level energies are negative because the electron is bound: you have t
 <p>A nucleus contains <b>protons</b> and <b>neutrons</b> (together, <b>nucleons</b>). A nuclide is written $^{A}_{Z}\mathrm{X}$, where $Z$ is the <b>atomic number</b> (number of protons) and $A$ the <b>mass number</b> (protons + neutrons), so the number of neutrons is $N = A - Z$. <b>Isotopes</b> of an element have the same $Z$ but different $A$, for example $^{12}_{6}\mathrm{C}$ and $^{14}_{6}\mathrm{C}$.</p>
 <h3>Three kinds of radiation</h3>
 ${Tbl([T`Radiation`, T`What it is`, T`Ionising`, T`Stopped by`], [[T`alpha, $\alpha$`, T`helium nucleus $^{4}_{2}\mathrm{He}$`, T`strongly`, T`paper or a few cm of air`], [T`beta, $\beta^-$`, T`fast electron $^{\;\,0}_{-1}\mathrm{e}$`, T`moderately`, T`a few mm of aluminium`], [T`gamma, $\gamma$`, T`high-energy photon`, T`weakly`, T`thick lead or concrete (reduced, not stopped)`]])}
+${FigW(penetrationSvg(), T`Penetrating power: alpha is stopped by paper, beta by a few mm of aluminium; gamma is only weakened, even by several cm of lead.`)}
 ${Key(T`<p>In a decay equation both $A$ and $Z$ must balance. Alpha decay lowers $A$ by 4 and $Z$ by 2; beta decay (a neutron turning into a proton) keeps $A$ and raises $Z$ by 1; gamma emission changes neither.</p><p>$$^{238}_{\;\,92}\mathrm{U} \to\, ^{234}_{\;\,90}\mathrm{Th} + {}^{4}_{2}\mathrm{He} \qquad ^{14}_{\;\,6}\mathrm{C} \to\, ^{14}_{\;\,7}\mathrm{N} + {}^{\;\,0}_{-1}\mathrm{e}$$</p>`)}
 <h3>Half-life</h3>
 <p>Decay is random, but a large number of nuclei decays at a predictable rate. The <b>half-life</b> $T_{1/2}$ is the time for half of the nuclei (and so half the activity) to decay:</p>
@@ -3243,9 +4085,11 @@ ${Tip(T`<p>Radiocarbon dating uses $^{14}\mathrm{C}$, with a half-life of about 
 ${Fm(T`\Delta m = Z m_p + (A - Z) m_n - m_{\text{nucleus}} \qquad E_B = \Delta m\,c^2`)}
 <p>Nuclear masses are given in <b>atomic mass units</b>, and $1\,\mathrm{u}$ is equivalent to $931.5\,\mathrm{MeV}$. Take $m_p = 1.00728\,\mathrm{u}$ and $m_n = 1.00867\,\mathrm{u}$.</p>
 ${Key(T`<p>The <b>binding energy per nucleon</b> measures how stable a nucleus is. It peaks near iron-56 (about $8.8\,\mathrm{MeV}$). Energy is released when light nuclei join (<b>fusion</b>) or heavy nuclei split (<b>fission</b>), because the products are more tightly bound. The energy released in a reaction is</p><p>$$Q = (m_{\text{before}} - m_{\text{after}}) \times 931.5\,\mathrm{MeV/u}.$$</p>`)}
+${Fig(planeSvg({ W: 380, H: 230, x: [0, 250], y: [0, 10], step: [50, 2], xl: T`mass number A`, yl: T`MeV per nucleon`, extra: (X, Y, BE = [[2, 1.11, 'H-2'], [4, 7.07, 'He-4'], [7, 5.61, 'Li-7'], [12, 7.68, 'C-12'], [16, 7.98, 'O-16'], [56, 8.79, 'Fe-56'], [84, 8.72, 'Kr-84'], [138, 8.39, 'Ba-138'], [235, 7.59, 'U-235']]) => sPline(BE.map(([a, e]) => [X(a), Y(e)]), 'mf-c1', ' fill="none" stroke-width="2"') + BE.map(([a, e, n], i) => sC(X(a), Y(e), 3.5, 'mf-dot') + ([0, 1, 5, 8].includes(i) ? sT(X(a) + (i === 0 ? 8 : 0), Y(e) - (i === 0 ? -4 : 9), n, 'mf-small', i === 0 ? 'start' : 'middle') : '')).join(''), label: T`Binding energy per nucleon against mass number, peaking at iron-56` }), T`Binding energy per nucleon (approximate values): it peaks at iron-56. Fusing light nuclei or splitting heavy ones both move towards the peak and release energy.`)}
 <h3>Fission</h3>
 <p>A slow neutron absorbed by uranium-235 makes it split into two smaller nuclei and 2 or 3 new neutrons, releasing about $200\,\mathrm{MeV}$. The new neutrons can split further nuclei: a <b>chain reaction</b>. In a reactor:</p>
 <ul><li>the <b>moderator</b> (water or graphite) slows the neutrons so that they cause fission more easily;</li><li><b>control rods</b> (boron or cadmium) absorb neutrons so that, on average, each fission causes exactly one more;</li><li>the <b>coolant</b> carries the heat to make steam for the turbines;</li><li>thick concrete <b>shielding</b> absorbs the radiation.</li></ul>
+${FigW(fissionSvg(), T`A chain reaction: each fission releases 2–3 neutrons that can split more uranium nuclei. In a reactor, control rods absorb enough of them to keep it steady.`)}
 <h3>Fusion</h3>
 <p>In the Sun, hydrogen nuclei fuse into helium at about 15 million kelvin; only at such temperatures do nuclei move fast enough to overcome their electric repulsion. Fusion fuel is plentiful and leaves little long-lived waste, but a practical fusion power station has not yet been built.</p>
 ${Tip(T`<p>Keep many decimal places when subtracting masses: the mass defect is a small difference between large numbers.</p>`)}`,
@@ -3305,12 +4149,14 @@ level({
   lesson: () => T`
 <p><b>Non-renewable</b> resources (coal, oil, natural gas, uranium) will run out, and burning fossil fuels releases carbon dioxide. <b>Renewable</b> resources are replaced naturally: sunlight, wind, flowing water, geothermal heat, waves, tides and biomass. Indonesia has some of the world's largest geothermal reserves and plenty of sunshine and rivers.</p>
 ${Key(T`<p>No device turns all of its input into useful output. The <b>efficiency</b> is</p><p>$$\eta = \frac{\text{useful output}}{\text{total input}} \times 100\%.$$</p>`)}
+${Fig(barModelSvg([['20%', 20, 'mf-s2l'], [T`heat 80%`, 80, 'mf-s4l']], { top: T`sunlight on the panel: 100%`, bottom: T`electricity 20% · heat 80%`, label: T`Bar showing a solar panel turning 20 percent of the sunlight into electricity and 80 percent into heat` }), T`A typical solar panel: about 20% of the sunlight becomes electricity; the rest warms the panel. Efficiency = useful output ÷ input.`)}
 <h3>Solar power</h3>
 <p>Photovoltaic (solar) cells turn light directly into electricity. On a clear day about $1000\,\mathrm{W/m^2}$ of sunlight reaches the ground, and typical panels are 15–22% efficient, so the output is $P = \eta\, I A$ for intensity $I$ and area $A$.</p>
 <h3>Wind power</h3>
 <p>The kinetic energy of the air passing through the blades each second is</p>
 ${Fm(T`P = \tfrac12 \rho A v^3`)}
 <p>where $\rho \approx 1.2\,\mathrm{kg/m^3}$ is the density of air and $A = \pi r^2$ the area swept by blades of length $r$. Doubling the wind speed gives $2^3 = 8$ times the power. No turbine can extract more than about 59% of this (the Betz limit).</p>
+${Fig(planeSvg({ W: 340, H: 220, x: [0, 13], y: [0, 7], step: [1, 1], tickX: 2, xl: 'v (m/s)', yl: 'P (MW)', fns: [{ f: v => 0.5 * 1.2 * Math.PI * 1600 * v ** 3 / 1e6, to: 12.6 }], pts: [[5, 0.5 * 1.2 * Math.PI * 1600 * 125 / 1e6, '5 m/s', 'end', false, 8, -6], [10, 0.5 * 1.2 * Math.PI * 1600 * 1000 / 1e6, '10 m/s: ×8', 'end', false, 8, -6]], label: T`Wind power through 40 metre blades rising with the cube of wind speed` }), T`Power in the wind through blades $40\,\mathrm{m}$ long: doubling the wind from $5$ to $10\,\mathrm{m/s}$ gives 8 times the power (about $0.38$ to $3.0\,\mathrm{MW}$, before efficiency).`)}
 <h3>Hydroelectric and geothermal power</h3>
 <p>Water falling through a height $h$ turns turbines. With a flow of volume $Q$ each second, the power is $P = \eta \rho Q g h$ (for water $\rho = 1000\,\mathrm{kg/m^3}$). Geothermal plants use steam from hot rocks underground to drive turbines.</p>
 ${Tip(T`<p>Electricity is sold in kilowatt-hours: $1\,\mathrm{kWh} = 1000\,\mathrm{W} \times 3600\,\mathrm{s}$, which is $3.6 \times 10^{6}\,\mathrm{J}$. Power in kW times hours gives kWh.</p>`)}`,
@@ -3362,12 +4208,15 @@ ${Tip(T`<p>Electricity is sold in kilowatt-hours: $1\,\mathrm{kWh} = 1000\,\math
 <p>Every object radiates electromagnetic waves, and hotter objects radiate more strongly and at shorter wavelengths. Two laws describe this radiation:</p>
 ${Fm(T`\lambda_{\max} T = 2.9 \times 10^{-3}\,\mathrm{m\,K} \qquad P = e\sigma A T^4`)}
 <p>The first is <b>Wien's law</b>: the Sun's surface at about $5800\,\mathrm{K}$ peaks in visible light (about $500\,\mathrm{nm}$), while the Earth at about $288\,\mathrm{K}$ peaks in the infrared (about $10\,\mathrm{\mu m}$). The second is the <b>Stefan–Boltzmann law</b>, with $\sigma = 5.67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$ and emissivity $e$ ($e = 1$ for a perfect black body).</p>
+${Fig(planeSvg({ W: 380, H: 200, x: [0.8, 4], y: [0, 1.15], grid: false, step: [1, 0.25], fmtX: v => ({ 1: '0.1 µm', 2: '1 µm', 3: '10 µm', 4: '100 µm' })[v] || '', fmtY: () => '', xl: 'λ', yl: ' ', fns: [[5800, 'mf-c4', T`Sun, 5800 K`], [288, 'mf-c1', T`Earth, 288 K`]].map(([T0, cls, lab]) => { const pk = 2.9e-3 / T0, pl = l => { const x = 1.4388e-2 / (l * T0), xp = 1.4388e-2 / (pk * T0); return (pk / l) ** 5 * (Math.exp(xp) - 1) / (Math.exp(x) - 1); }; return { f: v => pl(10 ** (v - 8)), cls, label: lab, at: Math.log10(pk) + 8, dx: 0, dy: -8, anchor: 'middle' }; }), label: T`Blackbody curves of the Sun peaking near 0.5 micrometres and the Earth near 10 micrometres, each scaled to the same height` }), T`Wien's law: the Sun (≈ 5800 K) radiates mostly visible light, the Earth (≈ 288 K) mostly infrared near $10\,\mu\mathrm{m}$. (Each curve scaled to the same height.)`)}
 <h3>The Earth's energy balance</h3>
 <p>The Earth absorbs sunlight and radiates infrared back to space. About 30% of the sunlight is reflected (the <b>albedo</b> $\alpha \approx 0.3$). Balancing the energy absorbed against the energy radiated gives, with the solar constant $S = 1361\,\mathrm{W/m^2}$,</p>
 ${Fm(T`T = \left(\frac{S(1 - \alpha)}{4\sigma}\right)^{1/4} \approx 255\,\mathrm{K}`)}
 <p>That is $-18\,^\circ\mathrm{C}$, yet the average surface temperature is about $15\,^\circ\mathrm{C}$. The difference is the <b>greenhouse effect</b>.</p>
 ${Key(T`<p><b>Greenhouse gases</b> (water vapour, carbon dioxide, methane, nitrous oxide) let visible sunlight through but absorb the infrared radiated by the ground, and re-emit part of it back down, warming the surface. Burning fossil fuels and cutting forests have raised the CO₂ concentration from about 280 ppm before 1800 to over 420 ppm today, enhancing the effect: this is <b>global warming</b>.</p>`)}
+${FigW(greenhouseSvg(), T`The greenhouse effect: sunlight passes through, the warm ground emits infrared, and greenhouse gases absorb part of it and send some back down.`)}
 <p>The consequences include rising sea levels (from the thermal expansion of seawater and melting land ice), more extreme weather and changes to ecosystems and farming. Emissions are reduced by using less energy, switching to renewable sources and protecting forests.</p>
+${Fig(planeSvg({ W: 380, H: 220, x: [1955, 2026], y: [300, 430], step: [10, 20], tickX: 10, fmtX: v => String(v), xl: T`year`, yl: 'CO₂ (ppm)', fns: [], pts: [[1960, 316.91], [1970, 325.68], [1980, 338.91], [1990, 354.45], [2000, 369.71], [2010, 389.9], [2020, 414.21], [2023, 421.08, '421', 'end', false, 8, -6]], extra: (X, Y) => sPline([[1960, 316.91], [1970, 325.68], [1980, 338.91], [1990, 354.45], [2000, 369.71], [2010, 389.9], [2020, 414.21], [2023, 421.08]].map(([a, b]) => [X(a), Y(b)]), 'mf-c1', ' fill="none" stroke-width="2"'), label: T`Annual mean carbon dioxide at Mauna Loa rising from about 317 ppm in 1960 to 421 ppm in 2023` }), T`Carbon dioxide in the air at Mauna Loa, Hawaii (annual means, NOAA Global Monitoring Laboratory): from about 317 ppm in 1960 to 421 ppm in 2023.`)}
 ${Tip(T`<p>The ozone hole is a different problem: ozone in the upper atmosphere blocks ultraviolet, and it was damaged by CFCs. It is not the main cause of global warming.</p>`)}`,
   gens: [
     () => {
@@ -3409,10 +4258,12 @@ ${Tip(T`<p>The ozone hole is a different problem: ozone in the upper atmosphere 
   blurb: 'Conductors, insulators and semiconductors, doping, diodes and LEDs, rectifiers, transistors, logic gates and binary numbers.',
   lesson: () => T`
 <p>Materials are grouped by how easily charge moves through them. <b>Conductors</b> (metals) have many free electrons; <b>insulators</b> have almost none. <b>Semiconductors</b> such as silicon lie in between, and their conductivity rises as they get warmer or are lit.</p>
+${FigW(bandsSvg(), T`Energy bands: electrons can only conduct in the upper (conduction) band. Semiconductors have a small gap that heat, light or doping can bridge.`)}
 <h3>Doping</h3>
 <p>Adding a tiny amount of another element changes a semiconductor dramatically. A group V element (phosphorus, arsenic) adds spare electrons: an <b>n-type</b> semiconductor. A group III element (boron, gallium) leaves gaps called <b>holes</b> that act as positive charges: a <b>p-type</b> semiconductor.</p>
 <h3>Diodes</h3>
 <p>A <b>p–n junction</b> is a <b>diode</b>: it conducts in one direction only. In <b>forward bias</b> (p side positive) it conducts once the voltage exceeds about $0.7\,\mathrm{V}$ for silicon; in <b>reverse bias</b> almost no current flows. Diodes turn AC into DC (<b>rectification</b>). A <b>light-emitting diode</b> (LED) gives out light when forward biased and needs a series resistor to limit its current:</p>
+${Fig(planeSvg({ W: 340, H: 210, x: [-2, 1.2], y: [-0.5, 5], step: [0.5, 1], ticks: false, xl: 'V', yl: 'I', fns: [{ f: v => (v < 0.55 ? 0 : 25 * (v - 0.55) ** 2), from: -2, to: 1.05 }], pts: [[0.7, 25 * 0.15 ** 2, '≈ 0.7 V', 'end', false, 10, -8]], texts: [[-1, 0.4, T`reverse: almost no current`, 'middle', 'mf-small'], [0.5, 4.3, T`forward`, 'end', 'mf-small']], label: T`Current-voltage graph of a silicon diode: almost no current in reverse, and a sharp rise above about 0.7 volts forward` }), T`A silicon diode: in reverse bias almost no current flows; in forward bias the current rises steeply once $V$ passes about $0.7\,\mathrm{V}$.`)}
 ${Fm(T`R = \frac{V_s - V_{\text{LED}}}{I}`)}
 <h3>Transistors</h3>
 <p>A transistor lets a small <b>base</b> current $I_B$ control a much larger <b>collector</b> current, $I_C = \beta I_B$, where $\beta$ (often 100 or more) is the current gain. Transistors work as amplifiers and as switches; a modern processor contains billions of them.</p>

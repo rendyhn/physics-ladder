@@ -1,15 +1,5 @@
 /* Bahasa Indonesia — 19-modern-b */
 addT('id', {
-  'bzten31v3l': R`
-<p>Inti atom berisi <b>proton</b> dan <b>neutron</b> (keduanya disebut <b>nukleon</b>). Suatu nuklida ditulis $^{A}_{Z}\mathrm{X}$, dengan $Z$ adalah <b>nomor atom</b> (banyaknya proton) dan $A$ adalah <b>nomor massa</b> (proton + neutron), sehingga banyaknya neutron $N = A - Z$. <b>Isotop-isotop</b> suatu unsur memiliki $Z$ yang sama tetapi $A$ yang berbeda, misalnya $^{12}_{6}\mathrm{C}$ dan $^{14}_{6}\mathrm{C}$.</p>
-<h3>Tiga jenis radiasi</h3>
-⟦0⟧
-⟦1⟧
-<h3>Waktu paruh</h3>
-<p>Peluruhan bersifat acak, tetapi sejumlah besar inti meluruh dengan laju yang dapat diramalkan. <b>Waktu paruh</b> $T_{1/2}$ adalah waktu yang diperlukan agar separuh inti (dan karena itu separuh aktivitasnya) meluruh:</p>
-⟦2⟧
-⟦3⟧
-⟦4⟧`,
   '2fv9ci45ruf': R`Radiasi`,
   '1b00t4z3zq2': R`Wujudnya`,
   'ulpbmvnemj': R`Daya ionisasi`,
@@ -74,17 +64,6 @@ addT('id', {
   '4v23lk8spt': R`Alfa hanya memengaruhi logam`,
   '5n7k21lnny': R`Alfa adalah salah satu bentuk cahaya`,
   '1ipejtxfevv': R`Di luar tubuh, alfa dihentikan oleh lapisan kulit mati terluar. Di dalam tubuh, seluruh daya ionisasinya yang kuat mengenai sel-sel hidup.`,
-  '22y6imb19uh': R`
-<p>Massa inti sedikit <b>lebih kecil</b> daripada jumlah massa proton dan neutron penyusunnya. <b>Defek massa</b> $\Delta m$ ini setara dengan <b>energi ikat</b>, yaitu energi yang diperlukan untuk memisahkan inti menjadi nukleon-nukleonnya:</p>
-⟦0⟧
-<p>Massa inti dinyatakan dalam <b>satuan massa atom</b>, dan $1\,\mathrm{u}$ setara dengan $931{,}5\,\mathrm{MeV}$. Gunakan $m_p = 1{,}00728\,\mathrm{u}$ dan $m_n = 1{,}00867\,\mathrm{u}$.</p>
-⟦1⟧
-<h3>Fisi</h3>
-<p>Neutron lambat yang diserap uranium-235 membuat inti itu terbelah menjadi dua inti yang lebih kecil dan 2 atau 3 neutron baru, sambil melepaskan sekitar $200\,\mathrm{MeV}$. Neutron-neutron baru itu dapat membelah inti-inti lain: terjadilah <b>reaksi berantai</b>. Di dalam reaktor:</p>
-<ul><li><b>moderator</b> (air atau grafit) memperlambat neutron agar lebih mudah menimbulkan fisi;</li><li><b>batang kendali</b> (boron atau kadmium) menyerap neutron sehingga, rata-rata, setiap fisi menimbulkan tepat satu fisi berikutnya;</li><li><b>pendingin</b> membawa panas untuk menghasilkan uap bagi turbin;</li><li><b>perisai</b> beton tebal menyerap radiasi.</li></ul>
-<h3>Fusi</h3>
-<p>Di Matahari, inti-inti hidrogen bergabung (berfusi) menjadi helium pada suhu sekitar 15 juta kelvin; hanya pada suhu setinggi itu inti-inti bergerak cukup cepat untuk mengatasi tolakan listriknya. Bahan bakar fusi berlimpah dan limbah berumur panjangnya sedikit, tetapi pembangkit listrik fusi yang praktis belum berhasil dibangun.</p>
-⟦2⟧`,
   '1ouefgz1rpx': R`\Delta m = Z m_p + (A - Z) m_n - m_{\text{inti}} \qquad E_B = \Delta m\,c^2`,
   'ghycpt9bpv': R`<p><b>Energi ikat per nukleon</b> menunjukkan seberapa stabil suatu inti. Nilainya paling besar di sekitar besi-56 (sekitar $8{,}8\,\mathrm{MeV}$). Energi dilepaskan ketika inti-inti ringan bergabung (<b>fusi</b>) atau inti berat terbelah (<b>fisi</b>), karena hasil reaksinya lebih kuat terikat. Energi yang dilepaskan dalam suatu reaksi adalah</p><p>$$Q = (m_{\text{sebelum}} - m_{\text{sesudah}}) \times 931{,}5\,\mathrm{MeV/u}.$$</p>`,
   'aox46tcuuf': R`<p>Pertahankan banyak angka desimal ketika mengurangkan massa: defek massa adalah selisih kecil antara dua bilangan besar.</p>`,

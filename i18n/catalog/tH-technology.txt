@@ -1,19 +1,35 @@
 ##### renewables
-@gi9ayo1olm  ; 0=Key(T`<p>No device turns all of its inpu | 1=Fm(T`P = \tfrac12 \rho A v^3`) | 2=Tip(T`<p>Electricity is sold in kilowatt
+@1lghrp9trz8  ; 0=Key(T`<p>No device turns all of its inpu | 1=Fig(barModelSvg([['20%', 20, 'mf-s2l'],  | 2=Fm(T`P = \tfrac12 \rho A v^3`) | 3=Fig(planeSvg({ W: 340, H: 220, x: [0, 13 | 4=Tip(T`<p>Electricity is sold in kilowatt
 
 <p><b>Non-renewable</b> resources (coal, oil, natural gas, uranium) will run out, and burning fossil fuels releases carbon dioxide. <b>Renewable</b> resources are replaced naturally: sunlight, wind, flowing water, geothermal heat, waves, tides and biomass. Indonesia has some of the world's largest geothermal reserves and plenty of sunshine and rivers.</p>
 ⟦0⟧
+⟦1⟧
 <h3>Solar power</h3>
 <p>Photovoltaic (solar) cells turn light directly into electricity. On a clear day about $1000\,\mathrm{W/m^2}$ of sunlight reaches the ground, and typical panels are 15–22% efficient, so the output is $P = \eta\, I A$ for intensity $I$ and area $A$.</p>
 <h3>Wind power</h3>
 <p>The kinetic energy of the air passing through the blades each second is</p>
-⟦1⟧
+⟦2⟧
 <p>where $\rho \approx 1.2\,\mathrm{kg/m^3}$ is the density of air and $A = \pi r^2$ the area swept by blades of length $r$. Doubling the wind speed gives $2^3 = 8$ times the power. No turbine can extract more than about 59% of this (the Betz limit).</p>
+⟦3⟧
 <h3>Hydroelectric and geothermal power</h3>
 <p>Water falling through a height $h$ turns turbines. With a flow of volume $Q$ each second, the power is $P = \eta \rho Q g h$ (for water $\rho = 1000\,\mathrm{kg/m^3}$). Geothermal plants use steam from hot rocks underground to drive turbines.</p>
-⟦2⟧
+⟦4⟧
 @1sqd0qw6yt9
 <p>No device turns all of its input into useful output. The <b>efficiency</b> is</p><p>$$\eta = \frac{\text{useful output}}{\text{total input}} \times 100\%.$$</p>
+@1jyu5url1hk
+heat 80%
+@bxcd30joq9
+sunlight on the panel: 100%
+@q9u1t1nx4j
+electricity 20% · heat 80%
+@26dxkjh9kj4
+Bar showing a solar panel turning 20 percent of the sunlight into electricity and 80 percent into heat
+@24yed8o3w0m
+A typical solar panel: about 20% of the sunlight becomes electricity; the rest warms the panel. Efficiency = useful output ÷ input.
+@29dvo97u8ya
+Wind power through 40 metre blades rising with the cube of wind speed
+@110bhey5y6i
+Power in the wind through blades $40\,\mathrm{m}$ long: doubling the wind from $5$ to $10\,\mathrm{m/s}$ gives 8 times the power (about $0.38$ to $3.0\,\mathrm{MW}$, before efficiency).
 @1gquuevw3v6
 <p>Electricity is sold in kilowatt-hours: $1\,\mathrm{kWh} = 1000\,\mathrm{W} \times 3600\,\mathrm{s}$, which is $3.6 \times 10^{6}\,\mathrm{J}$. Power in kW times hours gives kWh.</p>
 @23anl0rg7xc  ; 0=Q(I, 'W/m^2') | 1=Q(A, 'm^2') | 2=Q(eta, '%')
@@ -102,22 +118,41 @@ Burning coal
 Water pumped down (or naturally present) is heated by hot rocks and returns as steam to drive turbines.
 
 ##### climate
-@1dctkrz4nbx  ; 0=Fm(T`\lambda_{\max} T = 2.9 \times 10^{- | 1=Fm(T`T = \left(\frac{S(1 - \alpha)}{4\si | 2=Key(T`<p><b>Greenhouse gases</b> (water  | 3=Tip(T`<p>The ozone hole is a different p
+@q7q9d2er03  ; 0=Fm(T`\lambda_{\max} T = 2.9 \times 10^{- | 1=Fig(planeSvg({ W: 380, H: 200, x: [0.8,  | 2=Fm(T`T = \left(\frac{S(1 - \alpha)}{4\si | 3=Key(T`<p><b>Greenhouse gases</b> (water  | 4=FigW(greenhouseSvg(), T`The greenhouse e | 5=Fig(planeSvg({ W: 380, H: 220, x: [1955, | 6=Tip(T`<p>The ozone hole is a different p
 
 <p>Every object radiates electromagnetic waves, and hotter objects radiate more strongly and at shorter wavelengths. Two laws describe this radiation:</p>
 ⟦0⟧
 <p>The first is <b>Wien's law</b>: the Sun's surface at about $5800\,\mathrm{K}$ peaks in visible light (about $500\,\mathrm{nm}$), while the Earth at about $288\,\mathrm{K}$ peaks in the infrared (about $10\,\mathrm{\mu m}$). The second is the <b>Stefan–Boltzmann law</b>, with $\sigma = 5.67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$ and emissivity $e$ ($e = 1$ for a perfect black body).</p>
+⟦1⟧
 <h3>The Earth's energy balance</h3>
 <p>The Earth absorbs sunlight and radiates infrared back to space. About 30% of the sunlight is reflected (the <b>albedo</b> $\alpha \approx 0.3$). Balancing the energy absorbed against the energy radiated gives, with the solar constant $S = 1361\,\mathrm{W/m^2}$,</p>
-⟦1⟧
-<p>That is $-18\,^\circ\mathrm{C}$, yet the average surface temperature is about $15\,^\circ\mathrm{C}$. The difference is the <b>greenhouse effect</b>.</p>
 ⟦2⟧
-<p>The consequences include rising sea levels (from the thermal expansion of seawater and melting land ice), more extreme weather and changes to ecosystems and farming. Emissions are reduced by using less energy, switching to renewable sources and protecting forests.</p>
+<p>That is $-18\,^\circ\mathrm{C}$, yet the average surface temperature is about $15\,^\circ\mathrm{C}$. The difference is the <b>greenhouse effect</b>.</p>
 ⟦3⟧
+⟦4⟧
+<p>The consequences include rising sea levels (from the thermal expansion of seawater and melting land ice), more extreme weather and changes to ecosystems and farming. Emissions are reduced by using less energy, switching to renewable sources and protecting forests.</p>
+⟦5⟧
+⟦6⟧
 @25qbz25dq5g
 \lambda_{\max} T = 2.9 \times 10^{-3}\,\mathrm{m\,K} \qquad P = e\sigma A T^4
+@15etlf6v0qi
+Sun, 5800 K
+@80apnwafqh
+Earth, 288 K
+@1fqca2iy9fw
+Blackbody curves of the Sun peaking near 0.5 micrometres and the Earth near 10 micrometres, each scaled to the same height
+@22r8xx48wd8
+Wien's law: the Sun (≈ 5800 K) radiates mostly visible light, the Earth (≈ 288 K) mostly infrared near $10\,\mu\mathrm{m}$. (Each curve scaled to the same height.)
 @11ekpd75c8g
 <p><b>Greenhouse gases</b> (water vapour, carbon dioxide, methane, nitrous oxide) let visible sunlight through but absorb the infrared radiated by the ground, and re-emit part of it back down, warming the surface. Burning fossil fuels and cutting forests have raised the CO₂ concentration from about 280 ppm before 1800 to over 420 ppm today, enhancing the effect: this is <b>global warming</b>.</p>
+@1pi5xfz464o
+The greenhouse effect: sunlight passes through, the warm ground emits infrared, and greenhouse gases absorb part of it and send some back down.
+@1dnrupqfei6
+year
+@1hhyr3tn4t4
+Annual mean carbon dioxide at Mauna Loa rising from about 317 ppm in 1960 to 421 ppm in 2023
+@1wb1iaofqfv
+Carbon dioxide in the air at Mauna Loa, Hawaii (annual means, NOAA Global Monitoring Laboratory): from about 317 ppm in 1960 to 421 ppm in 2023.
 @2c5bjew3ndw
 <p>The ozone hole is a different problem: ozone in the upper atmosphere blocks ultraviolet, and it was damaged by CFCs. It is not the main cause of global warming.</p>
 @a413z1zy4a
@@ -202,20 +237,32 @@ In which part of the spectrum does the Earth radiate most strongly?
 By Wien's law, at about 288 K the peak is near $10\,\mathrm{\mu m}$, in the infrared.
 
 ##### electronics
-@1jzyh2pnebl  ; 0=Fm(T`R = \frac{V_s - V_{\text{LED}}}{I}` | 1=Tbl([T`Gate`, T`Output is 1 when…`], [[T | 2=Key(T`<p>Digital circuits work with just | 3=Tip(T`<p>Put the milliamps into amps bef
+@2ffhjcly9mi  ; 0=FigW(bandsSvg(), T`Energy bands: electro | 1=Fig(planeSvg({ W: 340, H: 210, x: [-2, 1 | 2=Fm(T`R = \frac{V_s - V_{\text{LED}}}{I}` | 3=Tbl([T`Gate`, T`Output is 1 when…`], [[T | 4=Key(T`<p>Digital circuits work with just | 5=Tip(T`<p>Put the milliamps into amps bef
 
 <p>Materials are grouped by how easily charge moves through them. <b>Conductors</b> (metals) have many free electrons; <b>insulators</b> have almost none. <b>Semiconductors</b> such as silicon lie in between, and their conductivity rises as they get warmer or are lit.</p>
+⟦0⟧
 <h3>Doping</h3>
 <p>Adding a tiny amount of another element changes a semiconductor dramatically. A group V element (phosphorus, arsenic) adds spare electrons: an <b>n-type</b> semiconductor. A group III element (boron, gallium) leaves gaps called <b>holes</b> that act as positive charges: a <b>p-type</b> semiconductor.</p>
 <h3>Diodes</h3>
 <p>A <b>p–n junction</b> is a <b>diode</b>: it conducts in one direction only. In <b>forward bias</b> (p side positive) it conducts once the voltage exceeds about $0.7\,\mathrm{V}$ for silicon; in <b>reverse bias</b> almost no current flows. Diodes turn AC into DC (<b>rectification</b>). A <b>light-emitting diode</b> (LED) gives out light when forward biased and needs a series resistor to limit its current:</p>
-⟦0⟧
+⟦1⟧
+⟦2⟧
 <h3>Transistors</h3>
 <p>A transistor lets a small <b>base</b> current $I_B$ control a much larger <b>collector</b> current, $I_C = \beta I_B$, where $\beta$ (often 100 or more) is the current gain. Transistors work as amplifiers and as switches; a modern processor contains billions of them.</p>
 <h3>Logic gates</h3>
-⟦1⟧
-⟦2⟧
 ⟦3⟧
+⟦4⟧
+⟦5⟧
+@slws1v3spw
+Energy bands: electrons can only conduct in the upper (conduction) band. Semiconductors have a small gap that heat, light or doping can bridge.
+@1pc4mse5bgc
+reverse: almost no current
+@1b0l37kf6bd
+forward
+@1vgyp48334k
+Current-voltage graph of a silicon diode: almost no current in reverse, and a sharp rise above about 0.7 volts forward
+@6m2cf40cen
+A silicon diode: in reverse bias almost no current flows; in forward bias the current rises steeply once $V$ passes about $0.7\,\mathrm{V}$.
 @b75zb1pwu5
 R = \frac{V_s - V_{\text{LED}}}{I}
 @ivft9kfdi0

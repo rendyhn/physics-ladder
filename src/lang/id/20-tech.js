@@ -1,17 +1,5 @@
 /* Bahasa Indonesia — 20-tech */
 addT('id', {
-  'gi9ayo1olm': R`
-<p>Sumber energi <b>tak terbarukan</b> (batu bara, minyak bumi, gas alam, uranium) akan habis, dan pembakaran bahan bakar fosil melepaskan karbon dioksida. Sumber energi <b>terbarukan</b> tergantikan secara alami: cahaya matahari, angin, air yang mengalir, panas bumi, gelombang laut, pasang surut, dan biomassa. Indonesia memiliki salah satu cadangan panas bumi terbesar di dunia serta sinar matahari dan sungai yang melimpah.</p>
-⟦0⟧
-<h3>Energi surya</h3>
-<p>Sel fotovoltaik (sel surya) mengubah cahaya langsung menjadi listrik. Pada hari yang cerah sekitar $1000\,\mathrm{W/m^2}$ cahaya matahari sampai di permukaan tanah, dan efisiensi panel pada umumnya 15–22%, sehingga keluarannya $P = \eta\, I A$ untuk intensitas $I$ dan luas $A$.</p>
-<h3>Energi angin</h3>
-<p>Energi kinetik udara yang melewati bilah turbin setiap detik adalah</p>
-⟦1⟧
-<p>dengan $\rho \approx 1{,}2\,\mathrm{kg/m^3}$ adalah massa jenis udara dan $A = \pi r^2$ luas yang disapu bilah sepanjang $r$. Kelajuan angin dua kali lipat menghasilkan daya $2^3 = 8$ kali lipat. Tidak ada turbin yang dapat mengambil lebih dari sekitar 59% daya ini (batas Betz).</p>
-<h3>Pembangkit listrik tenaga air dan panas bumi</h3>
-<p>Air yang jatuh dari ketinggian $h$ memutar turbin. Dengan debit (volume per detik) $Q$, dayanya $P = \eta \rho Q g h$ (untuk air $\rho = 1000\,\mathrm{kg/m^3}$). Pembangkit listrik tenaga panas bumi memakai uap dari batuan panas di bawah tanah untuk menggerakkan turbin.</p>
-⟦2⟧`,
   '1sqd0qw6yt9': R`<p>Tidak ada alat yang mengubah seluruh masukannya menjadi keluaran yang berguna. <b>Efisiensi</b> adalah</p><p>$$\eta = \frac{\text{keluaran berguna}}{\text{masukan total}} \times 100\%.$$</p>`,
   '1gquuevw3v6': R`<p>Listrik dijual dalam satuan kilowatt-jam: $1\,\mathrm{kWh} = 1000\,\mathrm{W} \times 3600\,\mathrm{s}$, yaitu $3{,}6 \times 10^{6}\,\mathrm{J}$. Daya dalam kW dikali jam menghasilkan kWh.</p>`,
   '23anl0rg7xc': R`Cahaya matahari dengan intensitas ⟦0⟧ mengenai panel surya seluas ⟦1⟧ yang efisiensinya ⟦2⟧. Berapa daya listrik keluarannya?`,
@@ -56,17 +44,6 @@ addT('id', {
   '258t0hpxuf8': R`Cahaya matahari`,
   '1uw96epmi13': R`Pembakaran batu bara`,
   '16gntv7v755': R`Air yang dipompa ke bawah (atau yang sudah ada secara alami) dipanaskan oleh batuan panas dan kembali sebagai uap untuk menggerakkan turbin.`,
-  '1dctkrz4nbx': R`
-<p>Setiap benda memancarkan gelombang elektromagnetik, dan benda yang lebih panas memancar lebih kuat dan pada panjang gelombang yang lebih pendek. Dua hukum menggambarkan radiasi ini:</p>
-⟦0⟧
-<p>Yang pertama adalah <b>hukum pergeseran Wien</b>: permukaan Matahari yang bersuhu sekitar $5800\,\mathrm{K}$ memancar paling kuat pada cahaya tampak (sekitar $500\,\mathrm{nm}$), sedangkan Bumi yang bersuhu sekitar $288\,\mathrm{K}$ memancar paling kuat pada inframerah (sekitar $10\,\mathrm{\mu m}$). Yang kedua adalah <b>hukum Stefan–Boltzmann</b>, dengan $\sigma = 5{,}67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$ dan emisivitas $e$ ($e = 1$ untuk benda hitam sempurna).</p>
-<h3>Keseimbangan energi Bumi</h3>
-<p>Bumi menyerap cahaya matahari dan memancarkan inframerah kembali ke luar angkasa. Sekitar 30% cahaya matahari dipantulkan (<b>albedo</b> $\alpha \approx 0{,}3$). Menyeimbangkan energi yang diserap dengan energi yang dipancarkan, dengan konstanta matahari $S = 1361\,\mathrm{W/m^2}$, menghasilkan</p>
-⟦1⟧
-<p>Itu sama dengan $-18\,^\circ\mathrm{C}$, padahal suhu rata-rata permukaan Bumi sekitar $15\,^\circ\mathrm{C}$. Selisihnya disebabkan oleh <b>efek rumah kaca</b>.</p>
-⟦2⟧
-<p>Akibatnya antara lain naiknya permukaan laut (karena pemuaian air laut dan mencairnya es di daratan), cuaca yang lebih ekstrem, serta perubahan ekosistem dan pertanian. Emisi dapat dikurangi dengan menghemat energi, beralih ke sumber terbarukan, dan melindungi hutan.</p>
-⟦3⟧`,
   '25qbz25dq5g': R`\lambda_{\max} T = 2{,}9 \times 10^{-3}\,\mathrm{m\,K} \qquad P = e\sigma A T^4`,
   '11ekpd75c8g': R`<p><b>Gas rumah kaca</b> (uap air, karbon dioksida, metana, dinitrogen oksida) meloloskan cahaya matahari tampak tetapi menyerap inframerah yang dipancarkan permukaan Bumi, lalu memancarkan sebagian kembali ke bawah sehingga permukaan menjadi hangat. Pembakaran bahan bakar fosil dan penebangan hutan telah menaikkan kadar CO₂ dari sekitar 280 ppm sebelum tahun 1800 menjadi lebih dari 420 ppm saat ini, sehingga efek itu makin kuat: inilah <b>pemanasan global</b>.</p>`,
   '2c5bjew3ndw': R`<p>Lubang ozon adalah masalah yang berbeda: ozon di atmosfer atas menahan ultraviolet, dan lapisan itu dirusak oleh CFC. Lubang ozon bukan penyebab utama pemanasan global.</p>`,
@@ -110,19 +87,6 @@ addT('id', {
   '9g3ub2qehe': R`Air yang lebih hangat memerlukan ruang yang lebih besar, dan gletser serta lapisan es yang mencair menambah air ke laut. Es laut yang terapung hampir tidak mengubah permukaan laut ketika mencair.`,
   'kj9sw8abyl': R`Pada bagian spektrum manakah Bumi memancar paling kuat?`,
   '1g9sox43ojh': R`Menurut hukum Wien, pada suhu sekitar 288 K puncaknya berada di dekat $10\,\mathrm{\mu m}$, yaitu inframerah.`,
-  '1jzyh2pnebl': R`
-<p>Bahan-bahan dikelompokkan menurut seberapa mudah muatan bergerak di dalamnya. <b>Konduktor</b> (logam) memiliki banyak elektron bebas; <b>isolator</b> hampir tidak memilikinya. <b>Semikonduktor</b> seperti silikon berada di antara keduanya, dan daya hantarnya meningkat ketika dipanaskan atau disinari.</p>
-<h3>Doping</h3>
-<p>Menambahkan sedikit sekali unsur lain mengubah semikonduktor secara drastis. Unsur golongan V (fosfor, arsen) menambahkan elektron lebih: semikonduktor <b>tipe-n</b>. Unsur golongan III (boron, galium) meninggalkan kekosongan yang disebut <b>hole</b> yang berperilaku sebagai muatan positif: semikonduktor <b>tipe-p</b>.</p>
-<h3>Dioda</h3>
-<p><b>Sambungan p–n</b> adalah sebuah <b>dioda</b>: dioda hanya menghantarkan arus ke satu arah. Pada <b>bias maju</b> (sisi p positif) dioda silikon menghantar setelah tegangannya melebihi sekitar $0{,}7\,\mathrm{V}$; pada <b>bias mundur</b> hampir tidak ada arus yang mengalir. Dioda mengubah AC menjadi DC (<b>penyearahan</b>). <b>Dioda pemancar cahaya</b> (LED) memancarkan cahaya ketika diberi bias maju dan memerlukan resistor seri untuk membatasi arusnya:</p>
-⟦0⟧
-<h3>Transistor</h3>
-<p>Transistor memungkinkan arus <b>basis</b> $I_B$ yang kecil mengendalikan arus <b>kolektor</b> yang jauh lebih besar, $I_C = \beta I_B$, dengan $\beta$ (sering 100 atau lebih) adalah penguatan arus. Transistor berfungsi sebagai penguat dan sebagai saklar; prosesor modern berisi miliaran transistor.</p>
-<h3>Gerbang logika</h3>
-⟦1⟧
-⟦2⟧
-⟦3⟧`,
   'b75zb1pwu5': R`R = \frac{V_s - V_{\text{LED}}}{I}`,
   'ivft9kfdi0': R`Gerbang`,
   '2b2vvcooba0': R`Keluaran bernilai 1 jika…`,

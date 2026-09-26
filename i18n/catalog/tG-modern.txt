@@ -1,5 +1,5 @@
 ##### relativity
-@1ew761u2kqi  ; 0=Fm(T`\gamma = \frac{1}{\sqrt{1 - v^2/c^2 | 1=Key(T`<p><b>Time dilation:</b> a moving  | 2=Fm(T`u = \frac{u' + v}{1 + \dfrac{u'v}{c | 3=Tip(T`<p>Write speeds as fractions of $c
+@284k6qvgs7x  ; 0=Fm(T`\gamma = \frac{1}{\sqrt{1 - v^2/c^2 | 1=Fig(planeSvg({ W: 340, H: 220, x: [0, 1. | 2=Key(T`<p><b>Time dilation:</b> a moving  | 3=FigW(lightClockSvg(), T`A light clock: t | 4=Fm(T`u = \frac{u' + v}{1 + \dfrac{u'v}{c | 5=Tip(T`<p>Write speeds as fractions of $c
 
 <p>Einstein built special relativity (1905) on two <b>postulates</b>:</p>
 <ol><li>The laws of physics are the same in every inertial (non-accelerating) frame of reference.</li><li>The speed of light in a vacuum, $c = 3.0 \times 10^{8}\,\mathrm{m/s}$, is the same for every observer, however fast they or the source move.</li></ol>
@@ -7,15 +7,23 @@
 ⟦0⟧
 <p>which is 1 at everyday speeds and grows without limit as $v$ approaches $c$. For $v = 0.6c$, $\gamma = 1.25$; for $v = 0.8c$, $\gamma = \frac53$.</p>
 ⟦1⟧
+⟦2⟧
+⟦3⟧
 <h3>Adding velocities</h3>
 <p>Speeds do not simply add. If a spaceship moving at $v$ fires a probe forwards at $u'$ relative to itself, an observer sees the probe move at</p>
-⟦2⟧
+⟦4⟧
 <p>which never exceeds $c$.</p>
 <h3>Mass and energy</h3>
 <p>Mass is a form of energy. An object of mass $m$ at rest has <b>rest energy</b> $E_0 = mc^2$, and its total energy when moving is $E = \gamma mc^2$, so its kinetic energy is $E_k = (\gamma - 1)mc^2$.</p>
-⟦3⟧
+⟦5⟧
+@phmfy2qxnx
+The Lorentz factor stays near 1 at everyday speeds and rises steeply as v approaches c
+@27xg123lid0
+The Lorentz factor is almost exactly 1 until about $0.3c$, then shoots up towards infinity as $v \to c$.
 @v5mvitovf4
 <p><b>Time dilation:</b> a moving clock runs slow, $\Delta t = \gamma\,\Delta t_0$, where $\Delta t_0$ is the <b>proper time</b> measured by a clock at rest relative to the events.</p><p><b>Length contraction:</b> a moving object is shorter along its direction of motion, $L = \dfrac{L_0}{\gamma}$, where $L_0$ is its <b>proper length</b> (measured at rest).</p>
+@1ktts6gnfee
+A light clock: to an observer who sees it moving, the light travels a longer diagonal path at the same speed $c$, so each tick takes longer — time dilation.
 @2bq3bg1sabs
 <p>Write speeds as fractions of $c$: then $v^2/c^2$ is just the square of that fraction, and $c$ cancels.</p>
 @dvkahsfr2o  ; 0=M(b)
@@ -80,22 +88,32 @@ older or younger at random
 Her clock (and her body) ran slow relative to the Earth, so less time passed for her. This is the twin paradox.
 
 ##### photons
-@104sg94tyb3  ; 0=Fm(T`E = hf = \frac{hc}{\lambda}`) | 1=Key(T`<p>One photon gives all its energy | 2=Tip(T`<p>A handy shortcut: $hc = 1240\,\
+@g84ukm983n  ; 0=Fm(T`E = hf = \frac{hc}{\lambda}`) | 1=Fig(photoSvg(), T`One photon, one electr | 2=Key(T`<p>One photon gives all its energy | 3=Fig(planeSvg({ W: 340, H: 210, x: [0, 12 | 4=Tip(T`<p>A handy shortcut: $hc = 1240\,\
 
 <p>Light carries energy in tiny packets called <b>photons</b>. Planck and Einstein showed that the energy of one photon depends only on its frequency:</p>
 ⟦0⟧
 <p>with Planck's constant $h = 6.63 \times 10^{-34}\,\mathrm{J\,s}$. Photon energies are tiny, so they are often given in <b>electronvolts</b>: $1\,\mathrm{eV} = 1.6 \times 10^{-19}\,\mathrm{J}$, the energy an electron gains across $1\,\mathrm{V}$.</p>
 <h3>The photoelectric effect</h3>
 <p>Light shining on a clean metal can knock electrons out of it. The experiments showed:</p>
-<ul><li>below a <b>threshold frequency</b> $f_0$ no electrons come out, however bright the light;</li><li>above it, electrons come out at once, and their maximum kinetic energy depends on the frequency, not the brightness;</li><li>brighter light gives <b>more</b> electrons, not faster ones.</li></ul>
 ⟦1⟧
+<ul><li>below a <b>threshold frequency</b> $f_0$ no electrons come out, however bright the light;</li><li>above it, electrons come out at once, and their maximum kinetic energy depends on the frequency, not the brightness;</li><li>brighter light gives <b>more</b> electrons, not faster ones.</li></ul>
+⟦2⟧
+⟦3⟧
 <h3>Matter waves</h3>
 <p>De Broglie suggested that particles also behave as waves, with wavelength $\lambda = \dfrac{h}{p} = \dfrac{h}{mv}$. Electron diffraction confirmed it, and electron microscopes use it to see details far smaller than light can.</p>
-⟦2⟧
+⟦4⟧
 @18enfkx2h3o
 E = hf = \frac{hc}{\lambda}
+@j6n3hgrf4g
+One photon, one electron: the photon's energy $hf$ frees the electron (work function $\phi$) and the rest becomes its kinetic energy.
 @1z2agzhwa5s
 <p>One photon gives all its energy to one electron. Part of it, the <b>work function</b> $\phi = hf_0$, is needed to free the electron; the rest becomes kinetic energy:</p><p>$$E_{k,\max} = hf - \phi = eV_s$$</p><p>where $V_s$ is the <b>stopping potential</b> needed to halt the fastest electrons.</p>
+@xah1yswyly
+slope = h
+@284rcislt4n
+Maximum kinetic energy of photoelectrons against frequency: zero below the threshold frequency, then a straight line of slope h
+@ewxi6xl1kd
+$E_{k,\max} = hf - \phi$: no electrons below $f_0$; above it a straight line of slope $h$ whose extension meets the axis at $-\phi$.
 @q9fb6rowh5
 <p>A handy shortcut: $hc = 1240\,\mathrm{eV\,nm}$ (to 3 significant figures, $1.24 \times 10^{3}$), so a photon of wavelength $\lambda$ in nm has an energy of about $\frac{1240}{\lambda}\,\mathrm{eV}$.</p>
 @1nxog0s2qbw  ; 0=Q(nm, 'nm')
@@ -192,17 +210,19 @@ Polarisation
 The threshold frequency and the instant emission can only be explained if light arrives in packets of energy $hf$. Interference, diffraction and polarisation show its wave nature.
 
 ##### atoms
-@gmyi9rl91h  ; 0=Tbl([T`Model`, T`Picture`, T`Problem`],  | 1=Fm(T`E_n = -\frac{13.6\,\mathrm{eV}}{n^2 | 2=Fig(levelsSvg(6, 3, 2, T`Energy levels o | 3=Key(T`<p>When an electron drops from a h | 4=Tip(T`<p>Level energies are negative bec
+@n7qvahswgs  ; 0=Tbl([T`Model`, T`Picture`, T`Problem`],  | 1=Fig(goldFoilSvg(), T`Rutherford's gold f | 2=Fm(T`E_n = -\frac{13.6\,\mathrm{eV}}{n^2 | 3=Fig(levelsSvg(6, 3, 2, T`Energy levels o | 4=Key(T`<p>When an electron drops from a h | 5=FigW(balmerSvg(), T`The visible (Balmer) | 6=Tip(T`<p>Level energies are negative bec
 
 <h3>Models of the atom</h3>
 ⟦0⟧
 <p>In Rutherford's <b>gold-foil experiment</b> most alpha particles passed straight through, but a few bounced back. So the atom is mostly empty space, with its mass and positive charge concentrated in a tiny nucleus.</p>
-<h3>The Bohr model of hydrogen</h3>
 ⟦1⟧
+<h3>The Bohr model of hydrogen</h3>
 ⟦2⟧
 ⟦3⟧
-<p>Because only certain energy differences are possible, each element emits and absorbs only certain wavelengths: its <b>line spectrum</b>, a fingerprint used to identify elements in stars. For hydrogen, drops to $n = 1$ give the ultraviolet <b>Lyman</b> series, drops to $n = 2$ the visible <b>Balmer</b> series and drops to $n = 3$ the infrared <b>Paschen</b> series.</p>
 ⟦4⟧
+<p>Because only certain energy differences are possible, each element emits and absorbs only certain wavelengths: its <b>line spectrum</b>, a fingerprint used to identify elements in stars. For hydrogen, drops to $n = 1$ give the ultraviolet <b>Lyman</b> series, drops to $n = 2$ the visible <b>Balmer</b> series and drops to $n = 3$ the infrared <b>Paschen</b> series.</p>
+⟦5⟧
+⟦6⟧
 @ki5bhylf5o
 Model
 @5g7bmgw51u
@@ -225,6 +245,8 @@ Bohr (1913)
 electrons only in certain allowed orbits, each with a fixed energy
 @1kf29ylfqg1
 works only for hydrogen-like atoms
+@1bqebxp4r4l
+Rutherford's gold foil: almost all alpha particles pass straight through; the rare large deflections reveal a tiny, dense, positive nucleus.
 @1vpmx6ftn31
 E_n = -\frac{13.6\,\mathrm{eV}}{n^2} \qquad r_n = n^2 \times 0.053\,\mathrm{nm}
 @1x0bckvin6w
@@ -233,6 +255,8 @@ Energy levels of hydrogen, with an electron dropping from n = 3 to n = 2
 Energy levels of hydrogen (not to scale). A drop from $n = 3$ to $n = 2$ emits a red photon of $1.89\,\mathrm{eV}$.
 @wyrtzm67pu
 <p>When an electron drops from a higher level to a lower one it emits a photon with exactly the energy difference: $hf = E_{\text{upper}} - E_{\text{lower}}$. Absorbing a photon of exactly that energy lifts it back up. The energy needed to remove the electron completely from level $n$ is the <b>ionisation energy</b>, $\frac{13.6}{n^2}\,\mathrm{eV}$.</p>
+@z0xf406aj3
+The visible (Balmer) lines of hydrogen, from electrons dropping to $n = 2$ (wavelengths from the NIST atomic spectra database).
 @1z9gegum1p1
 <p>Level energies are negative because the electron is bound: you have to add energy to free it. With $hc = 1240\,\mathrm{eV\,nm}$ the wavelength of a photon is $\lambda = \frac{1240}{\Delta E}$ in nm when $\Delta E$ is in eV.</p>
 @bgwixr92m4  ; 0=n
@@ -317,17 +341,18 @@ It put the electrons inside the nucleus
 Classical physics says an accelerating charge radiates. Bohr solved this by allowing only certain stable orbits.
 
 ##### radioactivity
-@bzten31v3l  ; 0=Tbl([T`Radiation`, T`What it is`, T`Ioni | 1=Key(T`<p>In a decay equation both $A$ an | 2=Fm(T`N = N_0\left(\tfrac12\right)^{t/T_{ | 3=Fig(graphSvg([...Array(41)].map((_, i) = | 4=Tip(T`<p>Radiocarbon dating uses $^{14}\
+@1yremi4yqr5  ; 0=Tbl([T`Radiation`, T`What it is`, T`Ioni | 1=FigW(penetrationSvg(), T`Penetrating pow | 2=Key(T`<p>In a decay equation both $A$ an | 3=Fm(T`N = N_0\left(\tfrac12\right)^{t/T_{ | 4=Fig(graphSvg([...Array(41)].map((_, i) = | 5=Tip(T`<p>Radiocarbon dating uses $^{14}\
 
 <p>A nucleus contains <b>protons</b> and <b>neutrons</b> (together, <b>nucleons</b>). A nuclide is written $^{A}_{Z}\mathrm{X}$, where $Z$ is the <b>atomic number</b> (number of protons) and $A$ the <b>mass number</b> (protons + neutrons), so the number of neutrons is $N = A - Z$. <b>Isotopes</b> of an element have the same $Z$ but different $A$, for example $^{12}_{6}\mathrm{C}$ and $^{14}_{6}\mathrm{C}$.</p>
 <h3>Three kinds of radiation</h3>
 ⟦0⟧
 ⟦1⟧
+⟦2⟧
 <h3>Half-life</h3>
 <p>Decay is random, but a large number of nuclei decays at a predictable rate. The <b>half-life</b> $T_{1/2}$ is the time for half of the nuclei (and so half the activity) to decay:</p>
-⟦2⟧
 ⟦3⟧
 ⟦4⟧
+⟦5⟧
 @2fv9ci45ruf
 Radiation
 @1b00t4z3zq2
@@ -360,6 +385,8 @@ high-energy photon
 weakly
 @12v1uc1pdij
 thick lead or concrete (reduced, not stopped)
+@2g3lrc2exh4
+Penetrating power: alpha is stopped by paper, beta by a few mm of aluminium; gamma is only weakened, even by several cm of lead.
 @1uq06x40lma
 <p>In a decay equation both $A$ and $Z$ must balance. Alpha decay lowers $A$ by 4 and $Z$ by 2; beta decay (a neutron turning into a proton) keeps $A$ and raises $Z$ by 1; gamma emission changes neither.</p><p>$$^{238}_{\;\,92}\mathrm{U} \to\, ^{234}_{\;\,90}\mathrm{Th} + {}^{4}_{2}\mathrm{He} \qquad ^{14}_{\;\,6}\mathrm{C} \to\, ^{14}_{\;\,7}\mathrm{N} + {}^{\;\,0}_{-1}\mathrm{e}$$</p>
 @8shst7qa2h
@@ -458,22 +485,34 @@ Alpha is a form of light
 Outside, alpha is stopped by the dead outer layer of skin. Inside, all of its strong ionisation is done to living cells.
 
 ##### nuclear-energy
-@22y6imb19uh  ; 0=Fm(T`\Delta m = Z m_p + (A - Z) m_n - m_ | 1=Key(T`<p>The <b>binding energy per nucle | 2=Tip(T`<p>Keep many decimal places when s
+@4rt7x5m6bh  ; 0=Fm(T`\Delta m = Z m_p + (A - Z) m_n - m_ | 1=Key(T`<p>The <b>binding energy per nucle | 2=Fig(planeSvg({ W: 380, H: 230, x: [0, 25 | 3=FigW(fissionSvg(), T`A chain reaction: e | 4=Tip(T`<p>Keep many decimal places when s
 
 <p>A nucleus has slightly <b>less</b> mass than the protons and neutrons it is made of. This <b>mass defect</b> $\Delta m$ is the mass equivalent of the <b>binding energy</b>, the energy needed to pull the nucleus apart:</p>
 ⟦0⟧
 <p>Nuclear masses are given in <b>atomic mass units</b>, and $1\,\mathrm{u}$ is equivalent to $931.5\,\mathrm{MeV}$. Take $m_p = 1.00728\,\mathrm{u}$ and $m_n = 1.00867\,\mathrm{u}$.</p>
 ⟦1⟧
+⟦2⟧
 <h3>Fission</h3>
 <p>A slow neutron absorbed by uranium-235 makes it split into two smaller nuclei and 2 or 3 new neutrons, releasing about $200\,\mathrm{MeV}$. The new neutrons can split further nuclei: a <b>chain reaction</b>. In a reactor:</p>
 <ul><li>the <b>moderator</b> (water or graphite) slows the neutrons so that they cause fission more easily;</li><li><b>control rods</b> (boron or cadmium) absorb neutrons so that, on average, each fission causes exactly one more;</li><li>the <b>coolant</b> carries the heat to make steam for the turbines;</li><li>thick concrete <b>shielding</b> absorbs the radiation.</li></ul>
+⟦3⟧
 <h3>Fusion</h3>
 <p>In the Sun, hydrogen nuclei fuse into helium at about 15 million kelvin; only at such temperatures do nuclei move fast enough to overcome their electric repulsion. Fusion fuel is plentiful and leaves little long-lived waste, but a practical fusion power station has not yet been built.</p>
-⟦2⟧
+⟦4⟧
 @1ouefgz1rpx
 \Delta m = Z m_p + (A - Z) m_n - m_{\text{nucleus}} \qquad E_B = \Delta m\,c^2
 @ghycpt9bpv
 <p>The <b>binding energy per nucleon</b> measures how stable a nucleus is. It peaks near iron-56 (about $8.8\,\mathrm{MeV}$). Energy is released when light nuclei join (<b>fusion</b>) or heavy nuclei split (<b>fission</b>), because the products are more tightly bound. The energy released in a reaction is</p><p>$$Q = (m_{\text{before}} - m_{\text{after}}) \times 931.5\,\mathrm{MeV/u}.$$</p>
+@1gi9hj4yelp
+mass number A
+@1y4wbl85eak
+MeV per nucleon
+@f2cepanktf
+Binding energy per nucleon against mass number, peaking at iron-56
+@coy8n851gc
+Binding energy per nucleon (approximate values): it peaks at iron-56. Fusing light nuclei or splitting heavy ones both move towards the peak and release energy.
+@uul15nagte
+A chain reaction: each fission releases 2–3 neutrons that can split more uranium nuclei. In a reactor, control rods absorb enough of them to keep it steady.
 @aox46tcuuf
 <p>Keep many decimal places when subtracting masses: the mass defect is a small difference between large numbers.</p>
 @1z86nmihn6k

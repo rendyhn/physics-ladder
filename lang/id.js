@@ -182,17 +182,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 10-mech-e */
 addT('id', {
-  '2bgoc0bt7g7': R`
-<p>Benda tegar berada dalam <b>kesetimbangan</b> jika tidak bertambah cepat dan tidak mulai berputar. Untuk itu diperlukan dua syarat sekaligus.</p>
-⟦0⟧
-<p><b>Momen gaya</b> terhadap suatu titik adalah gaya dikali jarak tegak lurusnya dari titik itu. Memilih titik tempat gaya yang belum diketahui bekerja akan menghilangkan gaya itu dari persamaan momen, sehingga soal menjadi jauh lebih singkat.</p>
-<h3>Tuas dan jungkat-jungkit</h3>
-⟦1⟧
-<p>Jungkat-jungkit seimbang jika $F_1 d_1 = F_2 d_2$. Tuas memungkinkan kuasa kecil mengangkat beban besar jika kuasa berada jauh lebih jauh dari titik tumpu daripada beban.</p>
-⟦2⟧
-<h3>Titik berat dan kestabilan</h3>
-<p>Berat suatu benda bekerja seolah-olah pada satu titik, yaitu <b>titik berat</b>; untuk batang homogen titik itu berada di tengah. Benda yang berdiri di atas alasnya akan terguling jika garis vertikal melalui titik beratnya jatuh di luar alas. Titik berat yang rendah dan alas yang lebar membuat benda lebih stabil.</p>
-⟦3⟧`,
   '1xo6yn5lhts': R`<p><b>Syarat kesetimbangan</b></p><ol><li>Gaya resultan nol: $\Sigma F_x = 0$ dan $\Sigma F_y = 0$.</li><li>Momen gaya resultan terhadap titik <i>mana pun</i> nol: jumlah momen searah jarum jam = jumlah momen berlawanan arah jarum jam.</li></ol>`,
   '23g7vlo9231': R`Jungkat-jungkit yang seimbang pada titik tumpu di tengah dengan beban sama pada jarak sama`,
   '1ia7igse039': R`Momen yang sama terhadap titik tumpu: $300 \times 1{,}5 = 300 \times 1{,}5$.`,
@@ -221,16 +210,6 @@ addT('id', {
   '1krwrnhumij': R`Hanya momen gaya resultannya yang nol`,
   '1b1n53la2iv': R`Beratnya sama dengan gaya normal dari dinding`,
   '1d4mywo9186': R`Benda tegar yang setimbang memerlukan kedua syarat: tidak ada gaya resultan dan tidak ada momen gaya resultan.`,
-  'nvjcaa6b85': R`
-<p>Setiap massa menarik setiap massa lainnya. Hukum gravitasi Newton menyatakan besar tarikan antara dua massa titik (atau bola) yang pusatnya berjarak $r$:</p>
-⟦0⟧
-<p>Ini adalah <b>hukum kuadrat terbalik</b>: menggandakan jarak membuat gayanya empat kali lebih kecil.</p>
-<h3>Kuat medan gravitasi $g$</h3>
-<p>Di permukaan planet bermassa $M$ dan berjari-jari $R$, $g = \dfrac{GM}{R^2}$. Untuk Bumi ($M = 6{,}0 \times 10^{24}\,\mathrm{kg}$, $R = 6{,}4 \times 10^{6}\,\mathrm{m}$) hasilnya sekitar $9{,}8\,\mathrm{m/s^2}$. Pada ketinggian $h$ di atas permukaan, $g_h = g \left(\dfrac{R}{R + h}\right)^2$.</p>
-⟦1⟧
-<h3>Kecepatan lepas</h3>
-<p>Kelajuan yang diperlukan untuk meninggalkan permukaan planet untuk selamanya (tanpa hambatan udara) adalah $v_{\text{lepas}} = \sqrt{\dfrac{2GM}{R}}$, sekitar $11{,}2\,\mathrm{km/s}$ untuk Bumi.</p>
-⟦2⟧`,
   '1c9bn1b3459': R`F = \frac{G m_1 m_2}{r^2}, \qquad G = 6{,}67 \times 10^{-11}\,\mathrm{N\,m^2/kg^2}`,
   'zpmy0epgmu': R`<p>Untuk satelit pada orbit lingkaran berjari-jari $r$, gravitasi menyediakan gaya sentripetal:</p><p>$$\frac{GMm}{r^2} = \frac{m v^2}{r} \;\Rightarrow\; v = \sqrt{\frac{GM}{r}}, \qquad T = \frac{2\pi r}{v}.$$</p><p>Dari sini diperoleh <b>hukum III Kepler</b>: $T^2 \propto r^3$ untuk semua benda yang mengorbit massa pusat yang sama.</p>`,
   '1nsox0r2osf': R`<p>$r$ diukur dari <b>pusat</b> planet. Satelit yang berada $400\,\mathrm{km}$ di atas permukaan mengorbit pada $r = R + 400\,\mathrm{km}$.</p>`,
@@ -263,18 +242,6 @@ addT('id', {
   '11allerlng8': R`Menjadi tiga kali lipat`,
   '1narefqxwk6': R`Tetap sama`,
   '27b94xj9u8t': R`Gravitasi mengikuti hukum kuadrat terbalik: $F \propto 1/r^2$, jadi melipattigakan $r$ membagi gayanya dengan $3^2 = 9$.`,
-  'tht7ack1bm': R`
-<p>Bahan yang <b>elastis</b> kembali ke bentuk semula ketika gayanya dihilangkan. Pegas, karet gelang, dan kawat baja (untuk regangan kecil) semuanya bersifat demikian.</p>
-<h3>Hukum Hooke</h3>
-⟦0⟧
-<p>Pertambahan panjang $x$ sebanding dengan gaya $F$, sampai <b>batas elastis</b>. Konstanta pegas $k$ (dalam $\mathrm{N/m}$) menyatakan kekakuan: pegas yang kaku memiliki $k$ besar.</p>
-<h3>Susunan pegas</h3>
-<ul><li><b>Paralel</b> (berdampingan, berbagi beban): $k = k_1 + k_2$. Lebih kaku.</li><li><b>Seri</b> (disambung memanjang): $\dfrac{1}{k} = \dfrac{1}{k_1} + \dfrac{1}{k_2}$. Lebih lentur.</li></ul>
-<h3>Tegangan, regangan, dan modulus Young</h3>
-⟦1⟧
-<p>Tegangan $\sigma$ adalah gaya per luas (dalam $\mathrm{Pa}$); regangan $\varepsilon$ adalah perubahan panjang relatif (tanpa satuan). <b>Modulus Young</b> $E$ adalah sifat bahan, bukan sifat kawat tertentu: baja sekitar $2 \times 10^{11}\,\mathrm{Pa}$.</p>
-⟦2⟧
-⟦3⟧`,
   '1vnn2tgh37x': R`<p>Pegas yang diregangkan atau dimampatkan menyimpan <b>energi potensial pegas</b>:</p><p>$$E_p = \tfrac12 k x^2 = \tfrac12 F x.$$</p><p>Energi ini sama dengan luas di bawah grafik gaya–pertambahan panjang, yang berbentuk segitiga.</p>`,
   '1yajnp82ry5': R`<p>Pertambahan panjang adalah <i>perubahan</i> panjang, bukan panjang barunya. Pegas $20\,\mathrm{cm}$ yang ditarik menjadi $25\,\mathrm{cm}$ memiliki $x = 5\,\mathrm{cm} = 0{,}05\,\mathrm{m}$.</p>`,
   '2ckt7977jyy': R`Sebuah pegas dengan konstanta ⟦0⟧ ditarik sejauh ⟦1⟧. Berapa gaya yang diperlukan?`,
@@ -301,20 +268,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 11-mech-f */
 addT('id', {
-  '132l0ady3rl': R`
-<h3>Massa jenis dan tekanan</h3>
-⟦0⟧
-<p>Massa jenis diukur dalam $\mathrm{kg/m^3}$ (air: $1000\,\mathrm{kg/m^3}$) dan tekanan dalam pascal, $1\,\mathrm{Pa} = 1\,\mathrm{N/m^2}$. Gaya yang sama pada luas yang lebih kecil menghasilkan tekanan yang lebih besar; itulah sebabnya pisau dibuat tajam dan sepatu salju dibuat lebar.</p>
-<h3>Tekanan hidrostatis</h3>
-⟦1⟧
-<p>Tekanan pada kedalaman $h$ adalah tekanan di permukaan $p_0$ (tekanan atmosfer, sekitar $1{,}0 \times 10^{5}\,\mathrm{Pa}$) ditambah berat zat cair di atas setiap meter persegi, $\rho g h$. Tekanan ini hanya bergantung pada kedalaman, bukan pada bentuk wadah, dan bekerja sama besar ke segala arah.</p>
-<h3>Hukum Pascal dan hidraulik</h3>
-<p>Tekanan yang diberikan pada zat cair dalam ruang tertutup diteruskan sama besar ke seluruh bagiannya. Pada pompa hidraulik atau dongkrak mobil, tekanan di bawah kedua pengisap sama, jadi</p>
-⟦2⟧
-<p>Gaya kecil pada pengisap kecil dapat mengangkat beban besar pada pengisap besar.</p>
-⟦3⟧
-⟦4⟧
-⟦5⟧`,
   '20hy5hggcsa': R`<p><b>Hukum Archimedes:</b> benda di dalam fluida mendapat <b>gaya apung</b> ke atas yang sama dengan berat fluida yang dipindahkannya:</p><p>$$F_A = \rho_{\text{fluida}}\, g\, V_{\text{tercelup}}.$$</p><p>Benda yang terapung memindahkan fluida seberat dirinya sendiri, jadi bagian yang tercelup adalah $\dfrac{\rho_{\text{benda}}}{\rho_{\text{fluida}}}$.</p>`,
   '1eqvj8151xy': R`<p>Sebuah batu bervolume $0{,}002\,\mathrm{m^3}$ tercelup seluruhnya di dalam air ($g = 10\,\mathrm{m/s^2}$). Gaya apung: $1000 \cdot 10 \cdot 0{,}002 = 20\,\mathrm{N}$. Jika berat batu di udara $50\,\mathrm{N}$, di dalam air beratnya seolah-olah hanya $50 - 20 = 30\,\mathrm{N}$.</p>`,
   'jxo254idn5': R`<p>Pakai massa jenis <b>fluida</b> pada $F_A = \rho g V$, bukan massa jenis bendanya.</p>`,
@@ -348,18 +301,6 @@ addT('id', {
   '2curpr1mjxp': R`Udara di atas permukaan air menahannya`,
   '1n10nia9hri': R`Tekanan air di permukaan nol`,
   '21em8h1a62o': R`Lambung kapal melingkupi volume yang besar, jadi massa jenis rata-rata kapal (baja ditambah udara) lebih kecil daripada air, dan kapal hanya tenggelam sampai air yang dipindahkannya seberat kapal itu.`,
-  '21hvlad5dmf': R`
-<p>Untuk fluida ideal (tak termampatkan, tanpa gesekan, aliran tunak), dua hukum sederhana menggambarkan geraknya.</p>
-<h3>Debit dan persamaan kontinuitas</h3>
-⟦0⟧
-<p>Debit $Q$ (dalam $\mathrm{m^3/s}$) sama di sepanjang pipa, karena fluida tidak dapat menumpuk di mana pun. Di bagian pipa yang menyempit, fluida mengalir lebih cepat. Itulah sebabnya air menyemprot lebih kencang ketika ujung selang ditutup sebagian dengan ibu jari.</p>
-⟦1⟧
-<h3>Hukum Torricelli</h3>
-<p>Air yang keluar dari lubang pada kedalaman $h$ di bawah permukaan tangki terbuka memiliki kelajuan yang sama dengan benda yang jatuh bebas dari ketinggian itu:</p>
-⟦2⟧
-<h3>Penerapan</h3>
-<ul><li>Sayap pesawat membuat udara mengalir lebih cepat di permukaan atasnya, sehingga tekanan di atas lebih kecil daripada di bawah: timbul gaya angkat.</li><li>Venturimeter mengukur kelajuan aliran dari penurunan tekanan di bagian yang sempit.</li><li>Dua lembar kertas yang didekatkan akan saling mendekat ketika kamu meniup di antara keduanya.</li></ul>
-⟦3⟧`,
   'jfct9zo3fm': R`<p><b>Persamaan Bernoulli</b> (kekekalan energi untuk fluida yang mengalir):</p><p>$$p + \tfrac12 \rho v^2 + \rho g h = \text{tetap sepanjang garis alir}.$$</p><p>Pada pipa mendatar, di bagian yang alirannya lebih cepat tekanannya lebih rendah.</p>`,
   '1tf33n72jde': R`<p>Jika pipa dinyatakan dengan diameternya, luasnya sebanding dengan kuadrat diameter: diameter setengahnya membuat luas empat kali lebih kecil dan kelajuan empat kali lebih besar.</p>`,
   'h7y62084hz': R`Sebuah selang mengalirkan air dengan debit ⟦0⟧. Berapa lama waktu untuk mengisi tangki ⟦1⟧?`,
@@ -387,17 +328,6 @@ addT('id', {
   '1z39d92s5z2': R`kelajuan dan tekanannya sama-sama lebih besar`,
   '1n7mw09tqd0': R`debitnya lebih kecil`,
   'p0onvirn47': R`Kontinuitas membuat air mengalir lebih cepat di bagian yang luasnya lebih kecil, lalu Bernoulli menyatakan tekanannya harus turun. Debitnya tetap sama.`,
-  '1woeplbt7b9': R`
-<h3>Pusat massa</h3>
-<p>Untuk sekumpulan massa titik, <b>pusat massa</b> adalah posisi rata-rata yang diberi bobot massa:</p>
-⟦0⟧
-<p>Pusat massa suatu sistem bergerak seolah-olah seluruh massa terkumpul di sana dan semua gaya luar bekerja padanya: $\Sigma F_{\text{luar}} = M a_{\text{pm}}$. Ketika sebuah peluru meledak di udara, pecahan-pecahannya berhamburan, tetapi pusat massanya tetap mengikuti parabola semula.</p>
-<h3>Momentum sudut</h3>
-⟦1⟧
-<p>Momentum sudut adalah padanan momentum pada gerak rotasi. Momen gaya resultan mengubahnya: $\tau = \dfrac{\Delta L}{\Delta t}$.</p>
-⟦2⟧
-⟦3⟧
-⟦4⟧`,
   'utaagz8jc5': R`L = I\,\omega \qquad \text{(untuk massa titik: } L = m v r\text{)}`,
   '1vqngikji5k': R`<p><b>Hukum kekekalan momentum sudut:</b> jika tidak ada momen gaya luar, $L$ tetap:</p><p>$$I_1 \omega_1 = I_2 \omega_2.$$</p><p>Penari es yang menarik lengannya ke dalam memperkecil $I$, sehingga $\omega$ naik dan ia berputar lebih cepat.</p>`,
   '1t4hircwlm6': R`<p>Seorang penari es berputar $2\,\mathrm{put/s}$ dengan $I = 4\,\mathrm{kg\,m^2}$, lalu menarik lengannya sehingga $I = 1{,}6\,\mathrm{kg\,m^2}$. Maka $\omega_2 = \frac{4 \cdot 2}{1{,}6} = 5\,\mathrm{put/s}$. Energi kinetiknya $\tfrac12 I\omega^2$ naik $2{,}5$ kali; tambahan energinya berasal dari usaha otot-ototnya.</p>`,
@@ -428,15 +358,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 12-waves */
 addT('id', {
-  '1i3485l57l3': R`
-<p>Sebuah benda bergerak <b>harmonik sederhana</b> (GHS) jika gaya yang menariknya kembali ke posisi setimbang sebanding dengan simpangannya: $F = -kx$. Beban pada pegas dan bandul yang berayun dengan sudut kecil adalah contoh klasiknya.</p>
-⟦0⟧
-<h3>Menggambarkan getaran</h3>
-<ul><li><b>Amplitudo</b> $A$: simpangan terbesar dari posisi setimbang.</li><li><b>Periode</b> $T$: waktu untuk satu getaran penuh; <b>frekuensi</b> $f = 1/T$; <b>frekuensi sudut</b> $\omega = 2\pi f$.</li><li>Simpangannya mengikuti kurva sinus atau kosinus: $x = A\cos(\omega t)$.</li></ul>
-⟦1⟧
-<h3>Kecepatan, percepatan, dan energi</h3>
-<ul><li>Kelajuan terbesar di titik setimbang: $v_{\max} = A\omega$. Pada simpangan $x$: $v = \omega\sqrt{A^2 - x^2}$.</li><li>Percepatan terbesar di kedua ujung: $a_{\max} = A\omega^2$, selalu mengarah kembali ke titik setimbang.</li><li>Energi totalnya tetap, $E = \tfrac12 k A^2$; energi ini berganti-ganti antara energi kinetik dan energi potensial.</li></ul>
-⟦2⟧`,
   '9pqe4ezwqq': R`Grafik simpangan terhadap waktu untuk getaran dengan amplitudo 4 cm dan periode 3 s`,
   'gnp8qkykr1': R`Amplitudo $A = 4\,\mathrm{cm}$, periode $T = 3\,\mathrm{s}$.`,
   '6jvoipk1c7': R`<p>Periode dua osilator baku:</p><p>$$\text{beban pada pegas: } T = 2\pi\sqrt{\frac{m}{k}} \qquad \text{bandul sederhana: } T = 2\pi\sqrt{\frac{L}{g}}$$</p><p>Keduanya tidak bergantung pada amplitudo. Periode bandul juga tidak bergantung pada massanya.</p>`,
@@ -466,19 +387,6 @@ addT('id', {
   '1q326t4g0i1': R`Di tengah-tengah antara titik setimbang dan ujung`,
   '23y0ansr5sj': R`Kelajuannya sama di mana pun`,
   '28zytuoytx3': R`Di titik setimbang seluruh energinya adalah energi kinetik, jadi kelajuannya terbesar; di ujung-ujung beban berhenti sesaat.`,
-  '8z6fbnnl86': R`
-<p><b>Gelombang</b> memindahkan energi dari satu tempat ke tempat lain tanpa memindahkan mediumnya. Pada gelombang mekanik, setiap partikel medium bergetar di sekitar posisinya sendiri dan meneruskan getaran itu ke partikel di sebelahnya.</p>
-<h3>Dua jenis gelombang</h3>
-<ul><li><b>Transversal:</b> partikel bergerak tegak lurus terhadap arah rambat gelombang. Gelombang pada tali, riak di permukaan air.</li><li><b>Longitudinal:</b> partikel bergerak maju-mundur searah rambat gelombang, membentuk rapatan dan regangan. Bunyi, slinki yang didorong.</li></ul>
-⟦0⟧
-<h3>Menggambarkan gelombang</h3>
-<ul><li><b>Panjang gelombang</b> $\lambda$: panjang satu gelombang penuh, misalnya dari puncak ke puncak.</li><li><b>Frekuensi</b> $f$: banyak gelombang yang melewati suatu titik per sekon; <b>periode</b> $T = 1/f$.</li><li><b>Amplitudo</b>: simpangan terbesar dari posisi setimbang.</li></ul>
-⟦1⟧
-<h3>Gelombang pada tali dan gelombang stasioner</h3>
-<p>Pada tali dengan tegangan $F$ dan massa per satuan panjang $\mu$, $v = \sqrt{F/\mu}$. Tali yang terikat di kedua ujungnya bergetar dalam <b>gelombang stasioner</b> yang panjangnya memuat bilangan bulat kali setengah panjang gelombang: $L = n\frac{\lambda}{2}$, jadi</p>
-⟦2⟧
-<p>Frekuensi terendah, $f_1$, adalah <b>nada dasar</b>; yang lain adalah nada atas (harmonik). Senar gitar disetel dengan mengubah tegangannya.</p>
-⟦3⟧`,
   'kp4lbl7udc': R`Gelombang transversal dengan panjang gelombang 2 m dan amplitudo 3 cm`,
   '1zm6py874qx': R`Panjang gelombang $\lambda = 2\,\mathrm{m}$ (puncak ke puncak), amplitudo $3\,\mathrm{cm}$.`,
   'bglc9ofl2o': R`<p>Dalam satu periode gelombang maju sejauh satu panjang gelombang, jadi cepat rambatnya</p><p>$$v = f\lambda = \frac{\lambda}{T}.$$</p><p>Cepat rambat ditentukan oleh medium; frekuensi ditentukan oleh sumber.</p>`,
@@ -509,20 +417,6 @@ addT('id', {
   '1t3vrgkwj6b': R`Panjang gelombangnya`,
   '28ydf6in6m2': R`Arahnya, selalu`,
   '6b9ks5f4ky': R`Frekuensi ditentukan oleh sumber dan tidak berubah. Karena $v = f\lambda$, cepat rambat yang lebih kecil berarti panjang gelombang yang lebih pendek.`,
-  '114v5emv6pf': R`
-<p>Bunyi adalah gelombang mekanik <b>longitudinal</b>: pola rapatan dan regangan yang merambat. Bunyi memerlukan medium dan tidak dapat merambat di ruang hampa. Di udara pada suhu ruang cepat rambatnya sekitar $340\,\mathrm{m/s}$; di air sekitar $1500\,\mathrm{m/s}$; di baja lebih cepat lagi.</p>
-<h3>Gema</h3>
-<p>Gema merambat ke permukaan pemantul lalu kembali, jadi jarak ke permukaan itu $d = \dfrac{v t}{2}$. Kelelawar, sonar kapal, dan alat USG semuanya memakai prinsip ini.</p>
-<h3>Tinggi nada dan kenyaringan</h3>
-<p><b>Tinggi nada</b> ditentukan oleh frekuensi dan <b>kenyaringan</b> terutama oleh amplitudo. Manusia dapat mendengar sekitar $20\,\mathrm{Hz}$ sampai $20\,000\,\mathrm{Hz}$; di atasnya ultrasonik, di bawahnya infrasonik.</p>
-⟦0⟧
-<h3>Efek Doppler</h3>
-<p>Jika sumber dan pendengar saling mendekat, pendengar mendengar frekuensi yang lebih tinggi; jika saling menjauh, lebih rendah. Dengan cepat rambat bunyi $v$, kelajuan pendengar $v_p$, dan kelajuan sumber $v_s$:</p>
-⟦1⟧
-<p>Pakai tanda atas jika keduanya saling mendekat dan tanda bawah jika saling menjauh.</p>
-<h3>Pipa organa</h3>
-<p>Kolom udara beresonansi seperti senar. Pipa organa terbuka memiliki $f_n = \dfrac{n v}{2L}$; pipa organa tertutup hanya memiliki harmonik ganjil, $f = \dfrac{(2n-1) v}{4L}$, jadi nada dasarnya $\dfrac{v}{4L}$.</p>
-⟦2⟧`,
   '1v6x9695ich': R`<p><b>Intensitas</b> adalah daya per satuan luas. Dari sumber kecil yang memancar ke segala arah:</p><p>$$I = \frac{P}{4\pi r^2}.$$</p><p>Kenyaringan diukur dengan skala logaritmik <b>desibel</b>:</p><p>$$\beta = 10 \log_{10}\frac{I}{I_0}\ \mathrm{dB}, \qquad I_0 = 10^{-12}\,\mathrm{W/m^2}.$$</p><p>Setiap tambahan $10\,\mathrm{dB}$ berarti intensitasnya sepuluh kali lipat.</p>`,
   '86oxii1rtz': R`<p>Jangan lupa membagi dua waktu gema: bunyi pergi <i>dan</i> kembali.</p>`,
   'd0x50jw74k': R`Pulsa sonar sebuah kapal kembali dari dasar laut setelah ⟦0⟧. Berapa kedalaman laut di tempat itu? (Cepat rambat bunyi di air: $1500\,\mathrm{m/s}$.)`,
@@ -550,16 +444,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 13-thermal-b */
 addT('id', {
-  '21dhslug5zb': R`
-<p>Gas terdiri atas sangat banyak molekul yang bergerak acak dan saling bertumbukan serta menumbuk dinding wadahnya. Tumbukan dengan dinding itulah yang menimbulkan <b>tekanan</b> gas.</p>
-<h3>Hukum-hukum gas</h3>
-<ul><li><b>Hukum Boyle</b> (suhu tetap): $p_1 V_1 = p_2 V_2$. Mampatkan gas menjadi setengah volumenya, tekanannya menjadi dua kali lipat.</li><li><b>Hukum Charles</b> (tekanan tetap): $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$.</li><li><b>Hukum Gay-Lussac</b> (volume tetap): $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$.</li></ul>
-⟦0⟧
-<h3>Teori kinetik</h3>
-<p>Suhu gas menyatakan energi kinetik rata-rata molekul-molekulnya:</p>
-⟦1⟧
-<p>Kelajuan khas (akar rata-rata kuadrat) molekul bermassa molar $M$ (dalam $\mathrm{kg/mol}$) adalah $v_{\text{rms}} = \sqrt{\dfrac{3RT}{M}}$: pada suhu yang sama, molekul yang lebih ringan bergerak lebih cepat.</p>
-⟦2⟧`,
   'gdeenhkvil': R`<p>Ketiganya bergabung menjadi <b>persamaan gas ideal</b>:</p><p>$$pV = nRT, \qquad R = 8{,}31\,\mathrm{J/(mol\,K)},$$</p><p>dengan $n$ banyaknya mol dan $T$ <b>suhu mutlak dalam kelvin</b>. Untuk jumlah gas yang tetap, $\dfrac{p_1 V_1}{T_1} = \dfrac{p_2 V_2}{T_2}$.</p>`,
   '1jw8grqalm0': R`\bar{E}_k = \tfrac32 k T, \qquad k = 1{,}38 \times 10^{-23}\,\mathrm{J/K}`,
   '177cn244pf2': R`<p>Selalu pakai kelvin dalam hukum-hukum gas. Menggandakan suhu dari $20^\circ\mathrm{C}$ ke $40^\circ\mathrm{C}$ <i>tidak</i> menggandakan suhu mutlaknya: $293\,\mathrm{K} \to 313\,\mathrm{K}$.</p>`,
@@ -585,18 +469,6 @@ addT('id', {
   's2bzamjkkl': R`Menjadi empat kali lipat`,
   '1h3f1i6xxtc': R`Bertambah $\sqrt2$ kali`,
   '185uhcvfxvw': R`$\bar{E}_k = \tfrac32 kT$ sebanding dengan suhu mutlak, jadi menjadi dua kali lipat. (Kelajuan rms hanya bertambah $\sqrt2$ kali.)`,
-  '29sy64nmqhy': R`
-<h3>Hukum I termodinamika</h3>
-<p><b>Energi dalam</b> $U$ suatu gas adalah jumlah energi kinetik molekul-molekulnya (untuk gas ideal hanya bergantung pada suhu). Energi dalam berubah ketika kalor masuk atau ketika gas melakukan usaha:</p>
-⟦0⟧
-<p>$Q$ adalah kalor yang diberikan <i>kepada</i> gas dan $W$ adalah usaha yang dilakukan <i>oleh</i> gas. Ini adalah hukum kekekalan energi.</p>
-<h3>Usaha oleh gas</h3>
-<p>Gas yang memuai pada tekanan tetap $p$ dari $V_1$ ke $V_2$ melakukan usaha $W = p\,\Delta V$. Pada diagram $p$–$V$, usaha sama dengan luas di bawah kurva.</p>
-⟦1⟧
-⟦2⟧
-<h3>Hukum II termodinamika dan mesin pendingin</h3>
-<p>Kalor dengan sendirinya hanya mengalir dari benda panas ke benda dingin, dan tidak ada mesin yang dapat mengubah seluruh kalornya menjadi usaha. Mesin pendingin memakai usaha $W$ untuk memindahkan kalor $Q_C$ keluar dari bagian dalamnya yang dingin; koefisien kinerjanya $\mathrm{COP} = \dfrac{Q_C}{W}$.</p>
-⟦3⟧`,
   '137ld4xmfi': R`Proses`,
   'mib91nk34z': R`Yang tetap`,
   'pnj7ezbtfu': R`Akibatnya`,
@@ -628,20 +500,6 @@ addT('id', {
   'neirk4q8uo': R`Energi dimusnahkan di dalam mesin`,
   '84zp6s3gd5': R`Mesin kalor selalu bocor gas`,
   '1s2kt2odl2q': R`Hukum II termodinamika: mesin yang bekerja dalam siklus harus membuang sebagian kalor ke reservoir dingin, jadi $W \lt Q_H$ walaupun tanpa gesekan sama sekali.`,
-  'kzd3elszlv': R`
-<p>Kalor selalu mengalir dari tempat yang lebih panas ke tempat yang lebih dingin, dengan tiga cara yang berbeda.</p>
-<h3>Konduksi</h3>
-<p>Di dalam zat padat, partikel yang berenergi tinggi memberikan energinya kepada partikel di sebelahnya. Logam menghantarkan kalor dengan baik karena elektron bebasnya membawa energi dengan cepat; kayu, plastik, udara diam, dan wol adalah penghantar yang buruk, atau <b>isolator</b>. Laju aliran kalor melalui lempeng seluas $A$ dan setebal $L$ dengan beda suhu $\Delta T$ adalah</p>
-⟦0⟧
-<p>dengan $k$ adalah konduktivitas termal dalam $\mathrm{W/(m\,K)}$ (tembaga sekitar 400, kaca sekitar 0,8, udara sekitar 0,025).</p>
-<h3>Konveksi</h3>
-<p>Di dalam zat cair dan gas, fluida yang hangat memuai, menjadi kurang rapat, lalu naik, sedangkan fluida yang lebih dingin turun menggantikannya. <b>Arus konveksi</b> ini memanaskan ruangan dari pemanas, menimbulkan angin laut, dan menggerakkan cuaca di Bumi.</p>
-<h3>Radiasi</h3>
-<p>Setiap benda memancarkan radiasi elektromagnetik (sebagian besar inframerah pada suhu sehari-hari). Radiasi tidak memerlukan medium; begitulah panas Matahari menyeberangi ruang angkasa. Daya yang dipancarkan adalah</p>
-⟦1⟧
-<p>dengan $T$ dalam kelvin dan emisivitas $e$ antara 0 dan 1. Permukaan hitam kusam adalah pemancar dan penyerap yang baik; permukaan perak mengilap buruk untuk keduanya.</p>
-⟦2⟧
-⟦3⟧`,
   'hwi1w49rkj': R`P = e \sigma A T^4, \qquad \sigma = 5{,}67 \times 10^{-8}\,\mathrm{W/(m^2\,K^4)}`,
   '13p3tgpadv1': R`<p>Termos menghambat ketiganya: ruang hampa di antara dinding gandanya menghentikan konduksi dan konveksi, dan dindingnya yang dilapisi perak mengurangi radiasi.</p>`,
   'x5fi8nnpex': R`<p>Pangkat empat membuat radiasi sangat peka terhadap suhu: menggandakan suhu mutlak mengalikan daya pancar dengan $2^4 = 16$.</p>`,
@@ -681,16 +539,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 14-elec-b */
 addT('id', {
-  '1cqh2ekaykl': R`
-<p>Muatan listrik ada dua jenis, positif dan negatif. Muatan sejenis tolak-menolak dan muatan tak sejenis tarik-menarik. Muatan bersifat <b>kekal</b> dan selalu merupakan kelipatan bulat muatan elementer $e = 1{,}6 \times 10^{-19}\,\mathrm{C}$. Menggosok balon pada rambut memindahkan elektron dari yang satu ke yang lain; tidak ada muatan yang diciptakan.</p>
-<h3>Hukum Coulomb</h3>
-⟦0⟧
-<p>Seperti gravitasi, gaya listrik mengikuti hukum kuadrat terbalik, tetapi jauh lebih kuat. Muatan sering dinyatakan dalam mikrocoulomb: $1\,\mu\mathrm{C} = 10^{-6}\,\mathrm{C}$.</p>
-⟦1⟧
-⟦2⟧
-<h3>Garis-garis medan</h3>
-<p>Garis medan berawal di muatan positif dan berakhir di muatan negatif. Di tempat garis-garisnya rapat, medannya kuat. Di antara dua keping sejajar yang muatannya berlawanan, garis-garisnya lurus dan berjarak sama: medannya homogen.</p>
-⟦3⟧`,
   '17czmrvz2a5': R`F = \frac{k\,q_1 q_2}{r^2}, \qquad k = 9{,}0 \times 10^{9}\,\mathrm{N\,m^2/C^2}`,
   '1k6chdh24ja': R`<p><b>Medan listrik</b> $E$ di suatu titik adalah gaya per satuan muatan positif yang diletakkan di sana:</p><p>$$E = \frac{F}{q}, \qquad \text{untuk muatan titik } Q: \; E = \frac{kQ}{r^2}.$$</p><p>Satuannya $\mathrm{N/C}$. Medan mengarah menjauhi muatan positif dan menuju muatan negatif. Medan dari beberapa muatan dijumlahkan secara vektor.</p>`,
   '5tl2skb9q3': R`<p>Dua muatan $+2\,\mu\mathrm{C}$ dan $+3\,\mu\mathrm{C}$ berjarak $0{,}3\,\mathrm{m}$. $F = \frac{9 \times 10^{9} \cdot 2 \times 10^{-6} \cdot 3 \times 10^{-6}}{0{,}3^2} = 0{,}6\,\mathrm{N}$, tolak-menolak.</p>`,
@@ -718,17 +566,6 @@ addT('id', {
   'fbh2xvqxd5': R`Melingkari muatan itu`,
   '1jd6aodmgfo': R`Tidak ada medan di dekat muatan negatif`,
   'vtva81h0ow': R`Arah medan adalah arah gaya pada muatan uji positif, yang tertarik ke arah muatan negatif.`,
-  '2ay2wqyhlpw': R`
-<h3>Potensial dan beda potensial</h3>
-<p><b>Potensial listrik</b> di suatu titik adalah energi potensial per satuan muatan di titik itu, diukur dalam volt ($1\,\mathrm{V} = 1\,\mathrm{J/C}$). Memindahkan muatan $q$ melalui beda potensial $V$ mengubah energinya sebesar</p>
-⟦0⟧
-<p>Di dekat muatan titik, $V = \dfrac{kQ}{r}$. Di antara dua keping sejajar berjarak $d$ dengan beda potensial $V$, medannya homogen: $E = \dfrac{V}{d}$ (jadi $\mathrm{V/m}$ sama dengan $\mathrm{N/C}$).</p>
-<p>Elektron yang dipercepat melalui beda potensial $1\,\mathrm{V}$ memperoleh energi $1\,\mathrm{eV} = 1{,}6 \times 10^{-19}\,\mathrm{J}$, yaitu satu <b>elektronvolt</b>.</p>
-⟦1⟧
-<h3>Susunan kapasitor</h3>
-<ul><li><b>Paralel:</b> $C = C_1 + C_2 + \dots$ (kebalikan dari resistor).</li><li><b>Seri:</b> $\dfrac{1}{C} = \dfrac{1}{C_1} + \dfrac{1}{C_2} + \dots$</li></ul>
-<p>Kapasitas diukur dalam farad (F); nilai yang umum dipakai adalah mikrofarad ($\mu\mathrm{F}$), nanofarad (nF), atau pikofarad (pF). Lampu kilat kamera dan defibrilator menyimpan energi dalam kapasitor lalu melepaskannya dalam sepersekian detik.</p>
-⟦2⟧`,
   '1l9b5cydr9n': R`W = qV`,
   '185hljrdzfk': R`<p><b>Kapasitor</b> menyimpan muatan pada dua konduktor yang dipisahkan isolator. <b>Kapasitas</b>-nya adalah muatan yang tersimpan per volt:</p><p>$$C = \frac{Q}{V} \qquad \text{keping sejajar: } C = \frac{\varepsilon_0 A}{d}, \; \varepsilon_0 = 8{,}85 \times 10^{-12}\,\mathrm{F/m}$$</p><p>Energi yang tersimpan $E = \tfrac12 C V^2 = \tfrac12 Q V$.</p>`,
   '86is7o3swu': R`<p>Kapasitor disusun dengan cara yang berkebalikan dengan resistor: pada susunan paralel kapasitasnya langsung dijumlahkan.</p>`,
@@ -745,17 +582,6 @@ addT('id', {
   '27sc6dayn4a': R`Kapasitor ⟦0⟧ dan ⟦1⟧ disusun seri. Berapa kapasitas gabungannya?`,
   '256rj2vt1iq': R`Pada susunan paralel kapasitasnya dijumlahkan: $⟦0⟧ + ⟦1⟧ = ⟦2⟧$.`,
   'njtm8ybly6': R`Pada susunan seri: $\frac{1}{C} = \frac{1}{⟦0⟧} + \frac{1}{⟦1⟧}$, jadi $C = \frac{⟦2⟧ \cdot ⟦3⟧}{⟦4⟧ + ⟦5⟧} = ⟦6⟧$.`,
-  '2d2i19q5ocd': R`
-<p>Magnet dan arus listrik sama-sama menghasilkan <b>medan magnet</b>, yang diukur dalam tesla (T). Medan magnet Bumi sekitar $5 \times 10^{-5}\,\mathrm{T}$; magnet kulkas sekitar $0{,}01\,\mathrm{T}$.</p>
-<h3>Medan magnet dari arus</h3>
-<ul><li>Di sekitar kawat lurus panjang, garis medannya berbentuk lingkaran: $B = \dfrac{\mu_0 I}{2\pi r}$.</li><li>Di dalam solenoida panjang dengan $n$ lilitan per meter, medannya homogen: $B = \mu_0 n I$.</li></ul>
-<p>Di sini $\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$. Genggam kawat dengan tangan kanan, ibu jari searah arus: jari-jari yang menggenggam menunjukkan arah medan.</p>
-⟦0⟧
-<h3>Partikel bermuatan dalam medan magnet</h3>
-<p>Muatan yang bergerak tegak lurus medan homogen mengalami gaya yang tegak lurus kecepatannya, sehingga bergerak melingkar. Dari $qvB = \dfrac{m v^2}{r}$ diperoleh jari-jarinya</p>
-⟦1⟧
-<p>Beginilah spektrometer massa memilah ion dan akselerator partikel membelokkan berkas partikel. Motor listrik memanfaatkan gaya pada kawat berarus.</p>
-⟦2⟧`,
   '15d7zgjyh76': R`<p>Medan magnet memberi gaya pada muatan yang bergerak (<b>gaya Lorentz</b>):</p><p>$$\text{pada kawat: } F = B I L \sin\theta \qquad \text{pada muatan: } F = q v B \sin\theta$$</p><p>$\theta$ adalah sudut antara arus (atau kecepatan) dan medan. Gayanya tegak lurus terhadap keduanya, dan nol jika keduanya sejajar.</p>`,
   '1xiuaep425p': R`<p>Gaya magnet tidak pernah mempercepat atau memperlambat muatan, karena selalu tegak lurus arah gerak: gaya ini hanya mengubah arahnya.</p>`,
   'l5qu1e640k': R`Sebuah kawat lurus panjang dialiri arus ⟦0⟧. Berapa kuat medan magnet pada jarak ⟦1⟧ dari kawat, dalam mikrotesla? ($\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$.)`,
@@ -786,19 +612,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 15-elec-c */
 addT('id', {
-  '22d5m88u78o': R`
-<p>Medan magnet yang berubah dapat membangkitkan arus. Inilah <b>induksi elektromagnetik</b>, yang ditemukan Faraday pada tahun 1831, dan dengan cara inilah hampir semua listrik kita dibangkitkan.</p>
-<h3>Fluks magnetik</h3>
-⟦0⟧
-<p>Fluks (dalam weber, $\mathrm{Wb}$) menyatakan seberapa banyak medan magnet yang menembus kumparan seluas $A$; $\theta$ adalah sudut antara medan dan garis normal bidang kumparan.</p>
-⟦1⟧
-<h3>Batang yang bergerak</h3>
-<p>Batang sepanjang $L$ yang bergerak dengan kelajuan $v$ tegak lurus medan $B$ menyapu fluks, sehingga timbul GGL $\varepsilon = B L v$ di antara kedua ujungnya.</p>
-<h3>Generator dan transformator</h3>
-<p>Generator memutar kumparan di dalam medan magnet sehingga menghasilkan GGL bolak-balik. <b>Transformator</b> memakai arus yang berubah pada satu kumparan untuk menginduksi GGL pada kumparan lain yang dililitkan pada inti besi yang sama:</p>
-⟦2⟧
-<p>Listrik disalurkan ke seluruh negeri dengan tegangan sangat tinggi: untuk daya yang sama arusnya kecil, sehingga daya yang hilang menjadi panas di kabel, $P = I^2 R$, juga kecil.</p>
-⟦3⟧`,
   '2ea3ecpuvs2': R`<p><b>Hukum Faraday:</b> GGL yang diinduksi pada kumparan dengan $N$ lilitan sama dengan laju perubahan fluks yang dilingkupinya:</p><p>$$\varepsilon = -N\frac{\Delta \Phi}{\Delta t}.$$</p><p><b>Hukum Lenz</b> (tanda minus): arus induksi mengalir sedemikian rupa sehingga melawan perubahan yang menimbulkannya.</p>`,
   '1kmpv0qnsr6': R`\frac{V_s}{V_p} = \frac{N_s}{N_p} \qquad \text{ideal: } V_p I_p = V_s I_s`,
   '23yc30r4bok': R`<p>Transformator hanya bekerja dengan arus bolak-balik. Arus searah yang tetap tidak menghasilkan fluks yang berubah, jadi tidak ada yang diinduksi.</p>`,
@@ -821,16 +634,6 @@ addT('id', {
   '1fyztwry1gw': R`baru mengalir setelah magnet berhenti`,
   '5od1ko8pf0': R`nol, karena magnet tidak menyentuh kumparan`,
   '1532uspzmii': R`Arus induksi melawan perubahan yang menimbulkannya: kumparan mendorong balik kutub utara yang mendekat dengan membentuk kutub utaranya sendiri. Usaha yang dilakukan untuk melawan dorongan ini berubah menjadi energi listrik.`,
-  'y5gumibg5a': R`
-<p>Listrik PLN adalah <b>arus bolak-balik</b>: tegangannya berayun bolak-balik secara sinusoidal, $V = V_0 \sin(\omega t)$ dengan $\omega = 2\pi f$. Di Indonesia frekuensinya $50\,\mathrm{Hz}$.</p>
-<h3>Nilai efektif (rms)</h3>
-<p>Nilai <b>efektif</b> (akar rata-rata kuadrat, rms) adalah nilai DC tetap yang menghasilkan panas yang sama: $V_{\text{rms}} = \dfrac{V_0}{\sqrt2}$ dan $I_{\text{rms}} = \dfrac{I_0}{\sqrt2}$. Ketika listrik rumah disebut $220\,\mathrm{V}$, itu adalah nilai efektifnya; nilai puncaknya $220\sqrt2 \approx 311\,\mathrm{V}$. Daya rata-rata pada resistor $P = I_{\text{rms}}^2 R = V_{\text{rms}} I_{\text{rms}}$.</p>
-⟦0⟧
-<h3>Resonansi</h3>
-<p>Jika $X_L = X_C$, impedansinya paling kecil ($Z = R$) dan arusnya paling besar. Hal ini terjadi pada <b>frekuensi resonansi</b></p>
-⟦1⟧
-<p>Radio memilih satu stasiun dengan menala rangkaian LC agar beresonansi pada frekuensi stasiun itu.</p>
-⟦2⟧`,
   '24cuq7xxpts': R`<p>Induktor dan kapasitor menghambat arus AC dengan <b>reaktansi</b> (dalam ohm) yang bergantung pada frekuensi:</p><p>$$X_L = \omega L = 2\pi f L \qquad X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}$$</p><p>Pada rangkaian seri RLC, <b>impedansinya</b> $Z = \sqrt{R^2 + (X_L - X_C)^2}$ dan $I = V/Z$.</p>`,
   'qjvaxdjfgn': R`<p>Induktor mudah dilalui frekuensi rendah dan menghambat frekuensi tinggi; kapasitor sebaliknya.</p>`,
   'vxzrwkqo76': R`Sebuah sumber listrik PLN bertegangan efektif ⟦0⟧. Berapa tegangan puncaknya?`,
@@ -854,14 +657,6 @@ addT('id', {
   'iih9cpv5l9': R`Berkurang, karena reaktansinya bertambah`,
   '1s74f5x9ne': R`Menjadi nol`,
   '2dlx2efv192': R`$X_C = \frac{1}{2\pi f C}$ berkurang ketika $f$ naik, jadi untuk tegangan yang sama arusnya lebih besar. (Pada induktor yang terjadi sebaliknya.)`,
-  '9izp365vqi': R`
-<p>Medan listrik dan medan magnet yang berubah saling membangkitkan dan merambat bersama di ruang angkasa sebagai <b>gelombang elektromagnetik (EM)</b>. Gelombang EM bersifat transversal, tidak memerlukan medium, dan di ruang hampa semuanya merambat dengan kelajuan cahaya, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.</p>
-⟦0⟧
-<h3>Spektrum elektromagnetik</h3>
-⟦1⟧
-<p>Dari gelombang radio sampai sinar gamma, panjang gelombangnya makin pendek dan frekuensinya makin tinggi. Frekuensi yang lebih tinggi juga berarti energi yang dibawa setiap foton lebih besar; itulah sebabnya ultraviolet, sinar-X, dan sinar gamma dapat merusak sel makhluk hidup.</p>
-⟦2⟧
-⟦3⟧`,
   'k7wfdtk1dy': R`Jenis`,
   '1aruppbi3k2': R`Panjang gelombang khas`,
   '1ha6u65qfqw': R`Kegunaan`,
@@ -932,18 +727,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 16-optics-a */
 addT('id', {
-  '5xmq0evl31': R`
-<p>Cahaya merambat lurus dalam bentuk <b>sinar</b>. Ketika sinar mengenai permukaan yang licin, sinar itu dipantulkan menurut <b>hukum pemantulan</b>:</p>
-⟦0⟧
-<h3>Cermin datar</h3>
-<p>Bayangan pada cermin datar bersifat <b>maya</b> (cahaya hanya seolah-olah datang dari bayangan itu), <b>tegak</b>, <b>sama besar</b> dengan bendanya, <b>tertukar kiri-kanan</b>, dan berada di belakang cermin sejauh jarak benda di depan cermin. Dua cermin yang membentuk sudut $\alpha$ menghasilkan $n = \dfrac{360^\circ}{\alpha} - 1$ bayangan.</p>
-<h3>Cermin lengkung</h3>
-<p><b>Cermin cekung</b> (melengkung ke dalam, seperti bagian dalam sendok) mengumpulkan sinar-sinar sejajar di <b>titik fokus</b> F. <b>Cermin cembung</b> (melengkung ke luar) menyebarkannya seolah-olah sinar-sinar itu datang dari titik fokus di belakang cermin. Jarak fokus adalah setengah jari-jari kelengkungan, $f = \frac{R}{2}$.</p>
-⟦1⟧
-⟦2⟧
-<p>Di sini $s$ adalah jarak benda dan $s'$ jarak bayangan. Gunakan aturan tanda: $f$ positif untuk cermin cekung dan negatif untuk cermin cembung; $s'$ positif berarti bayangan <b>nyata</b> di depan cermin, $s'$ negatif berarti bayangan <b>maya</b> di belakang cermin.</p>
-⟦3⟧
-⟦4⟧`,
   'sloay995au': R`<p>Sudut datang sama dengan sudut pantul, $i = r$. Kedua sudut diukur dari <b>garis normal</b>, yaitu garis yang tegak lurus permukaan. Sinar datang, sinar pantul, dan garis normal terletak pada satu bidang.</p>`,
   '3pwq8jv1vb': R`Diagram sinar: benda di luar C di depan cermin cekung membentuk bayangan nyata, terbalik, dan diperkecil di antara F dan C`,
   'z96iey12in': R`Benda di luar C: bayangannya nyata, terbalik, dan diperkecil.`,
@@ -994,19 +777,6 @@ addT('id', {
   'k4gy3m5ff8': R`Maya, tegak, diperkecil`,
   '2c9ddi203cv': R`Nyata, tegak, diperbesar`,
   'c3iuc2zfsn': R`Bayangannya maya (di belakang cermin), tegak, sama besar, dan tertukar kiri-kanan.`,
-  '179fybctq7n': R`
-<p>Cahaya melambat ketika memasuki medium yang lebih rapat seperti air atau kaca, dan jika datang dengan sudut miring arahnya berubah. Pembelokan ini disebut <b>pembiasan</b> (refraksi). <b>Indeks bias</b> suatu medium membandingkan kelajuan cahaya di ruang hampa dengan kelajuannya di medium itu:</p>
-⟦0⟧
-<p>Persamaan kedua adalah <b>hukum Snell</b>; sudut-sudutnya diukur dari garis normal. Ketika masuk ke medium yang lebih rapat ($n$ lebih besar), sinar dibelokkan <b>mendekati</b> garis normal.</p>
-⟦1⟧
-<h3>Pemantulan sempurna</h3>
-<p>Dari medium yang lebih rapat ke medium yang kurang rapat, sinar dibelokkan menjauhi garis normal. Jika sudut datangnya melebihi <b>sudut kritis</b> $C$, tidak ada cahaya yang keluar sama sekali: semuanya dipantulkan. Untuk medium berindeks bias $n$ yang berbatasan dengan udara, $\sin C = \dfrac{1}{n}$. Serat optik dan kilau berlian memanfaatkan pemantulan sempurna.</p>
-<h3>Lensa</h3>
-<p>Lensa <b>konvergen</b> (cembung) mengumpulkan sinar-sinar sejajar di titik fokusnya; lensa <b>divergen</b> (cekung) menyebarkannya. Persamaan yang sama seperti pada cermin berlaku, dengan $f$ positif untuk lensa konvergen dan negatif untuk lensa divergen:</p>
-⟦2⟧
-⟦3⟧
-⟦4⟧
-⟦5⟧`,
   'zuhhq1o61d': R`Sinar yang masuk dari udara ke kaca dibelokkan mendekati garis normal`,
   'wcn395gapo': R`Dari udara ke kaca, sinar dibelokkan mendekati garis normal.`,
   '24pol08m91g': R`Diagram sinar: benda di luar 2F di depan lensa konvergen membentuk bayangan nyata, terbalik, dan diperkecil di sisi lain lensa`,
@@ -1065,20 +835,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 17-optics-b */
 addT('id', {
-  '11qegw9nonk': R`
-<h3>Mata</h3>
-<p>Kornea dan lensa mata membentuk bayangan nyata dan terbalik pada <b>retina</b>. Otot-otot mengubah bentuk lensa sehingga benda dekat maupun jauh dapat terlihat tajam (<b>daya akomodasi</b>). Mata normal dapat melihat dengan jelas dari <b>titik dekat</b> (punctum proximum), sekitar $25\,\mathrm{cm}$, sampai <b>titik jauh</b> (punctum remotum) di tak hingga.</p>
-⟦0⟧
-<p>Di sini $PR$ (titik jauh) dan $PP$ (titik dekat) dinyatakan dalam sentimeter, dan $P$ yang diperoleh dalam dioptri.</p>
-<h3>Lup</h3>
-<p>Lup adalah lensa konvergen yang dipegang dekat mata dengan benda di dalam jarak fokusnya. Perbesaran angulernya $M = \dfrac{25}{f}$ untuk mata tidak berakomodasi (bayangan di tak hingga) dan $M = \dfrac{25}{f} + 1$ jika bayangan berada di titik dekat ($f$ dalam cm).</p>
-<h3>Mikroskop dan teropong</h3>
-<p><b>Mikroskop</b> memakai lensa objektif berfokus pendek untuk membentuk bayangan nyata yang diperbesar, lalu lensa okuler memperbesarnya lagi. Untuk mata tidak berakomodasi, perbesaran totalnya</p>
-⟦1⟧
-<p><b>Teropong bias</b> (teleskop) memiliki lensa objektif berfokus panjang dan lensa okuler berfokus pendek. Untuk mata tidak berakomodasi, jarak kedua lensa $d = f_{ob} + f_{ok}$ dan</p>
-⟦2⟧
-⟦3⟧
-⟦4⟧`,
   '1cg8jb6cnmm': R`Cacat mata`,
   '1rfj6s0td7l': R`Masalah`,
   '1yoo0feclny': R`Koreksi`,
@@ -1128,17 +884,6 @@ addT('id', {
   '28x01rk5lnj': R`Pupil berubah ukuran`,
   '1kis6f0ab3l': R`Retina bergeser`,
   '1peatd655x': R`Inilah daya akomodasi: otot siliaris membuat lensa lebih cembung untuk benda dekat dan lebih pipih untuk benda jauh. Kamera menggeser lensanya sebagai gantinya.`,
-  '2cjdo4fyecw': R`
-<p>Ketika dua gelombang bertemu, keduanya saling menjumlahkan (<b>superposisi</b>). Jika puncak bertemu puncak, keduanya saling menguatkan: <b>interferensi konstruktif</b>. Jika puncak bertemu lembah, keduanya saling meniadakan: <b>interferensi destruktif</b>. Agar pola yang tetap dapat terlihat, sumber-sumbernya harus <b>koheren</b>: frekuensinya sama dan beda fasenya tetap.</p>
-⟦0⟧
-<h3>Celah ganda Young</h3>
-<p>Cahaya yang melewati dua celah sempit berjarak $d$ menghasilkan pita terang dan gelap pada layar berjarak $L$. Untuk sudut kecil:</p>
-⟦1⟧
-⟦2⟧
-<h3>Difraksi</h3>
-<p>Gelombang menyebar ketika melewati celah. Untuk celah tunggal selebar $a$, pita gelap berada pada $a\sin\theta = m\lambda$, dan pita terang pusat dua kali lebih lebar daripada pita yang lain. <b>Kisi difraksi</b> memiliki sangat banyak celah, $N$ per satuan panjang, sehingga jarak antarcelahnya $d = 1/N$. Garis-garis terangnya tajam dan memenuhi $d\sin\theta = m\lambda$; orde tertinggi yang dapat muncul adalah bilangan bulat terbesar di bawah $d/\lambda$.</p>
-⟦3⟧
-<p>Warna-warni gelembung sabun dan lapisan minyak berasal dari <b>interferensi lapisan tipis</b> antara cahaya yang dipantulkan oleh permukaan atas dan permukaan bawah lapisan.</p>`,
   '1ei3r9wsxtr': R`<p>Konstruktif jika beda lintasannya kelipatan bulat panjang gelombang, $\Delta = m\lambda$; destruktif jika beda lintasannya kelipatan bulat ditambah setengah, $\Delta = (m + \frac12)\lambda$.</p>`,
   '16wpbecjuab': R`Dua celah berjarak d, layar berjarak L, dan pita terang yang berjarak Δy satu sama lain`,
   '1ctxbp4t5gr': R`Pita-pita terang berjarak sama, yaitu $\Delta y$.`,
@@ -1177,20 +922,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 18-modern-a */
 addT('id', {
-  '1ew761u2kqi': R`
-<p>Einstein menyusun teori relativitas khusus (1905) di atas dua <b>postulat</b>:</p>
-<ol><li>Hukum-hukum fisika berlaku sama di setiap kerangka acuan inersial (yang tidak dipercepat).</li><li>Kelajuan cahaya di ruang hampa, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$, sama bagi setiap pengamat, berapa pun kelajuan pengamat atau sumbernya.</li></ol>
-<p>Menerima kedua postulat itu berarti waktu dan panjang bergantung pada pengamat. Semuanya diatur oleh <b>faktor Lorentz</b></p>
-⟦0⟧
-<p>yang bernilai 1 pada kelajuan sehari-hari dan membesar tanpa batas ketika $v$ mendekati $c$. Untuk $v = 0{,}6c$, $\gamma = 1{,}25$; untuk $v = 0{,}8c$, $\gamma = \frac53$.</p>
-⟦1⟧
-<h3>Penjumlahan kecepatan</h3>
-<p>Kecepatan tidak dapat dijumlahkan begitu saja. Jika pesawat antariksa yang bergerak dengan kecepatan $v$ menembakkan wahana ke depan dengan kecepatan $u'$ relatif terhadap pesawat, pengamat melihat wahana itu bergerak dengan kecepatan</p>
-⟦2⟧
-<p>yang tidak pernah melebihi $c$.</p>
-<h3>Massa dan energi</h3>
-<p>Massa adalah salah satu bentuk energi. Benda bermassa $m$ yang diam memiliki <b>energi diam</b> $E_0 = mc^2$, dan energi totalnya ketika bergerak $E = \gamma mc^2$, sehingga energi kinetiknya $E_k = (\gamma - 1)mc^2$.</p>
-⟦3⟧`,
   'v5mvitovf4': R`<p><b>Dilatasi waktu:</b> jam yang bergerak berdetak lebih lambat, $\Delta t = \gamma\,\Delta t_0$, dengan $\Delta t_0$ adalah <b>waktu sejati</b> yang diukur oleh jam yang diam relatif terhadap kejadian-kejadian itu.</p><p><b>Kontraksi panjang:</b> benda yang bergerak menjadi lebih pendek searah geraknya, $L = \dfrac{L_0}{\gamma}$, dengan $L_0$ adalah <b>panjang sejati</b> (diukur dalam keadaan diam).</p>`,
   '2bq3bg1sabs': R`<p>Tuliskan kecepatan sebagai pecahan dari $c$: dengan begitu $v^2/c^2$ hanyalah kuadrat pecahan itu, dan $c$ saling menghilangkan.</p>`,
   'dvkahsfr2o': R`Berapa faktor Lorentz $\gamma$ untuk benda yang bergerak dengan kecepatan $⟦0⟧c$?`,
@@ -1223,17 +954,6 @@ addT('id', {
   'ohhicxuk2r': R`sama umurnya`,
   '1buxhc9lw24': R`bisa lebih tua atau lebih muda secara acak`,
   '8wgwhz4d59': R`Jamnya (dan tubuhnya) berjalan lebih lambat relatif terhadap Bumi, sehingga waktu yang berlalu baginya lebih sedikit. Inilah paradoks kembar.`,
-  '104sg94tyb3': R`
-<p>Cahaya membawa energi dalam paket-paket kecil yang disebut <b>foton</b>. Planck dan Einstein menunjukkan bahwa energi satu foton hanya bergantung pada frekuensinya:</p>
-⟦0⟧
-<p>dengan tetapan Planck $h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$. Energi foton sangat kecil, sehingga sering dinyatakan dalam <b>elektronvolt</b>: $1\,\mathrm{eV} = 1{,}6 \times 10^{-19}\,\mathrm{J}$, yaitu energi yang diperoleh elektron ketika melewati beda potensial $1\,\mathrm{V}$.</p>
-<h3>Efek fotolistrik</h3>
-<p>Cahaya yang menyinari logam bersih dapat melepaskan elektron dari logam itu. Hasil percobaannya menunjukkan:</p>
-<ul><li>di bawah <b>frekuensi ambang</b> $f_0$ tidak ada elektron yang keluar, seterang apa pun cahayanya;</li><li>di atas frekuensi itu, elektron langsung keluar, dan energi kinetik maksimumnya bergantung pada frekuensi, bukan pada kecerahan;</li><li>cahaya yang lebih terang menghasilkan elektron yang <b>lebih banyak</b>, bukan yang lebih cepat.</li></ul>
-⟦1⟧
-<h3>Gelombang materi</h3>
-<p>De Broglie mengusulkan bahwa partikel juga berperilaku sebagai gelombang, dengan panjang gelombang $\lambda = \dfrac{h}{p} = \dfrac{h}{mv}$. Difraksi elektron membuktikannya, dan mikroskop elektron memanfaatkannya untuk melihat detail yang jauh lebih kecil daripada yang dapat dilihat dengan cahaya.</p>
-⟦2⟧`,
   '18enfkx2h3o': R`E = hf = \frac{hc}{\lambda}`,
   '1z2agzhwa5s': R`<p>Satu foton memberikan seluruh energinya kepada satu elektron. Sebagian energi itu, yaitu <b>fungsi kerja</b> $\phi = hf_0$, diperlukan untuk melepaskan elektron; sisanya menjadi energi kinetik:</p><p>$$E_{k,\max} = hf - \phi = eV_s$$</p><p>dengan $V_s$ adalah <b>potensial henti</b> yang diperlukan untuk menghentikan elektron tercepat.</p>`,
   'q9fb6rowh5': R`<p>Jalan pintas yang berguna: $hc = 1240\,\mathrm{eV\,nm}$ (hingga 3 angka penting, $1{,}24 \times 10^{3}$), sehingga foton dengan panjang gelombang $\lambda$ dalam nm memiliki energi sekitar $\frac{1240}{\lambda}\,\mathrm{eV}$.</p>`,
@@ -1283,16 +1003,6 @@ addT('id', {
   '222gjxxnpjv': R`Difraksi melalui celah sempit`,
   'fjsh4vfaqm': R`Polarisasi`,
   '1gzc807a4v0': R`Frekuensi ambang dan pelepasan elektron yang seketika hanya dapat dijelaskan jika cahaya datang dalam paket-paket berenergi $hf$. Interferensi, difraksi, dan polarisasi menunjukkan sifat gelombangnya.`,
-  'gmyi9rl91h': R`
-<h3>Model-model atom</h3>
-⟦0⟧
-<p>Pada <b>percobaan hamburan foil emas</b> Rutherford, sebagian besar partikel alfa menembus lurus, tetapi beberapa terpantul kembali. Jadi atom sebagian besar berupa ruang kosong, dengan massa dan muatan positifnya terpusat pada inti yang sangat kecil.</p>
-<h3>Model atom hidrogen Bohr</h3>
-⟦1⟧
-⟦2⟧
-⟦3⟧
-<p>Karena hanya selisih energi tertentu yang mungkin, setiap unsur hanya memancarkan dan menyerap panjang gelombang tertentu: <b>spektrum garisnya</b>, semacam sidik jari yang dipakai untuk mengenali unsur-unsur di bintang. Untuk hidrogen, transisi ke $n = 1$ menghasilkan <b>deret Lyman</b> (ultraviolet), transisi ke $n = 2$ <b>deret Balmer</b> (cahaya tampak), dan transisi ke $n = 3$ <b>deret Paschen</b> (inframerah).</p>
-⟦4⟧`,
   'ki5bhylf5o': R`Model`,
   '5g7bmgw51u': R`Gambaran`,
   'e3m8pc7x3h': R`Thomson (1897)`,
@@ -1353,16 +1063,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 19-modern-b */
 addT('id', {
-  'bzten31v3l': R`
-<p>Inti atom berisi <b>proton</b> dan <b>neutron</b> (keduanya disebut <b>nukleon</b>). Suatu nuklida ditulis $^{A}_{Z}\mathrm{X}$, dengan $Z$ adalah <b>nomor atom</b> (banyaknya proton) dan $A$ adalah <b>nomor massa</b> (proton + neutron), sehingga banyaknya neutron $N = A - Z$. <b>Isotop-isotop</b> suatu unsur memiliki $Z$ yang sama tetapi $A$ yang berbeda, misalnya $^{12}_{6}\mathrm{C}$ dan $^{14}_{6}\mathrm{C}$.</p>
-<h3>Tiga jenis radiasi</h3>
-⟦0⟧
-⟦1⟧
-<h3>Waktu paruh</h3>
-<p>Peluruhan bersifat acak, tetapi sejumlah besar inti meluruh dengan laju yang dapat diramalkan. <b>Waktu paruh</b> $T_{1/2}$ adalah waktu yang diperlukan agar separuh inti (dan karena itu separuh aktivitasnya) meluruh:</p>
-⟦2⟧
-⟦3⟧
-⟦4⟧`,
   '2fv9ci45ruf': R`Radiasi`,
   '1b00t4z3zq2': R`Wujudnya`,
   'ulpbmvnemj': R`Daya ionisasi`,
@@ -1427,17 +1127,6 @@ addT('id', {
   '4v23lk8spt': R`Alfa hanya memengaruhi logam`,
   '5n7k21lnny': R`Alfa adalah salah satu bentuk cahaya`,
   '1ipejtxfevv': R`Di luar tubuh, alfa dihentikan oleh lapisan kulit mati terluar. Di dalam tubuh, seluruh daya ionisasinya yang kuat mengenai sel-sel hidup.`,
-  '22y6imb19uh': R`
-<p>Massa inti sedikit <b>lebih kecil</b> daripada jumlah massa proton dan neutron penyusunnya. <b>Defek massa</b> $\Delta m$ ini setara dengan <b>energi ikat</b>, yaitu energi yang diperlukan untuk memisahkan inti menjadi nukleon-nukleonnya:</p>
-⟦0⟧
-<p>Massa inti dinyatakan dalam <b>satuan massa atom</b>, dan $1\,\mathrm{u}$ setara dengan $931{,}5\,\mathrm{MeV}$. Gunakan $m_p = 1{,}00728\,\mathrm{u}$ dan $m_n = 1{,}00867\,\mathrm{u}$.</p>
-⟦1⟧
-<h3>Fisi</h3>
-<p>Neutron lambat yang diserap uranium-235 membuat inti itu terbelah menjadi dua inti yang lebih kecil dan 2 atau 3 neutron baru, sambil melepaskan sekitar $200\,\mathrm{MeV}$. Neutron-neutron baru itu dapat membelah inti-inti lain: terjadilah <b>reaksi berantai</b>. Di dalam reaktor:</p>
-<ul><li><b>moderator</b> (air atau grafit) memperlambat neutron agar lebih mudah menimbulkan fisi;</li><li><b>batang kendali</b> (boron atau kadmium) menyerap neutron sehingga, rata-rata, setiap fisi menimbulkan tepat satu fisi berikutnya;</li><li><b>pendingin</b> membawa panas untuk menghasilkan uap bagi turbin;</li><li><b>perisai</b> beton tebal menyerap radiasi.</li></ul>
-<h3>Fusi</h3>
-<p>Di Matahari, inti-inti hidrogen bergabung (berfusi) menjadi helium pada suhu sekitar 15 juta kelvin; hanya pada suhu setinggi itu inti-inti bergerak cukup cepat untuk mengatasi tolakan listriknya. Bahan bakar fusi berlimpah dan limbah berumur panjangnya sedikit, tetapi pembangkit listrik fusi yang praktis belum berhasil dibangun.</p>
-⟦2⟧`,
   '1ouefgz1rpx': R`\Delta m = Z m_p + (A - Z) m_n - m_{\text{inti}} \qquad E_B = \Delta m\,c^2`,
   'ghycpt9bpv': R`<p><b>Energi ikat per nukleon</b> menunjukkan seberapa stabil suatu inti. Nilainya paling besar di sekitar besi-56 (sekitar $8{,}8\,\mathrm{MeV}$). Energi dilepaskan ketika inti-inti ringan bergabung (<b>fusi</b>) atau inti berat terbelah (<b>fisi</b>), karena hasil reaksinya lebih kuat terikat. Energi yang dilepaskan dalam suatu reaksi adalah</p><p>$$Q = (m_{\text{sebelum}} - m_{\text{sesudah}}) \times 931{,}5\,\mathrm{MeV/u}.$$</p>`,
   'aox46tcuuf': R`<p>Pertahankan banyak angka desimal ketika mengurangkan massa: defek massa adalah selisih kecil antara dua bilangan besar.</p>`,
@@ -1519,24 +1208,6 @@ addT('id', {
   '240b972wn9q': R`joule (energi)`,
   '14lzl0vzv8l': R`watt (daya)`,
   '5dttmikgbw': R`pascal (tekanan)`,
-  '5xqht7vwgh': R`
-<p><b>Besaran fisika</b> adalah segala sesuatu yang dapat diukur, dan setiap hasil pengukuran punya dua bagian: <b>angka</b> dan <b>satuan</b>. "Meja itu 1,5" tidak ada artinya; "panjang meja itu $1{,}5\,\mathrm{m}$" barulah hasil pengukuran.</p>
-<h3>Satuan pokok SI</h3>
-<p>Para ilmuwan di seluruh dunia memakai Sistem Satuan Internasional (SI). Sistem ini berangkat dari tujuh besaran pokok:</p>
-⟦0⟧
-<p>Semua satuan lain adalah <b>satuan turunan</b> yang disusun dari ketujuh satuan itu. Kelajuan adalah jarak dibagi waktu, jadi satuannya $\mathrm{m/s}$. Gaya adalah massa kali percepatan, jadi $1\,\mathrm{N} = 1\,\mathrm{kg\,m/s^2}$. Energi adalah gaya kali jarak, jadi $1\,\mathrm{J} = 1\,\mathrm{N\,m} = 1\,\mathrm{kg\,m^2/s^2}$.</p>
-<h3>Awalan</h3>
-<p>Awalan memperbesar atau memperkecil satuan dengan perpangkatan sepuluh:</p>
-⟦1⟧
-⟦2⟧
-<h3>Satuan kuadrat dan kubik</h3>
-<p>Satu meter persegi adalah persegi dengan sisi $100\,\mathrm{cm}$, jadi $1\,\mathrm{m^2} = 100 \times 100 = 10\,000\,\mathrm{cm^2}$. Untuk volume, faktornya dipangkatkan tiga: $1\,\mathrm{m^3} = 1\,000\,000\,\mathrm{cm^3}$. Selain itu, $1\,\mathrm{L} = 1000\,\mathrm{cm^3}$ dan $1\,\mathrm{m^3} = 1000\,\mathrm{L}$.</p>
-<h3>Kelajuan: km/jam dan m/s</h3>
-⟦3⟧
-<p>Jadi, bagi dengan 3,6 untuk mengubah km/jam menjadi m/s, dan kalikan dengan 3,6 untuk sebaliknya: $72\,\mathrm{km/jam} = 20\,\mathrm{m/s}$.</p>
-<h3>Notasi ilmiah</h3>
-<p>Bilangan yang sangat besar atau sangat kecil ditulis sebagai $a \times 10^n$ dengan $1 \le a \lt 10$. Kelajuan cahaya adalah $3{,}0 \times 10^{8}\,\mathrm{m/s}$; muatan elektron adalah $1{,}6 \times 10^{-19}\,\mathrm{C}$. Di kalkulator atau di situs ini, kamu bisa mengetiknya sebagai <code>3e8</code> dan <code>1,6e-19</code>.</p>
-⟦4⟧`,
   'k5dfx6kr0n': R`<p>Untuk mengubah satuan, kalikan dengan faktor yang nilainya 1. Karena $1\,\mathrm{km} = 1000\,\mathrm{m}$,</p><p>$$3{,}2\,\mathrm{km} \times \frac{1000\,\mathrm{m}}{1\,\mathrm{km}} = 3200\,\mathrm{m}.$$</p><p>Satuan yang diinginkan diletakkan di atas, satuan yang ingin dihilangkan di bawah, lalu satuan lama saling mencoret.</p>`,
   'thgftg5cc1': R`1\,\mathrm{km/jam} = \frac{1000\,\mathrm{m}}{3600\,\mathrm{s}} = \frac{1}{3{,}6}\,\mathrm{m/s}`,
   '16er3rbte4x': R`<p>Periksa satuan di akhir setiap perhitungan. Jika kamu mencari kelajuan tetapi jawabanmu bersatuan $\mathrm{m\,s}$, pasti ada yang keliru di tengah jalan.</p>`,
@@ -1580,20 +1251,6 @@ addT('id', {
   '28guof6cc23': R`Manakah yang merupakan besaran <b>turunan</b> (bukan salah satu besaran pokok SI)?`,
   '2ecslf547i1': R`Tujuh besaran pokok SI adalah panjang, massa, waktu, kuat arus listrik, suhu, jumlah zat, dan intensitas cahaya. Semua besaran lain, misalnya ⟦0⟧, diturunkan dari ketujuhnya.`,
   'ec6esltyky': R`kelajuan atau gaya`,
-  '1rjwcbf0ldf': R`
-<p>Sebagian besaran sudah lengkap dijelaskan dengan besarnya saja: massa $5\,\mathrm{kg}$, suhu $30^\circ\mathrm{C}$. Besaran seperti ini disebut <b>skalar</b>. Besaran lain juga memerlukan arah: perpindahan $5\,\mathrm{m}$ <i>ke utara</i>, gaya $20\,\mathrm{N}$ <i>ke bawah</i>. Besaran seperti ini disebut <b>vektor</b>.</p>
-⟦0⟧
-<p>Vektor digambar sebagai anak panah. Panjangnya menunjukkan <b>besar</b> vektor dan ujung panahnya menunjukkan <b>arah</b>. Di buku, vektor ditulis tebal, $\mathbf{F}$, atau dengan tanda panah, $\vec{F}$; besarnya ditulis $F$ atau $|\vec{F}|$.</p>
-<h3>Komponen</h3>
-<p>Vektor dengan besar $A$ yang membentuk sudut $\theta$ di atas sumbu $x$ positif dapat diuraikan menjadi dua bagian yang saling tegak lurus:</p>
-⟦1⟧
-⟦2⟧
-<h3>Menjumlahkan vektor</h3>
-<p>Untuk menjumlahkan vektor, sambungkan ujung vektor pertama dengan pangkal vektor berikutnya; <b>resultan</b> ditarik dari pangkal pertama ke ujung terakhir.</p>
-<ul><li>Searah: jumlahkan besarnya. $3\,\mathrm{N} + 4\,\mathrm{N}$ ke kanan menghasilkan $7\,\mathrm{N}$ ke kanan.</li><li>Berlawanan arah: kurangkan, dan resultannya searah dengan vektor yang lebih besar.</li><li>Saling tegak lurus: pakai teorema Pythagoras. $3\,\mathrm{N}$ ke timur dan $4\,\mathrm{N}$ ke utara menghasilkan $\sqrt{3^2 + 4^2} = 5\,\mathrm{N}$.</li></ul>
-⟦3⟧
-⟦4⟧
-⟦5⟧`,
   '1dv40p014tv': R`Skalar`,
   '1ih3cm1us94': R`Vektor`,
   '1pwdg77dscu': R`jarak, kelajuan`,
@@ -1639,18 +1296,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 20-tech */
 addT('id', {
-  'gi9ayo1olm': R`
-<p>Sumber energi <b>tak terbarukan</b> (batu bara, minyak bumi, gas alam, uranium) akan habis, dan pembakaran bahan bakar fosil melepaskan karbon dioksida. Sumber energi <b>terbarukan</b> tergantikan secara alami: cahaya matahari, angin, air yang mengalir, panas bumi, gelombang laut, pasang surut, dan biomassa. Indonesia memiliki salah satu cadangan panas bumi terbesar di dunia serta sinar matahari dan sungai yang melimpah.</p>
-⟦0⟧
-<h3>Energi surya</h3>
-<p>Sel fotovoltaik (sel surya) mengubah cahaya langsung menjadi listrik. Pada hari yang cerah sekitar $1000\,\mathrm{W/m^2}$ cahaya matahari sampai di permukaan tanah, dan efisiensi panel pada umumnya 15–22%, sehingga keluarannya $P = \eta\, I A$ untuk intensitas $I$ dan luas $A$.</p>
-<h3>Energi angin</h3>
-<p>Energi kinetik udara yang melewati bilah turbin setiap detik adalah</p>
-⟦1⟧
-<p>dengan $\rho \approx 1{,}2\,\mathrm{kg/m^3}$ adalah massa jenis udara dan $A = \pi r^2$ luas yang disapu bilah sepanjang $r$. Kelajuan angin dua kali lipat menghasilkan daya $2^3 = 8$ kali lipat. Tidak ada turbin yang dapat mengambil lebih dari sekitar 59% daya ini (batas Betz).</p>
-<h3>Pembangkit listrik tenaga air dan panas bumi</h3>
-<p>Air yang jatuh dari ketinggian $h$ memutar turbin. Dengan debit (volume per detik) $Q$, dayanya $P = \eta \rho Q g h$ (untuk air $\rho = 1000\,\mathrm{kg/m^3}$). Pembangkit listrik tenaga panas bumi memakai uap dari batuan panas di bawah tanah untuk menggerakkan turbin.</p>
-⟦2⟧`,
   '1sqd0qw6yt9': R`<p>Tidak ada alat yang mengubah seluruh masukannya menjadi keluaran yang berguna. <b>Efisiensi</b> adalah</p><p>$$\eta = \frac{\text{keluaran berguna}}{\text{masukan total}} \times 100\%.$$</p>`,
   '1gquuevw3v6': R`<p>Listrik dijual dalam satuan kilowatt-jam: $1\,\mathrm{kWh} = 1000\,\mathrm{W} \times 3600\,\mathrm{s}$, yaitu $3{,}6 \times 10^{6}\,\mathrm{J}$. Daya dalam kW dikali jam menghasilkan kWh.</p>`,
   '23anl0rg7xc': R`Cahaya matahari dengan intensitas ⟦0⟧ mengenai panel surya seluas ⟦1⟧ yang efisiensinya ⟦2⟧. Berapa daya listrik keluarannya?`,
@@ -1695,17 +1340,6 @@ addT('id', {
   '258t0hpxuf8': R`Cahaya matahari`,
   '1uw96epmi13': R`Pembakaran batu bara`,
   '16gntv7v755': R`Air yang dipompa ke bawah (atau yang sudah ada secara alami) dipanaskan oleh batuan panas dan kembali sebagai uap untuk menggerakkan turbin.`,
-  '1dctkrz4nbx': R`
-<p>Setiap benda memancarkan gelombang elektromagnetik, dan benda yang lebih panas memancar lebih kuat dan pada panjang gelombang yang lebih pendek. Dua hukum menggambarkan radiasi ini:</p>
-⟦0⟧
-<p>Yang pertama adalah <b>hukum pergeseran Wien</b>: permukaan Matahari yang bersuhu sekitar $5800\,\mathrm{K}$ memancar paling kuat pada cahaya tampak (sekitar $500\,\mathrm{nm}$), sedangkan Bumi yang bersuhu sekitar $288\,\mathrm{K}$ memancar paling kuat pada inframerah (sekitar $10\,\mathrm{\mu m}$). Yang kedua adalah <b>hukum Stefan–Boltzmann</b>, dengan $\sigma = 5{,}67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$ dan emisivitas $e$ ($e = 1$ untuk benda hitam sempurna).</p>
-<h3>Keseimbangan energi Bumi</h3>
-<p>Bumi menyerap cahaya matahari dan memancarkan inframerah kembali ke luar angkasa. Sekitar 30% cahaya matahari dipantulkan (<b>albedo</b> $\alpha \approx 0{,}3$). Menyeimbangkan energi yang diserap dengan energi yang dipancarkan, dengan konstanta matahari $S = 1361\,\mathrm{W/m^2}$, menghasilkan</p>
-⟦1⟧
-<p>Itu sama dengan $-18\,^\circ\mathrm{C}$, padahal suhu rata-rata permukaan Bumi sekitar $15\,^\circ\mathrm{C}$. Selisihnya disebabkan oleh <b>efek rumah kaca</b>.</p>
-⟦2⟧
-<p>Akibatnya antara lain naiknya permukaan laut (karena pemuaian air laut dan mencairnya es di daratan), cuaca yang lebih ekstrem, serta perubahan ekosistem dan pertanian. Emisi dapat dikurangi dengan menghemat energi, beralih ke sumber terbarukan, dan melindungi hutan.</p>
-⟦3⟧`,
   '25qbz25dq5g': R`\lambda_{\max} T = 2{,}9 \times 10^{-3}\,\mathrm{m\,K} \qquad P = e\sigma A T^4`,
   '11ekpd75c8g': R`<p><b>Gas rumah kaca</b> (uap air, karbon dioksida, metana, dinitrogen oksida) meloloskan cahaya matahari tampak tetapi menyerap inframerah yang dipancarkan permukaan Bumi, lalu memancarkan sebagian kembali ke bawah sehingga permukaan menjadi hangat. Pembakaran bahan bakar fosil dan penebangan hutan telah menaikkan kadar CO₂ dari sekitar 280 ppm sebelum tahun 1800 menjadi lebih dari 420 ppm saat ini, sehingga efek itu makin kuat: inilah <b>pemanasan global</b>.</p>`,
   '2c5bjew3ndw': R`<p>Lubang ozon adalah masalah yang berbeda: ozon di atmosfer atas menahan ultraviolet, dan lapisan itu dirusak oleh CFC. Lubang ozon bukan penyebab utama pemanasan global.</p>`,
@@ -1749,19 +1383,6 @@ addT('id', {
   '9g3ub2qehe': R`Air yang lebih hangat memerlukan ruang yang lebih besar, dan gletser serta lapisan es yang mencair menambah air ke laut. Es laut yang terapung hampir tidak mengubah permukaan laut ketika mencair.`,
   'kj9sw8abyl': R`Pada bagian spektrum manakah Bumi memancar paling kuat?`,
   '1g9sox43ojh': R`Menurut hukum Wien, pada suhu sekitar 288 K puncaknya berada di dekat $10\,\mathrm{\mu m}$, yaitu inframerah.`,
-  '1jzyh2pnebl': R`
-<p>Bahan-bahan dikelompokkan menurut seberapa mudah muatan bergerak di dalamnya. <b>Konduktor</b> (logam) memiliki banyak elektron bebas; <b>isolator</b> hampir tidak memilikinya. <b>Semikonduktor</b> seperti silikon berada di antara keduanya, dan daya hantarnya meningkat ketika dipanaskan atau disinari.</p>
-<h3>Doping</h3>
-<p>Menambahkan sedikit sekali unsur lain mengubah semikonduktor secara drastis. Unsur golongan V (fosfor, arsen) menambahkan elektron lebih: semikonduktor <b>tipe-n</b>. Unsur golongan III (boron, galium) meninggalkan kekosongan yang disebut <b>hole</b> yang berperilaku sebagai muatan positif: semikonduktor <b>tipe-p</b>.</p>
-<h3>Dioda</h3>
-<p><b>Sambungan p–n</b> adalah sebuah <b>dioda</b>: dioda hanya menghantarkan arus ke satu arah. Pada <b>bias maju</b> (sisi p positif) dioda silikon menghantar setelah tegangannya melebihi sekitar $0{,}7\,\mathrm{V}$; pada <b>bias mundur</b> hampir tidak ada arus yang mengalir. Dioda mengubah AC menjadi DC (<b>penyearahan</b>). <b>Dioda pemancar cahaya</b> (LED) memancarkan cahaya ketika diberi bias maju dan memerlukan resistor seri untuk membatasi arusnya:</p>
-⟦0⟧
-<h3>Transistor</h3>
-<p>Transistor memungkinkan arus <b>basis</b> $I_B$ yang kecil mengendalikan arus <b>kolektor</b> yang jauh lebih besar, $I_C = \beta I_B$, dengan $\beta$ (sering 100 atau lebih) adalah penguatan arus. Transistor berfungsi sebagai penguat dan sebagai saklar; prosesor modern berisi miliaran transistor.</p>
-<h3>Gerbang logika</h3>
-⟦1⟧
-⟦2⟧
-⟦3⟧`,
   'b75zb1pwu5': R`R = \frac{V_s - V_{\text{LED}}}{I}`,
   'ivft9kfdi0': R`Gerbang`,
   '2b2vvcooba0': R`Keluaran bernilai 1 jika…`,
@@ -1825,25 +1446,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 3-mech-a */
 addT('id', {
-  'z7xv83ov6u': R`
-<p>Untuk menggambarkan gerak pada satu garis, kita memilih titik acuan dan arah positif. Dengan begitu setiap posisi dapat dinyatakan dengan sebuah bilangan, dan setiap perubahan posisi disebut <b>perpindahan</b>.</p>
-<h3>Jarak dan perpindahan, kelajuan dan kecepatan</h3>
-<ul><li><b>Jarak</b> adalah panjang seluruh lintasan (skalar). <b>Perpindahan</b> adalah perubahan posisi beserta arahnya (vektor). Berjalan $5\,\mathrm{m}$ maju lalu $5\,\mathrm{m}$ mundur: jaraknya $10\,\mathrm{m}$, perpindahannya $0$.</li>
-<li><b>Kelajuan rata-rata</b> $=\dfrac{\text{jarak}}{\text{waktu}}$ dan <b>kecepatan rata-rata</b> $=\dfrac{\text{perpindahan}}{\text{waktu}}$.</li></ul>
-<h3>Gerak lurus beraturan (GLB)</h3>
-<p>Jika kecepatannya tetap, benda menempuh jarak yang sama dalam selang waktu yang sama:</p>
-⟦0⟧
-<h3>Percepatan</h3>
-<p><b>Percepatan</b> adalah laju perubahan kecepatan. Satuannya $\mathrm{m/s}$ per sekon, ditulis $\mathrm{m/s^2}$:</p>
-⟦1⟧
-<p>Percepatan negatif (saat kecepatannya positif) berarti benda melambat; ini sering disebut <i>perlambatan</i>.</p>
-⟦2⟧
-⟦3⟧
-<h3>Grafik gerak</h3>
-⟦4⟧
-<ul><li>Pada grafik <b>posisi–waktu</b>, kemiringan grafik adalah kecepatan.</li><li>Pada grafik <b>kecepatan–waktu</b>, kemiringan grafik adalah percepatan dan <b>luas di bawah grafik</b> adalah perpindahan.</li></ul>
-<p>Pada grafik di atas, percepatan selama $4\,\mathrm{s}$ pertama adalah $\frac{12 - 4}{4} = 2\,\mathrm{m/s^2}$, dan perpindahan selama $8\,\mathrm{s}$ adalah luas trapesium $\frac{4 + 12}{2} \cdot 4 = 32\,\mathrm{m}$ ditambah luas persegi panjang $12 \cdot 4 = 48\,\mathrm{m}$: totalnya $80\,\mathrm{m}$.</p>
-⟦5⟧`,
   '21s7op65cq8': R`<p>Untuk <b>gerak lurus berubah beraturan (GLBB)</b>, dengan kecepatan awal $v_0$, kecepatan akhir $v$, waktu $t$, dan perpindahan $s$:</p><p>$$v = v_0 + a t$$ $$s = v_0 t + \tfrac{1}{2} a t^2$$ $$v^2 = v_0^2 + 2 a s$$</p><p>Pilih persamaan yang memuat tiga besaran yang diketahui dan satu besaran yang dicari.</p>`,
   '1nl75o08auw': R`<p>Sebuah mobil yang melaju $20\,\mathrm{m/s}$ direm dengan perlambatan $5\,\mathrm{m/s^2}$. Berapa jarak yang ditempuhnya sampai berhenti?</p><p>Diketahui $v_0 = 20$, $v = 0$, $a = -5$, dan yang dicari $s$, jadi pakai $v^2 = v_0^2 + 2as$:</p><p>$$0 = 20^2 + 2(-5)s \;\Rightarrow\; s = \frac{400}{10} = 40\,\mathrm{m}.$$</p>`,
   '1bhvof8tg5f': R`Dipercepat selama 4 s, lalu bergerak tetap 12 m/s.`,
@@ -1861,16 +1463,6 @@ addT('id', {
   '1phx00jyikk': R`Perpindahan sama dengan luas di bawah grafik: trapesium $\frac{⟦0⟧ + ⟦1⟧}{2} \cdot ⟦2⟧ = ⟦3⟧$ ditambah persegi panjang $⟦4⟧ \cdot ⟦5⟧ = ⟦6⟧$, sehingga hasilnya ⟦7⟧.`,
   '1066q0t6vhy': R`Grafik berikut menunjukkan perubahan kecepatan sebuah troli terhadap waktu. Berapa percepatannya selama ⟦0⟧ pertama?`,
   '21l9qmm0rv7': R`Percepatan adalah kemiringan grafik: $a = \frac{⟦0⟧ - ⟦1⟧}{⟦2⟧} = ⟦3⟧$. Setelah $t = ⟦4⟧\,\mathrm{s}$ garisnya datar, jadi percepatannya nol.`,
-  '21538olr0ye': R`
-<p>Tanpa hambatan udara, setiap benda di dekat permukaan Bumi jatuh dengan percepatan yang sama, berapa pun massanya. Inilah percepatan gravitasi, $g \approx 9{,}8\,\mathrm{m/s^2}$; banyak soal membulatkannya menjadi $10\,\mathrm{m/s^2}$. Setiap soal di situs ini menyebutkan nilai yang dipakai.</p>
-<p>Gerak vertikal hanyalah gerak dengan percepatan tetap, jadi persamaan pada topik sebelumnya tetap berlaku dengan $a = g$ yang arahnya ke bawah.</p>
-<h3>Dijatuhkan dari keadaan diam (jatuh bebas)</h3>
-⟦0⟧
-⟦1⟧
-<h3>Dilempar lurus ke atas</h3>
-<p>Ambil arah ke atas sebagai positif; maka $a = -g$. Bola melambat, berhenti sesaat di titik tertinggi, lalu jatuh kembali.</p>
-⟦2⟧
-⟦3⟧`,
   '1cglggk3h3l': R`<p>Sebuah batu dijatuhkan dari jembatan setinggi $45\,\mathrm{m}$ di atas permukaan air ($g = 10\,\mathrm{m/s^2}$).</p><p>Waktu jatuh: $45 = \tfrac12 \cdot 10 \cdot t^2 \Rightarrow t^2 = 9 \Rightarrow t = 3\,\mathrm{s}$.</p><p>Kelajuan saat menyentuh air: $v = gt = 30\,\mathrm{m/s}$, atau $v = \sqrt{2 \cdot 10 \cdot 45} = 30\,\mathrm{m/s}$.</p>`,
   '1a7wqssgetq': R`<p>Untuk bola yang dilempar ke atas dengan kecepatan $v_0$:</p><ul><li>waktu sampai titik tertinggi: $t_{\text{naik}} = \dfrac{v_0}{g}$</li><li>tinggi maksimum: $h_{\max} = \dfrac{v_0^2}{2g}$</li><li>bola kembali ke titik lempar setelah $2t_{\text{naik}}$, dengan kelajuan yang sama seperti saat dilempar.</li></ul>`,
   '19f8cicfrvo': R`<p>Di titik tertinggi <b>kecepatannya</b> nol, tetapi <b>percepatannya</b> tetap $g$ ke bawah. Kalau percepatannya nol, bola akan diam di atas sana.</p>`,
@@ -1903,17 +1495,6 @@ addT('id', {
   '1kiqgoxwz9y': R`lebih kecil`,
   'u47rxdfjki': R`nol`,
   'ny5pim4e0u': R`Geraknya simetris: gerak turun dari titik tertinggi mencerminkan gerak naik, jadi bola tiba dengan kelajuan yang sama seperti saat dilempar, tetapi kini arahnya ke bawah.`,
-  '1hor9hprhjq': R`
-<p><b>Proyektil</b> adalah benda yang setelah dilepaskan hanya dipengaruhi gravitasi: bola yang ditendang, batu yang dilempar dari tebing, air yang menyembur dari selang. Lintasannya berbentuk parabola.</p>
-⟦0⟧
-<h3>Dilempar mendatar</h3>
-<p>Sebuah bola menggelinding dari meja setinggi $h$ dengan kelajuan $v$. Secara vertikal bola mulai dari diam, jadi waktu jatuhnya hanya ditentukan oleh ketinggian: $t = \sqrt{2h/g}$. Secara horizontal bola bergerak dengan kelajuan tetap, jadi bola jatuh sejauh $x = v t$ dari meja.</p>
-<h3>Dilempar dengan sudut elevasi</h3>
-<p>Lemparan dengan kelajuan $v_0$ dan sudut $\theta$ memiliki komponen $v_{0x} = v_0\cos\theta$ dan $v_{0y} = v_0\sin\theta$. Di tanah datar:</p>
-⟦1⟧
-⟦2⟧
-<p>Jarak terjauh dicapai pada $\theta = 45^\circ$ (saat $\sin 2\theta = 1$). Dua sudut yang jumlahnya $90^\circ$, misalnya $30^\circ$ dan $60^\circ$, menghasilkan jarak yang sama.</p>
-⟦3⟧`,
   'x0tm332g7h': R`<p>Uraikan gerak menjadi dua bagian yang tidak saling memengaruhi:</p><ul><li><b>Horizontal:</b> tidak ada gaya, jadi kecepatan $v_x$ tetap: $x = v_x t$.</li><li><b>Vertikal:</b> percepatan tetap $g$ ke bawah, persis seperti jatuh bebas.</li></ul><p>Waktu $t$ adalah satu-satunya hal yang sama bagi kedua bagian itu.</p>`,
   'z4l93pdn03': R`Lintasan proyektil beserta kecepatan awal, tinggi maksimum, dan jarak jangkauannya`,
   '28npsep1ojd': R`Waktu terbang $T$, tinggi maksimum $H$, dan jarak jangkauan $R$.`,
@@ -1936,20 +1517,6 @@ addT('id', {
 
 /* Bahasa Indonesia — 4-mech-b */
 addT('id', {
-  'kc8afz59sg': R`
-<p><b>Gaya</b> adalah dorongan atau tarikan, diukur dalam newton ($\mathrm{N}$). Tiga hukum Newton menghubungkan gaya dengan gerak.</p>
-<h3>Hukum I: kelembaman (inersia)</h3>
-<p>Benda tetap diam, atau tetap bergerak dengan kecepatan tetap, selama tidak ada gaya resultan yang bekerja padanya. Penumpang terdorong ke depan saat bus mengerem karena tubuhnya cenderung tetap bergerak.</p>
-<h3>Hukum II: $F = ma$</h3>
-⟦0⟧
-<p><b>Gaya resultan</b> $\Sigma F$ adalah jumlah vektor semua gaya yang bekerja pada benda. Gaya resultan yang lebih besar menghasilkan percepatan yang lebih besar; massa yang lebih besar menghasilkan percepatan yang lebih kecil. $1\,\mathrm{N}$ adalah gaya yang memberi benda $1\,\mathrm{kg}$ percepatan $1\,\mathrm{m/s^2}$.</p>
-<h3>Hukum III: aksi dan reaksi</h3>
-<p>Jika benda A mendorong benda B, maka B mendorong balik A dengan gaya yang sama besar dan berlawanan arah. Kedua gaya itu bekerja pada benda yang <b>berbeda</b>, jadi keduanya tidak pernah saling meniadakan.</p>
-<h3>Gaya-gaya yang sering muncul</h3>
-<ul><li><b>Berat</b> $W = mg$, menarik ke arah pusat Bumi.</li><li><b>Gaya normal</b> $N$, dari permukaan, tegak lurus terhadap permukaan itu.</li><li><b>Tegangan tali</b> $T$, sepanjang tali.</li><li><b>Gaya gesek</b> $f$, sepanjang permukaan, melawan gerak (topik berikutnya).</li></ul>
-⟦1⟧
-⟦2⟧
-⟦3⟧`,
   '1ngrd91jx1z': R`<p>Langkah menyelesaikan soal gaya:</p><ol><li>Gambar <b>diagram gaya bebas</b>: bendanya saja, dengan setiap gaya yang bekerja padanya sebagai anak panah.</li><li>Pilih arah positif.</li><li>Tulis $\Sigma F = ma$ pada arah itu, lalu selesaikan.</li></ol>`,
   'kwsux5tbzj': R`Diagram gaya bebas balok yang ditarik di lantai: gaya normal ke atas, berat ke bawah, tarikan ke kanan, dan gaya gesek ke kiri`,
   '1cb2q47fvl4': R`Balok ditarik ke kanan: $N$ mengimbangi $W$, dan gaya resultannya $F - f$.`,
@@ -1989,17 +1556,6 @@ addT('id', {
   '2fspao7yqg3': R`Mobil mengerjakan gaya yang lebih besar`,
   '1azhrjweewr': R`Bergantung pada mana yang bergerak lebih cepat`,
   '27pevs4wvnb': R`Menurut hukum III Newton, kedua gaya sama besar dan berlawanan arah. Mobil rusak lebih parah karena massanya yang lebih kecil membuat percepatannya lebih besar.`,
-  'ye2dwlrqe1': R`
-<p><b>Gaya gesek</b> adalah gaya antara dua permukaan yang melawan gerak meluncur. Arahnya sepanjang permukaan, melawan gerak (atau melawan gerak yang akan terjadi seandainya gaya gesek tidak ada).</p>
-<h3>Gesekan statis dan kinetis</h3>
-<ul><li><b>Gaya gesek statis</b> menahan benda tetap diam. Besarnya ikut naik ketika dorongan diperbesar, sampai batas maksimum: $f_{s,\max} = \mu_s N$.</li><li><b>Gaya gesek kinetis</b> bekerja setelah benda meluncur: $f_k = \mu_k N$, kira-kira tetap.</li></ul>
-<p>$\mu_s$ dan $\mu_k$ adalah <b>koefisien gesek</b>. Keduanya tidak bersatuan, dan biasanya $\mu_k \lt \mu_s$. Itulah sebabnya mendorong kotak dari diam lebih sulit daripada menjaganya tetap bergerak. Di lantai datar tanpa gaya vertikal lain, $N = mg$.</p>
-⟦0⟧
-<h3>Bidang miring</h3>
-⟦1⟧
-⟦2⟧
-<p>Balok yang diam tetap diam selama $mg\sin\theta \le \mu_s mg\cos\theta$, yaitu selama $\tan\theta \le \mu_s$.</p>
-⟦3⟧`,
   '1jiwd84c8rz': R`<p>Sebuah peti bermassa $20\,\mathrm{kg}$ didorong di lantai dengan $\mu_k = 0{,}3$ oleh gaya mendatar $100\,\mathrm{N}$ ($g = 10\,\mathrm{m/s^2}$). Gaya gesek: $f = 0{,}3 \cdot 20 \cdot 10 = 60\,\mathrm{N}$. Gaya resultan: $100 - 60 = 40\,\mathrm{N}$, jadi $a = 40/20 = 2\,\mathrm{m/s^2}$.</p>`,
   'xj56l8z8yp': R`Balok di bidang miring bersudut theta, dengan gaya berat, gaya normal, dan gaya gesek`,
   'lkvtx6fggu': R`Di bidang miring, gaya berat $mg$ diuraikan menjadi dua komponen.`,
@@ -2028,20 +1584,6 @@ addT('id', {
   '1h2arje5kvu': R`tidak lebih dari`,
   '1f2cwjym872': R`gaya gesek statis tidak mampu menahannya dan balok meluncur`,
   '18elpp37r93': R`gaya gesek statis mampu menahannya`,
-  'ezxbtjc7z8': R`
-<p><b>Energi</b> adalah kemampuan untuk melakukan usaha, dan <b>usaha</b> adalah energi yang dipindahkan oleh gaya. Keduanya diukur dalam joule ($\mathrm{J}$).</p>
-<h3>Usaha</h3>
-⟦0⟧
-<p>Di sini $F$ adalah gaya, $s$ perpindahan, dan $\theta$ sudut di antara keduanya. Hanya bagian gaya yang searah gerak yang melakukan usaha. Gaya yang tegak lurus gerak (seperti gaya normal di lantai datar) tidak melakukan usaha; gaya yang melawan gerak (seperti gaya gesek) melakukan usaha negatif.</p>
-<h3>Energi kinetik dan energi potensial</h3>
-⟦1⟧
-<p>Energi kinetik dimiliki benda karena geraknya; energi potensial gravitasi karena ketinggiannya di atas bidang acuan yang dipilih.</p>
-⟦2⟧
-⟦3⟧
-<h3>Daya dan efisiensi</h3>
-⟦4⟧
-<p>Daya diukur dalam watt: $1\,\mathrm{W} = 1\,\mathrm{J/s}$.</p>
-⟦5⟧`,
   '1gysejys4zp': R`<p><b>Teorema usaha–energi:</b> usaha total pada benda sama dengan perubahan energi kinetiknya, $W_{\text{total}} = \Delta E_k$.</p><p><b>Hukum kekekalan energi mekanik:</b> jika hanya gravitasi yang melakukan usaha (tanpa gesekan),</p><p>$$E_k + E_p = \text{tetap}, \qquad \tfrac12 m v_1^2 + m g h_1 = \tfrac12 m v_2^2 + m g h_2.$$</p>`,
   'wjax83ohbn': R`<p>Sebuah kereta roller coaster mulai dari diam pada ketinggian $20\,\mathrm{m}$ di atas dasar lintasan yang licin ($g = 10\,\mathrm{m/s^2}$). Di dasar lintasan, seluruh energi potensialnya telah berubah menjadi energi kinetik:</p><p>$$mgh = \tfrac12 m v^2 \;\Rightarrow\; v = \sqrt{2gh} = \sqrt{400} = 20\,\mathrm{m/s}.$$</p><p>Massanya saling mencoret, jadi setiap kereta mencapai kelajuan yang sama.</p>`,
   '1aka3dk0wtz': R`P = \frac{W}{t} = F v \qquad \eta = \frac{\text{keluaran berguna}}{\text{masukan}} \times 100\%`,
@@ -2062,20 +1604,6 @@ addT('id', {
   '29o0ervjcr6': R`$\eta = \frac{P_{\text{keluar}}}{P_{\text{masuk}}} \times 100\% = \frac{⟦0⟧}{⟦1⟧} \times 100\% = ⟦2⟧\%$.`,
   '1iaymfx9g29': R`Sebuah pompa memiliki efisiensi ⟦0⟧% dan menerima daya ⟦1⟧. Berapa daya berguna yang dihasilkannya?`,
   '1pmbvzbfiyv': R`$P_{\text{keluar}} = \eta \times P_{\text{masuk}} = ⟦0⟧ \times ⟦1⟧ = ⟦2⟧$.`,
-  '9luwz9hbip': R`
-<p><b>Momentum</b> sebuah benda adalah massa dikali kecepatannya. Momentum adalah vektor yang searah dengan kecepatan, dan satuannya $\mathrm{kg\,m/s}$.</p>
-⟦0⟧
-<h3>Impuls</h3>
-<p>Gaya yang bekerja selama selang waktu tertentu mengubah momentum. Hasil kali $F\,\Delta t$ disebut <b>impuls</b>:</p>
-⟦1⟧
-<p>Inilah sebabnya kantong udara (airbag) dan zona remuk pada mobil menyelamatkan nyawa: perubahan momentum yang sama disebar ke waktu yang lebih lama, sehingga gayanya lebih kecil.</p>
-⟦2⟧
-<h3>Jenis tumbukan</h3>
-<ul><li><b>Tidak lenting sama sekali:</b> benda-benda menempel dan bergerak bersama dengan satu kecepatan $v' = \dfrac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$. Sebagian energi kinetik hilang (menjadi panas, bunyi, perubahan bentuk).</li><li><b>Lenting sempurna:</b> energi kinetik juga kekal. Jika dua benda bermassa sama bertumbukan lenting sempurna secara sentral, keduanya bertukar kecepatan.</li><li>Kebanyakan tumbukan nyata berada di antara keduanya: momentum kekal, sebagian energi kinetik hilang.</li></ul>
-⟦3⟧
-<h3>Gaya dorong balik (rekoil)</h3>
-<p>Sebelum senapan ditembakkan, momentum totalnya nol, jadi setelahnya momentum peluru ke depan diimbangi momentum senapan ke belakang: $m_p v_p = m_s v_s$.</p>
-⟦4⟧`,
   '2e2tqc5my45': R`<p><b>Hukum kekekalan momentum:</b> jika tidak ada gaya luar yang bekerja pada suatu sistem, momentum totalnya tetap. Untuk dua benda yang bertumbukan:</p><p>$$m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'.$$</p><p>Pilih arah positif, lalu beri tanda minus pada kecepatan yang berlawanan arah.</p>`,
   '2frhwamgtv6': R`<p>Sebuah kereta $2\,\mathrm{kg}$ yang bergerak $6\,\mathrm{m/s}$ menabrak kereta $1\,\mathrm{kg}$ yang diam, lalu keduanya menempel. $v' = \frac{2 \cdot 6 + 1 \cdot 0}{3} = 4\,\mathrm{m/s}$. Energi kinetik sebelum: $36\,\mathrm{J}$; sesudah: $\tfrac12 \cdot 3 \cdot 4^2 = 24\,\mathrm{J}$, jadi $12\,\mathrm{J}$ hilang.</p>`,
   'rfdx8x7xt6': R`<p>Saat bola memantul balik, tanda kecepatannya berubah. Memantul dari $+5\,\mathrm{m/s}$ menjadi $-5\,\mathrm{m/s}$ berarti perubahannya $10\,\mathrm{m/s}$, bukan nol.</p>`,
@@ -2106,26 +1634,6 @@ addT('id', {
   '1kodlvhytf0': R`besi`,
   'aohwz19hxq': R`tembaga`,
   '15qut058har': R`kaca`,
-  'uafnwtb3g0': R`
-<p><b>Suhu</b> menyatakan seberapa panas suatu benda; suhu mengukur energi kinetik rata-rata partikel-partikelnya. <b>Kalor</b> adalah energi yang mengalir dari benda yang lebih panas ke benda yang lebih dingin karena perbedaan suhu. Kalor diukur dalam joule.</p>
-<h3>Skala suhu</h3>
-⟦0⟧
-<p>Perubahan $1^\circ\mathrm{C}$ sama dengan perubahan $1\,\mathrm{K}$. Air membeku pada $0^\circ\mathrm{C} = 273\,\mathrm{K} = 32^\circ\mathrm{F}$ dan mendidih pada $100^\circ\mathrm{C} = 373\,\mathrm{K} = 212^\circ\mathrm{F}$. (Lebih tepatnya, $0^\circ\mathrm{C} = 273{,}15\,\mathrm{K}$.)</p>
-<h3>Kalor jenis</h3>
-<p>Kalor yang diperlukan untuk mengubah suhu benda bermassa $m$ sebesar $\Delta T$ adalah</p>
-⟦1⟧
-<p>dengan $c$ adalah <b>kalor jenis</b> bahan, dalam $\mathrm{J/(kg\,{}^\circ C)}$: kalor yang diperlukan untuk menaikkan suhu $1\,\mathrm{kg}$ bahan sebesar $1^\circ\mathrm{C}$. Kalor jenis air sangat besar, sekitar $4200\,\mathrm{J/(kg\,{}^\circ C)}$, itulah sebabnya laut lambat menjadi panas dan lambat menjadi dingin.</p>
-<h3>Perubahan wujud</h3>
-<p>Selama zat mencair atau mendidih, suhunya tetap walaupun kalor terus masuk. Kalor yang diperlukan adalah</p>
-⟦2⟧
-<p>dengan $L$ adalah <b>kalor laten</b>: sekitar $3{,}34 \times 10^{5}\,\mathrm{J/kg}$ untuk melebur es dan $2{,}26 \times 10^{6}\,\mathrm{J/kg}$ untuk menguapkan air.</p>
-⟦3⟧
-⟦4⟧
-<h3>Pemuaian</h3>
-<p>Sebagian besar bahan memuai ketika dipanaskan. Batang dengan panjang $L_0$ bertambah panjang sebesar</p>
-⟦5⟧
-<p>dengan $\alpha$ adalah koefisien muai panjang (baja: sekitar $1{,}2 \times 10^{-5}\,/{}^\circ\mathrm{C}$). Luas memuai dengan koefisien sekitar $2\alpha$ dan volume sekitar $3\alpha$. Karena itulah rel kereta dan jembatan diberi celah.</p>
-⟦6⟧`,
   '1uuqrvazom': R`<p><b>Kalorimetri (asas Black):</b> jika benda panas dan benda dingin dicampur di wadah yang terisolasi, kalor yang dilepas benda panas sama dengan kalor yang diterima benda dingin:</p><p>$$m_1 c_1 (T_1 - T) = m_2 c_2 (T - T_2),$$</p><p>dengan $T$ adalah suhu akhir campuran.</p>`,
   '9stuz8e92g': R`<p>$0{,}2\,\mathrm{kg}$ air bersuhu $80^\circ\mathrm{C}$ dicampur dengan $0{,}3\,\mathrm{kg}$ air bersuhu $20^\circ\mathrm{C}$. Nilai $c$ di kedua ruas sama, jadi saling mencoret:</p><p>$$0{,}2(80 - T) = 0{,}3(T - 20) \;\Rightarrow\; 16 + 6 = 0{,}5T \;\Rightarrow\; T = 44^\circ\mathrm{C}.$$</p>`,
   '1jky8g714ti': R`<p>Pada $Q = mc\Delta T$ massa harus dalam kilogram: $250\,\mathrm{g} = 0{,}25\,\mathrm{kg}$.</p>`,
@@ -2162,22 +1670,6 @@ addT('id', {
 /* Bahasa Indonesia — 7-electricity */
 addT('id', {
   '8pmwod04x2': R`Diagram rangkaian dengan baterai dan resistor`,
-  '1tctsbl174k': R`
-<p><b>Arus listrik</b> adalah aliran muatan. Di dalam kawat logam, muatan yang bergerak adalah elektron, masing-masing bermuatan $e = 1{,}6 \times 10^{-19}\,\mathrm{C}$ (coulomb).</p>
-⟦0⟧
-<p>Kuat arus diukur dalam ampere: $1\,\mathrm{A}$ berarti muatan $1\,\mathrm{C}$ melewati suatu titik setiap sekon. Menurut kesepakatan, arus mengalir dari $+$ ke $-$ di luar baterai, berlawanan dengan arah gerak elektron.</p>
-<h3>Beda potensial dan hambatan</h3>
-<p><b>Beda potensial</b> (tegangan) $V$ antara dua titik adalah energi yang diberikan kepada atau diambil dari setiap coulomb muatan: $1\,\mathrm{V} = 1\,\mathrm{J/C}$. <b>Hambatan</b> $R$ suatu komponen menunjukkan seberapa besar tegangan yang diperlukan untuk mengalirkan arus melaluinya.</p>
-⟦1⟧
-<h3>Hambatan jenis</h3>
-<p>Hambatan sebuah kawat bergantung pada bahannya, panjangnya $L$, dan luas penampangnya $A$:</p>
-⟦2⟧
-<p>$\rho$ adalah <b>hambatan jenis</b> bahan dalam $\Omega\,\mathrm{m}$ (tembaga: $1{,}7 \times 10^{-8}\,\Omega\,\mathrm{m}$). Kawat yang lebih panjang hambatannya lebih besar; kawat yang lebih tebal hambatannya lebih kecil.</p>
-<h3>Daya dan energi listrik</h3>
-⟦3⟧
-<p>Tagihan listrik memakai satuan <b>kilowatt-jam</b>: $1\,\mathrm{kWh}$ adalah energi yang dipakai alat berdaya $1\,\mathrm{kW}$ selama satu jam, yaitu $3{,}6 \times 10^{6}\,\mathrm{J}$.</p>
-⟦4⟧
-⟦5⟧`,
   'oimy8jns8d': R`<p><b>Hukum Ohm:</b> untuk penghantar logam pada suhu tetap, kuat arus sebanding dengan tegangan:</p><p>$$V = I\,R$$</p><p>Hambatan diukur dalam ohm: $1\,\Omega = 1\,\mathrm{V/A}$.</p>`,
   'th33vhvuaq': R`<p>Sebuah ketel listrik tertulis $2000\,\mathrm{W}$, $220\,\mathrm{V}$. Kuat arus: $I = P/V = 2000/220 \approx 9{,}1\,\mathrm{A}$. Jika dipakai $15$ menit sehari selama $30$ hari: $2\,\mathrm{kW} \times 0{,}25\,\mathrm{jam} \times 30 = 15\,\mathrm{kWh}$.</p>`,
   '2dchhuclfv': R`<p>Ubah luas dalam $\mathrm{mm^2}$ ke $\mathrm{m^2}$ sebelum memakai $R = \rho L / A$: $1\,\mathrm{mm^2} = 10^{-6}\,\mathrm{m^2}$.</p>`,
@@ -2201,21 +1693,6 @@ addT('id', {
   'whqrzzb55h': R`Kuat arus menjadi dua kali lipat dan daya tetap`,
   '17gcgm7tfee': R`Kuat arus menjadi setengahnya dan daya menjadi dua kali lipat`,
   'nepb6j9dlj': R`$I = V/R$, jadi menggandakan $V$ menggandakan $I$. $P = V^2/R$, jadi menggandakan $V$ mengalikan $P$ dengan $2^2 = 4$.`,
-  'te90xpu5gv': R`
-<p>Rangkaian adalah lintasan tertutup yang dapat dilalui muatan. Dua aturan yang sama menentukan segala sesuatu dalam rangkaian resistor.</p>
-<h3>Rangkaian seri</h3>
-⟦0⟧
-<ul><li><b>Kuat arus yang sama</b> mengalir melalui setiap komponen.</li><li>Tegangannya dijumlahkan: $V = V_1 + V_2 + V_3$.</li><li>Hambatannya dijumlahkan: $R_s = R_1 + R_2 + R_3$.</li></ul>
-<h3>Rangkaian paralel</h3>
-⟦1⟧
-<ul><li>Setiap cabang mendapat <b>tegangan yang sama</b>.</li><li>Arusnya dijumlahkan: $I = I_1 + I_2 + I_3$.</li><li>$\dfrac{1}{R_p} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \dfrac{1}{R_3}$. Untuk dua resistor saja: $R_p = \dfrac{R_1 R_2}{R_1 + R_2}$.</li></ul>
-<p>Hambatan pengganti rangkaian paralel selalu lebih kecil dari resistor terkecilnya, karena setiap cabang tambahan memberi arus jalur lain.</p>
-⟦2⟧
-⟦3⟧
-<h3>GGL dan hambatan dalam</h3>
-<p>Baterai nyata memiliki <b>gaya gerak listrik (GGL)</b> $\varepsilon$ (energi yang diberikannya kepada setiap coulomb) dan <b>hambatan dalam</b> $r$ yang kecil. Dengan hambatan luar $R$:</p>
-⟦4⟧
-⟦5⟧`,
   '1znip64d7e6': R`Tiga resistor dirangkai seri: hanya ada satu jalur bagi arus.`,
   '1fagoc02t7p': R`Tiga resistor dirangkai paralel: arus terbagi ke cabang-cabangnya.`,
   '252ypvrul5e': R`<p>Untuk rangkaian campuran, ganti setiap kelompok paralel dengan hambatan penggantinya, lalu jumlahkan bagian-bagian yang seri. Hitung arus total dengan $I = V/R_{\text{total}}$, lalu telusuri kembali rangkaian memakai $V = IR$ untuk setiap bagian.</p>`,
@@ -2346,9 +1823,309 @@ addT('id', {
   '1rgwobb5j30': R`Semikonduktor dijelaskan dengan tingkat energi elektron di dalam zat padat.`,
 });
 
-/* Bahasa Indonesia — 9-mech-d */
+/* Bahasa Indonesia — 9-figcaps */
 addT('id', {
-  '23qs3p5efgc': R`
+  '12vufoyzvkf': R`presisi`,
+  'jtvc8ire6n': R`akurat`,
+  '6uehs980g1': R`tidak akurat`,
+  'j162ed7mr5': R`tidak presisi`,
+  'd7u1kp20zf': R`Empat sasaran: akurat dan presisi, presisi tetapi tidak akurat, akurat tetapi tidak presisi, dan tidak keduanya`,
+  '71hx5npkqn': R`Dua pita ketik: jarak titik sama untuk kecepatan tetap dan jarak makin lebar untuk gerak yang makin cepat`,
+  'f5b2ppyxps': R`kecepatan tetap: jarak sama`,
+  '21fbernmd8y': R`makin cepat: jarak makin lebar`,
+  '29hh3k98dmu': R`Posisi bola yang dijatuhkan setiap detik: 0, 5, 20, 45, dan 80 meter di bawah titik awal`,
+  'rav3jgtyo0': R`Bola bertali dalam lingkaran vertikal: di puncak, tegangan dan berat sama-sama ke bawah; di dasar, tegangan ke atas dan berat ke bawah`,
+  '24iu7z6wy7w': R`Dua balok yang saling mendorong dengan gaya sama besar dan berlawanan arah`,
+  'ox41d4vu4e': R`A pada B`,
+  '1whfaf7d1r': R`B pada A`,
+  '1cuuue0vvvc': R`Kotak ditarik tali bersudut 30 derajat; hanya komponen mendatar F cos theta yang melakukan usaha di sepanjang lantai`,
+  '1t67qkkdkpz': R`Sebelum: troli 2 kg bergerak 6 m/s menuju troli 1 kg yang diam. Sesudah: keduanya bergerak bersama 4 m/s`,
+  'n44dld9jmf': R`sebelum`,
+  'je85qvhtch': R`sesudah`,
+  'm09gqn5e56': R`Kunci pas yang diputar pada baut: gaya F bersudut theta terhadap gagang, sejauh r dari sumbu`,
+  '1rpxmggepx0': R`sumbu`,
+  '1vtbloqjnr7': R`kembali tegak`,
+  '90rizt3cqh': R`terguling`,
+  '1196zvtc649': R`Dua kotak miring: jika garis tegak lewat titik berat masih di atas alas, kotak kembali tegak; jika keluar dari alas, kotak terguling`,
+  'hhh1re5p62': R`Satelit bermassa m pada orbit lingkaran berjari-jari r mengelilingi planet bermassa M; gravitasi mengarah ke pusat dan kecepatan menyinggung lintasan`,
+  '2dcghahmm3g': R`Satu pegas, dua pegas paralel, dan dua pegas seri, masing-masing menahan beban`,
+  'w48fc8x78m': R`tunggal: k`,
+  'jew35car1h': R`paralel: k₁ + k₂`,
+  '1vqsvq53670': R`seri: lebih lunak`,
+  '1g3kcl02ngt': R`Tangki berisi air dengan panah pada dinding yang makin panjang ke bawah, menunjukkan tekanan bertambah dengan kedalaman`,
+  '20lwhusqhbk': R`tekanan lebih besar`,
+  'f3q9vu1yjk': R`Pompa hidraulik: gaya kecil pada piston kecil menghasilkan gaya besar pada piston besar`,
+  '2cm2xw0ri9p': R`beban`,
+  '21nyk8m96f4': R`Batu di dalam air: beratnya ke bawah dan gaya apung ke atas`,
+  '1ccmrqxwuvs': R`Pipa yang menyempit: fluida bergerak lebih cepat di bagian sempit dan tekanannya lebih rendah, terlihat dari kolom yang lebih rendah pada tabung pengukur`,
+  'v5hqfbx5n4': R`p lebih besar`,
+  'jlerrcby96': R`p lebih kecil`,
+  '1ufi7flanbm': R`Air keluar dari lubang sedalam h di bawah permukaan tangki terbuka dengan kelajuan akar 2gh`,
+  'um5s63y773': R`Massa 2 kg dan 1 kg berjarak 3 m pada batang ringan; pusat massa berada 1 m dari massa yang lebih berat`,
+  'yjev2pjez8': R`pusat massa`,
+  '1aj3ickeqff': R`Massa pada pegas yang berosilasi antara minus A dan plus A, serta bandul yang berayun di sekitar titik terendahnya`,
+  '16hhify4is7': R`berosilasi`,
+  '1j51kyl8y1p': R`bandul`,
+  '2g4q36xsf8t': R`Gelombang longitudinal: daerah rapat (rapatan) dan daerah renggang (renggangan) searah rambatan`,
+  '2wu4du54ak': R`rambat`,
+  '1dl456qy249': R`Muka gelombang dari sumber yang bergerak memampat di depannya dan meregang di belakangnya`,
+  '1jgfzjvegc': R`f lebih tinggi`,
+  'sr6l8mw2t1': R`f lebih rendah`,
+  '2e2uggj4co7': R`Termometer Celsius, kelvin, dan Fahrenheit dengan titik didih dan titik beku air`,
+  '1lj9b26v2ob': R`air mendidih`,
+  '1xd57rhx2n5': R`air membeku`,
+  '1pnu3sw05mr': R`Mesin kalor: kalor dari sumber panas, sebagian diubah menjadi usaha, sisanya dibuang ke tandon dingin`,
+  '13oh3fvxizo': R`sumber panas`,
+  'ay0ty3ogqo': R`tandon dingin`,
+  'hkowm32pt': R`mesin`,
+  '1hr8mw8d6x1': R`Konduksi pada batang logam, arus konveksi dalam panci berisi air yang dipanaskan, dan radiasi dari Matahari`,
+  '26dy7ims9zg': R`konduksi`,
+  '2c3fqocjfz8': R`konveksi`,
+  'lhwvqty77e': R`radiasi`,
+  'nku2fz78if': R`Garis medan listrik: keluar dari muatan positif, melengkung dari positif ke negatif pada sepasang muatan, serta lurus dan sejajar di antara dua keping bermuatan`,
+  '5i8utsntfl': R`Kapasitor keping sejajar: muatan +Q dan −Q pada keping berjarak d dengan medan homogen di antaranya`,
+  '176t20216lq': R`Kiri: lingkaran medan magnet di sekitar kawat berarus yang masuk bidang gambar. Kanan: muatan positif bergerak melingkar dalam medan yang keluar dari bidang gambar`,
+  '8v41s37teh': R`arus masuk bidang`,
+  'elh7q2l520': R`B keluar bidang`,
+  '18dbef77j68': R`Batang yang bergeser dengan kelajuan v di atas dua rel dalam medan magnet yang masuk bidang gambar, dengan resistor menghubungkan kedua rel`,
+  'f9tnui3sga': R`B masuk bidang`,
+  '573rg6t9fd': R`Transformator: kumparan primer dengan sedikit lilitan dan kumparan sekunder dengan lebih banyak lilitan pada inti besi yang sama`,
+  '1mirz7zf8si': R`inti besi`,
+  '7kefr80vmo': R`Gelombang elektromagnetik: medan listrik dan medan magnet berosilasi saling tegak lurus dan tegak lurus arah rambat`,
+  '6zumy96um3': R`radio`,
+  '29dvn7pbxuk': R`mikro`,
+  'hq4u9elubm': R`Spektrum elektromagnetik dari gelombang radio sampai sinar gamma pada skala panjang gelombang, dengan pita cahaya tampak yang sempit`,
+  '1w7vqnowhdu': R`panjang gelombang lebih panjang, frekuensi lebih rendah`,
+  '290503g358w': R`panjang gelombang lebih pendek, energi lebih besar`,
+  'gqq8ipryz3': R`Hukum pemantulan: sinar datang dan sinar pantul membentuk sudut yang sama terhadap garis normal`,
+  '2gcw8nbq1wl': R`garis normal`,
+  '19z76dzltim': R`cermin`,
+  'm287pemmfo': R`Cermin datar: bayangan berada di belakang cermin sejauh benda di depannya`,
+  '22cgndj55f4': R`benda`,
+  '1wzro8a5tao': R`bayangan`,
+  '23wp9tccuu': R`Tiga sinar dari kaca ke udara: di bawah sudut kritis sinar dibiaskan keluar, pada sudut kritis sinar merambat di sepanjang permukaan, di atasnya cahaya dipantulkan seluruhnya`,
+  '5u7sc2r2ih': R`dibiaskan`,
+  '12qb3nni1ki': R`sudut kritis`,
+  'yagoucwk6q': R`dipantulkan total`,
+  '13eqycmbq2v': R`Mata normal: sinar sejajar difokuskan pada retina`,
+  '19lgqa2109z': R`Mata rabun jauh: sinar sejajar difokuskan di depan retina`,
+  '14u2h38zqtk': R`Lensa cekung menyebarkan sinar sehingga terfokus pada retina`,
+  '234v001jcfb': R`retina`,
+  '1ejgq67dgiz': R`Teropong bias: lensa objektif berfokus panjang dan lensa okuler berfokus pendek yang terpisah sejauh jumlah jarak fokusnya`,
+  '1uzm8wa0ul4': R`objektif`,
+  '1kdt8ddpi53': R`okuler`,
+  '1t5kve4v6rd': R`Jam cahaya: saat diam, cahaya bergerak lurus naik-turun; jika terlihat bergerak, cahaya menempuh lintasan zig-zag yang lebih panjang sehingga setiap detaknya lebih lama`,
+  '2ci3kdwh5cf': R`jam diam`,
+  '2fi2rh0fz37': R`jam bergerak`,
+  '1a9vpamyza3': R`Foton berenergi hf mengenai permukaan logam dan melepaskan sebuah elektron`,
+  '1x2n3s3pprw': R`logam`,
+  '59noi6ree1': R`Percobaan lempeng emas: sebagian besar partikel alfa menembus atom, beberapa dibelokkan, dan sangat sedikit yang terpantul balik dari inti yang sangat kecil`,
+  '17devtqz4j1': R`inti (tidak berskala)`,
+  '1q9b1ffez41': R`Spektrum garis tampak hidrogen dengan garis pada 656, 486, 434, dan 410 nanometer`,
+  'eh72o0x7nv': R`Alfa dihentikan kertas, beta oleh beberapa milimeter aluminium, dan gamma hanya dilemahkan oleh timbal tebal`,
+  '3ux99rswho': R`kertas`,
+  '1v3xbr4l41i': R`timbal`,
+  '1l002se04aq': R`Reaksi berantai: neutron membelah uranium-235 menjadi dua pecahan dan melepaskan neutron baru yang membelah inti berikutnya`,
+  '1hgb6n91ozq': R`… dan seterusnya`,
+  'ue2mzd3qgh': R`Efek rumah kaca: cahaya matahari menembus atmosfer, permukaan bumi memancarkan inframerah, dan gas rumah kaca menyerap serta memancarkan kembali sebagiannya ke bawah`,
+  '1ut5tbthoof': R`gas rumah kaca`,
+  '19u4p3nyfv3': R`cahaya matahari`,
+  '239fr0slyd7': R`sebagian IR lolos`,
+  '1jp2mb0mq7i': R`diserap dan dipancarkan kembali`,
+  '6fvlyf6bxl': R`permukaan bumi`,
+  '22hhm49t7xo': R`Pita energi: pada konduktor pita-pitanya bertumpang tindih, semikonduktor memiliki celah kecil, dan isolator memiliki celah besar`,
+  'ggkdh5auvg': R`konduktor`,
+  '1iuse023suq': R`semikonduktor`,
+  'ow1oicqqit': R`isolator`,
+  'hv31pdtshr': R`pita konduksi`,
+  '1vko0libqfr': R`pita valensi`,
+  '23lhaw8janq': R`satuan dasar`,
+  'nsrocydwld': R`Skala awalan dari nano sampai giga sebagai perpangkatan sepuluh`,
+  '1dl7tjf485i': R`Awalan yang umum pada skala perpangkatan sepuluh: setiap tiga langkah adalah faktor 1 000 (mili → satuan dasar → kilo → mega).`,
+  'osirn51nxq': R`Persegi 10 kali 10 berisi persegi kecil dengan satu persegi disorot`,
+  '16p5buwzzcw': R`Jika setiap sisi 10 kali lebih panjang, luasnya menjadi $10 \times 10 = 100$ kali: persegi besar memuat 100 persegi $1\,\mathrm{cm^2}$ yang disorot. Satu meter sama dengan 100 cm, jadi $1\,\mathrm{m^2} = 10\,000\,\mathrm{cm^2}$.`,
+  '23a01f8r47q': R`<b>Presisi</b> menyatakan seberapa dekat hasil pengukuran berulang satu sama lain; <b>akurasi</b> menyatakan seberapa dekat hasilnya dengan nilai sebenarnya (pusat sasaran).`,
+  '1umq4lwqcsy': R`Penjumlahan vektor A dan B secara ujung-ke-pangkal menghasilkan resultan R`,
+  '11cwaz7xw0y': R`Ujung ke pangkal: gambar $\mathbf{B}$ mulai dari ujung $\mathbf{A}$; resultan $\mathbf{R}$ menghubungkan pangkal pertama ke ujung terakhir.`,
+  'oexlaz6eip': R`Pewaktu ketik mencetak titik pada selang waktu yang sama. Jarak titik yang sama berarti kecepatan tetap; jarak yang makin lebar berarti benda makin cepat.`,
+  '13mzij15r38': R`Grafik posisi–waktu untuk kecepatan tetap: garis lurus`,
+  '16haesbm01e': R`kecepatan tetap: garis lurus`,
+  '6kirtqrur4': R`Grafik posisi–waktu untuk percepatan tetap: kurva yang makin curam`,
+  '1hqd89v2fdb': R`makin cepat: kurva makin curam`,
+  'qstuy7lizg': R`Pada grafik posisi–waktu, kemiringan adalah kecepatan: kemiringan tetap untuk gerak beraturan, kemiringan bertambah jika dipercepat.`,
+  '1oawwingv1s': R`Bola yang dijatuhkan difoto sekali setiap detik ($g = 10\,\mathrm{m/s^2}$): bola jatuh 5, 15, 25, 35 m pada detik-detik berikutnya, sehingga jaraknya makin lebar.`,
+  '9azmd3t3bd': R`puncak: v = 0`,
+  'iyh3vd8v0k': R`Grafik kecepatan–waktu bola yang dilempar ke atas dengan 20 m/s: garis lurus yang turun melewati nol pada 2 s`,
+  '2ef7h1w9hrr': R`Dilempar ke atas dengan $20\,\mathrm{m/s}$: kecepatannya berkurang $10\,\mathrm{m/s}$ setiap detik, bernilai nol di puncak ($t = 2\,\mathrm{s}$), lalu negatif saat turun. Kemiringannya, $-g$, tidak pernah berubah.`,
+  '178u1tsgm9q': R`Lintasan proyektil yang ditembakkan dengan 20 m/s pada sudut 30, 45, dan 60 derajat`,
+  'upmq90umli': R`Ditembakkan dengan $20\,\mathrm{m/s}$ ($g = 10\,\mathrm{m/s^2}$): sudut $45^\circ$ paling jauh ($40\,\mathrm{m}$); sudut $30^\circ$ dan $60^\circ$ jatuh di titik yang sama ($34{,}6\,\mathrm{m}$).`,
+  '2dhobe30ipx': R`Pada lingkaran vertikal, gaya total harus mengarah ke pusat. Di puncak: $T + mg = \frac{mv^2}{r}$; di dasar: $T - mg = \frac{mv^2}{r}$, jadi tali menarik paling kuat di dasar.`,
+  '260coxbp0sf': R`Hukum ketiga: A mendorong B dan B mendorong balik A dengan gaya yang sama besar. Masing-masing gaya bekerja pada balok yang berbeda.`,
+  '29c4njrtzm': R`dorongan`,
+  't86unu0m29': R`gesekan`,
+  '14w721wm5pg': R`statis: f = dorongan`,
+  '1m2k6wfjomk': R`kinetis: μₖN`,
+  '18277g37nbc': R`mulai meluncur`,
+  '24p88our7x': R`Gaya gesek terhadap gaya dorong: gesekan statis naik mengikuti dorongan sampai maksimum, lalu turun ke nilai kinetis yang tetap`,
+  '1p96lj5xz36': R`Gesekan statis menyamai dorongan sampai mencapai maksimum $\mu_s N$; begitu kotak meluncur, gesekan turun ke nilai kinetis yang lebih kecil, $\mu_k N$.`,
+  '23s1vnthbue': R`Hanya komponen gaya yang searah gerak, $F\cos\theta$, yang melakukan usaha: $W = F s\cos\theta$.`,
+  '2g6xioibq4s': R`ketinggian h (m)`,
+  '2d88wn2tpf7': R`energi (J)`,
+  'w3o14s3xf6': R`total`,
+  '9qf6zyqzfl': R`Energi kereta 1 kg pada lintasan licin: energi potensial naik bersama ketinggian, energi kinetik turun, dan jumlahnya tetap 200 J`,
+  '2eipmpdefx0': R`Kereta $1\,\mathrm{kg}$ pada lintasan licin yang mulai dari ketinggian $20\,\mathrm{m}$ ($g = 10\,\mathrm{m/s^2}$): di setiap ketinggian $E_p + E_k = 200\,\mathrm{J}$.`,
+  '1kb9sohpl5a': R`berhenti mendadak`,
+  '1svtobijlaa': R`kantong udara`,
+  '1qtk928x28z': R`Grafik gaya–waktu untuk berhenti mendadak dan dengan kantong udara: luasnya sama, tetapi kantong udara menyebarkannya dalam waktu lebih lama dengan gaya puncak lebih kecil`,
+  '1qllx30kvk5': R`Luas di bawah grafik gaya–waktu adalah impuls. Kedua cara berhenti memiliki luas yang sama ($\Delta p$ sama), tetapi waktu yang lebih lama pada kantong udara membuat gaya puncaknya jauh lebih kecil.`,
+  'efa1cp0bs': R`Tumbukan tidak lenting sama sekali: momentum total $2 \cdot 6 = 12\,\mathrm{kg\,m/s}$ sebelum dan $3 \cdot 4 = 12\,\mathrm{kg\,m/s}$ sesudah.`,
+  '15bhwnfcay2': R`Momen gaya pada kunci pas: hanya bagian gaya yang tegak lurus gagang, $F\sin\theta$, yang memutarnya, jadi $\tau = rF\sin\theta$. Gagang yang lebih panjang ($r$ lebih besar) memberi momen gaya lebih besar untuk gaya yang sama.`,
+  'crv9uxmvjk': R`Kestabilan: ikuti garis tegak ke bawah dari titik berat. Jika masih di dalam alas, berat benda memutarnya kembali; jika di luar alas, benda terguling.`,
+  'kx9ijitw4b': R`Hukum kuadrat terbalik: gaya menjadi seperempatnya pada jarak dua kali dan sepersembilannya pada jarak tiga kali`,
+  'fe8kgrs58t': R`Hukum kuadrat terbalik: pada $2r$ gayanya $\frac14$ kali, pada $3r$ gayanya $\frac19$ kali.`,
+  '25rg5a7f1nn': R`Pada orbit lingkaran, gravitasi menjadi gaya sentripetal: selalu mengarah ke pusat planet, tegak lurus terhadap kecepatan.`,
+  'om7di9fsgk': R`pertambahan panjang x`,
+  'p2r96joqz7': R`gaya F`,
+  'wwwlbv9bye': R`batas elastis`,
+  '1gcv5ikmjyh': R`kemiringan = k`,
+  '15p14kg9tw3': R`Grafik gaya–pertambahan panjang: garis lurus bergradien k sampai batas elastis, dengan segitiga di bawahnya menunjukkan energi yang tersimpan`,
+  'gg7s16irfz': R`Hukum Hooke berlaku pada bagian yang lurus, dengan kemiringan $k$. Segitiga yang diarsir adalah energi elastis yang tersimpan pada pertambahan panjang itu.`,
+  '1xz73msgri5': R`Dua pegas berdampingan berbagi beban (lebih kaku); jika disusun atas-bawah, masing-masing menahan seluruh beban dan keduanya meregang (lebih lunak).`,
+  't5ss629kb1': R`Makin dalam, makin banyak air di atasnya, sehingga tekanan pada dinding bertambah teratur seiring kedalaman.`,
+  '1zivj7y7zn6': R`Tekanan yang sama bekerja di bawah kedua piston, jadi $F_2 = F_1 \frac{A_2}{A_1}$: piston dengan luas 50 kali mendorong ke atas 50 kali lebih kuat.`,
+  '17rn4m1abn8': R`Gaya apung sama dengan berat air yang dipindahkan batu. Jika lebih kecil daripada berat batu, batu tenggelam.`,
+  'x9ggwffgmf': R`Di bagian sempit fluida lebih cepat ($A_1v_1 = A_2v_2$) dan, menurut Bernoulli, tekanannya lebih rendah — kolom pengukur di sana lebih rendah.`,
+  '19qqnu5lx0p': R`Torricelli: pancaran air keluar dari lubang secepat batu yang dijatuhkan dari permukaan air sampai ke lubang.`,
+  '21gw8mst1kb': R`$x_{\text{pm}} = \frac{2 \cdot 0 + 1 \cdot 3}{2 + 1} = 1\,\mathrm{m}$: pusat massa lebih dekat ke massa yang lebih berat.`,
+  '1e8gphl9k89': R`Dua osilator baku: massa pada pegas bergerak antara $-A$ dan $+A$ di sekitar posisi setimbangnya; bandul sepanjang $L$ berayun di sekitar titik terendahnya.`,
+  '1rlpbigcm80': R`Energi pada gerak harmonik sederhana: energi kinetik terbesar di tengah, energi potensial terbesar di ujung, jumlahnya tetap`,
+  '1errsyiy00f': R`Pada GHS energi berpindah bolak-balik antara kinetik (terbesar di tengah) dan potensial (terbesar di $\pm A$); jumlahnya tetap.`,
+  '14zxgae7xap': R`Gelombang longitudinal, seperti bunyi: rapatan (C) dan renggangan (R). Satu panjang gelombang adalah jarak dari satu rapatan ke rapatan berikutnya.`,
+  '20vnkgrs28m': R`Pola gelombang stasioner dengan ⟦0⟧ perut`,
+  '2ac1qoo6br2': R`Gelombang stasioner pada tali yang kedua ujungnya terikat: panjang tali memuat 1, 2, 3 … setengah panjang gelombang, sehingga frekuensinya $f_1$, $2f_1$, $3f_1$ …`,
+  '2158lonl9pu': R`bisikan`,
+  '17jzxn17jv0': R`percakapan`,
+  '25w9q3qgw0m': R`lalu lintas padat`,
+  '3gnfjjok9r': R`konser rock`,
+  'b4ecs21hxk': R`nyeri`,
+  'rm8ggq9sft': R`Skala desibel dengan taraf bunyi yang umum, dari bisikan sampai ambang nyeri`,
+  'wl22qky3zx': R`Taraf bunyi yang umum (mengacu pada data CDC/NIOSH). Setiap 10 dB berarti intensitas 10 kali; paparan lama di atas sekitar 85 dB dapat merusak pendengaran.`,
+  '1ldr7endtdv': R`Sumber bergerak ke kanan: muka gelombang merapat di depannya (panjang gelombang lebih pendek, nada lebih tinggi) dan merenggang di belakangnya (nada lebih rendah).`,
+  '1q759ace67f': R`Dua titik tetap yang sama pada tiga skala. Kenaikan $1^\circ\mathrm{C}$ sama dengan $1\,\mathrm{K}$, tetapi sama dengan $1{,}8^\circ\mathrm{F}$.`,
+  '187b8bta69m': R`kalor yang diberikan`,
+  'gb8crbpgfx': R`mencair`,
+  '22x8wr2faka': R`mendidih`,
+  '268vrxnc179': R`uap`,
+  '22y3tht984': R`Kurva pemanasan air: suhu naik, tetap saat mencair, naik lagi, tetap saat mendidih, lalu naik lagi`,
+  '1r7w4kwil8g': R`Memanaskan es sampai menjadi uap (tidak berskala): bagian datar adalah perubahan wujud, ketika kalor ($Q = mL$) memutus ikatan alih-alih menaikkan suhu. Mendidih memerlukan sekitar 7 kali kalor untuk mencair.`,
+  '1yr3oa96uvg': R`Hukum Boyle: grafik tekanan terhadap volume berupa kurva`,
+  '1zn1zi97ufg': R`Boyle: $pV$ tetap`,
+  'il8fp1ikuv': R`Hukum Charles: grafik volume terhadap suhu Celsius berupa garis lurus yang jika diperpanjang mencapai nol pada minus 273 derajat`,
+  '26io1uf9snw': R`Charles: $V \propto T$`,
+  '1dgiqtkf198': R`Jika garis lurus Charles diperpanjang sampai volume nol, diperoleh $-273^\circ\mathrm{C}$: nol mutlak, titik awal skala kelvin.`,
+  '1i5r0lncobh': R`Diagram tekanan–volume untuk pemuaian pada tekanan tetap; usahanya adalah persegi panjang yang diarsir di bawah garis`,
+  '11ic05zy5dg': R`Pada diagram $p$–$V$, usaha yang dilakukan gas adalah luas di bawah lintasannya: di sini sebuah persegi panjang, $W = p\,\Delta V$.`,
+  'bz6oh7rivx': R`Aliran energi pada mesin kalor: $Q_H = W + Q_C$. Makin lebar panah usaha dibandingkan $Q_H$, makin efisien mesinnya.`,
+  '94485lih2i': R`Tiga cara perpindahan kalor: melalui zat padat (konduksi), terbawa fluida yang bergerak (konveksi), dan sebagai gelombang elektromagnetik (radiasi).`,
+  'tx5ulg2tpb': R`Garis medan keluar dari muatan positif dan berakhir di muatan negatif. Di antara dua keping sejajar medannya homogen.`,
+  '1lsf6xk4bxo': R`Kapasitor keping sejajar: muatan sama besar dan berlawanan pada kedua keping, serta medan homogen $E = V/d$ di antaranya.`,
+  '1f21xuuoj2a': R`kemiringan = C`,
+  '2bv04crxebx': R`Muatan terhadap tegangan untuk kapasitor: garis lurus bergradien C; segitiga di bawahnya adalah energi yang tersimpan`,
+  'reh6s5apzs': R`$Q$ sebanding dengan $V$ (kemiringan $C$). Luas di bawah garis adalah energi yang tersimpan, $E = \tfrac12 QV = \tfrac12 CV^2$.`,
+  '895m3t7bu5': R`Arus terhadap tegangan untuk resistor: garis lurus melalui titik asal`,
+  '1itdr9583qv': R`resistor (ohmik): garis lurus`,
+  '20ke3cxvu0x': R`Arus terhadap tegangan untuk lampu pijar: kurva yang makin landai saat filamen memanas`,
+  '1ov8l7irhex': R`lampu pijar: kurva melandai`,
+  'frhopaz42d': R`Untuk penghantar ohmik $I \propto V$. Filamen lampu memanas sehingga hambatannya naik dan grafiknya melengkung.`,
+  '2bzezmwe086': R`kemiringan = −r`,
+  '1s4mjhbf6l0': R`Tegangan jepit yang turun secara linear terhadap arus untuk baterai 12 volt dengan hambatan dalam 2 ohm`,
+  'abj5q7tfeo': R`Tegangan jepit $V = \varepsilon - Ir$ untuk $\varepsilon = 12\,\mathrm{V}$, $r = 2\,\Omega$: nilainya sama dengan GGL hanya jika tidak ada arus.`,
+  '23o2s0b5rb6': R`Kiri: garis medan melingkar di sekitar arus lurus (kaidah genggaman tangan kanan). Kanan: dalam medan homogen gaya magnet selalu tegak lurus kecepatan, sehingga muatan bergerak melingkar.`,
+  'eol51idnox': R`Saat bergeser, batang menyapu fluks magnet sehingga GGL $\varepsilon = BLv$ mengalirkan arus dalam rangkaian.`,
+  '1xzy4tatnny': R`Transformator step-up: lilitan sekunder dua kali lebih banyak menghasilkan tegangan dua kali (dan arus setengahnya).`,
+  'mrr4o094cy': R`rms 220 V`,
+  'rmzwb4xm6b': R`puncak 311 V`,
+  '1lt345ieyot': R`Tegangan listrik PLN di Indonesia: gelombang sinus 50 hertz dengan puncak 311 volt dan rms 220 volt`,
+  '1sc5gm2cch0': R`Listrik PLN: $V_{\text{rms}} = 220\,\mathrm{V}$ pada $50\,\mathrm{Hz}$, jadi puncaknya $220\sqrt2 \approx 311\,\mathrm{V}$ dan satu siklus berlangsung $20\,\mathrm{ms}$.`,
+  '1o53t724cus': R`Kurva resonansi: arus memuncak tajam pada frekuensi resonansi`,
+  'gx96nnc380': R`Arus pada rangkaian RLC memuncak pada frekuensi resonansi $f_0$, ketika $X_L = X_C$.`,
+  '2ddxseetjnq': R`Pada gelombang EM, medan listrik $E$ dan medan magnet $B$ berosilasi serempak, saling tegak lurus dan tegak lurus arah rambat.`,
+  'pnov4h3lro': R`Spektrum elektromagnetik pada skala panjang gelombang (setiap tanda adalah faktor 1 000). Cahaya tampak, 400–700 nm, hanyalah irisan yang sangat sempit (rentang mengikuti NASA).`,
+  'b45co40xot': R`Hukum pemantulan: $i = r$, keduanya diukur dari garis normal.`,
+  '1k6wexcbrek': R`Bayangan cermin datar berada di belakang cermin sejauh benda di depannya. Sinar pantul hanya <i>tampak</i> berasal dari bayangan itu, jadi bayangannya maya.`,
+  '2dv3z1h5qhb': R`Dari kaca ke udara: di bawah sudut kritis sinar keluar (membelok menjauhi normal); pada sudut kritis sinar menyusuri permukaan; di atasnya seluruh cahaya dipantulkan kembali — prinsip serat optik.`,
+  't7j2j7dvmd': R`mata normal`,
+  '1ius8ya7hlu': R`rabun jauh`,
+  '2gjafmkahgq': R`dikoreksi`,
+  '1woam9ursgl': R`Rabun jauh: mata memfokuskan sinar sejajar di depan retina. Lensa cekung menyebarkan sinar sedikit sehingga bertemu tepat di retina.`,
+  '1fsv4aspgim': R`Teropong bias: cahaya sejajar difokuskan oleh objektif berfokus panjang di F; okuler, satu jarak fokus di belakang F, membuatnya sejajar kembali dalam berkas yang lebih sempit. Sudut diperbesar sebesar $f_{ob}/f_{ok}$.`,
+  '2eyjuzp0b2z': R`Dua gelombang sefase menjumlah menjadi gelombang dengan amplitudo dua kali`,
+  '191mz9cv4rj': R`sefase: konstruktif`,
+  'q1v89wgp8s': R`Dua gelombang berlawanan fase saling meniadakan`,
+  '1347sq8qnrl': R`beda setengah gelombang: destruktif`,
+  'xo3habxklk': R`Superposisi: jika serempak, gelombang menjumlah menjadi dua kali amplitudonya; jika berbeda setengah panjang gelombang, keduanya saling meniadakan.`,
+  '29w7ka4ni5h': R`Pola difraksi celah tunggal: maksimum pusat terang yang dua kali lebih lebar daripada maksimum samping yang lebih redup`,
+  'diicg9pb43': R`Pola celah tunggal: pita terang pusat dua kali lebih lebar daripada pita lainnya, dengan pita gelap pada $\sin\theta = m\lambda/a$.`,
+  'phmfy2qxnx': R`Faktor Lorentz tetap mendekati 1 pada kelajuan sehari-hari dan naik tajam saat v mendekati c`,
+  '27xg123lid0': R`Faktor Lorentz hampir tepat 1 sampai sekitar $0{,}3c$, lalu melonjak menuju tak hingga saat $v \to c$.`,
+  '1ktts6gnfee': R`Jam cahaya: bagi pengamat yang melihatnya bergerak, cahaya menempuh lintasan miring yang lebih panjang dengan kelajuan $c$ yang sama, sehingga setiap detak lebih lama — dilatasi waktu.`,
+  'j6n3hgrf4g': R`Satu foton, satu elektron: energi foton $hf$ melepaskan elektron (fungsi kerja $\phi$) dan sisanya menjadi energi kinetiknya.`,
+  'xah1yswyly': R`kemiringan = h`,
+  '284rcislt4n': R`Energi kinetik maksimum fotoelektron terhadap frekuensi: nol di bawah frekuensi ambang, lalu garis lurus bergradien h`,
+  'ewxi6xl1kd': R`$E_{k,\max} = hf - \phi$: tidak ada elektron di bawah $f_0$; di atasnya berupa garis lurus bergradien $h$ yang perpanjangannya memotong sumbu di $-\phi$.`,
+  '1bqebxp4r4l': R`Lempeng emas Rutherford: hampir semua partikel alfa menembus lurus; pembelokan besar yang jarang terjadi mengungkap inti yang sangat kecil, rapat, dan bermuatan positif.`,
+  'z0xf406aj3': R`Garis-garis tampak (deret Balmer) hidrogen, dari elektron yang turun ke $n = 2$ (panjang gelombang dari basis data spektrum atom NIST).`,
+  '2g3lrc2exh4': R`Daya tembus: alfa dihentikan kertas, beta oleh beberapa mm aluminium; gamma hanya dilemahkan, bahkan oleh timbal setebal beberapa cm.`,
+  '1gi9hj4yelp': R`nomor massa A`,
+  '1y4wbl85eak': R`MeV per nukleon`,
+  'f2cepanktf': R`Energi ikat per nukleon terhadap nomor massa, memuncak pada besi-56`,
+  'coy8n851gc': R`Energi ikat per nukleon (nilai perkiraan): memuncak pada besi-56. Fusi inti ringan maupun fisi inti berat sama-sama bergerak menuju puncak dan melepaskan energi.`,
+  'uul15nagte': R`Reaksi berantai: setiap fisi melepaskan 2–3 neutron yang dapat membelah inti uranium lain. Di reaktor, batang kendali menyerap sebagian neutron agar reaksinya stabil.`,
+  '1jyu5url1hk': R`kalor 80%`,
+  'bxcd30joq9': R`cahaya matahari pada panel: 100%`,
+  'q9u1t1nx4j': R`listrik 20% · kalor 80%`,
+  '26dxkjh9kj4': R`Batang yang menunjukkan panel surya mengubah 20 persen cahaya matahari menjadi listrik dan 80 persen menjadi kalor`,
+  '24yed8o3w0m': R`Panel surya pada umumnya: sekitar 20% cahaya matahari menjadi listrik; sisanya memanaskan panel. Efisiensi = keluaran berguna ÷ masukan.`,
+  '29dvo97u8ya': R`Daya angin melalui bilah 40 meter yang naik sebanding dengan pangkat tiga kelajuan angin`,
+  '110bhey5y6i': R`Daya angin melalui bilah sepanjang $40\,\mathrm{m}$: menggandakan kelajuan angin dari $5$ ke $10\,\mathrm{m/s}$ memberi 8 kali daya (sekitar $0{,}38$ menjadi $3{,}0\,\mathrm{MW}$, sebelum efisiensi).`,
+  '15etlf6v0qi': R`Matahari, 5800 K`,
+  '80apnwafqh': R`Bumi, 288 K`,
+  '1fqca2iy9fw': R`Kurva benda hitam Matahari yang memuncak di sekitar 0,5 mikrometer dan Bumi di sekitar 10 mikrometer, masing-masing diskalakan sama tinggi`,
+  '22r8xx48wd8': R`Hukum Wien: Matahari (≈ 5800 K) terutama memancarkan cahaya tampak, Bumi (≈ 288 K) terutama inframerah di sekitar $10\,\mu\mathrm{m}$. (Setiap kurva diskalakan sama tinggi.)`,
+  '1pi5xfz464o': R`Efek rumah kaca: cahaya matahari menembus, permukaan bumi yang hangat memancarkan inframerah, dan gas rumah kaca menyerap sebagiannya serta memancarkan sebagian kembali ke bawah.`,
+  '1dnrupqfei6': R`tahun`,
+  '1hhyr3tn4t4': R`Rata-rata tahunan karbon dioksida di Mauna Loa naik dari sekitar 317 ppm pada 1960 menjadi 421 ppm pada 2023`,
+  '1wb1iaofqfv': R`Karbon dioksida di udara di Mauna Loa, Hawaii (rata-rata tahunan, NOAA Global Monitoring Laboratory): dari sekitar 317 ppm pada 1960 menjadi 421 ppm pada 2023.`,
+  'slws1v3spw': R`Pita energi: elektron hanya dapat menghantarkan listrik di pita atas (pita konduksi). Semikonduktor memiliki celah kecil yang dapat dilompati berkat panas, cahaya, atau doping.`,
+  '1pc4mse5bgc': R`arah balik: hampir tanpa arus`,
+  '1b0l37kf6bd': R`arah maju`,
+  '1vgyp48334k': R`Grafik arus–tegangan dioda silikon: hampir tanpa arus pada arah balik, dan naik tajam di atas sekitar 0,7 volt pada arah maju`,
+  '6m2cf40cen': R`Dioda silikon: pada bias balik hampir tidak ada arus; pada bias maju arusnya naik tajam begitu $V$ melewati sekitar $0{,}7\,\mathrm{V}$.`,
+});
+
+/* id — lessons with figures */
+addT('id', {
+  '16factbvpc': R`
+<p><b>Besaran fisika</b> adalah segala sesuatu yang dapat diukur, dan setiap hasil pengukuran punya dua bagian: <b>angka</b> dan <b>satuan</b>. "Meja itu 1,5" tidak ada artinya; "panjang meja itu $1{,}5\,\mathrm{m}$" barulah hasil pengukuran.</p>
+<h3>Satuan pokok SI</h3>
+<p>Para ilmuwan di seluruh dunia memakai Sistem Satuan Internasional (SI). Sistem ini berangkat dari tujuh besaran pokok:</p>
+⟦0⟧
+<p>Semua satuan lain adalah <b>satuan turunan</b> yang disusun dari ketujuh satuan itu. Kelajuan adalah jarak dibagi waktu, jadi satuannya $\mathrm{m/s}$. Gaya adalah massa kali percepatan, jadi $1\,\mathrm{N} = 1\,\mathrm{kg\,m/s^2}$. Energi adalah gaya kali jarak, jadi $1\,\mathrm{J} = 1\,\mathrm{N\,m} = 1\,\mathrm{kg\,m^2/s^2}$.</p>
+<h3>Awalan</h3>
+<p>Awalan memperbesar atau memperkecil satuan dengan perpangkatan sepuluh:</p>
+⟦1⟧
+⟦2⟧
+⟦3⟧
+<h3>Satuan kuadrat dan kubik</h3>
+<p>Satu meter persegi adalah persegi dengan sisi $100\,\mathrm{cm}$, jadi $1\,\mathrm{m^2} = 100 \times 100 = 10\,000\,\mathrm{cm^2}$. Untuk volume, faktornya dipangkatkan tiga: $1\,\mathrm{m^3} = 1\,000\,000\,\mathrm{cm^3}$. Selain itu, $1\,\mathrm{L} = 1000\,\mathrm{cm^3}$ dan $1\,\mathrm{m^3} = 1000\,\mathrm{L}$.</p>
+⟦4⟧
+<h3>Kelajuan: km/jam dan m/s</h3>
+⟦5⟧
+<p>Jadi, bagi dengan 3,6 untuk mengubah km/jam menjadi m/s, dan kalikan dengan 3,6 untuk sebaliknya: $72\,\mathrm{km/jam} = 20\,\mathrm{m/s}$.</p>
+<h3>Notasi ilmiah</h3>
+<p>Bilangan yang sangat besar atau sangat kecil ditulis sebagai $a \times 10^n$ dengan $1 \le a \lt 10$. Kelajuan cahaya adalah $3{,}0 \times 10^{8}\,\mathrm{m/s}$; muatan elektron adalah $1{,}6 \times 10^{-19}\,\mathrm{C}$. Di kalkulator atau di situs ini, kamu bisa mengetiknya sebagai <code>3e8</code> dan <code>1,6e-19</code>.</p>
+⟦6⟧`,
+  '180vil82d8b': R`
 <p>Tidak ada pengukuran yang benar-benar tepat. Hasil pengukuran yang baik menyatakan seberapa besar sesuatu <i>dan</i> seberapa teliti kita mengetahuinya.</p>
 <h3>Alat ukur dan ketelitiannya</h3>
 ⟦0⟧
@@ -2360,9 +2137,623 @@ addT('id', {
 <h3>Ketidakpastian</h3>
 <p>Satu kali pengukuran biasanya dilaporkan dengan ketidakpastian sekitar setengah skala terkecil, misalnya $12{,}5 \pm 0{,}05\,\mathrm{cm}$ dengan mistar milimeter. Untuk beberapa kali pengukuran besaran yang sama, pakai <b>rata-rata</b> sebagai nilai terbaik, dan sebaran hasilnya menunjukkan ketidakpastian.</p>
 ⟦2⟧
+⟦3⟧
 <h3>Berhitung dengan hasil pengukuran</h3>
 <ul><li><b>Perkalian atau pembagian:</b> hasilnya ditulis dengan <i>angka penting paling sedikit</i> dari nilai-nilai yang dipakai. $12{,}5\,\mathrm{cm} \times 3{,}2\,\mathrm{cm} = 40{,}0 \to 40\,\mathrm{cm^2}$ (2 angka penting).</li><li><b>Penjumlahan atau pengurangan:</b> hasilnya ditulis dengan <i>jumlah angka di belakang koma paling sedikit</i>. $12{,}52 + 3{,}1 = 15{,}62 \to 15{,}6$.</li></ul>
+⟦4⟧`,
+  '18lxdp8ezoy': R`
+<p>Sebagian besaran sudah lengkap dijelaskan dengan besarnya saja: massa $5\,\mathrm{kg}$, suhu $30^\circ\mathrm{C}$. Besaran seperti ini disebut <b>skalar</b>. Besaran lain juga memerlukan arah: perpindahan $5\,\mathrm{m}$ <i>ke utara</i>, gaya $20\,\mathrm{N}$ <i>ke bawah</i>. Besaran seperti ini disebut <b>vektor</b>.</p>
+⟦0⟧
+<p>Vektor digambar sebagai anak panah. Panjangnya menunjukkan <b>besar</b> vektor dan ujung panahnya menunjukkan <b>arah</b>. Di buku, vektor ditulis tebal, $\mathbf{F}$, atau dengan tanda panah, $\vec{F}$; besarnya ditulis $F$ atau $|\vec{F}|$.</p>
+<h3>Komponen</h3>
+<p>Vektor dengan besar $A$ yang membentuk sudut $\theta$ di atas sumbu $x$ positif dapat diuraikan menjadi dua bagian yang saling tegak lurus:</p>
+⟦1⟧
+⟦2⟧
+<h3>Menjumlahkan vektor</h3>
+⟦3⟧
+<p>Untuk menjumlahkan vektor, sambungkan ujung vektor pertama dengan pangkal vektor berikutnya; <b>resultan</b> ditarik dari pangkal pertama ke ujung terakhir.</p>
+<ul><li>Searah: jumlahkan besarnya. $3\,\mathrm{N} + 4\,\mathrm{N}$ ke kanan menghasilkan $7\,\mathrm{N}$ ke kanan.</li><li>Berlawanan arah: kurangkan, dan resultannya searah dengan vektor yang lebih besar.</li><li>Saling tegak lurus: pakai teorema Pythagoras. $3\,\mathrm{N}$ ke timur dan $4\,\mathrm{N}$ ke utara menghasilkan $\sqrt{3^2 + 4^2} = 5\,\mathrm{N}$.</li></ul>
+⟦4⟧
+⟦5⟧
+⟦6⟧`,
+  '1axcvjq0k49': R`
+<p>Untuk menggambarkan gerak pada satu garis, kita memilih titik acuan dan arah positif. Dengan begitu setiap posisi dapat dinyatakan dengan sebuah bilangan, dan setiap perubahan posisi disebut <b>perpindahan</b>.</p>
+<h3>Jarak dan perpindahan, kelajuan dan kecepatan</h3>
+<ul><li><b>Jarak</b> adalah panjang seluruh lintasan (skalar). <b>Perpindahan</b> adalah perubahan posisi beserta arahnya (vektor). Berjalan $5\,\mathrm{m}$ maju lalu $5\,\mathrm{m}$ mundur: jaraknya $10\,\mathrm{m}$, perpindahannya $0$.</li>
+<li><b>Kelajuan rata-rata</b> $=\dfrac{\text{jarak}}{\text{waktu}}$ dan <b>kecepatan rata-rata</b> $=\dfrac{\text{perpindahan}}{\text{waktu}}$.</li></ul>
+<h3>Gerak lurus beraturan (GLB)</h3>
+<p>Jika kecepatannya tetap, benda menempuh jarak yang sama dalam selang waktu yang sama:</p>
+⟦0⟧
+⟦1⟧
+<h3>Percepatan</h3>
+<p><b>Percepatan</b> adalah laju perubahan kecepatan. Satuannya $\mathrm{m/s}$ per sekon, ditulis $\mathrm{m/s^2}$:</p>
+⟦2⟧
+<p>Percepatan negatif (saat kecepatannya positif) berarti benda melambat; ini sering disebut <i>perlambatan</i>.</p>
+⟦3⟧
+⟦4⟧
+<h3>Grafik gerak</h3>
+⟦5⟧
+⟦6⟧
+<ul><li>Pada grafik <b>posisi–waktu</b>, kemiringan grafik adalah kecepatan.</li><li>Pada grafik <b>kecepatan–waktu</b>, kemiringan grafik adalah percepatan dan <b>luas di bawah grafik</b> adalah perpindahan.</li></ul>
+<p>Pada grafik di atas, percepatan selama $4\,\mathrm{s}$ pertama adalah $\frac{12 - 4}{4} = 2\,\mathrm{m/s^2}$, dan perpindahan selama $8\,\mathrm{s}$ adalah luas trapesium $\frac{4 + 12}{2} \cdot 4 = 32\,\mathrm{m}$ ditambah luas persegi panjang $12 \cdot 4 = 48\,\mathrm{m}$: totalnya $80\,\mathrm{m}$.</p>
+⟦7⟧`,
+  '114ntvksk6u': R`
+<p>Tanpa hambatan udara, setiap benda di dekat permukaan Bumi jatuh dengan percepatan yang sama, berapa pun massanya. Inilah percepatan gravitasi, $g \approx 9{,}8\,\mathrm{m/s^2}$; banyak soal membulatkannya menjadi $10\,\mathrm{m/s^2}$. Setiap soal di situs ini menyebutkan nilai yang dipakai.</p>
+<p>Gerak vertikal hanyalah gerak dengan percepatan tetap, jadi persamaan pada topik sebelumnya tetap berlaku dengan $a = g$ yang arahnya ke bawah.</p>
+<h3>Dijatuhkan dari keadaan diam (jatuh bebas)</h3>
+⟦0⟧
+⟦1⟧
+⟦2⟧
+<h3>Dilempar lurus ke atas</h3>
+<p>Ambil arah ke atas sebagai positif; maka $a = -g$. Bola melambat, berhenti sesaat di titik tertinggi, lalu jatuh kembali.</p>
+⟦3⟧
+⟦4⟧
+⟦5⟧`,
+  '69fk6a7gkb': R`
+<p><b>Proyektil</b> adalah benda yang setelah dilepaskan hanya dipengaruhi gravitasi: bola yang ditendang, batu yang dilempar dari tebing, air yang menyembur dari selang. Lintasannya berbentuk parabola.</p>
+⟦0⟧
+<h3>Dilempar mendatar</h3>
+<p>Sebuah bola menggelinding dari meja setinggi $h$ dengan kelajuan $v$. Secara vertikal bola mulai dari diam, jadi waktu jatuhnya hanya ditentukan oleh ketinggian: $t = \sqrt{2h/g}$. Secara horizontal bola bergerak dengan kelajuan tetap, jadi bola jatuh sejauh $x = v t$ dari meja.</p>
+<h3>Dilempar dengan sudut elevasi</h3>
+<p>Lemparan dengan kelajuan $v_0$ dan sudut $\theta$ memiliki komponen $v_{0x} = v_0\cos\theta$ dan $v_{0y} = v_0\sin\theta$. Di tanah datar:</p>
+⟦1⟧
+⟦2⟧
+⟦3⟧
+<p>Jarak terjauh dicapai pada $\theta = 45^\circ$ (saat $\sin 2\theta = 1$). Dua sudut yang jumlahnya $90^\circ$, misalnya $30^\circ$ dan $60^\circ$, menghasilkan jarak yang sama.</p>
+⟦4⟧`,
+  'xtt4ktxge5': R`
+<p>Benda yang bergerak melingkar dengan kelajuan tetap tetap mengalami <b>percepatan</b>, karena arah kecepatannya terus berubah.</p>
+⟦0⟧
+<h3>Menggambarkan gerak melingkar</h3>
+<ul><li><b>Periode</b> $T$: waktu untuk satu putaran. <b>Frekuensi</b> $f = 1/T$, dalam hertz ($\mathrm{Hz}$), yaitu putaran per sekon.</li><li><b>Kecepatan sudut</b> $\omega = \dfrac{2\pi}{T} = 2\pi f$, dalam radian per sekon.</li><li><b>Kelajuan linear</b> sepanjang lingkaran: $v = \dfrac{2\pi r}{T} = \omega r$.</li></ul>
+⟦1⟧
+⟦2⟧
+<h3>Lingkaran vertikal</h3>
+<p>Di puncak lintasan melingkar vertikal, gravitasi dapat menyediakan seluruh gaya sentripetal. Kelajuan terkecil agar bola atau kereta roller coaster tetap berada di lintasan di titik itu adalah $v_{\min} = \sqrt{g r}$.</p>
+⟦3⟧
+⟦4⟧`,
+  'nbh8i211ge': R`
+<p><b>Gaya</b> adalah dorongan atau tarikan, diukur dalam newton ($\mathrm{N}$). Tiga hukum Newton menghubungkan gaya dengan gerak.</p>
+<h3>Hukum I: kelembaman (inersia)</h3>
+<p>Benda tetap diam, atau tetap bergerak dengan kecepatan tetap, selama tidak ada gaya resultan yang bekerja padanya. Penumpang terdorong ke depan saat bus mengerem karena tubuhnya cenderung tetap bergerak.</p>
+<h3>Hukum II: $F = ma$</h3>
+⟦0⟧
+<p><b>Gaya resultan</b> $\Sigma F$ adalah jumlah vektor semua gaya yang bekerja pada benda. Gaya resultan yang lebih besar menghasilkan percepatan yang lebih besar; massa yang lebih besar menghasilkan percepatan yang lebih kecil. $1\,\mathrm{N}$ adalah gaya yang memberi benda $1\,\mathrm{kg}$ percepatan $1\,\mathrm{m/s^2}$.</p>
+<h3>Hukum III: aksi dan reaksi</h3>
+<p>Jika benda A mendorong benda B, maka B mendorong balik A dengan gaya yang sama besar dan berlawanan arah. Kedua gaya itu bekerja pada benda yang <b>berbeda</b>, jadi keduanya tidak pernah saling meniadakan.</p>
+⟦1⟧
+<h3>Gaya-gaya yang sering muncul</h3>
+<ul><li><b>Berat</b> $W = mg$, menarik ke arah pusat Bumi.</li><li><b>Gaya normal</b> $N$, dari permukaan, tegak lurus terhadap permukaan itu.</li><li><b>Tegangan tali</b> $T$, sepanjang tali.</li><li><b>Gaya gesek</b> $f$, sepanjang permukaan, melawan gerak (topik berikutnya).</li></ul>
+⟦2⟧
+⟦3⟧
+⟦4⟧`,
+  '1e0jiup69pa': R`
+<p><b>Gaya gesek</b> adalah gaya antara dua permukaan yang melawan gerak meluncur. Arahnya sepanjang permukaan, melawan gerak (atau melawan gerak yang akan terjadi seandainya gaya gesek tidak ada).</p>
+<h3>Gesekan statis dan kinetis</h3>
+<ul><li><b>Gaya gesek statis</b> menahan benda tetap diam. Besarnya ikut naik ketika dorongan diperbesar, sampai batas maksimum: $f_{s,\max} = \mu_s N$.</li><li><b>Gaya gesek kinetis</b> bekerja setelah benda meluncur: $f_k = \mu_k N$, kira-kira tetap.</li></ul>
+<p>$\mu_s$ dan $\mu_k$ adalah <b>koefisien gesek</b>. Keduanya tidak bersatuan, dan biasanya $\mu_k \lt \mu_s$. Itulah sebabnya mendorong kotak dari diam lebih sulit daripada menjaganya tetap bergerak. Di lantai datar tanpa gaya vertikal lain, $N = mg$.</p>
+⟦0⟧
+⟦1⟧
+<h3>Bidang miring</h3>
+⟦2⟧
+⟦3⟧
+<p>Balok yang diam tetap diam selama $mg\sin\theta \le \mu_s mg\cos\theta$, yaitu selama $\tan\theta \le \mu_s$.</p>
+⟦4⟧`,
+  '1l6z9pd3jhf': R`
+<p><b>Energi</b> adalah kemampuan untuk melakukan usaha, dan <b>usaha</b> adalah energi yang dipindahkan oleh gaya. Keduanya diukur dalam joule ($\mathrm{J}$).</p>
+<h3>Usaha</h3>
+⟦0⟧
+<p>Di sini $F$ adalah gaya, $s$ perpindahan, dan $\theta$ sudut di antara keduanya. Hanya bagian gaya yang searah gerak yang melakukan usaha. Gaya yang tegak lurus gerak (seperti gaya normal di lantai datar) tidak melakukan usaha; gaya yang melawan gerak (seperti gaya gesek) melakukan usaha negatif.</p>
+⟦1⟧
+<h3>Energi kinetik dan energi potensial</h3>
+⟦2⟧
+<p>Energi kinetik dimiliki benda karena geraknya; energi potensial gravitasi karena ketinggiannya di atas bidang acuan yang dipilih.</p>
+⟦3⟧
+⟦4⟧
+⟦5⟧
+<h3>Daya dan efisiensi</h3>
+⟦6⟧
+<p>Daya diukur dalam watt: $1\,\mathrm{W} = 1\,\mathrm{J/s}$.</p>
+⟦7⟧`,
+  '1mshvchkque': R`
+<p><b>Momentum</b> sebuah benda adalah massa dikali kecepatannya. Momentum adalah vektor yang searah dengan kecepatan, dan satuannya $\mathrm{kg\,m/s}$.</p>
+⟦0⟧
+<h3>Impuls</h3>
+<p>Gaya yang bekerja selama selang waktu tertentu mengubah momentum. Hasil kali $F\,\Delta t$ disebut <b>impuls</b>:</p>
+⟦1⟧
+<p>Inilah sebabnya kantong udara (airbag) dan zona remuk pada mobil menyelamatkan nyawa: perubahan momentum yang sama disebar ke waktu yang lebih lama, sehingga gayanya lebih kecil.</p>
+⟦2⟧
+⟦3⟧
+<h3>Jenis tumbukan</h3>
+<ul><li><b>Tidak lenting sama sekali:</b> benda-benda menempel dan bergerak bersama dengan satu kecepatan $v' = \dfrac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$. Sebagian energi kinetik hilang (menjadi panas, bunyi, perubahan bentuk).</li><li><b>Lenting sempurna:</b> energi kinetik juga kekal. Jika dua benda bermassa sama bertumbukan lenting sempurna secara sentral, keduanya bertukar kecepatan.</li><li>Kebanyakan tumbukan nyata berada di antara keduanya: momentum kekal, sebagian energi kinetik hilang.</li></ul>
+⟦4⟧
+⟦5⟧
+<h3>Gaya dorong balik (rekoil)</h3>
+<p>Sebelum senapan ditembakkan, momentum totalnya nol, jadi setelahnya momentum peluru ke depan diimbangi momentum senapan ke belakang: $m_p v_p = m_s v_s$.</p>
+⟦6⟧`,
+  '1fr1zts0bon': R`
+<p>Gaya membuat benda bertambah cepat pada gerak lurus; <b>momen gaya (torsi)</b> membuat benda berputar makin cepat atau makin lambat.</p>
+<h3>Momen gaya</h3>
+⟦0⟧
+<p>$r$ adalah jarak dari sumbu putar ke titik kerja gaya dan $\theta$ adalah sudut antara $r$ dan $F$. Satuannya $\mathrm{N\,m}$. Gaya yang mengarah lurus ke sumbu ($\theta = 0$) tidak menghasilkan momen gaya; itulah sebabnya gagang pintu dipasang jauh dari engsel.</p>
+⟦1⟧
+<h3>Momen inersia</h3>
+<p>Padanan massa pada gerak rotasi adalah <b>momen inersia</b> $I = \sum m r^2$. Massa yang jauh dari sumbu jauh lebih berpengaruh daripada massa yang dekat dengan sumbu.</p>
+⟦2⟧
+⟦3⟧
+<h3>Menggelinding</h3>
+<p>Benda yang menggelinding memiliki kedua jenis energi kinetik: $E_k = \tfrac12 m v^2 + \tfrac12 I\omega^2$ dengan $v = \omega r$. Menggelinding dari diam menuruni lereng setinggi $h$, bola pejal mencapai $v = \sqrt{\tfrac{10}{7} g h}$ dan silinder pejal $v = \sqrt{\tfrac43 g h}$: keduanya lebih lambat daripada balok yang meluncur tanpa gesekan ($\sqrt{2gh}$), karena sebagian energinya dipakai untuk berputar.</p>
+⟦4⟧`,
+  '1f04o0sco4j': R`
+<p>Benda tegar berada dalam <b>kesetimbangan</b> jika tidak bertambah cepat dan tidak mulai berputar. Untuk itu diperlukan dua syarat sekaligus.</p>
+⟦0⟧
+<p><b>Momen gaya</b> terhadap suatu titik adalah gaya dikali jarak tegak lurusnya dari titik itu. Memilih titik tempat gaya yang belum diketahui bekerja akan menghilangkan gaya itu dari persamaan momen, sehingga soal menjadi jauh lebih singkat.</p>
+<h3>Tuas dan jungkat-jungkit</h3>
+⟦1⟧
+<p>Jungkat-jungkit seimbang jika $F_1 d_1 = F_2 d_2$. Tuas memungkinkan kuasa kecil mengangkat beban besar jika kuasa berada jauh lebih jauh dari titik tumpu daripada beban.</p>
+⟦2⟧
+<h3>Titik berat dan kestabilan</h3>
+<p>Berat suatu benda bekerja seolah-olah pada satu titik, yaitu <b>titik berat</b>; untuk batang homogen titik itu berada di tengah. Benda yang berdiri di atas alasnya akan terguling jika garis vertikal melalui titik beratnya jatuh di luar alas. Titik berat yang rendah dan alas yang lebar membuat benda lebih stabil.</p>
+⟦3⟧
+⟦4⟧`,
+  'gi70ufheum': R`
+<p>Setiap massa menarik setiap massa lainnya. Hukum gravitasi Newton menyatakan besar tarikan antara dua massa titik (atau bola) yang pusatnya berjarak $r$:</p>
+⟦0⟧
+<p>Ini adalah <b>hukum kuadrat terbalik</b>: menggandakan jarak membuat gayanya empat kali lebih kecil.</p>
+⟦1⟧
+<h3>Kuat medan gravitasi $g$</h3>
+<p>Di permukaan planet bermassa $M$ dan berjari-jari $R$, $g = \dfrac{GM}{R^2}$. Untuk Bumi ($M = 6{,}0 \times 10^{24}\,\mathrm{kg}$, $R = 6{,}4 \times 10^{6}\,\mathrm{m}$) hasilnya sekitar $9{,}8\,\mathrm{m/s^2}$. Pada ketinggian $h$ di atas permukaan, $g_h = g \left(\dfrac{R}{R + h}\right)^2$.</p>
+⟦2⟧
+⟦3⟧
+<h3>Kecepatan lepas</h3>
+<p>Kelajuan yang diperlukan untuk meninggalkan permukaan planet untuk selamanya (tanpa hambatan udara) adalah $v_{\text{lepas}} = \sqrt{\dfrac{2GM}{R}}$, sekitar $11{,}2\,\mathrm{km/s}$ untuk Bumi.</p>
+⟦4⟧`,
+  'qkqjs1tc1y': R`
+<p>Bahan yang <b>elastis</b> kembali ke bentuk semula ketika gayanya dihilangkan. Pegas, karet gelang, dan kawat baja (untuk regangan kecil) semuanya bersifat demikian.</p>
+<h3>Hukum Hooke</h3>
+⟦0⟧
+<p>Pertambahan panjang $x$ sebanding dengan gaya $F$, sampai <b>batas elastis</b>. Konstanta pegas $k$ (dalam $\mathrm{N/m}$) menyatakan kekakuan: pegas yang kaku memiliki $k$ besar.</p>
+⟦1⟧
+<h3>Susunan pegas</h3>
+<ul><li><b>Paralel</b> (berdampingan, berbagi beban): $k = k_1 + k_2$. Lebih kaku.</li><li><b>Seri</b> (disambung memanjang): $\dfrac{1}{k} = \dfrac{1}{k_1} + \dfrac{1}{k_2}$. Lebih lentur.</li></ul>
+⟦2⟧
+<h3>Tegangan, regangan, dan modulus Young</h3>
+⟦3⟧
+<p>Tegangan $\sigma$ adalah gaya per luas (dalam $\mathrm{Pa}$); regangan $\varepsilon$ adalah perubahan panjang relatif (tanpa satuan). <b>Modulus Young</b> $E$ adalah sifat bahan, bukan sifat kawat tertentu: baja sekitar $2 \times 10^{11}\,\mathrm{Pa}$.</p>
+⟦4⟧
+⟦5⟧`,
+  '1r2jwuprm2x': R`
+<h3>Massa jenis dan tekanan</h3>
+⟦0⟧
+<p>Massa jenis diukur dalam $\mathrm{kg/m^3}$ (air: $1000\,\mathrm{kg/m^3}$) dan tekanan dalam pascal, $1\,\mathrm{Pa} = 1\,\mathrm{N/m^2}$. Gaya yang sama pada luas yang lebih kecil menghasilkan tekanan yang lebih besar; itulah sebabnya pisau dibuat tajam dan sepatu salju dibuat lebar.</p>
+<h3>Tekanan hidrostatis</h3>
+⟦1⟧
+<p>Tekanan pada kedalaman $h$ adalah tekanan di permukaan $p_0$ (tekanan atmosfer, sekitar $1{,}0 \times 10^{5}\,\mathrm{Pa}$) ditambah berat zat cair di atas setiap meter persegi, $\rho g h$. Tekanan ini hanya bergantung pada kedalaman, bukan pada bentuk wadah, dan bekerja sama besar ke segala arah.</p>
+⟦2⟧
+<h3>Hukum Pascal dan hidraulik</h3>
+<p>Tekanan yang diberikan pada zat cair dalam ruang tertutup diteruskan sama besar ke seluruh bagiannya. Pada pompa hidraulik atau dongkrak mobil, tekanan di bawah kedua pengisap sama, jadi</p>
+⟦3⟧
+<p>Gaya kecil pada pengisap kecil dapat mengangkat beban besar pada pengisap besar.</p>
+⟦4⟧
+⟦5⟧
+⟦6⟧
+⟦7⟧
+⟦8⟧`,
+  '103bjffo4oq': R`
+<p>Untuk fluida ideal (tak termampatkan, tanpa gesekan, aliran tunak), dua hukum sederhana menggambarkan geraknya.</p>
+<h3>Debit dan persamaan kontinuitas</h3>
+⟦0⟧
+<p>Debit $Q$ (dalam $\mathrm{m^3/s}$) sama di sepanjang pipa, karena fluida tidak dapat menumpuk di mana pun. Di bagian pipa yang menyempit, fluida mengalir lebih cepat. Itulah sebabnya air menyemprot lebih kencang ketika ujung selang ditutup sebagian dengan ibu jari.</p>
+⟦1⟧
+⟦2⟧
+<h3>Hukum Torricelli</h3>
+<p>Air yang keluar dari lubang pada kedalaman $h$ di bawah permukaan tangki terbuka memiliki kelajuan yang sama dengan benda yang jatuh bebas dari ketinggian itu:</p>
+⟦3⟧
+⟦4⟧
+<h3>Penerapan</h3>
+<ul><li>Sayap pesawat membuat udara mengalir lebih cepat di permukaan atasnya, sehingga tekanan di atas lebih kecil daripada di bawah: timbul gaya angkat.</li><li>Venturimeter mengukur kelajuan aliran dari penurunan tekanan di bagian yang sempit.</li><li>Dua lembar kertas yang didekatkan akan saling mendekat ketika kamu meniup di antara keduanya.</li></ul>
+⟦5⟧`,
+  '2566v8xyrw9': R`
+<h3>Pusat massa</h3>
+<p>Untuk sekumpulan massa titik, <b>pusat massa</b> adalah posisi rata-rata yang diberi bobot massa:</p>
+⟦0⟧
+<p>Pusat massa suatu sistem bergerak seolah-olah seluruh massa terkumpul di sana dan semua gaya luar bekerja padanya: $\Sigma F_{\text{luar}} = M a_{\text{pm}}$. Ketika sebuah peluru meledak di udara, pecahan-pecahannya berhamburan, tetapi pusat massanya tetap mengikuti parabola semula.</p>
+⟦1⟧
+<h3>Momentum sudut</h3>
+⟦2⟧
+<p>Momentum sudut adalah padanan momentum pada gerak rotasi. Momen gaya resultan mengubahnya: $\tau = \dfrac{\Delta L}{\Delta t}$.</p>
+⟦3⟧
+⟦4⟧
+⟦5⟧`,
+  '20ax2rsqkev': R`
+<p>Sebuah benda bergerak <b>harmonik sederhana</b> (GHS) jika gaya yang menariknya kembali ke posisi setimbang sebanding dengan simpangannya: $F = -kx$. Beban pada pegas dan bandul yang berayun dengan sudut kecil adalah contoh klasiknya.</p>
+⟦0⟧
+<h3>Menggambarkan getaran</h3>
+<ul><li><b>Amplitudo</b> $A$: simpangan terbesar dari posisi setimbang.</li><li><b>Periode</b> $T$: waktu untuk satu getaran penuh; <b>frekuensi</b> $f = 1/T$; <b>frekuensi sudut</b> $\omega = 2\pi f$.</li><li>Simpangannya mengikuti kurva sinus atau kosinus: $x = A\cos(\omega t)$.</li></ul>
+⟦1⟧
+⟦2⟧
+<h3>Kecepatan, percepatan, dan energi</h3>
+<ul><li>Kelajuan terbesar di titik setimbang: $v_{\max} = A\omega$. Pada simpangan $x$: $v = \omega\sqrt{A^2 - x^2}$.</li><li>Percepatan terbesar di kedua ujung: $a_{\max} = A\omega^2$, selalu mengarah kembali ke titik setimbang.</li><li>Energi totalnya tetap, $E = \tfrac12 k A^2$; energi ini berganti-ganti antara energi kinetik dan energi potensial.</li></ul>
+⟦3⟧
+⟦4⟧`,
+  '1wc26qot8ew': R`
+<p><b>Gelombang</b> memindahkan energi dari satu tempat ke tempat lain tanpa memindahkan mediumnya. Pada gelombang mekanik, setiap partikel medium bergetar di sekitar posisinya sendiri dan meneruskan getaran itu ke partikel di sebelahnya.</p>
+<h3>Dua jenis gelombang</h3>
+<ul><li><b>Transversal:</b> partikel bergerak tegak lurus terhadap arah rambat gelombang. Gelombang pada tali, riak di permukaan air.</li><li><b>Longitudinal:</b> partikel bergerak maju-mundur searah rambat gelombang, membentuk rapatan dan regangan. Bunyi, slinki yang didorong.</li></ul>
+⟦0⟧
+⟦1⟧
+<h3>Menggambarkan gelombang</h3>
+<ul><li><b>Panjang gelombang</b> $\lambda$: panjang satu gelombang penuh, misalnya dari puncak ke puncak.</li><li><b>Frekuensi</b> $f$: banyak gelombang yang melewati suatu titik per sekon; <b>periode</b> $T = 1/f$.</li><li><b>Amplitudo</b>: simpangan terbesar dari posisi setimbang.</li></ul>
+⟦2⟧
+<h3>Gelombang pada tali dan gelombang stasioner</h3>
+<p>Pada tali dengan tegangan $F$ dan massa per satuan panjang $\mu$, $v = \sqrt{F/\mu}$. Tali yang terikat di kedua ujungnya bergetar dalam <b>gelombang stasioner</b> yang panjangnya memuat bilangan bulat kali setengah panjang gelombang: $L = n\frac{\lambda}{2}$, jadi</p>
+⟦3⟧
+⟦4⟧
+<p>Frekuensi terendah, $f_1$, adalah <b>nada dasar</b>; yang lain adalah nada atas (harmonik). Senar gitar disetel dengan mengubah tegangannya.</p>
+⟦5⟧`,
+  'n7q9bpofjd': R`
+<p>Bunyi adalah gelombang mekanik <b>longitudinal</b>: pola rapatan dan regangan yang merambat. Bunyi memerlukan medium dan tidak dapat merambat di ruang hampa. Di udara pada suhu ruang cepat rambatnya sekitar $340\,\mathrm{m/s}$; di air sekitar $1500\,\mathrm{m/s}$; di baja lebih cepat lagi.</p>
+<h3>Gema</h3>
+<p>Gema merambat ke permukaan pemantul lalu kembali, jadi jarak ke permukaan itu $d = \dfrac{v t}{2}$. Kelelawar, sonar kapal, dan alat USG semuanya memakai prinsip ini.</p>
+<h3>Tinggi nada dan kenyaringan</h3>
+<p><b>Tinggi nada</b> ditentukan oleh frekuensi dan <b>kenyaringan</b> terutama oleh amplitudo. Manusia dapat mendengar sekitar $20\,\mathrm{Hz}$ sampai $20\,000\,\mathrm{Hz}$; di atasnya ultrasonik, di bawahnya infrasonik.</p>
+⟦0⟧
+⟦1⟧
+<h3>Efek Doppler</h3>
+<p>Jika sumber dan pendengar saling mendekat, pendengar mendengar frekuensi yang lebih tinggi; jika saling menjauh, lebih rendah. Dengan cepat rambat bunyi $v$, kelajuan pendengar $v_p$, dan kelajuan sumber $v_s$:</p>
+⟦2⟧
+⟦3⟧
+<p>Pakai tanda atas jika keduanya saling mendekat dan tanda bawah jika saling menjauh.</p>
+<h3>Pipa organa</h3>
+<p>Kolom udara beresonansi seperti senar. Pipa organa terbuka memiliki $f_n = \dfrac{n v}{2L}$; pipa organa tertutup hanya memiliki harmonik ganjil, $f = \dfrac{(2n-1) v}{4L}$, jadi nada dasarnya $\dfrac{v}{4L}$.</p>
+⟦4⟧`,
+  '2cmbi708rhp': R`
+<p><b>Suhu</b> menyatakan seberapa panas suatu benda; suhu mengukur energi kinetik rata-rata partikel-partikelnya. <b>Kalor</b> adalah energi yang mengalir dari benda yang lebih panas ke benda yang lebih dingin karena perbedaan suhu. Kalor diukur dalam joule.</p>
+<h3>Skala suhu</h3>
+⟦0⟧
+<p>Perubahan $1^\circ\mathrm{C}$ sama dengan perubahan $1\,\mathrm{K}$. Air membeku pada $0^\circ\mathrm{C} = 273\,\mathrm{K} = 32^\circ\mathrm{F}$ dan mendidih pada $100^\circ\mathrm{C} = 373\,\mathrm{K} = 212^\circ\mathrm{F}$. (Lebih tepatnya, $0^\circ\mathrm{C} = 273{,}15\,\mathrm{K}$.)</p>
+⟦1⟧
+<h3>Kalor jenis</h3>
+<p>Kalor yang diperlukan untuk mengubah suhu benda bermassa $m$ sebesar $\Delta T$ adalah</p>
+⟦2⟧
+<p>dengan $c$ adalah <b>kalor jenis</b> bahan, dalam $\mathrm{J/(kg\,{}^\circ C)}$: kalor yang diperlukan untuk menaikkan suhu $1\,\mathrm{kg}$ bahan sebesar $1^\circ\mathrm{C}$. Kalor jenis air sangat besar, sekitar $4200\,\mathrm{J/(kg\,{}^\circ C)}$, itulah sebabnya laut lambat menjadi panas dan lambat menjadi dingin.</p>
+<h3>Perubahan wujud</h3>
+<p>Selama zat mencair atau mendidih, suhunya tetap walaupun kalor terus masuk. Kalor yang diperlukan adalah</p>
+⟦3⟧
+<p>dengan $L$ adalah <b>kalor laten</b>: sekitar $3{,}34 \times 10^{5}\,\mathrm{J/kg}$ untuk melebur es dan $2{,}26 \times 10^{6}\,\mathrm{J/kg}$ untuk menguapkan air.</p>
+⟦4⟧
+⟦5⟧
+⟦6⟧
+<h3>Pemuaian</h3>
+<p>Sebagian besar bahan memuai ketika dipanaskan. Batang dengan panjang $L_0$ bertambah panjang sebesar</p>
+⟦7⟧
+<p>dengan $\alpha$ adalah koefisien muai panjang (baja: sekitar $1{,}2 \times 10^{-5}\,/{}^\circ\mathrm{C}$). Luas memuai dengan koefisien sekitar $2\alpha$ dan volume sekitar $3\alpha$. Karena itulah rel kereta dan jembatan diberi celah.</p>
+⟦8⟧`,
+  'oiwqyyrffz': R`
+<p>Gas terdiri atas sangat banyak molekul yang bergerak acak dan saling bertumbukan serta menumbuk dinding wadahnya. Tumbukan dengan dinding itulah yang menimbulkan <b>tekanan</b> gas.</p>
+<h3>Hukum-hukum gas</h3>
+<ul><li><b>Hukum Boyle</b> (suhu tetap): $p_1 V_1 = p_2 V_2$. Mampatkan gas menjadi setengah volumenya, tekanannya menjadi dua kali lipat.</li><li><b>Hukum Charles</b> (tekanan tetap): $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$.</li><li><b>Hukum Gay-Lussac</b> (volume tetap): $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$.</li></ul>
+⟦0⟧
+⟦1⟧
+<h3>Teori kinetik</h3>
+<p>Suhu gas menyatakan energi kinetik rata-rata molekul-molekulnya:</p>
+⟦2⟧
+<p>Kelajuan khas (akar rata-rata kuadrat) molekul bermassa molar $M$ (dalam $\mathrm{kg/mol}$) adalah $v_{\text{rms}} = \sqrt{\dfrac{3RT}{M}}$: pada suhu yang sama, molekul yang lebih ringan bergerak lebih cepat.</p>
 ⟦3⟧`,
+  '18l4fg3nr5v': R`
+<h3>Hukum I termodinamika</h3>
+<p><b>Energi dalam</b> $U$ suatu gas adalah jumlah energi kinetik molekul-molekulnya (untuk gas ideal hanya bergantung pada suhu). Energi dalam berubah ketika kalor masuk atau ketika gas melakukan usaha:</p>
+⟦0⟧
+<p>$Q$ adalah kalor yang diberikan <i>kepada</i> gas dan $W$ adalah usaha yang dilakukan <i>oleh</i> gas. Ini adalah hukum kekekalan energi.</p>
+<h3>Usaha oleh gas</h3>
+<p>Gas yang memuai pada tekanan tetap $p$ dari $V_1$ ke $V_2$ melakukan usaha $W = p\,\Delta V$. Pada diagram $p$–$V$, usaha sama dengan luas di bawah kurva.</p>
+⟦1⟧
+⟦2⟧
+⟦3⟧
+⟦4⟧
+<h3>Hukum II termodinamika dan mesin pendingin</h3>
+<p>Kalor dengan sendirinya hanya mengalir dari benda panas ke benda dingin, dan tidak ada mesin yang dapat mengubah seluruh kalornya menjadi usaha. Mesin pendingin memakai usaha $W$ untuk memindahkan kalor $Q_C$ keluar dari bagian dalamnya yang dingin; koefisien kinerjanya $\mathrm{COP} = \dfrac{Q_C}{W}$.</p>
+⟦5⟧`,
+  '7cnvv7lr3a': R`
+<p>Kalor selalu mengalir dari tempat yang lebih panas ke tempat yang lebih dingin, dengan tiga cara yang berbeda.</p>
+⟦0⟧
+<h3>Konduksi</h3>
+<p>Di dalam zat padat, partikel yang berenergi tinggi memberikan energinya kepada partikel di sebelahnya. Logam menghantarkan kalor dengan baik karena elektron bebasnya membawa energi dengan cepat; kayu, plastik, udara diam, dan wol adalah penghantar yang buruk, atau <b>isolator</b>. Laju aliran kalor melalui lempeng seluas $A$ dan setebal $L$ dengan beda suhu $\Delta T$ adalah</p>
+⟦1⟧
+<p>dengan $k$ adalah konduktivitas termal dalam $\mathrm{W/(m\,K)}$ (tembaga sekitar 400, kaca sekitar 0,8, udara sekitar 0,025).</p>
+<h3>Konveksi</h3>
+<p>Di dalam zat cair dan gas, fluida yang hangat memuai, menjadi kurang rapat, lalu naik, sedangkan fluida yang lebih dingin turun menggantikannya. <b>Arus konveksi</b> ini memanaskan ruangan dari pemanas, menimbulkan angin laut, dan menggerakkan cuaca di Bumi.</p>
+<h3>Radiasi</h3>
+<p>Setiap benda memancarkan radiasi elektromagnetik (sebagian besar inframerah pada suhu sehari-hari). Radiasi tidak memerlukan medium; begitulah panas Matahari menyeberangi ruang angkasa. Daya yang dipancarkan adalah</p>
+⟦2⟧
+<p>dengan $T$ dalam kelvin dan emisivitas $e$ antara 0 dan 1. Permukaan hitam kusam adalah pemancar dan penyerap yang baik; permukaan perak mengilap buruk untuk keduanya.</p>
+⟦3⟧
+⟦4⟧`,
+  '2fb6t3vjybf': R`
+<p>Muatan listrik ada dua jenis, positif dan negatif. Muatan sejenis tolak-menolak dan muatan tak sejenis tarik-menarik. Muatan bersifat <b>kekal</b> dan selalu merupakan kelipatan bulat muatan elementer $e = 1{,}6 \times 10^{-19}\,\mathrm{C}$. Menggosok balon pada rambut memindahkan elektron dari yang satu ke yang lain; tidak ada muatan yang diciptakan.</p>
+<h3>Hukum Coulomb</h3>
+⟦0⟧
+<p>Seperti gravitasi, gaya listrik mengikuti hukum kuadrat terbalik, tetapi jauh lebih kuat. Muatan sering dinyatakan dalam mikrocoulomb: $1\,\mu\mathrm{C} = 10^{-6}\,\mathrm{C}$.</p>
+⟦1⟧
+⟦2⟧
+<h3>Garis-garis medan</h3>
+<p>Garis medan berawal di muatan positif dan berakhir di muatan negatif. Di tempat garis-garisnya rapat, medannya kuat. Di antara dua keping sejajar yang muatannya berlawanan, garis-garisnya lurus dan berjarak sama: medannya homogen.</p>
+⟦3⟧
+⟦4⟧`,
+  '18q0bd1e6pk': R`
+<h3>Potensial dan beda potensial</h3>
+<p><b>Potensial listrik</b> di suatu titik adalah energi potensial per satuan muatan di titik itu, diukur dalam volt ($1\,\mathrm{V} = 1\,\mathrm{J/C}$). Memindahkan muatan $q$ melalui beda potensial $V$ mengubah energinya sebesar</p>
+⟦0⟧
+<p>Di dekat muatan titik, $V = \dfrac{kQ}{r}$. Di antara dua keping sejajar berjarak $d$ dengan beda potensial $V$, medannya homogen: $E = \dfrac{V}{d}$ (jadi $\mathrm{V/m}$ sama dengan $\mathrm{N/C}$).</p>
+<p>Elektron yang dipercepat melalui beda potensial $1\,\mathrm{V}$ memperoleh energi $1\,\mathrm{eV} = 1{,}6 \times 10^{-19}\,\mathrm{J}$, yaitu satu <b>elektronvolt</b>.</p>
+⟦1⟧
+⟦2⟧
+<h3>Susunan kapasitor</h3>
+<ul><li><b>Paralel:</b> $C = C_1 + C_2 + \dots$ (kebalikan dari resistor).</li><li><b>Seri:</b> $\dfrac{1}{C} = \dfrac{1}{C_1} + \dfrac{1}{C_2} + \dots$</li></ul>
+<p>Kapasitas diukur dalam farad (F); nilai yang umum dipakai adalah mikrofarad ($\mu\mathrm{F}$), nanofarad (nF), atau pikofarad (pF). Lampu kilat kamera dan defibrilator menyimpan energi dalam kapasitor lalu melepaskannya dalam sepersekian detik.</p>
+⟦3⟧
+⟦4⟧`,
+  'yjvzdzkhz': R`
+<p><b>Arus listrik</b> adalah aliran muatan. Di dalam kawat logam, muatan yang bergerak adalah elektron, masing-masing bermuatan $e = 1{,}6 \times 10^{-19}\,\mathrm{C}$ (coulomb).</p>
+⟦0⟧
+<p>Kuat arus diukur dalam ampere: $1\,\mathrm{A}$ berarti muatan $1\,\mathrm{C}$ melewati suatu titik setiap sekon. Menurut kesepakatan, arus mengalir dari $+$ ke $-$ di luar baterai, berlawanan dengan arah gerak elektron.</p>
+<h3>Beda potensial dan hambatan</h3>
+<p><b>Beda potensial</b> (tegangan) $V$ antara dua titik adalah energi yang diberikan kepada atau diambil dari setiap coulomb muatan: $1\,\mathrm{V} = 1\,\mathrm{J/C}$. <b>Hambatan</b> $R$ suatu komponen menunjukkan seberapa besar tegangan yang diperlukan untuk mengalirkan arus melaluinya.</p>
+⟦1⟧
+⟦2⟧
+<h3>Hambatan jenis</h3>
+<p>Hambatan sebuah kawat bergantung pada bahannya, panjangnya $L$, dan luas penampangnya $A$:</p>
+⟦3⟧
+<p>$\rho$ adalah <b>hambatan jenis</b> bahan dalam $\Omega\,\mathrm{m}$ (tembaga: $1{,}7 \times 10^{-8}\,\Omega\,\mathrm{m}$). Kawat yang lebih panjang hambatannya lebih besar; kawat yang lebih tebal hambatannya lebih kecil.</p>
+<h3>Daya dan energi listrik</h3>
+⟦4⟧
+<p>Tagihan listrik memakai satuan <b>kilowatt-jam</b>: $1\,\mathrm{kWh}$ adalah energi yang dipakai alat berdaya $1\,\mathrm{kW}$ selama satu jam, yaitu $3{,}6 \times 10^{6}\,\mathrm{J}$.</p>
+⟦5⟧
+⟦6⟧`,
+  '8mmnfpfzvl': R`
+<p>Rangkaian adalah lintasan tertutup yang dapat dilalui muatan. Dua aturan yang sama menentukan segala sesuatu dalam rangkaian resistor.</p>
+<h3>Rangkaian seri</h3>
+⟦0⟧
+<ul><li><b>Kuat arus yang sama</b> mengalir melalui setiap komponen.</li><li>Tegangannya dijumlahkan: $V = V_1 + V_2 + V_3$.</li><li>Hambatannya dijumlahkan: $R_s = R_1 + R_2 + R_3$.</li></ul>
+<h3>Rangkaian paralel</h3>
+⟦1⟧
+<ul><li>Setiap cabang mendapat <b>tegangan yang sama</b>.</li><li>Arusnya dijumlahkan: $I = I_1 + I_2 + I_3$.</li><li>$\dfrac{1}{R_p} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \dfrac{1}{R_3}$. Untuk dua resistor saja: $R_p = \dfrac{R_1 R_2}{R_1 + R_2}$.</li></ul>
+<p>Hambatan pengganti rangkaian paralel selalu lebih kecil dari resistor terkecilnya, karena setiap cabang tambahan memberi arus jalur lain.</p>
+⟦2⟧
+⟦3⟧
+<h3>GGL dan hambatan dalam</h3>
+<p>Baterai nyata memiliki <b>gaya gerak listrik (GGL)</b> $\varepsilon$ (energi yang diberikannya kepada setiap coulomb) dan <b>hambatan dalam</b> $r$ yang kecil. Dengan hambatan luar $R$:</p>
+⟦4⟧
+⟦5⟧
+⟦6⟧`,
+  'h7xy033e7': R`
+<p>Magnet dan arus listrik sama-sama menghasilkan <b>medan magnet</b>, yang diukur dalam tesla (T). Medan magnet Bumi sekitar $5 \times 10^{-5}\,\mathrm{T}$; magnet kulkas sekitar $0{,}01\,\mathrm{T}$.</p>
+<h3>Medan magnet dari arus</h3>
+<ul><li>Di sekitar kawat lurus panjang, garis medannya berbentuk lingkaran: $B = \dfrac{\mu_0 I}{2\pi r}$.</li><li>Di dalam solenoida panjang dengan $n$ lilitan per meter, medannya homogen: $B = \mu_0 n I$.</li></ul>
+<p>Di sini $\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$. Genggam kawat dengan tangan kanan, ibu jari searah arus: jari-jari yang menggenggam menunjukkan arah medan.</p>
+⟦0⟧
+⟦1⟧
+<h3>Partikel bermuatan dalam medan magnet</h3>
+<p>Muatan yang bergerak tegak lurus medan homogen mengalami gaya yang tegak lurus kecepatannya, sehingga bergerak melingkar. Dari $qvB = \dfrac{m v^2}{r}$ diperoleh jari-jarinya</p>
+⟦2⟧
+<p>Beginilah spektrometer massa memilah ion dan akselerator partikel membelokkan berkas partikel. Motor listrik memanfaatkan gaya pada kawat berarus.</p>
+⟦3⟧`,
+  'u2g9mni8vb': R`
+<p>Medan magnet yang berubah dapat membangkitkan arus. Inilah <b>induksi elektromagnetik</b>, yang ditemukan Faraday pada tahun 1831, dan dengan cara inilah hampir semua listrik kita dibangkitkan.</p>
+<h3>Fluks magnetik</h3>
+⟦0⟧
+<p>Fluks (dalam weber, $\mathrm{Wb}$) menyatakan seberapa banyak medan magnet yang menembus kumparan seluas $A$; $\theta$ adalah sudut antara medan dan garis normal bidang kumparan.</p>
+⟦1⟧
+<h3>Batang yang bergerak</h3>
+<p>Batang sepanjang $L$ yang bergerak dengan kelajuan $v$ tegak lurus medan $B$ menyapu fluks, sehingga timbul GGL $\varepsilon = B L v$ di antara kedua ujungnya.</p>
+⟦2⟧
+<h3>Generator dan transformator</h3>
+<p>Generator memutar kumparan di dalam medan magnet sehingga menghasilkan GGL bolak-balik. <b>Transformator</b> memakai arus yang berubah pada satu kumparan untuk menginduksi GGL pada kumparan lain yang dililitkan pada inti besi yang sama:</p>
+⟦3⟧
+⟦4⟧
+<p>Listrik disalurkan ke seluruh negeri dengan tegangan sangat tinggi: untuk daya yang sama arusnya kecil, sehingga daya yang hilang menjadi panas di kabel, $P = I^2 R$, juga kecil.</p>
+⟦5⟧`,
+  '2cb2bsytx0b': R`
+<p>Listrik PLN adalah <b>arus bolak-balik</b>: tegangannya berayun bolak-balik secara sinusoidal, $V = V_0 \sin(\omega t)$ dengan $\omega = 2\pi f$. Di Indonesia frekuensinya $50\,\mathrm{Hz}$.</p>
+<h3>Nilai efektif (rms)</h3>
+<p>Nilai <b>efektif</b> (akar rata-rata kuadrat, rms) adalah nilai DC tetap yang menghasilkan panas yang sama: $V_{\text{rms}} = \dfrac{V_0}{\sqrt2}$ dan $I_{\text{rms}} = \dfrac{I_0}{\sqrt2}$. Ketika listrik rumah disebut $220\,\mathrm{V}$, itu adalah nilai efektifnya; nilai puncaknya $220\sqrt2 \approx 311\,\mathrm{V}$. Daya rata-rata pada resistor $P = I_{\text{rms}}^2 R = V_{\text{rms}} I_{\text{rms}}$.</p>
+⟦0⟧
+⟦1⟧
+<h3>Resonansi</h3>
+<p>Jika $X_L = X_C$, impedansinya paling kecil ($Z = R$) dan arusnya paling besar. Hal ini terjadi pada <b>frekuensi resonansi</b></p>
+⟦2⟧
+⟦3⟧
+<p>Radio memilih satu stasiun dengan menala rangkaian LC agar beresonansi pada frekuensi stasiun itu.</p>
+⟦4⟧`,
+  'xwfzlqslwo': R`
+<p>Medan listrik dan medan magnet yang berubah saling membangkitkan dan merambat bersama di ruang angkasa sebagai <b>gelombang elektromagnetik (EM)</b>. Gelombang EM bersifat transversal, tidak memerlukan medium, dan di ruang hampa semuanya merambat dengan kelajuan cahaya, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$.</p>
+⟦0⟧
+⟦1⟧
+<h3>Spektrum elektromagnetik</h3>
+⟦2⟧
+⟦3⟧
+<p>Dari gelombang radio sampai sinar gamma, panjang gelombangnya makin pendek dan frekuensinya makin tinggi. Frekuensi yang lebih tinggi juga berarti energi yang dibawa setiap foton lebih besar; itulah sebabnya ultraviolet, sinar-X, dan sinar gamma dapat merusak sel makhluk hidup.</p>
+⟦4⟧
+⟦5⟧`,
+  '28y4pn6sotw': R`
+<p>Cahaya merambat lurus dalam bentuk <b>sinar</b>. Ketika sinar mengenai permukaan yang licin, sinar itu dipantulkan menurut <b>hukum pemantulan</b>:</p>
+⟦0⟧
+⟦1⟧
+<h3>Cermin datar</h3>
+<p>Bayangan pada cermin datar bersifat <b>maya</b> (cahaya hanya seolah-olah datang dari bayangan itu), <b>tegak</b>, <b>sama besar</b> dengan bendanya, <b>tertukar kiri-kanan</b>, dan berada di belakang cermin sejauh jarak benda di depan cermin. Dua cermin yang membentuk sudut $\alpha$ menghasilkan $n = \dfrac{360^\circ}{\alpha} - 1$ bayangan.</p>
+⟦2⟧
+<h3>Cermin lengkung</h3>
+<p><b>Cermin cekung</b> (melengkung ke dalam, seperti bagian dalam sendok) mengumpulkan sinar-sinar sejajar di <b>titik fokus</b> F. <b>Cermin cembung</b> (melengkung ke luar) menyebarkannya seolah-olah sinar-sinar itu datang dari titik fokus di belakang cermin. Jarak fokus adalah setengah jari-jari kelengkungan, $f = \frac{R}{2}$.</p>
+⟦3⟧
+⟦4⟧
+<p>Di sini $s$ adalah jarak benda dan $s'$ jarak bayangan. Gunakan aturan tanda: $f$ positif untuk cermin cekung dan negatif untuk cermin cembung; $s'$ positif berarti bayangan <b>nyata</b> di depan cermin, $s'$ negatif berarti bayangan <b>maya</b> di belakang cermin.</p>
+⟦5⟧
+⟦6⟧`,
+  '1pc5lzs7h78': R`
+<p>Cahaya melambat ketika memasuki medium yang lebih rapat seperti air atau kaca, dan jika datang dengan sudut miring arahnya berubah. Pembelokan ini disebut <b>pembiasan</b> (refraksi). <b>Indeks bias</b> suatu medium membandingkan kelajuan cahaya di ruang hampa dengan kelajuannya di medium itu:</p>
+⟦0⟧
+<p>Persamaan kedua adalah <b>hukum Snell</b>; sudut-sudutnya diukur dari garis normal. Ketika masuk ke medium yang lebih rapat ($n$ lebih besar), sinar dibelokkan <b>mendekati</b> garis normal.</p>
+⟦1⟧
+<h3>Pemantulan sempurna</h3>
+<p>Dari medium yang lebih rapat ke medium yang kurang rapat, sinar dibelokkan menjauhi garis normal. Jika sudut datangnya melebihi <b>sudut kritis</b> $C$, tidak ada cahaya yang keluar sama sekali: semuanya dipantulkan. Untuk medium berindeks bias $n$ yang berbatasan dengan udara, $\sin C = \dfrac{1}{n}$. Serat optik dan kilau berlian memanfaatkan pemantulan sempurna.</p>
+⟦2⟧
+<h3>Lensa</h3>
+<p>Lensa <b>konvergen</b> (cembung) mengumpulkan sinar-sinar sejajar di titik fokusnya; lensa <b>divergen</b> (cekung) menyebarkannya. Persamaan yang sama seperti pada cermin berlaku, dengan $f$ positif untuk lensa konvergen dan negatif untuk lensa divergen:</p>
+⟦3⟧
+⟦4⟧
+⟦5⟧
+⟦6⟧`,
+  '1sjxqj4p3hr': R`
+<h3>Mata</h3>
+<p>Kornea dan lensa mata membentuk bayangan nyata dan terbalik pada <b>retina</b>. Otot-otot mengubah bentuk lensa sehingga benda dekat maupun jauh dapat terlihat tajam (<b>daya akomodasi</b>). Mata normal dapat melihat dengan jelas dari <b>titik dekat</b> (punctum proximum), sekitar $25\,\mathrm{cm}$, sampai <b>titik jauh</b> (punctum remotum) di tak hingga.</p>
+⟦0⟧
+⟦1⟧
+<p>Di sini $PR$ (titik jauh) dan $PP$ (titik dekat) dinyatakan dalam sentimeter, dan $P$ yang diperoleh dalam dioptri.</p>
+<h3>Lup</h3>
+<p>Lup adalah lensa konvergen yang dipegang dekat mata dengan benda di dalam jarak fokusnya. Perbesaran angulernya $M = \dfrac{25}{f}$ untuk mata tidak berakomodasi (bayangan di tak hingga) dan $M = \dfrac{25}{f} + 1$ jika bayangan berada di titik dekat ($f$ dalam cm).</p>
+<h3>Mikroskop dan teropong</h3>
+<p><b>Mikroskop</b> memakai lensa objektif berfokus pendek untuk membentuk bayangan nyata yang diperbesar, lalu lensa okuler memperbesarnya lagi. Untuk mata tidak berakomodasi, perbesaran totalnya</p>
+⟦2⟧
+<p><b>Teropong bias</b> (teleskop) memiliki lensa objektif berfokus panjang dan lensa okuler berfokus pendek. Untuk mata tidak berakomodasi, jarak kedua lensa $d = f_{ob} + f_{ok}$ dan</p>
+⟦3⟧
+⟦4⟧
+⟦5⟧
+⟦6⟧`,
+  '8bj6suvi1s': R`
+<p>Ketika dua gelombang bertemu, keduanya saling menjumlahkan (<b>superposisi</b>). Jika puncak bertemu puncak, keduanya saling menguatkan: <b>interferensi konstruktif</b>. Jika puncak bertemu lembah, keduanya saling meniadakan: <b>interferensi destruktif</b>. Agar pola yang tetap dapat terlihat, sumber-sumbernya harus <b>koheren</b>: frekuensinya sama dan beda fasenya tetap.</p>
+⟦0⟧
+⟦1⟧
+<h3>Celah ganda Young</h3>
+<p>Cahaya yang melewati dua celah sempit berjarak $d$ menghasilkan pita terang dan gelap pada layar berjarak $L$. Untuk sudut kecil:</p>
+⟦2⟧
+⟦3⟧
+<h3>Difraksi</h3>
+<p>Gelombang menyebar ketika melewati celah. Untuk celah tunggal selebar $a$, pita gelap berada pada $a\sin\theta = m\lambda$, dan pita terang pusat dua kali lebih lebar daripada pita yang lain. <b>Kisi difraksi</b> memiliki sangat banyak celah, $N$ per satuan panjang, sehingga jarak antarcelahnya $d = 1/N$. Garis-garis terangnya tajam dan memenuhi $d\sin\theta = m\lambda$; orde tertinggi yang dapat muncul adalah bilangan bulat terbesar di bawah $d/\lambda$.</p>
+⟦4⟧
+⟦5⟧
+<p>Warna-warni gelembung sabun dan lapisan minyak berasal dari <b>interferensi lapisan tipis</b> antara cahaya yang dipantulkan oleh permukaan atas dan permukaan bawah lapisan.</p>`,
+  '284k6qvgs7x': R`
+<p>Einstein menyusun teori relativitas khusus (1905) di atas dua <b>postulat</b>:</p>
+<ol><li>Hukum-hukum fisika berlaku sama di setiap kerangka acuan inersial (yang tidak dipercepat).</li><li>Kelajuan cahaya di ruang hampa, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$, sama bagi setiap pengamat, berapa pun kelajuan pengamat atau sumbernya.</li></ol>
+<p>Menerima kedua postulat itu berarti waktu dan panjang bergantung pada pengamat. Semuanya diatur oleh <b>faktor Lorentz</b></p>
+⟦0⟧
+<p>yang bernilai 1 pada kelajuan sehari-hari dan membesar tanpa batas ketika $v$ mendekati $c$. Untuk $v = 0{,}6c$, $\gamma = 1{,}25$; untuk $v = 0{,}8c$, $\gamma = \frac53$.</p>
+⟦1⟧
+⟦2⟧
+⟦3⟧
+<h3>Penjumlahan kecepatan</h3>
+<p>Kecepatan tidak dapat dijumlahkan begitu saja. Jika pesawat antariksa yang bergerak dengan kecepatan $v$ menembakkan wahana ke depan dengan kecepatan $u'$ relatif terhadap pesawat, pengamat melihat wahana itu bergerak dengan kecepatan</p>
+⟦4⟧
+<p>yang tidak pernah melebihi $c$.</p>
+<h3>Massa dan energi</h3>
+<p>Massa adalah salah satu bentuk energi. Benda bermassa $m$ yang diam memiliki <b>energi diam</b> $E_0 = mc^2$, dan energi totalnya ketika bergerak $E = \gamma mc^2$, sehingga energi kinetiknya $E_k = (\gamma - 1)mc^2$.</p>
+⟦5⟧`,
+  'g84ukm983n': R`
+<p>Cahaya membawa energi dalam paket-paket kecil yang disebut <b>foton</b>. Planck dan Einstein menunjukkan bahwa energi satu foton hanya bergantung pada frekuensinya:</p>
+⟦0⟧
+<p>dengan tetapan Planck $h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$. Energi foton sangat kecil, sehingga sering dinyatakan dalam <b>elektronvolt</b>: $1\,\mathrm{eV} = 1{,}6 \times 10^{-19}\,\mathrm{J}$, yaitu energi yang diperoleh elektron ketika melewati beda potensial $1\,\mathrm{V}$.</p>
+<h3>Efek fotolistrik</h3>
+<p>Cahaya yang menyinari logam bersih dapat melepaskan elektron dari logam itu. Hasil percobaannya menunjukkan:</p>
+⟦1⟧
+<ul><li>di bawah <b>frekuensi ambang</b> $f_0$ tidak ada elektron yang keluar, seterang apa pun cahayanya;</li><li>di atas frekuensi itu, elektron langsung keluar, dan energi kinetik maksimumnya bergantung pada frekuensi, bukan pada kecerahan;</li><li>cahaya yang lebih terang menghasilkan elektron yang <b>lebih banyak</b>, bukan yang lebih cepat.</li></ul>
+⟦2⟧
+⟦3⟧
+<h3>Gelombang materi</h3>
+<p>De Broglie mengusulkan bahwa partikel juga berperilaku sebagai gelombang, dengan panjang gelombang $\lambda = \dfrac{h}{p} = \dfrac{h}{mv}$. Difraksi elektron membuktikannya, dan mikroskop elektron memanfaatkannya untuk melihat detail yang jauh lebih kecil daripada yang dapat dilihat dengan cahaya.</p>
+⟦4⟧`,
+  'n7qvahswgs': R`
+<h3>Model-model atom</h3>
+⟦0⟧
+<p>Pada <b>percobaan hamburan foil emas</b> Rutherford, sebagian besar partikel alfa menembus lurus, tetapi beberapa terpantul kembali. Jadi atom sebagian besar berupa ruang kosong, dengan massa dan muatan positifnya terpusat pada inti yang sangat kecil.</p>
+⟦1⟧
+<h3>Model atom hidrogen Bohr</h3>
+⟦2⟧
+⟦3⟧
+⟦4⟧
+<p>Karena hanya selisih energi tertentu yang mungkin, setiap unsur hanya memancarkan dan menyerap panjang gelombang tertentu: <b>spektrum garisnya</b>, semacam sidik jari yang dipakai untuk mengenali unsur-unsur di bintang. Untuk hidrogen, transisi ke $n = 1$ menghasilkan <b>deret Lyman</b> (ultraviolet), transisi ke $n = 2$ <b>deret Balmer</b> (cahaya tampak), dan transisi ke $n = 3$ <b>deret Paschen</b> (inframerah).</p>
+⟦5⟧
+⟦6⟧`,
+  '1yremi4yqr5': R`
+<p>Inti atom berisi <b>proton</b> dan <b>neutron</b> (keduanya disebut <b>nukleon</b>). Suatu nuklida ditulis $^{A}_{Z}\mathrm{X}$, dengan $Z$ adalah <b>nomor atom</b> (banyaknya proton) dan $A$ adalah <b>nomor massa</b> (proton + neutron), sehingga banyaknya neutron $N = A - Z$. <b>Isotop-isotop</b> suatu unsur memiliki $Z$ yang sama tetapi $A$ yang berbeda, misalnya $^{12}_{6}\mathrm{C}$ dan $^{14}_{6}\mathrm{C}$.</p>
+<h3>Tiga jenis radiasi</h3>
+⟦0⟧
+⟦1⟧
+⟦2⟧
+<h3>Waktu paruh</h3>
+<p>Peluruhan bersifat acak, tetapi sejumlah besar inti meluruh dengan laju yang dapat diramalkan. <b>Waktu paruh</b> $T_{1/2}$ adalah waktu yang diperlukan agar separuh inti (dan karena itu separuh aktivitasnya) meluruh:</p>
+⟦3⟧
+⟦4⟧
+⟦5⟧`,
+  '4rt7x5m6bh': R`
+<p>Massa inti sedikit <b>lebih kecil</b> daripada jumlah massa proton dan neutron penyusunnya. <b>Defek massa</b> $\Delta m$ ini setara dengan <b>energi ikat</b>, yaitu energi yang diperlukan untuk memisahkan inti menjadi nukleon-nukleonnya:</p>
+⟦0⟧
+<p>Massa inti dinyatakan dalam <b>satuan massa atom</b>, dan $1\,\mathrm{u}$ setara dengan $931{,}5\,\mathrm{MeV}$. Gunakan $m_p = 1{,}00728\,\mathrm{u}$ dan $m_n = 1{,}00867\,\mathrm{u}$.</p>
+⟦1⟧
+⟦2⟧
+<h3>Fisi</h3>
+<p>Neutron lambat yang diserap uranium-235 membuat inti itu terbelah menjadi dua inti yang lebih kecil dan 2 atau 3 neutron baru, sambil melepaskan sekitar $200\,\mathrm{MeV}$. Neutron-neutron baru itu dapat membelah inti-inti lain: terjadilah <b>reaksi berantai</b>. Di dalam reaktor:</p>
+<ul><li><b>moderator</b> (air atau grafit) memperlambat neutron agar lebih mudah menimbulkan fisi;</li><li><b>batang kendali</b> (boron atau kadmium) menyerap neutron sehingga, rata-rata, setiap fisi menimbulkan tepat satu fisi berikutnya;</li><li><b>pendingin</b> membawa panas untuk menghasilkan uap bagi turbin;</li><li><b>perisai</b> beton tebal menyerap radiasi.</li></ul>
+⟦3⟧
+<h3>Fusi</h3>
+<p>Di Matahari, inti-inti hidrogen bergabung (berfusi) menjadi helium pada suhu sekitar 15 juta kelvin; hanya pada suhu setinggi itu inti-inti bergerak cukup cepat untuk mengatasi tolakan listriknya. Bahan bakar fusi berlimpah dan limbah berumur panjangnya sedikit, tetapi pembangkit listrik fusi yang praktis belum berhasil dibangun.</p>
+⟦4⟧`,
+  '1lghrp9trz8': R`
+<p>Sumber energi <b>tak terbarukan</b> (batu bara, minyak bumi, gas alam, uranium) akan habis, dan pembakaran bahan bakar fosil melepaskan karbon dioksida. Sumber energi <b>terbarukan</b> tergantikan secara alami: cahaya matahari, angin, air yang mengalir, panas bumi, gelombang laut, pasang surut, dan biomassa. Indonesia memiliki salah satu cadangan panas bumi terbesar di dunia serta sinar matahari dan sungai yang melimpah.</p>
+⟦0⟧
+⟦1⟧
+<h3>Energi surya</h3>
+<p>Sel fotovoltaik (sel surya) mengubah cahaya langsung menjadi listrik. Pada hari yang cerah sekitar $1000\,\mathrm{W/m^2}$ cahaya matahari sampai di permukaan tanah, dan efisiensi panel pada umumnya 15–22%, sehingga keluarannya $P = \eta\, I A$ untuk intensitas $I$ dan luas $A$.</p>
+<h3>Energi angin</h3>
+<p>Energi kinetik udara yang melewati bilah turbin setiap detik adalah</p>
+⟦2⟧
+<p>dengan $\rho \approx 1{,}2\,\mathrm{kg/m^3}$ adalah massa jenis udara dan $A = \pi r^2$ luas yang disapu bilah sepanjang $r$. Kelajuan angin dua kali lipat menghasilkan daya $2^3 = 8$ kali lipat. Tidak ada turbin yang dapat mengambil lebih dari sekitar 59% daya ini (batas Betz).</p>
+⟦3⟧
+<h3>Pembangkit listrik tenaga air dan panas bumi</h3>
+<p>Air yang jatuh dari ketinggian $h$ memutar turbin. Dengan debit (volume per detik) $Q$, dayanya $P = \eta \rho Q g h$ (untuk air $\rho = 1000\,\mathrm{kg/m^3}$). Pembangkit listrik tenaga panas bumi memakai uap dari batuan panas di bawah tanah untuk menggerakkan turbin.</p>
+⟦4⟧`,
+  'q7q9d2er03': R`
+<p>Setiap benda memancarkan gelombang elektromagnetik, dan benda yang lebih panas memancar lebih kuat dan pada panjang gelombang yang lebih pendek. Dua hukum menggambarkan radiasi ini:</p>
+⟦0⟧
+<p>Yang pertama adalah <b>hukum pergeseran Wien</b>: permukaan Matahari yang bersuhu sekitar $5800\,\mathrm{K}$ memancar paling kuat pada cahaya tampak (sekitar $500\,\mathrm{nm}$), sedangkan Bumi yang bersuhu sekitar $288\,\mathrm{K}$ memancar paling kuat pada inframerah (sekitar $10\,\mathrm{\mu m}$). Yang kedua adalah <b>hukum Stefan–Boltzmann</b>, dengan $\sigma = 5{,}67 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$ dan emisivitas $e$ ($e = 1$ untuk benda hitam sempurna).</p>
+⟦1⟧
+<h3>Keseimbangan energi Bumi</h3>
+<p>Bumi menyerap cahaya matahari dan memancarkan inframerah kembali ke luar angkasa. Sekitar 30% cahaya matahari dipantulkan (<b>albedo</b> $\alpha \approx 0{,}3$). Menyeimbangkan energi yang diserap dengan energi yang dipancarkan, dengan konstanta matahari $S = 1361\,\mathrm{W/m^2}$, menghasilkan</p>
+⟦2⟧
+<p>Itu sama dengan $-18\,^\circ\mathrm{C}$, padahal suhu rata-rata permukaan Bumi sekitar $15\,^\circ\mathrm{C}$. Selisihnya disebabkan oleh <b>efek rumah kaca</b>.</p>
+⟦3⟧
+⟦4⟧
+<p>Akibatnya antara lain naiknya permukaan laut (karena pemuaian air laut dan mencairnya es di daratan), cuaca yang lebih ekstrem, serta perubahan ekosistem dan pertanian. Emisi dapat dikurangi dengan menghemat energi, beralih ke sumber terbarukan, dan melindungi hutan.</p>
+⟦5⟧
+⟦6⟧`,
+  '2ffhjcly9mi': R`
+<p>Bahan-bahan dikelompokkan menurut seberapa mudah muatan bergerak di dalamnya. <b>Konduktor</b> (logam) memiliki banyak elektron bebas; <b>isolator</b> hampir tidak memilikinya. <b>Semikonduktor</b> seperti silikon berada di antara keduanya, dan daya hantarnya meningkat ketika dipanaskan atau disinari.</p>
+⟦0⟧
+<h3>Doping</h3>
+<p>Menambahkan sedikit sekali unsur lain mengubah semikonduktor secara drastis. Unsur golongan V (fosfor, arsen) menambahkan elektron lebih: semikonduktor <b>tipe-n</b>. Unsur golongan III (boron, galium) meninggalkan kekosongan yang disebut <b>hole</b> yang berperilaku sebagai muatan positif: semikonduktor <b>tipe-p</b>.</p>
+<h3>Dioda</h3>
+<p><b>Sambungan p–n</b> adalah sebuah <b>dioda</b>: dioda hanya menghantarkan arus ke satu arah. Pada <b>bias maju</b> (sisi p positif) dioda silikon menghantar setelah tegangannya melebihi sekitar $0{,}7\,\mathrm{V}$; pada <b>bias mundur</b> hampir tidak ada arus yang mengalir. Dioda mengubah AC menjadi DC (<b>penyearahan</b>). <b>Dioda pemancar cahaya</b> (LED) memancarkan cahaya ketika diberi bias maju dan memerlukan resistor seri untuk membatasi arusnya:</p>
+⟦1⟧
+⟦2⟧
+<h3>Transistor</h3>
+<p>Transistor memungkinkan arus <b>basis</b> $I_B$ yang kecil mengendalikan arus <b>kolektor</b> yang jauh lebih besar, $I_C = \beta I_B$, dengan $\beta$ (sering 100 atau lebih) adalah penguatan arus. Transistor berfungsi sebagai penguat dan sebagai saklar; prosesor modern berisi miliaran transistor.</p>
+<h3>Gerbang logika</h3>
+⟦3⟧
+⟦4⟧
+⟦5⟧`,
+});
+
+/* Bahasa Indonesia — 9-figshared */
+addT('id', {
+  '1ogbw8wz8eu': R`median`,
+  'glmqryi5du': R`atas`,
+  '133jc9ud4m8': R`depan`,
+  '1ha0sto9ww8': R`bawah`,
+  '3aovv25fmb': R`samping`,
+  '180lyt6tmu1': R`belakang`,
+});
+
+/* Bahasa Indonesia — 9-mech-d */
+addT('id', {
   '1n4tjiq7o59': R`Alat ukur`,
   '13gr3233qj5': R`Skala terkecil`,
   '244d6ygn4m3': R`Kegunaan umum`,
@@ -2391,16 +2782,6 @@ addT('id', {
   '2934qdqdjm7': R`Hasil = skala utama + skala putar $\times\ 0{,}01\,\mathrm{mm}$ $= ⟦0⟧ + ⟦1⟧ \times 0{,}01 = ⟦2⟧$.`,
   '1fi2vg8vugw': R`Periode sebuah bandul diukur lima kali (dalam sekon): ⟦0⟧. Berapa periode rata-ratanya, sampai dua angka di belakang koma?`,
   'jvtjtfkr1t': R`Jumlahkan hasilnya lalu bagi 5: $\frac{⟦0⟧}{5} = ⟦1⟧$, yaitu ⟦2⟧ jika dibulatkan sampai dua angka di belakang koma, setara ketelitian hasil pengukurannya.`,
-  'vxtqthabi0': R`
-<p>Benda yang bergerak melingkar dengan kelajuan tetap tetap mengalami <b>percepatan</b>, karena arah kecepatannya terus berubah.</p>
-⟦0⟧
-<h3>Menggambarkan gerak melingkar</h3>
-<ul><li><b>Periode</b> $T$: waktu untuk satu putaran. <b>Frekuensi</b> $f = 1/T$, dalam hertz ($\mathrm{Hz}$), yaitu putaran per sekon.</li><li><b>Kecepatan sudut</b> $\omega = \dfrac{2\pi}{T} = 2\pi f$, dalam radian per sekon.</li><li><b>Kelajuan linear</b> sepanjang lingkaran: $v = \dfrac{2\pi r}{T} = \omega r$.</li></ul>
-⟦1⟧
-⟦2⟧
-<h3>Lingkaran vertikal</h3>
-<p>Di puncak lintasan melingkar vertikal, gravitasi dapat menyediakan seluruh gaya sentripetal. Kelajuan terkecil agar bola atau kereta roller coaster tetap berada di lintasan di titik itu adalah $v_{\min} = \sqrt{g r}$.</p>
-⟦3⟧`,
   '27o6nwir9ki': R`Benda yang bergerak melingkar, dengan kecepatan searah garis singgung dan percepatan menuju pusat`,
   'pad2pv74vu': R`Kecepatan searah garis singgung; percepatan mengarah ke pusat.`,
   'vw9hk837w2': R`<p><b>Percepatan sentripetal</b> mengarah ke pusat lingkaran:</p><p>$$a_s = \frac{v^2}{r} = \omega^2 r.$$</p><p>Menurut hukum II Newton, diperlukan gaya resultan ke arah pusat, yaitu <b>gaya sentripetal</b> $F_s = \dfrac{m v^2}{r}$. Ini bukan jenis gaya baru: gaya ini disediakan oleh tegangan tali, gaya gesek, gravitasi, atau gaya normal.</p>`,
@@ -2431,18 +2812,6 @@ addT('id', {
   '1o5er8u1bkw': R`Benda mengalami percepatan searah geraknya`,
   '1ugh3u0y905': R`Benda mengalami percepatan menjauhi pusat`,
   'kgw7obehup': R`Arah kecepatannya berubah terus-menerus, jadi ada percepatan $v^2/r$ yang mengarah ke pusat.`,
-  '1iz3ty5e7jw': R`
-<p>Gaya membuat benda bertambah cepat pada gerak lurus; <b>momen gaya (torsi)</b> membuat benda berputar makin cepat atau makin lambat.</p>
-<h3>Momen gaya</h3>
-⟦0⟧
-<p>$r$ adalah jarak dari sumbu putar ke titik kerja gaya dan $\theta$ adalah sudut antara $r$ dan $F$. Satuannya $\mathrm{N\,m}$. Gaya yang mengarah lurus ke sumbu ($\theta = 0$) tidak menghasilkan momen gaya; itulah sebabnya gagang pintu dipasang jauh dari engsel.</p>
-<h3>Momen inersia</h3>
-<p>Padanan massa pada gerak rotasi adalah <b>momen inersia</b> $I = \sum m r^2$. Massa yang jauh dari sumbu jauh lebih berpengaruh daripada massa yang dekat dengan sumbu.</p>
-⟦1⟧
-⟦2⟧
-<h3>Menggelinding</h3>
-<p>Benda yang menggelinding memiliki kedua jenis energi kinetik: $E_k = \tfrac12 m v^2 + \tfrac12 I\omega^2$ dengan $v = \omega r$. Menggelinding dari diam menuruni lereng setinggi $h$, bola pejal mencapai $v = \sqrt{\tfrac{10}{7} g h}$ dan silinder pejal $v = \sqrt{\tfrac43 g h}$: keduanya lebih lambat daripada balok yang meluncur tanpa gesekan ($\sqrt{2gh}$), karena sebagian energinya dipakai untuk berputar.</p>
-⟦3⟧`,
   '1rn864qo94t': R`Benda (sumbu melalui pusat, kecuali disebutkan lain)`,
   '1f6y3bd30el': R`Cincin tipis`,
   '1xulwtm601d': R`Piringan atau silinder pejal`,

@@ -21,6 +21,7 @@ ${Key(T`<p>The <b>electric field</b> $E$ at a point is the force per unit positi
 ${Ex(T`<p>Two charges of $+2\,\mu\mathrm{C}$ and $+3\,\mu\mathrm{C}$ are $0.3\,\mathrm{m}$ apart. $F = \frac{9 \times 10^{9} \cdot 2 \times 10^{-6} \cdot 3 \times 10^{-6}}{0.3^2} = 0.6\,\mathrm{N}$, repulsive.</p>`)}
 <h3>Field lines</h3>
 <p>Field lines start on positive charges and end on negative ones. Where they crowd together the field is strong. Between two parallel oppositely charged plates the lines are straight and evenly spaced: the field is uniform.</p>
+${FigW(fieldLinesSvg(), T`Field lines leave positive charges and end on negative ones. Between parallel plates the field is uniform.`)}
 ${Tip(T`<p>Convert $\mu\mathrm{C}$ to C and cm to m before using Coulomb's law. Forgetting the $10^{-6}$ is the most common slip.</p>`)}`,
   gens: [
     () => {
@@ -65,9 +66,11 @@ ${Fm(T`W = qV`)}
 <p>Near a point charge, $V = \dfrac{kQ}{r}$. Between two parallel plates a distance $d$ apart with potential difference $V$, the field is uniform: $E = \dfrac{V}{d}$ (so $\mathrm{V/m}$ is the same unit as $\mathrm{N/C}$).</p>
 <p>An electron accelerated through $1\,\mathrm{V}$ gains $1\,\mathrm{eV} = 1.6 \times 10^{-19}\,\mathrm{J}$ of energy, the <b>electronvolt</b>.</p>
 ${Key(T`<p>A <b>capacitor</b> stores charge on two conductors separated by an insulator. Its <b>capacitance</b> is the charge stored per volt:</p><p>$$C = \frac{Q}{V} \qquad \text{parallel plates: } C = \frac{\varepsilon_0 A}{d}, \; \varepsilon_0 = 8.85 \times 10^{-12}\,\mathrm{F/m}$$</p><p>The stored energy is $E = \tfrac12 C V^2 = \tfrac12 Q V$.</p>`)}
+${Fig(capacitorSvg(), T`A parallel-plate capacitor: equal and opposite charges on the plates and a uniform field $E = V/d$ between them.`)}
 <h3>Combining capacitors</h3>
 <ul><li><b>Parallel:</b> $C = C_1 + C_2 + \dots$ (the opposite of resistors).</li><li><b>Series:</b> $\dfrac{1}{C} = \dfrac{1}{C_1} + \dfrac{1}{C_2} + \dots$</li></ul>
 <p>Capacitance is measured in farads (F); practical values are microfarads ($\mu\mathrm{F}$), nanofarads (nF) or picofarads (pF). Camera flashes and defibrillators store energy in capacitors and release it in a fraction of a second.</p>
+${Fig(planeSvg({ W: 320, H: 200, x: [0, 6], y: [0, 6], ticks: false, xl: 'V', yl: 'Q', shade: [{ f: v => v, from: 0, to: 4, cls: 'mf-f1' }], fns: [{ f: v => v, to: 5.5, label: T`slope = C`, at: 5, dx: -6, dy: -6, anchor: 'end' }], segs: [[4, 0, 4, 4, 'mf-grid', true]], texts: [[2.9, 1, 'E = ½QV', 'middle', 'mf-lab-b']], label: T`Charge against voltage for a capacitor: a straight line of slope C; the triangle under it is the stored energy` }), T`$Q$ is proportional to $V$ (slope $C$). The area under the line is the stored energy, $E = \tfrac12 QV = \tfrac12 CV^2$.`)}
 ${Tip(T`<p>Capacitors combine the opposite way to resistors: in parallel they simply add.</p>`)}`,
   gens: [
     () => {
@@ -113,6 +116,7 @@ ${Fm(T`I = \frac{Q}{t}`)}
 <h3>Potential difference and resistance</h3>
 <p>The <b>potential difference</b> (voltage) $V$ between two points is the energy given to or taken from each coulomb of charge: $1\,\mathrm{V} = 1\,\mathrm{J/C}$. The <b>resistance</b> $R$ of a component tells us how much voltage is needed to push a current through it.</p>
 ${Key(T`<p><b>Ohm's law:</b> for a metal conductor at constant temperature the current is proportional to the voltage:</p><p>$$V = I\,R$$</p><p>Resistance is measured in ohms: $1\,\Omega = 1\,\mathrm{V/A}$.</p>`)}
+${FigRow([[planeSvg({ W: 250, H: 190, x: [-6, 6], y: [-3, 3], ticks: false, xl: 'V', yl: 'I', fns: [{ f: v => v / 2.4 }], label: T`Current against voltage for a resistor: a straight line through the origin` }), T`resistor (ohmic): straight line`], [planeSvg({ W: 250, H: 190, x: [-6, 6], y: [-3, 3], ticks: false, xl: 'V', yl: 'I', fns: [{ f: v => 2 * Math.tanh(v / 2.2), cls: 'mf-c2' }], label: T`Current against voltage for a filament lamp: a curve that flattens as the filament heats up` }), T`filament lamp: curve flattens`]], T`For an ohmic conductor $I \propto V$. A lamp filament heats up, so its resistance rises and the graph bends over.`)}
 <h3>Resistivity</h3>
 <p>A wire's resistance depends on its material, length $L$ and cross-sectional area $A$:</p>
 ${Fm(T`R = \rho\,\frac{L}{A}`)}
@@ -178,6 +182,7 @@ ${Ex(T`<p>$R_1 = 4\,\Omega$ in series with $R_2 = 6\,\Omega$ and $R_3 = 3\,\Omeg
 <h3>EMF and internal resistance</h3>
 <p>A real battery has an <b>electromotive force</b> $\varepsilon$ (the energy it gives each coulomb) and a small <b>internal resistance</b> $r$. With an external resistance $R$:</p>
 ${Fm(T`I = \frac{\varepsilon}{R + r} \qquad V_{\text{terminal}} = \varepsilon - I r`)}
+${Fig(planeSvg({ W: 320, H: 200, x: [0, 6.6], y: [0, 14], step: [1, 2], xl: 'I (A)', yl: 'V (V)', fns: [{ f: i => 12 - 2 * i, to: 6 }], pts: [[0, 12, 'ε = 12 V', 'start', false, 8, -4]], texts: [[3.4, 7.5, T`slope = −r`, 'start', 'mf-small']], label: T`Terminal voltage falling linearly with current for a 12 volt battery with 2 ohm internal resistance` }), T`Terminal voltage $V = \varepsilon - Ir$ for $\varepsilon = 12\,\mathrm{V}$, $r = 2\,\Omega$: it equals the EMF only when no current flows.`)}
 ${Tip(T`<p><b>Kirchhoff's rules</b> summarise all of this: the currents into a junction equal the currents out, and around any closed loop the voltage rises equal the voltage drops.</p>`)}`,
   gens: [
     () => {
@@ -241,6 +246,7 @@ ${Tip(T`<p><b>Kirchhoff's rules</b> summarise all of this: the currents into a j
 <h3>Fields made by currents</h3>
 <ul><li>Around a long straight wire the field lines are circles: $B = \dfrac{\mu_0 I}{2\pi r}$.</li><li>Inside a long solenoid with $n$ turns per metre the field is uniform: $B = \mu_0 n I$.</li></ul>
 <p>Here $\mu_0 = 4\pi \times 10^{-7}\,\mathrm{T\,m/A}$. Curl the fingers of your right hand around the wire with the thumb along the current: the fingers show the field direction.</p>
+${FigW(wireFieldSvg(), T`Left: circular field lines around a straight current (right-hand grip rule). Right: in a uniform field the magnetic force is always perpendicular to the velocity, so the charge moves in a circle.`)}
 ${Key(T`<p>A magnetic field pushes on moving charges (the <b>Lorentz force</b>):</p><p>$$\text{on a wire: } F = B I L \sin\theta \qquad \text{on a charge: } F = q v B \sin\theta$$</p><p>$\theta$ is the angle between the current (or velocity) and the field. The force is perpendicular to both, and zero when they are parallel.</p>`)}
 <h3>Charged particles in a field</h3>
 <p>A charge moving at right angles to a uniform field feels a force perpendicular to its velocity, so it moves in a circle. Setting $qvB = \dfrac{m v^2}{r}$ gives the radius</p>
@@ -290,9 +296,11 @@ ${Fm(T`\Phi = B A \cos\theta`)}
 ${Key(T`<p><b>Faraday's law:</b> the EMF induced in a coil of $N$ turns equals the rate of change of flux linkage:</p><p>$$\varepsilon = -N\frac{\Delta \Phi}{\Delta t}.$$</p><p><b>Lenz's law</b> (the minus sign): the induced current flows so as to oppose the change that causes it.</p>`)}
 <h3>A moving rod</h3>
 <p>A rod of length $L$ moving at speed $v$ at right angles to a field $B$ sweeps through flux, and an EMF $\varepsilon = B L v$ appears between its ends.</p>
+${Fig(railsSvg(), T`As the rod slides it sweeps through magnetic flux, so an EMF $\varepsilon = BLv$ drives a current round the circuit.`)}
 <h3>Generators and transformers</h3>
 <p>A generator turns a coil in a magnetic field, producing an alternating EMF. A <b>transformer</b> uses a changing current in one coil to induce an EMF in another wound on the same iron core:</p>
 ${Fm(T`\frac{V_s}{V_p} = \frac{N_s}{N_p} \qquad \text{ideal: } V_p I_p = V_s I_s`)}
+${Fig(transformerSvg(), T`A step-up transformer: twice as many turns on the secondary gives twice the voltage (and half the current).`)}
 <p>Power is sent across the country at very high voltage: for the same power the current is small, so the heating loss in the cables, $P = I^2 R$, is small too.</p>
 ${Tip(T`<p>A transformer works only with alternating current. A steady direct current gives no changing flux, so nothing is induced.</p>`)}`,
   gens: [
@@ -333,10 +341,12 @@ ${Tip(T`<p>A transformer works only with alternating current. A steady direct cu
 <p>Mains electricity is <b>alternating current</b>: the voltage swings back and forth sinusoidally, $V = V_0 \sin(\omega t)$ with $\omega = 2\pi f$. In Indonesia the frequency is $50\,\mathrm{Hz}$.</p>
 <h3>RMS values</h3>
 <p>The <b>root-mean-square</b> (rms) value is the steady DC value that would give the same heating: $V_{\text{rms}} = \dfrac{V_0}{\sqrt2}$ and $I_{\text{rms}} = \dfrac{I_0}{\sqrt2}$. When mains is described as $220\,\mathrm{V}$ this is the rms value; the peak is $220\sqrt2 \approx 311\,\mathrm{V}$. The average power in a resistor is $P = I_{\text{rms}}^2 R = V_{\text{rms}} I_{\text{rms}}$.</p>
+${FigW(planeSvg({ W: 540, H: 230, x: [0, 42], y: [-380, 380], step: [5, 100], tickX: 10, tickY: 200, xl: 't (ms)', yl: 'V (V)', fns: [{ f: t => 311 * Math.sin(2 * Math.PI * 50 * t / 1000) }, { f: () => 220, cls: 'mf-c2', dash: true, label: T`rms 220 V`, at: 42, dx: -4, dy: -6, anchor: 'end' }], pts: [[5, 311, T`peak 311 V`, 'start', false, 8, -2]], label: T`Mains voltage in Indonesia: a 50 hertz sine wave with peak 311 volts and rms 220 volts` }), T`Indonesian mains: $V_{\text{rms}} = 220\,\mathrm{V}$ at $50\,\mathrm{Hz}$, so the peak is $220\sqrt2 \approx 311\,\mathrm{V}$ and one cycle takes $20\,\mathrm{ms}$.`)}
 ${Key(T`<p>Inductors and capacitors oppose AC with a <b>reactance</b> (in ohms) that depends on the frequency:</p><p>$$X_L = \omega L = 2\pi f L \qquad X_C = \frac{1}{\omega C} = \frac{1}{2\pi f C}$$</p><p>In a series RLC circuit the <b>impedance</b> is $Z = \sqrt{R^2 + (X_L - X_C)^2}$ and $I = V/Z$.</p>`)}
 <h3>Resonance</h3>
 <p>When $X_L = X_C$, the impedance is smallest ($Z = R$) and the current largest. This happens at the <b>resonant frequency</b></p>
 ${Fm(T`f_0 = \frac{1}{2\pi\sqrt{LC}}`)}
+${Fig(planeSvg({ W: 340, H: 200, x: [0, 3.2], y: [0, 1.15], step: [0.5, 0.25], ticks: false, xl: 'f', yl: 'I', fns: [{ f: f => 1 / Math.sqrt(1 + 16 * (f - 1 / f) ** 2), from: 0.05 }], segs: [[1, 0, 1, 1, 'mf-c2', true]], pts: [[1, 1, 'f₀', 'start', false, 8, -4]], label: T`Resonance curve: the current peaks sharply at the resonant frequency` }), T`The current in an LCR circuit peaks at the resonant frequency $f_0$, where $X_L = X_C$.`)}
 <p>Radios select one station by tuning an LC circuit to resonate at its frequency.</p>
 ${Tip(T`<p>An inductor passes low frequencies easily and blocks high ones; a capacitor does the opposite.</p>`)}`,
   gens: [
@@ -376,8 +386,10 @@ ${Tip(T`<p>An inductor passes low frequencies easily and blocks high ones; a cap
   lesson: () => T`
 <p>Changing electric and magnetic fields create each other and travel together through space as an <b>electromagnetic (EM) wave</b>. EM waves are transverse, need no medium, and in a vacuum all travel at the speed of light, $c = 3.0 \times 10^{8}\,\mathrm{m/s}$.</p>
 ${Fm(T`c = f\lambda`)}
+${FigW(emWaveSvg(), T`In an EM wave the electric field $E$ and magnetic field $B$ oscillate in step, at right angles to each other and to the direction of travel.`)}
 <h3>The electromagnetic spectrum</h3>
 ${Tbl([T`Type`, T`Typical wavelength`, T`Uses`], [[T`Radio waves`, T`metres to kilometres`, T`radio, TV, communication`], [T`Microwaves`, T`millimetres to centimetres`, T`mobile phones, Wi-Fi, radar, cooking`], [T`Infrared`, T`micrometres`, T`remote controls, thermal cameras, heaters`], [T`Visible light`, T`400–700 nm`, T`seeing, optical fibres`], [T`Ultraviolet`, T`10–400 nm`, T`sterilising, fluorescence; causes sunburn`], [T`X-rays`, T`about 0.01–10 nm`, T`medical imaging, airport security`], [T`Gamma rays`, T`below about 0.01 nm`, T`cancer treatment, sterilising equipment`]])}
+${FigW(spectrumSvg(), T`The electromagnetic spectrum on a wavelength scale (each tick is a factor of 1,000). Visible light, 400–700 nm, is a tiny slice (ranges as used by NASA).`)}
 <p>From radio to gamma rays the wavelength gets shorter and the frequency higher. Higher frequency also means more energy carried by each photon, which is why ultraviolet, X-rays and gamma rays can damage living cells.</p>
 ${Key(T`<p><b>Polarisation</b> shows that EM waves are transverse. A polarising filter lets through only the part of the wave oscillating in one direction. For polarised light of intensity $I_0$ falling on a filter at angle $\theta$ to its direction of polarisation (Malus's law):</p><p>$$I = I_0 \cos^2\theta.$$</p><p>Unpolarised light loses half its intensity at the first filter.</p>`)}
 ${Tip(T`<p>1 nanometre is $10^{-9}\,\mathrm{m}$. Green light of $500\,\mathrm{nm}$ has $f = \frac{3 \times 10^{8}}{500 \times 10^{-9}} = 6 \times 10^{14}\,\mathrm{Hz}$.</p>`)}`,

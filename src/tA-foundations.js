@@ -31,9 +31,11 @@ ${siTable()}
 <h3>Prefixes</h3>
 <p>Prefixes scale a unit up or down by powers of ten:</p>
 ${prefixTable()}
+${FigW(numberLineSvg({ min: -9, max: 9, step: 1, labelEvery: 3, W: 560, H: 104, fmt: v => '10' + String(v).replace('-', '⁻').replace(/\d/g, d => '⁰¹²³⁴⁵⁶⁷⁸⁹'[d]), marks: [{ v: -9, label: 'n' }, { v: -6, label: 'µ' }, { v: -3, label: 'm' }, { v: -2, label: 'c', below: true, cls: 'mf-s2' }, { v: 0, label: T`base unit`, cls: 'mf-s4' }, { v: 3, label: 'k' }, { v: 6, label: 'M' }, { v: 9, label: 'G' }], label: T`Scale of prefixes from nano to giga as powers of ten` }), T`The common prefixes on a powers-of-ten scale: each step of three is a factor of 1,000 (milli → base → kilo → mega).`)}
 ${Key(T`<p>To convert, multiply by a factor that equals 1. Since $1\,\mathrm{km} = 1000\,\mathrm{m}$,</p><p>$$3.2\,\mathrm{km} \times \frac{1000\,\mathrm{m}}{1\,\mathrm{km}} = 3200\,\mathrm{m}.$$</p><p>The unit you want goes on top, the unit you are removing goes underneath, and the old units cancel.</p>`)}
 <h3>Squared and cubed units</h3>
 <p>A square metre is a square $100\,\mathrm{cm}$ on each side, so $1\,\mathrm{m^2} = 100 \times 100 = 10\,000\,\mathrm{cm^2}$. For volumes the factor is cubed: $1\,\mathrm{m^3} = 1\,000\,000\,\mathrm{cm^3}$. Also $1\,\mathrm{L} = 1000\,\mathrm{cm^3}$ and $1\,\mathrm{m^3} = 1000\,\mathrm{L}$.</p>
+${Fig(gridSvg(10, 10, (r, c) => r === 0 && c === 0 ? 'mf-s1' : 'mf-s2l', { cell: 18, label: T`A 10 by 10 square of small squares with one highlighted`, caption: '10 cm × 10 cm = 100 cm²' }), T`Make each side 10 times longer and the area grows $10 \times 10 = 100$ times: the big square holds 100 of the highlighted $1\,\mathrm{cm^2}$ squares. A metre is 100 cm, so $1\,\mathrm{m^2} = 10\,000\,\mathrm{cm^2}$.`)}
 <h3>Speeds: km/h and m/s</h3>
 ${Fm(T`1\,\mathrm{km/h} = \frac{1000\,\mathrm{m}}{3600\,\mathrm{s}} = \frac{1}{3.6}\,\mathrm{m/s}`)}
 <p>So divide by 3.6 to go from km/h to m/s, and multiply by 3.6 to go back: $72\,\mathrm{km/h} = 20\,\mathrm{m/s}$.</p>
@@ -99,6 +101,7 @@ ${Fig(vernierSvg(23.4, T`A vernier caliper reading`), T`Main scale: 23 mm. Verni
 <p>The sleeve shows whole and half millimetres; the thimble has 50 divisions of $0.01\,\mathrm{mm}$. Reading = sleeve + thimble $\times\ 0.01\,\mathrm{mm}$. A sleeve showing $5.5\,\mathrm{mm}$ with thimble line 23 gives $5.5 + 0.23 = 5.73\,\mathrm{mm}$.</p>
 <h3>Uncertainty</h3>
 <p>A single reading is usually quoted with an uncertainty of about half the smallest division, for example $12.5 \pm 0.05\,\mathrm{cm}$ on a millimetre ruler. For several readings of the same quantity, use the <b>mean</b> as the best value and let the spread of the readings show the uncertainty.</p>
+${FigW(targetsSvg(), T`<b>Precision</b> is how close repeated readings are to each other; <b>accuracy</b> is how close they are to the true value (the centre).`)}
 ${Key(T`<p><b>Significant figures</b> are the digits that carry information about the measurement:</p><ul><li>All non-zero digits count: $4.73$ has 3.</li><li>Zeros between them count: $4.07$ has 3.</li><li>Leading zeros never count: $0.0047$ has 2.</li><li>Trailing zeros after a decimal point count: $4.70$ has 3.</li></ul>`)}
 <h3>Calculating with measurements</h3>
 <ul><li><b>Multiplying or dividing:</b> give the answer to the <i>fewest significant figures</i> of the values used. $12.5\,\mathrm{cm} \times 3.2\,\mathrm{cm} = 40.0 \to 40\,\mathrm{cm^2}$ (2 s.f.).</li><li><b>Adding or subtracting:</b> give the answer to the <i>fewest decimal places</i>. $12.52 + 3.1 = 15.62 \to 15.6$.</li></ul>
@@ -163,6 +166,7 @@ ${Tbl([T`Scalars`, T`Vectors`], [[T`distance, speed`, T`displacement, velocity`]
 ${Fm(T`A_x = A\cos\theta \qquad A_y = A\sin\theta`)}
 ${Fig(vectorSvg([{ x: 5.2, y: 3, label: 'A', guides: true, theta: 'θ' }, { x: 5.2, y: 0, label: sub('A', 'x'), kind: 'b', mid: [0, 24] }, { x: 0, y: 3, label: sub('A', 'y'), kind: 'b', mid: [-20, 5] }], T`A vector A split into a horizontal component and a vertical component`, 7), T`The components $A_x$ and $A_y$ add up to $\vec{A}$.`)}
 <h3>Adding vectors</h3>
+${Fig(planeSvg({ W: 300, x: [-0.5, 6], y: [-0.5, 5], equal: true, grid: true, ticks: false, xl: ' ', yl: ' ', vecs: [[0, 0, 4, 1, 'mf-c1'], [4, 1, 5, 4, 'mf-c2'], [0, 0, 5, 4, 'mf-c3']], texts: [[2, 0.2, 'A', 'middle', 'mf-var'], [4.75, 2.3, 'B', 'start', 'mf-var'], [2.2, 2.4, 'R = A + B', 'end', 'mf-var']], label: T`Head-to-tail addition of vectors A and B giving the resultant R` }), T`Head to tail: draw $\mathbf{B}$ from the tip of $\mathbf{A}$; the resultant $\mathbf{R}$ joins the first tail to the last head.`)}
 <p>To add vectors, place them head to tail; the <b>resultant</b> runs from the first tail to the last head.</p>
 <ul><li>Same direction: add the magnitudes. $3\,\mathrm{N} + 4\,\mathrm{N}$ to the right gives $7\,\mathrm{N}$ to the right.</li><li>Opposite directions: subtract, and the resultant points the way of the larger one.</li><li>Perpendicular: use Pythagoras. $3\,\mathrm{N}$ east and $4\,\mathrm{N}$ north give $\sqrt{3^2 + 4^2} = 5\,\mathrm{N}$.</li></ul>
 ${Key(T`<p>For vectors at any angle, add the components:</p><p>$$R_x = A_x + B_x, \qquad R_y = A_y + B_y,$$</p><p>$$R = \sqrt{R_x^2 + R_y^2}, \qquad \tan\varphi = \frac{R_y}{R_x}.$$</p><p>For two vectors $A$ and $B$ with angle $\alpha$ between them, this gives the shortcut $R = \sqrt{A^2 + B^2 + 2AB\cos\alpha}$.</p>`)}

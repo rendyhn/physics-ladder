@@ -47,7 +47,7 @@ watt (power)
 pascal (pressure)
 
 ##### units
-@5xqht7vwgh  ; 0=siTable() | 1=prefixTable() | 2=Key(T`<p>To convert, multiply by a facto | 3=Fm(T`1\,\mathrm{km/h} = \frac{1000\,\mat | 4=Tip(T`<p>Check the units at the end of e
+@16factbvpc  ; 0=siTable() | 1=prefixTable() | 2=FigW(numberLineSvg({ min: -9, max: 9, st | 3=Key(T`<p>To convert, multiply by a facto | 4=Fig(gridSvg(10, 10, (r, c) => r === 0 && | 5=Fm(T`1\,\mathrm{km/h} = \frac{1000\,\mat | 6=Tip(T`<p>Check the units at the end of e
 
 <p>A <b>physical quantity</b> is anything we can measure, and every measurement has two parts: a <b>number</b> and a <b>unit</b>. "The table is 1.5" means nothing; "the table is $1.5\,\mathrm{m}$ long" is a measurement.</p>
 <h3>SI base units</h3>
@@ -58,16 +58,28 @@ pascal (pressure)
 <p>Prefixes scale a unit up or down by powers of ten:</p>
 ⟦1⟧
 ⟦2⟧
+⟦3⟧
 <h3>Squared and cubed units</h3>
 <p>A square metre is a square $100\,\mathrm{cm}$ on each side, so $1\,\mathrm{m^2} = 100 \times 100 = 10\,000\,\mathrm{cm^2}$. For volumes the factor is cubed: $1\,\mathrm{m^3} = 1\,000\,000\,\mathrm{cm^3}$. Also $1\,\mathrm{L} = 1000\,\mathrm{cm^3}$ and $1\,\mathrm{m^3} = 1000\,\mathrm{L}$.</p>
+⟦4⟧
 <h3>Speeds: km/h and m/s</h3>
-⟦3⟧
+⟦5⟧
 <p>So divide by 3.6 to go from km/h to m/s, and multiply by 3.6 to go back: $72\,\mathrm{km/h} = 20\,\mathrm{m/s}$.</p>
 <h3>Scientific notation</h3>
 <p>Very large and very small numbers are written as $a \times 10^n$ with $1 \le a \lt 10$. The speed of light is $3.0 \times 10^{8}\,\mathrm{m/s}$; the charge of an electron is $1.6 \times 10^{-19}\,\mathrm{C}$. In a calculator or on this site you can type these as <code>3e8</code> and <code>1.6e-19</code>.</p>
-⟦4⟧
+⟦6⟧
+@23lhaw8janq
+base unit
+@nsrocydwld
+Scale of prefixes from nano to giga as powers of ten
+@1dl7tjf485i
+The common prefixes on a powers-of-ten scale: each step of three is a factor of 1,000 (milli → base → kilo → mega).
 @k5dfx6kr0n
 <p>To convert, multiply by a factor that equals 1. Since $1\,\mathrm{km} = 1000\,\mathrm{m}$,</p><p>$$3.2\,\mathrm{km} \times \frac{1000\,\mathrm{m}}{1\,\mathrm{km}} = 3200\,\mathrm{m}.$$</p><p>The unit you want goes on top, the unit you are removing goes underneath, and the old units cancel.</p>
+@osirn51nxq
+A 10 by 10 square of small squares with one highlighted
+@16p5buwzzcw
+Make each side 10 times longer and the area grows $10 \times 10 = 100$ times: the big square holds 100 of the highlighted $1\,\mathrm{cm^2}$ squares. A metre is 100 cm, so $1\,\mathrm{m^2} = 10\,000\,\mathrm{cm^2}$.
 @thgftg5cc1
 1\,\mathrm{km/h} = \frac{1000\,\mathrm{m}}{3600\,\mathrm{s}} = \frac{1}{3.6}\,\mathrm{m/s}
 @16er3rbte4x
@@ -154,7 +166,7 @@ The seven SI base quantities are length, mass, time, electric current, temperatu
 speed or force
 
 ##### measurement
-@23qs3p5efgc  ; 0=Tbl([T`Instrument`, T`Smallest reading`, | 1=Fig(vernierSvg(23.4, T`A vernier caliper | 2=Key(T`<p><b>Significant figures</b> are  | 3=Tip(T`<p>A calculator shows many digits,
+@180vil82d8b  ; 0=Tbl([T`Instrument`, T`Smallest reading`, | 1=Fig(vernierSvg(23.4, T`A vernier caliper | 2=FigW(targetsSvg(), T`<b>Precision</b> is | 3=Key(T`<p><b>Significant figures</b> are  | 4=Tip(T`<p>A calculator shows many digits,
 
 <p>No measurement is perfectly exact. A good measurement says how big something is <i>and</i> how precisely we know it.</p>
 <h3>Instruments and their precision</h3>
@@ -167,9 +179,10 @@ speed or force
 <h3>Uncertainty</h3>
 <p>A single reading is usually quoted with an uncertainty of about half the smallest division, for example $12.5 \pm 0.05\,\mathrm{cm}$ on a millimetre ruler. For several readings of the same quantity, use the <b>mean</b> as the best value and let the spread of the readings show the uncertainty.</p>
 ⟦2⟧
+⟦3⟧
 <h3>Calculating with measurements</h3>
 <ul><li><b>Multiplying or dividing:</b> give the answer to the <i>fewest significant figures</i> of the values used. $12.5\,\mathrm{cm} \times 3.2\,\mathrm{cm} = 40.0 \to 40\,\mathrm{cm^2}$ (2 s.f.).</li><li><b>Adding or subtracting:</b> give the answer to the <i>fewest decimal places</i>. $12.52 + 3.1 = 15.62 \to 15.6$.</li></ul>
-⟦3⟧
+⟦4⟧
 @1n4tjiq7o59
 Instrument
 @13gr3233qj5
@@ -192,6 +205,8 @@ wire diameters, sheet thickness
 A vernier caliper reading
 @e1v15jhjcz
 Main scale: 23 mm. Vernier line 4 lines up. Reading: $23 + 0.4 = 23.4\,\mathrm{mm}$.
+@23a01f8r47q
+<b>Precision</b> is how close repeated readings are to each other; <b>accuracy</b> is how close they are to the true value (the centre).
 @d202007fgc
 <p><b>Significant figures</b> are the digits that carry information about the measurement:</p><ul><li>All non-zero digits count: $4.73$ has 3.</li><li>Zeros between them count: $4.07$ has 3.</li><li>Leading zeros never count: $0.0047$ has 2.</li><li>Trailing zeros after a decimal point count: $4.70$ has 3.</li></ul>
 @1c8c59799nz
@@ -228,7 +243,7 @@ A pendulum's period is timed five times (in seconds): ⟦0⟧. What is the mean 
 Add the readings and divide by 5: $\frac{⟦0⟧}{5} = ⟦1⟧$, which is ⟦2⟧ to two decimal places, the same precision as the readings.
 
 ##### vectors
-@1rjwcbf0ldf  ; 0=Tbl([T`Scalars`, T`Vectors`], [[T`distan | 1=Fm(T`A_x = A\cos\theta \qquad A_y = A\si | 2=Fig(vectorSvg([{ x: 5.2, y: 3, label: 'A | 3=Key(T`<p>For vectors at any angle, add t | 4=Ex(T`<p>Forces of $6\,\mathrm{N}$ and $8 | 5=Tip(T`<p>The angle in $R = \sqrt{A^2 + B
+@18lxdp8ezoy  ; 0=Tbl([T`Scalars`, T`Vectors`], [[T`distan | 1=Fm(T`A_x = A\cos\theta \qquad A_y = A\si | 2=Fig(vectorSvg([{ x: 5.2, y: 3, label: 'A | 3=Fig(planeSvg({ W: 300, x: [-0.5, 6], y:  | 4=Key(T`<p>For vectors at any angle, add t | 5=Ex(T`<p>Forces of $6\,\mathrm{N}$ and $8 | 6=Tip(T`<p>The angle in $R = \sqrt{A^2 + B
 
 <p>Some quantities are fully described by a size alone: a mass of $5\,\mathrm{kg}$, a temperature of $30^\circ\mathrm{C}$. These are <b>scalars</b>. Others also need a direction: a displacement of $5\,\mathrm{m}$ <i>north</i>, a force of $20\,\mathrm{N}$ <i>downwards</i>. These are <b>vectors</b>.</p>
 ⟦0⟧
@@ -238,11 +253,12 @@ Add the readings and divide by 5: $\frac{⟦0⟧}{5} = ⟦1⟧$, which is ⟦2�
 ⟦1⟧
 ⟦2⟧
 <h3>Adding vectors</h3>
+⟦3⟧
 <p>To add vectors, place them head to tail; the <b>resultant</b> runs from the first tail to the last head.</p>
 <ul><li>Same direction: add the magnitudes. $3\,\mathrm{N} + 4\,\mathrm{N}$ to the right gives $7\,\mathrm{N}$ to the right.</li><li>Opposite directions: subtract, and the resultant points the way of the larger one.</li><li>Perpendicular: use Pythagoras. $3\,\mathrm{N}$ east and $4\,\mathrm{N}$ north give $\sqrt{3^2 + 4^2} = 5\,\mathrm{N}$.</li></ul>
-⟦3⟧
 ⟦4⟧
 ⟦5⟧
+⟦6⟧
 @1dv40p014tv
 Scalars
 @1ih3cm1us94
@@ -267,6 +283,10 @@ electric field, weight
 A vector A split into a horizontal component and a vertical component
 @1bus56gqak5
 The components $A_x$ and $A_y$ add up to $\vec{A}$.
+@1umq4lwqcsy
+Head-to-tail addition of vectors A and B giving the resultant R
+@11cwaz7xw0y
+Head to tail: draw $\mathbf{B}$ from the tip of $\mathbf{A}$; the resultant $\mathbf{R}$ joins the first tail to the last head.
 @1skqvdcrwsz
 <p>For vectors at any angle, add the components:</p><p>$$R_x = A_x + B_x, \qquad R_y = A_y + B_y,$$</p><p>$$R = \sqrt{R_x^2 + R_y^2}, \qquad \tan\varphi = \frac{R_y}{R_x}.$$</p><p>For two vectors $A$ and $B$ with angle $\alpha$ between them, this gives the shortcut $R = \sqrt{A^2 + B^2 + 2AB\cos\alpha}$.</p>
 @1902q7pwfqk

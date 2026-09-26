@@ -1,22 +1,6 @@
 /* Bahasa Indonesia — 7-electricity */
 addT('id', {
   '8pmwod04x2': R`Diagram rangkaian dengan baterai dan resistor`,
-  '1tctsbl174k': R`
-<p><b>Arus listrik</b> adalah aliran muatan. Di dalam kawat logam, muatan yang bergerak adalah elektron, masing-masing bermuatan $e = 1{,}6 \times 10^{-19}\,\mathrm{C}$ (coulomb).</p>
-⟦0⟧
-<p>Kuat arus diukur dalam ampere: $1\,\mathrm{A}$ berarti muatan $1\,\mathrm{C}$ melewati suatu titik setiap sekon. Menurut kesepakatan, arus mengalir dari $+$ ke $-$ di luar baterai, berlawanan dengan arah gerak elektron.</p>
-<h3>Beda potensial dan hambatan</h3>
-<p><b>Beda potensial</b> (tegangan) $V$ antara dua titik adalah energi yang diberikan kepada atau diambil dari setiap coulomb muatan: $1\,\mathrm{V} = 1\,\mathrm{J/C}$. <b>Hambatan</b> $R$ suatu komponen menunjukkan seberapa besar tegangan yang diperlukan untuk mengalirkan arus melaluinya.</p>
-⟦1⟧
-<h3>Hambatan jenis</h3>
-<p>Hambatan sebuah kawat bergantung pada bahannya, panjangnya $L$, dan luas penampangnya $A$:</p>
-⟦2⟧
-<p>$\rho$ adalah <b>hambatan jenis</b> bahan dalam $\Omega\,\mathrm{m}$ (tembaga: $1{,}7 \times 10^{-8}\,\Omega\,\mathrm{m}$). Kawat yang lebih panjang hambatannya lebih besar; kawat yang lebih tebal hambatannya lebih kecil.</p>
-<h3>Daya dan energi listrik</h3>
-⟦3⟧
-<p>Tagihan listrik memakai satuan <b>kilowatt-jam</b>: $1\,\mathrm{kWh}$ adalah energi yang dipakai alat berdaya $1\,\mathrm{kW}$ selama satu jam, yaitu $3{,}6 \times 10^{6}\,\mathrm{J}$.</p>
-⟦4⟧
-⟦5⟧`,
   'oimy8jns8d': R`<p><b>Hukum Ohm:</b> untuk penghantar logam pada suhu tetap, kuat arus sebanding dengan tegangan:</p><p>$$V = I\,R$$</p><p>Hambatan diukur dalam ohm: $1\,\Omega = 1\,\mathrm{V/A}$.</p>`,
   'th33vhvuaq': R`<p>Sebuah ketel listrik tertulis $2000\,\mathrm{W}$, $220\,\mathrm{V}$. Kuat arus: $I = P/V = 2000/220 \approx 9{,}1\,\mathrm{A}$. Jika dipakai $15$ menit sehari selama $30$ hari: $2\,\mathrm{kW} \times 0{,}25\,\mathrm{jam} \times 30 = 15\,\mathrm{kWh}$.</p>`,
   '2dchhuclfv': R`<p>Ubah luas dalam $\mathrm{mm^2}$ ke $\mathrm{m^2}$ sebelum memakai $R = \rho L / A$: $1\,\mathrm{mm^2} = 10^{-6}\,\mathrm{m^2}$.</p>`,
@@ -40,21 +24,6 @@ addT('id', {
   'whqrzzb55h': R`Kuat arus menjadi dua kali lipat dan daya tetap`,
   '17gcgm7tfee': R`Kuat arus menjadi setengahnya dan daya menjadi dua kali lipat`,
   'nepb6j9dlj': R`$I = V/R$, jadi menggandakan $V$ menggandakan $I$. $P = V^2/R$, jadi menggandakan $V$ mengalikan $P$ dengan $2^2 = 4$.`,
-  'te90xpu5gv': R`
-<p>Rangkaian adalah lintasan tertutup yang dapat dilalui muatan. Dua aturan yang sama menentukan segala sesuatu dalam rangkaian resistor.</p>
-<h3>Rangkaian seri</h3>
-⟦0⟧
-<ul><li><b>Kuat arus yang sama</b> mengalir melalui setiap komponen.</li><li>Tegangannya dijumlahkan: $V = V_1 + V_2 + V_3$.</li><li>Hambatannya dijumlahkan: $R_s = R_1 + R_2 + R_3$.</li></ul>
-<h3>Rangkaian paralel</h3>
-⟦1⟧
-<ul><li>Setiap cabang mendapat <b>tegangan yang sama</b>.</li><li>Arusnya dijumlahkan: $I = I_1 + I_2 + I_3$.</li><li>$\dfrac{1}{R_p} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \dfrac{1}{R_3}$. Untuk dua resistor saja: $R_p = \dfrac{R_1 R_2}{R_1 + R_2}$.</li></ul>
-<p>Hambatan pengganti rangkaian paralel selalu lebih kecil dari resistor terkecilnya, karena setiap cabang tambahan memberi arus jalur lain.</p>
-⟦2⟧
-⟦3⟧
-<h3>GGL dan hambatan dalam</h3>
-<p>Baterai nyata memiliki <b>gaya gerak listrik (GGL)</b> $\varepsilon$ (energi yang diberikannya kepada setiap coulomb) dan <b>hambatan dalam</b> $r$ yang kecil. Dengan hambatan luar $R$:</p>
-⟦4⟧
-⟦5⟧`,
   '1znip64d7e6': R`Tiga resistor dirangkai seri: hanya ada satu jalur bagi arus.`,
   '1fagoc02t7p': R`Tiga resistor dirangkai paralel: arus terbagi ke cabang-cabangnya.`,
   '252ypvrul5e': R`<p>Untuk rangkaian campuran, ganti setiap kelompok paralel dengan hambatan penggantinya, lalu jumlahkan bagian-bagian yang seri. Hitung arus total dengan $I = V/R_{\text{total}}$, lalu telusuri kembali rangkaian memakai $V = IR$ untuk setiap bagian.</p>`,

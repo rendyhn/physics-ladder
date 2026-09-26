@@ -17,7 +17,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / 'src'
 OUT = ROOT / 'i18n'
-CONTENT_FILES = ['core.js', 'phys.js', 'tA-foundations.js', 'tB-mechanics.js', 'tC-waves.js', 'tD-thermal.js', 'tE-electricity.js', 'tF-optics.js', 'tG-modern.js', 'tH-technology.js', 'ladder.js']
+CONTENT_FILES = ['core.js', 'phys.js', 'fig.js', 'pfig.js', 'tA-foundations.js', 'tB-mechanics.js', 'tC-waves.js', 'tD-thermal.js', 'tE-electricity.js', 'tF-optics.js', 'tG-modern.js', 'tH-technology.js', 'ladder.js']
 LANGS = ['id']
 M32 = 0xFFFFFFFF
 

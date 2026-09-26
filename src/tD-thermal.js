@@ -17,6 +17,7 @@ level({
 <h3>Temperature scales</h3>
 ${Fm(T`T_K = T_C + 273 \qquad T_F = \tfrac95 T_C + 32`)}
 <p>A change of $1^\circ\mathrm{C}$ is the same as a change of $1\,\mathrm{K}$. Water freezes at $0^\circ\mathrm{C} = 273\,\mathrm{K} = 32^\circ\mathrm{F}$ and boils at $100^\circ\mathrm{C} = 373\,\mathrm{K} = 212^\circ\mathrm{F}$. (More precisely, $0^\circ\mathrm{C} = 273.15\,\mathrm{K}$.)</p>
+${Fig(thermometersSvg(), T`The same two fixed points on three scales. A step of $1^\circ\mathrm{C}$ equals $1\,\mathrm{K}$, but $1.8^\circ\mathrm{F}$.`)}
 <h3>Specific heat capacity</h3>
 <p>The heat needed to change the temperature of a mass $m$ by $\Delta T$ is</p>
 ${Fm(T`Q = m\,c\,\Delta T`)}
@@ -25,6 +26,7 @@ ${Fm(T`Q = m\,c\,\Delta T`)}
 <p>While a substance melts or boils, its temperature stays constant even though heat is flowing in. The heat needed is</p>
 ${Fm(T`Q = m\,L`)}
 <p>where $L$ is the <b>latent heat</b>: about $3.34 \times 10^{5}\,\mathrm{J/kg}$ to melt ice and $2.26 \times 10^{6}\,\mathrm{J/kg}$ to boil water.</p>
+${Fig(planeSvg({ W: 380, H: 230, x: [0, 10.4], y: [-30, 135], step: [1, 20], ticks: false, xl: T`heat added`, yl: 'T (°C)', segs: [[0, -20, 1, 0, 'mf-c1'], [1, 0, 3, 0, 'mf-c4'], [3, 0, 5, 100, 'mf-c1'], [5, 100, 9, 100, 'mf-c4'], [9, 100, 10, 120, 'mf-c1']], texts: [[0.3, -5, T`ice`, 'start', 'mf-small'], [2, 6, T`melting`, 'middle', 'mf-small'], [4.1, 45, T`water`, 'end', 'mf-small'], [7, 106, T`boiling`, 'middle', 'mf-small'], [9.6, 124, T`steam`, 'end', 'mf-small'], [-0.15, 0, '0', 'end', 'mf-small'], [-0.15, 100, '100', 'end', 'mf-small']], label: T`Heating curve of water: temperature rises, stays flat while melting, rises, stays flat while boiling, rises again` }), T`Heating ice to steam (not to scale): the flat parts are changes of state, where the heat ($Q = mL$) breaks bonds instead of raising the temperature. Boiling needs about 7 times the heat of melting.`)}
 ${Key(T`<p><b>Calorimetry (Black's principle):</b> when hot and cold objects are mixed in an insulated container, the heat lost by the hot one equals the heat gained by the cold one:</p><p>$$m_1 c_1 (T_1 - T) = m_2 c_2 (T - T_2),$$</p><p>where $T$ is the final common temperature.</p>`)}
 ${Ex(T`<p>$0.2\,\mathrm{kg}$ of water at $80^\circ\mathrm{C}$ is mixed with $0.3\,\mathrm{kg}$ of water at $20^\circ\mathrm{C}$. The $c$ is the same on both sides, so it cancels:</p><p>$$0.2(80 - T) = 0.3(T - 20) \;\Rightarrow\; 16 + 6 = 0.5T \;\Rightarrow\; T = 44^\circ\mathrm{C}.$$</p>`)}
 <h3>Thermal expansion</h3>
@@ -84,6 +86,7 @@ ${Tip(T`<p>In $Q = mc\Delta T$ the mass must be in kilograms: $250\,\mathrm{g} =
 <p>A gas is made of a huge number of molecules moving randomly and colliding with each other and the walls of their container. The collisions with the walls cause the gas <b>pressure</b>.</p>
 <h3>The gas laws</h3>
 <ul><li><b>Boyle's law</b> (constant temperature): $p_1 V_1 = p_2 V_2$. Squeeze a gas into half the volume and its pressure doubles.</li><li><b>Charles's law</b> (constant pressure): $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$.</li><li><b>Gay-Lussac's law</b> (constant volume): $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$.</li></ul>
+${FigRow([[planeSvg({ W: 250, H: 190, x: [0, 5], y: [0, 5], ticks: false, xl: 'V', yl: 'p', fns: [{ f: v => 4 / v, from: 0.8 }], label: T`Boyle's law: pressure against volume is a curve` }), T`Boyle: $pV$ constant`], [planeSvg({ W: 250, H: 190, x: [-300, 120], y: [0, 5], step: [50, 1], ticks: false, xl: 'T (°C)', yl: 'V', fns: [{ f: t => 3 * (t + 273) / 373, from: 0, to: 110 }, { f: t => 3 * (t + 273) / 373, from: -273, to: 0, dash: true, cls: 'mf-c2' }], pts: [[-273, 0, '−273 °C', 'start', false, 6, -8]], label: T`Charles's law: volume against Celsius temperature is a straight line that extrapolates to zero at minus 273 degrees` }), T`Charles: $V \propto T$`]], T`Extending Charles's straight line back to zero volume gives $-273^\circ\mathrm{C}$: absolute zero, the start of the kelvin scale.`)}
 ${Key(T`<p>All three combine into the <b>ideal gas equation</b>:</p><p>$$pV = nRT, \qquad R = 8.31\,\mathrm{J/(mol\,K)},$$</p><p>where $n$ is the number of moles and $T$ the <b>absolute temperature in kelvin</b>. For a fixed amount of gas, $\dfrac{p_1 V_1}{T_1} = \dfrac{p_2 V_2}{T_2}$.</p>`)}
 <h3>Kinetic theory</h3>
 <p>The temperature of a gas measures the average kinetic energy of its molecules:</p>
@@ -135,8 +138,10 @@ ${Fm(T`\Delta U = Q - W`)}
 <p>$Q$ is the heat added <i>to</i> the gas and $W$ the work done <i>by</i> the gas. This is conservation of energy.</p>
 <h3>Work done by a gas</h3>
 <p>A gas expanding at constant pressure $p$ from $V_1$ to $V_2$ does work $W = p\,\Delta V$. On a $p$–$V$ diagram, the work is the area under the curve.</p>
+${Fig(planeSvg({ W: 320, H: 210, x: [0, 6], y: [0, 5], ticks: false, xl: 'V', yl: 'p', shade: [{ f: () => 3, from: 1, to: 5, cls: 'mf-f1' }], segs: [[1, 3, 5, 3, 'mf-c1']], vecs: [[2.6, 3, 3.4, 3, 'mf-c1']], pts: [[1, 3, 'V₁', 'middle', false, 0, 18], [5, 3, 'V₂', 'middle', false, 0, 18]], texts: [[3, 1.5, 'W = pΔV', 'middle', 'mf-lab-b']], label: T`Pressure-volume diagram of an expansion at constant pressure; the work is the shaded rectangle under the line` }), T`On a $p$–$V$ diagram the work done by the gas is the area under the path: here a rectangle, $W = p\,\Delta V$.`)}
 ${Tbl([T`Process`, T`What stays fixed`, T`Consequence`], [[T`Isobaric`, T`pressure`, '$W = p\\Delta V$'], [T`Isochoric`, T`volume`, '$W = 0$, $\\Delta U = Q$'], [T`Isothermal`, T`temperature`, '$\\Delta U = 0$, $Q = W$'], [T`Adiabatic`, T`no heat flow`, '$Q = 0$, $\\Delta U = -W$']])}
 ${Key(T`<p>A <b>heat engine</b> takes in heat $Q_H$ from a hot source, does work $W$ and rejects heat $Q_C$ to a cold sink: $W = Q_H - Q_C$. Its efficiency is</p><p>$$\eta = \frac{W}{Q_H} = 1 - \frac{Q_C}{Q_H}.$$</p><p>No engine working between absolute temperatures $T_H$ and $T_C$ can beat the <b>Carnot efficiency</b> $\eta_{\max} = 1 - \dfrac{T_C}{T_H}$.</p>`)}
+${Fig(engineSvg(), T`Energy flow in a heat engine: $Q_H = W + Q_C$. The wider the work arrow compared with $Q_H$, the more efficient the engine.`)}
 <h3>The second law and refrigerators</h3>
 <p>Heat flows by itself only from hot to cold, and no engine can turn all of its heat into work. A refrigerator uses work $W$ to move heat $Q_C$ out of its cold interior; its coefficient of performance is $\mathrm{COP} = \dfrac{Q_C}{W}$.</p>
 ${Tip(T`<p>Watch the signs: heat <i>removed</i> from the gas makes $Q$ negative, and work done <i>on</i> the gas (compression) makes $W$ negative.</p>`)}`,
@@ -176,6 +181,7 @@ ${Tip(T`<p>Watch the signs: heat <i>removed</i> from the gas makes $Q$ negative,
   blurb: 'The three ways heat travels, the rate of conduction through a wall, radiation and the fourth-power law, and insulation.',
   lesson: () => T`
 <p>Heat always flows from a hotter place to a colder one, in three different ways.</p>
+${FigW(heatWaysSvg(), T`The three ways heat travels: through a solid (conduction), carried by a moving fluid (convection), and as electromagnetic waves (radiation).`)}
 <h3>Conduction</h3>
 <p>In a solid, energetic particles pass energy to their neighbours. Metals conduct well because their free electrons carry energy quickly; wood, plastic, still air and wool are poor conductors, or <b>insulators</b>. The rate of heat flow through a slab of area $A$ and thickness $L$ with temperature difference $\Delta T$ is</p>
 ${Fm(T`P = \frac{k A \Delta T}{L}`)}

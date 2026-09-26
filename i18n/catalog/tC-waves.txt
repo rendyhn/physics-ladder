@@ -1,20 +1,28 @@
 ##### shm
-@1i3485l57l3  ; 0=Fig(graphSvg(Array.from({ length: 121 }, | 1=Key(T`<p>Periods of the two standard osc | 2=Tip(T`<p>Use SI units inside the square 
+@20ax2rsqkev  ; 0=Fig(graphSvg(Array.from({ length: 121 }, | 1=FigW(oscSvg(), T`Two standard oscillator | 2=Key(T`<p>Periods of the two standard osc | 3=Fig(planeSvg({ W: 340, H: 210, x: [-1.25 | 4=Tip(T`<p>Use SI units inside the square 
 
 <p>An object oscillates in <b>simple harmonic motion</b> (SHM) when the force pulling it back to its rest position is proportional to how far it has been moved: $F = -kx$. A mass on a spring and a pendulum swinging through small angles are the classic examples.</p>
 ⟦0⟧
 <h3>Describing an oscillation</h3>
 <ul><li><b>Amplitude</b> $A$: the largest displacement from the rest position.</li><li><b>Period</b> $T$: the time for one complete oscillation; <b>frequency</b> $f = 1/T$; <b>angular frequency</b> $\omega = 2\pi f$.</li><li>The displacement follows a sine or cosine curve: $x = A\cos(\omega t)$.</li></ul>
 ⟦1⟧
+⟦2⟧
 <h3>Speed, acceleration and energy</h3>
 <ul><li>The speed is greatest at the centre: $v_{\max} = A\omega$. At displacement $x$: $v = \omega\sqrt{A^2 - x^2}$.</li><li>The acceleration is greatest at the ends: $a_{\max} = A\omega^2$, always pointing back to the centre.</li><li>The total energy stays constant, $E = \tfrac12 k A^2$; it changes back and forth between kinetic and potential energy.</li></ul>
-⟦2⟧
+⟦3⟧
+⟦4⟧
 @9pqe4ezwqq
 Displacement against time for an oscillation with amplitude 4 cm and period 3 s
 @gnp8qkykr1
 Amplitude $A = 4\,\mathrm{cm}$, period $T = 3\,\mathrm{s}$.
+@1e8gphl9k89
+Two standard oscillators: a mass on a spring moves between $-A$ and $+A$ about its rest position; a pendulum of length $L$ swings about its lowest point.
 @6jvoipk1c7
 <p>Periods of the two standard oscillators:</p><p>$$\text{mass on a spring: } T = 2\pi\sqrt{\frac{m}{k}} \qquad \text{simple pendulum: } T = 2\pi\sqrt{\frac{L}{g}}$$</p><p>Neither depends on the amplitude. The pendulum's period does not depend on its mass either.</p>
+@1rlpbigcm80
+Energy in simple harmonic motion: kinetic energy largest at the centre, potential energy largest at the ends, total constant
+@1errsyiy00f
+In SHM energy sloshes between kinetic (largest at the centre) and potential (largest at $\pm A$); the total stays constant.
 @ztuj449fxe
 <p>Use SI units inside the square roots: mass in kg, length in m. A $50\,\mathrm{cm}$ pendulum has $L = 0.5\,\mathrm{m}$.</p>
 @22y4iw6i15l  ; 0=Q(m, 'kg') | 1=QT(k, 'N/m')
@@ -69,26 +77,34 @@ Its speed is the same everywhere
 At the centre all the energy is kinetic, so the speed is greatest; at the ends the mass stops for an instant.
 
 ##### mech-waves
-@8z6fbnnl86  ; 0=Fig(waveSvg(2, 3, 5, { label: T`A transv | 1=Key(T`<p>In one period a wave moves forw | 2=Fm(T`f_n = \frac{n v}{2L}, \qquad n = 1, | 3=Tip(T`<p>A crest and the next trough are
+@1wc26qot8ew  ; 0=Fig(waveSvg(2, 3, 5, { label: T`A transv | 1=FigW(longWaveSvg(), T`A longitudinal wav | 2=Key(T`<p>In one period a wave moves forw | 3=Fm(T`f_n = \frac{n v}{2L}, \qquad n = 1, | 4=FigRow([1, 2, 3].map(n => [planeSvg({ W: | 5=Tip(T`<p>A crest and the next trough are
 
 <p>A <b>wave</b> carries energy from place to place without carrying the material along with it. In a mechanical wave, each particle of the medium oscillates about its own position and passes the motion on to its neighbour.</p>
 <h3>Two kinds of wave</h3>
 <ul><li><b>Transverse:</b> the particles move at right angles to the direction the wave travels. Waves on a string, ripples on water.</li><li><b>Longitudinal:</b> the particles move back and forth along the direction of travel, making compressions and rarefactions. Sound, a pushed slinky.</li></ul>
 ⟦0⟧
+⟦1⟧
 <h3>Describing a wave</h3>
 <ul><li><b>Wavelength</b> $\lambda$: the length of one complete wave, for example crest to crest.</li><li><b>Frequency</b> $f$: waves passing a point per second; <b>period</b> $T = 1/f$.</li><li><b>Amplitude</b>: the largest displacement from the rest position.</li></ul>
-⟦1⟧
+⟦2⟧
 <h3>Waves on a string and standing waves</h3>
 <p>On a string with tension $F$ and mass per unit length $\mu$, $v = \sqrt{F/\mu}$. A string fixed at both ends vibrates in <b>standing waves</b> whose length fits a whole number of half-wavelengths: $L = n\frac{\lambda}{2}$, so</p>
-⟦2⟧
-<p>The lowest, $f_1$, is the <b>fundamental</b>; the others are harmonics. Guitar strings are tuned by changing their tension.</p>
 ⟦3⟧
+⟦4⟧
+<p>The lowest, $f_1$, is the <b>fundamental</b>; the others are harmonics. Guitar strings are tuned by changing their tension.</p>
+⟦5⟧
 @kp4lbl7udc
 A transverse wave with wavelength 2 m and amplitude 3 cm
 @1zm6py874qx
 Wavelength $\lambda = 2\,\mathrm{m}$ (crest to crest), amplitude $3\,\mathrm{cm}$.
+@14zxgae7xap
+A longitudinal wave, like sound: compressions (C) and rarefactions (R). One wavelength is the distance from one compression to the next.
 @bglc9ofl2o
 <p>In one period a wave moves forward one wavelength, so its speed is</p><p>$$v = f\lambda = \frac{\lambda}{T}.$$</p><p>The speed is set by the medium; the frequency is set by the source.</p>
+@20vnkgrs28m  ; 0=n
+Standing wave pattern with ⟦0⟧ loops
+@2ac1qoo6br2
+Standing waves on a string fixed at both ends: the length holds 1, 2, 3 … half-wavelengths, giving $f_1$, $2f_1$, $3f_1$ …
 @1jnkp0gh44x
 <p>A crest and the next trough are half a wavelength apart, not a whole one.</p>
 @ie8wf5nukd  ; 0=Q(f, 'Hz') | 1=Q(lam, 'm')
@@ -145,7 +161,7 @@ Its direction always
 The frequency is set by the source and does not change. Since $v = f\lambda$, a lower speed means a shorter wavelength.
 
 ##### sound
-@114v5emv6pf  ; 0=Key(T`<p>The <b>intensity</b> is the pow | 1=Fm(T`f_L = f_S\,\frac{v \pm v_L}{v \mp v | 2=Tip(T`<p>Do not forget to halve the echo
+@n7q9bpofjd  ; 0=Key(T`<p>The <b>intensity</b> is the pow | 1=FigW(numberLineSvg({ min: 0, max: 140, s | 2=Fm(T`f_L = f_S\,\frac{v \pm v_L}{v \mp v | 3=Fig(dopplerSvg(), T`A source moving to t | 4=Tip(T`<p>Do not forget to halve the echo
 
 <p>Sound is a <b>longitudinal</b> mechanical wave: a travelling pattern of compressions and rarefactions. It needs a medium and cannot cross a vacuum. In air at room temperature it travels at about $340\,\mathrm{m/s}$; in water at about $1500\,\mathrm{m/s}$; in steel even faster.</p>
 <h3>Echoes</h3>
@@ -153,15 +169,33 @@ The frequency is set by the source and does not change. Since $v = f\lambda$, a 
 <h3>Pitch and loudness</h3>
 <p>The <b>pitch</b> of a sound is set by its frequency and the <b>loudness</b> mostly by its amplitude. People hear roughly $20\,\mathrm{Hz}$ to $20\,000\,\mathrm{Hz}$; above that is ultrasound, below it infrasound.</p>
 ⟦0⟧
+⟦1⟧
 <h3>The Doppler effect</h3>
 <p>When a source and a listener move towards each other, the listener hears a higher frequency; moving apart, a lower one. With the speed of sound $v$, listener speed $v_L$ and source speed $v_S$:</p>
-⟦1⟧
+⟦2⟧
+⟦3⟧
 <p>Use the upper signs when they approach each other and the lower signs when they move apart.</p>
 <h3>Pipes</h3>
 <p>An air column resonates like a string. A pipe open at both ends has $f_n = \dfrac{n v}{2L}$; a pipe closed at one end has only odd harmonics, $f = \dfrac{(2n-1) v}{4L}$, so its fundamental is $\dfrac{v}{4L}$.</p>
-⟦2⟧
+⟦4⟧
 @1v6x9695ich
 <p>The <b>intensity</b> is the power per unit area. From a small source spreading out in all directions:</p><p>$$I = \frac{P}{4\pi r^2}.$$</p><p>Loudness is measured on the logarithmic <b>decibel</b> scale:</p><p>$$\beta = 10 \log_{10}\frac{I}{I_0}\ \mathrm{dB}, \qquad I_0 = 10^{-12}\,\mathrm{W/m^2}.$$</p><p>Every $10\,\mathrm{dB}$ more means ten times the intensity.</p>
+@2158lonl9pu
+whisper
+@17jzxn17jv0
+conversation
+@25w9q3qgw0m
+heavy traffic
+@3gnfjjok9r
+rock concert
+@b4ecs21hxk
+pain
+@rm8ggq9sft
+Decibel scale with typical sound levels from a whisper to the threshold of pain
+@wl22qky3zx
+Typical sound levels (after CDC/NIOSH figures). Every 10 dB is 10 times the intensity; long exposure above about 85 dB can damage hearing.
+@1ldr7endtdv
+A source moving to the right: the wavefronts bunch up ahead (shorter wavelength, higher pitch) and spread out behind (lower pitch).
 @86oxii1rtz
 <p>Do not forget to halve the echo time: the sound goes there <i>and</i> back.</p>
 @d0x50jw74k  ; 0=Q(t, 's')

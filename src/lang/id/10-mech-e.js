@@ -1,16 +1,5 @@
 /* Bahasa Indonesia — 10-mech-e */
 addT('id', {
-  '2bgoc0bt7g7': R`
-<p>Benda tegar berada dalam <b>kesetimbangan</b> jika tidak bertambah cepat dan tidak mulai berputar. Untuk itu diperlukan dua syarat sekaligus.</p>
-⟦0⟧
-<p><b>Momen gaya</b> terhadap suatu titik adalah gaya dikali jarak tegak lurusnya dari titik itu. Memilih titik tempat gaya yang belum diketahui bekerja akan menghilangkan gaya itu dari persamaan momen, sehingga soal menjadi jauh lebih singkat.</p>
-<h3>Tuas dan jungkat-jungkit</h3>
-⟦1⟧
-<p>Jungkat-jungkit seimbang jika $F_1 d_1 = F_2 d_2$. Tuas memungkinkan kuasa kecil mengangkat beban besar jika kuasa berada jauh lebih jauh dari titik tumpu daripada beban.</p>
-⟦2⟧
-<h3>Titik berat dan kestabilan</h3>
-<p>Berat suatu benda bekerja seolah-olah pada satu titik, yaitu <b>titik berat</b>; untuk batang homogen titik itu berada di tengah. Benda yang berdiri di atas alasnya akan terguling jika garis vertikal melalui titik beratnya jatuh di luar alas. Titik berat yang rendah dan alas yang lebar membuat benda lebih stabil.</p>
-⟦3⟧`,
   '1xo6yn5lhts': R`<p><b>Syarat kesetimbangan</b></p><ol><li>Gaya resultan nol: $\Sigma F_x = 0$ dan $\Sigma F_y = 0$.</li><li>Momen gaya resultan terhadap titik <i>mana pun</i> nol: jumlah momen searah jarum jam = jumlah momen berlawanan arah jarum jam.</li></ol>`,
   '23g7vlo9231': R`Jungkat-jungkit yang seimbang pada titik tumpu di tengah dengan beban sama pada jarak sama`,
   '1ia7igse039': R`Momen yang sama terhadap titik tumpu: $300 \times 1{,}5 = 300 \times 1{,}5$.`,
@@ -39,16 +28,6 @@ addT('id', {
   '1krwrnhumij': R`Hanya momen gaya resultannya yang nol`,
   '1b1n53la2iv': R`Beratnya sama dengan gaya normal dari dinding`,
   '1d4mywo9186': R`Benda tegar yang setimbang memerlukan kedua syarat: tidak ada gaya resultan dan tidak ada momen gaya resultan.`,
-  'nvjcaa6b85': R`
-<p>Setiap massa menarik setiap massa lainnya. Hukum gravitasi Newton menyatakan besar tarikan antara dua massa titik (atau bola) yang pusatnya berjarak $r$:</p>
-⟦0⟧
-<p>Ini adalah <b>hukum kuadrat terbalik</b>: menggandakan jarak membuat gayanya empat kali lebih kecil.</p>
-<h3>Kuat medan gravitasi $g$</h3>
-<p>Di permukaan planet bermassa $M$ dan berjari-jari $R$, $g = \dfrac{GM}{R^2}$. Untuk Bumi ($M = 6{,}0 \times 10^{24}\,\mathrm{kg}$, $R = 6{,}4 \times 10^{6}\,\mathrm{m}$) hasilnya sekitar $9{,}8\,\mathrm{m/s^2}$. Pada ketinggian $h$ di atas permukaan, $g_h = g \left(\dfrac{R}{R + h}\right)^2$.</p>
-⟦1⟧
-<h3>Kecepatan lepas</h3>
-<p>Kelajuan yang diperlukan untuk meninggalkan permukaan planet untuk selamanya (tanpa hambatan udara) adalah $v_{\text{lepas}} = \sqrt{\dfrac{2GM}{R}}$, sekitar $11{,}2\,\mathrm{km/s}$ untuk Bumi.</p>
-⟦2⟧`,
   '1c9bn1b3459': R`F = \frac{G m_1 m_2}{r^2}, \qquad G = 6{,}67 \times 10^{-11}\,\mathrm{N\,m^2/kg^2}`,
   'zpmy0epgmu': R`<p>Untuk satelit pada orbit lingkaran berjari-jari $r$, gravitasi menyediakan gaya sentripetal:</p><p>$$\frac{GMm}{r^2} = \frac{m v^2}{r} \;\Rightarrow\; v = \sqrt{\frac{GM}{r}}, \qquad T = \frac{2\pi r}{v}.$$</p><p>Dari sini diperoleh <b>hukum III Kepler</b>: $T^2 \propto r^3$ untuk semua benda yang mengorbit massa pusat yang sama.</p>`,
   '1nsox0r2osf': R`<p>$r$ diukur dari <b>pusat</b> planet. Satelit yang berada $400\,\mathrm{km}$ di atas permukaan mengorbit pada $r = R + 400\,\mathrm{km}$.</p>`,
@@ -81,18 +60,6 @@ addT('id', {
   '11allerlng8': R`Menjadi tiga kali lipat`,
   '1narefqxwk6': R`Tetap sama`,
   '27b94xj9u8t': R`Gravitasi mengikuti hukum kuadrat terbalik: $F \propto 1/r^2$, jadi melipattigakan $r$ membagi gayanya dengan $3^2 = 9$.`,
-  'tht7ack1bm': R`
-<p>Bahan yang <b>elastis</b> kembali ke bentuk semula ketika gayanya dihilangkan. Pegas, karet gelang, dan kawat baja (untuk regangan kecil) semuanya bersifat demikian.</p>
-<h3>Hukum Hooke</h3>
-⟦0⟧
-<p>Pertambahan panjang $x$ sebanding dengan gaya $F$, sampai <b>batas elastis</b>. Konstanta pegas $k$ (dalam $\mathrm{N/m}$) menyatakan kekakuan: pegas yang kaku memiliki $k$ besar.</p>
-<h3>Susunan pegas</h3>
-<ul><li><b>Paralel</b> (berdampingan, berbagi beban): $k = k_1 + k_2$. Lebih kaku.</li><li><b>Seri</b> (disambung memanjang): $\dfrac{1}{k} = \dfrac{1}{k_1} + \dfrac{1}{k_2}$. Lebih lentur.</li></ul>
-<h3>Tegangan, regangan, dan modulus Young</h3>
-⟦1⟧
-<p>Tegangan $\sigma$ adalah gaya per luas (dalam $\mathrm{Pa}$); regangan $\varepsilon$ adalah perubahan panjang relatif (tanpa satuan). <b>Modulus Young</b> $E$ adalah sifat bahan, bukan sifat kawat tertentu: baja sekitar $2 \times 10^{11}\,\mathrm{Pa}$.</p>
-⟦2⟧
-⟦3⟧`,
   '1vnn2tgh37x': R`<p>Pegas yang diregangkan atau dimampatkan menyimpan <b>energi potensial pegas</b>:</p><p>$$E_p = \tfrac12 k x^2 = \tfrac12 F x.$$</p><p>Energi ini sama dengan luas di bawah grafik gaya–pertambahan panjang, yang berbentuk segitiga.</p>`,
   '1yajnp82ry5': R`<p>Pertambahan panjang adalah <i>perubahan</i> panjang, bukan panjang barunya. Pegas $20\,\mathrm{cm}$ yang ditarik menjadi $25\,\mathrm{cm}$ memiliki $x = 5\,\mathrm{cm} = 0{,}05\,\mathrm{m}$.</p>`,
   '2ckt7977jyy': R`Sebuah pegas dengan konstanta ⟦0⟧ ditarik sejauh ⟦1⟧. Berapa gaya yang diperlukan?`,

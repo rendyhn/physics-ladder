@@ -1,17 +1,5 @@
 /* Bahasa Indonesia — 16-optics-a */
 addT('id', {
-  '5xmq0evl31': R`
-<p>Cahaya merambat lurus dalam bentuk <b>sinar</b>. Ketika sinar mengenai permukaan yang licin, sinar itu dipantulkan menurut <b>hukum pemantulan</b>:</p>
-⟦0⟧
-<h3>Cermin datar</h3>
-<p>Bayangan pada cermin datar bersifat <b>maya</b> (cahaya hanya seolah-olah datang dari bayangan itu), <b>tegak</b>, <b>sama besar</b> dengan bendanya, <b>tertukar kiri-kanan</b>, dan berada di belakang cermin sejauh jarak benda di depan cermin. Dua cermin yang membentuk sudut $\alpha$ menghasilkan $n = \dfrac{360^\circ}{\alpha} - 1$ bayangan.</p>
-<h3>Cermin lengkung</h3>
-<p><b>Cermin cekung</b> (melengkung ke dalam, seperti bagian dalam sendok) mengumpulkan sinar-sinar sejajar di <b>titik fokus</b> F. <b>Cermin cembung</b> (melengkung ke luar) menyebarkannya seolah-olah sinar-sinar itu datang dari titik fokus di belakang cermin. Jarak fokus adalah setengah jari-jari kelengkungan, $f = \frac{R}{2}$.</p>
-⟦1⟧
-⟦2⟧
-<p>Di sini $s$ adalah jarak benda dan $s'$ jarak bayangan. Gunakan aturan tanda: $f$ positif untuk cermin cekung dan negatif untuk cermin cembung; $s'$ positif berarti bayangan <b>nyata</b> di depan cermin, $s'$ negatif berarti bayangan <b>maya</b> di belakang cermin.</p>
-⟦3⟧
-⟦4⟧`,
   'sloay995au': R`<p>Sudut datang sama dengan sudut pantul, $i = r$. Kedua sudut diukur dari <b>garis normal</b>, yaitu garis yang tegak lurus permukaan. Sinar datang, sinar pantul, dan garis normal terletak pada satu bidang.</p>`,
   '3pwq8jv1vb': R`Diagram sinar: benda di luar C di depan cermin cekung membentuk bayangan nyata, terbalik, dan diperkecil di antara F dan C`,
   'z96iey12in': R`Benda di luar C: bayangannya nyata, terbalik, dan diperkecil.`,
@@ -62,19 +50,6 @@ addT('id', {
   'k4gy3m5ff8': R`Maya, tegak, diperkecil`,
   '2c9ddi203cv': R`Nyata, tegak, diperbesar`,
   'c3iuc2zfsn': R`Bayangannya maya (di belakang cermin), tegak, sama besar, dan tertukar kiri-kanan.`,
-  '179fybctq7n': R`
-<p>Cahaya melambat ketika memasuki medium yang lebih rapat seperti air atau kaca, dan jika datang dengan sudut miring arahnya berubah. Pembelokan ini disebut <b>pembiasan</b> (refraksi). <b>Indeks bias</b> suatu medium membandingkan kelajuan cahaya di ruang hampa dengan kelajuannya di medium itu:</p>
-⟦0⟧
-<p>Persamaan kedua adalah <b>hukum Snell</b>; sudut-sudutnya diukur dari garis normal. Ketika masuk ke medium yang lebih rapat ($n$ lebih besar), sinar dibelokkan <b>mendekati</b> garis normal.</p>
-⟦1⟧
-<h3>Pemantulan sempurna</h3>
-<p>Dari medium yang lebih rapat ke medium yang kurang rapat, sinar dibelokkan menjauhi garis normal. Jika sudut datangnya melebihi <b>sudut kritis</b> $C$, tidak ada cahaya yang keluar sama sekali: semuanya dipantulkan. Untuk medium berindeks bias $n$ yang berbatasan dengan udara, $\sin C = \dfrac{1}{n}$. Serat optik dan kilau berlian memanfaatkan pemantulan sempurna.</p>
-<h3>Lensa</h3>
-<p>Lensa <b>konvergen</b> (cembung) mengumpulkan sinar-sinar sejajar di titik fokusnya; lensa <b>divergen</b> (cekung) menyebarkannya. Persamaan yang sama seperti pada cermin berlaku, dengan $f$ positif untuk lensa konvergen dan negatif untuk lensa divergen:</p>
-⟦2⟧
-⟦3⟧
-⟦4⟧
-⟦5⟧`,
   'zuhhq1o61d': R`Sinar yang masuk dari udara ke kaca dibelokkan mendekati garis normal`,
   'wcn395gapo': R`Dari udara ke kaca, sinar dibelokkan mendekati garis normal.`,
   '24pol08m91g': R`Diagram sinar: benda di luar 2F di depan lensa konvergen membentuk bayangan nyata, terbalik, dan diperkecil di sisi lain lensa`,

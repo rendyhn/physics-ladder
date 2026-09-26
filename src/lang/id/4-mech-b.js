@@ -1,19 +1,5 @@
 /* Bahasa Indonesia — 4-mech-b */
 addT('id', {
-  'kc8afz59sg': R`
-<p><b>Gaya</b> adalah dorongan atau tarikan, diukur dalam newton ($\mathrm{N}$). Tiga hukum Newton menghubungkan gaya dengan gerak.</p>
-<h3>Hukum I: kelembaman (inersia)</h3>
-<p>Benda tetap diam, atau tetap bergerak dengan kecepatan tetap, selama tidak ada gaya resultan yang bekerja padanya. Penumpang terdorong ke depan saat bus mengerem karena tubuhnya cenderung tetap bergerak.</p>
-<h3>Hukum II: $F = ma$</h3>
-⟦0⟧
-<p><b>Gaya resultan</b> $\Sigma F$ adalah jumlah vektor semua gaya yang bekerja pada benda. Gaya resultan yang lebih besar menghasilkan percepatan yang lebih besar; massa yang lebih besar menghasilkan percepatan yang lebih kecil. $1\,\mathrm{N}$ adalah gaya yang memberi benda $1\,\mathrm{kg}$ percepatan $1\,\mathrm{m/s^2}$.</p>
-<h3>Hukum III: aksi dan reaksi</h3>
-<p>Jika benda A mendorong benda B, maka B mendorong balik A dengan gaya yang sama besar dan berlawanan arah. Kedua gaya itu bekerja pada benda yang <b>berbeda</b>, jadi keduanya tidak pernah saling meniadakan.</p>
-<h3>Gaya-gaya yang sering muncul</h3>
-<ul><li><b>Berat</b> $W = mg$, menarik ke arah pusat Bumi.</li><li><b>Gaya normal</b> $N$, dari permukaan, tegak lurus terhadap permukaan itu.</li><li><b>Tegangan tali</b> $T$, sepanjang tali.</li><li><b>Gaya gesek</b> $f$, sepanjang permukaan, melawan gerak (topik berikutnya).</li></ul>
-⟦1⟧
-⟦2⟧
-⟦3⟧`,
   '1ngrd91jx1z': R`<p>Langkah menyelesaikan soal gaya:</p><ol><li>Gambar <b>diagram gaya bebas</b>: bendanya saja, dengan setiap gaya yang bekerja padanya sebagai anak panah.</li><li>Pilih arah positif.</li><li>Tulis $\Sigma F = ma$ pada arah itu, lalu selesaikan.</li></ol>`,
   'kwsux5tbzj': R`Diagram gaya bebas balok yang ditarik di lantai: gaya normal ke atas, berat ke bawah, tarikan ke kanan, dan gaya gesek ke kiri`,
   '1cb2q47fvl4': R`Balok ditarik ke kanan: $N$ mengimbangi $W$, dan gaya resultannya $F - f$.`,
@@ -53,17 +39,6 @@ addT('id', {
   '2fspao7yqg3': R`Mobil mengerjakan gaya yang lebih besar`,
   '1azhrjweewr': R`Bergantung pada mana yang bergerak lebih cepat`,
   '27pevs4wvnb': R`Menurut hukum III Newton, kedua gaya sama besar dan berlawanan arah. Mobil rusak lebih parah karena massanya yang lebih kecil membuat percepatannya lebih besar.`,
-  'ye2dwlrqe1': R`
-<p><b>Gaya gesek</b> adalah gaya antara dua permukaan yang melawan gerak meluncur. Arahnya sepanjang permukaan, melawan gerak (atau melawan gerak yang akan terjadi seandainya gaya gesek tidak ada).</p>
-<h3>Gesekan statis dan kinetis</h3>
-<ul><li><b>Gaya gesek statis</b> menahan benda tetap diam. Besarnya ikut naik ketika dorongan diperbesar, sampai batas maksimum: $f_{s,\max} = \mu_s N$.</li><li><b>Gaya gesek kinetis</b> bekerja setelah benda meluncur: $f_k = \mu_k N$, kira-kira tetap.</li></ul>
-<p>$\mu_s$ dan $\mu_k$ adalah <b>koefisien gesek</b>. Keduanya tidak bersatuan, dan biasanya $\mu_k \lt \mu_s$. Itulah sebabnya mendorong kotak dari diam lebih sulit daripada menjaganya tetap bergerak. Di lantai datar tanpa gaya vertikal lain, $N = mg$.</p>
-⟦0⟧
-<h3>Bidang miring</h3>
-⟦1⟧
-⟦2⟧
-<p>Balok yang diam tetap diam selama $mg\sin\theta \le \mu_s mg\cos\theta$, yaitu selama $\tan\theta \le \mu_s$.</p>
-⟦3⟧`,
   '1jiwd84c8rz': R`<p>Sebuah peti bermassa $20\,\mathrm{kg}$ didorong di lantai dengan $\mu_k = 0{,}3$ oleh gaya mendatar $100\,\mathrm{N}$ ($g = 10\,\mathrm{m/s^2}$). Gaya gesek: $f = 0{,}3 \cdot 20 \cdot 10 = 60\,\mathrm{N}$. Gaya resultan: $100 - 60 = 40\,\mathrm{N}$, jadi $a = 40/20 = 2\,\mathrm{m/s^2}$.</p>`,
   'xj56l8z8yp': R`Balok di bidang miring bersudut theta, dengan gaya berat, gaya normal, dan gaya gesek`,
   'lkvtx6fggu': R`Di bidang miring, gaya berat $mg$ diuraikan menjadi dua komponen.`,

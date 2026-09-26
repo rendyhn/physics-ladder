@@ -1,19 +1,5 @@
 /* Bahasa Indonesia — 17-optics-b */
 addT('id', {
-  '11qegw9nonk': R`
-<h3>Mata</h3>
-<p>Kornea dan lensa mata membentuk bayangan nyata dan terbalik pada <b>retina</b>. Otot-otot mengubah bentuk lensa sehingga benda dekat maupun jauh dapat terlihat tajam (<b>daya akomodasi</b>). Mata normal dapat melihat dengan jelas dari <b>titik dekat</b> (punctum proximum), sekitar $25\,\mathrm{cm}$, sampai <b>titik jauh</b> (punctum remotum) di tak hingga.</p>
-⟦0⟧
-<p>Di sini $PR$ (titik jauh) dan $PP$ (titik dekat) dinyatakan dalam sentimeter, dan $P$ yang diperoleh dalam dioptri.</p>
-<h3>Lup</h3>
-<p>Lup adalah lensa konvergen yang dipegang dekat mata dengan benda di dalam jarak fokusnya. Perbesaran angulernya $M = \dfrac{25}{f}$ untuk mata tidak berakomodasi (bayangan di tak hingga) dan $M = \dfrac{25}{f} + 1$ jika bayangan berada di titik dekat ($f$ dalam cm).</p>
-<h3>Mikroskop dan teropong</h3>
-<p><b>Mikroskop</b> memakai lensa objektif berfokus pendek untuk membentuk bayangan nyata yang diperbesar, lalu lensa okuler memperbesarnya lagi. Untuk mata tidak berakomodasi, perbesaran totalnya</p>
-⟦1⟧
-<p><b>Teropong bias</b> (teleskop) memiliki lensa objektif berfokus panjang dan lensa okuler berfokus pendek. Untuk mata tidak berakomodasi, jarak kedua lensa $d = f_{ob} + f_{ok}$ dan</p>
-⟦2⟧
-⟦3⟧
-⟦4⟧`,
   '1cg8jb6cnmm': R`Cacat mata`,
   '1rfj6s0td7l': R`Masalah`,
   '1yoo0feclny': R`Koreksi`,
@@ -63,17 +49,6 @@ addT('id', {
   '28x01rk5lnj': R`Pupil berubah ukuran`,
   '1kis6f0ab3l': R`Retina bergeser`,
   '1peatd655x': R`Inilah daya akomodasi: otot siliaris membuat lensa lebih cembung untuk benda dekat dan lebih pipih untuk benda jauh. Kamera menggeser lensanya sebagai gantinya.`,
-  '2cjdo4fyecw': R`
-<p>Ketika dua gelombang bertemu, keduanya saling menjumlahkan (<b>superposisi</b>). Jika puncak bertemu puncak, keduanya saling menguatkan: <b>interferensi konstruktif</b>. Jika puncak bertemu lembah, keduanya saling meniadakan: <b>interferensi destruktif</b>. Agar pola yang tetap dapat terlihat, sumber-sumbernya harus <b>koheren</b>: frekuensinya sama dan beda fasenya tetap.</p>
-⟦0⟧
-<h3>Celah ganda Young</h3>
-<p>Cahaya yang melewati dua celah sempit berjarak $d$ menghasilkan pita terang dan gelap pada layar berjarak $L$. Untuk sudut kecil:</p>
-⟦1⟧
-⟦2⟧
-<h3>Difraksi</h3>
-<p>Gelombang menyebar ketika melewati celah. Untuk celah tunggal selebar $a$, pita gelap berada pada $a\sin\theta = m\lambda$, dan pita terang pusat dua kali lebih lebar daripada pita yang lain. <b>Kisi difraksi</b> memiliki sangat banyak celah, $N$ per satuan panjang, sehingga jarak antarcelahnya $d = 1/N$. Garis-garis terangnya tajam dan memenuhi $d\sin\theta = m\lambda$; orde tertinggi yang dapat muncul adalah bilangan bulat terbesar di bawah $d/\lambda$.</p>
-⟦3⟧
-<p>Warna-warni gelembung sabun dan lapisan minyak berasal dari <b>interferensi lapisan tipis</b> antara cahaya yang dipantulkan oleh permukaan atas dan permukaan bawah lapisan.</p>`,
   '1ei3r9wsxtr': R`<p>Konstruktif jika beda lintasannya kelipatan bulat panjang gelombang, $\Delta = m\lambda$; destruktif jika beda lintasannya kelipatan bulat ditambah setengah, $\Delta = (m + \frac12)\lambda$.</p>`,
   '16wpbecjuab': R`Dua celah berjarak d, layar berjarak L, dan pita terang yang berjarak Δy satu sama lain`,
   '1ctxbp4t5gr': R`Pita-pita terang berjarak sama, yaitu $\Delta y$.`,

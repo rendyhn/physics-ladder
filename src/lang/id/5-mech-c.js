@@ -3,20 +3,6 @@ addT('id', {
   '1h2arje5kvu': R`tidak lebih dari`,
   '1f2cwjym872': R`gaya gesek statis tidak mampu menahannya dan balok meluncur`,
   '18elpp37r93': R`gaya gesek statis mampu menahannya`,
-  'ezxbtjc7z8': R`
-<p><b>Energi</b> adalah kemampuan untuk melakukan usaha, dan <b>usaha</b> adalah energi yang dipindahkan oleh gaya. Keduanya diukur dalam joule ($\mathrm{J}$).</p>
-<h3>Usaha</h3>
-⟦0⟧
-<p>Di sini $F$ adalah gaya, $s$ perpindahan, dan $\theta$ sudut di antara keduanya. Hanya bagian gaya yang searah gerak yang melakukan usaha. Gaya yang tegak lurus gerak (seperti gaya normal di lantai datar) tidak melakukan usaha; gaya yang melawan gerak (seperti gaya gesek) melakukan usaha negatif.</p>
-<h3>Energi kinetik dan energi potensial</h3>
-⟦1⟧
-<p>Energi kinetik dimiliki benda karena geraknya; energi potensial gravitasi karena ketinggiannya di atas bidang acuan yang dipilih.</p>
-⟦2⟧
-⟦3⟧
-<h3>Daya dan efisiensi</h3>
-⟦4⟧
-<p>Daya diukur dalam watt: $1\,\mathrm{W} = 1\,\mathrm{J/s}$.</p>
-⟦5⟧`,
   '1gysejys4zp': R`<p><b>Teorema usaha–energi:</b> usaha total pada benda sama dengan perubahan energi kinetiknya, $W_{\text{total}} = \Delta E_k$.</p><p><b>Hukum kekekalan energi mekanik:</b> jika hanya gravitasi yang melakukan usaha (tanpa gesekan),</p><p>$$E_k + E_p = \text{tetap}, \qquad \tfrac12 m v_1^2 + m g h_1 = \tfrac12 m v_2^2 + m g h_2.$$</p>`,
   'wjax83ohbn': R`<p>Sebuah kereta roller coaster mulai dari diam pada ketinggian $20\,\mathrm{m}$ di atas dasar lintasan yang licin ($g = 10\,\mathrm{m/s^2}$). Di dasar lintasan, seluruh energi potensialnya telah berubah menjadi energi kinetik:</p><p>$$mgh = \tfrac12 m v^2 \;\Rightarrow\; v = \sqrt{2gh} = \sqrt{400} = 20\,\mathrm{m/s}.$$</p><p>Massanya saling mencoret, jadi setiap kereta mencapai kelajuan yang sama.</p>`,
   '1aka3dk0wtz': R`P = \frac{W}{t} = F v \qquad \eta = \frac{\text{keluaran berguna}}{\text{masukan}} \times 100\%`,
@@ -37,20 +23,6 @@ addT('id', {
   '29o0ervjcr6': R`$\eta = \frac{P_{\text{keluar}}}{P_{\text{masuk}}} \times 100\% = \frac{⟦0⟧}{⟦1⟧} \times 100\% = ⟦2⟧\%$.`,
   '1iaymfx9g29': R`Sebuah pompa memiliki efisiensi ⟦0⟧% dan menerima daya ⟦1⟧. Berapa daya berguna yang dihasilkannya?`,
   '1pmbvzbfiyv': R`$P_{\text{keluar}} = \eta \times P_{\text{masuk}} = ⟦0⟧ \times ⟦1⟧ = ⟦2⟧$.`,
-  '9luwz9hbip': R`
-<p><b>Momentum</b> sebuah benda adalah massa dikali kecepatannya. Momentum adalah vektor yang searah dengan kecepatan, dan satuannya $\mathrm{kg\,m/s}$.</p>
-⟦0⟧
-<h3>Impuls</h3>
-<p>Gaya yang bekerja selama selang waktu tertentu mengubah momentum. Hasil kali $F\,\Delta t$ disebut <b>impuls</b>:</p>
-⟦1⟧
-<p>Inilah sebabnya kantong udara (airbag) dan zona remuk pada mobil menyelamatkan nyawa: perubahan momentum yang sama disebar ke waktu yang lebih lama, sehingga gayanya lebih kecil.</p>
-⟦2⟧
-<h3>Jenis tumbukan</h3>
-<ul><li><b>Tidak lenting sama sekali:</b> benda-benda menempel dan bergerak bersama dengan satu kecepatan $v' = \dfrac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$. Sebagian energi kinetik hilang (menjadi panas, bunyi, perubahan bentuk).</li><li><b>Lenting sempurna:</b> energi kinetik juga kekal. Jika dua benda bermassa sama bertumbukan lenting sempurna secara sentral, keduanya bertukar kecepatan.</li><li>Kebanyakan tumbukan nyata berada di antara keduanya: momentum kekal, sebagian energi kinetik hilang.</li></ul>
-⟦3⟧
-<h3>Gaya dorong balik (rekoil)</h3>
-<p>Sebelum senapan ditembakkan, momentum totalnya nol, jadi setelahnya momentum peluru ke depan diimbangi momentum senapan ke belakang: $m_p v_p = m_s v_s$.</p>
-⟦4⟧`,
   '2e2tqc5my45': R`<p><b>Hukum kekekalan momentum:</b> jika tidak ada gaya luar yang bekerja pada suatu sistem, momentum totalnya tetap. Untuk dua benda yang bertumbukan:</p><p>$$m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'.$$</p><p>Pilih arah positif, lalu beri tanda minus pada kecepatan yang berlawanan arah.</p>`,
   '2frhwamgtv6': R`<p>Sebuah kereta $2\,\mathrm{kg}$ yang bergerak $6\,\mathrm{m/s}$ menabrak kereta $1\,\mathrm{kg}$ yang diam, lalu keduanya menempel. $v' = \frac{2 \cdot 6 + 1 \cdot 0}{3} = 4\,\mathrm{m/s}$. Energi kinetik sebelum: $36\,\mathrm{J}$; sesudah: $\tfrac12 \cdot 3 \cdot 4^2 = 24\,\mathrm{J}$, jadi $12\,\mathrm{J}$ hilang.</p>`,
   'rfdx8x7xt6': R`<p>Saat bola memantul balik, tanda kecepatannya berubah. Memantul dari $+5\,\mathrm{m/s}$ menjadi $-5\,\mathrm{m/s}$ berarti perubahannya $10\,\mathrm{m/s}$, bukan nol.</p>`,

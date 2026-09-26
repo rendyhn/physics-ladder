@@ -23,24 +23,6 @@ addT('id', {
   '240b972wn9q': R`joule (energi)`,
   '14lzl0vzv8l': R`watt (daya)`,
   '5dttmikgbw': R`pascal (tekanan)`,
-  '5xqht7vwgh': R`
-<p><b>Besaran fisika</b> adalah segala sesuatu yang dapat diukur, dan setiap hasil pengukuran punya dua bagian: <b>angka</b> dan <b>satuan</b>. "Meja itu 1,5" tidak ada artinya; "panjang meja itu $1{,}5\,\mathrm{m}$" barulah hasil pengukuran.</p>
-<h3>Satuan pokok SI</h3>
-<p>Para ilmuwan di seluruh dunia memakai Sistem Satuan Internasional (SI). Sistem ini berangkat dari tujuh besaran pokok:</p>
-⟦0⟧
-<p>Semua satuan lain adalah <b>satuan turunan</b> yang disusun dari ketujuh satuan itu. Kelajuan adalah jarak dibagi waktu, jadi satuannya $\mathrm{m/s}$. Gaya adalah massa kali percepatan, jadi $1\,\mathrm{N} = 1\,\mathrm{kg\,m/s^2}$. Energi adalah gaya kali jarak, jadi $1\,\mathrm{J} = 1\,\mathrm{N\,m} = 1\,\mathrm{kg\,m^2/s^2}$.</p>
-<h3>Awalan</h3>
-<p>Awalan memperbesar atau memperkecil satuan dengan perpangkatan sepuluh:</p>
-⟦1⟧
-⟦2⟧
-<h3>Satuan kuadrat dan kubik</h3>
-<p>Satu meter persegi adalah persegi dengan sisi $100\,\mathrm{cm}$, jadi $1\,\mathrm{m^2} = 100 \times 100 = 10\,000\,\mathrm{cm^2}$. Untuk volume, faktornya dipangkatkan tiga: $1\,\mathrm{m^3} = 1\,000\,000\,\mathrm{cm^3}$. Selain itu, $1\,\mathrm{L} = 1000\,\mathrm{cm^3}$ dan $1\,\mathrm{m^3} = 1000\,\mathrm{L}$.</p>
-<h3>Kelajuan: km/jam dan m/s</h3>
-⟦3⟧
-<p>Jadi, bagi dengan 3,6 untuk mengubah km/jam menjadi m/s, dan kalikan dengan 3,6 untuk sebaliknya: $72\,\mathrm{km/jam} = 20\,\mathrm{m/s}$.</p>
-<h3>Notasi ilmiah</h3>
-<p>Bilangan yang sangat besar atau sangat kecil ditulis sebagai $a \times 10^n$ dengan $1 \le a \lt 10$. Kelajuan cahaya adalah $3{,}0 \times 10^{8}\,\mathrm{m/s}$; muatan elektron adalah $1{,}6 \times 10^{-19}\,\mathrm{C}$. Di kalkulator atau di situs ini, kamu bisa mengetiknya sebagai <code>3e8</code> dan <code>1,6e-19</code>.</p>
-⟦4⟧`,
   'k5dfx6kr0n': R`<p>Untuk mengubah satuan, kalikan dengan faktor yang nilainya 1. Karena $1\,\mathrm{km} = 1000\,\mathrm{m}$,</p><p>$$3{,}2\,\mathrm{km} \times \frac{1000\,\mathrm{m}}{1\,\mathrm{km}} = 3200\,\mathrm{m}.$$</p><p>Satuan yang diinginkan diletakkan di atas, satuan yang ingin dihilangkan di bawah, lalu satuan lama saling mencoret.</p>`,
   'thgftg5cc1': R`1\,\mathrm{km/jam} = \frac{1000\,\mathrm{m}}{3600\,\mathrm{s}} = \frac{1}{3{,}6}\,\mathrm{m/s}`,
   '16er3rbte4x': R`<p>Periksa satuan di akhir setiap perhitungan. Jika kamu mencari kelajuan tetapi jawabanmu bersatuan $\mathrm{m\,s}$, pasti ada yang keliru di tengah jalan.</p>`,
@@ -84,20 +66,6 @@ addT('id', {
   '28guof6cc23': R`Manakah yang merupakan besaran <b>turunan</b> (bukan salah satu besaran pokok SI)?`,
   '2ecslf547i1': R`Tujuh besaran pokok SI adalah panjang, massa, waktu, kuat arus listrik, suhu, jumlah zat, dan intensitas cahaya. Semua besaran lain, misalnya ⟦0⟧, diturunkan dari ketujuhnya.`,
   'ec6esltyky': R`kelajuan atau gaya`,
-  '1rjwcbf0ldf': R`
-<p>Sebagian besaran sudah lengkap dijelaskan dengan besarnya saja: massa $5\,\mathrm{kg}$, suhu $30^\circ\mathrm{C}$. Besaran seperti ini disebut <b>skalar</b>. Besaran lain juga memerlukan arah: perpindahan $5\,\mathrm{m}$ <i>ke utara</i>, gaya $20\,\mathrm{N}$ <i>ke bawah</i>. Besaran seperti ini disebut <b>vektor</b>.</p>
-⟦0⟧
-<p>Vektor digambar sebagai anak panah. Panjangnya menunjukkan <b>besar</b> vektor dan ujung panahnya menunjukkan <b>arah</b>. Di buku, vektor ditulis tebal, $\mathbf{F}$, atau dengan tanda panah, $\vec{F}$; besarnya ditulis $F$ atau $|\vec{F}|$.</p>
-<h3>Komponen</h3>
-<p>Vektor dengan besar $A$ yang membentuk sudut $\theta$ di atas sumbu $x$ positif dapat diuraikan menjadi dua bagian yang saling tegak lurus:</p>
-⟦1⟧
-⟦2⟧
-<h3>Menjumlahkan vektor</h3>
-<p>Untuk menjumlahkan vektor, sambungkan ujung vektor pertama dengan pangkal vektor berikutnya; <b>resultan</b> ditarik dari pangkal pertama ke ujung terakhir.</p>
-<ul><li>Searah: jumlahkan besarnya. $3\,\mathrm{N} + 4\,\mathrm{N}$ ke kanan menghasilkan $7\,\mathrm{N}$ ke kanan.</li><li>Berlawanan arah: kurangkan, dan resultannya searah dengan vektor yang lebih besar.</li><li>Saling tegak lurus: pakai teorema Pythagoras. $3\,\mathrm{N}$ ke timur dan $4\,\mathrm{N}$ ke utara menghasilkan $\sqrt{3^2 + 4^2} = 5\,\mathrm{N}$.</li></ul>
-⟦3⟧
-⟦4⟧
-⟦5⟧`,
   '1dv40p014tv': R`Skalar`,
   '1ih3cm1us94': R`Vektor`,
   '1pwdg77dscu': R`jarak, kelajuan`,

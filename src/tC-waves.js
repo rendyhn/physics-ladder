@@ -13,9 +13,11 @@ level({
 ${Fig(graphSvg(Array.from({ length: 121 }, (_, i) => [i / 20, 4 * Math.cos(2 * Math.PI * i / 60)]), { xMax: 6, yMax: 5, yMin: -5, xStep: 1, yStep: 2, xl: 't (s)', yl: 'x (cm)', dots: false, label: T`Displacement against time for an oscillation with amplitude 4 cm and period 3 s` }), T`Amplitude $A = 4\,\mathrm{cm}$, period $T = 3\,\mathrm{s}$.`)}
 <h3>Describing an oscillation</h3>
 <ul><li><b>Amplitude</b> $A$: the largest displacement from the rest position.</li><li><b>Period</b> $T$: the time for one complete oscillation; <b>frequency</b> $f = 1/T$; <b>angular frequency</b> $\omega = 2\pi f$.</li><li>The displacement follows a sine or cosine curve: $x = A\cos(\omega t)$.</li></ul>
+${FigW(oscSvg(), T`Two standard oscillators: a mass on a spring moves between $-A$ and $+A$ about its rest position; a pendulum of length $L$ swings about its lowest point.`)}
 ${Key(T`<p>Periods of the two standard oscillators:</p><p>$$\text{mass on a spring: } T = 2\pi\sqrt{\frac{m}{k}} \qquad \text{simple pendulum: } T = 2\pi\sqrt{\frac{L}{g}}$$</p><p>Neither depends on the amplitude. The pendulum's period does not depend on its mass either.</p>`)}
 <h3>Speed, acceleration and energy</h3>
 <ul><li>The speed is greatest at the centre: $v_{\max} = A\omega$. At displacement $x$: $v = \omega\sqrt{A^2 - x^2}$.</li><li>The acceleration is greatest at the ends: $a_{\max} = A\omega^2$, always pointing back to the centre.</li><li>The total energy stays constant, $E = \tfrac12 k A^2$; it changes back and forth between kinetic and potential energy.</li></ul>
+${Fig(planeSvg({ W: 340, H: 210, x: [-1.25, 1.25], y: [0, 1.2], step: [0.5, 0.25], ticks: false, xl: 'x', yl: 'E', fns: [{ f: x => x * x, from: -1, to: 1, label: sub('E', 'p'), at: -0.9, dx: -4, dy: -6, anchor: 'end' }, { f: x => 1 - x * x, from: -1, to: 1, cls: 'mf-c2', label: sub('E', 'k'), at: 0, dx: 0, dy: -8, anchor: 'middle' }, { f: () => 1, from: -1, to: 1, cls: 'mf-c4', dash: true, label: T`total`, at: 1, dx: 6, dy: 4 }], texts: [[-1, -0.06, '−A', 'middle', 'mf-small'], [1, -0.06, '+A', 'middle', 'mf-small']], label: T`Energy in simple harmonic motion: kinetic energy largest at the centre, potential energy largest at the ends, total constant` }), T`In SHM energy sloshes between kinetic (largest at the centre) and potential (largest at $\pm A$); the total stays constant.`)}
 ${Tip(T`<p>Use SI units inside the square roots: mass in kg, length in m. A $50\,\mathrm{cm}$ pendulum has $L = 0.5\,\mathrm{m}$.</p>`)}`,
   gens: [
     () => {
@@ -59,12 +61,14 @@ ${Tip(T`<p>Use SI units inside the square roots: mass in kg, length in m. A $50\
 <h3>Two kinds of wave</h3>
 <ul><li><b>Transverse:</b> the particles move at right angles to the direction the wave travels. Waves on a string, ripples on water.</li><li><b>Longitudinal:</b> the particles move back and forth along the direction of travel, making compressions and rarefactions. Sound, a pushed slinky.</li></ul>
 ${Fig(waveSvg(2, 3, 5, { label: T`A transverse wave with wavelength 2 m and amplitude 3 cm` }), T`Wavelength $\lambda = 2\,\mathrm{m}$ (crest to crest), amplitude $3\,\mathrm{cm}$.`)}
+${FigW(longWaveSvg(), T`A longitudinal wave, like sound: compressions (C) and rarefactions (R). One wavelength is the distance from one compression to the next.`)}
 <h3>Describing a wave</h3>
 <ul><li><b>Wavelength</b> $\lambda$: the length of one complete wave, for example crest to crest.</li><li><b>Frequency</b> $f$: waves passing a point per second; <b>period</b> $T = 1/f$.</li><li><b>Amplitude</b>: the largest displacement from the rest position.</li></ul>
 ${Key(T`<p>In one period a wave moves forward one wavelength, so its speed is</p><p>$$v = f\lambda = \frac{\lambda}{T}.$$</p><p>The speed is set by the medium; the frequency is set by the source.</p>`)}
 <h3>Waves on a string and standing waves</h3>
 <p>On a string with tension $F$ and mass per unit length $\mu$, $v = \sqrt{F/\mu}$. A string fixed at both ends vibrates in <b>standing waves</b> whose length fits a whole number of half-wavelengths: $L = n\frac{\lambda}{2}$, so</p>
 ${Fm(T`f_n = \frac{n v}{2L}, \qquad n = 1, 2, 3, \dots`)}
+${FigRow([1, 2, 3].map(n => [planeSvg({ W: 200, H: 110, x: [0, 1], y: [-1.3, 1.3], grid: false, ticks: false, xl: ' ', yl: ' ', fns: [{ f: x => Math.sin(n * Math.PI * x) }, { f: x => -Math.sin(n * Math.PI * x), cls: 'mf-c2', dash: true }], label: T`Standing wave pattern with ${n} loops` }), `n = ${n}`]), T`Standing waves on a string fixed at both ends: the length holds 1, 2, 3 … half-wavelengths, giving $f_1$, $2f_1$, $3f_1$ …`)}
 <p>The lowest, $f_1$, is the <b>fundamental</b>; the others are harmonics. Guitar strings are tuned by changing their tension.</p>
 ${Tip(T`<p>A crest and the next trough are half a wavelength apart, not a whole one.</p>`)}`,
   gens: [
@@ -111,9 +115,11 @@ ${Tip(T`<p>A crest and the next trough are half a wavelength apart, not a whole 
 <h3>Pitch and loudness</h3>
 <p>The <b>pitch</b> of a sound is set by its frequency and the <b>loudness</b> mostly by its amplitude. People hear roughly $20\,\mathrm{Hz}$ to $20\,000\,\mathrm{Hz}$; above that is ultrasound, below it infrasound.</p>
 ${Key(T`<p>The <b>intensity</b> is the power per unit area. From a small source spreading out in all directions:</p><p>$$I = \frac{P}{4\pi r^2}.$$</p><p>Loudness is measured on the logarithmic <b>decibel</b> scale:</p><p>$$\beta = 10 \log_{10}\frac{I}{I_0}\ \mathrm{dB}, \qquad I_0 = 10^{-12}\,\mathrm{W/m^2}.$$</p><p>Every $10\,\mathrm{dB}$ more means ten times the intensity.</p>`)}
+${FigW(numberLineSvg({ min: 0, max: 140, step: 10, labelEvery: 20, W: 560, H: 110, fmt: v => v + ' dB', marks: [{ v: 30, label: T`whisper` }, { v: 60, label: T`conversation`, below: true, cls: 'mf-s2' }, { v: 85, label: T`heavy traffic`, cls: 'mf-s3' }, { v: 110, label: T`rock concert`, below: true, cls: 'mf-s4' }, { v: 130, label: T`pain`, cls: 'mf-s4' }], label: T`Decibel scale with typical sound levels from a whisper to the threshold of pain` }), T`Typical sound levels (after CDC/NIOSH figures). Every 10 dB is 10 times the intensity; long exposure above about 85 dB can damage hearing.`)}
 <h3>The Doppler effect</h3>
 <p>When a source and a listener move towards each other, the listener hears a higher frequency; moving apart, a lower one. With the speed of sound $v$, listener speed $v_L$ and source speed $v_S$:</p>
 ${Fm(T`f_L = f_S\,\frac{v \pm v_L}{v \mp v_S}`)}
+${Fig(dopplerSvg(), T`A source moving to the right: the wavefronts bunch up ahead (shorter wavelength, higher pitch) and spread out behind (lower pitch).`)}
 <p>Use the upper signs when they approach each other and the lower signs when they move apart.</p>
 <h3>Pipes</h3>
 <p>An air column resonates like a string. A pipe open at both ends has $f_n = \dfrac{n v}{2L}$; a pipe closed at one end has only odd harmonics, $f = \dfrac{(2n-1) v}{4L}$, so its fundamental is $\dfrac{v}{4L}$.</p>

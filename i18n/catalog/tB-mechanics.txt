@@ -3,7 +3,7 @@
 A velocity–time graph
 
 ##### linear-motion
-@z7xv83ov6u  ; 0=Fm(T`s = v\,t`) | 1=Fm(T`a = \frac{\Delta v}{\Delta t} = \fr | 2=Key(T`<p>For <b>constant acceleration</b | 3=Ex(T`<p>A car at $20\,\mathrm{m/s}$ brak | 4=Fig(graphSvg([[0, 4], [4, 12], [8, 12]], | 5=Tip(T`<p>Convert km/h to m/s before usin
+@1axcvjq0k49  ; 0=Fm(T`s = v\,t`) | 1=FigW(tickerSvg(), T`A ticker timer print | 2=Fm(T`a = \frac{\Delta v}{\Delta t} = \fr | 3=Key(T`<p>For <b>constant acceleration</b | 4=Ex(T`<p>A car at $20\,\mathrm{m/s}$ brak | 5=Fig(graphSvg([[0, 4], [4, 12], [8, 12]], | 6=FigRow([[planeSvg({ W: 250, H: 190, x: [ | 7=Tip(T`<p>Convert km/h to m/s before usin
 
 <p>To describe motion along a line we choose a starting point and a positive direction. Then every position is a number, and every change of position is a <b>displacement</b>.</p>
 <h3>Distance and displacement, speed and velocity</h3>
@@ -12,23 +12,37 @@ A velocity–time graph
 <h3>Uniform motion</h3>
 <p>If the velocity is constant, the object covers equal distances in equal times:</p>
 ⟦0⟧
+⟦1⟧
 <h3>Acceleration</h3>
 <p><b>Acceleration</b> is the rate of change of velocity. Its unit is $\mathrm{m/s}$ per second, written $\mathrm{m/s^2}$:</p>
-⟦1⟧
-<p>A negative acceleration (when the velocity is positive) means the object is slowing down; this is often called <i>deceleration</i>.</p>
 ⟦2⟧
+<p>A negative acceleration (when the velocity is positive) means the object is slowing down; this is often called <i>deceleration</i>.</p>
 ⟦3⟧
-<h3>Motion graphs</h3>
 ⟦4⟧
+<h3>Motion graphs</h3>
+⟦5⟧
+⟦6⟧
 <ul><li>On a <b>position–time</b> graph the slope is the velocity.</li><li>On a <b>velocity–time</b> graph the slope is the acceleration and the <b>area under the graph</b> is the displacement.</li></ul>
 <p>In the graph above the acceleration during the first $4\,\mathrm{s}$ is $\frac{12 - 4}{4} = 2\,\mathrm{m/s^2}$, and the displacement over $8\,\mathrm{s}$ is the trapezium $\frac{4 + 12}{2} \cdot 4 = 32\,\mathrm{m}$ plus the rectangle $12 \cdot 4 = 48\,\mathrm{m}$: $80\,\mathrm{m}$ in total.</p>
-⟦5⟧
+⟦7⟧
+@oexlaz6eip
+A ticker timer prints a dot at equal time intervals. Equal gaps mean constant velocity; growing gaps mean the object is speeding up.
 @21s7op65cq8
 <p>For <b>constant acceleration</b>, with initial velocity $v_0$, final velocity $v$, time $t$ and displacement $s$:</p><p>$$v = v_0 + a t$$ $$s = v_0 t + \tfrac{1}{2} a t^2$$ $$v^2 = v_0^2 + 2 a s$$</p><p>Pick the equation that contains the three quantities you know and the one you want.</p>
 @1nl75o08auw
 <p>A car at $20\,\mathrm{m/s}$ brakes with a deceleration of $5\,\mathrm{m/s^2}$. How far does it travel before stopping?</p><p>We know $v_0 = 20$, $v = 0$, $a = -5$ and want $s$, so use $v^2 = v_0^2 + 2as$:</p><p>$$0 = 20^2 + 2(-5)s \;\Rightarrow\; s = \frac{400}{10} = 40\,\mathrm{m}.$$</p>
 @1bhvof8tg5f
 Speeding up for 4 s, then moving at a constant 12 m/s.
+@13mzij15r38
+Position-time graph for constant velocity: a straight line
+@16haesbm01e
+constant velocity: straight line
+@6kirtqrur4
+Position-time graph for constant acceleration: a curve getting steeper
+@1hqd89v2fdb
+speeding up: curve gets steeper
+@qstuy7lizg
+On a position–time graph the slope is the velocity: constant slope for steady motion, increasing slope when accelerating.
 @guqae9j0q5
 <p>Convert km/h to m/s before using the equations: $72\,\mathrm{km/h} = 20\,\mathrm{m/s}$.</p>
 @297x2bh5cks  ; 0=Q(d, 'm') | 1=Q(t, 's')
@@ -59,21 +73,31 @@ The graph shows how the velocity of a trolley changes with time. What is its acc
 The acceleration is the slope of the graph: $a = \frac{⟦0⟧ - ⟦1⟧}{⟦2⟧} = ⟦3⟧$. After $t = ⟦4⟧\,\mathrm{s}$ the line is flat, so the acceleration is zero.
 
 ##### free-fall
-@21538olr0ye  ; 0=Fm(T`v = g t \qquad h = \tfrac12 g t^2 \ | 1=Ex(T`<p>A stone is dropped from a bridge | 2=Key(T`<p>For a ball thrown up at $v_0$:< | 3=Tip(T`<p>At the top the <b>velocity</b> 
+@114ntvksk6u  ; 0=Fm(T`v = g t \qquad h = \tfrac12 g t^2 \ | 1=Ex(T`<p>A stone is dropped from a bridge | 2=Fig(strobeSvg(), T`A dropped ball photog | 3=Key(T`<p>For a ball thrown up at $v_0$:< | 4=Fig(planeSvg({ W: 340, H: 220, x: [0, 4. | 5=Tip(T`<p>At the top the <b>velocity</b> 
 
 <p>Without air resistance every object near the Earth's surface falls with the same acceleration, whatever its mass. This is the acceleration due to gravity, $g \approx 9.8\,\mathrm{m/s^2}$; many problems round it to $10\,\mathrm{m/s^2}$. Each question on this site tells you which value to use.</p>
 <p>Vertical motion is just motion with constant acceleration, so the equations of the previous topic apply with $a = g$ pointing downwards.</p>
 <h3>Dropped from rest</h3>
 ⟦0⟧
 ⟦1⟧
+⟦2⟧
 <h3>Thrown straight up</h3>
 <p>Take upwards as positive; then $a = -g$. The ball slows down, stops for an instant at the top, and falls back.</p>
-⟦2⟧
 ⟦3⟧
+⟦4⟧
+⟦5⟧
 @1cglggk3h3l
 <p>A stone is dropped from a bridge $45\,\mathrm{m}$ above the water ($g = 10\,\mathrm{m/s^2}$).</p><p>Time to fall: $45 = \tfrac12 \cdot 10 \cdot t^2 \Rightarrow t^2 = 9 \Rightarrow t = 3\,\mathrm{s}$.</p><p>Speed on impact: $v = gt = 30\,\mathrm{m/s}$, or $v = \sqrt{2 \cdot 10 \cdot 45} = 30\,\mathrm{m/s}$.</p>
+@1oawwingv1s
+A dropped ball photographed once a second ($g = 10\,\mathrm{m/s^2}$): it falls 5, 15, 25, 35 m in successive seconds, so the gaps grow.
 @1a7wqssgetq
 <p>For a ball thrown up at $v_0$:</p><ul><li>time to the top: $t_{\text{up}} = \dfrac{v_0}{g}$</li><li>maximum height: $h_{\max} = \dfrac{v_0^2}{2g}$</li><li>it returns to the launch point after $2t_{\text{up}}$, with the same speed it started with.</li></ul>
+@9azmd3t3bd
+top: v = 0
+@iyh3vd8v0k
+Velocity-time graph of a ball thrown up at 20 m/s: a straight line falling through zero at 2 s
+@2ef7h1w9hrr
+Thrown up at $20\,\mathrm{m/s}$: the velocity falls by $10\,\mathrm{m/s}$ every second, passes zero at the top ($t = 2\,\mathrm{s}$) and becomes negative on the way down. The slope, $-g$, never changes.
 @19f8cicfrvo
 <p>At the top the <b>velocity</b> is zero, but the <b>acceleration</b> is still $g$ downwards. If it were zero, the ball would stay up there.</p>
 @1ro85lo216i  ; 0=Q(h, 'm') | 1=gNote(g)
@@ -136,7 +160,7 @@ zero
 The motion is symmetric: the fall back from the top mirrors the rise, so the ball arrives with the same speed it left with, now pointing downwards.
 
 ##### projectile
-@1hor9hprhjq  ; 0=Key(T`<p>Split the motion into two parts | 1=Fm(T`T = \frac{2 v_0 \sin\theta}{g} \qqu | 2=Fig(projectileSvg(20, 50, 10, T`The path | 3=Tip(T`<p>At the top of the path the vert
+@69fk6a7gkb  ; 0=Key(T`<p>Split the motion into two parts | 1=Fm(T`T = \frac{2 v_0 \sin\theta}{g} \qqu | 2=Fig(projectileSvg(20, 50, 10, T`The path | 3=Fig(planeSvg({ W: 380, H: 220, x: [0, 44 | 4=Tip(T`<p>At the top of the path the vert
 
 <p>A <b>projectile</b> is an object that moves under gravity alone after it is launched: a kicked ball, a stone thrown off a cliff, water from a hose. Its path is a parabola.</p>
 ⟦0⟧
@@ -146,14 +170,19 @@ The motion is symmetric: the fall back from the top mirrors the rise, so the bal
 <p>A launch at speed $v_0$ and angle $\theta$ has components $v_{0x} = v_0\cos\theta$ and $v_{0y} = v_0\sin\theta$. On level ground:</p>
 ⟦1⟧
 ⟦2⟧
-<p>The range is largest at $\theta = 45^\circ$ (where $\sin 2\theta = 1$). Two angles that add up to $90^\circ$, such as $30^\circ$ and $60^\circ$, give the same range.</p>
 ⟦3⟧
+<p>The range is largest at $\theta = 45^\circ$ (where $\sin 2\theta = 1$). Two angles that add up to $90^\circ$, such as $30^\circ$ and $60^\circ$, give the same range.</p>
+⟦4⟧
 @x0tm332g7h
 <p>Split the motion into two parts that do not affect each other:</p><ul><li><b>Horizontal:</b> no force, so the velocity $v_x$ is constant: $x = v_x t$.</li><li><b>Vertical:</b> constant acceleration $g$ downwards, exactly like free fall.</li></ul><p>The time $t$ is the only thing the two parts share.</p>
 @z4l93pdn03
 The path of a projectile with its launch velocity, maximum height and range marked
 @28npsep1ojd
 Time of flight $T$, maximum height $H$ and range $R$.
+@178u1tsgm9q
+Paths of projectiles launched at 20 m/s at 30, 45 and 60 degrees
+@upmq90umli
+Launched at $20\,\mathrm{m/s}$ ($g = 10\,\mathrm{m/s^2}$): $45^\circ$ goes farthest ($40\,\mathrm{m}$); $30^\circ$ and $60^\circ$ land at the same point ($34.6\,\mathrm{m}$).
 @290cqlyxiyk
 <p>At the top of the path the vertical velocity is zero, but the horizontal velocity is not. The projectile is still moving sideways at $v_0\cos\theta$.</p>
 @26k2a0seb9  ; 0=Q(h, 'm') | 1=Q(v, 'm/s') | 2=gNote(g)
@@ -186,7 +215,7 @@ Its acceleration is zero
 The horizontal velocity $v_0\cos\theta$ never changes. Only the vertical velocity drops to zero at the top, while the acceleration stays $g$ downwards.
 
 ##### circular
-@vxtqthabi0  ; 0=Fig(circleSvg(T`An object moving on a ci | 1=Key(T`<p>The <b>centripetal acceleration | 2=Ex(T`<p>A car of mass $1000\,\mathrm{kg} | 3=Tip(T`<p>If the string of a whirling bal
+@xtt4ktxge5  ; 0=Fig(circleSvg(T`An object moving on a ci | 1=Key(T`<p>The <b>centripetal acceleration | 2=Ex(T`<p>A car of mass $1000\,\mathrm{kg} | 3=Fig(loopSvg(), T`In a vertical circle th | 4=Tip(T`<p>If the string of a whirling bal
 
 <p>An object moving around a circle at constant speed is still <b>accelerating</b>, because the direction of its velocity keeps changing.</p>
 ⟦0⟧
@@ -197,6 +226,7 @@ The horizontal velocity $v_0\cos\theta$ never changes. Only the vertical velocit
 <h3>Vertical circles</h3>
 <p>At the top of a vertical loop, gravity can provide the whole centripetal force. The smallest speed that keeps a ball or a roller-coaster car on the track there is $v_{\min} = \sqrt{g r}$.</p>
 ⟦3⟧
+⟦4⟧
 @27o6nwir9ki
 An object moving on a circle, with its velocity along the tangent and its acceleration towards the centre
 @pad2pv74vu
@@ -205,6 +235,8 @@ The velocity is along the tangent; the acceleration points to the centre.
 <p>The <b>centripetal acceleration</b> points to the centre of the circle:</p><p>$$a_c = \frac{v^2}{r} = \omega^2 r.$$</p><p>By Newton's second law this needs a net force towards the centre, the <b>centripetal force</b> $F_c = \dfrac{m v^2}{r}$. It is not a new kind of force: tension, friction, gravity or a normal force provides it.</p>
 @1vd3hiih900
 <p>A car of mass $1000\,\mathrm{kg}$ takes a flat bend of radius $50\,\mathrm{m}$ at $10\,\mathrm{m/s}$. The friction on the tyres must provide $F_c = \frac{1000 \cdot 10^2}{50} = 2000\,\mathrm{N}$. If the maximum friction is $\mu m g$, the fastest safe speed is $v_{\max} = \sqrt{\mu g r}$.</p>
+@2dhobe30ipx
+In a vertical circle the net force must point to the centre. At the top: $T + mg = \frac{mv^2}{r}$; at the bottom: $T - mg = \frac{mv^2}{r}$, so the string pulls hardest at the bottom.
 @fsbpqux5b7
 <p>If the string of a whirling ball breaks, the ball flies off along the <b>tangent</b>, not outwards along the radius. There is no "centrifugal force" pulling it out; it simply keeps moving in a straight line.</p>
 @2d2ecrbq62t  ; 0=n | 1=Q(t, 's') | 2=askT ? T`period` : T`frequency`
@@ -259,7 +291,7 @@ It is accelerating away from the centre
 The direction of the velocity changes all the time, so there is an acceleration $v^2/r$ pointing to the centre.
 
 ##### newton
-@kc8afz59sg  ; 0=Fm(T`\Sigma F = m a`) | 1=Key(T`<p>Solving a force problem:</p><ol | 2=Fig(fbdSvg([{ ang: 90, len: 70, label: ' | 3=Ex(T`<p>A $60\,\mathrm{kg}$ person stand
+@nbh8i211ge  ; 0=Fm(T`\Sigma F = m a`) | 1=Fig(thirdLawSvg(), T`Third law: A pushes | 2=Key(T`<p>Solving a force problem:</p><ol | 3=Fig(fbdSvg([{ ang: 90, len: 70, label: ' | 4=Ex(T`<p>A $60\,\mathrm{kg}$ person stand
 
 <p>A <b>force</b> is a push or a pull, measured in newtons ($\mathrm{N}$). Newton's three laws link forces to motion.</p>
 <h3>First law: inertia</h3>
@@ -269,11 +301,14 @@ The direction of the velocity changes all the time, so there is an acceleration 
 <p>The <b>net force</b> $\Sigma F$ is the vector sum of all forces on the object. A larger net force gives a larger acceleration; a larger mass gives a smaller one. $1\,\mathrm{N}$ is the force that gives $1\,\mathrm{kg}$ an acceleration of $1\,\mathrm{m/s^2}$.</p>
 <h3>Third law: action and reaction</h3>
 <p>If body A pushes on body B, then B pushes back on A with a force of equal size in the opposite direction. The two forces act on <b>different</b> bodies, so they never cancel each other.</p>
+⟦1⟧
 <h3>Common forces</h3>
 <ul><li><b>Weight</b> $W = mg$, pulling towards the centre of the Earth.</li><li><b>Normal force</b> $N$, from a surface, perpendicular to it.</li><li><b>Tension</b> $T$, along a rope or string.</li><li><b>Friction</b> $f$, along a surface, against sliding (next topic).</li></ul>
-⟦1⟧
 ⟦2⟧
 ⟦3⟧
+⟦4⟧
+@260coxbp0sf
+Third law: A pushes B and B pushes A back with the same size of force. Each force acts on a different block.
 @1ngrd91jx1z
 <p>Solving a force problem:</p><ol><li>Draw a <b>free-body diagram</b>: the object alone, with every force on it as an arrow.</li><li>Choose a positive direction.</li><li>Write $\Sigma F = ma$ along that direction and solve.</li></ol>
 @kwsux5tbzj
@@ -354,18 +389,33 @@ It depends on which is moving faster
 By Newton's third law the forces are equal and opposite. The car is damaged more because its smaller mass gives it a larger acceleration.
 
 ##### friction-incline
-@ye2dwlrqe1  ; 0=Ex(T`<p>A $20\,\mathrm{kg}$ crate is pus | 1=Fig(inclineSvg(30, T`A block on a slope  | 2=Key(T`<p>On a slope of angle $\theta$, s | 3=Tip(T`<p>The normal force on a slope is 
+@1e0jiup69pa  ; 0=Fig(planeSvg({ W: 340, H: 210, x: [0, 10 | 1=Ex(T`<p>A $20\,\mathrm{kg}$ crate is pus | 2=Fig(inclineSvg(30, T`A block on a slope  | 3=Key(T`<p>On a slope of angle $\theta$, s | 4=Tip(T`<p>The normal force on a slope is 
 
 <p><b>Friction</b> is the force between two surfaces that opposes sliding. It acts along the surface, against the motion (or against the motion that would happen without it).</p>
 <h3>Static and kinetic friction</h3>
 <ul><li><b>Static friction</b> holds an object still. It grows as you push harder, up to a maximum: $f_{s,\max} = \mu_s N$.</li><li><b>Kinetic friction</b> acts once the object slides: $f_k = \mu_k N$, roughly constant.</li></ul>
 <p>$\mu_s$ and $\mu_k$ are the <b>coefficients of friction</b>. They have no unit, and usually $\mu_k \lt \mu_s$, which is why it is harder to start pushing a box than to keep it moving. On a level floor with no other vertical forces, $N = mg$.</p>
 ⟦0⟧
-<h3>Inclined planes</h3>
 ⟦1⟧
+<h3>Inclined planes</h3>
 ⟦2⟧
-<p>A block at rest stays put as long as $mg\sin\theta \le \mu_s mg\cos\theta$, that is, while $\tan\theta \le \mu_s$.</p>
 ⟦3⟧
+<p>A block at rest stays put as long as $mg\sin\theta \le \mu_s mg\cos\theta$, that is, while $\tan\theta \le \mu_s$.</p>
+⟦4⟧
+@29c4njrtzm
+push
+@t86unu0m29
+friction
+@14w721wm5pg
+static: f = push
+@1m2k6wfjomk
+kinetic: μₖN
+@18277g37nbc
+starts sliding
+@24p88our7x
+Friction against pushing force: static friction grows with the push up to a maximum, then drops to a constant kinetic value
+@1p96lj5xz36
+Static friction matches the push until it reaches its maximum $\mu_s N$; once the box slides, friction drops to the smaller kinetic value $\mu_k N$.
 @1jiwd84c8rz
 <p>A $20\,\mathrm{kg}$ crate is pushed along a floor with $\mu_k = 0.3$ by a $100\,\mathrm{N}$ horizontal force ($g = 10\,\mathrm{m/s^2}$). Friction: $f = 0.3 \cdot 20 \cdot 10 = 60\,\mathrm{N}$. Net force: $100 - 60 = 40\,\mathrm{N}$, so $a = 40/20 = 2\,\mathrm{m/s^2}$.</p>
 @xj56l8z8yp
@@ -416,25 +466,39 @@ static friction cannot hold it and it slides
 static friction can hold it
 
 ##### work-energy
-@ezxbtjc7z8  ; 0=Fm(T`W = F\,s\cos\theta`) | 1=Fm(T`E_k = \tfrac12 m v^2 \qquad E_p = m | 2=Key(T`<p><b>Work–energy theorem:</b> the | 3=Ex(T`<p>A roller-coaster car starts from | 4=Fm(T`P = \frac{W}{t} = F v \qquad \eta = | 5=Tip(T`<p>Square the speed in $\tfrac12 m
+@1l6z9pd3jhf  ; 0=Fm(T`W = F\,s\cos\theta`) | 1=Fig(workAngleSvg(), T`Only the component | 2=Fm(T`E_k = \tfrac12 m v^2 \qquad E_p = m | 3=Key(T`<p><b>Work–energy theorem:</b> the | 4=Ex(T`<p>A roller-coaster car starts from | 5=Fig(planeSvg({ W: 340, H: 220, x: [0, 21 | 6=Fm(T`P = \frac{W}{t} = F v \qquad \eta = | 7=Tip(T`<p>Square the speed in $\tfrac12 m
 
 <p><b>Energy</b> is the ability to do work, and <b>work</b> is energy transferred by a force. Both are measured in joules ($\mathrm{J}$).</p>
 <h3>Work</h3>
 ⟦0⟧
 <p>Here $F$ is the force, $s$ the displacement and $\theta$ the angle between them. Only the part of the force along the motion does work. A force perpendicular to the motion (like the normal force on a level floor) does no work; a force against the motion (like friction) does negative work.</p>
-<h3>Kinetic and potential energy</h3>
 ⟦1⟧
-<p>Kinetic energy belongs to motion; gravitational potential energy to height above a chosen reference level.</p>
+<h3>Kinetic and potential energy</h3>
 ⟦2⟧
+<p>Kinetic energy belongs to motion; gravitational potential energy to height above a chosen reference level.</p>
 ⟦3⟧
-<h3>Power and efficiency</h3>
 ⟦4⟧
-<p>Power is measured in watts: $1\,\mathrm{W} = 1\,\mathrm{J/s}$.</p>
 ⟦5⟧
+<h3>Power and efficiency</h3>
+⟦6⟧
+<p>Power is measured in watts: $1\,\mathrm{W} = 1\,\mathrm{J/s}$.</p>
+⟦7⟧
+@23s1vnthbue
+Only the component of the force along the motion, $F\cos\theta$, does work: $W = F s\cos\theta$.
 @1gysejys4zp
 <p><b>Work–energy theorem:</b> the net work on an object equals its change in kinetic energy, $W_{\text{net}} = \Delta E_k$.</p><p><b>Conservation of mechanical energy:</b> if only gravity does work (no friction),</p><p>$$E_k + E_p = \text{constant}, \qquad \tfrac12 m v_1^2 + m g h_1 = \tfrac12 m v_2^2 + m g h_2.$$</p>
 @wjax83ohbn
 <p>A roller-coaster car starts from rest $20\,\mathrm{m}$ above the bottom of a smooth track ($g = 10\,\mathrm{m/s^2}$). At the bottom all the potential energy has become kinetic:</p><p>$$mgh = \tfrac12 m v^2 \;\Rightarrow\; v = \sqrt{2gh} = \sqrt{400} = 20\,\mathrm{m/s}.$$</p><p>The mass cancels, so every car reaches the same speed.</p>
+@2g6xioibq4s
+height h (m)
+@2d88wn2tpf7
+energy (J)
+@w3o14s3xf6
+total
+@9qf6zyqzfl
+Energy of a 1 kg car on a smooth track: potential energy rises with height, kinetic energy falls, and their total stays 200 J
+@2eipmpdefx0
+A $1\,\mathrm{kg}$ car on a smooth track starting at $20\,\mathrm{m}$ ($g = 10\,\mathrm{m/s^2}$): at every height $E_p + E_k = 200\,\mathrm{J}$.
 @1aka3dk0wtz
 P = \frac{W}{t} = F v \qquad \eta = \frac{\text{useful output}}{\text{input}} \times 100\%
 @2sxeyeb2ug
@@ -473,7 +537,7 @@ A pump is ⟦0⟧% efficient and takes in ⟦1⟧. What useful power does it del
 $P_{\text{out}} = \eta \times P_{\text{in}} = ⟦0⟧ \times ⟦1⟧ = ⟦2⟧$.
 
 ##### momentum
-@9luwz9hbip  ; 0=Fm(T`p = m v`) | 1=Fm(T`J = F\,\Delta t = \Delta p = m v -  | 2=Key(T`<p><b>Conservation of momentum:</b | 3=Ex(T`<p>A $2\,\mathrm{kg}$ cart at $6\,\ | 4=Tip(T`<p>When a ball bounces back, its v
+@1mshvchkque  ; 0=Fm(T`p = m v`) | 1=Fm(T`J = F\,\Delta t = \Delta p = m v -  | 2=Fig(planeSvg({ W: 360, H: 210, x: [0, 90 | 3=Key(T`<p><b>Conservation of momentum:</b | 4=Ex(T`<p>A $2\,\mathrm{kg}$ cart at $6\,\ | 5=FigW(collisionSvg(), T`Perfectly inelast | 6=Tip(T`<p>When a ball bounces back, its v
 
 <p>The <b>momentum</b> of an object is its mass times its velocity. It is a vector, pointing the same way as the velocity, and its unit is $\mathrm{kg\,m/s}$.</p>
 ⟦0⟧
@@ -482,16 +546,28 @@ $P_{\text{out}} = \eta \times P_{\text{in}} = ⟦0⟧ \times ⟦1⟧ = ⟦2⟧$.
 ⟦1⟧
 <p>This is why airbags and crumple zones save lives: spreading the same change of momentum over a longer time means a smaller force.</p>
 ⟦2⟧
+⟦3⟧
 <h3>Types of collision</h3>
 <ul><li><b>Perfectly inelastic:</b> the objects stick together and move off with one common velocity $v' = \dfrac{m_1 v_1 + m_2 v_2}{m_1 + m_2}$. Kinetic energy is lost (to heat, sound, deformation).</li><li><b>Elastic:</b> kinetic energy is conserved as well. When two equal masses collide elastically head-on, they swap velocities.</li><li>Most real collisions are in between: momentum is conserved, some kinetic energy is lost.</li></ul>
-⟦3⟧
+⟦4⟧
+⟦5⟧
 <h3>Recoil</h3>
 <p>Before a gun fires, the total momentum is zero, so afterwards the bullet's forward momentum is balanced by the gun's backward momentum: $m_b v_b = m_g v_g$.</p>
-⟦4⟧
+⟦6⟧
+@1kb9sohpl5a
+hard stop
+@1svtobijlaa
+airbag
+@1qtk928x28z
+Force-time graphs for a hard stop and an airbag: same area, but the airbag spreads it over a longer time with a lower peak force
+@1qllx30kvk5
+The area under a force–time graph is the impulse. Both stops have the same area (same $\Delta p$), but the airbag's longer time means a much smaller peak force.
 @2e2tqc5my45
 <p><b>Conservation of momentum:</b> when no outside force acts on a system, its total momentum stays the same. For two objects colliding:</p><p>$$m_1 v_1 + m_2 v_2 = m_1 v_1' + m_2 v_2'.$$</p><p>Choose a positive direction and give velocities the other way a minus sign.</p>
 @2frhwamgtv6
 <p>A $2\,\mathrm{kg}$ cart at $6\,\mathrm{m/s}$ hits a $1\,\mathrm{kg}$ cart at rest and they stick. $v' = \frac{2 \cdot 6 + 1 \cdot 0}{3} = 4\,\mathrm{m/s}$. Kinetic energy before: $36\,\mathrm{J}$; after: $\tfrac12 \cdot 3 \cdot 4^2 = 24\,\mathrm{J}$, so $12\,\mathrm{J}$ is lost.</p>
+@efa1cp0bs
+Perfectly inelastic collision: total momentum $2 \cdot 6 = 12\,\mathrm{kg\,m/s}$ before and $3 \cdot 4 = 12\,\mathrm{kg\,m/s}$ after.
 @rfdx8x7xt6
 <p>When a ball bounces back, its velocity changes sign. Bouncing from $+5\,\mathrm{m/s}$ to $-5\,\mathrm{m/s}$ is a change of $10\,\mathrm{m/s}$, not zero.</p>
 @rivcwpwaw  ; 0=Q(m, 'kg') | 1=Q(v, 'm/s')
@@ -530,19 +606,22 @@ Both carts stop
 In an elastic head-on collision between equal masses both momentum and kinetic energy are conserved, and the only solution is that the carts swap velocities.
 
 ##### rotation
-@1iz3ty5e7jw  ; 0=Fm(T`\tau = r F \sin\theta`) | 1=Tbl([T`Object (axis through centre unles | 2=Key(T`<p>Rotation mirrors straight-line  | 3=Tip(T`<p>Angles in rotational formulas m
+@1fr1zts0bon  ; 0=Fm(T`\tau = r F \sin\theta`) | 1=Fig(wrenchSvg(), T`Torque on a spanner:  | 2=Tbl([T`Object (axis through centre unles | 3=Key(T`<p>Rotation mirrors straight-line  | 4=Tip(T`<p>Angles in rotational formulas m
 
 <p>Forces make things speed up in a straight line; <b>torques</b> make them spin faster or slower.</p>
 <h3>Torque</h3>
 ⟦0⟧
 <p>$r$ is the distance from the axis to where the force acts and $\theta$ the angle between $r$ and $F$. The unit is $\mathrm{N\,m}$. A force pointing straight at the axis ($\theta = 0$) produces no torque, which is why door handles are far from the hinges.</p>
+⟦1⟧
 <h3>Moment of inertia</h3>
 <p>The rotational version of mass is the <b>moment of inertia</b> $I = \sum m r^2$. Mass far from the axis counts much more than mass close to it.</p>
-⟦1⟧
 ⟦2⟧
+⟦3⟧
 <h3>Rolling</h3>
 <p>A rolling object has both kinds of kinetic energy: $E_k = \tfrac12 m v^2 + \tfrac12 I\omega^2$ with $v = \omega r$. Rolling down a slope of height $h$ from rest, a solid sphere reaches $v = \sqrt{\tfrac{10}{7} g h}$ and a solid cylinder $v = \sqrt{\tfrac43 g h}$: both slower than a block sliding without friction ($\sqrt{2gh}$), because part of the energy goes into spinning.</p>
-⟦3⟧
+⟦4⟧
+@15bhwnfcay2
+Torque on a spanner: only the part of the force perpendicular to the handle, $F\sin\theta$, turns it, so $\tau = rF\sin\theta$. A longer handle (larger $r$) gives more torque for the same force.
 @1rn864qo94t
 Object (axis through centre unless stated)
 @1f6y3bd30el
@@ -607,7 +686,7 @@ The ring, because its moment of inertia is smaller
 $\alpha = \tau / I$. The disc has $I = \tfrac12 MR^2$ and the ring $I = MR^2$, so the same torque gives the disc twice the angular acceleration.
 
 ##### equilibrium
-@2bgoc0bt7g7  ; 0=Key(T`<p><b>Conditions for equilibrium</ | 1=Fig(beamSvg(4, [{ x: 2, kind: 'pivot' }, | 2=Ex(T`<p>A uniform $4\,\mathrm{m}$ plank  | 3=Tip(T`<p>Remember the beam's own weight:
+@1f04o0sco4j  ; 0=Key(T`<p><b>Conditions for equilibrium</ | 1=Fig(beamSvg(4, [{ x: 2, kind: 'pivot' }, | 2=Ex(T`<p>A uniform $4\,\mathrm{m}$ plank  | 3=Fig(toppleSvg(), T`Stability: follow the | 4=Tip(T`<p>Remember the beam's own weight:
 
 <p>A rigid body is in <b>equilibrium</b> when it neither speeds up nor starts to turn. That needs two conditions at once.</p>
 ⟦0⟧
@@ -619,6 +698,7 @@ $\alpha = \tau / I$. The disc has $I = \tfrac12 MR^2$ and the ring $I = MR^2$, s
 <h3>Centre of gravity and stability</h3>
 <p>The weight of a body acts as if at one point, its <b>centre of gravity</b>; for a uniform beam that is the middle. An object resting on a base topples when the vertical line through its centre of gravity falls outside the base. A low centre of gravity and a wide base make an object more stable.</p>
 ⟦3⟧
+⟦4⟧
 @1xo6yn5lhts
 <p><b>Conditions for equilibrium</b></p><ol><li>The net force is zero: $\Sigma F_x = 0$ and $\Sigma F_y = 0$.</li><li>The net torque (moment) about <i>any</i> point is zero: clockwise moments = anticlockwise moments.</li></ol>
 @23g7vlo9231
@@ -627,6 +707,8 @@ A seesaw balanced on a central pivot with equal loads at equal distances
 Equal moments about the pivot: $300 \times 1.5 = 300 \times 1.5$.
 @2dnb66q652e
 <p>A uniform $4\,\mathrm{m}$ plank of weight $200\,\mathrm{N}$ rests on supports at its two ends. A $600\,\mathrm{N}$ person stands $1\,\mathrm{m}$ from the left end. Taking moments about the left support: $R_B \cdot 4 = 600 \cdot 1 + 200 \cdot 2$, so $R_B = 250\,\mathrm{N}$. Then $R_A = 800 - 250 = 550\,\mathrm{N}$.</p>
+@crv9uxmvjk
+Stability: follow the vertical line down from the centre of gravity. Inside the base, the weight turns the box back; outside the base, it tips the box over.
 @1v1bcfnsxbs
 <p>Remember the beam's own weight: for a uniform beam, put it at the midpoint when you take moments.</p>
 @27ai89vg7lv  ; 0=Q(w1, 'N') | 1=Q(d1, 'm') | 2=Q(w2, 'N')
@@ -677,21 +759,29 @@ The weight equals the normal force from the wall
 A rigid body in equilibrium needs both conditions: no net force and no net torque.
 
 ##### gravitation
-@nvjcaa6b85  ; 0=Fm(T`F = \frac{G m_1 m_2}{r^2}, \qquad G | 1=Key(T`<p>For a satellite in a circular o | 2=Tip(T`<p>$r$ is measured from the <b>cen
+@gi70ufheum  ; 0=Fm(T`F = \frac{G m_1 m_2}{r^2}, \qquad G | 1=Fig(planeSvg({ W: 340, H: 210, x: [0, 4. | 2=Key(T`<p>For a satellite in a circular o | 3=Fig(orbitSvg(), T`In a circular orbit gr | 4=Tip(T`<p>$r$ is measured from the <b>cen
 
 <p>Every mass attracts every other mass. Newton's law of gravitation gives the size of the pull between two point masses (or spheres) whose centres are a distance $r$ apart:</p>
 ⟦0⟧
 <p>It is an <b>inverse-square law</b>: doubling the distance makes the force four times smaller.</p>
+⟦1⟧
 <h3>The gravitational field strength $g$</h3>
 <p>At the surface of a planet of mass $M$ and radius $R$, $g = \dfrac{GM}{R^2}$. For the Earth ($M = 6.0 \times 10^{24}\,\mathrm{kg}$, $R = 6.4 \times 10^{6}\,\mathrm{m}$) this gives about $9.8\,\mathrm{m/s^2}$. At a height $h$ above the surface, $g_h = g \left(\dfrac{R}{R + h}\right)^2$.</p>
-⟦1⟧
+⟦2⟧
+⟦3⟧
 <h3>Escape speed</h3>
 <p>The speed needed to leave a planet's surface for good (ignoring air) is $v_{\text{esc}} = \sqrt{\dfrac{2GM}{R}}$, about $11.2\,\mathrm{km/s}$ for the Earth.</p>
-⟦2⟧
+⟦4⟧
 @1c9bn1b3459
 F = \frac{G m_1 m_2}{r^2}, \qquad G = 6.67 \times 10^{-11}\,\mathrm{N\,m^2/kg^2}
+@kx9ijitw4b
+Inverse-square law: the force falls to a quarter at twice the distance and a ninth at three times
+@fe8kgrs58t
+Inverse-square law: at $2r$ the force is $\frac14$ as large, at $3r$ it is $\frac19$.
 @zpmy0epgmu
 <p>For a satellite in a circular orbit of radius $r$, gravity provides the centripetal force:</p><p>$$\frac{GMm}{r^2} = \frac{m v^2}{r} \;\Rightarrow\; v = \sqrt{\frac{GM}{r}}, \qquad T = \frac{2\pi r}{v}.$$</p><p>From this follows <b>Kepler's third law</b>: $T^2 \propto r^3$ for all bodies orbiting the same central mass.</p>
+@25rg5a7f1nn
+In a circular orbit gravity supplies the centripetal force: it always points to the planet's centre, at right angles to the velocity.
 @1nsox0r2osf
 <p>$r$ is measured from the <b>centre</b> of the planet. A satellite $400\,\mathrm{km}$ up orbits at $r = R + 400\,\mathrm{km}$.</p>
 @d9s18hv7kt  ; 0=Q(m1, 'kg') | 1=Q(m2, 'kg') | 2=Q(r, 'm')
@@ -754,19 +844,35 @@ It stays the same
 Gravity is an inverse-square law: $F \propto 1/r^2$, so tripling $r$ divides the force by $3^2 = 9$.
 
 ##### elasticity
-@tht7ack1bm  ; 0=Fm(T`F = k\,x`) | 1=Fm(T`\sigma = \frac{F}{A} \qquad \vareps | 2=Key(T`<p>A stretched or compressed sprin | 3=Tip(T`<p>Extension is the <i>change</i> 
+@qkqjs1tc1y  ; 0=Fm(T`F = k\,x`) | 1=Fig(planeSvg({ W: 340, H: 220, x: [0, 10 | 2=Fig(springsSvg(), T`Two springs side by  | 3=Fm(T`\sigma = \frac{F}{A} \qquad \vareps | 4=Key(T`<p>A stretched or compressed sprin | 5=Tip(T`<p>Extension is the <i>change</i> 
 
 <p>An <b>elastic</b> material returns to its original shape when the force is removed. Springs, rubber bands, and steel wires (for small stretches) all behave this way.</p>
 <h3>Hooke's law</h3>
 ⟦0⟧
 <p>The extension $x$ is proportional to the force $F$, up to the <b>elastic limit</b>. The spring constant $k$ (in $\mathrm{N/m}$) measures stiffness: a stiff spring has a large $k$.</p>
+⟦1⟧
 <h3>Combining springs</h3>
 <ul><li><b>Parallel</b> (side by side, sharing the load): $k = k_1 + k_2$. Stiffer.</li><li><b>Series</b> (one below the other): $\dfrac{1}{k} = \dfrac{1}{k_1} + \dfrac{1}{k_2}$. Softer.</li></ul>
-<h3>Stress, strain and Young's modulus</h3>
-⟦1⟧
-<p>Stress $\sigma$ is force per area (in $\mathrm{Pa}$); strain $\varepsilon$ is the fractional change in length (no unit). The <b>Young's modulus</b> $E$ is a property of the material, not of the particular wire: steel has about $2 \times 10^{11}\,\mathrm{Pa}$.</p>
 ⟦2⟧
+<h3>Stress, strain and Young's modulus</h3>
 ⟦3⟧
+<p>Stress $\sigma$ is force per area (in $\mathrm{Pa}$); strain $\varepsilon$ is the fractional change in length (no unit). The <b>Young's modulus</b> $E$ is a property of the material, not of the particular wire: steel has about $2 \times 10^{11}\,\mathrm{Pa}$.</p>
+⟦4⟧
+⟦5⟧
+@om7di9fsgk
+extension x
+@p2r96joqz7
+force F
+@wwwlbv9bye
+elastic limit
+@1gcv5ikmjyh
+slope = k
+@15p14kg9tw3
+Force-extension graph: a straight line of slope k up to the elastic limit, with the triangle under it showing stored energy
+@gg7s16irfz
+Hooke's law holds on the straight part, whose slope is $k$. The shaded triangle is the elastic energy stored at that extension.
+@1xz73msgri5
+Two springs side by side share the load (stiffer); one below the other each feel the whole load and both stretch (softer).
 @1vnn2tgh37x
 <p>A stretched or compressed spring stores <b>elastic potential energy</b>:</p><p>$$E_p = \tfrac12 k x^2 = \tfrac12 F x.$$</p><p>It is the area under the force–extension graph, a triangle.</p>
 @1yajnp82ry5
@@ -795,8 +901,6 @@ Cross-sectional area: $A = \pi\left(\frac{d}{2}\right)^2 = \pi (⟦0⟧)^2 = ⟦
 steel
 @aohwz19hxq
 copper
-@29s3flj4o7q
-aluminium
 @21tbyjxpkpz  ; 0=mat | 1=Q(L, 'm') | 2=Q(A * 1e6, 'mm^2') | 3=Q(F, 'N') | 4=sciT(E, 2)
 A wire made of ⟦0⟧, ⟦1⟧ long, with a cross-sectional area of ⟦2⟧ carries a load of ⟦3⟧. By how many millimetres does it stretch? (Young's modulus: $⟦4⟧\,\mathrm{Pa}$.)
 @14ov2o2z4pw  ; 0=QT(k, 'N/m') | 1=Q(x * 100, 'cm') | 2=Q(m * 1000, 'g')
@@ -819,7 +923,7 @@ It stretches twice as much
 $\Delta L = \frac{FL}{AE}$. Doubling the diameter makes the area $2^2 = 4$ times larger, so the stretch is 4 times smaller. The Young's modulus is the same because the material is the same.
 
 ##### fluid-statics
-@132l0ady3rl  ; 0=Fm(T`\rho = \frac{m}{V} \qquad p = \frac | 1=Fm(T`p = p_0 + \rho g h`) | 2=Fm(T`\frac{F_1}{A_1} = \frac{F_2}{A_2}`) | 3=Key(T`<p><b>Archimedes' principle:</b> a | 4=Ex(T`<p>A $0.002\,\mathrm{m^3}$ stone is | 5=Tip(T`<p>Use the density of the <b>fluid
+@1r2jwuprm2x  ; 0=Fm(T`\rho = \frac{m}{V} \qquad p = \frac | 1=Fm(T`p = p_0 + \rho g h`) | 2=Fig(tankSvg(), T`The deeper you go, the  | 3=Fm(T`\frac{F_1}{A_1} = \frac{F_2}{A_2}`) | 4=Fig(hydraulicSvg(), T`The same pressure  | 5=Key(T`<p><b>Archimedes' principle:</b> a | 6=Ex(T`<p>A $0.002\,\mathrm{m^3}$ stone is | 7=Fig(buoyancySvg(), T`The buoyant force i | 8=Tip(T`<p>Use the density of the <b>fluid
 
 <h3>Density and pressure</h3>
 ⟦0⟧
@@ -827,17 +931,26 @@ $\Delta L = \frac{FL}{AE}$. Doubling the diameter makes the area $2^2 = 4$ times
 <h3>Pressure in a liquid</h3>
 ⟦1⟧
 <p>The pressure at depth $h$ is the pressure at the surface $p_0$ (atmospheric pressure, about $1.0 \times 10^{5}\,\mathrm{Pa}$) plus the weight of the liquid above each square metre, $\rho g h$. It depends only on depth, not on the shape of the container, and acts equally in all directions.</p>
+⟦2⟧
 <h3>Pascal's principle and hydraulics</h3>
 <p>Pressure applied to an enclosed liquid is passed on undiminished to every part of it. In a hydraulic press or car lift the pressure is the same under both pistons, so</p>
-⟦2⟧
-<p>A small force on a small piston lifts a large load on a large piston.</p>
 ⟦3⟧
+<p>A small force on a small piston lifts a large load on a large piston.</p>
 ⟦4⟧
 ⟦5⟧
+⟦6⟧
+⟦7⟧
+⟦8⟧
+@t5ss629kb1
+The deeper you go, the more water is above you, so the pressure on the wall grows steadily with depth.
+@1zivj7y7zn6
+The same pressure acts under both pistons, so $F_2 = F_1 \frac{A_2}{A_1}$: a piston with 50 times the area pushes up 50 times as hard.
 @20hy5hggcsa
 <p><b>Archimedes' principle:</b> a body in a fluid feels an upward <b>buoyant force</b> equal to the weight of the fluid it displaces:</p><p>$$F_B = \rho_{\text{fluid}}\, g\, V_{\text{submerged}}.$$</p><p>A floating object displaces its own weight of fluid, so the fraction under the surface is $\dfrac{\rho_{\text{object}}}{\rho_{\text{fluid}}}$.</p>
 @1eqvj8151xy
 <p>A $0.002\,\mathrm{m^3}$ stone is fully under water ($g = 10\,\mathrm{m/s^2}$). Buoyant force: $1000 \cdot 10 \cdot 0.002 = 20\,\mathrm{N}$. If the stone weighs $50\,\mathrm{N}$ in air, it seems to weigh only $50 - 20 = 30\,\mathrm{N}$ in the water.</p>
+@17rn4m1abn8
+The buoyant force is the weight of the water the stone pushes aside. If it is less than the stone's weight, the stone sinks.
 @jxo254idn5
 <p>Use the density of the <b>fluid</b> in $F_B = \rho g V$, not the density of the object.</p>
 @1gnv467hur7  ; 0=Q(F, 'N') | 1=Q(A, 'm^2')
@@ -902,21 +1015,27 @@ Water pressure is zero at the surface
 The hull encloses a large volume, so the ship's average density (steel plus air) is less than that of water, and it sinks only until the displaced water weighs as much as the ship.
 
 ##### fluid-dynamics
-@21hvlad5dmf  ; 0=Fm(T`Q = \frac{V}{t} = A\,v \qquad A_1 v | 1=Key(T`<p><b>Bernoulli's equation</b> (co | 2=Fm(T`v = \sqrt{2 g h}`) | 3=Tip(T`<p>If a pipe is described by its d
+@103bjffo4oq  ; 0=Fm(T`Q = \frac{V}{t} = A\,v \qquad A_1 v | 1=Key(T`<p><b>Bernoulli's equation</b> (co | 2=FigW(pipeSvg(), T`In the narrow section  | 3=Fm(T`v = \sqrt{2 g h}`) | 4=Fig(torricelliSvg(), T`Torricelli: the j | 5=Tip(T`<p>If a pipe is described by its d
 
 <p>For an ideal fluid (incompressible, no friction, steady flow) two simple laws describe the motion.</p>
 <h3>Flow rate and continuity</h3>
 ⟦0⟧
 <p>The volume flow rate $Q$ (in $\mathrm{m^3/s}$) is the same all along a pipe, because the fluid cannot pile up anywhere. Where the pipe narrows, the fluid speeds up. Putting your thumb over a garden hose makes the water squirt faster for this reason.</p>
 ⟦1⟧
+⟦2⟧
 <h3>Torricelli's law</h3>
 <p>Water leaking from a hole a depth $h$ below the surface of an open tank comes out at the speed of a free fall from that height:</p>
-⟦2⟧
+⟦3⟧
+⟦4⟧
 <h3>Applications</h3>
 <ul><li>An aircraft wing makes air flow faster over its top surface, so the pressure above is lower than below: lift.</li><li>A Venturi meter measures flow speed from the pressure drop in a narrow section.</li><li>Two sheets of paper held close together are pushed towards each other when you blow between them.</li></ul>
-⟦3⟧
+⟦5⟧
 @jfct9zo3fm
 <p><b>Bernoulli's equation</b> (conservation of energy for a flowing fluid):</p><p>$$p + \tfrac12 \rho v^2 + \rho g h = \text{constant along a streamline}.$$</p><p>In a horizontal pipe, where the fluid flows faster its pressure is lower.</p>
+@x9ggwffgmf
+In the narrow section the fluid is faster ($A_1v_1 = A_2v_2$) and, by Bernoulli, its pressure is lower — the gauge column there stands lower.
+@19qqnu5lx0p
+Torricelli: the jet leaves the hole as fast as a stone dropped from the water surface down to the hole.
 @1tf33n72jde
 <p>If a pipe is described by its diameter, the area goes with the square: halving the diameter makes the area four times smaller and the speed four times larger.</p>
 @h7y62084hz  ; 0=Q(Q0, 'L/s') | 1=Q(V, 'L')
@@ -937,8 +1056,6 @@ A tank stands on the ground. Water spurts horizontally from a small hole ⟦0⟧
 Exit speed: $v = \sqrt{2gh}$. Falling time: $t = \sqrt{2y/g}$. Distance: $x = vt = \sqrt{2gh} \cdot \sqrt{\frac{2y}{g}} = 2\sqrt{hy} = 2\sqrt{⟦0⟧ \cdot ⟦1⟧} = ⟦2⟧$. The value of $g$ cancels.
 @fvac4t57w5
 water
-@242gqtld3d4
-air
 @1h40nwesfdh  ; 0=fl === T`water` ? T`Water` : T`Air` | 1=Q(rho, 'kg/m^3') | 2=Q(v1, 'm/s') | 3=Q(v2, 'm/s')
 ⟦0⟧ (density ⟦1⟧) flows through a horizontal pipe. Its speed rises from ⟦2⟧ to ⟦3⟧ at a narrowing. By how much does the pressure drop?
 @24uhc1w9ess
@@ -973,20 +1090,23 @@ the flow rate is smaller
 Continuity makes the water speed up where the area is smaller, and Bernoulli then says its pressure must drop. The volume flow rate stays the same.
 
 ##### center-of-mass
-@1woeplbt7b9  ; 0=Fm(T`x_{\text{cm}} = \frac{\sum m_i x_i} | 1=Fm(T`L = I\,\omega \qquad \text{(for a p | 2=Key(T`<p><b>Conservation of angular mome | 3=Ex(T`<p>A skater spins at $2\,\mathrm{re | 4=Tip(T`<p>In $I_1\omega_1 = I_2\omega_2$ 
+@2566v8xyrw9  ; 0=Fm(T`x_{\text{cm}} = \frac{\sum m_i x_i} | 1=Fig(comSvg(), T`$x_{\text{cm}} = \frac{2 | 2=Fm(T`L = I\,\omega \qquad \text{(for a p | 3=Key(T`<p><b>Conservation of angular mome | 4=Ex(T`<p>A skater spins at $2\,\mathrm{re | 5=Tip(T`<p>In $I_1\omega_1 = I_2\omega_2$ 
 
 <h3>Centre of mass</h3>
 <p>For a set of point masses, the <b>centre of mass</b> is the mass-weighted average position:</p>
 ⟦0⟧
 <p>The centre of mass of a system moves as if all the mass were concentrated there and all the external forces acted on it: $\Sigma F_{\text{ext}} = M a_{\text{cm}}$. When a shell explodes in mid-air, its fragments fly apart, but their centre of mass keeps following the original parabola.</p>
-<h3>Angular momentum</h3>
 ⟦1⟧
-<p>Angular momentum is the rotational counterpart of momentum. A net torque changes it: $\tau = \dfrac{\Delta L}{\Delta t}$.</p>
+<h3>Angular momentum</h3>
 ⟦2⟧
+<p>Angular momentum is the rotational counterpart of momentum. A net torque changes it: $\tau = \dfrac{\Delta L}{\Delta t}$.</p>
 ⟦3⟧
 ⟦4⟧
+⟦5⟧
 @deihpxduhb
 x_{\text{cm}} = \frac{\sum m_i x_i}{\sum m_i} \qquad y_{\text{cm}} = \frac{\sum m_i y_i}{\sum m_i}
+@21gw8mst1kb
+$x_{\text{cm}} = \frac{2 \cdot 0 + 1 \cdot 3}{2 + 1} = 1\,\mathrm{m}$: the centre of mass sits closer to the heavier mass.
 @utaagz8jc5
 L = I\,\omega \qquad \text{(for a point mass: } L = m v r\text{)}
 @1vqngikji5k

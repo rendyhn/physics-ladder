@@ -1,20 +1,5 @@
 /* Bahasa Indonesia — 9-mech-d */
 addT('id', {
-  '23qs3p5efgc': R`
-<p>Tidak ada pengukuran yang benar-benar tepat. Hasil pengukuran yang baik menyatakan seberapa besar sesuatu <i>dan</i> seberapa teliti kita mengetahuinya.</p>
-<h3>Alat ukur dan ketelitiannya</h3>
-⟦0⟧
-<h3>Membaca jangka sorong</h3>
-<p>Baca skala utama tepat di sebelah kiri angka nol nonius, lalu cari garis nonius yang tepat segaris dengan garis skala utama. Dengan 10 skala nonius, nomor garis itu menunjukkan persepuluhan milimeter.</p>
-⟦1⟧
-<h3>Membaca mikrometer sekrup</h3>
-<p>Selubung (skala utama) menunjukkan milimeter dan setengah milimeter; selubung luar (skala putar) memiliki 50 bagian, masing-masing $0{,}01\,\mathrm{mm}$. Hasil = skala utama + skala putar $\times\ 0{,}01\,\mathrm{mm}$. Skala utama $5{,}5\,\mathrm{mm}$ dengan garis skala putar 23 menghasilkan $5{,}5 + 0{,}23 = 5{,}73\,\mathrm{mm}$.</p>
-<h3>Ketidakpastian</h3>
-<p>Satu kali pengukuran biasanya dilaporkan dengan ketidakpastian sekitar setengah skala terkecil, misalnya $12{,}5 \pm 0{,}05\,\mathrm{cm}$ dengan mistar milimeter. Untuk beberapa kali pengukuran besaran yang sama, pakai <b>rata-rata</b> sebagai nilai terbaik, dan sebaran hasilnya menunjukkan ketidakpastian.</p>
-⟦2⟧
-<h3>Berhitung dengan hasil pengukuran</h3>
-<ul><li><b>Perkalian atau pembagian:</b> hasilnya ditulis dengan <i>angka penting paling sedikit</i> dari nilai-nilai yang dipakai. $12{,}5\,\mathrm{cm} \times 3{,}2\,\mathrm{cm} = 40{,}0 \to 40\,\mathrm{cm^2}$ (2 angka penting).</li><li><b>Penjumlahan atau pengurangan:</b> hasilnya ditulis dengan <i>jumlah angka di belakang koma paling sedikit</i>. $12{,}52 + 3{,}1 = 15{,}62 \to 15{,}6$.</li></ul>
-⟦3⟧`,
   '1n4tjiq7o59': R`Alat ukur`,
   '13gr3233qj5': R`Skala terkecil`,
   '244d6ygn4m3': R`Kegunaan umum`,
@@ -43,16 +28,6 @@ addT('id', {
   '2934qdqdjm7': R`Hasil = skala utama + skala putar $\times\ 0{,}01\,\mathrm{mm}$ $= ⟦0⟧ + ⟦1⟧ \times 0{,}01 = ⟦2⟧$.`,
   '1fi2vg8vugw': R`Periode sebuah bandul diukur lima kali (dalam sekon): ⟦0⟧. Berapa periode rata-ratanya, sampai dua angka di belakang koma?`,
   'jvtjtfkr1t': R`Jumlahkan hasilnya lalu bagi 5: $\frac{⟦0⟧}{5} = ⟦1⟧$, yaitu ⟦2⟧ jika dibulatkan sampai dua angka di belakang koma, setara ketelitian hasil pengukurannya.`,
-  'vxtqthabi0': R`
-<p>Benda yang bergerak melingkar dengan kelajuan tetap tetap mengalami <b>percepatan</b>, karena arah kecepatannya terus berubah.</p>
-⟦0⟧
-<h3>Menggambarkan gerak melingkar</h3>
-<ul><li><b>Periode</b> $T$: waktu untuk satu putaran. <b>Frekuensi</b> $f = 1/T$, dalam hertz ($\mathrm{Hz}$), yaitu putaran per sekon.</li><li><b>Kecepatan sudut</b> $\omega = \dfrac{2\pi}{T} = 2\pi f$, dalam radian per sekon.</li><li><b>Kelajuan linear</b> sepanjang lingkaran: $v = \dfrac{2\pi r}{T} = \omega r$.</li></ul>
-⟦1⟧
-⟦2⟧
-<h3>Lingkaran vertikal</h3>
-<p>Di puncak lintasan melingkar vertikal, gravitasi dapat menyediakan seluruh gaya sentripetal. Kelajuan terkecil agar bola atau kereta roller coaster tetap berada di lintasan di titik itu adalah $v_{\min} = \sqrt{g r}$.</p>
-⟦3⟧`,
   '27o6nwir9ki': R`Benda yang bergerak melingkar, dengan kecepatan searah garis singgung dan percepatan menuju pusat`,
   'pad2pv74vu': R`Kecepatan searah garis singgung; percepatan mengarah ke pusat.`,
   'vw9hk837w2': R`<p><b>Percepatan sentripetal</b> mengarah ke pusat lingkaran:</p><p>$$a_s = \frac{v^2}{r} = \omega^2 r.$$</p><p>Menurut hukum II Newton, diperlukan gaya resultan ke arah pusat, yaitu <b>gaya sentripetal</b> $F_s = \dfrac{m v^2}{r}$. Ini bukan jenis gaya baru: gaya ini disediakan oleh tegangan tali, gaya gesek, gravitasi, atau gaya normal.</p>`,
@@ -83,18 +58,6 @@ addT('id', {
   '1o5er8u1bkw': R`Benda mengalami percepatan searah geraknya`,
   '1ugh3u0y905': R`Benda mengalami percepatan menjauhi pusat`,
   'kgw7obehup': R`Arah kecepatannya berubah terus-menerus, jadi ada percepatan $v^2/r$ yang mengarah ke pusat.`,
-  '1iz3ty5e7jw': R`
-<p>Gaya membuat benda bertambah cepat pada gerak lurus; <b>momen gaya (torsi)</b> membuat benda berputar makin cepat atau makin lambat.</p>
-<h3>Momen gaya</h3>
-⟦0⟧
-<p>$r$ adalah jarak dari sumbu putar ke titik kerja gaya dan $\theta$ adalah sudut antara $r$ dan $F$. Satuannya $\mathrm{N\,m}$. Gaya yang mengarah lurus ke sumbu ($\theta = 0$) tidak menghasilkan momen gaya; itulah sebabnya gagang pintu dipasang jauh dari engsel.</p>
-<h3>Momen inersia</h3>
-<p>Padanan massa pada gerak rotasi adalah <b>momen inersia</b> $I = \sum m r^2$. Massa yang jauh dari sumbu jauh lebih berpengaruh daripada massa yang dekat dengan sumbu.</p>
-⟦1⟧
-⟦2⟧
-<h3>Menggelinding</h3>
-<p>Benda yang menggelinding memiliki kedua jenis energi kinetik: $E_k = \tfrac12 m v^2 + \tfrac12 I\omega^2$ dengan $v = \omega r$. Menggelinding dari diam menuruni lereng setinggi $h$, bola pejal mencapai $v = \sqrt{\tfrac{10}{7} g h}$ dan silinder pejal $v = \sqrt{\tfrac43 g h}$: keduanya lebih lambat daripada balok yang meluncur tanpa gesekan ($\sqrt{2gh}$), karena sebagian energinya dipakai untuk berputar.</p>
-⟦3⟧`,
   '1rn864qo94t': R`Benda (sumbu melalui pusat, kecuali disebutkan lain)`,
   '1f6y3bd30el': R`Cincin tipis`,
   '1xulwtm601d': R`Piringan atau silinder pejal`,

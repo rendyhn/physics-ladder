@@ -1,14 +1,5 @@
 /* Bahasa Indonesia — 12-waves */
 addT('id', {
-  '1i3485l57l3': R`
-<p>Sebuah benda bergerak <b>harmonik sederhana</b> (GHS) jika gaya yang menariknya kembali ke posisi setimbang sebanding dengan simpangannya: $F = -kx$. Beban pada pegas dan bandul yang berayun dengan sudut kecil adalah contoh klasiknya.</p>
-⟦0⟧
-<h3>Menggambarkan getaran</h3>
-<ul><li><b>Amplitudo</b> $A$: simpangan terbesar dari posisi setimbang.</li><li><b>Periode</b> $T$: waktu untuk satu getaran penuh; <b>frekuensi</b> $f = 1/T$; <b>frekuensi sudut</b> $\omega = 2\pi f$.</li><li>Simpangannya mengikuti kurva sinus atau kosinus: $x = A\cos(\omega t)$.</li></ul>
-⟦1⟧
-<h3>Kecepatan, percepatan, dan energi</h3>
-<ul><li>Kelajuan terbesar di titik setimbang: $v_{\max} = A\omega$. Pada simpangan $x$: $v = \omega\sqrt{A^2 - x^2}$.</li><li>Percepatan terbesar di kedua ujung: $a_{\max} = A\omega^2$, selalu mengarah kembali ke titik setimbang.</li><li>Energi totalnya tetap, $E = \tfrac12 k A^2$; energi ini berganti-ganti antara energi kinetik dan energi potensial.</li></ul>
-⟦2⟧`,
   '9pqe4ezwqq': R`Grafik simpangan terhadap waktu untuk getaran dengan amplitudo 4 cm dan periode 3 s`,
   'gnp8qkykr1': R`Amplitudo $A = 4\,\mathrm{cm}$, periode $T = 3\,\mathrm{s}$.`,
   '6jvoipk1c7': R`<p>Periode dua osilator baku:</p><p>$$\text{beban pada pegas: } T = 2\pi\sqrt{\frac{m}{k}} \qquad \text{bandul sederhana: } T = 2\pi\sqrt{\frac{L}{g}}$$</p><p>Keduanya tidak bergantung pada amplitudo. Periode bandul juga tidak bergantung pada massanya.</p>`,
@@ -38,19 +29,6 @@ addT('id', {
   '1q326t4g0i1': R`Di tengah-tengah antara titik setimbang dan ujung`,
   '23y0ansr5sj': R`Kelajuannya sama di mana pun`,
   '28zytuoytx3': R`Di titik setimbang seluruh energinya adalah energi kinetik, jadi kelajuannya terbesar; di ujung-ujung beban berhenti sesaat.`,
-  '8z6fbnnl86': R`
-<p><b>Gelombang</b> memindahkan energi dari satu tempat ke tempat lain tanpa memindahkan mediumnya. Pada gelombang mekanik, setiap partikel medium bergetar di sekitar posisinya sendiri dan meneruskan getaran itu ke partikel di sebelahnya.</p>
-<h3>Dua jenis gelombang</h3>
-<ul><li><b>Transversal:</b> partikel bergerak tegak lurus terhadap arah rambat gelombang. Gelombang pada tali, riak di permukaan air.</li><li><b>Longitudinal:</b> partikel bergerak maju-mundur searah rambat gelombang, membentuk rapatan dan regangan. Bunyi, slinki yang didorong.</li></ul>
-⟦0⟧
-<h3>Menggambarkan gelombang</h3>
-<ul><li><b>Panjang gelombang</b> $\lambda$: panjang satu gelombang penuh, misalnya dari puncak ke puncak.</li><li><b>Frekuensi</b> $f$: banyak gelombang yang melewati suatu titik per sekon; <b>periode</b> $T = 1/f$.</li><li><b>Amplitudo</b>: simpangan terbesar dari posisi setimbang.</li></ul>
-⟦1⟧
-<h3>Gelombang pada tali dan gelombang stasioner</h3>
-<p>Pada tali dengan tegangan $F$ dan massa per satuan panjang $\mu$, $v = \sqrt{F/\mu}$. Tali yang terikat di kedua ujungnya bergetar dalam <b>gelombang stasioner</b> yang panjangnya memuat bilangan bulat kali setengah panjang gelombang: $L = n\frac{\lambda}{2}$, jadi</p>
-⟦2⟧
-<p>Frekuensi terendah, $f_1$, adalah <b>nada dasar</b>; yang lain adalah nada atas (harmonik). Senar gitar disetel dengan mengubah tegangannya.</p>
-⟦3⟧`,
   'kp4lbl7udc': R`Gelombang transversal dengan panjang gelombang 2 m dan amplitudo 3 cm`,
   '1zm6py874qx': R`Panjang gelombang $\lambda = 2\,\mathrm{m}$ (puncak ke puncak), amplitudo $3\,\mathrm{cm}$.`,
   'bglc9ofl2o': R`<p>Dalam satu periode gelombang maju sejauh satu panjang gelombang, jadi cepat rambatnya</p><p>$$v = f\lambda = \frac{\lambda}{T}.$$</p><p>Cepat rambat ditentukan oleh medium; frekuensi ditentukan oleh sumber.</p>`,
@@ -81,20 +59,6 @@ addT('id', {
   '1t3vrgkwj6b': R`Panjang gelombangnya`,
   '28ydf6in6m2': R`Arahnya, selalu`,
   '6b9ks5f4ky': R`Frekuensi ditentukan oleh sumber dan tidak berubah. Karena $v = f\lambda$, cepat rambat yang lebih kecil berarti panjang gelombang yang lebih pendek.`,
-  '114v5emv6pf': R`
-<p>Bunyi adalah gelombang mekanik <b>longitudinal</b>: pola rapatan dan regangan yang merambat. Bunyi memerlukan medium dan tidak dapat merambat di ruang hampa. Di udara pada suhu ruang cepat rambatnya sekitar $340\,\mathrm{m/s}$; di air sekitar $1500\,\mathrm{m/s}$; di baja lebih cepat lagi.</p>
-<h3>Gema</h3>
-<p>Gema merambat ke permukaan pemantul lalu kembali, jadi jarak ke permukaan itu $d = \dfrac{v t}{2}$. Kelelawar, sonar kapal, dan alat USG semuanya memakai prinsip ini.</p>
-<h3>Tinggi nada dan kenyaringan</h3>
-<p><b>Tinggi nada</b> ditentukan oleh frekuensi dan <b>kenyaringan</b> terutama oleh amplitudo. Manusia dapat mendengar sekitar $20\,\mathrm{Hz}$ sampai $20\,000\,\mathrm{Hz}$; di atasnya ultrasonik, di bawahnya infrasonik.</p>
-⟦0⟧
-<h3>Efek Doppler</h3>
-<p>Jika sumber dan pendengar saling mendekat, pendengar mendengar frekuensi yang lebih tinggi; jika saling menjauh, lebih rendah. Dengan cepat rambat bunyi $v$, kelajuan pendengar $v_p$, dan kelajuan sumber $v_s$:</p>
-⟦1⟧
-<p>Pakai tanda atas jika keduanya saling mendekat dan tanda bawah jika saling menjauh.</p>
-<h3>Pipa organa</h3>
-<p>Kolom udara beresonansi seperti senar. Pipa organa terbuka memiliki $f_n = \dfrac{n v}{2L}$; pipa organa tertutup hanya memiliki harmonik ganjil, $f = \dfrac{(2n-1) v}{4L}$, jadi nada dasarnya $\dfrac{v}{4L}$.</p>
-⟦2⟧`,
   '1v6x9695ich': R`<p><b>Intensitas</b> adalah daya per satuan luas. Dari sumber kecil yang memancar ke segala arah:</p><p>$$I = \frac{P}{4\pi r^2}.$$</p><p>Kenyaringan diukur dengan skala logaritmik <b>desibel</b>:</p><p>$$\beta = 10 \log_{10}\frac{I}{I_0}\ \mathrm{dB}, \qquad I_0 = 10^{-12}\,\mathrm{W/m^2}.$$</p><p>Setiap tambahan $10\,\mathrm{dB}$ berarti intensitasnya sepuluh kali lipat.</p>`,
   '86oxii1rtz': R`<p>Jangan lupa membagi dua waktu gema: bunyi pergi <i>dan</i> kembali.</p>`,
   'd0x50jw74k': R`Pulsa sonar sebuah kapal kembali dari dasar laut setelah ⟦0⟧. Berapa kedalaman laut di tempat itu? (Cepat rambat bunyi di air: $1500\,\mathrm{m/s}$.)`,

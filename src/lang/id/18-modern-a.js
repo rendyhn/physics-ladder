@@ -1,19 +1,5 @@
 /* Bahasa Indonesia — 18-modern-a */
 addT('id', {
-  '1ew761u2kqi': R`
-<p>Einstein menyusun teori relativitas khusus (1905) di atas dua <b>postulat</b>:</p>
-<ol><li>Hukum-hukum fisika berlaku sama di setiap kerangka acuan inersial (yang tidak dipercepat).</li><li>Kelajuan cahaya di ruang hampa, $c = 3{,}0 \times 10^{8}\,\mathrm{m/s}$, sama bagi setiap pengamat, berapa pun kelajuan pengamat atau sumbernya.</li></ol>
-<p>Menerima kedua postulat itu berarti waktu dan panjang bergantung pada pengamat. Semuanya diatur oleh <b>faktor Lorentz</b></p>
-⟦0⟧
-<p>yang bernilai 1 pada kelajuan sehari-hari dan membesar tanpa batas ketika $v$ mendekati $c$. Untuk $v = 0{,}6c$, $\gamma = 1{,}25$; untuk $v = 0{,}8c$, $\gamma = \frac53$.</p>
-⟦1⟧
-<h3>Penjumlahan kecepatan</h3>
-<p>Kecepatan tidak dapat dijumlahkan begitu saja. Jika pesawat antariksa yang bergerak dengan kecepatan $v$ menembakkan wahana ke depan dengan kecepatan $u'$ relatif terhadap pesawat, pengamat melihat wahana itu bergerak dengan kecepatan</p>
-⟦2⟧
-<p>yang tidak pernah melebihi $c$.</p>
-<h3>Massa dan energi</h3>
-<p>Massa adalah salah satu bentuk energi. Benda bermassa $m$ yang diam memiliki <b>energi diam</b> $E_0 = mc^2$, dan energi totalnya ketika bergerak $E = \gamma mc^2$, sehingga energi kinetiknya $E_k = (\gamma - 1)mc^2$.</p>
-⟦3⟧`,
   'v5mvitovf4': R`<p><b>Dilatasi waktu:</b> jam yang bergerak berdetak lebih lambat, $\Delta t = \gamma\,\Delta t_0$, dengan $\Delta t_0$ adalah <b>waktu sejati</b> yang diukur oleh jam yang diam relatif terhadap kejadian-kejadian itu.</p><p><b>Kontraksi panjang:</b> benda yang bergerak menjadi lebih pendek searah geraknya, $L = \dfrac{L_0}{\gamma}$, dengan $L_0$ adalah <b>panjang sejati</b> (diukur dalam keadaan diam).</p>`,
   '2bq3bg1sabs': R`<p>Tuliskan kecepatan sebagai pecahan dari $c$: dengan begitu $v^2/c^2$ hanyalah kuadrat pecahan itu, dan $c$ saling menghilangkan.</p>`,
   'dvkahsfr2o': R`Berapa faktor Lorentz $\gamma$ untuk benda yang bergerak dengan kecepatan $⟦0⟧c$?`,
@@ -46,17 +32,6 @@ addT('id', {
   'ohhicxuk2r': R`sama umurnya`,
   '1buxhc9lw24': R`bisa lebih tua atau lebih muda secara acak`,
   '8wgwhz4d59': R`Jamnya (dan tubuhnya) berjalan lebih lambat relatif terhadap Bumi, sehingga waktu yang berlalu baginya lebih sedikit. Inilah paradoks kembar.`,
-  '104sg94tyb3': R`
-<p>Cahaya membawa energi dalam paket-paket kecil yang disebut <b>foton</b>. Planck dan Einstein menunjukkan bahwa energi satu foton hanya bergantung pada frekuensinya:</p>
-⟦0⟧
-<p>dengan tetapan Planck $h = 6{,}63 \times 10^{-34}\,\mathrm{J\,s}$. Energi foton sangat kecil, sehingga sering dinyatakan dalam <b>elektronvolt</b>: $1\,\mathrm{eV} = 1{,}6 \times 10^{-19}\,\mathrm{J}$, yaitu energi yang diperoleh elektron ketika melewati beda potensial $1\,\mathrm{V}$.</p>
-<h3>Efek fotolistrik</h3>
-<p>Cahaya yang menyinari logam bersih dapat melepaskan elektron dari logam itu. Hasil percobaannya menunjukkan:</p>
-<ul><li>di bawah <b>frekuensi ambang</b> $f_0$ tidak ada elektron yang keluar, seterang apa pun cahayanya;</li><li>di atas frekuensi itu, elektron langsung keluar, dan energi kinetik maksimumnya bergantung pada frekuensi, bukan pada kecerahan;</li><li>cahaya yang lebih terang menghasilkan elektron yang <b>lebih banyak</b>, bukan yang lebih cepat.</li></ul>
-⟦1⟧
-<h3>Gelombang materi</h3>
-<p>De Broglie mengusulkan bahwa partikel juga berperilaku sebagai gelombang, dengan panjang gelombang $\lambda = \dfrac{h}{p} = \dfrac{h}{mv}$. Difraksi elektron membuktikannya, dan mikroskop elektron memanfaatkannya untuk melihat detail yang jauh lebih kecil daripada yang dapat dilihat dengan cahaya.</p>
-⟦2⟧`,
   '18enfkx2h3o': R`E = hf = \frac{hc}{\lambda}`,
   '1z2agzhwa5s': R`<p>Satu foton memberikan seluruh energinya kepada satu elektron. Sebagian energi itu, yaitu <b>fungsi kerja</b> $\phi = hf_0$, diperlukan untuk melepaskan elektron; sisanya menjadi energi kinetik:</p><p>$$E_{k,\max} = hf - \phi = eV_s$$</p><p>dengan $V_s$ adalah <b>potensial henti</b> yang diperlukan untuk menghentikan elektron tercepat.</p>`,
   'q9fb6rowh5': R`<p>Jalan pintas yang berguna: $hc = 1240\,\mathrm{eV\,nm}$ (hingga 3 angka penting, $1{,}24 \times 10^{3}$), sehingga foton dengan panjang gelombang $\lambda$ dalam nm memiliki energi sekitar $\frac{1240}{\lambda}\,\mathrm{eV}$.</p>`,
@@ -106,16 +81,6 @@ addT('id', {
   '222gjxxnpjv': R`Difraksi melalui celah sempit`,
   'fjsh4vfaqm': R`Polarisasi`,
   '1gzc807a4v0': R`Frekuensi ambang dan pelepasan elektron yang seketika hanya dapat dijelaskan jika cahaya datang dalam paket-paket berenergi $hf$. Interferensi, difraksi, dan polarisasi menunjukkan sifat gelombangnya.`,
-  'gmyi9rl91h': R`
-<h3>Model-model atom</h3>
-⟦0⟧
-<p>Pada <b>percobaan hamburan foil emas</b> Rutherford, sebagian besar partikel alfa menembus lurus, tetapi beberapa terpantul kembali. Jadi atom sebagian besar berupa ruang kosong, dengan massa dan muatan positifnya terpusat pada inti yang sangat kecil.</p>
-<h3>Model atom hidrogen Bohr</h3>
-⟦1⟧
-⟦2⟧
-⟦3⟧
-<p>Karena hanya selisih energi tertentu yang mungkin, setiap unsur hanya memancarkan dan menyerap panjang gelombang tertentu: <b>spektrum garisnya</b>, semacam sidik jari yang dipakai untuk mengenali unsur-unsur di bintang. Untuk hidrogen, transisi ke $n = 1$ menghasilkan <b>deret Lyman</b> (ultraviolet), transisi ke $n = 2$ <b>deret Balmer</b> (cahaya tampak), dan transisi ke $n = 3$ <b>deret Paschen</b> (inframerah).</p>
-⟦4⟧`,
   'ki5bhylf5o': R`Model`,
   '5g7bmgw51u': R`Gambaran`,
   'e3m8pc7x3h': R`Thomson (1897)`,

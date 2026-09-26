@@ -1,31 +1,47 @@
 ##### core
 @1kodlvhytf0
 iron
-@15qut058har
-glass
 
 ##### heat
-@uafnwtb3g0  ; 0=Fm(T`T_K = T_C + 273 \qquad T_F = \tfrac | 1=Fm(T`Q = m\,c\,\Delta T`) | 2=Fm(T`Q = m\,L`) | 3=Key(T`<p><b>Calorimetry (Black's princip | 4=Ex(T`<p>$0.2\,\mathrm{kg}$ of water at $ | 5=Fm(T`\Delta L = \alpha\, L_0\, \Delta T` | 6=Tip(T`<p>In $Q = mc\Delta T$ the mass mu
+@2cmbi708rhp  ; 0=Fm(T`T_K = T_C + 273 \qquad T_F = \tfrac | 1=Fig(thermometersSvg(), T`The same two fi | 2=Fm(T`Q = m\,c\,\Delta T`) | 3=Fm(T`Q = m\,L`) | 4=Fig(planeSvg({ W: 380, H: 230, x: [0, 10 | 5=Key(T`<p><b>Calorimetry (Black's princip | 6=Ex(T`<p>$0.2\,\mathrm{kg}$ of water at $ | 7=Fm(T`\Delta L = \alpha\, L_0\, \Delta T` | 8=Tip(T`<p>In $Q = mc\Delta T$ the mass mu
 
 <p><b>Temperature</b> tells us how hot something is; it measures the average kinetic energy of its particles. <b>Heat</b> is energy that flows from a hotter object to a colder one because of the temperature difference. Heat is measured in joules.</p>
 <h3>Temperature scales</h3>
 ⟦0⟧
 <p>A change of $1^\circ\mathrm{C}$ is the same as a change of $1\,\mathrm{K}$. Water freezes at $0^\circ\mathrm{C} = 273\,\mathrm{K} = 32^\circ\mathrm{F}$ and boils at $100^\circ\mathrm{C} = 373\,\mathrm{K} = 212^\circ\mathrm{F}$. (More precisely, $0^\circ\mathrm{C} = 273.15\,\mathrm{K}$.)</p>
+⟦1⟧
 <h3>Specific heat capacity</h3>
 <p>The heat needed to change the temperature of a mass $m$ by $\Delta T$ is</p>
-⟦1⟧
+⟦2⟧
 <p>where $c$ is the <b>specific heat capacity</b> of the material, in $\mathrm{J/(kg\,{}^\circ C)}$: the heat needed to warm $1\,\mathrm{kg}$ by $1^\circ\mathrm{C}$. Water has a very large value, about $4200\,\mathrm{J/(kg\,{}^\circ C)}$, which is why the sea warms and cools slowly.</p>
 <h3>Changes of state</h3>
 <p>While a substance melts or boils, its temperature stays constant even though heat is flowing in. The heat needed is</p>
-⟦2⟧
-<p>where $L$ is the <b>latent heat</b>: about $3.34 \times 10^{5}\,\mathrm{J/kg}$ to melt ice and $2.26 \times 10^{6}\,\mathrm{J/kg}$ to boil water.</p>
 ⟦3⟧
+<p>where $L$ is the <b>latent heat</b>: about $3.34 \times 10^{5}\,\mathrm{J/kg}$ to melt ice and $2.26 \times 10^{6}\,\mathrm{J/kg}$ to boil water.</p>
 ⟦4⟧
+⟦5⟧
+⟦6⟧
 <h3>Thermal expansion</h3>
 <p>Most materials expand when heated. A rod of length $L_0$ grows by</p>
-⟦5⟧
+⟦7⟧
 <p>where $\alpha$ is the coefficient of linear expansion (steel: about $1.2 \times 10^{-5}\,/{}^\circ\mathrm{C}$). Areas expand with about $2\alpha$ and volumes with about $3\alpha$. Gaps are left in railway tracks and bridges for this reason.</p>
-⟦6⟧
+⟦8⟧
+@1q759ace67f
+The same two fixed points on three scales. A step of $1^\circ\mathrm{C}$ equals $1\,\mathrm{K}$, but $1.8^\circ\mathrm{F}$.
+@187b8bta69m
+heat added
+@bacelxbizn
+ice
+@gb8crbpgfx
+melting
+@22x8wr2faka
+boiling
+@268vrxnc179
+steam
+@22y3tht984
+Heating curve of water: temperature rises, stays flat while melting, rises, stays flat while boiling, rises again
+@1r7w4kwil8g
+Heating ice to steam (not to scale): the flat parts are changes of state, where the heat ($Q = mL$) breaks bonds instead of raising the temperature. Boiling needs about 7 times the heat of melting.
 @1uuqrvazom
 <p><b>Calorimetry (Black's principle):</b> when hot and cold objects are mixed in an insulated container, the heat lost by the hot one equals the heat gained by the cold one:</p><p>$$m_1 c_1 (T_1 - T) = m_2 c_2 (T - T_2),$$</p><p>where $T$ is the final common temperature.</p>
 @9stuz8e92g
@@ -88,17 +104,28 @@ Temperature and heat mean the same thing
 Temperature measures how hot something is; the total thermal energy also depends on how much material there is. A large mass of warm water can store more energy than a small mass of very hot water.
 
 ##### gases
-@21dhslug5zb  ; 0=Key(T`<p>All three combine into the <b>i | 1=Fm(T`\bar{E}_k = \tfrac32 k T, \qquad k  | 2=Tip(T`<p>Always use kelvin in the gas la
+@oiwqyyrffz  ; 0=FigRow([[planeSvg({ W: 250, H: 190, x: [ | 1=Key(T`<p>All three combine into the <b>i | 2=Fm(T`\bar{E}_k = \tfrac32 k T, \qquad k  | 3=Tip(T`<p>Always use kelvin in the gas la
 
 <p>A gas is made of a huge number of molecules moving randomly and colliding with each other and the walls of their container. The collisions with the walls cause the gas <b>pressure</b>.</p>
 <h3>The gas laws</h3>
 <ul><li><b>Boyle's law</b> (constant temperature): $p_1 V_1 = p_2 V_2$. Squeeze a gas into half the volume and its pressure doubles.</li><li><b>Charles's law</b> (constant pressure): $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$.</li><li><b>Gay-Lussac's law</b> (constant volume): $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$.</li></ul>
 ⟦0⟧
+⟦1⟧
 <h3>Kinetic theory</h3>
 <p>The temperature of a gas measures the average kinetic energy of its molecules:</p>
-⟦1⟧
-<p>The typical (root-mean-square) speed of molecules of molar mass $M$ (in $\mathrm{kg/mol}$) is $v_{\text{rms}} = \sqrt{\dfrac{3RT}{M}}$: lighter molecules move faster at the same temperature.</p>
 ⟦2⟧
+<p>The typical (root-mean-square) speed of molecules of molar mass $M$ (in $\mathrm{kg/mol}$) is $v_{\text{rms}} = \sqrt{\dfrac{3RT}{M}}$: lighter molecules move faster at the same temperature.</p>
+⟦3⟧
+@1yr3oa96uvg
+Boyle's law: pressure against volume is a curve
+@1zn1zi97ufg
+Boyle: $pV$ constant
+@il8fp1ikuv
+Charles's law: volume against Celsius temperature is a straight line that extrapolates to zero at minus 273 degrees
+@26io1uf9snw
+Charles: $V \propto T$
+@1dgiqtkf198
+Extending Charles's straight line back to zero volume gives $-273^\circ\mathrm{C}$: absolute zero, the start of the kelvin scale.
 @gdeenhkvil
 <p>All three combine into the <b>ideal gas equation</b>:</p><p>$$pV = nRT, \qquad R = 8.31\,\mathrm{J/(mol\,K)},$$</p><p>where $n$ is the number of moles and $T$ the <b>absolute temperature in kelvin</b>. For a fixed amount of gas, $\dfrac{p_1 V_1}{T_1} = \dfrac{p_2 V_2}{T_2}$.</p>
 @1jw8grqalm0
@@ -151,7 +178,7 @@ It increases by a factor of $\sqrt2$
 $\bar{E}_k = \tfrac32 kT$ is proportional to the absolute temperature, so it doubles. (The rms speed grows only by $\sqrt2$.)
 
 ##### thermo-laws
-@29sy64nmqhy  ; 0=Fm(T`\Delta U = Q - W`) | 1=Tbl([T`Process`, T`What stays fixed`, T` | 2=Key(T`<p>A <b>heat engine</b> takes in h | 3=Tip(T`<p>Watch the signs: heat <i>remove
+@18l4fg3nr5v  ; 0=Fm(T`\Delta U = Q - W`) | 1=Fig(planeSvg({ W: 320, H: 210, x: [0, 6] | 2=Tbl([T`Process`, T`What stays fixed`, T` | 3=Key(T`<p>A <b>heat engine</b> takes in h | 4=Fig(engineSvg(), T`Energy flow in a heat | 5=Tip(T`<p>Watch the signs: heat <i>remove
 
 <h3>The first law</h3>
 <p>The <b>internal energy</b> $U$ of a gas is the total kinetic energy of its molecules (for an ideal gas it depends only on temperature). It changes when heat flows in or when the gas does work:</p>
@@ -161,9 +188,15 @@ $\bar{E}_k = \tfrac32 kT$ is proportional to the absolute temperature, so it dou
 <p>A gas expanding at constant pressure $p$ from $V_1$ to $V_2$ does work $W = p\,\Delta V$. On a $p$–$V$ diagram, the work is the area under the curve.</p>
 ⟦1⟧
 ⟦2⟧
+⟦3⟧
+⟦4⟧
 <h3>The second law and refrigerators</h3>
 <p>Heat flows by itself only from hot to cold, and no engine can turn all of its heat into work. A refrigerator uses work $W$ to move heat $Q_C$ out of its cold interior; its coefficient of performance is $\mathrm{COP} = \dfrac{Q_C}{W}$.</p>
-⟦3⟧
+⟦5⟧
+@1i5r0lncobh
+Pressure-volume diagram of an expansion at constant pressure; the work is the shaded rectangle under the line
+@11ic05zy5dg
+On a $p$–$V$ diagram the work done by the gas is the area under the path: here a rectangle, $W = p\,\Delta V$.
 @137ld4xmfi
 Process
 @mib91nk34z
@@ -182,6 +215,8 @@ Adiabatic
 no heat flow
 @2f8vl3mzmme
 <p>A <b>heat engine</b> takes in heat $Q_H$ from a hot source, does work $W$ and rejects heat $Q_C$ to a cold sink: $W = Q_H - Q_C$. Its efficiency is</p><p>$$\eta = \frac{W}{Q_H} = 1 - \frac{Q_C}{Q_H}.$$</p><p>No engine working between absolute temperatures $T_H$ and $T_C$ can beat the <b>Carnot efficiency</b> $\eta_{\max} = 1 - \dfrac{T_C}{T_H}$.</p>
+@bz6oh7rivx
+Energy flow in a heat engine: $Q_H = W + Q_C$. The wider the work arrow compared with $Q_H$, the more efficient the engine.
 @hppfy94p9s
 <p>Watch the signs: heat <i>removed</i> from the gas makes $Q$ negative, and work done <i>on</i> the gas (compression) makes $W$ negative.</p>
 @2bdwxcz15vn  ; 0=Q(Qh, 'J') | 1=Q(W, 'J')
@@ -228,21 +263,24 @@ Heat engines always leak gas
 The second law of thermodynamics: an engine working in a cycle must reject some heat to a cold sink, so $W \lt Q_H$ even with no friction at all.
 
 ##### heat-transfer
-@kzd3elszlv  ; 0=Fm(T`P = \frac{k A \Delta T}{L}`) | 1=Fm(T`P = e \sigma A T^4, \qquad \sigma = | 2=Key(T`<p>A vacuum flask blocks all three | 3=Tip(T`<p>The fourth power makes radiatio
+@7cnvv7lr3a  ; 0=FigW(heatWaysSvg(), T`The three ways hea | 1=Fm(T`P = \frac{k A \Delta T}{L}`) | 2=Fm(T`P = e \sigma A T^4, \qquad \sigma = | 3=Key(T`<p>A vacuum flask blocks all three | 4=Tip(T`<p>The fourth power makes radiatio
 
 <p>Heat always flows from a hotter place to a colder one, in three different ways.</p>
+⟦0⟧
 <h3>Conduction</h3>
 <p>In a solid, energetic particles pass energy to their neighbours. Metals conduct well because their free electrons carry energy quickly; wood, plastic, still air and wool are poor conductors, or <b>insulators</b>. The rate of heat flow through a slab of area $A$ and thickness $L$ with temperature difference $\Delta T$ is</p>
-⟦0⟧
+⟦1⟧
 <p>where $k$ is the thermal conductivity in $\mathrm{W/(m\,K)}$ (copper about 400, glass about 0.8, air about 0.025).</p>
 <h3>Convection</h3>
 <p>In liquids and gases, warm fluid expands, becomes less dense and rises, while cooler fluid sinks to take its place. These <b>convection currents</b> heat a room from a heater, drive sea breezes and move the Earth's weather.</p>
 <h3>Radiation</h3>
 <p>Every object emits electromagnetic radiation (mostly infrared at everyday temperatures). Radiation needs no medium, which is how the Sun's heat crosses space. The power radiated is</p>
-⟦1⟧
-<p>with $T$ in kelvin and emissivity $e$ between 0 and 1. Dull black surfaces are good emitters and good absorbers; shiny silver surfaces are poor at both.</p>
 ⟦2⟧
+<p>with $T$ in kelvin and emissivity $e$ between 0 and 1. Dull black surfaces are good emitters and good absorbers; shiny silver surfaces are poor at both.</p>
 ⟦3⟧
+⟦4⟧
+@94485lih2i
+The three ways heat travels: through a solid (conduction), carried by a moving fluid (convection), and as electromagnetic waves (radiation).
 @hwi1w49rkj
 P = e \sigma A T^4, \qquad \sigma = 5.67 \times 10^{-8}\,\mathrm{W/(m^2\,K^4)}
 @13p3tgpadv1

@@ -11,8 +11,10 @@ level({
   lesson: () => T`
 <p>Light travels in straight lines called <b>rays</b>. When a ray hits a smooth surface it bounces off according to the <b>law of reflection</b>:</p>
 ${Key(T`<p>The angle of incidence equals the angle of reflection, $i = r$. Both angles are measured from the <b>normal</b>, the line at right angles to the surface, and the incident ray, reflected ray and normal lie in one plane.</p>`)}
+${Fig(reflectionSvg(), T`Law of reflection: $i = r$, both measured from the normal.`)}
 <h3>Plane mirrors</h3>
 <p>The image in a flat mirror is <b>virtual</b> (the light only seems to come from it), <b>upright</b>, the <b>same size</b> as the object, <b>laterally inverted</b> (left and right swapped) and as far behind the mirror as the object is in front. Two mirrors at an angle $\alpha$ form $n = \dfrac{360^\circ}{\alpha} - 1$ images.</p>
+${Fig(planeMirrorSvg(), T`A plane-mirror image is as far behind the mirror as the object is in front. The reflected rays only <i>seem</i> to come from it, so it is virtual.`)}
 <h3>Curved mirrors</h3>
 <p>A <b>concave</b> mirror (curved inwards, like the inside of a spoon) brings parallel rays together at its <b>focal point</b> F. A <b>convex</b> mirror (curved outwards) spreads them out as if they came from a focal point behind it. The focal length is half the radius of curvature, $f = \frac{R}{2}$.</p>
 ${Fig(opticsSvg('concave', 10, 25, T`Ray diagram: an object beyond C in front of a concave mirror forms a real, inverted, smaller image between F and C`), T`Object beyond C: the image is real, inverted and smaller.`)}
@@ -78,6 +80,7 @@ ${Fm(T`n = \frac{c}{v} \qquad n_1 \sin\theta_1 = n_2 \sin\theta_2`)}
 ${Fig(refractionSvg(40, 25, T`air`, T`glass`, T`A ray passing from air into glass bends towards the normal`), T`From air into glass the ray bends towards the normal.`)}
 <h3>Total internal reflection</h3>
 <p>Going from a denser into a less dense medium the ray bends away from the normal. Beyond the <b>critical angle</b> $C$ no light gets out at all: it is all reflected. For a medium of index $n$ against air, $\sin C = \dfrac{1}{n}$. Optical fibres and the sparkle of diamonds use total internal reflection.</p>
+${FigW(tirSvg(), T`From glass into air: below the critical angle the ray escapes (bending away from the normal); at the critical angle it skims the surface; beyond it all the light is reflected back — the principle of optical fibres.`)}
 <h3>Lenses</h3>
 <p>A <b>converging</b> (convex) lens brings parallel rays together at its focal point; a <b>diverging</b> (concave) lens spreads them out. The same equations as for mirrors apply, with $f$ positive for converging and negative for diverging lenses:</p>
 ${Fm(T`\frac{1}{f} = \frac{1}{s} + \frac{1}{s'} \qquad M = \left|\frac{s'}{s}\right| \qquad P = \frac{1}{f}`)}
@@ -134,6 +137,7 @@ ${Tip(T`<p>An object inside the focal length of a converging lens gives a virtua
 <h3>The eye</h3>
 <p>The cornea and the lens of the eye form a real, inverted image on the <b>retina</b>. Muscles change the shape of the lens so that both near and far objects are in focus (<b>accommodation</b>). A normal eye sees clearly from its <b>near point</b>, about $25\,\mathrm{cm}$, to its <b>far point</b> at infinity.</p>
 ${Tbl([T`Defect`, T`Problem`, T`Correction`], [[T`Short sight (myopia)`, T`far point is too close; the image forms in front of the retina`, T`diverging lens: $P = -\dfrac{100}{PR}$`], [T`Long sight (hypermetropia)`, T`near point is too far; the image forms behind the retina`, T`converging lens: $P = 4 - \dfrac{100}{PP}$`], [T`Presbyopia (old age)`, T`the lens stiffens and cannot accommodate`, T`bifocal lenses`]])}
+${FigRow([[eyeSvg('normal'), T`normal eye`], [eyeSvg('myopia'), T`short sight`], [eyeSvg('corrected'), T`corrected`]], T`Short sight: the eye focuses parallel rays in front of the retina. A diverging lens spreads the rays a little so they meet on the retina.`)}
 <p>Here $PR$ (far point) and $PP$ (near point) are in centimetres and $P$ comes out in dioptres.</p>
 <h3>Magnifying glass</h3>
 <p>A converging lens held close to the eye with the object inside its focal length. Its angular magnification is $M = \dfrac{25}{f}$ for a relaxed eye (image at infinity) and $M = \dfrac{25}{f} + 1$ when the image is at the near point ($f$ in cm).</p>
@@ -142,6 +146,7 @@ ${Tbl([T`Defect`, T`Problem`, T`Correction`], [[T`Short sight (myopia)`, T`far p
 ${Fm(T`M = \frac{s'_{ob}}{s_{ob}} \times \frac{25}{f_{ok}}`)}
 <p>A <b>refracting telescope</b> has a long-focus objective and a short-focus eyepiece. For a relaxed eye the lenses are $d = f_{ob} + f_{ok}$ apart and</p>
 ${Fm(T`M = \frac{f_{ob}}{f_{ok}}`)}
+${FigW(telescopeSvg(), T`A refracting telescope: parallel light is focused by the long-focus objective at F; the eyepiece, one focal length beyond F, makes it parallel again in a narrower beam. Angles are magnified by $f_{ob}/f_{ok}$.`)}
 ${Key(T`<p>A <b>camera</b> is like an eye: a converging lens forms a real, inverted, smaller image on a sensor. It focuses by moving the lens rather than changing its shape.</p>`)}
 ${Tip(T`<p>Keep centimetres throughout these formulas, and remember that the 25 is the near point in cm.</p>`)}`,
   gens: [
@@ -182,6 +187,7 @@ ${Tip(T`<p>Keep centimetres throughout these formulas, and remember that the 25 
   blurb: 'Superposition of light, Young’s double slit, single-slit diffraction, diffraction gratings and thin films.',
   lesson: () => T`
 <p>When two waves meet they add up (<b>superposition</b>). If crest meets crest they reinforce: <b>constructive interference</b>. If crest meets trough they cancel: <b>destructive interference</b>. To see a steady pattern the sources must be <b>coherent</b>: the same frequency and a constant phase difference.</p>
+${FigRow([[planeSvg({ W: 250, H: 170, x: [0, 2], y: [-2.3, 2.3], grid: false, ticks: false, xl: ' ', yl: ' ', fns: [{ f: x => Math.sin(2 * Math.PI * x), cls: 'mf-c3', dash: true }, { f: x => 2 * Math.sin(2 * Math.PI * x) }], label: T`Two waves in phase add to a wave of double amplitude` }), T`in phase: constructive`], [planeSvg({ W: 250, H: 170, x: [0, 2], y: [-2.3, 2.3], grid: false, ticks: false, xl: ' ', yl: ' ', fns: [{ f: x => Math.sin(2 * Math.PI * x), cls: 'mf-c3', dash: true }, { f: x => -Math.sin(2 * Math.PI * x), cls: 'mf-c2', dash: true }, { f: () => 0, cls: 'mf-c1' }], label: T`Two waves in antiphase cancel to zero` }), T`half a wave out: destructive`]], T`Superposition: in step the waves add to twice the amplitude; half a wavelength out of step they cancel.`)}
 ${Key(T`<p>Constructive where the path difference is a whole number of wavelengths, $\Delta = m\lambda$; destructive where it is a whole number plus a half, $\Delta = (m + \frac12)\lambda$.</p>`)}
 <h3>Young's double slit</h3>
 <p>Light through two narrow slits a distance $d$ apart makes bright and dark fringes on a screen a distance $L$ away. For small angles:</p>
@@ -189,6 +195,7 @@ ${Fig(slitSvg(T`Two slits a distance d apart, a screen a distance L away, and br
 ${Fm(T`d\sin\theta = m\lambda \qquad y_m = \frac{m\lambda L}{d} \qquad \Delta y = \frac{\lambda L}{d}`)}
 <h3>Diffraction</h3>
 <p>Waves spread out when they pass through a gap. For a single slit of width $a$ the dark fringes are at $a\sin\theta = m\lambda$, and the central bright band is twice as wide as the others. A <b>diffraction grating</b> has very many slits, $N$ per unit length, so the slit spacing is $d = 1/N$. Its bright lines are sharp and obey $d\sin\theta = m\lambda$; the highest order that can appear is the largest whole number below $d/\lambda$.</p>
+${Fig(planeSvg({ W: 380, H: 200, x: [-3.4, 3.4], y: [0, 1.1], grid: false, step: [1, 0.25], fmtX: v => (v === 0 ? '0' : (v > 0 ? '' : '−') + Math.abs(v) + 'λ/a'), fmtY: () => '', xl: 'sin θ', yl: 'I', fns: [{ f: x => { const b = Math.PI * x; return Math.abs(b) < 1e-6 ? 1 : (Math.sin(b) / b) ** 2; }, n: 400 }], label: T`Single-slit diffraction pattern: a bright central maximum twice as wide as the weaker side maxima` }), T`Single-slit pattern: the central bright band is twice as wide as the others, with dark fringes at $\sin\theta = m\lambda/a$.`)}
 ${Tip(T`<p>Work in metres: $1\,\mathrm{nm} = 10^{-9}\,\mathrm{m}$ and $1\,\mathrm{mm} = 10^{-3}\,\mathrm{m}$. A grating with 500 lines per mm has $d = \frac{1}{500}\,\mathrm{mm} = 2 \times 10^{-6}\,\mathrm{m}$.</p>`)}
 <p>The colours of soap bubbles and oil films come from <b>thin-film interference</b> between light reflected from the top and the bottom of the film.</p>`,
   gens: [

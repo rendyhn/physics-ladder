@@ -5,26 +5,6 @@ addT('id', {
   '1kodlvhytf0': R`besi`,
   'aohwz19hxq': R`tembaga`,
   '15qut058har': R`kaca`,
-  'uafnwtb3g0': R`
-<p><b>Suhu</b> menyatakan seberapa panas suatu benda; suhu mengukur energi kinetik rata-rata partikel-partikelnya. <b>Kalor</b> adalah energi yang mengalir dari benda yang lebih panas ke benda yang lebih dingin karena perbedaan suhu. Kalor diukur dalam joule.</p>
-<h3>Skala suhu</h3>
-⟦0⟧
-<p>Perubahan $1^\circ\mathrm{C}$ sama dengan perubahan $1\,\mathrm{K}$. Air membeku pada $0^\circ\mathrm{C} = 273\,\mathrm{K} = 32^\circ\mathrm{F}$ dan mendidih pada $100^\circ\mathrm{C} = 373\,\mathrm{K} = 212^\circ\mathrm{F}$. (Lebih tepatnya, $0^\circ\mathrm{C} = 273{,}15\,\mathrm{K}$.)</p>
-<h3>Kalor jenis</h3>
-<p>Kalor yang diperlukan untuk mengubah suhu benda bermassa $m$ sebesar $\Delta T$ adalah</p>
-⟦1⟧
-<p>dengan $c$ adalah <b>kalor jenis</b> bahan, dalam $\mathrm{J/(kg\,{}^\circ C)}$: kalor yang diperlukan untuk menaikkan suhu $1\,\mathrm{kg}$ bahan sebesar $1^\circ\mathrm{C}$. Kalor jenis air sangat besar, sekitar $4200\,\mathrm{J/(kg\,{}^\circ C)}$, itulah sebabnya laut lambat menjadi panas dan lambat menjadi dingin.</p>
-<h3>Perubahan wujud</h3>
-<p>Selama zat mencair atau mendidih, suhunya tetap walaupun kalor terus masuk. Kalor yang diperlukan adalah</p>
-⟦2⟧
-<p>dengan $L$ adalah <b>kalor laten</b>: sekitar $3{,}34 \times 10^{5}\,\mathrm{J/kg}$ untuk melebur es dan $2{,}26 \times 10^{6}\,\mathrm{J/kg}$ untuk menguapkan air.</p>
-⟦3⟧
-⟦4⟧
-<h3>Pemuaian</h3>
-<p>Sebagian besar bahan memuai ketika dipanaskan. Batang dengan panjang $L_0$ bertambah panjang sebesar</p>
-⟦5⟧
-<p>dengan $\alpha$ adalah koefisien muai panjang (baja: sekitar $1{,}2 \times 10^{-5}\,/{}^\circ\mathrm{C}$). Luas memuai dengan koefisien sekitar $2\alpha$ dan volume sekitar $3\alpha$. Karena itulah rel kereta dan jembatan diberi celah.</p>
-⟦6⟧`,
   '1uuqrvazom': R`<p><b>Kalorimetri (asas Black):</b> jika benda panas dan benda dingin dicampur di wadah yang terisolasi, kalor yang dilepas benda panas sama dengan kalor yang diterima benda dingin:</p><p>$$m_1 c_1 (T_1 - T) = m_2 c_2 (T - T_2),$$</p><p>dengan $T$ adalah suhu akhir campuran.</p>`,
   '9stuz8e92g': R`<p>$0{,}2\,\mathrm{kg}$ air bersuhu $80^\circ\mathrm{C}$ dicampur dengan $0{,}3\,\mathrm{kg}$ air bersuhu $20^\circ\mathrm{C}$. Nilai $c$ di kedua ruas sama, jadi saling mencoret:</p><p>$$0{,}2(80 - T) = 0{,}3(T - 20) \;\Rightarrow\; 16 + 6 = 0{,}5T \;\Rightarrow\; T = 44^\circ\mathrm{C}.$$</p>`,
   '1jky8g714ti': R`<p>Pada $Q = mc\Delta T$ massa harus dalam kilogram: $250\,\mathrm{g} = 0{,}25\,\mathrm{kg}$.</p>`,

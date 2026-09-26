@@ -1,15 +1,5 @@
 /* Bahasa Indonesia — 13-thermal-b */
 addT('id', {
-  '21dhslug5zb': R`
-<p>Gas terdiri atas sangat banyak molekul yang bergerak acak dan saling bertumbukan serta menumbuk dinding wadahnya. Tumbukan dengan dinding itulah yang menimbulkan <b>tekanan</b> gas.</p>
-<h3>Hukum-hukum gas</h3>
-<ul><li><b>Hukum Boyle</b> (suhu tetap): $p_1 V_1 = p_2 V_2$. Mampatkan gas menjadi setengah volumenya, tekanannya menjadi dua kali lipat.</li><li><b>Hukum Charles</b> (tekanan tetap): $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$.</li><li><b>Hukum Gay-Lussac</b> (volume tetap): $\dfrac{p_1}{T_1} = \dfrac{p_2}{T_2}$.</li></ul>
-⟦0⟧
-<h3>Teori kinetik</h3>
-<p>Suhu gas menyatakan energi kinetik rata-rata molekul-molekulnya:</p>
-⟦1⟧
-<p>Kelajuan khas (akar rata-rata kuadrat) molekul bermassa molar $M$ (dalam $\mathrm{kg/mol}$) adalah $v_{\text{rms}} = \sqrt{\dfrac{3RT}{M}}$: pada suhu yang sama, molekul yang lebih ringan bergerak lebih cepat.</p>
-⟦2⟧`,
   'gdeenhkvil': R`<p>Ketiganya bergabung menjadi <b>persamaan gas ideal</b>:</p><p>$$pV = nRT, \qquad R = 8{,}31\,\mathrm{J/(mol\,K)},$$</p><p>dengan $n$ banyaknya mol dan $T$ <b>suhu mutlak dalam kelvin</b>. Untuk jumlah gas yang tetap, $\dfrac{p_1 V_1}{T_1} = \dfrac{p_2 V_2}{T_2}$.</p>`,
   '1jw8grqalm0': R`\bar{E}_k = \tfrac32 k T, \qquad k = 1{,}38 \times 10^{-23}\,\mathrm{J/K}`,
   '177cn244pf2': R`<p>Selalu pakai kelvin dalam hukum-hukum gas. Menggandakan suhu dari $20^\circ\mathrm{C}$ ke $40^\circ\mathrm{C}$ <i>tidak</i> menggandakan suhu mutlaknya: $293\,\mathrm{K} \to 313\,\mathrm{K}$.</p>`,
@@ -35,18 +25,6 @@ addT('id', {
   's2bzamjkkl': R`Menjadi empat kali lipat`,
   '1h3f1i6xxtc': R`Bertambah $\sqrt2$ kali`,
   '185uhcvfxvw': R`$\bar{E}_k = \tfrac32 kT$ sebanding dengan suhu mutlak, jadi menjadi dua kali lipat. (Kelajuan rms hanya bertambah $\sqrt2$ kali.)`,
-  '29sy64nmqhy': R`
-<h3>Hukum I termodinamika</h3>
-<p><b>Energi dalam</b> $U$ suatu gas adalah jumlah energi kinetik molekul-molekulnya (untuk gas ideal hanya bergantung pada suhu). Energi dalam berubah ketika kalor masuk atau ketika gas melakukan usaha:</p>
-⟦0⟧
-<p>$Q$ adalah kalor yang diberikan <i>kepada</i> gas dan $W$ adalah usaha yang dilakukan <i>oleh</i> gas. Ini adalah hukum kekekalan energi.</p>
-<h3>Usaha oleh gas</h3>
-<p>Gas yang memuai pada tekanan tetap $p$ dari $V_1$ ke $V_2$ melakukan usaha $W = p\,\Delta V$. Pada diagram $p$–$V$, usaha sama dengan luas di bawah kurva.</p>
-⟦1⟧
-⟦2⟧
-<h3>Hukum II termodinamika dan mesin pendingin</h3>
-<p>Kalor dengan sendirinya hanya mengalir dari benda panas ke benda dingin, dan tidak ada mesin yang dapat mengubah seluruh kalornya menjadi usaha. Mesin pendingin memakai usaha $W$ untuk memindahkan kalor $Q_C$ keluar dari bagian dalamnya yang dingin; koefisien kinerjanya $\mathrm{COP} = \dfrac{Q_C}{W}$.</p>
-⟦3⟧`,
   '137ld4xmfi': R`Proses`,
   'mib91nk34z': R`Yang tetap`,
   'pnj7ezbtfu': R`Akibatnya`,
@@ -78,20 +56,6 @@ addT('id', {
   'neirk4q8uo': R`Energi dimusnahkan di dalam mesin`,
   '84zp6s3gd5': R`Mesin kalor selalu bocor gas`,
   '1s2kt2odl2q': R`Hukum II termodinamika: mesin yang bekerja dalam siklus harus membuang sebagian kalor ke reservoir dingin, jadi $W \lt Q_H$ walaupun tanpa gesekan sama sekali.`,
-  'kzd3elszlv': R`
-<p>Kalor selalu mengalir dari tempat yang lebih panas ke tempat yang lebih dingin, dengan tiga cara yang berbeda.</p>
-<h3>Konduksi</h3>
-<p>Di dalam zat padat, partikel yang berenergi tinggi memberikan energinya kepada partikel di sebelahnya. Logam menghantarkan kalor dengan baik karena elektron bebasnya membawa energi dengan cepat; kayu, plastik, udara diam, dan wol adalah penghantar yang buruk, atau <b>isolator</b>. Laju aliran kalor melalui lempeng seluas $A$ dan setebal $L$ dengan beda suhu $\Delta T$ adalah</p>
-⟦0⟧
-<p>dengan $k$ adalah konduktivitas termal dalam $\mathrm{W/(m\,K)}$ (tembaga sekitar 400, kaca sekitar 0,8, udara sekitar 0,025).</p>
-<h3>Konveksi</h3>
-<p>Di dalam zat cair dan gas, fluida yang hangat memuai, menjadi kurang rapat, lalu naik, sedangkan fluida yang lebih dingin turun menggantikannya. <b>Arus konveksi</b> ini memanaskan ruangan dari pemanas, menimbulkan angin laut, dan menggerakkan cuaca di Bumi.</p>
-<h3>Radiasi</h3>
-<p>Setiap benda memancarkan radiasi elektromagnetik (sebagian besar inframerah pada suhu sehari-hari). Radiasi tidak memerlukan medium; begitulah panas Matahari menyeberangi ruang angkasa. Daya yang dipancarkan adalah</p>
-⟦1⟧
-<p>dengan $T$ dalam kelvin dan emisivitas $e$ antara 0 dan 1. Permukaan hitam kusam adalah pemancar dan penyerap yang baik; permukaan perak mengilap buruk untuk keduanya.</p>
-⟦2⟧
-⟦3⟧`,
   'hwi1w49rkj': R`P = e \sigma A T^4, \qquad \sigma = 5{,}67 \times 10^{-8}\,\mathrm{W/(m^2\,K^4)}`,
   '13p3tgpadv1': R`<p>Termos menghambat ketiganya: ruang hampa di antara dinding gandanya menghentikan konduksi dan konveksi, dan dindingnya yang dilapisi perak mengurangi radiasi.</p>`,
   'x5fi8nnpex': R`<p>Pangkat empat membuat radiasi sangat peka terhadap suhu: menggandakan suhu mutlak mengalikan daya pancar dengan $2^4 = 16$.</p>`,
