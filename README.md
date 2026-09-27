@@ -76,6 +76,7 @@ To add a topic, add it to its track file first as `{ id, stage, soon: true, titl
 | `src/ladder.js` | Prerequisite links between topics and to Math Ladder, each with its reason. |
 | `src/phys.js` | Significant figures, units, scientific notation, and the SVG diagrams. |
 | `src/core.js` | Random numbers, number formatting, formula builders, the translation system. |
+| `src/facts.js` | Fun facts shown on the home page, one per visit from a shuffled deck (Indonesian versions in `src/lang/id/facts.js`, same order). |
 | `src/app.js` | Navigation, worksheets, answer checking, answer key, printing, language menu, day/night mode. |
 | `src/style.css`, `src/head.html`, `src/body.html` | Styles (light/dark, print) and page skeleton. |
 | `src/lang/<code>/` | Translation sources. |
