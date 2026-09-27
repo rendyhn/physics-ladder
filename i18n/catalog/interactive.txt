@@ -1,0 +1,35 @@
+##### v
+@1mib5327i37
+launch speed (m/s)
+
+##### th
+@1x16pc38tmg
+launch angle (°)
+@2fvrt36mxtq
+Path of a projectile for the chosen speed and angle; the dashed path is the same speed at 45 degrees
+@ht8my9dpza  ; 0=ixF(T0, 2) | 1=ixF(Hm) | 2=ixF(R) | 3=ixF(v * v / g)
+Time of flight ⟦0⟧ s · maximum height ⟦1⟧ m · range ⟦2⟧ m. The dashed path is 45°, which gives the longest range, ⟦3⟧ m.
+
+##### a
+@20kl4kf29wv
+angle of incidence (°)
+
+##### n1
+@1frgmczf05z
+n₁ (upper medium)
+
+##### n2
+@2btph5lu46r
+n₂ (lower medium)
+@uv0l5v50cn
+Ray diagram of refraction for the chosen angle and refractive indices
+@nt28unreqx  ; 0=ixF(s2, 2) | 1=ixF(Math.asin(n2 / n1) * 180 / Math.PI)
+sin θ₂ would be ⟦0⟧ > 1: total internal reflection. Critical angle = ⟦1⟧°.
+@we7z8y2t5m  ; 0=ixF(r2 * 180 / Math.PI) | 1=n2 > n1 ? T`towards the normal (into a d
+n₁ sin θ₁ = n₂ sin θ₂ gives θ₂ = ⟦0⟧°. The ray bends ⟦1⟧.
+@caibunq676
+towards the normal (into a denser medium)
+@1ic3g1vo5lz
+away from the normal (into a less dense medium)
+@2be7hmdprc9
+not at all (same medium)

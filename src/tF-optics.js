@@ -86,7 +86,9 @@ ${FigW(tirSvg(), T`From glass into air: below the critical angle the ray escapes
 ${Fm(T`\frac{1}{f} = \frac{1}{s} + \frac{1}{s'} \qquad M = \left|\frac{s'}{s}\right| \qquad P = \frac{1}{f}`)}
 ${Fig(opticsSvg('converging', 10, 25, T`Ray diagram: an object beyond 2F in front of a converging lens forms a real, inverted, smaller image on the other side`), T`A converging lens: a ray parallel to the axis passes through F; a ray through the centre goes straight on.`)}
 ${Key(T`<p>A positive $s'$ is a <b>real</b> image on the far side of the lens; a negative $s'$ is a <b>virtual</b> image on the same side as the object. The <b>power</b> $P$ is measured in dioptres (D) when $f$ is in metres: a lens with $f = 50\,\mathrm{cm}$ has $P = 2\,\mathrm{D}$.</p>`)}
-${Tip(T`<p>An object inside the focal length of a converging lens gives a virtual, upright, magnified image: this is a magnifying glass. A diverging lens always gives a virtual, upright, smaller image.</p>`)}`,
+${Tip(T`<p>An object inside the focal length of a converging lens gives a virtual, upright, magnified image: this is a magnifying glass. A diverging lens always gives a virtual, upright, smaller image.</p>`)}
+<h3>${T`Try it yourself`}</h3>${Ix('snell', T`Change the angle and the refractive indices. Make n₁ larger than n₂ and increase the angle to see total internal reflection.`)}
+`,
   gens: [
     () => {
       const [mat, n] = pick([[T`water`, 1.33], [T`glass`, 1.5], [T`diamond`, 2.42], [T`glass`, 1.6], [T`ice`, 1.31]]), v = 3e8 / n, askV = chance();

@@ -120,7 +120,7 @@ Real, upright, magnified
 The image is virtual (behind the mirror), upright, the same size and laterally inverted.
 
 ##### lenses
-@1pc5lzs7h78  ; 0=Fm(T`n = \frac{c}{v} \qquad n_1 \sin\the | 1=Fig(refractionSvg(40, 25, T`air`, T`glas | 2=FigW(tirSvg(), T`From glass into air: be | 3=Fm(T`\frac{1}{f} = \frac{1}{s} + \frac{1 | 4=Fig(opticsSvg('converging', 10, 25, T`Ra | 5=Key(T`<p>A positive $s'$ is a <b>real</b | 6=Tip(T`<p>An object inside the focal leng
+@1x6iic0c3gu  ; 0=Fm(T`n = \frac{c}{v} \qquad n_1 \sin\the | 1=Fig(refractionSvg(40, 25, T`air`, T`glas | 2=FigW(tirSvg(), T`From glass into air: be | 3=Fm(T`\frac{1}{f} = \frac{1}{s} + \frac{1 | 4=Fig(opticsSvg('converging', 10, 25, T`Ra | 5=Key(T`<p>A positive $s'$ is a <b>real</b | 6=Tip(T`<p>An object inside the focal leng | 7=T`Try it yourself` | 8=Ix('snell', T`Change the angle and the r
 
 <p>Light slows down when it enters a denser medium such as water or glass, and if it arrives at an angle it changes direction. This bending is <b>refraction</b>. The <b>refractive index</b> of a medium compares the speed of light in a vacuum with its speed there:</p>
 ⟦0⟧
@@ -135,6 +135,8 @@ The image is virtual (behind the mirror), upright, the same size and laterally i
 ⟦4⟧
 ⟦5⟧
 ⟦6⟧
+<h3>⟦7⟧</h3>⟦8⟧
+
 @zuhhq1o61d
 A ray passing from air into glass bends towards the normal
 @wcn395gapo
@@ -149,6 +151,8 @@ A converging lens: a ray parallel to the axis passes through F; a ray through th
 <p>A positive $s'$ is a <b>real</b> image on the far side of the lens; a negative $s'$ is a <b>virtual</b> image on the same side as the object. The <b>power</b> $P$ is measured in dioptres (D) when $f$ is in metres: a lens with $f = 50\,\mathrm{cm}$ has $P = 2\,\mathrm{D}$.</p>
 @cf1ts18l8b
 <p>An object inside the focal length of a converging lens gives a virtual, upright, magnified image: this is a magnifying glass. A diverging lens always gives a virtual, upright, smaller image.</p>
+@1opmhf2e9ss
+Change the angle and the refractive indices. Make n₁ larger than n₂ and increase the angle to see total internal reflection.
 @n6qnovqr0x
 diamond
 @1cce1ko3mbd  ; 0=mat | 1=NUM(n)

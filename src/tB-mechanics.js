@@ -143,7 +143,9 @@ ${Fm(T`T = \frac{2 v_0 \sin\theta}{g} \qquad H = \frac{v_0^2 \sin^2\theta}{2g} \
 ${Fig(projectileSvg(20, 50, 10, T`The path of a projectile with its launch velocity, maximum height and range marked`), T`Time of flight $T$, maximum height $H$ and range $R$.`)}
 ${Fig(planeSvg({ W: 380, H: 220, x: [0, 44], y: [0, 16.5], step: [5, 5], xl: 'x (m)', yl: 'y (m)', fns: [[30, 'mf-c2'], [45, 'mf-c1'], [60, 'mf-c3']].map(([a, cls]) => { const r = a * Math.PI / 180; return { f: x => x * Math.tan(r) - 10 * x * x / (2 * 400 * Math.cos(r) ** 2), cls, from: 0, to: 40 * Math.sin(2 * r), label: a + '°', at: 20 * Math.sin(2 * r), dx: 0, dy: -8, anchor: 'middle' }; }), label: T`Paths of projectiles launched at 20 m/s at 30, 45 and 60 degrees` }), T`Launched at $20\,\mathrm{m/s}$ ($g = 10\,\mathrm{m/s^2}$): $45^\circ$ goes farthest ($40\,\mathrm{m}$); $30^\circ$ and $60^\circ$ land at the same point ($34.6\,\mathrm{m}$).`)}
 <p>The range is largest at $\theta = 45^\circ$ (where $\sin 2\theta = 1$). Two angles that add up to $90^\circ$, such as $30^\circ$ and $60^\circ$, give the same range.</p>
-${Tip(T`<p>At the top of the path the vertical velocity is zero, but the horizontal velocity is not. The projectile is still moving sideways at $v_0\cos\theta$.</p>`)}`,
+${Tip(T`<p>At the top of the path the vertical velocity is zero, but the horizontal velocity is not. The projectile is still moving sideways at $v_0\cos\theta$.</p>`)}
+<h3>${T`Try it yourself`}</h3>${Ix('projectile', T`Change the launch speed and angle. Complementary angles (such as 30° and 60°) give the same range.`)}
+`,
   gens: [
     () => {
       const g = gPick(), h = pick([0.8, 1.25, 1.8, 5, 20, 45, 80]), v = ri(2, 15), t = Math.sqrt(2 * h / g), x = sig(v * t);

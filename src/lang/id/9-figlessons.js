@@ -84,7 +84,7 @@ addT('id', {
 ⟦3⟧
 ⟦4⟧
 ⟦5⟧`,
-  '69fk6a7gkb': R`
+  '17mqw36vy47': R`
 <p><b>Proyektil</b> adalah benda yang setelah dilepaskan hanya dipengaruhi gravitasi: bola yang ditendang, batu yang dilempar dari tebing, air yang menyembur dari selang. Lintasannya berbentuk parabola.</p>
 ⟦0⟧
 <h3>Dilempar mendatar</h3>
@@ -95,7 +95,9 @@ addT('id', {
 ⟦2⟧
 ⟦3⟧
 <p>Jarak terjauh dicapai pada $\theta = 45^\circ$ (saat $\sin 2\theta = 1$). Dua sudut yang jumlahnya $90^\circ$, misalnya $30^\circ$ dan $60^\circ$, menghasilkan jarak yang sama.</p>
-⟦4⟧`,
+⟦4⟧
+<h3>⟦5⟧</h3>⟦6⟧
+`,
   'xtt4ktxge5': R`
 <p>Benda yang bergerak melingkar dengan kelajuan tetap tetap mengalami <b>percepatan</b>, karena arah kecepatannya terus berubah.</p>
 ⟦0⟧
@@ -484,7 +486,7 @@ addT('id', {
 <p>Di sini $s$ adalah jarak benda dan $s'$ jarak bayangan. Gunakan aturan tanda: $f$ positif untuk cermin cekung dan negatif untuk cermin cembung; $s'$ positif berarti bayangan <b>nyata</b> di depan cermin, $s'$ negatif berarti bayangan <b>maya</b> di belakang cermin.</p>
 ⟦5⟧
 ⟦6⟧`,
-  '1pc5lzs7h78': R`
+  '1x6iic0c3gu': R`
 <p>Cahaya melambat ketika memasuki medium yang lebih rapat seperti air atau kaca, dan jika datang dengan sudut miring arahnya berubah. Pembelokan ini disebut <b>pembiasan</b> (refraksi). <b>Indeks bias</b> suatu medium membandingkan kelajuan cahaya di ruang hampa dengan kelajuannya di medium itu:</p>
 ⟦0⟧
 <p>Persamaan kedua adalah <b>hukum Snell</b>; sudut-sudutnya diukur dari garis normal. Ketika masuk ke medium yang lebih rapat ($n$ lebih besar), sinar dibelokkan <b>mendekati</b> garis normal.</p>
@@ -497,7 +499,9 @@ addT('id', {
 ⟦3⟧
 ⟦4⟧
 ⟦5⟧
-⟦6⟧`,
+⟦6⟧
+<h3>⟦7⟧</h3>⟦8⟧
+`,
   '1sjxqj4p3hr': R`
 <h3>Mata</h3>
 <p>Kornea dan lensa mata membentuk bayangan nyata dan terbalik pada <b>retina</b>. Otot-otot mengubah bentuk lensa sehingga benda dekat maupun jauh dapat terlihat tajam (<b>daya akomodasi</b>). Mata normal dapat melihat dengan jelas dari <b>titik dekat</b> (punctum proximum), sekitar $25\,\mathrm{cm}$, sampai <b>titik jauh</b> (punctum remotum) di tak hingga.</p>

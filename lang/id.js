@@ -28,6 +28,18 @@ addUI('id', {
   funFact: R`Fakta unik`,
   anotherFact: R`Fakta lain`,
   hint: R`Petunjuk`,
+  glossary: R`Glosarium`,
+  glossaryLede: R`⟦0⟧ istilah penting dalam bahasa Indonesia dan Inggris, masing-masing dengan definisi singkat dan tautan ke materinya.`,
+  glossarySearch: R`Cari istilah`,
+  glossaryNone: R`Tidak ada istilah yang cocok.`,
+  examStart: R`Mode ujian (⟦0⟧ menit)`,
+  examOn: R`Mode ujian`,
+  examLeft: R`Sisa waktu`,
+  examFinish: R`Selesai dan nilai`,
+  examNote: R`Petunjuk, pengecekan, dan kunci jawaban disembunyikan sampai kamu selesai. Lembar dinilai otomatis saat waktu habis.`,
+  examUp: R`Waktu habis: lembarmu sudah dinilai.`,
+  examDone: R`Lembarmu sudah dinilai.`,
+  examConfirm: R`Selesaikan ujian dan lihat nilaimu?`,
   hintHead: R`Konsep kunci dari materi`,
   openLesson: R`Buka materi`,
   pgLevel: R`⟦0⟧ dari ⟦1⟧ dikuasai`,
@@ -2207,7 +2219,7 @@ addT('id', {
 ⟦3⟧
 ⟦4⟧
 ⟦5⟧`,
-  '69fk6a7gkb': R`
+  '17mqw36vy47': R`
 <p><b>Proyektil</b> adalah benda yang setelah dilepaskan hanya dipengaruhi gravitasi: bola yang ditendang, batu yang dilempar dari tebing, air yang menyembur dari selang. Lintasannya berbentuk parabola.</p>
 ⟦0⟧
 <h3>Dilempar mendatar</h3>
@@ -2218,7 +2230,9 @@ addT('id', {
 ⟦2⟧
 ⟦3⟧
 <p>Jarak terjauh dicapai pada $\theta = 45^\circ$ (saat $\sin 2\theta = 1$). Dua sudut yang jumlahnya $90^\circ$, misalnya $30^\circ$ dan $60^\circ$, menghasilkan jarak yang sama.</p>
-⟦4⟧`,
+⟦4⟧
+<h3>⟦5⟧</h3>⟦6⟧
+`,
   'xtt4ktxge5': R`
 <p>Benda yang bergerak melingkar dengan kelajuan tetap tetap mengalami <b>percepatan</b>, karena arah kecepatannya terus berubah.</p>
 ⟦0⟧
@@ -2607,7 +2621,7 @@ addT('id', {
 <p>Di sini $s$ adalah jarak benda dan $s'$ jarak bayangan. Gunakan aturan tanda: $f$ positif untuk cermin cekung dan negatif untuk cermin cembung; $s'$ positif berarti bayangan <b>nyata</b> di depan cermin, $s'$ negatif berarti bayangan <b>maya</b> di belakang cermin.</p>
 ⟦5⟧
 ⟦6⟧`,
-  '1pc5lzs7h78': R`
+  '1x6iic0c3gu': R`
 <p>Cahaya melambat ketika memasuki medium yang lebih rapat seperti air atau kaca, dan jika datang dengan sudut miring arahnya berubah. Pembelokan ini disebut <b>pembiasan</b> (refraksi). <b>Indeks bias</b> suatu medium membandingkan kelajuan cahaya di ruang hampa dengan kelajuannya di medium itu:</p>
 ⟦0⟧
 <p>Persamaan kedua adalah <b>hukum Snell</b>; sudut-sudutnya diukur dari garis normal. Ketika masuk ke medium yang lebih rapat ($n$ lebih besar), sinar dibelokkan <b>mendekati</b> garis normal.</p>
@@ -2620,7 +2634,9 @@ addT('id', {
 ⟦3⟧
 ⟦4⟧
 ⟦5⟧
-⟦6⟧`,
+⟦6⟧
+<h3>⟦7⟧</h3>⟦8⟧
+`,
   '1sjxqj4p3hr': R`
 <h3>Mata</h3>
 <p>Kornea dan lensa mata membentuk bayangan nyata dan terbalik pada <b>retina</b>. Otot-otot mengubah bentuk lensa sehingga benda dekat maupun jauh dapat terlihat tajam (<b>daya akomodasi</b>). Mata normal dapat melihat dengan jelas dari <b>titik dekat</b> (punctum proximum), sekitar $25\,\mathrm{cm}$, sampai <b>titik jauh</b> (punctum remotum) di tak hingga.</p>
@@ -2930,3 +2946,23 @@ addFacts('id', [
   { t: `Mengapa penari es berputar makin cepat`, b: `Ketika seorang pemain seluncur indah menarik lengannya saat berputar, putarannya menjadi jauh lebih cepat. Momentum sudutnya tetap, dan menarik massa lebih dekat ke sumbu putar memperkecil momen inersianya, sehingga laju putarnya harus naik. Hukum yang sama menjelaskan mengapa bintang yang runtuh dapat menjadi pulsar yang berputar ratusan kali per detik.` },
   { t: `Mengapa kapal baja bisa mengapung`, b: `Baja hampir delapan kali lebih rapat daripada air, tetapi kapal baja yang besar dapat mengapung. Lambung kapal melingkupi volume udara yang besar, sehingga massa jenis rata-rata kapal lebih kecil daripada air. Kapal tenggelam hingga air yang dipindahkannya sama beratnya dengan seluruh kapal, persis seperti yang diramalkan hukum Archimedes.` }
 ]);
+
+/* Bahasa Indonesia — interactive figures */
+addT('id', {
+  '1mib5327i37': R`kecepatan awal (m/s)`,
+  '1x16pc38tmg': R`sudut elevasi (°)`,
+  '2fvrt36mxtq': R`Lintasan benda untuk kecepatan dan sudut yang dipilih; lintasan putus-putus memakai kecepatan yang sama dengan sudut 45 derajat`,
+  'ht8my9dpza': R`Waktu melayang ⟦0⟧ s · tinggi maksimum ⟦1⟧ m · jarak mendatar ⟦2⟧ m. Lintasan putus-putus bersudut 45°, yang memberi jarak terjauh, ⟦3⟧ m.`,
+  '20kl4kf29wv': R`sudut datang (°)`,
+  '1frgmczf05z': R`n₁ (medium atas)`,
+  '2btph5lu46r': R`n₂ (medium bawah)`,
+  'uv0l5v50cn': R`Diagram sinar pembiasan untuk sudut dan indeks bias yang dipilih`,
+  'nt28unreqx': R`sin θ₂ akan bernilai ⟦0⟧ > 1: terjadi pemantulan sempurna. Sudut kritis = ⟦1⟧°.`,
+  'we7z8y2t5m': R`n₁ sin θ₁ = n₂ sin θ₂ menghasilkan θ₂ = ⟦0⟧°. Sinar dibelokkan ⟦1⟧.`,
+  'caibunq676': R`mendekati garis normal (masuk ke medium lebih rapat)`,
+  '1ic3g1vo5lz': R`menjauhi garis normal (masuk ke medium kurang rapat)`,
+  '2be7hmdprc9': R`sama sekali tidak (medium sama)`,
+  'qgl9kj4nky': R`Coba sendiri`,
+  '1dgnmmy7jlq': R`Ubah kecepatan awal dan sudut elevasi. Dua sudut yang berjumlah 90° (misalnya 30° dan 60°) memberi jarak mendatar yang sama.`,
+  '1opmhf2e9ss': R`Ubah sudut dan indeks biasnya. Buat n₁ lebih besar daripada n₂, lalu perbesar sudutnya untuk melihat pemantulan sempurna.`,
+});

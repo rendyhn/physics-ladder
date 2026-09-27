@@ -160,7 +160,7 @@ zero
 The motion is symmetric: the fall back from the top mirrors the rise, so the ball arrives with the same speed it left with, now pointing downwards.
 
 ##### projectile
-@69fk6a7gkb  ; 0=Key(T`<p>Split the motion into two parts | 1=Fm(T`T = \frac{2 v_0 \sin\theta}{g} \qqu | 2=Fig(projectileSvg(20, 50, 10, T`The path | 3=Fig(planeSvg({ W: 380, H: 220, x: [0, 44 | 4=Tip(T`<p>At the top of the path the vert
+@17mqw36vy47  ; 0=Key(T`<p>Split the motion into two parts | 1=Fm(T`T = \frac{2 v_0 \sin\theta}{g} \qqu | 2=Fig(projectileSvg(20, 50, 10, T`The path | 3=Fig(planeSvg({ W: 380, H: 220, x: [0, 44 | 4=Tip(T`<p>At the top of the path the vert | 5=T`Try it yourself` | 6=Ix('projectile', T`Change the launch spe
 
 <p>A <b>projectile</b> is an object that moves under gravity alone after it is launched: a kicked ball, a stone thrown off a cliff, water from a hose. Its path is a parabola.</p>
 ⟦0⟧
@@ -173,6 +173,8 @@ The motion is symmetric: the fall back from the top mirrors the rise, so the bal
 ⟦3⟧
 <p>The range is largest at $\theta = 45^\circ$ (where $\sin 2\theta = 1$). Two angles that add up to $90^\circ$, such as $30^\circ$ and $60^\circ$, give the same range.</p>
 ⟦4⟧
+<h3>⟦5⟧</h3>⟦6⟧
+
 @x0tm332g7h
 <p>Split the motion into two parts that do not affect each other:</p><ul><li><b>Horizontal:</b> no force, so the velocity $v_x$ is constant: $x = v_x t$.</li><li><b>Vertical:</b> constant acceleration $g$ downwards, exactly like free fall.</li></ul><p>The time $t$ is the only thing the two parts share.</p>
 @z4l93pdn03
@@ -185,6 +187,10 @@ Paths of projectiles launched at 20 m/s at 30, 45 and 60 degrees
 Launched at $20\,\mathrm{m/s}$ ($g = 10\,\mathrm{m/s^2}$): $45^\circ$ goes farthest ($40\,\mathrm{m}$); $30^\circ$ and $60^\circ$ land at the same point ($34.6\,\mathrm{m}$).
 @290cqlyxiyk
 <p>At the top of the path the vertical velocity is zero, but the horizontal velocity is not. The projectile is still moving sideways at $v_0\cos\theta$.</p>
+@qgl9kj4nky
+Try it yourself
+@1dgnmmy7jlq
+Change the launch speed and angle. Complementary angles (such as 30° and 60°) give the same range.
 @26k2a0seb9  ; 0=Q(h, 'm') | 1=Q(v, 'm/s') | 2=gNote(g)
 A ball rolls off a horizontal table ⟦0⟧ high at ⟦1⟧. How far from the foot of the table does it land? ⟦2⟧
 @2a8pr91t3au  ; 0=M(h) | 1=M(g) | 2=M(sig(t)) | 3=v | 4=M(sig(t)) | 5=QT(x, 'm')
