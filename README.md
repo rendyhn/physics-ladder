@@ -77,7 +77,10 @@ To add a topic, add it to its track file first as `{ id, stage, soon: true, titl
 | `src/phys.js` | Significant figures, units, scientific notation, and the SVG diagrams. |
 | `src/core.js` | Random numbers, number formatting, formula builders, the translation system. |
 | `src/facts.js` | Fun facts shown on the home page, one per visit from a shuffled deck (Indonesian versions in `src/lang/id/facts.js`, same order). |
-| `src/app.js` | Navigation, worksheets, answer checking, answer key, printing, language menu, day/night mode. |
+| `src/subjects.js` | The four Ladder sites, for the subject menu in the top bar (it keeps the chosen language). |
+| `src/sw.js` | Service worker template; `build.py` writes `sw.js` with a new cache name on every build, so the site works offline once visited. |
+| `manifest.webmanifest`, `icons/` | Lets the site be installed on a phone or computer like an app. |
+| `src/app.js` | Navigation, worksheets, answer checking, answer key, printing, language menu, day/night mode, progress (best score per topic, saved in the browser), hints (the topic's key ideas). |
 | `src/style.css`, `src/head.html`, `src/body.html` | Styles (light/dark, print) and page skeleton. |
 | `src/lang/<code>/` | Translation sources. |
 | `tools/i18n.py` | Translation catalogue and checks. |
